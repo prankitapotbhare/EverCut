@@ -18,7 +18,7 @@ export const passwordValidation = {
     // - At least one lowercase letter
     // - At least one number
     // - Length between 8-64 characters
-    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,64}$/,
+    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\w\W]{8,64}$/,
     message: 'Password must contain at least one uppercase letter, one lowercase letter, and one number'
   },
   maxLength: {

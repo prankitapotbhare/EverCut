@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { FaEnvelope, FaSync } from 'react-icons/fa';
+import { actionCodeSettings } from '../../firebase/config';
 
 const EmailVerification = ({ email }) => {
   const [loading, setLoading] = useState(false);
@@ -30,17 +31,17 @@ const EmailVerification = ({ email }) => {
     return () => clearInterval(timer);
   }, [countdown, currentUser]);
 
+  // ... in the handleResendEmail function
   const handleResendEmail = async () => {
     try {
       setLoading(true);
       setError('');
-      await currentUser.sendEmailVerification({
-        url: window.location.origin // Redirect URL after verification
-      });
+      await currentUser.sendEmailVerification(actionCodeSettings);
       setMessage('Verification email sent! Please check your inbox.');
-      setCountdown(60); // Reset countdown
+      setCountdown(60);
     } catch (error) {
       setError('Failed to resend verification email. Please try again.');
+      console.error('Verification error:', error);
     } finally {
       setLoading(false);
     }

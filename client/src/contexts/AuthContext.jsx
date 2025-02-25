@@ -12,6 +12,7 @@ import {
 } from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { storage } from '../utils/helpers';
+import { actionCodeSettings } from '../firebase/config';
 
 const AuthContext = createContext();
 
@@ -24,19 +25,41 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const signup = async (email, password, displayName, location) => {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    await Promise.all([
-      updateProfile(userCredential.user, { 
-        displayName,
-        photoURL: `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}&background=random`
-      }),
-      sendEmailVerification(userCredential.user)
-    ]);
-    
-    // Store additional user data
-    storage.set('userLocation', location);
-    
-    return userCredential.user;
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      await Promise.all([
+        updateProfile(user, {
+          displayName,
+          photoURL: `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}&background=random`
+        }),
+        sendEmailVerification(user, {
+          ...actionCodeSettings,
+          url: `${window.location.origin}/verify-email-confirmation`
+        })
+      ]);
+
+      storage.set('userLocation', location);
+      return user;
+    } catch (error) {
+      console.error('Signup error:', error);
+      throw error;
+    }
+  };
+
+  const resendVerificationEmail = async () => {
+    if (currentUser && !currentUser.emailVerified) {
+      try {
+        await sendEmailVerification(currentUser, {
+          ...actionCodeSettings,
+          url: `${window.location.origin}/verify-email-confirmation`
+        });
+      } catch (error) {
+        console.error('Verification email error:', error);
+        throw error;
+      }
+    }
   };
 
   const login = async (email, password) => {
@@ -61,12 +84,6 @@ export const AuthProvider = ({ children }) => {
     });
     const result = await signInWithPopup(auth, provider);
     return result.user;
-  };
-
-  const resendVerificationEmail = async () => {
-    if (currentUser && !currentUser.emailVerified) {
-      await sendEmailVerification(currentUser);
-    }
   };
 
   const updateUserProfile = async (data) => {

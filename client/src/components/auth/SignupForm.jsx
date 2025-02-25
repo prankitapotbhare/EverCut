@@ -28,6 +28,7 @@ const SignupForm = () => {
       await signup(data.email, data.password, data.name, data.location);
       navigate('/verify-email', { state: { email: data.email } });
     } catch (error) {
+      console.error('Signup error:', error);
       setAuthError(parseAuthError(error));
     } finally {
       setIsLoading(false);
@@ -63,7 +64,6 @@ const SignupForm = () => {
     <div className="flex h-screen">
       {/* Left Section */}
       <div className="w-1/2 flex flex-col justify-center items-center p-8">
-        // In the return statement
         <img src="/evercut.svg" alt="Logo" className="mb-8" />
         <h1 className="text-3xl font-bold mb-6">Get Started Now</h1>
 

@@ -9,6 +9,7 @@ import PrivateRoute from './components/auth/PrivateRoute';
 import ErrorBoundary from './components/error/ErrorBoundary';
 import ErrorHandler from './components/error/ErrorHandler';
 import { useState } from 'react';
+import VerifyEmailConfirmation from './pages/VerifyEmailConfirmation';
 
 function App() {
   const [error, setError] = useState(null);
@@ -39,6 +40,7 @@ function App() {
             <Route path="/signup" element={<Signup onError={handleError} />} />
             <Route path="/forgot-password" element={<ForgotPassword onError={handleError} />} />
             <Route path="/verify-email" element={<VerifyEmail onError={handleError} />} />
+            <Route path="/verify-email-confirmation" element={<VerifyEmailConfirmation />} />
           </Routes>
         </Router>
       </AuthProvider>

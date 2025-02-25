@@ -10,18 +10,21 @@ export const getAuthToken = async () => {
 
 export const parseAuthError = (error) => {
   const errorMessages = {
-    'auth/user-not-found': 'No account found with this email',
-    'auth/wrong-password': 'Invalid password',
-    'auth/email-already-in-use': 'Email is already registered',
-    'auth/weak-password': 'Password should be at least 6 characters',
+    'auth/email-already-in-use': 'This email is already registered',
     'auth/invalid-email': 'Invalid email format',
-    'auth/popup-closed-by-user': 'Sign in was cancelled',
+    'auth/operation-not-allowed': 'Email/password sign up is not enabled',
+    'auth/weak-password': 'Password should be at least 6 characters',
     'auth/network-request-failed': 'Network error. Please check your connection',
     'auth/too-many-requests': 'Too many attempts. Please try again later',
+    'auth/user-disabled': 'This account has been disabled',
+    'auth/user-not-found': 'No account found with this email',
+    'auth/wrong-password': 'Invalid password',
+    'auth/popup-closed-by-user': 'Sign in was cancelled',
     'auth/requires-recent-login': 'Please log in again to continue'
   };
 
-  return errorMessages[error.code] || 'An unexpected error occurred';
+  console.error('Auth error:', error);
+  return errorMessages[error.code] || error.message || 'An unexpected error occurred';
 };
 
 export const isTokenExpired = (token) => {
