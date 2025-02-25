@@ -15,12 +15,12 @@
 **Frontend Framework:**
 - React + Vite
 - Tailwind CSS
+- Firebase Authentication (Primary auth provider)
 
 **Backend:**
 - Node.js
 - Express.js
-- Firebase Authentication
-- JWT for session management
+- Firebase Admin (Token verification only)
 
 **Deployment:**
 - Vercel (Frontend)
@@ -35,6 +35,7 @@
    - Password confirmation
    - Terms acceptance
    - Google OAuth signup option
+   - Email verification requirement (except Google OAuth)
 
 2. **User Login:**
    - Email/password authentication
@@ -59,11 +60,19 @@
      * Terms & policy acceptance
    - Form validation
    - Google OAuth popup option
-   - Email verification process
+   - Email verification process:
+     * Automatic verification email sent after signup
+     * User must verify email before accessing protected routes
+     * Resend verification option available
+     * Skip verification for Google OAuth users
 
 3. **Login Flow:**
    - Credential validation
    - OAuth authentication
+   - Email verification check:
+     * Block access if email not verified
+     * Redirect to verification page
+     * Exception for Google OAuth users
 
 4. **Forgot Password Flow:**
    - Email submission
@@ -106,6 +115,16 @@
 **Frontend (React + Vite):**
 - React Router for navigation
 - React Hook Form for form management and validation
+- Firebase Authentication Integration:
+  * Complete auth management using Firebase
+  * Initialize Firebase with config
+  * Use Firebase Auth hooks (useAuth)
+  * Handle auth state changes
+  * Implement protected routes with AuthGuard
+  * Manage Firebase tokens
+  * Handle email verification
+  * Manage OAuth providers
+  * Password reset flow
 - Form validation rules:
   * Name: Required
   * Location: Required
@@ -117,17 +136,57 @@
 
 **Backend (Express js):**
 - RESTful API architecture
-- Firebase Admin SDK integration
-- JWT middleware for route protection
+- Firebase Admin SDK integration (minimal):
+  * Token verification only
+  * No direct auth operations
+- Security Features:
+  * Rate limiting (100 requests per 15 minutes)
+  * Helmet for security headers
+  * XSS protection
+  * HTTP Parameter Pollution prevention
+- Authentication Middleware:
+  * Verify Firebase ID tokens for API access
+  * Extract user claims from token
+  * Handle token expiration
+- Error Handling:
+  * Custom AppError class
+  * Centralized error handling
+  * Operational vs Programming errors
+- Protected Routes:
+  * All /api/* routes require valid Firebase token
+  * Simple token verification
+  * Handle unauthorized access
 
 **Authentication Flow:**
-- Signup:
+- Frontend Authentication (Firebase):
+  * Complete auth state management
+  * Handle all auth operations
+  * Listen to auth state changes
+  * Manage Firebase tokens
+  * Handle email verification
+  * OAuth provider management
+  * Password reset handling
+  * User profile updates
+- Backend Authentication:
+  * Only verify Firebase tokens
+  * No auth state management
+  * No user management
+  * Simple middleware protection
+- Protected Routes:
+  * Frontend: AuthGuard using Firebase
+  * Backend: Simple token verification
+  * Handle unauthorized redirects
+
+- Signup (Firebase):
   - Form validation
   - Firebase auth creation
-- Login:
+  - Send verification email
+  - Redirect to verification page
+- Login (Firebase):
   - Email/Password: Firebase authentication
   - Google OAuth: Firebase Google provider
-- Password Reset: Firebase password reset email
+  - Check email verification status
+- Password Reset: Firebase password reset flow
 
 **Deployment (Vercel):**
 - Automated deployments
@@ -153,7 +212,9 @@ npm install
 ```
 
 3. Set up environment variables:
-   - VITE_FIREBASE_CONFIG
+   - VITE_FIREBASE_CONFIG (Frontend)
+   - FIREBASE_SERVICE_ACCOUNT_KEY (Backend)
+   - PORT (Backend)
    - DATABASE_URL
    - JWT_SECRET
 

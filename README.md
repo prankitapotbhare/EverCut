@@ -11,25 +11,29 @@
 
 ## 🌟 Features
 
-- 🔐 Secure Authentication System
-  - Email/Password Authentication
+- 🔐 Authentication System
+  - Email/Password Authentication with Verification
   - Google OAuth Integration
-  - Password Reset Functionality
-  - JWT Token-based Session Management
+  - Password Reset Flow
+  - Protected Routes
+  - Firebase Token Management
 
 - 💅 Modern UI/UX
-  - Responsive Design
-  - Tailwind CSS Styling
-  - Form Validation
-  - Loading States
-  - Error Handling
+  - Responsive Design with Tailwind CSS
+  - Gradient Button Effects
+  - Form Validation States
+  - Loading Indicators
+  - Modal Dialogs
+  - Smooth Transitions
+  - High Contrast Support
 
-- 🛠️ Technical Features
-  - React + Vite for Frontend
-  - Express.js Backend
-  - Firebase Integration
-  - RESTful API Architecture
-  - JWT Authentication
+- 🛡️ Security Features
+  - Firebase Authentication
+  - Rate Limiting Protection
+  - XSS Prevention
+  - Security Headers
+  - HTTP Parameter Pollution Prevention
+  - Token Verification
 
 ## 📋 Prerequisites
 
@@ -76,10 +80,8 @@ VITE_FIREBASE_APP_ID=your_app_id
 
 **Server (.env)**
 ```env
-JWT_SECRET=your_jwt_secret
-FIREBASE_ADMIN_PROJECT_ID=your_project_id
-FIREBASE_ADMIN_PRIVATE_KEY=your_private_key
-FIREBASE_ADMIN_CLIENT_EMAIL=your_client_email
+PORT=5000
+CLIENT_URL=http://localhost:3000
 ```
 
 4. **Start Development Servers**

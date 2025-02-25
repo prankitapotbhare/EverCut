@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { GoogleAuthButton } from './GoogleAuthButton';
+import { GoogleAuthButton } from '../ui/GoogleAuthButton';
+import { useAuth } from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const { login, googleSignIn } = useAuth();
+  const navigate = useNavigate();
+  const [authError, setAuthError] = useState('');
 
   const onSubmit = async (data) => {
     try {
-      // Firebase login logic will be implemented here
-      console.log(data);
+      setAuthError('');
+      await login(data.email, data.password);
+      navigate('/');
     } catch (error) {
-      console.error('Login error:', error);
+      setAuthError(
+        error.code === 'auth/user-not-found' ? 'Invalid email address' :
+        error.code === 'auth/wrong-password' ? 'Invalid password' :
+        'Failed to log in. Please try again.'
+      );
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      setAuthError('');
+      await googleSignIn();
+      navigate('/');
+    } catch (error) {
+      setAuthError('Failed to sign in with Google. Please try again.');
     }
   };
 
@@ -19,7 +39,7 @@ const LoginForm = () => {
     <div className="flex h-screen">
       {/* Left Section */}
       <div className="w-1/2 flex flex-col justify-center items-center p-8">
-        <img src="/assets/logo.png" alt="Logo" className="mb-8" />
+        <img src="./evercut.svg" alt="Logo" className="mb-8" />
         <h1 className="text-2xl font-bold mb-4">Welcome back!</h1>
         <p className="text-gray-600 mb-6">Enter your Credentials to access your account</p>
 
@@ -85,7 +105,8 @@ const LoginForm = () => {
 
         <div className="mt-4 text-center">
           <span className="text-gray-700">or</span>
-          <GoogleAuthButton />
+          {/* Update the GoogleAuthButton component call: */}
+          <GoogleAuthButton onClick={handleGoogleSignIn} />
         </div>
 
         <div className="mt-4 text-center">
@@ -98,7 +119,7 @@ const LoginForm = () => {
 
       {/* Right Section */}
       <div className="w-1/2 bg-gray-100">
-        <img src="/assets/auth-banner.jpg" alt="Authentication Banner" className="w-full h-full object-cover" />
+        <img src="./Login-Right.png" alt="Authentication Banner" className="w-full h-full object-cover" />
       </div>
     </div>
   );
