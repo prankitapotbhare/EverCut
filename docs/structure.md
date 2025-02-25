@@ -33,8 +33,7 @@ evercut/
 │   │   ├── utils/           # Utility functions
 │   │   │   ├── validation.js
 │   │   │   └── helpers.js
-│   │   ├── styles/          # Global styles
-│   │   │   └── index.css
+│   │   ├── index.css         # Global styles
 │   │   ├── App.jsx
 │   │   ├── main.jsx
 │   │   └── routes.jsx
