@@ -1,7 +1,7 @@
 # Backend Development Roadmap
 
 ## 1. Initial Setup
-- [x] Create server directory structure
+- [ ] Create server directory structure
 - [ ] Initialize Node.js project
 - [ ] Install core dependencies
 - [ ] Configure environment variables

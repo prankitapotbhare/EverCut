@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="client/public/assets/evercut.svg" alt="EverCut Logo" width="200"/>
+  <img src="client/public/evercut.svg" alt="EverCut Logo" width="200"/>
   <h1>EverCut</h1>
   <p>Modern Authentication System with Firebase Integration</p>
 
