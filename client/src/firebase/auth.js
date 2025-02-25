@@ -5,17 +5,54 @@ import {
   sendPasswordResetEmail,
   sendEmailVerification,
   updateProfile,
-  onAuthStateChanged
+  onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
+  fetchSignInMethodsForEmail,
+  EmailAuthProvider,
+  linkWithCredential
 } from 'firebase/auth';
 import { auth } from './config';
+
+const googleProvider = new GoogleAuthProvider();
 
 export const createUser = async (email, password, displayName) => {
   const userCredential = await createUserWithEmailAndPassword(auth, email, password);
   await Promise.all([
     sendEmailVerification(userCredential.user),
-    updateProfile(userCredential.user, { displayName })
+    updateProfile(userCredential.user, { 
+      displayName,
+      photoURL: `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}`
+    })
   ]);
   return userCredential.user;
+};
+
+export const signInWithGoogle = async () => {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    const user = result.user;
+    
+    // Check if email exists with different provider
+    const methods = await fetchSignInMethodsForEmail(auth, user.email);
+    
+    if (methods.length > 0 && !methods.includes('google.com')) {
+      // Email exists with different provider
+      throw new Error('EMAIL_EXISTS_DIFFERENT_PROVIDER');
+    }
+    
+    return user;
+  } catch (error) {
+    if (error.code === 'auth/account-exists-with-different-credential') {
+      throw new Error('EMAIL_EXISTS_DIFFERENT_PROVIDER');
+    }
+    throw error;
+  }
+};
+
+export const linkEmailProvider = async (email, password) => {
+  const credential = EmailAuthProvider.credential(email, password);
+  return linkWithCredential(auth.currentUser, credential);
 };
 
 export const updateUserProfile = async (user, data) => {

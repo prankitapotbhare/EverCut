@@ -9,12 +9,29 @@ export const emailValidation = {
 export const passwordValidation = {
   required: 'Password is required',
   minLength: {
-    value: 6,
-    message: 'Password must be at least 6 characters'
+    value: 8,
+    message: 'Password must be at least 8 characters'
   },
   pattern: {
-    value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{6,}$/,
-    message: 'Password must contain at least one letter and one number'
+    // More comprehensive regex that requires:
+    // - At least one uppercase letter
+    // - At least one lowercase letter
+    // - At least one number
+    // - Length between 8-64 characters
+    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,64}$/,
+    message: 'Password must contain at least one uppercase letter, one lowercase letter, and one number'
+  },
+  maxLength: {
+    value: 64,
+    message: 'Password cannot exceed 64 characters'
+  },
+  validate: {
+    noSpaces: (value) => !value.includes(' ') || 'Password cannot contain spaces',
+    noCommonPatterns: (value) => {
+      const commonPatterns = ['password', '123456', 'qwerty'];
+      return !commonPatterns.some(pattern => value.toLowerCase().includes(pattern)) || 
+        'Password contains common unsafe patterns';
+    }
   }
 };
 

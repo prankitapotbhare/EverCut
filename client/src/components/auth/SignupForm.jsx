@@ -4,6 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { GoogleAuthButton } from '../ui/GoogleAuthButton';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { parseAuthError } from '../../utils/auth';
+import { 
+  emailValidation, 
+  passwordValidation, 
+  nameValidation, 
+  locationValidation, 
+  termsValidation,
+  validatePasswordMatch 
+} from '../../utils/validation';
 
 const SignupForm = () => {
   const { register, handleSubmit, formState: { errors }, getValues } = useForm();
@@ -29,10 +38,19 @@ const SignupForm = () => {
     try {
       setIsLoading(true);
       setAuthError('');
-      await googleSignIn();
-      navigate('/');
+      const user = await googleSignIn();
+      
+      if (user.emailVerified) {
+        navigate('/');
+      } else {
+        navigate('/verify-email', { state: { email: user.email } });
+      }
     } catch (error) {
-      setAuthError(parseAuthError(error));
+      if (error.message === 'EMAIL_EXISTS_DIFFERENT_PROVIDER') {
+        setAuthError('An account already exists with this email. Please use email/password login.');
+      } else {
+        setAuthError(parseAuthError(error));
+      }
     } finally {
       setIsLoading(false);
     }
@@ -45,7 +63,8 @@ const SignupForm = () => {
     <div className="flex h-screen">
       {/* Left Section */}
       <div className="w-1/2 flex flex-col justify-center items-center p-8">
-        <img src="/assets/logo.png" alt="Logo" className="mb-8" />
+        // In the return statement
+        <img src="/evercut.svg" alt="Logo" className="mb-8" />
         <h1 className="text-3xl font-bold mb-6">Get Started Now</h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xs">
@@ -54,7 +73,7 @@ const SignupForm = () => {
             <input
               type="text"
               id="name"
-              {...register('name', { required: 'Name is required' })}
+              {...register('name', nameValidation)}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
               placeholder="Enter your name"
             />
@@ -66,7 +85,7 @@ const SignupForm = () => {
             <input
               type="text"
               id="location"
-              {...register('location', { required: 'Location is required' })}
+              {...register('location', locationValidation)}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
               placeholder="Enter your location"
             />
@@ -78,13 +97,7 @@ const SignupForm = () => {
             <input
               type="email"
               id="email"
-              {...register('email', { 
-                required: 'Email is required',
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: 'Invalid email address'
-                }
-              })}
+              {...register('email', emailValidation)}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
               placeholder="Enter your email"
             />
@@ -97,13 +110,7 @@ const SignupForm = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
-                {...register('password', { 
-                  required: 'Password is required',
-                  minLength: {
-                    value: 6,
-                    message: 'Password must be at least 6 characters'
-                  }
-                })}
+                {...register('password', passwordValidation)}
                 className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500 pr-10"
                 placeholder="Enter your password"
               />
@@ -124,9 +131,9 @@ const SignupForm = () => {
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 id="confirmPassword"
-                {...register('confirmPassword', { 
+                {...register('confirmPassword', {
                   required: 'Please confirm your password',
-                  validate: (value) => value === password || 'Passwords do not match'
+                  validate: (value) => validatePasswordMatch(getValues('password'), value)
                 })}
                 className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500 pr-10"
                 placeholder="Confirm your password"
@@ -146,7 +153,7 @@ const SignupForm = () => {
             <input 
               type="checkbox" 
               id="terms" 
-              {...register('terms', { required: 'You must accept the terms & policy' })}
+              {...register('terms', termsValidation)}
               className="mr-2" 
             />
             <label htmlFor="terms" className="text-gray-700">I agree to the terms & policy</label>

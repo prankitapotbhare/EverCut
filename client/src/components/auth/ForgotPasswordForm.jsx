@@ -23,14 +23,22 @@ const ForgotPasswordForm = () => {
   return (
     <div className="flex h-screen">
       <div className="w-1/2 flex flex-col justify-center items-center p-8">
-        <img src="/assets/logo.png" alt="Logo" className="mb-8" />
-        <h1 className="text-2xl font-bold mb-4">Reset Password</h1>
+        <img src="/evercut.svg" alt="Logo" className="mb-8" />
+        <h1 className="text-3xl font-bold mb-6">Reset Password</h1>
         <p className="text-gray-600 mb-6">
           Enter your email address and we'll send you instructions to reset your password.
         </p>
 
-        {message && <div className="text-green-500 mb-4">{message}</div>}
-        {error && <div className="text-red-500 mb-4">{error}</div>}
+        {message && (
+          <div className="mb-4 w-full max-w-xs bg-green-50 border-l-4 border-green-500 p-4 rounded">
+            <p className="text-green-700">{message}</p>
+          </div>
+        )}
+        {error && (
+          <div className="mb-4 w-full max-w-xs bg-red-50 border-l-4 border-red-500 p-4 rounded">
+            <p className="text-red-700">{error}</p>
+          </div>
+        )}
 
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xs">
           <div className="mb-4">
@@ -53,14 +61,14 @@ const ForgotPasswordForm = () => {
 
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none"
+            className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 focus:outline-none"
           >
             Reset Password
           </button>
         </form>
 
         <div className="mt-4">
-          <Link to="/login" className="text-blue-500 hover:underline">
+          <Link to="/login" className="text-green-500 hover:underline">
             Back to Login
           </Link>
         </div>

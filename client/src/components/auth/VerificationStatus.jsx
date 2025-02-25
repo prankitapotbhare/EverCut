@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 
 const VerificationStatus = ({ email, showResend = true }) => {
@@ -21,7 +21,7 @@ const VerificationStatus = ({ email, showResend = true }) => {
   if (!currentUser) return null;
 
   return (
-    <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+    <div className="bg-green-50 border-l-4 border-green-400 p-4">
       <div className="flex">
         <div className="flex-shrink-0">
           <svg className="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
@@ -33,18 +33,24 @@ const VerificationStatus = ({ email, showResend = true }) => {
             Please verify your email address ({email})
           </p>
           {showResend && (
-            <div className="mt-4">
-              <button
-                onClick={handleResendVerification}
-                disabled={loading}
-                className="text-sm text-yellow-700 underline hover:text-yellow-600 disabled:opacity-50"
-              >
-                {loading ? 'Sending...' : 'Resend verification email'}
-              </button>
-            </div>
+            <button
+              onClick={handleResendVerification}
+              disabled={loading}
+              className="text-sm text-green-700 underline hover:text-green-600 disabled:opacity-50"
+            >
+              {loading ? 'Sending...' : 'Resend verification email'}
+            </button>
           )}
-          {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
         </div>
+        {showResend && (
+          <button
+            onClick={handleResendVerification}
+            disabled={loading}
+            className="text-sm text-green-700 underline hover:text-green-600 disabled:opacity-50"
+          >
+            {loading ? 'Sending...' : 'Resend verification email'}
+          </button>
+        )}
       </div>
     </div>
   );
