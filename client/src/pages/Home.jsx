@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-8 py-8">
         <nav className="flex justify-between items-center mb-12">
           <img 
             src="./evercut.svg" 
@@ -33,8 +33,8 @@ const Home = () => {
           <h1 className="text-5xl font-bold text-gray-800 mb-6">
             Welcome to Evercut
           </h1>
-          <p className="text-xl text-gray-600 mb-12">
-            Your one-stop destination for professional haircuts and styling services
+          <p className="text-2xl text-gray-600 mb-12">
+            Your one-stop destination for professional Haircuts & Styling services
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -44,7 +44,7 @@ const Home = () => {
                 Find and book appointments with top hairstylists in your area.
               </p>
               <button
-                onClick={() => navigate('/signup')}
+                onClick={() => navigate('/login')}
                 className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-200"
               >
                 Get Started

@@ -18,9 +18,9 @@ const LoginForm = () => {
               <h2 className="text-3xl font-semibold mt-4">
                 Welcome back!
               </h2>
-              <p className="text-black-500 mb-10">Enter your Credentials to access your account</p>
+              <p className="text-black-500 mb-10 text-sm whitespace-nowrap">Enter your Credentials to access your account</p>
               <form>
-                <div className="mb-4">
+                <div className="mb-8">
                   <label className="block text-black-700 font-semibold text-sm" htmlFor="email">
                     Email address
                   </label>
@@ -32,8 +32,14 @@ const LoginForm = () => {
                   />
                 </div>
                 <div className="mb-4">
-                  <label className="block text-black-700 font-semibold text-sm" htmlFor="password">
-                    Password
+                  <label className="flex justify-between items-center text-black-700 font-semibold text-sm" htmlFor="password">
+                    <span>Password</span>
+                    <a 
+                      className="text-blue-500 hover:text-blue-800 text-xs" 
+                      href="#"
+                    >
+                      forgot password
+                    </a>
                   </label>
                   <input 
                     className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm" 
@@ -41,14 +47,6 @@ const LoginForm = () => {
                     type="password" 
                     placeholder="Enter your password"
                   />
-                  <div className="text-right mt-2">
-                    <a 
-                      className="inline-block align-baseline font-semibold text-sm text-blue-500 hover:text-blue-800" 
-                      href="#"
-                    >
-                      forgot password
-                    </a>
-                  </div>
                 </div>
                 <div className="mb-4">
                   <label className="inline-flex items-center">
@@ -81,7 +79,7 @@ const LoginForm = () => {
                   </button>
                 </div>
                 <div className="text-center mt-2">
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 mb-8 font-semibold">
                     Don't have an account?
                     <a className="text-blue-500 hover:text-blue-800 font-semibold ml-1" href="#">
                       Sign Up
@@ -94,7 +92,7 @@ const LoginForm = () => {
               <img 
                 src="./login.png" 
                 alt="A hairdresser standing behind a seated customer, both smiling" 
-                className="w-full h-full object-cover rounded-l-lg"
+                className="w-full h-full object-cover rounded-l-[50px]"
                 width="600"
                 height="800"
               />

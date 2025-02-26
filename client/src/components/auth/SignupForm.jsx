@@ -21,7 +21,7 @@ const SignupForm = () => {
                 </div>
                 <form>
                   <div className="mb-4">
-                    <label className="block text-gray-700 text-sm">
+                    <label className="block text-gray-700 text-sm font-semibold">
                       Name
                     </label>
                     <input 
@@ -30,8 +30,8 @@ const SignupForm = () => {
                       className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
                     />
                   </div>
-                  <div className="mb-3">
-                    <label className="block text-gray-700 text-sm">
+                  <div className="mb-3.5">
+                    <label className="block text-gray-700 text-sm font-semibold">
                       Location
                     </label>
                     <input 
@@ -40,8 +40,8 @@ const SignupForm = () => {
                       className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm" 
                     />
                   </div>
-                  <div className="mb-3">
-                    <label className="block text-gray-700 text-sm">
+                  <div className="mb-3.5">
+                    <label className="block text-gray-700 text-sm font-semibold">
                       Email address
                     </label>
                     <input 
@@ -50,8 +50,8 @@ const SignupForm = () => {
                       className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm" 
                     />
                   </div>
-                  <div className="mb-3">
-                    <label className="block text-gray-700 text-sm">
+                  <div className="mb-3.5">
+                    <label className="block text-gray-700 text-sm font-semibold">
                       Password
                     </label>
                     <input 
@@ -60,13 +60,13 @@ const SignupForm = () => {
                       className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm" 
                     />
                   </div>
-                  <div className="mb-3">
-                    <label className="block text-gray-700 text-sm">
-                      Confirm Password
+                  <div className="mb-3.5">
+                    <label className="block text-gray-700 text-sm font-semibold">
+                      Conform Password
                     </label>
                     <input 
                       type="password" 
-                      placeholder="Confirm password" 
+                      placeholder="Conform password" 
                       className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm" 
                     />
                   </div>
@@ -76,17 +76,14 @@ const SignupForm = () => {
                       id="terms" 
                       className="mr-2" 
                     />
-                    <label htmlFor="terms" className="text-gray-700 text-[9px]">
-                      I agree to the
-                      <a href="#" className="text-green-500">
-                        {' '}terms & policy
-                      </a>
+                    <label htmlFor="terms" className="text-gray-700 text-[9px] font-semibold">
+                      I agree to the terms & policy
                     </label>
                   </div>
                   <div className="mt-10">
                     <button 
                       type="submit"
-                      className="w-full bg-green-500 text-white py-1.5 rounded-lg hover:bg-green-600 transition duration-200 text-sm"
+                      className="w-full bg-green-500 text-white font-semibold py-1.5 rounded-lg hover:bg-green-600 transition duration-200 text-sm"
                     >
                       Signup
                     </button>
@@ -96,11 +93,11 @@ const SignupForm = () => {
                   <p className="text-gray-500 text-sm">
                     or
                   </p>
-                  <button className="mt-3 flex items-center justify-center w-5/8 mx-auto border border-gray-300 px-1 py-1.5 rounded-lg hover:bg-gray-100 transition duration-200 text-sm">
+                  <button className="mt-2 flex items-center justify-center w-5/8 mx-auto border border-gray-300 py-1.5 rounded-lg hover:bg-gray-100 transition duration-200 text-sm">
                     <FcGoogle className="mr-2 text-lg" />
                     Sign in with Google
                   </button>
-                  <p className="mt-3 text-gray-700 text-sm">
+                  <p className="mt-1 text-gray-700 text-sm font-semibold">
                     Have an account?
                     <a href="#" className="text-blue-500">
                       {' '}Sign In
