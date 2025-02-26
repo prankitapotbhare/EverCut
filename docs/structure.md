@@ -4,45 +4,52 @@
 evercut/
 ├── client/                     # Frontend application
 │   ├── public/
-│   │   └── assets/            # Static assets
+│   │   └── evercut.svg        # Logo asset
 │   ├── src/
 │   │   ├── components/        # Reusable UI components
 │   │   │   ├── auth/         # Authentication related components
-│   │   │   │   ├── LoginForm.jsx          # Email/password login
-│   │   │   │   ├── SignupForm.jsx         # User registration
-│   │   │   │   ├── ForgotPasswordForm.jsx # Password reset
-│   │   │   │   ├── GoogleAuthButton.jsx   # Google OAuth
-│   │   │   │   ├── AuthGuard.jsx          # Protected route wrapper
-│   │   │   │   ├── EmailVerification.jsx  # Email verification handler
-│   │   │   │   └── VerificationStatus.jsx # Verification state display
-│   │   │   └── common/       # Common UI components
-│   │   │       ├── Button.jsx   # Custom button with variants
-│   │   │       ├── Input.jsx    # Form input with validation
-│   │   │       ├── Modal.jsx    # Popup dialog component
-│   │   │       └── Loading.jsx  # Loading indicators
-│   │   ├── context/          # React Context providers
+│   │   │   │   ├── ActionCodeHandler.jsx  
+│   │   │   │   ├── EmailVerification.jsx  # Email verification component
+│   │   │   │   ├── PrivateRoute.jsx       # Protected route wrapper
+│   │   │   │   └── VerificationStatus.jsx  # Email verification status
+│   │   │   ├── common/       # Common UI components
+│   │   │   │   ├── Input.jsx    # Form input component
+│   │   │   │   ├── Loading.jsx  # Loading indicators
+│   │   │   │   └── Modal.jsx    # Modal dialog component
+│   │   │   ├── error/        # Error handling components
+│   │   │   │   ├── ErrorBoundary.jsx # React error boundary
+│   │   │   │   └── ErrorHandler.jsx  # Error notification handler
+│   │   │   └── ui/           # UI components
+│   │   │       ├── Button.jsx   # Button component
+│   │   │       └── GoogleAuthButton.jsx # Google auth button
+│   │   ├── contexts/         # React Context providers
 │   │   │   └── AuthContext.jsx  # Firebase Auth state management
-│   │   ├── pages/            # Page components
-│   │   │   ├── Home.jsx          # Protected home page
-│   │   │   ├── Login.jsx         # Login page
-│   │   │   ├── Signup.jsx        # Registration page
-│   │   │   ├── ForgotPassword.jsx # Reset password page
-│   │   │   └── VerifyEmail.jsx   # Email verification page
 │   │   ├── firebase/         # Firebase configuration
-│   │   │   ├── config.js     # Firebase app initialization
-│   │   │   ├── auth.js       # Auth methods and listeners
+│   │   │   ├── auth.js       # Firebase auth methods
+│   │   │   ├── config.js     # Firebase initialization
 │   │   │   └── providers.js  # OAuth providers setup
-│   │   ├── utils/            # Utility functions
-│   │   │   ├── validation.js # Form validation rules
-│   │   │   ├── auth.js       # Auth helper functions
-│   │   │   └── helpers.js    # Common utility functions
+│   │   ├── pages/            # Page components
+│   │   │   ├── ForgotPassword.jsx        # Reset password request page
+│   │   │   ├── Home.jsx                  # Protected home page
+│   │   │   ├── Login.jsx                 # Login page
+│   │   │   ├── ResetPasswordConfirmation.jsx # Password reset page
+│   │   │   ├── Signup.jsx                # Registration page
+│   │   │   ├── VerifyEmail.jsx           # Email verification page
+│   │   │   └── VerifyEmailConfirmation.jsx # Email verification confirmation
+│   │   ├── services/            
+│   │   │   └── api.js        
 │   │   ├── styles/           # Global styles
-│   │   │   └── index.css     # Tailwind and custom styles
+│   │   │   └── index.css     # Tailwind imports
+│   │   ├── utils/            # Utility functions
+│   │   │   ├── auth.js       # Auth helper functions
+│   │   │   ├── helpers.js    # Common utilities
+│   │   │   └── validation.js # Form validation rules
 │   │   ├── App.jsx          # Root component
-│   │   ├── main.jsx         # Application entry point
-│   │   └── routes.jsx       # Route definitions with guards
-│   ├── .env                 # Frontend environment variables
-│   └── package.json         # Frontend dependencies
+│   │   └── main.jsx         # Application entry point
+│   ├── index.html          # HTML entry point
+│   ├── eslint.config.js    # ESLint configuration
+│   ├── package.json        # Frontend dependencies
+│   └── vite.config.js      # Vite configuration
 │
 ├── server/                   # Backend application
 │   ├── src/

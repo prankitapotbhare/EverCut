@@ -25,20 +25,19 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        // Refresh the user object to get the latest data
-        user.reload().then(() => {
+        try {
+          // Refresh the user object to get the latest data
+          await user.reload();
           setCurrentUser(user);
-          setLoading(false);
-        }).catch((error) => {
+        } catch (error) {
           console.error('Error reloading user:', error);
-          setLoading(false);
-        });
+        }
       } else {
         setCurrentUser(null);
-        setLoading(false);
       }
+      setLoading(false);
     });
 
     return () => unsubscribe();
@@ -58,6 +57,8 @@ export const AuthProvider = ({ children }) => {
       ]);
 
       storage.set('userLocation', location);
+      // Wait for auth state to update
+      await new Promise(resolve => setTimeout(resolve, 1000));
       return user;
     } catch (error) {
       console.error('Signup error:', error);
@@ -65,14 +66,27 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Update other auth methods to use parseAuthError
   const login = async (email, password) => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      // Wait for auth state to update
+      await new Promise(resolve => setTimeout(resolve, 1000));
       return userCredential.user;
     } catch (error) {
       throw new Error(parseAuthError(error));
     }
+  };
+
+  const googleSignIn = async () => {
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({
+      prompt: 'select_account',
+      access_type: 'offline'
+    });
+    const result = await signInWithPopup(auth, provider);
+    // Wait for auth state to update
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    return result.user;
   };
 
   const resetPassword = async (email) => {
@@ -96,16 +110,6 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     await signOut(auth);
     storage.remove('userLocation');
-  };
-
-  const googleSignIn = async () => {
-    const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({
-      prompt: 'select_account',
-      access_type: 'offline'
-    });
-    const result = await signInWithPopup(auth, provider);
-    return result.user;
   };
 
   const updateUserProfile = async (data) => {

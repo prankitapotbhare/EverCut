@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { GoogleAuthButton } from '../components/ui/GoogleAuthButton';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -21,6 +21,28 @@ const Signup = () => {
   const navigate = useNavigate();
   const [authError, setAuthError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+
+  const handleGoogleSignIn = async () => {
+    try {
+      setIsLoading(true);
+      setAuthError('');
+      await googleSignIn();
+      const destination = location.state?.from || '/';
+      // Add a small delay to ensure auth state is updated
+      setTimeout(() => {
+        navigate(destination, { replace: true });
+      }, 500);
+    } catch (error) {
+      if (error.message === 'EMAIL_EXISTS_DIFFERENT_PROVIDER') {
+        setAuthError('An account already exists with this email. Please use email/password login.');
+      } else {
+        setAuthError(parseAuthError(error));
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const onSubmit = async (data) => {
     try {
@@ -31,28 +53,6 @@ const Signup = () => {
     } catch (error) {
       console.error('Signup error:', error);
       setAuthError(parseAuthError(error));
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleGoogleSignIn = async () => {
-    try {
-      setIsLoading(true);
-      setAuthError('');
-      const user = await googleSignIn();
-      
-      if (user.emailVerified) {
-        navigate('/');
-      } else {
-        navigate('/verify-email', { state: { email: user.email } });
-      }
-    } catch (error) {
-      if (error.message === 'EMAIL_EXISTS_DIFFERENT_PROVIDER') {
-        setAuthError('An account already exists with this email. Please use email/password login.');
-      } else {
-        setAuthError(parseAuthError(error));
-      }
     } finally {
       setIsLoading(false);
     }

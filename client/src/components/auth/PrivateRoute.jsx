@@ -6,17 +6,17 @@ const PrivateRoute = ({ children, requireVerified = true }) => {
   const location = useLocation();
   const publicPaths = ['/verify-email-confirmation', '/reset-password-confirmation'];
 
-  // Allow access to confirmation pages without authentication
   if (publicPaths.includes(location.pathname)) {
     return children;
   }
 
   if (!currentUser) {
-    return <Navigate to="/login" state={{ from: location }} />;
+    // Save the current path as the redirect destination
+    return <Navigate to="/login" state={{ from: location.pathname }} replace />;
   }
 
   if (requireVerified && !currentUser.emailVerified) {
-    return <Navigate to="/verify-email" state={{ from: location }} />;
+    return <Navigate to="/verify-email" state={{ email: currentUser.email }} replace />;
   }
 
   return children;

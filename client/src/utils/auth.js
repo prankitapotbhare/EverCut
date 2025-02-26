@@ -10,11 +10,7 @@ export const getAuthToken = async () => {
 
 export const parseAuthError = (error) => {
   const errorMessages = {
-    'auth/account-exists-with-different-credential': 'An account already exists with this email using a different sign-in method',
-    'auth/invalid-action-code': 'The verification link has expired or already been used',
-    'auth/invalid-verification-code': 'Invalid verification code',
     'auth/unauthorized-domain': 'This domain is not authorized to use this service',
-    'auth/email-already-in-use': 'This email is already registered',
     'auth/invalid-email': 'Invalid email format',
     'auth/invalid-credential': 'Invalid credential',
     'auth/operation-not-allowed': 'Email/password sign up is not enabled',
@@ -24,8 +20,6 @@ export const parseAuthError = (error) => {
     'auth/user-disabled': 'This account has been disabled',
     'auth/user-not-found': 'No account found with this email',
     'auth/wrong-password': 'Invalid password',
-    'auth/popup-closed-by-user': 'Sign in was cancelled',
-    'auth/requires-recent-login': 'Please log in again to continue',
     'auth/account-exists-with-different-credential': 'An account already exists with this email using a different sign-in method',
     'auth/invalid-action-code': 'The verification link has expired or already been used',
     'auth/invalid-verification-code': 'Invalid verification code',
@@ -88,6 +82,7 @@ export const isTokenExpired = (token) => {
     
     return Date.now() >= expirationTime;
   } catch (error) {
+    console.error('Error decoding token:', error);
     return true;
   }
 };

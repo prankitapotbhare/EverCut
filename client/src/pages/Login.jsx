@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { GoogleAuthButton } from '../components/ui/GoogleAuthButton';
 import { useAuth } from '../contexts/AuthContext';
 import { parseAuthError } from '../utils/auth';
@@ -15,13 +15,18 @@ const Login = () => {
   const [authError, setAuthError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
 
   const onSubmit = async (data) => {
     try {
       setIsLoading(true);
       setAuthError('');
       await login(data.email, data.password);
-      navigate('/');
+      const destination = location.state?.from || '/';
+      // Add a small delay to ensure auth state is updated
+      setTimeout(() => {
+        navigate(destination, { replace: true });
+      }, 500);
     } catch (error) {
       setAuthError(parseAuthError(error));
     } finally {
@@ -35,12 +40,11 @@ const Login = () => {
       setIsLoading(true);
       setAuthError('');
       googleUser = await googleSignIn();
-      
-      if (googleUser.emailVerified) {
-        navigate('/');
-      } else {
-        navigate('/verify-email', { state: { email: googleUser.email } });
-      }
+      const destination = location.state?.from || '/';
+      // Add a small delay to ensure auth state is updated
+      setTimeout(() => {
+        navigate(destination, { replace: true });
+      }, 500);
     } catch (error) {
       console.error('Google Sign In Error:', error);
       if (error.code === 'auth/account-exists-with-different-credential' && googleUser) {
