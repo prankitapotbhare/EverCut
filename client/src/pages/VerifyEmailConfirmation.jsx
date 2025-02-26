@@ -26,10 +26,7 @@ const VerifyEmailConfirmation = () => {
         
         if (auth.currentUser) {
           await auth.currentUser.reload();
-          // Add a small delay before navigation to show success message
-          setTimeout(() => {
-            navigate('/', { replace: true });
-          }, 2000);
+          navigate('/', { replace: true });
         }
       } catch (error) {
         console.error('Verification error:', error);

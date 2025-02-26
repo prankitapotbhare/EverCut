@@ -4,19 +4,19 @@ import { useAuth } from '../../contexts/AuthContext';
 const PrivateRoute = ({ children, requireVerified = true }) => {
   const { currentUser } = useAuth();
   const location = useLocation();
-  
-  // Allow verification links to pass through
-  const isVerificationLink = location.search.includes('mode=verifyEmail');
-  if (isVerificationLink) {
-    return <Navigate to={`/verify-email-confirmation${location.search}`} />;
+  const publicPaths = ['/verify-email-confirmation', '/reset-password-confirmation'];
+
+  // Allow access to confirmation pages without authentication
+  if (publicPaths.includes(location.pathname)) {
+    return children;
   }
 
   if (!currentUser) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" state={{ from: location }} />;
   }
 
   if (requireVerified && !currentUser.emailVerified) {
-    return <Navigate to="/verify-email" />;
+    return <Navigate to="/verify-email" state={{ from: location }} />;
   }
 
   return children;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import { actionCodeSettings } from '../../firebase/config';
+import { verifyEmailSettings } from '../../firebase/config';
 
 const VerificationStatus = ({ email, showResend = true }) => {
   const { currentUser } = useAuth();
@@ -11,7 +11,7 @@ const VerificationStatus = ({ email, showResend = true }) => {
     try {
       setLoading(true);
       setError('');
-      await currentUser.sendEmailVerification(actionCodeSettings);
+      await currentUser.sendEmailVerification(verifyEmailSettings);
     } catch (error) {
       console.error('Verification error:', error);
       setError('Failed to resend verification email');

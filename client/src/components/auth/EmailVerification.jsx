@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { FaEnvelope, FaSync } from 'react-icons/fa';
-import { actionCodeSettings } from '../../firebase/config';
+import { verifyEmailSettings } from '../../firebase/config';
 
 const EmailVerification = ({ email }) => {
   const [loading, setLoading] = useState(false);
@@ -36,7 +36,7 @@ const EmailVerification = ({ email }) => {
     try {
       setLoading(true);
       setError('');
-      await currentUser.sendEmailVerification(actionCodeSettings);
+      await currentUser.sendEmailVerification(verifyEmailSettings);
       setMessage('Verification email sent! Please check your inbox.');
       setCountdown(60);
     } catch (error) {

@@ -13,7 +13,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
-export const actionCodeSettings = {
-  url: `${window.location.origin}/verify-email-confirmation`,
-  handleCodeInApp: false
+const baseUrl = window.location.origin;
+
+export const verifyEmailSettings = {
+  url: `${baseUrl}`,  // Remove the path, let ActionCodeHandler handle it
+  handleCodeInApp: true
+};
+
+export const resetPasswordSettings = {
+  url: `${baseUrl}`,  // Remove the path, let ActionCodeHandler handle it
+  handleCodeInApp: true
 };

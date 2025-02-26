@@ -10,9 +10,8 @@ import {
   updateProfile,
   sendEmailVerification
 } from 'firebase/auth';
-import { auth } from '../firebase/config';
+import { auth, verifyEmailSettings, resetPasswordSettings } from '../firebase/config';
 import { storage } from '../utils/helpers';
-import { actionCodeSettings } from '../firebase/config';
 
 const AuthContext = createContext();
 
@@ -24,6 +23,26 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // Refresh the user object to get the latest data
+        user.reload().then(() => {
+          setCurrentUser(user);
+          setLoading(false);
+        }).catch((error) => {
+          console.error('Error reloading user:', error);
+          setLoading(false);
+        });
+      } else {
+        setCurrentUser(null);
+        setLoading(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const signup = async (email, password, displayName, location) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -34,10 +53,7 @@ export const AuthProvider = ({ children }) => {
           displayName,
           photoURL: `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}&background=random`
         }),
-        sendEmailVerification(user, {
-          ...actionCodeSettings,
-          url: `${window.location.origin}/verify-email-confirmation`
-        })
+        sendEmailVerification(user, verifyEmailSettings)
       ]);
 
       storage.set('userLocation', location);
@@ -48,13 +64,14 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const resetPassword = async (email) => {
+    await sendPasswordResetEmail(auth, email, resetPasswordSettings);
+  };
+
   const resendVerificationEmail = async () => {
     if (currentUser && !currentUser.emailVerified) {
       try {
-        await sendEmailVerification(currentUser, {
-          ...actionCodeSettings,
-          url: `${window.location.origin}/verify-email-confirmation`
-        });
+        await sendEmailVerification(currentUser, verifyEmailSettings);
       } catch (error) {
         console.error('Verification email error:', error);
         throw error;
@@ -70,10 +87,6 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     await signOut(auth);
     storage.remove('userLocation');
-  };
-
-  const resetPassword = async (email) => {
-    await sendPasswordResetEmail(auth, email);
   };
 
   const googleSignIn = async () => {
@@ -92,15 +105,6 @@ export const AuthProvider = ({ children }) => {
       setCurrentUser({ ...currentUser, ...data });
     }
   };
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-      setLoading(false);
-    });
-
-    return unsubscribe;
-  }, []);
 
   const value = {
     currentUser,
