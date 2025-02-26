@@ -23,19 +23,6 @@ const VerifyEmail = () => {
     }
   }, [currentUser, navigate]);
 
-  const handleResendEmail = async () => {
-    try {
-      setIsLoading(true);
-      setError('');
-      await resendVerificationEmail();
-      // Show success message
-    } catch (error) {
-      setError(parseAuthError(error));
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   if (!email) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
