@@ -66,9 +66,13 @@ const Login = () => {
   return (
     <div className="flex h-screen">
       <div className="w-1/2 flex flex-col justify-center items-center p-8">
-        <img src="/evercut.svg" alt="Logo" className="mb-8" />
-        <h1 className="text-3xl font-bold mb-6">Welcome back!</h1>
-        <p className="text-gray-600 mb-6">Enter your credentials to access your account</p>
+        <div className="w-full max-w-xs">
+          <div className="mt-3 mb-4 width=130 height=20" 
+>           <img src="/evercut.svg" alt="Logo" className="mb-8"/>
+          </div>
+          <h1 className="text-4xl font-semibold mb-1 whitespace-nowrap">Welcome back!</h1>
+        </div>
+        <p className="text-black-600 mb-6 font-semibold">Enter your Credentials to access your account</p>
 
         {authError && (
           <div className="mb-4 w-full max-w-xs bg-red-50 border-l-4 border-red-500 p-4 rounded">
@@ -78,25 +82,30 @@ const Login = () => {
 
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xs">
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700">Email address</label>
+            <label htmlFor="email" className="block text-black-700 font-semibold">Email address</label>
             <input
               type="email"
               id="email"
               {...register('email', emailValidation)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:border-green-500"
               placeholder="Enter your email"
             />
             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
           </div>
 
           <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700">Password</label>
+            <label htmlFor="password" className="block text-black-700 font-semibold">
+              Password
+            <Link to="/forgot-password" className="block text-blue-500 hover:text-blue-800 text-sm float-right hover:underline">
+              forgot password
+            </Link>
+            </label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
                 {...register('password', passwordValidation)}
-                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500 pr-10"
+                className="w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:border-green-500 pr-10"
                 placeholder="Enter your password"
               />
               <button
@@ -118,11 +127,8 @@ const Login = () => {
                 {...register('remember')}
                 className="mr-2" 
               />
-              <label htmlFor="remember" className="text-gray-700">Remember for 30 days</label>
+              <label htmlFor="remember" className="text-gray-700 font-semibold text-sm">Remember for 30 days</label>
             </div>
-            <Link to="/forgot-password" className="text-green-500 hover:underline">
-              Forgot password?
-            </Link>
           </div>
 
           <Button
@@ -142,15 +148,18 @@ const Login = () => {
         </div>
 
         <div className="mt-4 text-center">
-          <span className="text-gray-700">Don't have an account?</span>
-          <Link to="/signup" className="text-green-500 hover:underline ml-1">
+          <span className="text-gray-600 mb-8 font-semibold">Don't have an account?</span>
+          <Link to="/signup" className="text-blue-500 hover:text-blue-800 font-semibold ml-1">
             Sign Up
           </Link>
         </div>
       </div>
 
-      <div className="w-1/2 bg-gray-100">
-        <img src="/Login-Right.png" alt="Authentication Banner" className="w-full h-full object-cover" />
+      <div className="w-1/2 bg-white-100">
+        <img src="/Login-Right.png" alt="Authentication Banner" className="w-full h-full object-cover rounded-l-[45px]"
+        width="600"
+        height="800"
+        />
       </div>
     </div>
   );
