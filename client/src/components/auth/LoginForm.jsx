@@ -6,6 +6,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { parseAuthError } from '../../utils/auth';
 import { emailValidation, passwordValidation } from '../../utils/validation';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Button from '../ui/Button';
 
 const LoginForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -29,21 +30,28 @@ const LoginForm = () => {
   };
 
   const handleGoogleSignIn = async () => {
+    let googleUser = null;
     try {
       setIsLoading(true);
       setAuthError('');
-      const user = await googleSignIn();
+      googleUser = await googleSignIn();
       
-      if (user.emailVerified) {
+      if (googleUser.emailVerified) {
         navigate('/');
       } else {
-        navigate('/verify-email', { state: { email: user.email } });
+        navigate('/verify-email', { state: { email: googleUser.email } });
       }
     } catch (error) {
-      if (error.message === 'EMAIL_EXISTS_DIFFERENT_PROVIDER') {
+      console.error('Google Sign In Error:', error);
+      if (error.code === 'auth/account-exists-with-different-credential' && googleUser) {
         try {
-          await linkEmailProvider(user.email, password);
-          navigate('/');
+          // Handle the case where email exists with different provider
+          const linkedCredential = await linkEmailProvider(googleUser.email);
+          if (linkedCredential) {
+            navigate('/');
+          } else {
+            setAuthError('This email is already registered. Please use email/password to login.');
+          }
         } catch (linkError) {
           setAuthError('Failed to link accounts. Please try logging in with email/password.');
         }
@@ -117,13 +125,15 @@ const LoginForm = () => {
             </Link>
           </div>
 
-          <button
+          <Button
             type="submit"
+            variant="primary"
+            fullWidth
+            isLoading={isLoading}
             disabled={isLoading}
-            className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? 'Logging in...' : 'Login'}
-          </button>
+          </Button>
         </form>
 
         <div className="mt-4 text-center">

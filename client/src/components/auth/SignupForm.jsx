@@ -13,6 +13,7 @@ import {
   termsValidation,
   validatePasswordMatch 
 } from '../../utils/validation';
+import Button from '../ui/Button';
 
 const SignupForm = () => {
   const { register, handleSubmit, formState: { errors }, getValues } = useForm();
@@ -62,10 +63,15 @@ const SignupForm = () => {
 
   return (
     <div className="flex h-screen">
-      {/* Left Section */}
       <div className="w-1/2 flex flex-col justify-center items-center p-8">
         <img src="/evercut.svg" alt="Logo" className="mb-8" />
         <h1 className="text-3xl font-bold mb-6">Get Started Now</h1>
+
+        {authError && (
+          <div className="mb-4 w-full max-w-xs bg-red-50 border-l-4 border-red-500 p-4 rounded">
+            <p className="text-red-700">{authError}</p>
+          </div>
+        )}
 
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xs">
           <div className="mb-4">
@@ -160,17 +166,20 @@ const SignupForm = () => {
             {errors.terms && <p className="text-red-500 text-sm mt-1">{errors.terms.message}</p>}
           </div>
 
-          <button
+          <Button
             type="submit"
-            className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 focus:outline-none"
+            variant="secondary"
+            fullWidth
+            isLoading={isLoading}
+            disabled={isLoading}
           >
-            Sign Up
-          </button>
+            {isLoading ? 'Signing up...' : 'Sign Up'}
+          </Button>
         </form>
 
         <div className="mt-4 text-center">
           <span className="text-gray-700">or</span>
-          <GoogleAuthButton />
+          <GoogleAuthButton onClick={handleGoogleSignIn} isLoading={isLoading} />
         </div>
 
         <div className="mt-4 text-center">

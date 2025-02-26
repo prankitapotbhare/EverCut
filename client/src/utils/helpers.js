@@ -12,10 +12,6 @@ export const formatError = (error) => {
   return 'An unexpected error occurred';
 };
 
-export const generateAvatarUrl = (name) => {
-  return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=random`;
-};
-
 export const formatDate = (date) => {
   return new Intl.DateTimeFormat('en-US', {
     year: 'numeric',

@@ -12,6 +12,7 @@ import {
 } from 'firebase/auth';
 import { auth, verifyEmailSettings, resetPasswordSettings } from '../firebase/config';
 import { storage } from '../utils/helpers';
+import { parseAuthError } from '../utils/auth';
 
 const AuthContext = createContext();
 
@@ -60,12 +61,26 @@ export const AuthProvider = ({ children }) => {
       return user;
     } catch (error) {
       console.error('Signup error:', error);
-      throw error;
+      throw new Error(parseAuthError(error));
+    }
+  };
+
+  // Update other auth methods to use parseAuthError
+  const login = async (email, password) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      return userCredential.user;
+    } catch (error) {
+      throw new Error(parseAuthError(error));
     }
   };
 
   const resetPassword = async (email) => {
-    await sendPasswordResetEmail(auth, email, resetPasswordSettings);
+    try {
+      await sendPasswordResetEmail(auth, email, resetPasswordSettings);
+    } catch (error) {
+      throw new Error(parseAuthError(error));
+    }
   };
 
   const resendVerificationEmail = async () => {
@@ -73,15 +88,9 @@ export const AuthProvider = ({ children }) => {
       try {
         await sendEmailVerification(currentUser, verifyEmailSettings);
       } catch (error) {
-        console.error('Verification email error:', error);
-        throw error;
+        throw new Error(parseAuthError(error));
       }
     }
-  };
-
-  const login = async (email, password) => {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    return userCredential.user;
   };
 
   const logout = async () => {

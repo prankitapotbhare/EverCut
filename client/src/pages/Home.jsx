@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import Button from '../components/common/Button';
+import Button from '../components/ui/Button';
 
 const Home = () => {
   const { currentUser, logout } = useAuth();
