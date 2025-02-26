@@ -4,7 +4,7 @@
 evercut/
 ├── client/                     # Frontend application
 │   ├── public/
-│   │   └── evercut.svg        # Logo asset
+│   │   └── logo/evercut.svg        # Logo asset
 │   ├── src/
 │   │   ├── components/        # Reusable UI components
 │   │   │   ├── auth/         # Authentication related components

@@ -70,7 +70,7 @@ const Login = () => {
   return (
     <div className="flex h-screen">
       <div className="w-1/2 flex flex-col justify-center items-center p-8">
-        <img src="/evercut.svg" alt="Logo" className="mb-8" />
+        <img src="/logo/evercut.svg" alt="Logo" className="mb-8" />
         <h1 className="text-3xl font-bold mb-6">Welcome back!</h1>
         <p className="text-gray-600 mb-6">Enter your credentials to access your account</p>
 

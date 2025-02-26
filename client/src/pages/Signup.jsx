@@ -64,7 +64,7 @@ const Signup = () => {
   return (
     <div className="flex h-screen">
       <div className="w-1/2 flex flex-col justify-center items-center p-8">
-        <img src="/evercut.svg" alt="Logo" className="mb-8" />
+        <img src="/logo/evercut.svg" alt="Logo" className="mb-8" />
         <h1 className="text-3xl font-bold mb-6">Get Started Now</h1>
 
         {authError && (

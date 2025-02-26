@@ -50,7 +50,7 @@ const EmailVerification = ({ email }) => {
   return (
     <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
       <div className="text-center mb-8">
-        <img src="/evercut.svg" alt="Logo" className="h-12 mx-auto mb-6" />
+        <img src="/logo/evercut.svg" alt="Logo" className="h-12 mx-auto mb-6" />
         <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
           <FaEnvelope className="text-green-500 text-2xl" />
         </div>
