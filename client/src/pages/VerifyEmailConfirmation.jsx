@@ -15,6 +15,8 @@ const VerifyEmailConfirmation = () => {
   const { currentUser } = useAuth();
 
   useEffect(() => {
+    let mounted = true;
+
     const verifyEmail = async () => {
       if (!oobCode || mode !== 'verifyEmail') {
         setStatus('error');
@@ -22,44 +24,55 @@ const VerifyEmailConfirmation = () => {
         return;
       }
 
-      try {
-        await applyActionCode(auth, oobCode);
-        
-        // Wait for a short delay to ensure Firebase updates the user state
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        if (auth.currentUser) {
-          await auth.currentUser.reload();
-          
-          // Double-check if the email is actually verified
-          if (auth.currentUser.emailVerified) {
-            setStatus('success');
-          } else {
-            // If somehow the email is still not verified, retry once
-            await new Promise(resolve => setTimeout(resolve, 1000));
+      const waitForVerification = async () => {
+        const maxAttempts = 10;
+        const interval = 500;
+        for (let attempt = 0; attempt < maxAttempts; attempt++) {
+          if (auth.currentUser) {
             await auth.currentUser.reload();
-            
             if (auth.currentUser.emailVerified) {
-              setStatus('success');
-            } else {
-              throw new Error('Email verification failed. Please try again.');
+              return true;
             }
           }
-        } else {
-          // If user is not logged in, still show success but redirect to login
-          setStatus('success-login');
+          await new Promise(resolve => setTimeout(resolve, interval));
+        }
+        return false;
+      };
+
+      try {
+        await applyActionCode(auth, oobCode);
+        const isVerified = await waitForVerification();
+        if (mounted) {
+          if (isVerified) {
+            setStatus('success');
+          } else {
+            setStatus('success-login');
+          }
         }
       } catch (error) {
         console.error('Verification error:', error);
-        setStatus('error');
-        setError(error.code === 'auth/invalid-action-code' 
-          ? 'The verification link has expired or already been used.' 
-          : error.message);
+        const isVerified = await waitForVerification();
+        if (mounted) {
+          if (isVerified) {
+            setStatus('success');
+          } else {
+            setStatus('error');
+            setError(
+              error.code === 'auth/invalid-action-code'
+                ? 'The verification link has expired or already been used.'
+                : 'Failed to verify email. Please try again.'
+            );
+          }
+        }
       }
     };
 
     verifyEmail();
-  }, [oobCode, mode, navigate]);
+
+    return () => {
+      mounted = false;
+    };
+  }, [oobCode, mode]);
 
   const renderContent = () => {
     switch (status) {
@@ -71,7 +84,6 @@ const VerifyEmailConfirmation = () => {
             <p className="text-gray-600 mt-2">Please wait while we verify your email address.</p>
           </div>
         );
-
       case 'success':
         return (
           <div className="text-center">
@@ -86,7 +98,6 @@ const VerifyEmailConfirmation = () => {
             </button>
           </div>
         );
-
       case 'success-login':
         return (
           <div className="text-center">
@@ -101,7 +112,6 @@ const VerifyEmailConfirmation = () => {
             </button>
           </div>
         );
-
       case 'error':
         return (
           <div className="text-center">
@@ -124,7 +134,6 @@ const VerifyEmailConfirmation = () => {
             </div>
           </div>
         );
-
       default:
         return null;
     }
