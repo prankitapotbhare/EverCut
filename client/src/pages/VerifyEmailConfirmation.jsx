@@ -18,39 +18,47 @@ const VerifyEmailConfirmation = () => {
     let mounted = true;
 
     const verifyEmail = async () => {
+      // Validate URL parameters
       if (!oobCode || mode !== 'verifyEmail') {
-        setStatus('error');
-        setError('Invalid verification link');
+        if (mounted) {
+          setStatus('error');
+          setError('Invalid verification link');
+        }
         return;
       }
 
-      const waitForVerification = async () => {
-        const maxAttempts = 10;
-        const interval = 500;
-        for (let attempt = 0; attempt < maxAttempts; attempt++) {
+      // Helper function to wait for emailVerified status
+      const waitForVerification = async (timeout = 5000, interval = 500) => {
+        const startTime = Date.now();
+        while (Date.now() - startTime < timeout) {
           if (auth.currentUser) {
             await auth.currentUser.reload();
             if (auth.currentUser.emailVerified) {
               return true;
             }
           }
+          // If no currentUser, don't keep polling unless it changes
           await new Promise(resolve => setTimeout(resolve, interval));
         }
         return false;
       };
 
       try {
+        // Attempt to apply the action code
         await applyActionCode(auth, oobCode);
+        // Wait for emailVerified to update
         const isVerified = await waitForVerification();
         if (mounted) {
           if (isVerified) {
             setStatus('success');
           } else {
+            // If no user is logged in or verification hasn't propagated, prompt login
             setStatus('success-login');
           }
         }
       } catch (error) {
         console.error('Verification error:', error);
+        // Check if email is already verified despite the error
         const isVerified = await waitForVerification();
         if (mounted) {
           if (isVerified) {
@@ -69,11 +77,13 @@ const VerifyEmailConfirmation = () => {
 
     verifyEmail();
 
+    // Cleanup to prevent state updates after unmount
     return () => {
       mounted = false;
     };
   }, [oobCode, mode]);
 
+  // Render UI based on status
   const renderContent = () => {
     switch (status) {
       case 'verifying':
@@ -84,6 +94,7 @@ const VerifyEmailConfirmation = () => {
             <p className="text-gray-600 mt-2">Please wait while we verify your email address.</p>
           </div>
         );
+
       case 'success':
         return (
           <div className="text-center">
@@ -98,6 +109,7 @@ const VerifyEmailConfirmation = () => {
             </button>
           </div>
         );
+
       case 'success-login':
         return (
           <div className="text-center">
@@ -112,6 +124,7 @@ const VerifyEmailConfirmation = () => {
             </button>
           </div>
         );
+
       case 'error':
         return (
           <div className="text-center">
@@ -134,6 +147,7 @@ const VerifyEmailConfirmation = () => {
             </div>
           </div>
         );
+
       default:
         return null;
     }

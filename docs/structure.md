@@ -22,10 +22,6 @@ evercut/
 │   │   │       └── Loading.jsx  # Loading indicators
 │   │   ├── context/          # React Context providers
 │   │   │   └── AuthContext.jsx  # Firebase Auth state management
-│   │   ├── hooks/            # Custom React hooks
-│   │   │   ├── useAuth.js       # Firebase auth state hook
-│   │   │   ├── useForm.js       # Form handling hook
-│   │   │   └── useProtectedRoute.js  # Route protection hook
 │   │   ├── pages/            # Page components
 │   │   │   ├── Home.jsx          # Protected home page
 │   │   │   ├── Login.jsx         # Login page
