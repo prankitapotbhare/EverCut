@@ -11,6 +11,7 @@ evercut/
 │   │   │   │   ├── ActionCodeHandler.jsx  
 │   │   │   │   ├── EmailVerification.jsx  # Email verification component
 │   │   │   │   ├── PrivateRoute.jsx       # Protected route wrapper
+│   │   │   │   ├── PublicRoute.jsx        # Public route wrapper
 │   │   │   │   └── VerificationStatus.jsx  # Email verification status
 │   │   │   ├── common/       # Common UI components
 │   │   │   │   ├── Input.jsx    # Form input component
@@ -25,9 +26,7 @@ evercut/
 │   │   ├── contexts/         # React Context providers
 │   │   │   └── AuthContext.jsx  # Firebase Auth state management
 │   │   ├── firebase/         # Firebase configuration
-│   │   │   ├── auth.js       # Firebase auth methods
-│   │   │   ├── config.js     # Firebase initialization
-│   │   │   └── providers.js  # OAuth providers setup
+│   │   │   └── config.js     # Firebase initialization
 │   │   ├── pages/            # Page components
 │   │   │   ├── ForgotPassword.jsx        # Reset password request page
 │   │   │   ├── Home.jsx                  # Protected home page

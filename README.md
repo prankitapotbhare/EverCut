@@ -17,23 +17,31 @@
   - Password Reset Flow
   - Protected Routes
   - Firebase Token Management
+  - User Profile Management
 
 - 💅 Modern UI/UX
   - Responsive Design with Tailwind CSS
   - Gradient Button Effects
   - Form Validation States
-  - Loading Indicators
-  - Modal Dialogs
+  - Loading Indicators & Animations
+  - Modal Dialogs with Focus Trap
   - Smooth Transitions
-  - High Contrast Support
+  - Accessibility Support
 
 - 🛡️ Security Features
-  - Firebase Authentication
-  - Rate Limiting Protection
-  - XSS Prevention
-  - Security Headers
-  - HTTP Parameter Pollution Prevention
-  - Token Verification
+  - Email Verification Requirement
+  - Secure Password Requirements
+  - Protected Routes
+  - Authentication State Management
+  - Token Handling
+  - Firebase Error Parsing
+
+- 🧰 Utility Functions
+  - Debounce for Performance Optimization
+  - Local Storage Helpers
+  - Date Formatting
+  - Error Formatting
+  - Form Validation Rules
 
 ## 📋 Prerequisites
 
@@ -106,9 +114,24 @@ npm run dev
 
 ```
 evercut/
-├── client/          # Frontend application
-├── server/          # Backend application
-└── docs/            # Documentation
+├── client/                     # Frontend application
+│   ├── src/
+│   │   ├── components/         # Reusable UI components
+│   │   ├── contexts/           # React Context providers
+│   │   ├── firebase/           # Firebase configuration
+│   │   ├── pages/              # Page components
+│   │   ├── styles/             # Global styles
+│   │   ├── utils/              # Utility functions
+│   │   ├── App.jsx             # Root component
+│   │   └── main.jsx            # Application entry point
+├── server/                     # Backend application
+│   ├── src/
+│   │   ├── config/             # Configuration files
+│   │   ├── middleware/         # Express middleware
+│   │   ├── routes/             # API routes
+│   │   ├── utils/              # Utility functions
+│   │   └── app.js              # Express application setup
+└── docs/                       # Documentation
 ```
 
 For detailed structure, see [Project Structure](docs/structure.md).
@@ -138,6 +161,24 @@ This project is configured for deployment on Vercel:
 2. Backend: Deploy the `server` directory as a serverless function
 
 For detailed deployment instructions, see [Setup Guide](docs/setup.md).
+
+## 🧩 Core Components
+
+- **Authentication**
+  - SignupForm - User registration with validation
+  - LoginForm - User authentication
+  - GoogleAuthButton - OAuth integration
+  - EmailVerification - Email verification handling
+  - VerificationStatus - Display verification status
+
+- **UI Components**
+  - Button - Customizable button with variants
+  - Input - Form input with validation states
+  - Modal - Dialog with accessibility features
+  - Loading - Customizable loading indicators
+  - ErrorBoundary - Global error handling
+
+For detailed component documentation, see [Components Documentation](docs/components.md).
 
 ## 🤝 Contributing
 

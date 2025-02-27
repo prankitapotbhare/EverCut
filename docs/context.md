@@ -7,7 +7,8 @@
 - Email/Password authentication
 - Google OAuth integration
 - Secure password reset mechanism
-- JWT token-based session management
+- Email verification system
+- User profile management
 
 ---
 
@@ -15,7 +16,8 @@
 **Frontend Framework:**
 - React + Vite
 - Tailwind CSS
-- Firebase Authentication (Primary auth provider)
+- Firebase Authentication
+- Firestore Database
 
 **Backend:**
 - Node.js
@@ -32,64 +34,82 @@
 1. **User Signup:**
    - Email/password registration
    - Name and location information
-   - Password confirmation
+   - Password confirmation with validation
    - Terms acceptance
    - Google OAuth signup option
-   - Email verification requirement (except Google OAuth)
+   - Email verification requirement
+   - User data storage in Firestore
 
 2. **User Login:**
    - Email/password authentication
    - Google OAuth login
+   - Error handling with user-friendly messages
 
 3. **Password Reset:**
    - Firebase password reset flow
+   - Custom reset password confirmation page
+   - Password strength validation
 
-4. **Home Page:**
-   - Welcome message
-   - Authentication options
+4. **Email Verification:**
+   - Automatic verification email sent after signup
+   - Custom verification confirmation page
+   - Resend verification option
+
+5. **User Profile:**
+   - Profile information display
+   - Last seen tracking
+   - Provider information
 
 ---
 
 ### 4. User Flow
-2. **Signup Flow:**
+1. **Signup Flow:**
    - Required field collection:
      * Full name
      * Location
      * Email address
-     * Password (with confirmation)
+     * Password (with confirmation and validation)
      * Terms & policy acceptance
-   - Form validation
+   - Form validation with detailed error messages
    - Google OAuth popup option
    - Email verification process:
      * Automatic verification email sent after signup
      * User must verify email before accessing protected routes
      * Resend verification option available
-     * Skip verification for Google OAuth users
+     * User data stored in Firestore
 
-3. **Login Flow:**
+2. **Login Flow:**
    - Credential validation
    - OAuth authentication
    - Email verification check:
      * Block access if email not verified
      * Redirect to verification page
-     * Exception for Google OAuth users
+     * User data updated in Firestore
 
-4. **Forgot Password Flow:**
+3. **Forgot Password Flow:**
    - Email submission
    - Reset link generation
-   - New password setup
+   - New password setup with validation
+   - Confirmation page after successful reset
+
+4. **Email Verification Flow:**
+   - Verification link sent to user email
+   - Custom verification confirmation page
+   - Success/error handling
+   - Redirect to appropriate page based on verification status
 
 ---
 
 ### 5. Design and UI/UX Guidelines
 **Color Palette:**
-- Primary: #3B82F6 (Blue)
-- Secondary: #10B981 (Emerald)
-- Background: #0F172A (Slate)
-- Text: #F8FAFC (Light)
+- Primary: Blue (#3B82F6)
+- Secondary: Green (#10B981)
+- Error: Red (#EF4444)
+- Background: Light gray (#F9FAFB)
+- Text: Dark slate (#1F2937)
 
 **Typography:**
-- Primary Font: Inter
+- System fonts with fallbacks
 - Font Sizes: 
   - Headings: 1.5rem - 2.5rem
   - Body: 1rem
@@ -97,132 +117,63 @@
 
 **UI Components:**
 - Buttons: Gradient backgrounds with hover effects
-- Forms: Floating labels with validation states
-- Modals: Blur backdrop with smooth transitions
+- Forms: Labeled inputs with validation states
+- Modals: Overlay with focus trap
+- Loading indicators: Spinner and dots animations
+- Error messages: Inline and toast notifications
 
 **Animations:**
-- Smooth page transitions
-- Loading state animations
+- Loading spinners
+- Form transitions
+- Error message animations
 
 **Accessibility:**
 - ARIA labels
-- Keyboard navigation
-- High contrast mode support
+- Form validation messages
+- Screen reader support
+- Focus management
 
 ---
 
 ### 6. Technical Implementation Approach
-**Frontend (React + Vite):**
-- React Router for navigation
+**Frontend Architecture:**
+- React Context API for state management (AuthContext)
+- React Router for navigation with protected routes
 - React Hook Form for form management and validation
-- Firebase Authentication Integration:
-  * Complete auth management using Firebase
-  * Initialize Firebase with config
-  * Use Firebase Auth hooks (useAuth)
-  * Handle auth state changes
-  * Implement protected routes with AuthGuard
-  * Manage Firebase tokens
-  * Handle email verification
-  * Manage OAuth providers
-  * Password reset flow
-- Form validation rules:
-  * Name: Required
-  * Location: Required
-  * Email: Required, valid email format
-  * Password: Required, minimum security requirements
-  * Confirm Password: Must match password
-  * Terms: Must be accepted
-- Tailwind CSS for styling
+- Error boundary for application-wide error handling
+- Portal-based modals and notifications
 
-**Backend (Express js):**
-- RESTful API architecture
-- Firebase Admin SDK integration (minimal):
-  * Token verification only
-  * No direct auth operations
-- Security Features:
-  * Rate limiting (100 requests per 15 minutes)
-  * Helmet for security headers
-  * XSS protection
-  * HTTP Parameter Pollution prevention
-- Authentication Middleware:
-  * Verify Firebase ID tokens for API access
-  * Extract user claims from token
-  * Handle token expiration
-- Error Handling:
-  * Custom AppError class
-  * Centralized error handling
-  * Operational vs Programming errors
-- Protected Routes:
-  * All /api/* routes require valid Firebase token
-  * Simple token verification
-  * Handle unauthorized access
+**Firebase Integration:**
+- Firebase Authentication for user management
+- Firestore for user data storage
+- Custom email templates for verification and password reset
+- Action code handler for email verification and password reset
 
-**Authentication Flow:**
-- Frontend Authentication (Firebase):
-  * Complete auth state management
-  * Handle all auth operations
-  * Listen to auth state changes
-  * Manage Firebase tokens
-  * Handle email verification
-  * OAuth provider management
-  * Password reset handling
-  * User profile updates
-- Backend Authentication:
-  * Only verify Firebase tokens
-  * No auth state management
-  * No user management
-  * Simple middleware protection
-- Protected Routes:
-  * Frontend: AuthGuard using Firebase
-  * Backend: Simple token verification
-  * Handle unauthorized redirects
+**Form Validation:**
+- Email: Required, valid format
+- Password: Required, minimum 8 characters, uppercase, lowercase, number
+- Name: Required, minimum 2 characters
+- Location: Required
+- Terms: Must be accepted
+- Password confirmation: Must match password
 
-- Signup (Firebase):
-  - Form validation
-  - Firebase auth creation
-  - Send verification email
-  - Redirect to verification page
-- Login (Firebase):
-  - Email/Password: Firebase authentication
-  - Google OAuth: Firebase Google provider
-  - Check email verification status
-- Password Reset: Firebase password reset flow
+**Error Handling:**
+- Global error boundary for React errors
+- Toast notifications for auth errors
+- Form validation errors
+- Network error handling
+- Firebase error parsing and user-friendly messages
 
-**Deployment (Vercel):**
-- Automated deployments
-- Environment variable management
+**Security Features:**
+- Email verification requirement
+- Secure password requirements
+- Protected routes
+- Authentication state management
+- Token handling
 
----
-
-### 7. Development Tools and Setup Instructions
-**Tools:**
-- VS Code
-- Git
-- Firebase Console
-
-**Setup Instructions:**
-1. Clone the repository:
-```bash
-git clone https://github.com/username/EverCut.git
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Set up environment variables:
-   - VITE_FIREBASE_CONFIG (Frontend)
-   - FIREBASE_SERVICE_ACCOUNT_KEY (Backend)
-   - PORT (Backend)
-   - DATABASE_URL
-   - JWT_SECRET
-
-4. Run the development server:
-```bash
-npm run dev
-```
-
-5. Deploy to Vercel:
-   - Connect GitHub repository
-   - Configure environment variables
+**Utility Functions:**
+- Debounce for performance optimization
+- Local storage helpers
+- Date formatting
+- Error formatting
+- Clipboard functionality
