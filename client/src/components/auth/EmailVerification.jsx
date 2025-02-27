@@ -32,7 +32,6 @@ const EmailVerification = ({ email }) => {
     return () => clearInterval(timer);
   }, [countdown, currentUser]);
 
-  // ... in the handleResendEmail function
   const handleResendEmail = async () => {
     try {
       setLoading(true);

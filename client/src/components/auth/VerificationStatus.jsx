@@ -44,15 +44,6 @@ const VerificationStatus = ({ email, showResend = true }) => {
             </button>
           )}
         </div>
-        {showResend && (
-          <button
-            onClick={handleResendVerification}
-            disabled={loading}
-            className="text-sm text-green-700 underline hover:text-green-600 disabled:opacity-50"
-          >
-            {loading ? 'Sending...' : 'Resend verification email'}
-          </button>
-        )}
       </div>
     </div>
   );

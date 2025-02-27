@@ -23,21 +23,24 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [authError, setAuthError] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        try {
+      try {
+        if (user) {
           // Refresh the user object to get the latest data
           await user.reload();
           setCurrentUser(user);
-        } catch (error) {
-          console.error('Error reloading user:', error);
+        } else {
+          setCurrentUser(null);
         }
-      } else {
-        setCurrentUser(null);
+      } catch (error) {
+        console.error('Error reloading user:', error);
+        setAuthError(error);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     });
 
     return () => unsubscribe();
@@ -109,7 +112,6 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     await signOut(auth);
-    storage.remove('userLocation');
   };
 
   const updateUserProfile = async (data) => {
@@ -121,16 +123,18 @@ export const AuthProvider = ({ children }) => {
 
   const value = {
     currentUser,
+    loading,
+    authError,
     signup,
     login,
     logout,
     resetPassword,
     googleSignIn,
     resendVerificationEmail,
-    updateUserProfile,
-    loading
+    updateUserProfile
   };
 
+  // Only render children when initial loading is complete
   return (
     <AuthContext.Provider value={value}>
       {!loading && children}

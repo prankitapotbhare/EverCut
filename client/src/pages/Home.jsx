@@ -4,9 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../components/ui/Button';
 
 const Home = () => {
-  const { currentUser, logout } = useAuth();
+  const { currentUser, logout, resetPassword } = useAuth();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const [resetLoading, setResetLoading] = useState(false);
+  const [resetMessage, setResetMessage] = useState('');
 
   const handleLogout = async () => {
     try {
@@ -17,6 +19,22 @@ const Home = () => {
       console.error('Logout error:', error);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleResetPassword = async () => {
+    try {
+      setResetLoading(true);
+      setResetMessage('');
+      await resetPassword(currentUser.email);
+      setResetMessage('Password reset email has been sent. Please check your inbox.');
+    } catch (error) {
+      console.error('Reset password error:', error);
+      setResetMessage('Failed to send reset email. Please try again.');
+    } finally {
+      setResetLoading(false);
+      // Clear success message after 5 seconds
+      setTimeout(() => setResetMessage(''), 5000);
     }
   };
 
@@ -34,9 +52,25 @@ const Home = () => {
               Logout
             </Button>
           </div>
-          <p className="text-slate-300">
-            You're now logged in with: {currentUser?.email}
-          </p>
+          <div className="flex flex-col gap-4">
+            <div className="flex justify-between items-center">
+              <p className="text-slate-300">
+                You're now logged in with: {currentUser?.email}
+              </p>
+              <Button
+                variant="primary"
+                onClick={handleResetPassword}
+                isLoading={resetLoading}
+              >
+                Reset Password
+              </Button>
+            </div>
+            {resetMessage && (
+              <div className={`p-4 rounded-lg ${resetMessage.includes('Failed') ? 'bg-red-900/50' : 'bg-green-900/50'}`}>
+                {resetMessage}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

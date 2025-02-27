@@ -1,22 +1,27 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 
-const PrivateRoute = ({ children, requireVerified = true }) => {
-  const { currentUser } = useAuth();
+const PrivateRoute = ({ children }) => {
+  const { currentUser, loading } = useAuth();
   const location = useLocation();
-  const publicPaths = ['/verify-email-confirmation', '/reset-password-confirmation'];
+  const actionPaths = ['/verify-email-confirmation', '/reset-password-confirmation'];
 
-  if (publicPaths.includes(location.pathname)) {
+  if (loading) {
+    return null;
+  }
+
+  // Allow access to action paths regardless of auth state
+  if (actionPaths.includes(location.pathname)) {
     return children;
   }
 
   if (!currentUser) {
-    // Save the current path as the redirect destination
     return <Navigate to="/login" state={{ from: location.pathname }} replace />;
   }
 
-  if (requireVerified && !currentUser.emailVerified) {
-    return <Navigate to="/verify-email" state={{ email: currentUser.email }} replace />;
+  // Redirect unverified users to verify email page
+  if (!currentUser.emailVerified && location.pathname !== '/verify-email') {
+    return <Navigate to="/verify-email" state={{ email: currentUser.email, from: location.pathname }} replace />;
   }
 
   return children;
