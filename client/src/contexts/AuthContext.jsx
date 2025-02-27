@@ -31,79 +31,68 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [authError, setAuthError] = useState(null);
 
-  const createOrUpdateUser = async (user, additionalData = {}) => {
+  // In createOrUpdateUser function, add a parameter to control initialization
+  const createOrUpdateUser = async (user, additionalData = {}, isInitializing = false) => {
     try {
       const userRef = doc(db, 'users', user.uid);
       const userSnap = await getDoc(userRef);
       
-      if (!userSnap.exists()) {
-        // Create new user document with all required fields
+      const baseUserData = {
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName || additionalData.displayName,
+        photoURL: user.photoURL || additionalData.photoURL,
+        emailVerified: user.emailVerified,
+        lastSeen: serverTimestamp(),
+      };
+
+      if (!userSnap.exists() && isInitializing) {
         const newUserData = {
-          uid: user.uid,
-          email: user.email,
-          displayName: user.displayName || additionalData.displayName,
-          photoURL: user.photoURL || additionalData.photoURL,
-          emailVerified: user.emailVerified,
+          ...baseUserData,
           createdAt: serverTimestamp(),
-          lastSeen: serverTimestamp(),
           provider: additionalData.provider || 'email/password',
           location: additionalData.location || '',
           termsAccepted: additionalData.termsAccepted || false,
           termsAcceptedAt: additionalData.termsAccepted ? serverTimestamp() : null,
         };
         await setDoc(userRef, newUserData);
-      } else {
-        // Update only the fields that are provided or need updating
-        const existingData = userSnap.data();
-        const updateData = {
-          lastSeen: serverTimestamp(),
-          emailVerified: user.emailVerified,
-          ...(user.displayName && { displayName: user.displayName }),
-          ...(user.photoURL && { photoURL: user.photoURL }),
-          ...(additionalData.provider && { provider: additionalData.provider }),
-          ...(additionalData.location && { location: additionalData.location }),
-        };
-        await updateDoc(userRef, updateData);
+        console.log('Set UserData:', newUserData);
+        return;
       }
+
+      const existingData = userSnap.data();
+      const updateData = {
+        ...baseUserData,
+        // Only update these fields if they are explicitly provided and different
+        ...(additionalData.provider && additionalData.provider !== existingData.provider && {
+          provider: additionalData.provider
+        }),
+        ...(additionalData.location && additionalData.location !== existingData.location && {
+          location: additionalData.location
+        }),
+        ...(additionalData.termsAccepted && !existingData.termsAccepted && {
+          termsAccepted: true,
+          termsAcceptedAt: serverTimestamp()
+        })
+      };
+
+      await updateDoc(userRef, updateData);
+      console.log('Updated UserData:', updateData);
     } catch (error) {
       console.error('Error updating user data:', error);
       throw error;
     }
   };
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      try {
-        if (user) {
-          await user.reload();
-          if (user.emailVerified) {
-            // Update emailVerified status in Firestore
-            await createOrUpdateUser(user);
-          }
-          setCurrentUser(user);
-        } else {
-          setCurrentUser(null);
-        }
-      } catch (error) {
-        console.error('Error reloading user:', error);
-        setAuthError(error);
-      } finally {
-        setLoading(false);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
-
+  // In signup function, pass isInitializing as true
   const signup = async (email, password, displayName, location) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-
       const photoURL = `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}&background=random`;
 
       await Promise.all([
-        updateProfile(user, { displayName, photoURL, location }),
+        updateProfile(user, { displayName, photoURL }),
         sendEmailVerification(user, verifyEmailSettings),
         createOrUpdateUser(user, {
           displayName,
@@ -111,7 +100,7 @@ export const AuthProvider = ({ children }) => {
           location,
           termsAccepted: true,
           provider: 'email/password'
-        })
+        }, true) // Add isInitializing flag
       ]);
 
       return user;
@@ -124,11 +113,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      await createOrUpdateUser(userCredential.user, {
-        provider: 'email/password'
-      });
-      // Wait for auth state to update
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await createOrUpdateUser(userCredential.user);
       return userCredential.user;
     } catch (error) {
       throw new Error(parseAuthError(error));
@@ -136,13 +121,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   const googleSignIn = async () => {
-    const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({
-      prompt: 'select_account',
-      access_type: 'offline'
-    });
-    
     try {
+      const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({
+        prompt: 'select_account',
+        access_type: 'offline'
+      });
+      
       const result = await signInWithPopup(auth, provider);
       await createOrUpdateUser(result.user, {
         displayName: result.user.displayName,
@@ -151,7 +136,8 @@ export const AuthProvider = ({ children }) => {
         termsAccepted: true,
         termsAcceptedAt: serverTimestamp(),
         location: ''
-      });
+      }, true); // Add isInitializing flag
+      
       return result.user;
     } catch (error) {
       console.error('Google Sign In Error:', error);
@@ -178,15 +164,47 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    await signOut(auth);
+    try {
+      await signOut(auth);
+    } catch (error) {
+      throw new Error(parseAuthError(error));
+    }
   };
 
   const updateUserProfile = async (data) => {
-    if (currentUser) {
+    if (!currentUser) return;
+
+    try {
       await updateProfile(currentUser, data);
+      await createOrUpdateUser(currentUser, data);
       setCurrentUser({ ...currentUser, ...data });
+    } catch (error) {
+      throw new Error(parseAuthError(error));
     }
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      try {
+        if (user) {
+          await user.reload();
+          if (user.emailVerified) {
+            await createOrUpdateUser(user, {}, false); // Add isInitializing flag
+          }
+          setCurrentUser(user);
+        } else {
+          setCurrentUser(null);
+        }
+      } catch (error) {
+        console.error('Auth state change error:', error);
+        setAuthError(error);
+      } finally {
+        setLoading(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const value = {
     currentUser,
@@ -199,7 +217,7 @@ export const AuthProvider = ({ children }) => {
     googleSignIn,
     resendVerificationEmail,
     updateUserProfile,
-    createOrUpdateUser // Add this to make it available throughout the app
+    createOrUpdateUser
   };
 
   return (
@@ -208,3 +226,5 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+export default AuthProvider;
