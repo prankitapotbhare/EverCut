@@ -125,7 +125,7 @@ const Login = () => {
               <label htmlFor="remember" className="text-gray-700">Remember for 30 days</label>
             </div>
             <Link to="/forgot-password" className="text-green-500 hover:underline">
-              Forgot password?
+              forgot password?
             </Link>
           </div>
 
