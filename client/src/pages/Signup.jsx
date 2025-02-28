@@ -62,135 +62,154 @@ const Signup = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
-    <div className="flex h-screen">
-      <div className="w-1/2 flex flex-col justify-center items-center p-8">
-        <img src="/evercut.svg" alt="Logo" className="mb-8" />
-        <h1 className="text-3xl font-bold mb-6">Get Started Now</h1>
-
-        {authError && (
-          <div className="mb-4 w-full max-w-xs bg-red-50 border-l-4 border-red-500 p-4 rounded">
-            <p className="text-red-700">{authError}</p>
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xs">
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700">Name</label>
-            <input
-              type="text"
-              id="name"
-              {...register('name', nameValidation)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
-              placeholder="Enter your name"
-            />
-            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="location" className="block text-gray-700">Location</label>
-            <input
-              type="text"
-              id="location"
-              {...register('location', locationValidation)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
-              placeholder="Enter your location"
-            />
-            {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location.message}</p>}
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700">Email address</label>
-            <input
-              type="email"
-              id="email"
-              {...register('email', emailValidation)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
-              placeholder="Enter your email"
-            />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700">Password</label>
-            <div className="relative">
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                {...register('password', passwordValidation)}
-                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500 pr-10"
-                placeholder="Enter your password"
-              />
-              <button
-                type="button"
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
-              </button>
+    <div className="h-screen flex flex-col lg:flex-row overflow-hidden">
+      {/* Left Section - Form */}
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-center p-4 lg:p-6">
+        <div className="w-full max-w-md px-4">
+          <img src="/evercut.svg" alt="Logo" className="mb-4 max-w-[150px]" />
+          <h1 className="text-xl lg:text-3xl font-semibold mb-4">Get Started Now</h1>
+          
+          {authError && (
+            <div className="mb-3 w-full bg-red-50 border-l-4 border-red-500 p-2 rounded">
+              <p className="text-red-700 text-xs">{authError}</p>
             </div>
-            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
-          </div>
+          )}
 
-          <div className="mb-4">
-            <label htmlFor="confirmPassword" className="block text-gray-700">Confirm Password</label>
-            <div className="relative">
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+            {/* Name Input */}
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-black-700 font-semibold text-xs font-medium mb-1">Name</label>
               <input
-                type={showConfirmPassword ? "text" : "password"}
-                id="confirmPassword"
-                {...register('confirmPassword', {
-                  required: 'Please confirm your password',
-                  validate: (value) => validatePasswordMatch(getValues('password'), value)
-                })}
-                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500 pr-10"
-                placeholder="Confirm your password"
+                type="text"
+                id="name"
+                {...register('name', nameValidation)}
+                className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500 text-sm"
+                placeholder="Enter your name"
               />
-              <button
-                type="button"
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              >
-                {showConfirmPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
-              </button>
+              {errors.name && <p className="text-red-500 text-xs mt-0.5">{errors.name.message}</p>}
             </div>
-            {errors.confirmPassword && <p className="text-red-500 text-sm mt-1">{errors.confirmPassword.message}</p>}
+
+            {/* Location Input */}
+            <div className="mb-4">
+              <label htmlFor="location" className="block text-black-700 font-semibold text-xs font-medium mb-1">Location</label>
+              <input
+                type="text"
+                id="location"
+                {...register('location', locationValidation)}
+                className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500 text-sm"
+                placeholder="Enter location"
+              />
+              {errors.location && <p className="text-red-500 text-xs mt-0.5">{errors.location.message}</p>}
+            </div>
+
+            {/* Email Input */}
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-black-700 font-semibold text-xs font-medium mb-1">Email address</label>
+              <input
+                type="email"
+                id="email"
+                {...register('email', emailValidation)}
+                className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500 text-sm"
+                placeholder="Enter your email"
+              />
+              {errors.email && <p className="text-red-500 text-xs mt-0.5">{errors.email.message}</p>}
+            </div>
+
+            {/* Password Input */}
+            <div className="mb-4">
+              <label htmlFor="password" className="block text-black-700 font-semibold text-xs font-medium mb-1">Password</label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  {...register('password', passwordValidation)}
+                  className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500 text-sm pr-10"
+                  placeholder="Enter password"
+                />
+                <button
+                  type="button"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash size={12} /> : <FaEye size={12} />}
+                </button>
+              </div>
+              {errors.password && <p className="text-red-500 text-xs mt-0.5">{errors.password.message}</p>}
+            </div>
+
+            {/* Confirm Password Input */}
+            <div className="mb-4">
+              <label htmlFor="confirmPassword" className="block text-black-700 font-semibold text-xs font-medium mb-1">Confirm Password</label>
+              <div className="relative">
+                <input
+                  type={showConfirmPassword ? "text" : "password"}
+                  id="confirmPassword"
+                  {...register('confirmPassword', {
+                    required: 'Please confirm your password',
+                    validate: (value) => validatePasswordMatch(getValues('password'), value)
+                  })}
+                  className="w-full px-3 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500 text-sm pr-10"
+                  placeholder="Confirm password"
+                />
+                <button
+                  type="button"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                >
+                  {showConfirmPassword ? <FaEyeSlash size={12} /> : <FaEye size={12} />}
+                </button>
+              </div>
+              {errors.confirmPassword && <p className="text-red-500 text-xs mt-0.5">{errors.confirmPassword.message}</p>}
+            </div>
+
+            {/* Terms Checkbox */}
+            <div className="flex items-start mb-3">
+              <input 
+                type="checkbox" 
+                id="terms" 
+                {...register('terms', termsValidation)}
+                className="mt-0.5 mr-2" 
+              />
+              <label htmlFor="terms" className="text-black-700 font-semibold text-xs">I agree to the terms & policy</label>
+            </div>
+            {errors.terms && <p className="text-red-500 text-xs mt-0.5">{errors.terms.message}</p>}
+
+            {/* Submit Button */}
+            <div className="mt-10">
+              <Button
+                type="submit"
+                variant="secondary"
+                fullWidth
+                isLoading={isLoading}
+                disabled={isLoading}
+                className="py-1.5 text-sm"
+              >
+                {isLoading ? 'Signing up...' : 'Sign Up'}
+              </Button>
+            </div>
+          </form>
+
+          {/* Google Sign In */}
+          <div className="mt-3 text-center">
+            <span className="text-gray-700 text-xs">or</span>
+            <GoogleAuthButton onClick={handleGoogleSignIn} isLoading={isLoading} />
           </div>
 
-          <div className="flex items-center mb-4">
-            <input 
-              type="checkbox" 
-              id="terms" 
-              {...register('terms', termsValidation)}
-              className="mr-2" 
-            />
-            <label htmlFor="terms" className="text-gray-700">I agree to the terms & policy</label>
-            {errors.terms && <p className="text-red-500 text-sm mt-1">{errors.terms.message}</p>}
+          {/* Login Link */}
+          <div className="mt-3 text-center">
+            <span className="text-gray-600 mb-8 font-semibold">Have an account?</span>
+            <Link to="/login" className="text-blue-500 hover:text-blue-800 font-semibold ml-1">Sign In</Link>
           </div>
-
-          <Button
-            type="submit"
-            variant="secondary"
-            fullWidth
-            isLoading={isLoading}
-            disabled={isLoading}
-          >
-            {isLoading ? 'Signing up...' : 'Sign Up'}
-          </Button>
-        </form>
-
-        <div className="mt-4 text-center">
-          <span className="text-gray-700">or</span>
-          <GoogleAuthButton onClick={handleGoogleSignIn} isLoading={isLoading} />
-        </div>
-
-        <div className="mt-4 text-center">
-          <span className="text-gray-700">Have an account?</span>
-          <Link to="/login" className="text-green-500 hover:underline ml-1">Sign In</Link>
         </div>
       </div>
 
-      {/* Right Section */}
-      <div className="w-1/2 bg-gray-100">
-        <img src="/Signup-Right.jpeg" alt="Authentication Banner" className="w-full h-full object-cover" />
+      {/* Right Section - Image */}
+      <div className="hidden lg:block w-1/2">
+        <img 
+          src="/Signup-Right.jpeg" 
+          alt="Authentication Banner" 
+          className="w-full h-screen object-cover rounded-tl-[50px] rounded-bl-[50px]"
+        />
       </div>
     </div>
   );

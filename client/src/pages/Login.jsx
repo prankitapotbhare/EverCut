@@ -156,7 +156,8 @@ const Login = () => {
       </div>
 
       <div className="w-1/2 bg-white-100">
-        <img src="/Login-Right.png" alt="Authentication Banner" className="w-full h-full object-cover rounded-l-[45px]"
+        <img src="/Login-Right.png" alt="Authentication Banner" 
+        className="w-full h-screen object-cover rounded-tl-[50px] rounded-bl-[50px]"
         width="600"
         height="800"
         />
