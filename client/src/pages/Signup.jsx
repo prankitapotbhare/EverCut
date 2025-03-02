@@ -62,10 +62,17 @@ const Signup = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
-    <div className="flex h-screen">
-      <div className="w-1/2 flex flex-col justify-center items-center p-8">
-        <img src="/logo/evercut.svg" alt="Logo" className="mb-8" />
-        <h1 className="text-3xl font-bold mb-6">Get Started Now</h1>
+    <div className="flex flex-col md:flex-row min-h-screen bg-white">
+      {/* Right Section for Mobile */}
+      <div className="md:hidden w-full h-[240px] bg-gray-100 rounded-b-[50px] overflow-hidden">
+        <img src="/Signup-Right.jpeg" alt="Authentication Banner" className="w-full h-full object-cover" />
+      </div>
+      
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-6 py-8 md:p-8">
+        <div className="w-full max-w-[360px]">
+          <img src="/logo/evercut.svg" alt="Logo" className="h-8 mb-6 md:mb-8" />
+        <h1 className="text-[28px] md:text-[32px] leading-[36px] md:leading-[40px] font-bold text-gray-900 mb-2">Get Started Now</h1>
+          <p className="text-base text-gray-600 mb-6 md:mb-8">Create an account to get started with Evercut</p>
 
         {authError && (
           <div className="mb-4 w-full max-w-xs bg-red-50 border-l-4 border-red-500 p-4 rounded">
@@ -73,51 +80,51 @@ const Signup = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xs">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4 md:space-y-0">
           <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700">Name</label>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
             <input
               type="text"
               id="name"
               {...register('name', nameValidation)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
+              className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-gray-900 text-base"
               placeholder="Enter your name"
             />
             {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
           </div>
 
           <div className="mb-4">
-            <label htmlFor="location" className="block text-gray-700">Location</label>
+            <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">Location</label>
             <input
               type="text"
               id="location"
               {...register('location', locationValidation)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
+              className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-gray-900 text-base"
               placeholder="Enter your location"
             />
             {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location.message}</p>}
           </div>
 
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700">Email address</label>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email address</label>
             <input
               type="email"
               id="email"
               {...register('email', emailValidation)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
+              className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-gray-900 text-base"
               placeholder="Enter your email"
             />
             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
           </div>
 
           <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700">Password</label>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">Password</label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
                 {...register('password', passwordValidation)}
-                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500 pr-10"
+                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-gray-900 text-base pr-10"
                 placeholder="Enter your password"
               />
               <button
@@ -132,7 +139,7 @@ const Signup = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="confirmPassword" className="block text-gray-700">Confirm Password</label>
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
             <div className="relative">
               <input
                 type={showConfirmPassword ? "text" : "password"}
@@ -141,7 +148,7 @@ const Signup = () => {
                   required: 'Please confirm your password',
                   validate: (value) => validatePasswordMatch(getValues('password'), value)
                 })}
-                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500 pr-10"
+                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-gray-900 text-base pr-10"
                 placeholder="Confirm your password"
               />
               <button
@@ -155,42 +162,52 @@ const Signup = () => {
             {errors.confirmPassword && <p className="text-red-500 text-sm mt-1">{errors.confirmPassword.message}</p>}
           </div>
 
-          <div className="flex items-center mb-4">
+          <div className="flex items-center mb-6">
             <input 
               type="checkbox" 
               id="terms" 
               {...register('terms', termsValidation)}
-              className="mr-2" 
+              className="h-4 w-4 rounded border-gray-300 text-green-500 focus:ring-green-500 mr-2" 
             />
-            <label htmlFor="terms" className="text-gray-700">I agree to the terms & policy</label>
+            <label htmlFor="terms" className="text-sm text-gray-700">I agree to the terms & policy</label>
             {errors.terms && <p className="text-red-500 text-sm mt-1">{errors.terms.message}</p>}
           </div>
 
           <Button
             type="submit"
-            variant="secondary"
+            variant="primary"
             fullWidth
             isLoading={isLoading}
             disabled={isLoading}
+            className="mb-6 bg-[#00B341] hover:bg-[#00A33B] h-11 text-base font-medium"
           >
             {isLoading ? 'Signing up...' : 'Sign Up'}
           </Button>
         </form>
 
-        <div className="mt-4 text-center">
-          <span className="text-gray-700">or</span>
-          <GoogleAuthButton onClick={handleGoogleSignIn} isLoading={isLoading} />
-        </div>
+        <div className="relative mb-6">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-200"></div>
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-4 bg-white text-gray-500">Or</span>
+            </div>
+          </div>
 
-        <div className="mt-4 text-center">
-          <span className="text-gray-700">Have an account?</span>
-          <Link to="/login" className="text-green-500 hover:underline ml-1">Sign In</Link>
+          <div className="flex justify-center w-full">
+            <GoogleAuthButton onClick={handleGoogleSignIn} isLoading={isLoading} />
+          </div>
+
+        <div className="text-center mt-6">
+            <span className="text-gray-700">Have an account?</span>
+            <Link to="/login" className="text-[#00B341] hover:underline ml-1">Sign In</Link>
+          </div>
         </div>
       </div>
 
       {/* Right Section */}
-      <div className="w-1/2 bg-gray-100">
-        <img src="/Signup-Right.jpeg" alt="Authentication Banner" className="w-full h-full object-cover" />
+      <div className="hidden md:block w-1/2">
+        <img src="/Signup-Right.jpeg" alt="Authentication Banner" className="w-full h-full object-cover rounded-l-[50px]" />
       </div>
     </div>
   );
