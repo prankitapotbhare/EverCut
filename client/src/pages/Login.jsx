@@ -77,8 +77,8 @@ const Login = () => {
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-6 py-8 md:p-8">
         <div className="w-full max-w-[360px]">
           <img src="/logo/evercut.svg" alt="Logo" className="h-8 mb-6 md:mb-8" />
-          <h1 className="text-[28px] md:text-[32px] leading-[36px] md:leading-[40px] font-bold text-gray-900 mb-2">Welcome back!</h1>
-          <p className="text-base text-gray-600 mb-6 md:mb-8">Enter your Credentials to access your account</p>
+          <h1 className="text-[28px] md:text-[32px] leading-[36px] md:leading-[40px] font-bold text-black-900 mb-2">Welcome back!</h1>
+          <p className="text-sm text-black-600 font-semibold mb-6 md:mb-8">Enter your Credentials to access your account</p>
 
           {authError && (
             <div className="mb-4 w-full bg-red-50 border-l-4 border-red-500 p-4 rounded">
@@ -88,12 +88,12 @@ const Login = () => {
 
           <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4 md:space-y-0">
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+              <label htmlFor="email" className="block text-sm font-medium text-black-700 font-semibold mb-1">Email address</label>
               <input
                 type="email"
                 id="email"
                 {...register('email', emailValidation)}
-                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-gray-900 text-base"
+                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-gray-900 text-base"
                 placeholder="Enter your email"
               />
               {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
@@ -101,8 +101,8 @@ const Login = () => {
 
             <div className="mb-4">
               <div className="flex justify-between items-center mb-2">
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-                <Link to="/forgot-password" className="text-sm text-[#0066FF] hover:underline">
+                <label htmlFor="password" className="block text-sm font-medium text-black-700 font-semibold">Password</label>
+                <Link to="/forgot-password" className="text-sm text-[#0066FF] hover:underline font-semibold">
                   forgot password
                 </Link>
               </div>
@@ -111,8 +111,8 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   id="password"
                   {...register('password', passwordValidation)}
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-gray-900 text-base pr-10"
-                  placeholder="••••••••"
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-gray-900 text-base pr-10"
+                  placeholder="Enter you password"
                 />
                 <button
                   type="button"
@@ -132,7 +132,7 @@ const Login = () => {
                 {...register('remember')}
                 className="h-4 w-4 rounded border-gray-300 text-green-500 focus:ring-green-500"
               />
-              <label htmlFor="remember" className="ml-2 block text-sm text-gray-700">
+              <label htmlFor="remember" className="ml-2 block text-sm text-gray-700 font-semibold">
                 Remember for 30 days
               </label>
             </div>
@@ -162,8 +162,8 @@ const Login = () => {
             </div>
 
             <div className="text-center mt-6">
-              <span className="text-gray-700">Don't have an account?</span>
-              <Link to="/signup" className="text-[#00B341] hover:underline ml-1">Sign Up</Link>
+              <span className="text-gray-700 font-semibold">Don't have an account?</span>
+              <Link to="/signup" className="text-blue-700 hover:text-blue-800 font-semibold ml-1">Sign Up</Link>
             </div>
           </form>
         </div>

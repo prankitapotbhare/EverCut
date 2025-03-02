@@ -71,18 +71,17 @@ const Signup = () => {
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-6 py-8 md:p-8">
         <div className="w-full max-w-[360px]">
           <img src="/logo/evercut.svg" alt="Logo" className="h-8 mb-6 md:mb-8" />
-        <h1 className="text-[28px] md:text-[32px] leading-[36px] md:leading-[40px] font-bold text-gray-900 mb-2">Get Started Now</h1>
-          <p className="text-base text-gray-600 mb-6 md:mb-8">Create an account to get started with Evercut</p>
-
+        <h1 className="text-[28px] md:text-[32px] leading-[36px] md:leading-[40px] font-bold text-black-900 mb-2">Get Started Now</h1>
+         
         {authError && (
           <div className="mb-4 w-full max-w-xs bg-red-50 border-l-4 border-red-500 p-4 rounded">
             <p className="text-red-700">{authError}</p>
           </div>
         )}
 
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4 md:space-y-0">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4 md:space-y-0 mt-10">
           <div className="mb-4">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <label htmlFor="name" className="block text-sm font-medium text-black-700 font-semibold mb-1">Name</label>
             <input
               type="text"
               id="name"
@@ -94,7 +93,7 @@ const Signup = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">Location</label>
+            <label htmlFor="location" className="block text-sm font-medium text-black-700 font-semibold mb-1">Location</label>
             <input
               type="text"
               id="location"
@@ -106,7 +105,7 @@ const Signup = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+            <label htmlFor="email" className="block text-sm font-medium text-black-700 font-semibold mb-1">Email address</label>
             <input
               type="email"
               id="email"
@@ -118,7 +117,7 @@ const Signup = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label htmlFor="password" className="block text-sm font-medium text-black-700 font-semibold mb-1">Password</label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
@@ -139,7 +138,7 @@ const Signup = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-black-700 font-semibold mb-1">Confirm Password</label>
             <div className="relative">
               <input
                 type={showConfirmPassword ? "text" : "password"}
@@ -169,13 +168,13 @@ const Signup = () => {
               {...register('terms', termsValidation)}
               className="h-4 w-4 rounded border-gray-300 text-green-500 focus:ring-green-500 mr-2" 
             />
-            <label htmlFor="terms" className="text-sm text-gray-700">I agree to the terms & policy</label>
+            <label htmlFor="terms" className="text-sm text-gray-700 font-semibold">I agree to the terms & policy</label>
             {errors.terms && <p className="text-red-500 text-sm mt-1">{errors.terms.message}</p>}
           </div>
 
           <Button
             type="submit"
-            variant="primary"
+            variant="secondary"
             fullWidth
             isLoading={isLoading}
             disabled={isLoading}
@@ -199,8 +198,8 @@ const Signup = () => {
           </div>
 
         <div className="text-center mt-6">
-            <span className="text-gray-700">Have an account?</span>
-            <Link to="/login" className="text-[#00B341] hover:underline ml-1">Sign In</Link>
+            <span className="text-gray-700 font-semibold">Have an account?</span>
+            <Link to="/login" className="text-blue-700 hover:text-blue-800 font-semibold ml-1">Sign In</Link>
           </div>
         </div>
       </div>

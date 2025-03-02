@@ -4,7 +4,7 @@ import Loading from '../common/loading';
 
 const variants = {
   primary: 'bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700',
-  secondary: 'bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 focus:outline-none',
+  secondary: 'bg-green-600 text-white py-2 rounded-lg hover:bg-green-600 focus:outline-none',
   danger: 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700',
   outline: 'border-2 border-blue-500 text-blue-500 hover:bg-blue-50',
 };
