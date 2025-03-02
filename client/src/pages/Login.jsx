@@ -68,93 +68,110 @@ const Login = () => {
   };
 
   return (
-    <div className="flex h-screen">
-      <div className="w-1/2 flex flex-col justify-center items-center p-8">
-        <img src="/logo/evercut.svg" alt="Logo" className="mb-8" />
-        <h1 className="text-3xl font-bold mb-6">Welcome back!</h1>
-        <p className="text-gray-600 mb-6">Enter your credentials to access your account</p>
+    <div className="flex flex-col md:flex-row min-h-screen bg-white">
+      {/* Right Section for Mobile */}
+      <div className="md:hidden w-full h-[240px] bg-gray-100 rounded-b-[50px] overflow-hidden">
+        <img src="/Login-Right.png" alt="Authentication Banner" className="w-full h-full object-cover" />
+      </div>
 
-        {authError && (
-          <div className="mb-4 w-full max-w-xs bg-red-50 border-l-4 border-red-500 p-4 rounded">
-            <p className="text-red-700">{authError}</p>
-          </div>
-        )}
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-6 py-8 md:p-8">
+        <div className="w-full max-w-[360px]">
+          <img src="/logo/evercut.svg" alt="Logo" className="h-8 mb-6 md:mb-8" />
+          <h1 className="text-[28px] md:text-[32px] leading-[36px] md:leading-[40px] font-bold text-gray-900 mb-2">Welcome back!</h1>
+          <p className="text-base text-gray-600 mb-6 md:mb-8">Enter your Credentials to access your account</p>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xs">
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700">Email address</label>
-            <input
-              type="email"
-              id="email"
-              {...register('email', emailValidation)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500"
-              placeholder="Enter your email"
-            />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-          </div>
+          {authError && (
+            <div className="mb-4 w-full bg-red-50 border-l-4 border-red-500 p-4 rounded">
+              <p className="text-red-700">{authError}</p>
+            </div>
+          )}
 
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700">Password</label>
-            <div className="relative">
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4 md:space-y-0">
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email address</label>
               <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                {...register('password', passwordValidation)}
-                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-green-500 pr-10"
-                placeholder="Enter your password"
+                type="email"
+                id="email"
+                {...register('email', emailValidation)}
+                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-gray-900 text-base"
+                placeholder="Enter your email"
               />
-              <button
-                type="button"
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
-              </button>
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
             </div>
-            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
-          </div>
 
-          <div className="flex justify-between mb-4">
-            <div className="flex items-center">
-              <input 
-                type="checkbox" 
-                id="remember" 
+            <div className="mb-4">
+              <div className="flex justify-between items-center mb-2">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+                <Link to="/forgot-password" className="text-sm text-[#0066FF] hover:underline">
+                  forgot password
+                </Link>
+              </div>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  {...register('password', passwordValidation)}
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 text-gray-900 text-base pr-10"
+                  placeholder="••••••••"
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
+                </button>
+              </div>
+              {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
+            </div>
+
+            <div className="flex items-center mb-6">
+              <input
+                type="checkbox"
+                id="remember"
                 {...register('remember')}
-                className="mr-2" 
+                className="h-4 w-4 rounded border-gray-300 text-green-500 focus:ring-green-500"
               />
-              <label htmlFor="remember" className="text-gray-700">Remember for 30 days</label>
+              <label htmlFor="remember" className="ml-2 block text-sm text-gray-700">
+                Remember for 30 days
+              </label>
             </div>
-            <Link to="/forgot-password" className="text-green-500 hover:underline">
-              forgot password?
-            </Link>
-          </div>
 
-          <Button
-            type="submit"
-            variant="primary"
-            fullWidth
-            isLoading={isLoading}
-            disabled={isLoading}
-          >
-            {isLoading ? 'Logging in...' : 'Login'}
-          </Button>
-        </form>
+            <Button
+              type="submit"
+              variant="primary"
+              fullWidth
+              isLoading={isLoading}
+              disabled={isLoading}
+              className="mb-6 bg-[#00B341] hover:bg-[#00A33B] h-11 text-base font-medium"
+            >
+              {isLoading ? 'Logging in...' : 'Login'}
+            </Button>
 
-        <div className="mt-4 text-center">
-          <span className="text-gray-700">or</span>
-          <GoogleAuthButton onClick={handleGoogleSignIn} isLoading={isLoading} />
-        </div>
+            <div className="relative mb-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-200"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-4 bg-white text-gray-500">Or</span>
+              </div>
+            </div>
 
-        <div className="mt-4 text-center">
-          <span className="text-gray-700">Don't have an account?</span>
-          <Link to="/signup" className="text-green-500 hover:underline ml-1">
-            Sign Up
-          </Link>
+            <div className="flex justify-center w-full">
+              <GoogleAuthButton onClick={handleGoogleSignIn} isLoading={isLoading} />
+            </div>
+
+            <div className="text-center mt-6">
+              <span className="text-gray-700">Don't have an account?</span>
+              <Link to="/signup" className="text-[#00B341] hover:underline ml-1">Sign Up</Link>
+            </div>
+          </form>
         </div>
       </div>
 
-      <div className="w-1/2 bg-gray-100">
-        <img src="/Login-Right.png" alt="Authentication Banner" className="w-full h-full object-cover" />
+      {/* Right Section */}
+      <div className="hidden md:block w-1/2">
+        <img src="/Login-Right.png" alt="Authentication Banner" className="w-full h-full object-cover rounded-l-[50px]" />
       </div>
     </div>
   );
