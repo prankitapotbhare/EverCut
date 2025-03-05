@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { GoogleAuthButton } from '../components/ui/GoogleAuthButton';
+import { useAuth } from '../../contexts/AuthContext';
+import { GoogleAuthButton } from '../../components/ui/GoogleAuthButton';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { parseAuthError } from '../utils/auth';
+import { parseAuthError } from '../../utils/auth';
 import { 
   emailValidation, 
   passwordValidation, 
@@ -12,8 +12,8 @@ import {
   locationValidation, 
   termsValidation,
   validatePasswordMatch 
-} from '../utils/validation';
-import Button from '../components/ui/Button';
+} from '../../utils/validation';
+import Button from '../../components/ui/Button';
 
 const Signup = () => {
   const { register, handleSubmit, formState: { errors }, getValues } = useForm();

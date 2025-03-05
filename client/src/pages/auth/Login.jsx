@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { GoogleAuthButton } from '../components/ui/GoogleAuthButton';
-import { useAuth } from '../contexts/AuthContext';
-import { parseAuthError } from '../utils/auth';
-import { emailValidation, passwordValidation } from '../utils/validation';
+import { GoogleAuthButton } from '../../components/ui/GoogleAuthButton';
+import { useAuth } from '../../contexts/AuthContext';
+import { parseAuthError } from '../../utils/auth';
+import { emailValidation, passwordValidation } from '../../utils/validation';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import Button from '../components/ui/Button';
+import Button from '../../components/ui/Button';
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();

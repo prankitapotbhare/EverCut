@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { applyActionCode } from 'firebase/auth';
-import { auth } from '../firebase/config';
+import { auth } from '../../firebase/config';
 import { FaCheckCircle, FaExclamationCircle, FaSpinner } from 'react-icons/fa';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 
 const VerifyEmailConfirmation = () => {
   const [searchParams] = useSearchParams();
