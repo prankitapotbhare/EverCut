@@ -1,18 +1,18 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
-import Signup from './pages/auth/Signup';
-import Login from './pages/auth/Login';
-import ForgotPassword from './pages/auth/ForgotPassword';
-import VerifyEmail from './pages/auth/VerifyEmail';
-import Home from './pages/Home';
-import PrivateRoute from './components/auth/PrivateRoute';
-import PublicRoute from './components/auth/PublicRoute';
-import ErrorBoundary from './components/error/ErrorBoundary';
-import ErrorHandler from './components/error/ErrorHandler';
+import { AuthProvider, useAuth } from '@/contexts/AuthContext';
+import Signup from '@/pages/auth/Signup';
+import Login from '@/pages/auth/Login';
+import ForgotPassword from '@/pages/auth/ForgotPassword';
+import VerifyEmail from '@/pages/auth/VerifyEmail';
+import Home from '@/pages/Home';
+import PrivateRoute from '@/components/auth/PrivateRoute';
+import PublicRoute from '@/components/auth/PublicRoute';
+import ErrorBoundary from '@/components/error/ErrorBoundary';
+import ErrorHandler from '@/components/error/ErrorHandler';
 import { useState } from 'react';
-import VerifyEmailConfirmation from './pages/auth/VerifyEmailConfirmation';
-import ResetPasswordConfirmation from './pages/auth/ResetPasswordConfirmation';
-import ActionCodeHandler from './components/auth/ActionCodeHandler';
+import VerifyEmailConfirmation from '@/pages/auth/VerifyEmailConfirmation';
+import ResetPasswordConfirmation from '@/pages/auth/ResetPasswordConfirmation';
+import ActionCodeHandler from '@/components/auth/ActionCodeHandler';
 
 function AppRoutes() {
   const [error, setError] = useState(null);

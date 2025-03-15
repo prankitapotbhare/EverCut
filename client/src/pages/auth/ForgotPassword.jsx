@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '@/contexts/AuthContext';
 import { FaCheckCircle, FaExclamationCircle, FaSpinner } from 'react-icons/fa';
-import { emailValidation } from '../../utils/validation';
+import { emailValidation } from '@/utils/validation';
 
 const ForgotPassword = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();

@@ -17,8 +17,8 @@ import {
   serverTimestamp, 
   getDoc 
 } from 'firebase/firestore';
-import { auth, db, verifyEmailSettings, resetPasswordSettings } from '../firebase/config';
-import { parseAuthError } from '../utils/auth';
+import { auth, db, verifyEmailSettings, resetPasswordSettings } from '@/firebase/config';
+import { parseAuthError } from '@/utils/auth';
 
 const AuthContext = createContext();
 
