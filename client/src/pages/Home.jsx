@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Navbar from '../components/home/navbar';
-import Hero from '../components/home/hero';
-import RankingCard from '../components/home/priview';
-import RankingCard1 from '../components/home/priview2';
-import Landing from '../components/home/landing';
-import Footer from '../components/home/doo';
+import Navbar from '../components/home/Navbar';
+import Hero from '../components/home/Hero';
+import RankingCard from '../components/home/RankingCard';
+import RankingCard1 from '../components/home/RankingCard1';
+import Landing from '../components/home/Landing';
+import Footer from '../components/home/Footer';
 
 const Home = () => {
   return (

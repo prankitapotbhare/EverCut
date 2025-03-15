@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FeaturesComponent = () => {
+const Features = () => {
   return (
     <section className="bg-gray-50 py-12 px-6 md:px-16 lg:px-24">
       {/* Title */}
@@ -60,4 +60,4 @@ const FeaturesComponent = () => {
   );
 };
 
-export default FeaturesComponent;
+export default Features;

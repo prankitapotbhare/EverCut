@@ -45,7 +45,7 @@ const Navbar = () => {
     currentUser ? (
       <button
         onClick={handleLogout}
-        className={`${isMobile ? 'w-full mt-2' : ''} bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out disabled:opacity-50`}
+        className={`${isMobile ? 'w-full mt-2' : ''} bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out disabled:opacity-50 cursor-pointer`}
         disabled={isLoading}
         aria-label={isLoading ? 'Logging out' : 'Logout'}
       >
@@ -55,14 +55,14 @@ const Navbar = () => {
       <>
         <button
           onClick={handleLogin}
-          className={`${isMobile ? 'w-full mt-2' : ''} bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out`}
+          className={`${isMobile ? 'w-full mt-2' : ''} bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out cursor-pointer`}
           aria-label="Login"
         >
           Login
         </button>
         <button
           onClick={handleSignup}
-          className={`${isMobile ? 'w-full mt-2' : ''} bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out`}
+          className={`${isMobile ? 'w-full mt-2' : ''} bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out cursor-pointer`}
           aria-label="Sign up"
         >
           Signup
