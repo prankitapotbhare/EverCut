@@ -86,9 +86,7 @@ function AppRoutes() {
           <Route 
             path="/"
             element={
-              <PrivateRoute>
                 <Home onError={handleError} />
-              </PrivateRoute>
             } 
           />
 
