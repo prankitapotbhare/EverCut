@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import { confirmPasswordReset } from 'firebase/auth';
-import { auth } from '../../firebase/config';
+import { auth } from '@/firebase/config';
 import { FaCheckCircle, FaExclamationCircle, FaSpinner, FaEye, FaEyeSlash } from 'react-icons/fa';
-import { passwordValidation, validatePasswordMatch } from '../../utils/validation';
+import { passwordValidation, validatePasswordMatch } from '@/utils/validation';
 import { useForm } from 'react-hook-form';
 
 const ResetPasswordConfirmation = () => {
