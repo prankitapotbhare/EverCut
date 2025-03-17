@@ -82,7 +82,6 @@ function AppRoutes() {
             }
           />
 
-          {/* Protected Routes */}
           <Route 
             path="/"
             element={
