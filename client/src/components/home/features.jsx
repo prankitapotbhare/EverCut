@@ -36,7 +36,6 @@ const Features = () => {
           Evercut offers a wide range of salon services including haircuts, styling, coloring, and more. Choose from our comprehensive list of services and find the perfect style that matches your preferences.
         </p>
 
-        {/* Mockup with Categories */}
         <div className="mt-6 flex flex-col md:flex-row items-center gap-6">
           <img
             src="https://i.imgur.com/PARsKvF.jpg"

@@ -81,7 +81,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop menu */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4">
             <a
               href="mailto:evercut@gmail.com"

@@ -14,7 +14,7 @@ const Landing = () => {
         </h1>
         <h2 className="text-3xl font-bold text-white mb-6">Coming soon on!</h2>
 
-        {/* Download Buttons */}
+        {/* Download Button */}
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <button className="bg-white text-black px-6 py-3 rounded-lg text-lg flex items-center shadow-md hover:bg-gray-200 transition">
             <img

@@ -16,7 +16,7 @@ const Hero = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start center", "end center"], // ✅ Fix: Adjusted offset for proper scrolling animation
+    offset: ["start center", "end center"],
   });
 
   const [isMobile, setIsMobile] = useState(false);
