@@ -25,7 +25,7 @@ const RankingCard = () => {
 
       {/* Right Side - Image Placeholder */}
       <div className="flex-1 flex justify-center h-full">
-        <img src="/v2.png" alt="Evercut User Experience" className="w-full h-auto max-h-[700px] md:max-h-full rounded-3xl object-cover" />
+        <img src="https://i.imgur.com/JuWsIKh.jpg" alt="Evercut User Experience" className="w-full h-auto max-h-[700px] md:max-h-full rounded-3xl object-cover" />
       </div>
     </section>
   );

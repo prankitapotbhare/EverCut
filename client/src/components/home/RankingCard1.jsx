@@ -6,7 +6,7 @@ const RankingCard1 = () => {
       
       {/* Left Side - Image */}
       <div className="flex-1 flex justify-center h-full ">
-        <img src="/v3.png" alt="Evercut Barber Experience" className="w-full h-auto max-h-[700px] md:max-h-full rounded-3xl object-cover" />
+        <img src="https://i.imgur.com/jMR0mEO.jpg" alt="Evercut Barber Experience" className="w-full h-auto max-h-[700px] md:max-h-full rounded-3xl object-cover" />
       </div>
 
       {/* Right Side - Text Content */}

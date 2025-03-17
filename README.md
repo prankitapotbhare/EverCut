@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="client/public/logo/evercut.svg" alt="EverCut Logo" width="200"/>
+  <img src="client/public/logo/evercut.png" alt="EverCut Logo" width="200"/>
   <p>Modern Authentication System with Firebase Integration</p>
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

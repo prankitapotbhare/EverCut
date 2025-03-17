@@ -25,7 +25,7 @@ const Footer = () => {
           <div className="flex-shrink-0 flex items-center justify-center md:justify-start mb-5">
             <Link to="/">
               <img 
-                src="/evcut.png" 
+                src="/logo/evercut.png" 
                 alt="evercut" 
                 className="h-8 w-auto transition-opacity hover:opacity-75"
               />

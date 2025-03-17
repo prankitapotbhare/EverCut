@@ -5,7 +5,7 @@ const Landing = () => {
     <div
       className="relative flex items-center justify-end min-h-screen px-6 py-16 text-center 
                  bg-cover bg-center bg-no-repeat
-                 bg-black sm:bg-[url('/landingm.png')] md:bg-[url('/landingl.png')] lg:bg-[url('/landingx.png')] xl:bg-[url('/landingx.png')]"
+                 bg-black sm:bg-[url('https://i.imgur.com/YAtfeMP.png')] md:bg-[url('https://i.imgur.com/Dz96nFB.png')] lg:bg-[url('https://i.imgur.com/QTeXQqp.png')] xl:bg-[url('https://i.imgur.com/QTeXQqp.png')]"
     >
       <div className="max-w-lg w-full flex flex-col lg:items-center">
         {/* Heading Section */}

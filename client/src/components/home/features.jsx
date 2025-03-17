@@ -39,7 +39,7 @@ const Features = () => {
         {/* Mockup with Categories */}
         <div className="mt-6 flex flex-col md:flex-row items-center gap-6">
           <img
-            src="/v1.png"
+            src="https://i.imgur.com/PARsKvF.jpg"
             alt="Evercut App Mockup"
             className="w-[300px] h-[200px] object-cover rounded-lg shadow-lg"
           />

@@ -1,7 +1,7 @@
 I'll explain the best flow for image handling using Cloudinary with your React, Express, and MongoDB stack:
 
 1. **Frontend (React) Flow**:
-```javascript:c:\Users\prank\Project\EverCut\client\src\utils\imageUpload.js
+```javascript:EverCut\client\src\utils\imageUpload.js
 import axios from 'axios';
 
 export const uploadImage = async (file) => {
@@ -22,7 +22,7 @@ export const uploadImage = async (file) => {
 ```
 
 2. **Backend (Express) Flow**:
-```javascript:c:\Users\prank\Project\EverCut\server\routes\upload.js
+```javascript:EverCut\server\routes\upload.js
 const express = require('express');
 const router = express.Router();
 const cloudinary = require('cloudinary').v2;
@@ -64,7 +64,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
 ```
 
 3. **MongoDB Schema**:
-```javascript:c:\Users\prank\Project\EverCut\server\models\Image.js
+```javascript:EverCut\server\models\Image.js
 const mongoose = require('mongoose');
 
 const imageSchema = new mongoose.Schema({
@@ -87,7 +87,7 @@ module.exports = mongoose.model('Image', imageSchema);
 ```
 
 4. **Usage in React Component**:
-```javascript:c:\Users\prank\Project\EverCut\client\src\components\ImageUpload.jsx
+```javascript:EverCut\client\src\components\ImageUpload.jsx
 import React, { useState } from 'react';
 import { uploadImage } from '@/utils/imageUpload';
 
@@ -145,7 +145,7 @@ npm install cloudinary multer
 ```
 
 Don't forget to set up your environment variables in the server:
-```plaintext:c:\Users\prank\Project\EverCut\server\.env
+```plaintext:EverCut\server\.env
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret

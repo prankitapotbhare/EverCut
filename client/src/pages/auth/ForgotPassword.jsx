@@ -109,7 +109,7 @@ const ForgotPassword = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
-        <img src="/logo/evercut.svg" alt="Logo" className="h-12 mx-auto mb-8" />
+        <img src="/logo/evercut.png" alt="Logo" className="h-12 mx-auto mb-8" />
         {renderContent()}
       </div>
     </div>

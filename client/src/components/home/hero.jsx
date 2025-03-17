@@ -89,7 +89,7 @@ const Hero = () => {
           }}
         >
           <img 
-            src="/ming.png" 
+            src="https://i.imgur.com/VRomEAi.png" 
             alt="main image" 
             className="mx-auto object-contain w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl bg-transparent lg:pl-4 md:pl-2 sm:pl-2"
           />

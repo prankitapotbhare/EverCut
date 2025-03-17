@@ -77,7 +77,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" aria-label="Home">
-              <img src="/evcut.png" alt="evercut" className="h-8 w-auto" />
+              <img src="/logo/evercut.png" alt="evercut" className="h-8 w-auto" />
             </Link>
           </div>
 
