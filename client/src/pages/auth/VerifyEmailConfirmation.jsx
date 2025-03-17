@@ -27,49 +27,57 @@ const VerifyEmailConfirmation = () => {
         return;
       }
 
-      // Helper function to wait for emailVerified status
-      const waitForVerification = async (timeout = 5000, interval = 500) => {
-        const startTime = Date.now();
-        while (Date.now() - startTime < timeout) {
-          if (auth.currentUser) {
-            await auth.currentUser.reload();
-            if (auth.currentUser.emailVerified) {
-              return true;
+      try {
+        // Apply the action code to verify the email
+        await applyActionCode(auth, oobCode);
+        
+        // If user is logged in, update their profile in Firestore
+        if (auth.currentUser) {
+          await auth.currentUser.reload();
+          
+          if (auth.currentUser.emailVerified) {
+            // Update the user data in Firestore to reflect verified status
+            if (mounted) setStatus('success');
+          } else {
+            // This is unlikely but handle the case where Firebase says verification succeeded
+            // but the emailVerified flag is still false
+            if (mounted) {
+              setStatus('success-login');
             }
           }
-          // If no currentUser, don't keep polling unless it changes
-          await new Promise(resolve => setTimeout(resolve, interval));
-        }
-        return false;
-      };
-
-      try {
-        // Attempt to apply the action code
-        await applyActionCode(auth, oobCode);
-        // Wait for emailVerified to update
-        const isVerified = await waitForVerification();
-        if (mounted) {
-          if (isVerified) {
-            setStatus('success');
-          } else {
-            // If no user is logged in or verification hasn't propagated, prompt login
+        } else {
+          // User is not logged in, show success but prompt to login
+          if (mounted) {
             setStatus('success-login');
           }
         }
       } catch (error) {
         console.error('Verification error:', error);
-        // Check if email is already verified despite the error
-        const isVerified = await waitForVerification();
+        
+        // Check if the user is already verified despite the error
+        if (auth.currentUser) {
+          await auth.currentUser.reload();
+          if (auth.currentUser.emailVerified) {
+            if (mounted) setStatus('success');
+            return;
+          }
+        }
+        
+        // Handle specific error codes
         if (mounted) {
-          if (isVerified) {
-            setStatus('success');
-          } else {
-            setStatus('error');
-            setError(
-              error.code === 'auth/invalid-action-code'
-                ? 'The verification link has expired or already been used.'
-                : 'Failed to verify email. Please try again.'
-            );
+          setStatus('error');
+          switch (error.code) {
+            case 'auth/invalid-action-code':
+              setError('The verification link has expired or already been used.');
+              break;
+            case 'auth/user-not-found':
+              setError('User account not found. Please sign up again.');
+              break;
+            case 'auth/expired-action-code':
+              setError('The verification link has expired. Please request a new one.');
+              break;
+            default:
+              setError('Failed to verify email. Please try again or request a new verification link.');
           }
         }
       }
@@ -115,7 +123,7 @@ const VerifyEmailConfirmation = () => {
           <div className="text-center">
             <FaCheckCircle className="h-12 w-12 text-green-500 mx-auto" />
             <h2 className="text-xl font-semibold mt-4">Email Verified Successfully!</h2>
-            <p className="text-gray-600 mt-2">Please log in to continue.</p>
+            <p className="text-gray-600 mt-2">Please log in to continue using your account.</p>
             <button
               onClick={() => navigate('/login')}
               className="mt-6 px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
@@ -138,12 +146,14 @@ const VerifyEmailConfirmation = () => {
               >
                 Back to Login
               </button>
-              <button
-                onClick={() => navigate('/verify-email')}
-                className="w-full px-6 py-2 border border-green-500 text-green-500 rounded-lg hover:bg-green-50 transition-colors"
-              >
-                Try Another Verification
-              </button>
+              {currentUser && !currentUser.emailVerified && (
+                <button
+                  onClick={() => navigate('/verify-email')}
+                  className="w-full px-6 py-2 border border-green-500 text-green-500 rounded-lg hover:bg-green-50 transition-colors"
+                >
+                  Request New Verification Email
+                </button>
+              )}
             </div>
           </div>
         );
