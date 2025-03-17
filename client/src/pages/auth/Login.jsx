@@ -71,7 +71,7 @@ const Login = () => {
     <div className="flex flex-col md:flex-row min-h-screen bg-white">
       {/* Right Section for Mobile */}
       <div className="md:hidden w-full h-[240px] bg-gray-100 rounded-b-[50px] overflow-hidden">
-        <img src="https://i.imgur.com/2ZXwoGU.jpg" alt="Authentication Banner" className="w-full h-full object-cover" />
+        <img src="/Login-Right.png" alt="Authentication Banner" className="w-full h-full object-cover" />
       </div>
 
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-6 py-8 md:p-8">
@@ -171,7 +171,7 @@ const Login = () => {
 
       {/* Right Section */}
       <div className="hidden md:block w-1/2">
-        <img src="https://i.imgur.com/2ZXwoGU.jpg" alt="Authentication Banner" className="w-full h-full object-cover rounded-l-[50px]" />
+        <img src="/Login-Right.png" alt="Authentication Banner" className="w-full h-full object-cover rounded-l-[50px]" />
       </div>
     </div>
   );
