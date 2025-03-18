@@ -1,6 +1,6 @@
 <div align="center">
   <img src="client/public/logo/evercut.png" alt="EverCut Logo" width="200"/>
-  <p>Modern Authentication System with Firebase Integration</p>
+  <p>Modern Salon Booking System with Firebase Integration</p>
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   [![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)
@@ -11,13 +11,49 @@
 
 ## 🌟 Features
 
-- 🔐 Authentication System
+- 🔐 Authentication & User Management
   - Email/Password Authentication with Verification
   - Google OAuth Integration
   - Password Reset Flow
+  - User Roles (Customer, Salon Owner, Admin)
   - Protected Routes
   - Firebase Token Management
   - User Profile Management
+
+- 🔍 Salon Search & Discovery
+  - Advanced Search with Filters (Location, Service Type, Price)
+  - Salon Database with Detailed Information
+  - Pagination for Search Results
+  - Sorting Options
+  - Location-Based Filtering
+
+- 💇‍♀️ Salon Details & Services
+  - Detailed Salon Information Pages
+  - Service Catalog with Filtering
+  - Image Gallery with Lightbox
+  - Review and Rating System
+  - Salon Description and Amenities
+
+- 📅 Booking System
+  - Service Selection Interface
+  - Availability Checking
+  - Date and Time Picker
+  - Dynamic Pricing Calculation
+  - Booking Confirmation
+
+- 🗺️ Maps & Payments
+  - Google Maps Integration
+  - Distance-Based Salon Filtering
+  - Stripe Payment Processing
+  - Credit Card Validation
+  - Booking Confirmation
+
+- 📱 Booking Management & Notifications
+  - Booking History and Details
+  - Cancellation and Rescheduling
+  - Email Notifications
+  - SMS Notifications
+  - Receipt and Invoice Generation
 
 - 💅 Modern UI/UX
   - Responsive Design with Tailwind CSS
@@ -27,21 +63,6 @@
   - Modal Dialogs with Focus Trap
   - Smooth Transitions
   - Accessibility Support
-
-- 🛡️ Security Features
-  - Email Verification Requirement
-  - Secure Password Requirements
-  - Protected Routes
-  - Authentication State Management
-  - Token Handling
-  - Firebase Error Parsing
-
-- 🧰 Utility Functions
-  - Debounce for Performance Optimization
-  - Local Storage Helpers
-  - Date Formatting
-  - Error Formatting
-  - Form Validation Rules
 
 ## 📋 Prerequisites
 
@@ -84,12 +105,18 @@ VITE_FIREBASE_PROJECT_ID=your_project_id
 VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
+VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 ```
 
 **Server (.env)**
 ```env
 PORT=5000
 CLIENT_URL=http://localhost:3000
+MONGODB_URI=your_mongodb_connection_string
+STRIPE_SECRET_KEY=your_stripe_secret_key
+SENDGRID_API_KEY=your_sendgrid_api_key
+TWILIO_ACCOUNT_SID=your_twilio_account_sid
+TWILIO_AUTH_TOKEN=your_twilio_auth_token
 ```
 
 4. **Start Development Servers**
@@ -109,6 +136,7 @@ npm run dev
 - [Project Context](docs/context.md)
 - [Project Structure](docs/structure.md)
 - [Setup Guide](docs/setup.md)
+- [Salon Booking Roadmap](docs/salon-booking-roadmap.md)
 
 ## 🏗️ Project Structure
 
@@ -171,14 +199,42 @@ For detailed deployment instructions, see [Setup Guide](docs/setup.md).
   - EmailVerification - Email verification handling
   - VerificationStatus - Display verification status
 
+- **Salon Management**
+  - SalonSearch - Search interface with filters
+  - SalonCard - Display salon information
+  - SalonDetails - Detailed salon view
+  - ServiceCatalog - List of salon services
+  - ReviewSystem - Rating and review components
+
+- **Booking System**
+  - ServiceSelection - Service selection interface
+  - DateTimePicker - Booking date and time selection
+  - BookingSummary - Booking details summary
+  - PaymentForm - Stripe payment integration
+  - BookingHistory - User booking management
+
 - **UI Components**
   - Button - Customizable button with variants
   - Input - Form input with validation states
   - Modal - Dialog with accessibility features
   - Loading - Customizable loading indicators
   - ErrorBoundary - Global error handling
+  - MapView - Google Maps integration
 
 For detailed component documentation, see [Components Documentation](docs/components.md).
+
+## 🛠️ Technology Stack
+
+- **Frontend**: React, Vite, Tailwind CSS, React Hook Form
+- **Backend**: Node.js, Express.js
+- **Database**: Firebase Firestore, MongoDB
+- **Authentication**: Firebase Auth
+- **Maps**: Google Maps API
+- **Payments**: Stripe
+- **Notifications**: SendGrid (Email), Twilio (SMS)
+- **Search**: Elasticsearch
+- **State Management**: React Context API, Redux
+- **Image Storage**: Firebase Storage
 
 ## 🤝 Contributing
 
@@ -203,6 +259,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Firebase](https://firebase.google.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Express.js](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Stripe](https://stripe.com/)
+- [Google Maps](https://developers.google.com/maps)
 
 ## 📞 Support
 
