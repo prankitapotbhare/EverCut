@@ -13,6 +13,7 @@ import { useState } from 'react';
 import VerifyEmailConfirmation from '@/pages/auth/VerifyEmailConfirmation';
 import ResetPasswordConfirmation from '@/pages/auth/ResetPasswordConfirmation';
 import ActionCodeHandler from '@/components/auth/ActionCodeHandler';
+import SalonDetailPage from '@/pages/salon/SalonDetailPage';
 
 function AppRoutes() {
   const [error, setError] = useState(null);
@@ -83,6 +84,13 @@ function AppRoutes() {
           />
 
           {/* Protected Routes */}
+          <Route path="/salon/:id" element={
+            <PrivateRoute>
+              <SalonDetailPage />
+            </PrivateRoute>} 
+          />
+
+          {/* Home Route */}
           <Route 
             path="/"
             element={
