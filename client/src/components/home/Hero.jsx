@@ -49,7 +49,7 @@ const Hero = () => {
       {/* Content Section */}
       <div className="relative z-10">
         {/* Heading */}
-        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mt-10 mb-4 text-black max-w-md md:max-w-xl lg:max-w-2xl text-center mx-auto">
+        <h1 className="py-10 text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mt-10 mb-4 text-black max-w-md md:max-w-xl lg:max-w-2xl text-center mx-auto">
         We’re here to bring out your best <span className="text-[#06C270]">look.</span>
         </h1>
 
