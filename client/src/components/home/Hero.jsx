@@ -53,11 +53,6 @@ const Hero = () => {
         We’re here to bring out your best <span className="text-[#06C270]">look.</span>
         </h1>
 
-        {/* Description */}
-        <p className="text-md md:text-lg text-gray-600 mb-8 max-w-md md:max-w-xl lg:max-w-2xl text-center mx-auto">
-        Seamless booking, smooth management, and a hassle-free salon experience—all in one powerful app. Stay ahead with Evercut!
-        </p>
-
         {/* App Store Badges */}
         <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-12 items-center justify-center w-full">
           <a className="block">
