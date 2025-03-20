@@ -9,6 +9,20 @@ import ServiceCard from '@/components/salon/ServiceCard';
 import ServiceTabs from '@/components/salon/ServiceTabs';
 import CartSummary from '@/components/salon/CartSummary';
 
+// Mock API function to simulate fetching salon by ID
+const getSalonById = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const salon = mockSalons.find(salon => salon.id === id);
+      if (salon) {
+        resolve(salon);
+      } else {
+        reject(new Error('Salon not found'));
+      }
+    }, 500); // Simulate network delay
+  });
+};
+
 const SalonDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -20,17 +34,14 @@ const SalonDetailPage = () => {
   const itemsPerPage = 6;
 
   useEffect(() => {
-    // Simulate API call with setTimeout
+    // Use the mock API function to fetch salon data
     const fetchSalon = async () => {
       try {
-        // Find salon by id from mockSalons
-        setTimeout(() => {
-          const foundSalon = mockSalons.find(salon => salon.id === parseInt(id));
-          setSalon(foundSalon || null);
-          setLoading(false);
-        }, 500); // Simulate network delay
+        const data = await getSalonById(parseInt(id));
+        setSalon(data);
       } catch (error) {
         console.error('Error fetching salon details:', error);
+      } finally {
         setLoading(false);
       }
     };
