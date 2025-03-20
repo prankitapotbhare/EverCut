@@ -1,30 +1,89 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Clock, DollarSign, Scissors, MessageCircle, Star, ArrowLeft } from 'lucide-react';
-import { getSalonById } from '@/services/salonService';
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+// Import mockSalons data
+import mockSalons from '@/data/mockSalons';
 import Navbar from '@/components/home/Navbar';
 import Footer from '@/components/home/Footer';
+import ServiceCard from '@/components/salon/ServiceCard';
+import ServiceTabs from '@/components/salon/ServiceTabs';
+import CartSummary from '@/components/salon/CartSummary';
 
 const SalonDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [salon, setSalon] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState('single');
+  const [selectedServices, setSelectedServices] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   useEffect(() => {
+    // Simulate API call with setTimeout
     const fetchSalon = async () => {
       try {
-        const data = await getSalonById(parseInt(id));
-        setSalon(data);
+        // Find salon by id from mockSalons
+        setTimeout(() => {
+          const foundSalon = mockSalons.find(salon => salon.id === parseInt(id));
+          setSalon(foundSalon || null);
+          setLoading(false);
+        }, 500); // Simulate network delay
       } catch (error) {
         console.error('Error fetching salon details:', error);
-      } finally {
         setLoading(false);
       }
     };
 
     fetchSalon();
   }, [id]);
+
+  // Reset pagination when tab changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeTab]);
+
+  const handleServiceSelect = (item) => {
+    if (selectedServices.some(s => s.id === item.id && s.type === activeTab)) {
+      setSelectedServices(selectedServices.filter(s => !(s.id === item.id && s.type === activeTab)));
+    } else {
+      setSelectedServices([...selectedServices, { ...item, type: activeTab }]);
+    }
+  };
+
+  const handleContinue = () => {
+    // Navigate to booking page or show booking modal
+    console.log('Continue with selected services:', selectedServices);
+    // navigate(`/salon/${id}/booking`, { state: { selectedServices } });
+  };
+
+  // Get current items based on active tab
+  const getCurrentItems = () => {
+    const items = activeTab === 'single' ? salon?.services : salon?.packages;
+    if (!items) return [];
+    
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    return items.slice(indexOfFirstItem, indexOfLastItem);
+  };
+
+  // Calculate total pages based on active tab
+  const getTotalPages = () => {
+    const items = activeTab === 'single' ? salon?.services : salon?.packages;
+    return items ? Math.ceil(items.length / itemsPerPage) : 0;
+  };
+
+  const nextPage = () => {
+    if (currentPage < getTotalPages()) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   if (loading) {
     return (
@@ -48,128 +107,79 @@ const SalonDetailPage = () => {
     );
   }
 
+  const currentItems = getCurrentItems();
+  const totalPages = getTotalPages();
+
   return (
-    <div>
+    <div className="bg-gray-50 min-h-screen">
       <Navbar />
       <div className="max-w-6xl mx-auto p-6">
-        <button 
-          onClick={() => navigate('/')}
-          className="flex items-center gap-2 mb-6 text-blue-600 hover:text-blue-800"
-        >
-          <ArrowLeft size={20} />
-          Back to salons
-        </button>
+        <div className="mb-6">
+          <h1 className="text-3xl font-bold mb-1">{salon.name}</h1>
+          <p className="text-gray-600">
+            Closed opens at 11:00 am • {salon.location.address}, {salon.location.city}, {salon.location.state} {salon.location.zip}
+          </p>
+        </div>
 
-        {/* Salon Images Gallery */}
-        <div className="grid grid-cols-2 gap-4 mb-8">
+        {/* Main salon image */}
+        <div className="mb-8">
           <img 
             src={salon.image} 
             alt={salon.name}
-            className="w-full h-64 object-cover rounded-lg col-span-2"
+            className="w-full h-80 object-cover rounded-lg"
           />
-          {salon.gallery?.slice(0, 3).map((img, idx) => (
-            <img 
-              key={idx}
-              src={img}
-              alt={`${salon.name} gallery ${idx + 1}`}
-              className="w-full h-32 object-cover rounded-lg"
-            />
-          ))}
         </div>
 
-        {/* Salon Info */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-3xl font-bold mb-2">{salon.name}</h2>
-          <p className="text-gray-600 mb-4">{salon.description}</p>
-          
-          {/* Services */}
-          {salon.services && (
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <Scissors className="w-5 h-5" />
-                Services
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {salon.services.map(service => (
-                  <div key={service.id} className="bg-gray-50 p-4 rounded-lg">
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-medium">{service.name}</h4>
-                      <span className="text-green-600 font-semibold">${service.price}</span>
-                    </div>
-                    <p className="text-sm text-gray-600 mb-2">{service.description}</p>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {service.duration}
-                    </div>
-                  </div>
-                ))}
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Services section - 2/3 width */}
+          <div className="md:col-span-2">
+            <h2 className="text-2xl font-bold mb-4">Shop Services</h2>
+            
+            <ServiceTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+            
+            <div className="space-y-4">
+              {currentItems.map(item => (
+                <ServiceCard 
+                  key={`${activeTab}-${item.id}`}
+                  service={item}
+                  onSelect={handleServiceSelect}
+                  isSelected={selectedServices.some(s => s.id === item.id && s.type === activeTab)}
+                />
+              ))}
             </div>
-          )}
 
-          {/* Packages */}
-          {salon.packages && (
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <DollarSign className="w-5 h-5" />
-                Packages
-              </h3>
-              <div className="grid grid-cols-1 gap-4">
-                {salon.packages.map(pkg => (
-                  <div key={pkg.id} className="bg-gray-50 p-4 rounded-lg">
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-medium">{pkg.name}</h4>
-                      <span className="text-green-600 font-semibold">${pkg.price}</span>
-                    </div>
-                    <p className="text-sm text-gray-600 mb-2">{pkg.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {pkg.services.map((service, idx) => (
-                        <span key={idx} className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                          {service}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {pkg.duration}
-                    </div>
-                  </div>
-                ))}
+            {/* Pagination controls */}
+            {totalPages > 1 && (
+              <div className="flex justify-center mt-6 gap-2">
+                <button 
+                  onClick={prevPage} 
+                  disabled={currentPage === 1}
+                  className="p-2 rounded-full bg-gray-200 disabled:opacity-50"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                <button 
+                  onClick={nextPage} 
+                  disabled={currentPage === totalPages}
+                  className="p-2 rounded-full bg-gray-200 disabled:opacity-50"
+                >
+                  <ChevronRight size={20} />
+                </button>
               </div>
-            </div>
-          )}
+            )}
+          </div>
 
-          {/* Reviews */}
-          {salon.customerReviews && (
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <MessageCircle className="w-5 h-5" />
-                Customer Reviews
-              </h3>
-              <div className="space-y-4">
-                {salon.customerReviews.map(review => (
-                  <div key={review.id} className="bg-gray-50 p-4 rounded-lg">
-                    <div className="flex items-center gap-3 mb-2">
-                      <img 
-                        src={review.userImage} 
-                        alt={review.userName}
-                        className="w-10 h-10 rounded-full object-cover"
-                      />
-                      <div>
-                        <h4 className="font-medium">{review.userName}</h4>
-                        <div className="flex items-center gap-1">
-                          <Star className="w-4 h-4 fill-current text-yellow-400" />
-                          <span className="text-sm text-gray-600">{review.rating}</span>
-                        </div>
-                      </div>
-                      <span className="text-sm text-gray-500 ml-auto">{review.date}</span>
-                    </div>
-                    <p className="text-gray-600">{review.comment}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* Cart summary - 1/3 width */}
+          <div>
+            <CartSummary 
+              selectedServices={selectedServices} 
+              salon={{
+                ...salon,
+                address: `${salon.location.address}, ${salon.location.city}, ${salon.location.state} ${salon.location.zip}`
+              }}
+              onContinue={handleContinue}
+            />
+          </div>
         </div>
       </div>
       <Footer />
