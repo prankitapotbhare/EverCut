@@ -14,6 +14,7 @@ import VerifyEmailConfirmation from '@/pages/auth/VerifyEmailConfirmation';
 import ResetPasswordConfirmation from '@/pages/auth/ResetPasswordConfirmation';
 import ActionCodeHandler from '@/components/auth/ActionCodeHandler';
 import SalonDetailPage from '@/pages/salon/SalonDetailPage';
+import BookingPage from '@/pages/salon/BookingPage';
 
 function AppRoutes() {
   const [error, setError] = useState(null);
@@ -87,6 +88,13 @@ function AppRoutes() {
           <Route path="/salon/:id" element={
             <PrivateRoute>
               <SalonDetailPage />
+            </PrivateRoute>} 
+          />
+          
+          {/* Booking Route */}
+          <Route path="/salon/:id/booking" element={
+            <PrivateRoute>
+              <BookingPage />
             </PrivateRoute>} 
           />
 

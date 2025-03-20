@@ -52,9 +52,8 @@ const SalonDetailPage = () => {
   };
 
   const handleContinue = () => {
-    // Navigate to booking page or show booking modal
-    console.log('Continue with selected services:', selectedServices);
-    // navigate(`/salon/${id}/booking`, { state: { selectedServices } });
+    // Navigate to booking page with selected services
+    navigate(`/salon/${id}/booking`, { state: { selectedServices } });
   };
 
   // Get current items based on active tab
