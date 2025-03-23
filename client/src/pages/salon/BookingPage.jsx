@@ -158,49 +158,14 @@ const BookingPage = () => {
 
           {/* Right section - Booking Summary */}
           <div className="md:w-1/3 md:pl-6">
-            <div className="bg-blue-50 rounded-lg p-4">
-              <div className="mb-4">
-                <img 
-                  src={salon.image} 
-                  alt={salon.name}
-                  className="w-full h-32 object-cover rounded-lg mb-2"
-                />
-                <h3 className="text-xl font-bold">{salon.name}</h3>
-                <p className="text-sm text-gray-600">Closed opens at 11:00 am • Pillar number 106, opposite to corner bar address maker, Bengaluru, Karnataka 560008</p>
-              </div>
-
-              {selectedStylist && selectedDate && selectedTime && (
-                <div className="mb-3 text-sm">
-                  <div className="font-medium">
-                    {selectedStylist.name} • {formatDate(selectedDate)} • {selectedTime}
-                  </div>
-                </div>
-              )}
-
-              {selectedServices.map((service, index) => (
-                <div key={index} className="py-3">
-                  <div className="flex justify-between font-medium">
-                    <span>{service.name}</span>
-                    <span>{service.price} ₹</span>
-                  </div>
-                  <div className="text-sm text-gray-600">{service.duration}</div>
-                </div>
-              ))}
-
-              <div className="border-t border-gray-200 mt-2 pt-3">
-                <div className="flex justify-between font-bold mb-4">
-                  <span>Total</span>
-                  <span>{selectedServices.reduce((sum, service) => sum + service.price, 0)} ₹</span>
-                </div>
-                <button 
-                  onClick={handlePayNow}
-                  className="w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600"
-                  disabled={!selectedStylist || !selectedDate || !selectedTime}
-                >
-                  Pay Now
-                </button>
-              </div>
-            </div>
+            <BookingSummary
+              salon={salon}
+              selectedServices={selectedServices}
+              selectedStylist={selectedStylist}
+              selectedDate={selectedDate}
+              selectedTime={selectedTime}
+              onPayNow={handlePayNow}
+            />
           </div>
         </div>
       </div>
