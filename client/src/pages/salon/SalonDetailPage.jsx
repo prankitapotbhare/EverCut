@@ -123,7 +123,7 @@ const SalonDetailPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <Navbar />
-      <div className="max-w-6xl mx-auto p-6">
+      <div className="max-w-8xl mx-auto py-6 px-12">
         <div className="mb-6">
           <h1 className="text-3xl font-bold mb-1">{salon.name}</h1>
           <p className="text-gray-600">
