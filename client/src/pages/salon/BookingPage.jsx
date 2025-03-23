@@ -53,6 +53,9 @@ const BookingPage = () => {
 
     fetchSalon();
   }, [id, location.state, fetchSalonById]);
+  
+  // Track combined loading state to prevent flickering
+  const isLoading = loading || contextLoading;
 
   const handleStylistSelect = (stylist) => {
     setSelectedStylist(stylist);
@@ -94,7 +97,7 @@ const BookingPage = () => {
     return `${date.getDate()} ${date.toLocaleString('default', { weekday: 'long' })}`;
   };
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-xl">Loading booking page...</div>
