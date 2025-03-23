@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
-import mockSalons from '@/data/mockSalons';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import Navbar from '@/components/home/Navbar';
 import Footer from '@/components/home/Footer';
 import BookingSummary from '@/components/salon/BookingSummary';
 import StylistSelector from '@/components/salon/StylistSelector';
 import DateSelector from '@/components/salon/DateSelector';
 import TimeSelector from '@/components/salon/TimeSelector';
+import { useSalon } from '@/contexts/SalonContext';
 
 // Mock stylists data
 const mockStylists = [
@@ -29,6 +30,8 @@ const BookingPage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState(null);
 
+  const { fetchSalonById, loading: contextLoading, error: contextError } = useSalon();
+
   useEffect(() => {
     // Get selected services from location state
     if (location.state?.selectedServices) {
@@ -38,20 +41,18 @@ const BookingPage = () => {
     // Fetch salon data
     const fetchSalon = async () => {
       try {
-        // Find salon by id from mockSalons
-        setTimeout(() => {
-          const foundSalon = mockSalons.find(salon => salon.id === parseInt(id));
-          setSalon(foundSalon || null);
-          setLoading(false);
-        }, 500); // Simulate network delay
+        setLoading(true);
+        const salonData = await fetchSalonById(parseInt(id));
+        setSalon(salonData);
       } catch (error) {
         console.error('Error fetching salon details:', error);
+      } finally {
         setLoading(false);
       }
     };
 
     fetchSalon();
-  }, [id, location.state]);
+  }, [id, location.state, fetchSalonById]);
 
   const handleStylistSelect = (stylist) => {
     setSelectedStylist(stylist);

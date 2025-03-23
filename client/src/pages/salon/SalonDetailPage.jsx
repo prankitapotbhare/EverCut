@@ -1,27 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
-// Import mockSalons data
-import mockSalons from '@/data/mockSalons';
 import Navbar from '@/components/home/Navbar';
 import Footer from '@/components/home/Footer';
 import ServiceCard from '@/components/salon/ServiceCard';
 import ServiceTabs from '@/components/salon/ServiceTabs';
 import CartSummary from '@/components/salon/CartSummary';
-
-// Mock API function to simulate fetching salon by ID
-const getSalonById = (id) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const salon = mockSalons.find(salon => salon.id === id);
-      if (salon) {
-        resolve(salon);
-      } else {
-        reject(new Error('Salon not found'));
-      }
-    }, 500); // Simulate network delay
-  });
-};
+import { useSalon } from '@/contexts/SalonContext';
 
 const SalonDetailPage = () => {
   const { id } = useParams();
@@ -33,11 +18,12 @@ const SalonDetailPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
+  const { fetchSalonById, loading: contextLoading, error: contextError } = useSalon();
+
   useEffect(() => {
-    // Use the mock API function to fetch salon data
     const fetchSalon = async () => {
       try {
-        const data = await getSalonById(parseInt(id));
+        const data = await fetchSalonById(parseInt(id));
         setSalon(data);
       } catch (error) {
         console.error('Error fetching salon details:', error);
@@ -47,7 +33,7 @@ const SalonDetailPage = () => {
     };
 
     fetchSalon();
-  }, [id]);
+  }, [id, fetchSalonById]);
 
   // Reset pagination when tab changes
   useEffect(() => {

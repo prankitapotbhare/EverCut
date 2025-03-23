@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Search, MapPin, ChevronDown } from 'lucide-react';
 import SalonCard from './SalonCard';
-import { getSalons } from '@/services/salonService';
+import { useSalon } from '@/contexts/SalonContext';
 
 const SalonFinder = () => {
   const [location, setLocation] = useState('Munich Center');
@@ -10,20 +10,14 @@ const SalonFinder = () => {
   const [salons, setSalons] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchSalons = async () => {
-      try {
-        const data = await getSalons();
-        setSalons(data);
-      } catch (error) {
-        console.error('Error fetching salons:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const { allSalons, loading: contextLoading, error: contextError } = useSalon();
 
-    fetchSalons();
-  }, []);
+  useEffect(() => {
+    if (allSalons.length > 0) {
+      setSalons(allSalons);
+      setLoading(false);
+    }
+  }, [allSalons]);
 
   const filteredSalons = useMemo(() => {
     const filtered = salons.filter(salon => 
