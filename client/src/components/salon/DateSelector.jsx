@@ -1,46 +1,94 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const DateSelector = ({ selectedDate, onDateSelect }) => {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
+  const scrollContainerRef = useRef(null);
+  
+  // Initialize with today's date
+  const today = useMemo(() => {
+    const date = new Date();
+    date.setHours(0, 0, 0, 0);
+    return date;
+  }, []);
+  
+  const [currentMonth, setCurrentMonth] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
   const [dates, setDates] = useState([]);
   
   // Generate dates when component mounts or month changes
   useEffect(() => {
-    generateDates();
-  }, [currentMonth]);
+    generateMonthDates();
+  }, [currentMonth, today]);
   
-  // Generate dates for the current month
-  const generateDates = () => {
+  // Scroll to today or selected date when dates change
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      const selectedIndex = dates.findIndex(d => 
+        selectedDate && isSameDay(d.date, selectedDate)
+      );
+      
+      const todayIndex = dates.findIndex(d => d.isToday);
+      
+      // Scroll to selected date or today
+      const scrollToIndex = selectedIndex >= 0 ? selectedIndex : todayIndex >= 0 ? todayIndex : 0;
+      
+      if (scrollToIndex >= 0) {
+        const buttonWidth = 68; // width + margin (60px + 8px)
+        scrollContainerRef.current.scrollLeft = scrollToIndex * buttonWidth;
+      }
+    }
+  }, [dates, selectedDate]);
+  
+  // Generate all dates for the current month
+  const generateMonthDates = () => {
     const year = currentMonth.getFullYear();
     const month = currentMonth.getMonth();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const today = new Date();
     
-    const newDates = [];
+    const dateRange = [];
     for (let i = 1; i <= daysInMonth; i++) {
-      const date = new Date(year, month, i);
-      // Include all dates in the month, but disable past dates
-      const isPastDate = date < new Date(today.setHours(0, 0, 0, 0));
-      newDates.push({
-        date,
-        day: i,
-        dayName: date.toLocaleString('default', { weekday: 'short' }).substring(0, 3),
-        isSelectable: !isPastDate
+      const currentDate = new Date(year, month, i);
+      
+      const isBeforeToday = currentDate < today;
+      
+      dateRange.push({
+        date: currentDate,
+        day: currentDate.getDate(),
+        dayName: currentDate.toLocaleString('default', { weekday: 'short' }),
+        month: currentDate.getMonth(),
+        year: currentDate.getFullYear(),
+        isSelectable: !isBeforeToday,
+        isToday: isSameDay(currentDate, today)
       });
     }
     
-    setDates(newDates);
+    setDates(dateRange);
   };
   
-  // Handle previous month navigation
+  // Helper function to check if two dates are the same day
+  const isSameDay = (date1, date2) => {
+    return date1.getDate() === date2.getDate() &&
+           date1.getMonth() === date2.getMonth() &&
+           date1.getFullYear() === date2.getFullYear();
+  };
+  
+  // Navigate to previous month
   const handlePrevMonth = () => {
     const prevMonth = new Date(currentMonth);
     prevMonth.setMonth(prevMonth.getMonth() - 1);
+    
+    // Don't allow navigating to months before the current month if today is in current month
+    if (prevMonth.getMonth() < today.getMonth() && prevMonth.getFullYear() <= today.getFullYear()) {
+      // If we're trying to go before the current month and today is in the current month,
+      // just stay in the current month
+      if (today.getMonth() === new Date().getMonth() && today.getFullYear() === new Date().getFullYear()) {
+        return;
+      }
+    }
+    
     setCurrentMonth(prevMonth);
   };
   
-  // Handle next month navigation
+  // Navigate to next month
   const handleNextMonth = () => {
     const nextMonth = new Date(currentMonth);
     nextMonth.setMonth(nextMonth.getMonth() + 1);
@@ -49,55 +97,92 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
   
   // Check if a date is selected
   const isDateSelected = (date) => {
-    return selectedDate && 
-           date.getDate() === selectedDate.getDate() && 
-           date.getMonth() === selectedDate.getMonth() && 
-           date.getFullYear() === selectedDate.getFullYear();
+    return selectedDate && isSameDay(date, selectedDate);
   };
   
-  // Get month name
+  // Get month name for display
   const getMonthName = () => {
     return currentMonth.toLocaleString('default', { month: 'long' });
   };
 
+  // Handle scroll buttons
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -200, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 200, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div>
+    <div className="date-selector">
       <div className="flex justify-between items-center mb-4">
-        <span className="font-medium">{getMonthName()}</span>
+        <span className="font-medium text-lg">{getMonthName()}</span>
         <div className="flex space-x-1 bg-gray-100 rounded-lg">
           <button 
-            className="p-2 rounded-l-lg hover:bg-gray-200"
+            className="p-2 rounded-l-lg hover:bg-gray-200 transition-colors"
             onClick={handlePrevMonth}
+            aria-label="Previous month"
           >
             <ChevronLeft size={16} />
           </button>
           <button 
-            className="p-2 rounded-r-lg hover:bg-gray-200"
+            className="p-2 rounded-r-lg hover:bg-gray-200 transition-colors"
             onClick={handleNextMonth}
+            aria-label="Next month"
           >
             <ChevronRight size={16} />
           </button>
         </div>
       </div>
       
-      <div className="flex space-x-2 overflow-x-auto pb-2">
-        {dates.map((dateObj, index) => (
-          <button
-            key={index}
-            disabled={!dateObj.isSelectable}
-            className={`flex flex-col items-center p-3 rounded-lg min-w-[60px] ${
-              isDateSelected(dateObj.date) 
-                ? 'bg-blue-600 text-white' 
-                : dateObj.isSelectable 
-                  ? 'bg-gray-100 hover:bg-gray-200' 
-                  : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-            }`}
-            onClick={() => dateObj.isSelectable && onDateSelect(dateObj.date)}
-          >
-            <span className="text-xs">{dateObj.dayName}</span>
-            <span className="text-lg font-medium">{dateObj.day}</span>
-          </button>
-        ))}
+      <div className="relative">
+        <button 
+          onClick={scrollLeft}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-70 rounded-full p-1 shadow-md"
+          aria-label="Scroll left"
+        >
+          <ChevronLeft size={16} />
+        </button>
+        
+        <div 
+          ref={scrollContainerRef}
+          className="flex space-x-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth px-6"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {dates.map((dateObj, index) => (
+            <button
+              key={index}
+              disabled={!dateObj.isSelectable}
+              className={`flex flex-col items-center p-3 rounded-lg min-w-[60px] transition-all ${
+                isDateSelected(dateObj.date) 
+                  ? 'bg-blue-600 text-white shadow-md' 
+                  : dateObj.isToday
+                    ? 'bg-blue-100 hover:bg-blue-200'
+                    : dateObj.isSelectable 
+                      ? 'bg-gray-100 hover:bg-gray-200' 
+                      : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+              }`}
+              onClick={() => dateObj.isSelectable && onDateSelect(dateObj.date)}
+              aria-label={`Select ${dateObj.date.toLocaleDateString()}`}
+            >
+              <span className="text-xs font-medium">{dateObj.dayName}</span>
+              <span className="text-lg font-medium">{dateObj.day}</span>
+            </button>
+          ))}
+        </div>
+        
+        <button 
+          onClick={scrollRight}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-70 rounded-full p-1 shadow-md"
+          aria-label="Scroll right"
+        >
+          <ChevronRight size={16} />
+        </button>
       </div>
     </div>
   );
