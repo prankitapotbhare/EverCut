@@ -105,19 +105,6 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
     return currentMonth.toLocaleString('default', { month: 'long' });
   };
 
-  // Handle scroll buttons
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -200, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 200, behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="date-selector">
       <div className="flex justify-between items-center mb-4">
@@ -141,14 +128,6 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
       </div>
       
       <div className="relative">
-        <button 
-          onClick={scrollLeft}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-70 rounded-full p-1 shadow-md"
-          aria-label="Scroll left"
-        >
-          <ChevronLeft size={16} />
-        </button>
-        
         <div 
           ref={scrollContainerRef}
           className="flex space-x-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth px-6"
@@ -175,14 +154,6 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
             </button>
           ))}
         </div>
-        
-        <button 
-          onClick={scrollRight}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-70 rounded-full p-1 shadow-md"
-          aria-label="Scroll right"
-        >
-          <ChevronRight size={16} />
-        </button>
       </div>
     </div>
   );
