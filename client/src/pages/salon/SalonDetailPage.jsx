@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
-import Navbar from '@/components/home/Navbar';
-import Footer from '@/components/home/Footer';
 import ServiceCard from '@/components/salon/ServiceCard';
 import ServiceTabs from '@/components/salon/ServiceTabs';
 import CartSummary from '@/components/salon/CartSummary';
@@ -108,7 +106,6 @@ const SalonDetailPage = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <Navbar />
       <div className="max-w-8xl mx-auto py-6 px-12">
         <div className="mb-6">
           <h1 className="text-3xl font-bold mb-1">{salon.name}</h1>
@@ -178,7 +175,6 @@ const SalonDetailPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

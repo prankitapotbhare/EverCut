@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 import { SalonProvider } from '@/contexts/SalonContext';
+import { UserProvider } from '@/contexts/UserContext';
+import { AppointmentProvider } from '@/contexts/AppointmentContext';
 import Signup from '@/pages/auth/Signup';
 import Login from '@/pages/auth/Login';
 import ForgotPassword from '@/pages/auth/ForgotPassword';
@@ -10,12 +12,14 @@ import PrivateRoute from '@/components/auth/PrivateRoute';
 import PublicRoute from '@/components/auth/PublicRoute';
 import ErrorBoundary from '@/components/error/ErrorBoundary';
 import ErrorHandler from '@/components/error/ErrorHandler';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import VerifyEmailConfirmation from '@/pages/auth/VerifyEmailConfirmation';
 import ResetPasswordConfirmation from '@/pages/auth/ResetPasswordConfirmation';
 import ActionCodeHandler from '@/components/auth/ActionCodeHandler';
 import SalonDetailPage from '@/pages/salon/SalonDetailPage';
 import BookingPage from '@/pages/salon/BookingPage';
+import Dashboard from '@/pages/dashboard/Dashboard';
+import MainLayout from '@/components/layout/MainLayout';
 
 function AppRoutes() {
   const [error, setError] = useState(null);
@@ -88,22 +92,44 @@ function AppRoutes() {
           {/* Protected Routes */}
           <Route path="/salon/:id" element={
             <PrivateRoute>
-              <SalonDetailPage />
+              <MainLayout>
+                <SalonDetailPage />
+              </MainLayout>
             </PrivateRoute>} 
           />
           
           {/* Booking Route */}
           <Route path="/salon/:id/booking" element={
             <PrivateRoute>
-              <BookingPage />
+              <MainLayout>
+                <BookingPage />
+              </MainLayout>
             </PrivateRoute>} 
+          />
+
+          {/* Dashboard Route */}
+          <Route 
+            path="/dashboard" 
+            element={
+              <PrivateRoute>
+                <React.Suspense fallback={<div className="min-h-screen flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
+                </div>}>
+                  <MainLayout showFooter={false}>
+                    <Dashboard />
+                  </MainLayout>
+                </React.Suspense>
+              </PrivateRoute>
+            } 
           />
 
           {/* Home Route */}
           <Route 
             path="/"
             element={
+              <MainLayout>
                 <Home onError={handleError} />
+              </MainLayout>
             } 
           />
 
@@ -120,7 +146,11 @@ function App() {
     <ErrorBoundary>
       <AuthProvider>
         <SalonProvider>
-          <AppRoutes />
+          <UserProvider>
+            <AppointmentProvider>
+              <AppRoutes />
+            </AppointmentProvider>
+          </UserProvider>
         </SalonProvider>
       </AuthProvider>
     </ErrorBoundary>
