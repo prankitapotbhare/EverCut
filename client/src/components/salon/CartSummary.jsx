@@ -34,7 +34,7 @@ const CartSummary = ({ selectedServices, salon, onContinue }) => {
             </div>
             <button 
               onClick={onContinue}
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700"
+              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 cursor-pointer"
             >
               Continue
             </button>

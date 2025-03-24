@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import Navbar from '@/components/home/Navbar';
 import Footer from '@/components/home/Footer';
 import BookingSummary from '@/components/salon/BookingSummary';
@@ -8,6 +7,7 @@ import StylistSelector from '@/components/salon/StylistSelector';
 import DateSelector from '@/components/salon/DateSelector';
 import TimeSelector from '@/components/salon/TimeSelector';
 import { useSalon } from '@/contexts/SalonContext';
+import { BookingPageSkeleton } from '@/components/common/SkeletonLoader';
 
 // Mock stylists data
 const mockStylists = [
@@ -98,11 +98,7 @@ const BookingPage = () => {
   };
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading booking page...</div>
-      </div>
-    );
+    return <BookingPageSkeleton />;
   }
 
   if (!salon) {

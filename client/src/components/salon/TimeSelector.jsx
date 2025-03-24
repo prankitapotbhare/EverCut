@@ -29,7 +29,7 @@ const TimeSelector = ({ selectedTime, onTimeSelect }) => {
         {timeSlots.map((time, index) => (
           <button
             key={index}
-            className={`py-2 px-1 text-sm rounded-lg ${
+            className={`py-2 px-1 text-sm rounded-lg cursor-pointer ${
               time === selectedTime ? 'bg-blue-600 text-white' : 'bg-gray-100 hover:bg-gray-200'
             }`}
             onClick={() => onTimeSelect(time)}
