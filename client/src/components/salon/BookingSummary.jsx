@@ -43,7 +43,7 @@ const BookingSummary = ({ salon, selectedServices, selectedStylist, selectedDate
         </div>
         <button 
           onClick={onPayNow}
-          className="w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600"
+          className="w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600 cursor-pointer"
         >
           Pay Now
         </button>

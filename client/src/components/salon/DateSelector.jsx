@@ -111,14 +111,14 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
         <span className="font-medium text-lg">{getMonthName()}</span>
         <div className="flex space-x-1 bg-gray-100 rounded-lg">
           <button 
-            className="p-2 rounded-l-lg hover:bg-gray-200 transition-colors"
+            className="p-2 rounded-l-lg hover:bg-gray-200 transition-colors cursor-pointer"
             onClick={handlePrevMonth}
             aria-label="Previous month"
           >
             <ChevronLeft size={16} />
           </button>
           <button 
-            className="p-2 rounded-r-lg hover:bg-gray-200 transition-colors"
+            className="p-2 rounded-r-lg hover:bg-gray-200 transition-colors cursor-pointer"
             onClick={handleNextMonth}
             aria-label="Next month"
           >
@@ -137,7 +137,7 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
             <button
               key={index}
               disabled={!dateObj.isSelectable}
-              className={`flex flex-col items-center p-3 rounded-lg min-w-[60px] transition-all ${
+              className={`flex flex-col items-center p-3 rounded-lg min-w-[60px] transition-all cursor-pointer ${
                 isDateSelected(dateObj.date) 
                   ? 'bg-blue-600 text-white shadow-md' 
                   : dateObj.isToday

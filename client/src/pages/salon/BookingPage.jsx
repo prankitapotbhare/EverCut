@@ -8,6 +8,7 @@ import StylistSelector from '@/components/salon/StylistSelector';
 import DateSelector from '@/components/salon/DateSelector';
 import TimeSelector from '@/components/salon/TimeSelector';
 import { useSalon } from '@/contexts/SalonContext';
+import { BookingPageSkeleton } from '@/components/common/SkeletonLoader';
 
 // Mock stylists data
 const mockStylists = [
@@ -98,11 +99,7 @@ const BookingPage = () => {
   };
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading booking page...</div>
-      </div>
-    );
+    return <BookingPageSkeleton />;
   }
 
   if (!salon) {

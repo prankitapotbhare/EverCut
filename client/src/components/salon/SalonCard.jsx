@@ -17,7 +17,7 @@ const SalonCard = ({ salon }) => {
           alt={salon.name}
           className="w-full h-full object-cover"
         />
-        <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md">
+        <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md cursor-pointer">
           <Heart className="w-5 h-5 text-gray-600" />
         </button>
       </div>
@@ -49,7 +49,7 @@ const SalonCard = ({ salon }) => {
           </div>
           <button 
             onClick={handleBookNow}
-            className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors"
+            className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors cursor-pointer"
           >
             Book Now
           </button>

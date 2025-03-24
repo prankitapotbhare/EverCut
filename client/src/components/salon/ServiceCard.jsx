@@ -23,7 +23,7 @@ const ServiceCard = ({ service, onSelect, isSelected }) => {
         <span className="font-medium">{service.price} ₹</span>
         <button 
           onClick={() => onSelect(service)}
-          className={`px-3 py-1 rounded text-sm ${
+          className={`px-3 py-1 rounded text-sm cursor-pointer ${
             isSelected 
               ? 'bg-green-500 text-white' 
               : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
