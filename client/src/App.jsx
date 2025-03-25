@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from '@/contexts/AuthContext';
+import { SalonProvider } from '@/contexts/SalonContext';
 import Signup from '@/pages/auth/Signup';
 import Login from '@/pages/auth/Login';
 import ForgotPassword from '@/pages/auth/ForgotPassword';
@@ -14,6 +15,7 @@ import VerifyEmailConfirmation from '@/pages/auth/VerifyEmailConfirmation';
 import ResetPasswordConfirmation from '@/pages/auth/ResetPasswordConfirmation';
 import ActionCodeHandler from '@/components/auth/ActionCodeHandler';
 import SalonDetailPage from '@/pages/salon/SalonDetailPage';
+import BookingPage from '@/pages/salon/BookingPage';
 
 function AppRoutes() {
   const [error, setError] = useState(null);
@@ -89,6 +91,13 @@ function AppRoutes() {
               <SalonDetailPage />
             </PrivateRoute>} 
           />
+          
+          {/* Booking Route */}
+          <Route path="/salon/:id/booking" element={
+            <PrivateRoute>
+              <BookingPage />
+            </PrivateRoute>} 
+          />
 
           {/* Home Route */}
           <Route 
@@ -110,7 +119,9 @@ function App() {
   return (
     <ErrorBoundary>
       <AuthProvider>
-        <AppRoutes />
+        <SalonProvider>
+          <AppRoutes />
+        </SalonProvider>
       </AuthProvider>
     </ErrorBoundary>
   );
