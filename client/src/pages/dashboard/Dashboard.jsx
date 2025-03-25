@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Link, useLocation } from 'react-router-dom';
 import DashboardSidebar from '@/components/dashboard/DashboardSidebar';
-import DashboardHeader from '@/components/dashboard/DashboardHeader';
 import AppointmentsList from '@/components/dashboard/AppointmentsList';
 import UserProfile from '@/components/dashboard/UserProfile';
 import FavoriteSalons from '@/components/dashboard/FavoriteSalons';
