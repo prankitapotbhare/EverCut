@@ -1,19 +1,30 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
+import { useUser } from '@/contexts/UserContext';
+import { User, Calendar, Heart, Settings, LogOut, ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const { currentUser, logout } = useAuth();
+  const { userProfile } = useUser();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const menuRef = useRef(null);
+  const profileMenuRef = useRef(null);
 
-  // Handle click outside to close menu
+  // Handle click outside to close menus
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // Close main menu if clicked outside
       if (menuRef.current && !menuRef.current.contains(event.target) && !event.target.closest('[aria-label="Toggle menu"]')) {
         setIsOpen(false);
+      }
+      
+      // Close profile dropdown if clicked outside
+      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target) && !event.target.closest('[aria-label="Toggle profile"]')) {
+        setIsProfileOpen(false);
       }
     };
 
@@ -43,14 +54,127 @@ const Navbar = () => {
 
   const AuthButtons = ({ isMobile = false }) => (
     currentUser ? (
-      <button
-        onClick={handleLogout}
-        className={`${isMobile ? 'w-full mt-2' : ''} bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out disabled:opacity-50 cursor-pointer`}
-        disabled={isLoading}
-        aria-label={isLoading ? 'Logging out' : 'Logout'}
-      >
-        {isLoading ? 'Logging out...' : 'Logout'}
-      </button>
+      isMobile ? (
+        <div className="flex flex-col space-y-2">
+          <Link
+            to="/dashboard"
+            className="w-full text-center bg-emerald-500 text-white px-4 py-2 rounded-3xl hover:bg-emerald-600 transition-all duration-300 ease-in-out cursor-pointer"
+            aria-label="Dashboard"
+          >
+            Dashboard
+          </Link>
+          <Link
+            to="/dashboard?tab=profile"
+            className="w-full text-center bg-emerald-500 text-white px-4 py-2 rounded-3xl hover:bg-emerald-600 transition-all duration-300 ease-in-out cursor-pointer"
+            aria-label="My Profile"
+          >
+            My Profile
+          </Link>
+          <Link
+            to="/dashboard?tab=appointments"
+            className="w-full text-center bg-emerald-500 text-white px-4 py-2 rounded-3xl hover:bg-emerald-600 transition-all duration-300 ease-in-out cursor-pointer"
+            aria-label="My Appointments"
+          >
+            My Appointments
+          </Link>
+          <Link
+            to="/dashboard?tab=favorites"
+            className="w-full text-center bg-emerald-500 text-white px-4 py-2 rounded-3xl hover:bg-emerald-600 transition-all duration-300 ease-in-out cursor-pointer"
+            aria-label="Favorite Salons"
+          >
+            Favorite Salons
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="w-full bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out disabled:opacity-50 cursor-pointer"
+            disabled={isLoading}
+            aria-label={isLoading ? 'Logging out' : 'Logout'}
+          >
+            {isLoading ? 'Logging out...' : 'Logout'}
+          </button>
+        </div>
+      ) : (
+        <div className="relative">
+          <button
+            onClick={() => setIsProfileOpen(!isProfileOpen)}
+            className="flex items-center space-x-2 bg-emerald-500 text-white px-4 py-2 rounded-3xl hover:bg-emerald-600 transition-all duration-300 ease-in-out cursor-pointer"
+            aria-label="Toggle profile"
+            aria-expanded={isProfileOpen}
+          >
+            <div className="h-6 w-6 rounded-full overflow-hidden bg-emerald-400">
+              {currentUser?.photoURL ? (
+                <img 
+                  src={currentUser.photoURL} 
+                  alt={currentUser.displayName || 'User'} 
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="h-full w-full flex items-center justify-center bg-emerald-100 text-emerald-600 font-bold">
+                  {currentUser?.displayName?.charAt(0) || 'U'}
+                </div>
+              )}
+            </div>
+            <span>{currentUser?.displayName?.split(' ')[0] || 'Account'}</span>
+            <ChevronDown size={16} />
+          </button>
+          
+          {/* Profile dropdown menu */}
+          {isProfileOpen && (
+            <div 
+              ref={profileMenuRef}
+              className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1 z-50"
+            >
+              <div className="px-4 py-2 border-b border-gray-100">
+                <p className="text-sm font-medium text-gray-900 truncate">{currentUser?.displayName || 'User'}</p>
+                <p className="text-xs text-gray-500 truncate">{currentUser?.email || ''}</p>
+              </div>
+              
+              <Link
+                to="/dashboard?tab=profile"
+                className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+              >
+                <User size={16} className="mr-2" />
+                My Profile
+              </Link>
+              
+              <Link
+                to="/dashboard?tab=appointments"
+                className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+              >
+                <Calendar size={16} className="mr-2" />
+                My Appointments
+              </Link>
+              
+              <Link
+                to="/dashboard?tab=favorites"
+                className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+              >
+                <Heart size={16} className="mr-2" />
+                Favorite Salons
+              </Link>
+              
+              <Link
+                to="/dashboard?tab=settings"
+                className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+              >
+                <Settings size={16} className="mr-2" />
+                Settings
+              </Link>
+              
+              <div className="border-t border-gray-100 mt-1">
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+                  disabled={isLoading}
+                >
+                  <LogOut size={16} className="mr-2" />
+                  {isLoading ? 'Logging out...' : 'Logout'}
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      )
     ) : (
       <>
         <button
