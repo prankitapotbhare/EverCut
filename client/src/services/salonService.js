@@ -1,59 +1,86 @@
-import mockSalons from '../data/mockSalons';
+import { get } from '@/utils/api';
 
-// Simulate API calls
-export const getSalons = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mockSalons);
-    }, 300); // Simulate network delay
-  });
+/**
+ * Get all salons with optional filtering
+ * @param {Object} params - Query parameters for filtering
+ * @returns {Promise} - Salon data
+ */
+export const getSalons = async (params = {}) => {
+  try {
+    const response = await get('/salons', params);
+    return response.data.salons;
+  } catch (error) {
+    console.error('Error fetching salons:', error);
+    throw error;
+  }
 };
 
-export const getSalonById = (id) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const salon = mockSalons.find(salon => salon.id === id);
-      if (salon) {
-        resolve(salon);
-      } else {
-        reject(new Error('Salon not found'));
-      }
-    }, 300);
-  });
+/**
+ * Get salon by ID
+ * @param {string} id - Salon ID
+ * @returns {Promise} - Salon data
+ */
+export const getSalonById = async (id) => {
+  try {
+    const response = await get(`/salons/${id}`);
+    return response.data.salon;
+  } catch (error) {
+    console.error('Error fetching salon details:', error);
+    throw error;
+  }
 };
 
-// Additional service functions
-export const getPopularSalons = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Sort by rating and reviews to get the most popular salons
-      const popular = [...mockSalons]
-        .sort((a, b) => (b.rating * b.reviews) - (a.rating * a.reviews))
-        .slice(0, 10);
-      resolve(popular);
-    }, 300);
-  });
+/**
+ * Get popular salons
+ * @param {Object} params - Query parameters (limit, page)
+ * @returns {Promise} - Popular salons data
+ */
+export const getPopularSalons = async (params = {}) => {
+  try {
+    const response = await get('/salons/popular/list', params);
+    return response.data.salons;
+  } catch (error) {
+    console.error('Error fetching popular salons:', error);
+    throw error;
+  }
 };
 
-export const getNearestSalons = (userLocation) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Sort by distance to get the nearest salons
-      const nearest = [...mockSalons]
-        .sort((a, b) => a.distance - b.distance)
-        .slice(0, 10);
-      resolve(nearest);
-    }, 300);
-  });
+/**
+ * Get nearest salons based on user location
+ * @param {Object} userLocation - User location data (latitude, longitude)
+ * @param {Object} params - Additional query parameters
+ * @returns {Promise} - Nearest salons data
+ */
+export const getNearestSalons = async (userLocation, params = {}) => {
+  try {
+    const queryParams = {
+      ...params,
+      ...userLocation
+    };
+    const response = await get('/salons/nearest/list', queryParams);
+    return response.data.salons;
+  } catch (error) {
+    console.error('Error fetching nearest salons:', error);
+    throw error;
+  }
 };
 
-export const searchSalons = (query) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const results = mockSalons.filter(salon => 
-        salon.name.toLowerCase().includes(query.toLowerCase())
-      );
-      resolve(results);
-    }, 300);
-  });
+/**
+ * Search salons by query
+ * @param {string} query - Search query
+ * @param {Object} params - Additional query parameters
+ * @returns {Promise} - Search results
+ */
+export const searchSalons = async (query, params = {}) => {
+  try {
+    const queryParams = {
+      ...params,
+      q: query
+    };
+    const response = await get('/salons/search/query', queryParams);
+    return response.data.salons;
+  } catch (error) {
+    console.error('Error searching salons:', error);
+    throw error;
+  }
 };

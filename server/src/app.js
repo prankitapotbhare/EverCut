@@ -11,6 +11,7 @@ const compression = require('compression');
 
 // Import routes
 const bookingRoutes = require('./routes/booking.routes');
+const salonRoutes = require('./routes/salon.routes');
 
 // Initialize express app
 const app = express();
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bo
 
 // API routes
 app.use('/api/bookings', bookingRoutes);
+app.use('/api/salons', salonRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
