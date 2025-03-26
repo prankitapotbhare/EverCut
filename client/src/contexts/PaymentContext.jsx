@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
-import { paymentService } from '@/services/paymentService';
+import React, { createContext, useContext, useState, useCallback } from 'react';
+import { paymentService, savedPaymentMethods, savedUpiIds } from '@/services/paymentService';
 
 const PaymentContext = createContext();
 
@@ -12,70 +12,107 @@ export const usePayment = () => {
 };
 
 export const PaymentProvider = ({ children }) => {
-  const [paymentMethod, setPaymentMethod] = useState('card'); // 'card' or 'upi'
-  const [loading, setLoading] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState('upi'); // 'upi' or 'card'
+  const [paymentStatus, setPaymentStatus] = useState(null); // null, 'success', 'failed'
+  const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState(null);
-  const [paymentSuccess, setPaymentSuccess] = useState(false);
-  const [paymentResult, setPaymentResult] = useState(null);
+  const [transactionDetails, setTransactionDetails] = useState(null);
   const [bookingResult, setBookingResult] = useState(null);
+  const [transactionHistory, setTransactionHistory] = useState([]);
 
   // Reset payment state
-  const resetPaymentState = () => {
-    setLoading(false);
+  const resetPaymentState = useCallback(() => {
+    setPaymentStatus(null);
     setError(null);
-    setPaymentSuccess(false);
-    setPaymentResult(null);
+    setTransactionDetails(null);
     setBookingResult(null);
-  };
+    setIsProcessing(false);
+  }, []);
 
-  // Process payment based on selected method
-  const processPayment = async (paymentDetails, bookingDetails) => {
-    setLoading(true);
-    setError(null);
-    setPaymentSuccess(false);
-    setPaymentResult(null);
-    setBookingResult(null);
-
+  // Load transaction history
+  const loadTransactionHistory = useCallback(async () => {
     try {
-      let result;
-
-      if (paymentMethod === 'card') {
-        result = await paymentService.processCardPayment(paymentDetails);
-      } else if (paymentMethod === 'upi') {
-        result = await paymentService.processUpiPayment(paymentDetails.upiId);
-      } else {
-        throw new Error('Invalid payment method');
-      }
-
-      setPaymentResult(result);
-      setPaymentSuccess(true);
-
-      // Create booking with payment
-      const booking = await paymentService.createBookingWithPayment(bookingDetails, result);
-      setBookingResult(booking);
-
-      return { paymentResult: result, bookingResult: booking };
+      const history = await paymentService.transactionHistory;
+      setTransactionHistory(history);
+      return history;
     } catch (error) {
+      console.error('Error loading transaction history:', error);
+      return [];
+    }
+  }, []);
+
+  // Handle payment
+  const handlePayment = useCallback(async (paymentDetails, bookingDetails) => {
+    setIsProcessing(true);
+    setError(null);
+    
+    try {
+      // Process payment based on method
+      const paymentResult = await (paymentMethod === 'card' 
+        ? paymentService.processCardPayment(paymentDetails)
+        : paymentService.processUpiPayment(paymentDetails.upiId));
+      
+      setTransactionDetails(paymentResult);
+      
+      // If booking details are provided, create a booking
+      if (bookingDetails) {
+        const booking = await paymentService.createBookingWithPayment(bookingDetails, paymentResult);
+        setBookingResult(booking);
+      }
+      
+      setPaymentStatus('success');
+      return paymentResult;
+    } catch (error) {
+      console.error('Payment error:', error);
       setError(error);
+      setPaymentStatus('failed');
       throw error;
     } finally {
-      setLoading(false);
+      setIsProcessing(false);
     }
-  };
+  }, [paymentMethod]);
+
+  // Verify payment
+  const verifyPayment = useCallback(async (paymentId) => {
+    try {
+      return await paymentService.verifyPayment(paymentId);
+    } catch (error) {
+      console.error('Verification error:', error);
+      throw error;
+    }
+  }, []);
+
+  // Get payment receipt
+  const getPaymentReceipt = useCallback(async (paymentId) => {
+    try {
+      return await paymentService.getPaymentReceipt(paymentId);
+    } catch (error) {
+      console.error('Receipt generation error:', error);
+      throw error;
+    }
+  }, []);
 
   const value = {
     paymentMethod,
     setPaymentMethod,
-    loading,
+    paymentStatus,
+    isProcessing,
     error,
-    paymentSuccess,
-    paymentResult,
+    transactionDetails,
     bookingResult,
-    processPayment,
+    transactionHistory,
+    handlePayment,
+    verifyPayment,
+    getPaymentReceipt,
     resetPaymentState,
-    savedPaymentMethods: paymentService.savedPaymentMethods,
-    savedUpiIds: paymentService.savedUpiIds,
+    loadTransactionHistory,
+    savedPaymentMethods,
+    savedUpiIds
   };
 
-  return <PaymentContext.Provider value={value}>{children}</PaymentContext.Provider>;
+  return (
+    <PaymentContext.Provider value={value}>
+      {children}
+    </PaymentContext.Provider>
+  );
 };

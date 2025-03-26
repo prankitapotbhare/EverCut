@@ -6,7 +6,9 @@ import BookingSummary from '@/components/salon/BookingSummary';
 import StylistSelector from '@/components/salon/StylistSelector';
 import DateSelector from '@/components/salon/DateSelector';
 import TimeSelector from '@/components/salon/TimeSelector';
+import PaymentModal from '@/components/payment/PaymentModal';
 import { useSalon } from '@/contexts/SalonContext';
+import { usePayment } from '@/contexts/PaymentContext';
 import { BookingPageSkeleton } from '@/components/common/SkeletonLoader';
 
 // Mock stylists data
@@ -29,8 +31,10 @@ const BookingPage = () => {
   const [selectedStylist, setSelectedStylist] = useState(null);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState(null);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   const { fetchSalonById, loading: contextLoading, error: contextError } = useSalon();
+  const { resetPaymentState } = usePayment();
 
   useEffect(() => {
     // Get selected services from location state
@@ -70,25 +74,16 @@ const BookingPage = () => {
   };
 
   const handlePayNow = () => {
-    // Handle payment logic
-    console.log('Processing payment for:', {
-      salon,
-      services: selectedServices,
-      stylist: selectedStylist,
-      date: selectedDate,
-      time: selectedTime
-    });
-    
-    // Navigate to confirmation page
-    // navigate(`/salon/${id}/confirmation`, { 
-    //   state: { 
-    //     salon, 
-    //     services: selectedServices, 
-    //     stylist: selectedStylist, 
-    //     date: selectedDate, 
-    //     time: selectedTime 
-    //   } 
-    // });
+    // Open payment modal
+    setShowPaymentModal(true);
+  };
+  
+  // Handle payment modal close
+  const handlePaymentModalClose = () => {
+    setShowPaymentModal(false);
+    // No need to navigate to confirmation page anymore
+    // Just reset the payment state when modal is closed
+    resetPaymentState();
   };
 
   // Format date for display
@@ -170,6 +165,19 @@ const BookingPage = () => {
         </div>
       </div>
       <Footer />
+      
+      {/* Payment Modal */}
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={handlePaymentModalClose}
+        bookingDetails={{
+          salon,
+          services: selectedServices,
+          stylist: selectedStylist,
+          date: selectedDate,
+          time: selectedTime
+        }}
+      />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 import { SalonProvider } from '@/contexts/SalonContext';
+import { PaymentProvider } from '@/contexts/PaymentContext';
 import Signup from '@/pages/auth/Signup';
 import Login from '@/pages/auth/Login';
 import ForgotPassword from '@/pages/auth/ForgotPassword';
@@ -120,7 +121,9 @@ function App() {
     <ErrorBoundary>
       <AuthProvider>
         <SalonProvider>
-          <AppRoutes />
+          <PaymentProvider>
+            <AppRoutes />
+          </PaymentProvider>
         </SalonProvider>
       </AuthProvider>
     </ErrorBoundary>
