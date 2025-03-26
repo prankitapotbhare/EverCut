@@ -101,7 +101,7 @@ const PaymentModal = ({ isOpen, onClose, bookingDetails }) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-white bg-opacity-[90%] flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center z-50 p-4">
       {content}
     </div>
   );
