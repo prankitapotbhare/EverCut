@@ -13,6 +13,8 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@stripe/react-stripe-js": "^3.5.1",
+    "@stripe/stripe-js": "^6.1.0",
     "@tailwindcss/vite": "^4.0.8",
     "firebase": "^11.3.1",
     "firebase-auth-react": "^2.0.12",
