@@ -25,12 +25,22 @@ const TimeSelector = ({ selectedTime, onTimeSelect }) => {
 
   return (
     <div className="border rounded-lg p-4 mt-6">
+      <div className="mb-3 flex justify-between items-center">
+        <h3 className="font-medium">Available Time Slots</h3>
+        {selectedTime ? (
+          <span className="text-sm text-green-600 font-medium">Selected: {selectedTime}</span>
+        ) : (
+          <span className="text-sm text-amber-600 font-medium">Please select a time</span>
+        )}
+      </div>
       <div className="grid grid-cols-5 gap-2">
         {timeSlots.map((time, index) => (
           <button
             key={index}
-            className={`py-2 px-1 text-sm rounded-lg cursor-pointer ${
-              time === selectedTime ? 'bg-blue-600 text-white' : 'bg-gray-100 hover:bg-gray-200'
+            className={`py-2 px-1 text-sm rounded-lg cursor-pointer transition-all ${
+              time === selectedTime 
+                ? 'bg-blue-600 text-white ring-2 ring-blue-300' 
+                : 'bg-gray-100 hover:bg-gray-200'
             }`}
             onClick={() => onTimeSelect(time)}
           >

@@ -107,7 +107,7 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
 
   return (
     <div className="date-selector">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-2">
         <span className="font-medium text-lg">{getMonthName()}</span>
         <div className="flex space-x-1 bg-gray-100 rounded-lg">
           <button 
@@ -126,6 +126,12 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
           </button>
         </div>
       </div>
+      
+      <p className="text-sm text-gray-600 mb-2">
+        {selectedDate ? 
+          `Selected: ${selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}` : 
+          'Please select a date'}
+      </p>
       
       <div className="relative">
         <div 
