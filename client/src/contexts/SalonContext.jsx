@@ -39,12 +39,28 @@ export const SalonProvider = ({ children }) => {
     fetchInitialData();
   }, []);
 
+  // Add a salon cache to avoid refetching
+  const [salonCache, setSalonCache] = useState({});
+
   // Function to fetch a specific salon by ID
   const fetchSalonById = async (id) => {
     try {
+      // Check if we already have this salon in cache
+      if (salonCache[id]) {
+        setCurrentSalon(salonCache[id]);
+        return salonCache[id];
+      }
+
       setLoading(true);
       const salonData = await getSalonById(id);
       setCurrentSalon(salonData);
+      
+      // Update the cache
+      setSalonCache(prev => ({
+        ...prev,
+        [id]: salonData
+      }));
+      
       setError(null);
       return salonData;
     } catch (err) {

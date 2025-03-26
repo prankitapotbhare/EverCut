@@ -49,8 +49,13 @@ const SalonDetailPage = () => {
   };
 
   const handleContinue = () => {
-    // Navigate to booking page with selected services
-    navigate(`/salon/${id}/booking`, { state: { selectedServices } });
+    // Navigate to booking page with selected services AND salon data
+    navigate(`/salon/${id}/booking`, { 
+      state: { 
+        selectedServices,
+        salonData: salon // Pass the salon data to avoid refetching
+      } 
+    });
   };
 
   // Get current items based on active tab

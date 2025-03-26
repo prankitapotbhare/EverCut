@@ -42,20 +42,26 @@ const BookingPage = () => {
       setSelectedServices(location.state.selectedServices);
     }
 
-    // Fetch salon data
-    const fetchSalon = async () => {
-      try {
-        setLoading(true);
-        const salonData = await fetchSalonById(parseInt(id));
-        setSalon(salonData);
-      } catch (error) {
-        console.error('Error fetching salon details:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    // Check if salon data was passed from previous page
+    if (location.state?.salonData) {
+      setSalon(location.state.salonData);
+      setLoading(false); // No need to fetch, we already have the data
+    } else {
+      // Fetch salon data only if not provided in location state
+      const fetchSalon = async () => {
+        try {
+          setLoading(true);
+          const salonData = await fetchSalonById(parseInt(id));
+          setSalon(salonData);
+        } catch (error) {
+          console.error('Error fetching salon details:', error);
+        } finally {
+          setLoading(false);
+        }
+      };
 
-    fetchSalon();
+      fetchSalon();
+    }
   }, [id, location.state, fetchSalonById]);
   
   // Track combined loading state to prevent flickering

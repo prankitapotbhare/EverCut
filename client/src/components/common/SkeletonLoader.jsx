@@ -17,10 +17,10 @@ Skeleton.propTypes = {
 const BookingPageSkeleton = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Navbar placeholder */}
+      {/* Navbar placeholder - make it match the real navbar height */}
       <div className="h-16 bg-white shadow-sm"></div>
       
-      <div className="max-w-8xl mx-auto py-6 px-12">
+      <div className="max-w-8xl mx-auto py-6 px-12 transition-opacity duration-300">
         {/* Salon title and address */}
         <div className="mb-6">
           <Skeleton className="h-8 w-64 mb-2" />
