@@ -270,10 +270,10 @@ const BookingPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <Navbar />
-      <div className="max-w-8xl mx-auto py-6 px-12">
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-1">{salon.name}</h1>
-          <p className="text-gray-600">
+      <div className="max-w-8xl mx-auto py-4 sm:py-6 px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="mb-4 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-1">{salon.name}</h1>
+          <p className="text-sm sm:text-base text-gray-600">
             Closed opens at 11:00 am • Pillar number 106, opposite to corner bar address maker, Bengaluru, Karnataka 560008
           </p>
         </div>
@@ -288,9 +288,6 @@ const BookingPage = () => {
               availableStylists={selectedDate ? useSalonist().availableSalonists : []}
             />
           </div>
-
-          {/* Vertical divider */}
-          {/* <div className="hidden md:block w-px bg-gray-200 mx-4"></div> */}
 
           {/* Middle section - Date & Time Selection */}
           <div className="md:w-[40%] mb-6 md:mb-0">
