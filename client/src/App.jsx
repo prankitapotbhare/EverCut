@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 import { SalonProvider } from '@/contexts/SalonContext';
 import { PaymentProvider } from '@/contexts/PaymentContext';
+import { SalonistProvider } from '@/contexts/SalonistContext';
 import Signup from '@/pages/auth/Signup';
 import Login from '@/pages/auth/Login';
 import ForgotPassword from '@/pages/auth/ForgotPassword';
@@ -122,7 +123,9 @@ function App() {
       <AuthProvider>
         <SalonProvider>
           <PaymentProvider>
-            <AppRoutes />
+            <SalonistProvider>
+              <AppRoutes />
+            </SalonistProvider>
           </PaymentProvider>
         </SalonProvider>
       </AuthProvider>
