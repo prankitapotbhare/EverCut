@@ -3,6 +3,9 @@ import React from 'react';
 const BookingSummary = ({ salon, selectedServices, selectedStylist, selectedDate, selectedTime, onPayNow }) => {
   const total = selectedServices.reduce((sum, service) => sum + service.price, 0);
   
+  // Check if all required selections are made
+  const isBookingComplete = selectedStylist && selectedDate && selectedTime;
+  
   const formatDate = (date) => {
     if (!date) return '';
     return `${date.getDate()} ${date.toLocaleString('default', { weekday: 'long' })}`;
@@ -20,11 +23,24 @@ const BookingSummary = ({ salon, selectedServices, selectedStylist, selectedDate
         <p className="text-sm text-gray-600">{salon.address}</p>
       </div>
 
-      {selectedStylist && selectedDate && selectedTime && (
-        <div className="mb-3 text-sm">
-          <div className="font-medium">{selectedStylist.name} • {formatDate(selectedDate)} • {selectedTime}</div>
-        </div>
-      )}
+      {/* Show selected details or prompt for selection */}
+      <div className="mb-3 text-sm">
+        {selectedStylist ? (
+          <div className="font-medium">
+            {selectedStylist.name} {selectedDate ? `• ${formatDate(selectedDate)}` : ''} {selectedTime ? `• ${selectedTime}` : ''}
+          </div>
+        ) : (
+          <div className="text-amber-600 font-medium">Please select a stylist</div>
+        )}
+        
+        {selectedStylist && !selectedDate && (
+          <div className="text-amber-600 font-medium mt-1">Please select a date</div>
+        )}
+        
+        {selectedStylist && selectedDate && !selectedTime && (
+          <div className="text-amber-600 font-medium mt-1">Please select a time</div>
+        )}
+      </div>
 
       {selectedServices.map((service, index) => (
         <div key={index} className="py-3">
@@ -43,9 +59,14 @@ const BookingSummary = ({ salon, selectedServices, selectedStylist, selectedDate
         </div>
         <button 
           onClick={onPayNow}
-          className="w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600 cursor-pointer"
+          disabled={!isBookingComplete}
+          className={`w-full py-3 rounded-lg font-medium ${
+            isBookingComplete 
+              ? 'bg-green-500 text-white hover:bg-green-600 cursor-pointer' 
+              : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+          }`}
         >
-          Pay Now
+          {isBookingComplete ? 'Pay Now' : 'Complete Selection'}
         </button>
       </div>
     </div>

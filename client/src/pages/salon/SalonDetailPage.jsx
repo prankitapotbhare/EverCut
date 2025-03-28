@@ -49,8 +49,13 @@ const SalonDetailPage = () => {
   };
 
   const handleContinue = () => {
-    // Navigate to booking page with selected services
-    navigate(`/salon/${id}/booking`, { state: { selectedServices } });
+    // Navigate to booking page with selected services AND salon data
+    navigate(`/salon/${id}/booking`, { 
+      state: { 
+        selectedServices,
+        salonData: salon // Pass the salon data to avoid refetching
+      } 
+    });
   };
 
   // Get current items based on active tab
@@ -109,27 +114,27 @@ const SalonDetailPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <Navbar />
-      <div className="max-w-8xl mx-auto py-6 px-12">
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold mb-1">{salon.name}</h1>
-          <p className="text-gray-600">
+      <div className="max-w-8xl mx-auto py-4 sm:py-6 px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="mb-4 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-1">{salon.name}</h1>
+          <p className="text-sm sm:text-base text-gray-600">
             Closed opens at 11:00 am • {salon.location.address}, {salon.location.city}, {salon.location.state} {salon.location.zip}
           </p>
         </div>
 
         {/* Main salon image */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <img 
             src={salon.image} 
             alt={salon.name}
-            className="w-full h-80 object-cover rounded-lg"
+            className="w-full h-60 sm:h-80 object-cover rounded-lg"
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {/* Services section - 2/3 width */}
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold mb-4">Shop Services</h2>
+            <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Shop Services</h2>
             
             <ServiceTabs activeTab={activeTab} setActiveTab={setActiveTab} />
             

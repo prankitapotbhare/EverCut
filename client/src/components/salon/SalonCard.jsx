@@ -49,7 +49,7 @@ const SalonCard = ({ salon }) => {
           </div>
           <button 
             onClick={handleBookNow}
-            className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors cursor-pointer"
+            className="bg-blue-600 text-white px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base rounded-full font-medium hover:bg-blue-700 transition-colors cursor-pointer whitespace-nowrap"
           >
             Book Now
           </button>

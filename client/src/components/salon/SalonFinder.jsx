@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Search, MapPin, ChevronDown } from 'lucide-react';
+import { Search } from 'lucide-react';
 import SalonCard from './SalonCard';
+import LocationSelector from '../common/LocationSelector';
 import { useSalon } from '@/contexts/SalonContext';
 
 const SalonFinder = () => {
@@ -12,6 +13,7 @@ const SalonFinder = () => {
 
   const { allSalons, loading: contextLoading, error: contextError } = useSalon();
 
+  // This effect sets salons once allSalons is available
   useEffect(() => {
     if (allSalons.length > 0) {
       setSalons(allSalons);
@@ -19,8 +21,18 @@ const SalonFinder = () => {
     }
   }, [allSalons]);
 
+  // Handle location change from LocationSelector
+  const handleLocationChange = (newLocation) => {
+    setLocation(newLocation);
+  };
+
+  // Optionally, detect location automatically on mount
+  useEffect(() => {
+    // This will be handled by the LocationSelector component
+  }, []);
+
   const filteredSalons = useMemo(() => {
-    const filtered = salons.filter(salon => 
+    const filtered = salons.filter(salon =>
       salon.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     return showAll ? filtered : filtered.slice(0, 6);
@@ -60,12 +72,13 @@ const SalonFinder = () => {
           <Search className="absolute right-6 top-1/2 transform -translate-y-1/2 text-gray-400" />
         </div>
 
-        {/* Location Selector */}
-        <button className="mt-4 flex items-center gap-2 mx-auto text-gray-700">
-          <MapPin size={18} />
-          {location}
-          <ChevronDown size={18} />
-        </button>
+        {/* Location Selector Component */}
+        <div className="mt-4">
+          <LocationSelector 
+            selectedLocation={location} 
+            onLocationChange={handleLocationChange} 
+          />
+        </div>
       </div>
 
       {/* Salon Cards Grid */}

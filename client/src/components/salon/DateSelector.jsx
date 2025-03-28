@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const DateSelector = ({ selectedDate, onDateSelect }) => {
+const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
   const scrollContainerRef = useRef(null);
   
   // Initialize with today's date
@@ -14,10 +14,10 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
   const [currentMonth, setCurrentMonth] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
   const [dates, setDates] = useState([]);
   
-  // Generate dates when component mounts or month changes
+  // Generate dates when component mounts, month changes, or available dates change
   useEffect(() => {
     generateMonthDates();
-  }, [currentMonth, today]);
+  }, [currentMonth, today, availableDates]);
   
   // Scroll to today or selected date when dates change
   useEffect(() => {
@@ -50,13 +50,18 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
       
       const isBeforeToday = currentDate < today;
       
+      // Check if this date is in the availableDates array
+      const isAvailable = availableDates.length === 0 || 
+        availableDates.some(availableDate => isSameDay(availableDate, currentDate));
+      
       dateRange.push({
         date: currentDate,
         day: currentDate.getDate(),
         dayName: currentDate.toLocaleString('default', { weekday: 'short' }),
         month: currentDate.getMonth(),
         year: currentDate.getFullYear(),
-        isSelectable: !isBeforeToday,
+        isSelectable: !isBeforeToday && (availableDates.length === 0 || isAvailable),
+        isAvailable: isAvailable,
         isToday: isSameDay(currentDate, today)
       });
     }
@@ -107,7 +112,7 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
 
   return (
     <div className="date-selector">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-2">
         <span className="font-medium text-lg">{getMonthName()}</span>
         <div className="flex space-x-1 bg-gray-100 rounded-lg">
           <button 
@@ -127,6 +132,12 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
         </div>
       </div>
       
+      <p className="text-sm text-gray-600 mb-2">
+        {selectedDate ? 
+          `Selected: ${selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}` : 
+          'Please select a date'}
+      </p>
+      
       <div className="relative">
         <div 
           ref={scrollContainerRef}
@@ -142,15 +153,20 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
                   ? 'bg-blue-600 text-white shadow-md' 
                   : dateObj.isToday
                     ? 'bg-blue-100 hover:bg-blue-200'
-                    : dateObj.isSelectable 
-                      ? 'bg-gray-100 hover:bg-gray-200' 
-                      : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : dateObj.isSelectable && dateObj.isAvailable
+                      ? 'bg-green-50 hover:bg-green-100 border border-green-200' 
+                      : dateObj.isSelectable 
+                        ? 'bg-gray-100 hover:bg-gray-200' 
+                        : 'bg-gray-100 text-gray-400 cursor-not-allowed'
               }`}
               onClick={() => dateObj.isSelectable && onDateSelect(dateObj.date)}
               aria-label={`Select ${dateObj.date.toLocaleDateString()}`}
             >
               <span className="text-xs font-medium">{dateObj.dayName}</span>
               <span className="text-lg font-medium">{dateObj.day}</span>
+              {dateObj.isAvailable && availableDates.length > 0 && (
+                <span className="w-2 h-2 bg-green-500 rounded-full mt-1"></span>
+              )}
             </button>
           ))}
         </div>
