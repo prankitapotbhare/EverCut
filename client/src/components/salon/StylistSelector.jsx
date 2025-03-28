@@ -17,7 +17,7 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
           return (
             <div 
               key={stylist.id}
-              className={`relative bg-gray-100 rounded-lg p-4 flex flex-col items-center cursor-pointer transition-all hover:bg-gray-200 ${
+              className={`relative bg-gray-100 rounded-lg p-4 flex flex-col items-center ${availableStylists.length > 0 && !isAvailable ? '' : 'cursor-pointer'} transition-all ${availableStylists.length > 0 && !isAvailable ? '' : 'hover:bg-gray-200'} ${
                 isSelected
                   ? 'ring-2 ring-green-500 bg-green-50' 
                   : availableStylists.length > 0 && isAvailable
@@ -26,7 +26,12 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
                       ? 'bg-red-50 border border-red-200'
                       : ''
               }`}
-              onClick={() => onStylistSelect(stylist)}
+              onClick={() => {
+                // Only allow selection if stylist is available or if no availability filtering is active
+                if (isAvailable || availableStylists.length === 0) {
+                  onStylistSelect(stylist);
+                }
+              }}
             >
               {isSelected && (
                 <div className="absolute top-2 right-2 w-4 h-4 bg-green-500 rounded-full"></div>
@@ -41,8 +46,8 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
                 src={stylist.image} 
                 alt={stylist.name}
                 className={`w-16 h-16 rounded-full object-cover mb-2 ${
-                  availableStylists.length > 0 && !isAvailable && !isSelected
-                    ? 'opacity-70'
+                  availableStylists.length > 0 && !isAvailable
+                    ? 'opacity-50 grayscale'
                     : ''
                 }`}
               />

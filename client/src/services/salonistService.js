@@ -1,6 +1,6 @@
 import mockSalonists from '../data/mockSalonists';
 import { mockSchedules } from '../data/mockSchedules';
-import { isTimeSlotInPast, getAvailableDatesForSalonist, getAvailableSalonistsForDate } from './schedulingService';
+import { isTimeSlotInPast } from './schedulingService';
 
 // Filter salonists by service type
 export const getSalonistsByServiceType = (serviceType) => {
