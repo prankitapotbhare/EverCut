@@ -6,6 +6,7 @@ import {
   getSalonistAvailability,
   getAvailableSalonists
 } from '@/services/salonistService';
+import { mockSchedules, isTimeSlotInPast } from '../data/mockSchedules';
 
 const SalonistContext = createContext({
   allSalonists: [],
