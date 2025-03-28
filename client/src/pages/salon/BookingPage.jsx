@@ -165,7 +165,18 @@ const BookingPage = () => {
         return () => clearTimeout(timeoutId);
       }
     }
-  }, [selectedStylist?.id, selectedDate, fetchAvailability, fetchAvailableDatesForSelectedStylist]);
+  }, [selectedStylist?.id, fetchAvailableDatesForSelectedStylist]);
+  
+  // Separate effect for date changes to avoid dependency conflicts
+  useEffect(() => {
+    if (selectedStylist && selectedDate) {
+      const timeoutId = setTimeout(() => {
+        fetchAvailability();
+      }, 300);
+      
+      return () => clearTimeout(timeoutId);
+    }
+  }, [selectedDate, selectedStylist?.id, fetchAvailability]);
   
   // When date changes, fetch available stylists for that date
   useEffect(() => {
@@ -173,19 +184,26 @@ const BookingPage = () => {
       // Fetch available stylists for this date
       fetchAvailableStylistsForSelectedDate();
       
-      // If stylist is already selected, fetch availability
+      // If stylist is already selected, check if they're still available on this date
+      // This will be handled by the separate effect for time slot fetching
       if (selectedStylist) {
-        // Add a small delay to prevent rapid re-renders
-        const timeoutId = setTimeout(() => {
-          fetchAvailability();
-          // Reset selected time when date changes
-          setSelectedTime(null);
-        }, 300);
-        
-        return () => clearTimeout(timeoutId);
+        // Reset selected time when date changes
+        setSelectedTime(null);
       }
     }
-  }, [selectedDate?.toISOString?.()?.split('T')[0], salon?.id, selectedStylist, fetchAvailability, fetchAvailableStylistsForSelectedDate]);
+  }, [selectedDate?.toISOString?.()?.split('T')[0], salon?.id, fetchAvailableStylistsForSelectedDate]);
+  
+  // Separate effect to handle time slot availability when both date and stylist are selected
+  useEffect(() => {
+    if (selectedDate && selectedStylist && salon) {
+      // Add a small delay to prevent rapid re-renders
+      const timeoutId = setTimeout(() => {
+        fetchAvailability();
+      }, 300);
+      
+      return () => clearTimeout(timeoutId);
+    }
+  }, [selectedDate?.toISOString?.()?.split('T')[0], selectedStylist?.id, salon?.id, fetchAvailability]);
   
   // Effect to clear selected time if it's no longer available
   useEffect(() => {

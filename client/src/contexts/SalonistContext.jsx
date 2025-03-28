@@ -4,9 +4,10 @@ import {
   getSalonistById, 
   getSalonistsBySalonId, 
   getSalonistAvailability,
-  getAvailableSalonists
+  getAvailableSalonists,
+  getAvailableDatesForSalonist as fetchDatesForSalonist,
+  getAvailableSalonistsForDate as fetchSalonistsForDate
 } from '@/services/salonistService';
-import { mockSchedules, isTimeSlotInPast } from '../data/mockSchedules';
 
 const SalonistContext = createContext({
   allSalonists: [],
@@ -214,14 +215,8 @@ export const SalonistProvider = ({ children }) => {
       
       setLoading(true);
       
-      // In a real app, this would be an API call to get available dates
-      // For now, we'll simulate by checking the mockSchedules
-      const salonistSchedule = mockSchedules[salonistId] || {};
-      
-      // Get dates with at least one available time slot
-      const availableDatesData = Object.entries(salonistSchedule)
-        .filter(([date, timeSlots]) => timeSlots.length > 0)
-        .map(([date]) => new Date(date));
+      // Use the service function to get available dates
+      const availableDatesData = await fetchDatesForSalonist(salonistId);
       
       setAvailableDates(availableDatesData);
       
@@ -258,22 +253,8 @@ export const SalonistProvider = ({ children }) => {
       
       setLoading(true);
       
-      // Start with all salonists or filter by salon if salonId is provided
-      let salonistsToCheck = [];
-      
-      if (salonId) {
-        // Get salonists for this salon
-        salonistsToCheck = await fetchSalonistsBySalonId(salonId);
-      } else {
-        salonistsToCheck = await fetchAllSalonists();
-      }
-      
-      // Filter salonists who have availability on this date
-      const availableSalonistsData = salonistsToCheck.filter(salonist => {
-        const salonistSchedule = mockSchedules[salonist.id] || {};
-        const availableSlots = salonistSchedule[dateString] || [];
-        return availableSlots.length > 0;
-      });
+      // Use the service function to get available salonists for this date
+      const availableSalonistsData = await fetchSalonistsForDate(date, salonId);
       
       // Update state and cache
       setAvailableSalonists(availableSalonistsData);

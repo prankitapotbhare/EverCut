@@ -14,10 +14,10 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
   const [currentMonth, setCurrentMonth] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
   const [dates, setDates] = useState([]);
   
-  // Generate dates when component mounts or month changes
+  // Generate dates when component mounts, month changes, or available dates change
   useEffect(() => {
     generateMonthDates();
-  }, [currentMonth, today]);
+  }, [currentMonth, today, availableDates]);
   
   // Scroll to today or selected date when dates change
   useEffect(() => {

@@ -33,8 +33,14 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [] }) =
   const defaultTimeSlots = useMemo(() => generateTimeSlots(), []);
   
   // Use available time slots if provided, otherwise generate default slots
+  // But only show default slots if no specific availability data is provided
   const timeSlots = useMemo(() => {
-    return availableTimeSlots.length > 0 ? availableTimeSlots : defaultTimeSlots;
+    // If we have explicit availability data (even if empty), use it
+    if (Array.isArray(availableTimeSlots)) {
+      return availableTimeSlots;
+    }
+    // Otherwise fall back to default slots (when component is first rendered)
+    return defaultTimeSlots;
   }, [availableTimeSlots, defaultTimeSlots]);
 
   return (

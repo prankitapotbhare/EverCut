@@ -1,5 +1,6 @@
 import mockSalonists from '../data/mockSalonists';
-import { mockSchedules, isTimeSlotInPast } from '../data/mockSchedules';
+import { mockSchedules } from '../data/mockSchedules';
+import { isTimeSlotInPast, getAvailableDatesForSalonist, getAvailableSalonistsForDate } from './schedulingService';
 
 // Filter salonists by service type
 export const getSalonistsByServiceType = (serviceType) => {
@@ -172,6 +173,53 @@ export const getAvailableSalonists = (date, time, salonId = null, serviceTypes =
       });
       
       resolve(availableSalonists);
+    }, 300);
+  });
+};
+
+// Get available dates for a specific salonist
+export const getAvailableDatesForSalonist = (salonistId) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      // Get schedule for this salonist
+      const salonistSchedule = mockSchedules[salonistId] || {};
+      
+      // Get dates with at least one available time slot
+      const availableDatesData = Object.entries(salonistSchedule)
+        .filter(([date, timeSlots]) => timeSlots.length > 0)
+        .map(([date]) => new Date(date));
+      
+      resolve(availableDatesData);
+    }, 300);
+  });
+};
+
+// Get available salonists for a specific date (without time)
+export const getAvailableSalonistsForDate = async (date, salonId = null) => {
+  return new Promise(async (resolve) => {
+    setTimeout(async () => {
+      const dateString = date instanceof Date 
+        ? date.toISOString().split('T')[0] 
+        : new Date(date).toISOString().split('T')[0];
+      
+      // Start with all salonists or filter by salon if salonId is provided
+      let salonistsToCheck = [];
+      
+      if (salonId) {
+        // Get salonists for this salon
+        salonistsToCheck = await getSalonistsBySalonId(salonId);
+      } else {
+        salonistsToCheck = await getSalonists();
+      }
+      
+      // Filter salonists who have availability on this date
+      const availableSalonistsData = salonistsToCheck.filter(salonist => {
+        const salonistSchedule = mockSchedules[salonist.id] || {};
+        const availableSlots = salonistSchedule[dateString] || [];
+        return availableSlots.length > 0;
+      });
+      
+      resolve(availableSalonistsData);
     }, 300);
   });
 };
