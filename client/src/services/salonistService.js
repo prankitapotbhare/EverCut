@@ -216,7 +216,12 @@ export const getAvailableSalonistsForDate = async (date, salonId = null) => {
       const availableSalonistsData = salonistsToCheck.filter(salonist => {
         const salonistSchedule = mockSchedules[salonist.id] || {};
         const availableSlots = salonistSchedule[dateString] || [];
-        return availableSlots.length > 0;
+        
+        // Check if there are any available slots for this date that are not in the past
+        const selectedDate = new Date(dateString);
+        const filteredSlots = availableSlots.filter(timeSlot => !isTimeSlotInPast(selectedDate, timeSlot));
+        
+        return filteredSlots.length > 0;
       });
       
       resolve(availableSalonistsData);

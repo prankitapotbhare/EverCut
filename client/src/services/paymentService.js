@@ -28,7 +28,7 @@ export const savedPaymentMethods = [
     type: 'card',
     card: {
       brand: 'mastercard',
-      last4: '5678',
+      last4: '1111',
       exp_month: 10,
       exp_year: 2024,
     },

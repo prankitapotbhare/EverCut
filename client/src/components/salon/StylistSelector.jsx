@@ -11,13 +11,15 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
       </p>
       <div className="grid grid-cols-2 gap-4">
         {stylists.map(stylist => {
+          // Only consider a stylist available if they're in the availableStylists array
+          // If availableStylists is empty, all stylists are considered available
           const isAvailable = availableStylists.length === 0 || availableStylists.some(s => s.id === stylist.id);
           const isSelected = selectedStylist?.id === stylist.id;
           
           return (
             <div 
               key={stylist.id}
-              className={`relative bg-gray-100 rounded-lg p-4 flex flex-col items-center ${availableStylists.length > 0 && !isAvailable ? '' : 'cursor-pointer'} transition-all ${availableStylists.length > 0 && !isAvailable ? '' : 'hover:bg-gray-200'} ${
+              className={`relative bg-gray-100 rounded-lg p-4 flex flex-col items-center ${isAvailable ? 'cursor-pointer hover:bg-gray-200' : 'cursor-not-allowed'} transition-all ${
                 isSelected
                   ? 'ring-2 ring-green-500 bg-green-50' 
                   : availableStylists.length > 0 && isAvailable
@@ -27,8 +29,9 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
                       : ''
               }`}
               onClick={() => {
-                // Only allow selection if stylist is available or if no availability filtering is active
-                if (isAvailable || availableStylists.length === 0) {
+                // Only allow selection if stylist is available
+                // If availableStylists array is empty, all stylists are considered available
+                if (isAvailable) {
                   onStylistSelect(stylist);
                 }
               }}
