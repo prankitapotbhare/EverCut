@@ -39,6 +39,11 @@ const PaymentModal = ({ isOpen, onClose, bookingDetails }) => {
     }
   };
 
+  const handleCancel = () => {
+    resetPaymentState();
+    onClose();
+  };
+
   // If modal is not open, don't render anything
   if (!isOpen) return null;
 
@@ -54,6 +59,20 @@ const PaymentModal = ({ isOpen, onClose, bookingDetails }) => {
   } else {
     content = (
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto">
+        {/* Header with close button */}
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-bold">Payment</h2>
+          <button 
+            onClick={handleCancel}
+            className="text-gray-500 hover:text-gray-700 focus:outline-none"
+            aria-label="Close"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        
         {/* Payment Method Selection */}
         <div className="mb-6">
           <div className="flex space-x-4 mb-4">
@@ -90,10 +109,21 @@ const PaymentModal = ({ isOpen, onClose, bookingDetails }) => {
             <UpiPaymentForm onSubmit={handlePaymentSubmit} loading={isProcessing} />
           )}
 
-          {/* Total Amount */}
-          <div className="flex justify-between items-center mt-6">
-            <span className="font-medium">Total:</span>
-            <span className="font-bold">₹ {total}</span>
+          {/* Total Amount and Cancel Button */}
+          <div className="mt-6">
+            <div className="flex justify-between items-center mb-4">
+              <span className="font-medium">Total:</span>
+              <span className="font-bold">₹ {total}</span>
+            </div>
+            
+            {/* Cancel Payment Button */}
+            <button
+              onClick={handleCancel}
+              className="w-full mt-2 border border-gray-300 text-gray-700 py-2 px-4 rounded-md font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              disabled={isProcessing}
+            >
+              Cancel Payment
+            </button>
           </div>
         </div>
       </div>
