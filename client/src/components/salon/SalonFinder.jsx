@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Search, MapPin, ChevronDown } from 'lucide-react';
+import { Search } from 'lucide-react';
 import SalonCard from './SalonCard';
+import LocationSelector from '../common/LocationSelector';
 import { useSalon } from '@/contexts/SalonContext';
 
 const SalonFinder = () => {
@@ -20,45 +21,14 @@ const SalonFinder = () => {
     }
   }, [allSalons]);
 
-  // Function to detect the user's location and update the city name
-  const detectLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          const { latitude, longitude } = position.coords;
-          try {
-            const response = await fetch(
-              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
-            );
-            const data = await response.json();
-            // Check for different keys that may contain the city name
-            if (data.address) {
-              if (data.address.city) {
-                setLocation(data.address.city);
-              } else if (data.address.town) {
-                setLocation(data.address.town);
-              } else if (data.address.village) {
-                setLocation(data.address.village);
-              } else {
-                setLocation("Unknown Location");
-              }
-            }
-          } catch (error) {
-            console.error('Error fetching location data:', error);
-          }
-        },
-        (error) => {
-          console.error('Geolocation error:', error);
-        }
-      );
-    } else {
-      console.error('Geolocation is not supported by this browser.');
-    }
+  // Handle location change from LocationSelector
+  const handleLocationChange = (newLocation) => {
+    setLocation(newLocation);
   };
 
   // Optionally, detect location automatically on mount
   useEffect(() => {
-    detectLocation();
+    // This will be handled by the LocationSelector component
   }, []);
 
   const filteredSalons = useMemo(() => {
@@ -102,15 +72,13 @@ const SalonFinder = () => {
           <Search className="absolute right-6 top-1/2 transform -translate-y-1/2 text-gray-400" />
         </div>
 
-        {/* Location Selector */}
-        <button 
-          onClick={detectLocation}
-          className="mt-4 flex items-center gap-2 mx-auto text-gray-700"
-        >
-          <MapPin size={18} />
-          {location}
-          <ChevronDown size={18} />
-        </button>
+        {/* Location Selector Component */}
+        <div className="mt-4">
+          <LocationSelector 
+            selectedLocation={location} 
+            onLocationChange={handleLocationChange} 
+          />
+        </div>
       </div>
 
       {/* Salon Cards Grid */}
