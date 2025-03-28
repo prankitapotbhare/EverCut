@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [] }) => {
   // Generate realistic time slots from 8:00 AM to 8:00 PM if no available slots provided
@@ -6,9 +6,17 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [] }) =
     const slots = [];
     const startHour = 8; // 8:00 AM
     const endHour = 20; // 8:00 PM
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
     
     for (let hour = startHour; hour < endHour; hour++) {
       for (let minute = 0; minute < 60; minute += 30) {
+        // Skip time slots in the past for today
+        if (hour < currentHour || (hour === currentHour && minute <= currentMinute)) {
+          continue;
+        }
+        
         const isPM = hour >= 12;
         const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
         const displayMinute = minute === 0 ? '00' : minute;
@@ -21,8 +29,13 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [] }) =
     return slots;
   };
   
+  // Use memoization to prevent unnecessary recalculations
+  const defaultTimeSlots = useMemo(() => generateTimeSlots(), []);
+  
   // Use available time slots if provided, otherwise generate default slots
-  const timeSlots = availableTimeSlots.length > 0 ? availableTimeSlots : generateTimeSlots();
+  const timeSlots = useMemo(() => {
+    return availableTimeSlots.length > 0 ? availableTimeSlots : defaultTimeSlots;
+  }, [availableTimeSlots, defaultTimeSlots]);
 
   return (
     <div className="border rounded-lg p-4 mt-6">

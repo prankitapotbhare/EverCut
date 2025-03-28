@@ -86,11 +86,12 @@ const BookingPage = () => {
   }, [salon, fetchSalonistsBySalonId]);
 
   // Fetch salonists when salon data is available
+  // Using salon?.id instead of the entire salon object to prevent unnecessary re-renders
   useEffect(() => {
-    if (salon) {
+    if (salon?.id) {
       fetchSalonists();
     }
-  }, [salon, fetchSalonists]);
+  }, [salon?.id, fetchSalonists]);
 
   // Memoize the fetchAvailability function
   const fetchAvailability = useCallback(async () => {
@@ -114,11 +115,20 @@ const BookingPage = () => {
       // Add a small delay to prevent rapid re-renders
       const timeoutId = setTimeout(() => {
         fetchAvailability();
+        // Reset selected time when stylist or date changes
+        setSelectedTime(null);
       }, 300); // Increased debounce time for better stability
       
       return () => clearTimeout(timeoutId);
     }
   }, [selectedStylist?.id, selectedDate?.toISOString?.()?.split('T')[0], fetchAvailability]);
+  
+  // Effect to clear selected time if it's no longer available
+  useEffect(() => {
+    if (selectedTime && availableTimeSlots.length > 0 && !availableTimeSlots.includes(selectedTime)) {
+      setSelectedTime(null);
+    }
+  }, [availableTimeSlots, selectedTime]);
   
   // Track combined loading state to prevent flickering
   // Use useMemo to prevent recalculating this value on every render

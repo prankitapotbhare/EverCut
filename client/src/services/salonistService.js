@@ -115,7 +115,11 @@ export const getSalonistAvailability = (salonistId, date) => {
       const salonistSchedule = mockSchedules[salonistId] || {};
       
       // Get available slots for this date
-      const availableSlots = salonistSchedule[dateString] || [];
+      let availableSlots = salonistSchedule[dateString] || [];
+      
+      // Filter out past time slots if the date is today
+      const selectedDate = new Date(dateString);
+      availableSlots = availableSlots.filter(timeSlot => !isTimeSlotInPast(selectedDate, timeSlot));
       
       resolve(availableSlots);
     }, 300);

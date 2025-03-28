@@ -7,10 +7,28 @@ import {
   getAvailableSalonists
 } from '@/services/salonistService';
 
-const SalonistContext = createContext();
+const SalonistContext = createContext({
+  allSalonists: [],
+  currentSalonist: null,
+  salonSalonists: [],
+  availableSalonists: [],
+  availableTimeSlots: [],
+  loading: false,
+  error: null,
+  fetchAllSalonists: () => {},
+  fetchSalonistById: () => {},
+  fetchSalonistsBySalonId: () => {},
+  fetchSalonistAvailability: () => {},
+  fetchAvailableSalonists: () => {},
+  clearCaches: () => {}
+});
 
 export const useSalonist = () => {
-  return useContext(SalonistContext);
+  const context = useContext(SalonistContext);
+  if (context === undefined) {
+    throw new Error('useSalonist must be used within a SalonistProvider');
+  }
+  return context;
 };
 
 export const SalonistProvider = ({ children }) => {
@@ -25,6 +43,8 @@ export const SalonistProvider = ({ children }) => {
   // Cache for salonist data to avoid refetching
   const [salonistCache, setSalonistCache] = useState({});
   const [availabilityCache, setAvailabilityCache] = useState({});
+  // Add a cache for salon salonists to prevent infinite loops
+  const [salonSalonistsCache, setSalonSalonistsCache] = useState({});
 
   // Fetch all salonists
   const fetchAllSalonists = async () => {
@@ -76,9 +96,22 @@ export const SalonistProvider = ({ children }) => {
   // Fetch salonists for a specific salon
   const fetchSalonistsBySalonId = async (salonId) => {
     try {
+      // Check if we already have this salon's salonists in cache
+      if (salonSalonistsCache[salonId]) {
+        setSalonSalonists(salonSalonistsCache[salonId]);
+        return salonSalonistsCache[salonId];
+      }
+      
       setLoading(true);
       const salonistsData = await getSalonistsBySalonId(salonId);
       setSalonSalonists(salonistsData);
+      
+      // Update the cache
+      setSalonSalonistsCache(prev => ({
+        ...prev,
+        [salonId]: salonistsData
+      }));
+      
       setError(null);
       return salonistsData;
     } catch (err) {
@@ -149,6 +182,7 @@ export const SalonistProvider = ({ children }) => {
   const clearCaches = () => {
     setSalonistCache({});
     setAvailabilityCache({});
+    setSalonSalonistsCache({});
   };
 
   const value = {
