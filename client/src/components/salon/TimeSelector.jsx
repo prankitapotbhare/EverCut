@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react';
-import { generateAvailableTimeSlots, getUnavailableTimeSlots } from '../../services/schedulingService';
+import { generateAvailableTimeSlots, getUnavailableTimeSlots, generateTimeSlots } from '../../services/schedulingService';
 
 const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], selectedStylist, selectedDate }) => {
   // Use memoization to prevent unnecessary recalculations
   const defaultTimeSlots = useMemo(() => generateAvailableTimeSlots(), []);
   
-  // Get all possible time slots for the day
-  const allPossibleTimeSlots = useMemo(() => generateAvailableTimeSlots(), []);
+  // Get all possible time slots for the day (8 AM to 8 PM)
+  const allPossibleTimeSlots = useMemo(() => generateTimeSlots(), []);
   
   // Use available time slots if provided, otherwise generate default slots
   // But only show default slots if no specific availability data is provided
@@ -15,9 +15,14 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
     if (Array.isArray(availableTimeSlots)) {
       return availableTimeSlots;
     }
+    // If we have a selected stylist and date but no explicit availability data,
+    // generate availability based on real-time data
+    if (selectedStylist && selectedDate) {
+      return generateAvailableTimeSlots(selectedDate, selectedStylist.id);
+    }
     // Otherwise fall back to default slots (when component is first rendered)
     return defaultTimeSlots;
-  }, [availableTimeSlots, defaultTimeSlots]);
+  }, [availableTimeSlots, defaultTimeSlots, selectedStylist, selectedDate]);
   
   // Get unavailable time slots with reasons
   const unavailableSlots = useMemo(() => {

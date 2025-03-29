@@ -1,7 +1,7 @@
 import mockSalonists from '../data/mockSalonists';
 import { mockSchedules } from '../data/mockSchedules';
 import { mockLeaveSchedules, isSalonistOnLeave, isSalonistOnLeaveForTimeSlot } from '../data/mockLeaveSchedules';
-import { isTimeSlotInPast } from './schedulingService';
+import { isTimeSlotInPast, getSalonistRealTimeAvailability, isSalonistAvailableForDateTime } from './schedulingService';
 import { isSalonistBookedForTimeSlot, getBookedTimeSlotsForSalonist } from '../data/mockBookings';
 
 // Filter salonists by service type
@@ -220,50 +220,8 @@ export const getSalonistAvailability = (salonistId, date) => {
         return;
       }
 
-      // Format date to YYYY-MM-DD for lookup
-      const dateString = date instanceof Date 
-        ? date.toISOString().split('T')[0] 
-        : new Date(date).toISOString().split('T')[0];
-
-      // Get schedule for this salonist
-      const salonistSchedule = mockSchedules[salonistId] || {};
-      
-      // Get available slots for this date
-      let availableSlots = salonistSchedule[dateString] || [];
-      
-      // Filter out past time slots if the date is today
-      const selectedDate = new Date(dateString);
-      availableSlots = availableSlots.filter(timeSlot => !isTimeSlotInPast(selectedDate, timeSlot));
-      
-      // Check if salonist is on full-day leave for this date
-      if (isSalonistOnLeave(salonistId, selectedDate)) {
-        // If salonist is on full-day leave, they have no available slots
-        const leaveSchedule = mockLeaveSchedules[salonistId] || [];
-        const fullDayLeave = leaveSchedule.find(leave => 
-          leave.type === 'FULL_DAY' && 
-          selectedDate >= new Date(leave.startDate) && 
-          selectedDate <= new Date(leave.endDate)
-        );
-        
-        if (fullDayLeave) {
-          resolve([]);
-          return;
-        }
-      }
-      
-      // Filter out time slots when salonist is on partial-day leave
-      availableSlots = availableSlots.filter(timeSlot => 
-        !isSalonistOnLeaveForTimeSlot(salonistId, selectedDate, timeSlot)
-      );
-      
-      // Get booked time slots for this salonist on this date
-      const bookedTimeSlots = getBookedTimeSlotsForSalonist(salonistId, selectedDate);
-      
-      // Filter out time slots that are already booked
-      availableSlots = availableSlots.filter(timeSlot => 
-        !bookedTimeSlots.includes(timeSlot)
-      );
-      
+      // Use the new real-time availability function from schedulingService
+      const availableSlots = getSalonistRealTimeAvailability(salonistId, date);
       resolve(availableSlots);
     }, 300);
   });
@@ -307,40 +265,10 @@ export const getAvailableSalonists = (date, time, salonId = null, serviceTypes =
         });
       }
 
-      // Check each salonist's availability
-      const availableSalonists = salonistsToCheck.filter(salonist => {
-        // First check if salonist is on full-day leave for this date
-        if (isSalonistOnLeave(salonist.id, selectedDate)) {
-          const leaveSchedule = mockLeaveSchedules[salonist.id] || [];
-          const fullDayLeave = leaveSchedule.find(leave => 
-            leave.type === 'FULL_DAY' && 
-            selectedDate >= new Date(leave.startDate) && 
-            selectedDate <= new Date(leave.endDate)
-          );
-          
-          if (fullDayLeave) {
-            return false; // Salonist is on full-day leave, not available
-          }
-        }
-        
-        // Check if salonist is on partial-day leave that includes this time slot
-        if (isSalonistOnLeaveForTimeSlot(salonist.id, selectedDate, time)) {
-          return false; // Salonist is on partial-day leave during this time slot
-        }
-        
-        // Check if salonist is already booked for this time slot
-        if (isSalonistBookedForTimeSlot(salonist.id, selectedDate, time)) {
-          return false; // Salonist is already booked during this time slot
-        }
-        
-        // Check if the time slot is in the salonist's schedule
-        const salonistSchedule = mockSchedules[salonist.id] || {};
-        const availableSlots = salonistSchedule[dateString] || [];
-        
-        // Salonist is available if the requested time is in their available slots
-        // and they are not on leave or booked during this time
-        return availableSlots.includes(time);
-      });
+      // Check each salonist's availability using the new helper function
+      const availableSalonists = salonistsToCheck.filter(salonist => 
+        isSalonistAvailableForDateTime(salonist.id, selectedDate, time)
+      );
       
       resolve(availableSalonists);
     }, 300);
