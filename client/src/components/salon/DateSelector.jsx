@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { isTimeSlotInPast } from '../../services/schedulingService';
 
 const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
   const scrollContainerRef = useRef(null);
@@ -48,23 +49,27 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
     for (let i = 1; i <= daysInMonth; i++) {
       const currentDate = new Date(year, month, i);
       
-      const isBeforeToday = currentDate < today;
+      // Use isTimeSlotInPast from schedulingService to check if date is in past
+      // For date comparison, we'll use midnight as the time
+      const isBeforeToday = isTimeSlotInPast(currentDate, '12:00 AM');
       
       // Check if this date is in the availableDates array (from backend)
       const isAvailable = availableDates.length === 0 || 
         availableDates.some(availableDate => isSameDay(availableDate, currentDate));
       
       // Calculate availability level based on how many slots are available
-      // This would come from the backend in a real implementation
       let availabilityLevel = 'high';
       if (availableDates.length > 0) {
         const matchingDate = availableDates.find(d => isSameDay(d, currentDate));
         if (matchingDate) {
-          // In a real implementation, the backend would provide this information
-          // For now, we'll use a simple random value for demonstration
+          // In a real implementation, we would get this from the backend
+          // For now, we'll use a simple algorithm based on the date
           const dayOfMonth = currentDate.getDate();
           if (dayOfMonth % 3 === 0) availabilityLevel = 'low';
           else if (dayOfMonth % 2 === 0) availabilityLevel = 'medium';
+        } else {
+          // If the date is not in availableDates, it's not available
+          availabilityLevel = 'none';
         }
       }
       
@@ -76,7 +81,7 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
         year: currentDate.getFullYear(),
         isSelectable: !isBeforeToday && (availableDates.length === 0 || isAvailable),
         isAvailable: isAvailable,
-        availabilityLevel: availabilityLevel, // Add availability level
+        availabilityLevel: availabilityLevel,
         isToday: isSameDay(currentDate, today)
       });
     }

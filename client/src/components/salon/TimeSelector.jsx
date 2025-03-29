@@ -1,5 +1,11 @@
 import React, { useMemo } from 'react';
-import { generateAvailableTimeSlots, getUnavailableTimeSlots, generateTimeSlots } from '../../services/schedulingService';
+import { 
+  generateAvailableTimeSlots, 
+  getUnavailableTimeSlots, 
+  generateTimeSlots,
+  getSalonistRealTimeAvailability,
+  isTimeSlotInPast
+} from '../../services/schedulingService';
 
 const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], selectedStylist, selectedDate }) => {
   // Use memoization to prevent unnecessary recalculations
@@ -16,19 +22,28 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
       return availableTimeSlots;
     }
     // If we have a selected stylist and date but no explicit availability data,
-    // generate availability based on real-time data
+    // generate availability based on real-time data using the service function
     if (selectedStylist && selectedDate) {
-      return generateAvailableTimeSlots(selectedDate, selectedStylist.id);
+      return getSalonistRealTimeAvailability(selectedStylist.id, selectedDate);
     }
     // Otherwise fall back to default slots (when component is first rendered)
     return defaultTimeSlots;
   }, [availableTimeSlots, defaultTimeSlots, selectedStylist, selectedDate]);
   
-  // Get unavailable time slots with reasons
+  // Get unavailable time slots with reasons using the service function
   const unavailableSlots = useMemo(() => {
     return getUnavailableTimeSlots(selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots);
   }, [selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots]);
-
+  
+  // Check if the selected time is still available
+  // This handles the case where a time slot becomes unavailable after selection
+  useMemo(() => {
+    if (selectedTime && !timeSlots.includes(selectedTime)) {
+      // If the selected time is no longer available, notify parent component
+      onTimeSelect(null);
+    }
+  }, [selectedTime, timeSlots, onTimeSelect]);
+  
   return (
     <div className="border rounded-lg p-4 mt-6">
       <div className="mb-3 flex justify-between items-center">
@@ -62,7 +77,7 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
               >
                 {time}
                 {!isAvailable && (
-                  <span className="absolute bottom-0 left-0 right-0 text-[8px] ${unavailableInfo?.color || 'text-gray-400'}">
+                  <span className={`absolute bottom-0 left-0 right-0 text-[8px] ${unavailableInfo?.color || 'text-gray-400'}`}>
                     {unavailableInfo?.reason}
                   </span>
                 )}
