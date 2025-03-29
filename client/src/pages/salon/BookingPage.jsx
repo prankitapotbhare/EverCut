@@ -39,6 +39,8 @@ const BookingPage = () => {
     fetchSalonistAvailability,
     fetchAvailableSalonistsForDate,
     fetchAvailableDatesForSalonist,
+    availableSalonists,
+    availableDates,
     loading: salonistLoading, 
     error: salonistError 
   } = useSalonist();
@@ -261,12 +263,6 @@ const BookingPage = () => {
     resetPaymentState();
   };
 
-  // Format date for display
-  const formatDate = (date) => {
-    if (!date) return '';
-    return `${date.getDate()} ${date.toLocaleString('default', { weekday: 'long' })}`;
-  };
-
   if (isLoading) {
     return <BookingPageSkeleton />;
   }
@@ -303,7 +299,7 @@ const BookingPage = () => {
               stylists={salonists}
               selectedStylist={selectedStylist}
               onStylistSelect={handleStylistSelect}
-              availableStylists={selectedDate ? useSalonist().availableSalonists : []}
+              availableStylists={selectedDate ? availableSalonists : []}
               selectedDate={selectedDate}
             />
           </div>
@@ -316,7 +312,7 @@ const BookingPage = () => {
             <DateSelector 
               selectedDate={selectedDate}
               onDateSelect={handleDateSelect}
-              availableDates={selectedStylist ? useSalonist().availableDates : []}
+              availableDates={selectedStylist ? availableDates : []}
             />
             
             {/* Time Selector */}

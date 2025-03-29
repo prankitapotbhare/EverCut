@@ -86,6 +86,12 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
                 statusBorder = 'border-purple-200';
                 statusText = 'Partially Booked';
                 break;
+              case 'mostly-booked':
+                statusColor = 'text-orange-600';
+                statusBgColor = 'bg-orange-50';
+                statusBorder = 'border-orange-200';
+                statusText = 'Mostly Booked';
+                break;
               case 'booked':
                 statusColor = 'text-red-600';
                 statusBgColor = 'bg-red-50';
@@ -96,7 +102,7 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
                 statusColor = 'text-red-600';
                 statusBgColor = 'bg-red-50';
                 statusBorder = 'border-red-200';
-                statusText = 'Unavailable';
+                statusText = 'Unavailable'
             }
             
             return (

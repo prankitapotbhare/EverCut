@@ -4,7 +4,8 @@ import {
   getUnavailableTimeSlots, 
   generateTimeSlots,
   getSalonistRealTimeAvailability,
-  isTimeSlotInPast
+  isTimeSlotInPast,
+  isSalonistAvailableForDateTime
 } from '../../services/schedulingService';
 
 const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], selectedStylist, selectedDate }) => {
@@ -14,26 +15,34 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
   // Get all possible time slots for the day (8 AM to 8 PM)
   const allPossibleTimeSlots = useMemo(() => generateTimeSlots(), []);
   
-  // Use available time slots if provided, otherwise generate default slots
-  // But only show default slots if no specific availability data is provided
+  // Update the timeSlots memoization logic
   const timeSlots = useMemo(() => {
-    // If we have explicit availability data (even if empty), use it
     if (Array.isArray(availableTimeSlots)) {
-      return availableTimeSlots;
+      return availableTimeSlots.filter(timeSlot => 
+        isSalonistAvailableForDateTime(
+          selectedStylist?.id,
+          selectedDate,
+          timeSlot
+        )
+      );
     }
-    // If we have a selected stylist and date but no explicit availability data,
-    // generate availability based on real-time data using the service function
+    
     if (selectedStylist && selectedDate) {
       return getSalonistRealTimeAvailability(selectedStylist.id, selectedDate);
     }
-    // Otherwise fall back to default slots (when component is first rendered)
+    
     return defaultTimeSlots;
-  }, [availableTimeSlots, defaultTimeSlots, selectedStylist, selectedDate]);
+  }, [availableTimeSlots, selectedStylist, selectedDate]);
   
-  // Get unavailable time slots with reasons using the service function
+  // Update the unavailable slots calculation
   const unavailableSlots = useMemo(() => {
-    return getUnavailableTimeSlots(selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots);
-  }, [selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots]);
+    return getUnavailableTimeSlots(
+      selectedStylist,
+      selectedDate, 
+      timeSlots,
+      allPossibleTimeSlots
+    );
+  }, [selectedStylist, selectedDate, timeSlots]);
   
   // Check if the selected time is still available
   // This handles the case where a time slot becomes unavailable after selection
