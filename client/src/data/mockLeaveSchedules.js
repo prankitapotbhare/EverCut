@@ -121,9 +121,13 @@ export const isSalonistOnLeave = (salonistId, date) => {
 };
 
 // Helper function to check if a salonist is on leave for a specific time slot
+// Fix the isSalonistOnLeaveForTimeSlot function
 export const isSalonistOnLeaveForTimeSlot = (salonistId, date, timeSlot) => {
   const leaveSchedule = mockLeaveSchedules[salonistId] || [];
   const checkDate = date instanceof Date ? date : new Date(date);
+  
+  // Format date for comparison
+  const dateString = checkDate.toISOString().split('T')[0];
   
   // Check if the salonist has any leave that includes this date and time
   return leaveSchedule.some(leave => {
@@ -142,19 +146,12 @@ export const isSalonistOnLeaveForTimeSlot = (salonistId, date, timeSlot) => {
     } else if (leave.type === LEAVE_TYPES.PARTIAL_DAY) {
       // For partial-day leave, check if the date matches and time falls within leave hours
       const leaveDate = new Date(leave.date);
+      const leaveDateString = leaveDate.toISOString().split('T')[0];
       
-      const isDateMatch = (
-        checkDate.getDate() === leaveDate.getDate() &&
-        checkDate.getMonth() === leaveDate.getMonth() &&
-        checkDate.getFullYear() === leaveDate.getFullYear()
-      );
+      // Only check time if the date matches
+      if (dateString !== leaveDateString) return false;
       
-      if (!isDateMatch) {
-        return false;
-      }
-      
-      // Check if the time slot falls within the leave hours
-      // Convert time strings to comparable values
+      // Convert time strings to minutes for comparison
       const timeToMinutes = (timeStr) => {
         const [hourStr, minuteStr] = timeStr.split(':');
         const [minuteWithAmPm, amPm] = minuteStr.split(' ');
@@ -173,10 +170,10 @@ export const isSalonistOnLeaveForTimeSlot = (salonistId, date, timeSlot) => {
       };
       
       const slotMinutes = timeToMinutes(timeSlot);
-      const leaveStartMinutes = timeToMinutes(leave.startTime);
-      const leaveEndMinutes = timeToMinutes(leave.endTime);
+      const startMinutes = timeToMinutes(leave.startTime);
+      const endMinutes = timeToMinutes(leave.endTime);
       
-      return slotMinutes >= leaveStartMinutes && slotMinutes < leaveEndMinutes;
+      return slotMinutes >= startMinutes && slotMinutes < endMinutes;
     }
     
     return false;

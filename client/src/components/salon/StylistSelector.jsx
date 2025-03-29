@@ -3,26 +3,37 @@ import { getStylistAvailabilityStatus } from '../../services/salonistService';
 
 const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, availableStylists = [], selectedDate }) => {
   // Use memoization to prevent unnecessary recalculations of stylist availability
+  // Update the stylistsWithAvailability memoization
   const stylistsWithAvailability = useMemo(() => {
     if (!stylists || stylists.length === 0) {
       return [];
     }
-
+  
     return stylists.map(stylist => {
       // Only consider a stylist available if they're in the availableStylists array
       // If availableStylists is empty, all stylists are considered available
       const isAvailable = availableStylists.length === 0 || 
         availableStylists.some(s => s.id === stylist.id);
       
-      // Get detailed availability status using the service function
-      const { status, reason } = getStylistAvailabilityStatus(stylist, isAvailable, selectedDate);
-      
-      return {
-        ...stylist,
-        isAvailable,
-        availabilityStatus: status,
-        availabilityReason: reason
-      };
+      try {
+        // Get detailed availability status using the service function
+        const { status, reason } = getStylistAvailabilityStatus(stylist, isAvailable, selectedDate);
+        
+        return {
+          ...stylist,
+          isAvailable,
+          availabilityStatus: status,
+          availabilityReason: reason
+        };
+      } catch (error) {
+        console.error(`Error getting availability for stylist ${stylist.id}:`, error);
+        return {
+          ...stylist,
+          isAvailable: false,
+          availabilityStatus: 'error',
+          availabilityReason: 'Error checking availability'
+        };
+      }
     });
   }, [stylists, availableStylists, selectedDate]);
 

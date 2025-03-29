@@ -17,32 +17,29 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
   
   // Update the timeSlots memoization logic
   const timeSlots = useMemo(() => {
-    if (Array.isArray(availableTimeSlots)) {
-      return availableTimeSlots.filter(timeSlot => 
-        isSalonistAvailableForDateTime(
-          selectedStylist?.id,
-          selectedDate,
-          timeSlot
-        )
-      );
+    // If no stylist or date is selected, return empty array
+    if (!selectedStylist || !selectedDate) return [];
+    
+    // If explicit available time slots are provided, use them
+    if (Array.isArray(availableTimeSlots) && availableTimeSlots.length > 0) {
+      return availableTimeSlots;
     }
     
-    if (selectedStylist && selectedDate) {
-      return getSalonistRealTimeAvailability(selectedStylist.id, selectedDate);
-    }
-    
-    return defaultTimeSlots;
+    // Otherwise, get real-time availability
+    return getSalonistRealTimeAvailability(selectedStylist.id, selectedDate);
   }, [availableTimeSlots, selectedStylist, selectedDate]);
   
   // Update the unavailable slots calculation
   const unavailableSlots = useMemo(() => {
+    if (!selectedStylist || !selectedDate) return {};
+    
     return getUnavailableTimeSlots(
       selectedStylist,
       selectedDate, 
       timeSlots,
       allPossibleTimeSlots
     );
-  }, [selectedStylist, selectedDate, timeSlots]);
+  }, [selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots]);
   
   // Check if the selected time is still available
   // This handles the case where a time slot becomes unavailable after selection
