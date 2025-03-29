@@ -304,6 +304,7 @@ const BookingPage = () => {
               selectedStylist={selectedStylist}
               onStylistSelect={handleStylistSelect}
               availableStylists={selectedDate ? useSalonist().availableSalonists : []}
+              selectedDate={selectedDate}
             />
           </div>
 
@@ -323,6 +324,8 @@ const BookingPage = () => {
               selectedTime={selectedTime}
               onTimeSelect={handleTimeSelect}
               availableTimeSlots={availableTimeSlots}
+              selectedStylist={selectedStylist}
+              selectedDate={selectedDate}
             />
           </div>
 

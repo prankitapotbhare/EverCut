@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
+import { isSalonistBookedForTimeSlot } from '../../data/mockBookings';
+import { isSalonistOnLeaveForTimeSlot } from '../../data/mockLeaveSchedules';
 
-const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [] }) => {
+const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], selectedStylist, selectedDate }) => {
   // Generate realistic time slots from 8:00 AM to 8:00 PM if no available slots provided
   const generateTimeSlots = () => {
     const slots = [];
@@ -32,6 +34,9 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [] }) =
   // Use memoization to prevent unnecessary recalculations
   const defaultTimeSlots = useMemo(() => generateTimeSlots(), []);
   
+  // Get all possible time slots for the day
+  const allPossibleTimeSlots = useMemo(() => generateTimeSlots(), []);
+  
   // Use available time slots if provided, otherwise generate default slots
   // But only show default slots if no specific availability data is provided
   const timeSlots = useMemo(() => {
@@ -42,6 +47,36 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [] }) =
     // Otherwise fall back to default slots (when component is first rendered)
     return defaultTimeSlots;
   }, [availableTimeSlots, defaultTimeSlots]);
+  
+  // Get unavailable time slots with reasons
+  const unavailableSlots = useMemo(() => {
+    if (!selectedStylist || !selectedDate) return {};
+    
+    const unavailableWithReasons = {};
+    
+    // Check each possible time slot
+    allPossibleTimeSlots.forEach(timeSlot => {
+      // Skip if the slot is available
+      if (timeSlots.includes(timeSlot)) return;
+      
+      // Check if the slot is unavailable due to booking
+      if (isSalonistBookedForTimeSlot(selectedStylist.id, selectedDate, timeSlot)) {
+        unavailableWithReasons[timeSlot] = { reason: 'Booked', color: 'text-red-500' };
+        return;
+      }
+      
+      // Check if the slot is unavailable due to leave
+      if (isSalonistOnLeaveForTimeSlot(selectedStylist.id, selectedDate, timeSlot)) {
+        unavailableWithReasons[timeSlot] = { reason: 'On leave', color: 'text-amber-500' };
+        return;
+      }
+      
+      // Otherwise, it's unavailable for other reasons
+      unavailableWithReasons[timeSlot] = { reason: 'Unavailable', color: 'text-gray-500' };
+    });
+    
+    return unavailableWithReasons;
+  }, [selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots]);
 
   return (
     <div className="border rounded-lg p-4 mt-6">
@@ -55,19 +90,34 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [] }) =
       </div>
       <div className="grid grid-cols-5 gap-2">
         {timeSlots.length > 0 ? (
-          timeSlots.map((time, index) => (
-            <button
-              key={index}
-              className={`py-2 px-1 text-sm rounded-lg cursor-pointer transition-all ${
-                time === selectedTime 
-                  ? 'bg-blue-600 text-white ring-2 ring-blue-300' 
-                  : 'bg-gray-100 hover:bg-gray-200'
-              }`}
-              onClick={() => onTimeSelect(time)}
-            >
-              {time}
-            </button>
-          ))
+          // Show all possible time slots, but disable unavailable ones
+          allPossibleTimeSlots.map((time, index) => {
+            const isAvailable = timeSlots.includes(time);
+            const unavailableInfo = !isAvailable ? unavailableSlots[time] : null;
+            
+            return (
+              <button
+                key={index}
+                disabled={!isAvailable}
+                className={`py-2 px-1 text-sm rounded-lg transition-all relative group ${
+                  time === selectedTime 
+                    ? 'bg-blue-600 text-white ring-2 ring-blue-300' 
+                    : isAvailable
+                      ? 'bg-gray-100 hover:bg-gray-200 cursor-pointer'
+                      : 'bg-gray-50 text-gray-400 cursor-not-allowed'
+                }`}
+                onClick={() => isAvailable && onTimeSelect(time)}
+                title={!isAvailable ? unavailableInfo?.reason : 'Available'}
+              >
+                {time}
+                {!isAvailable && (
+                  <span className="absolute bottom-0 left-0 right-0 text-[8px] ${unavailableInfo?.color || 'text-gray-400'}">
+                    {unavailableInfo?.reason}
+                  </span>
+                )}
+              </button>
+            );
+          })
         ) : (
           <div className="col-span-5 text-center py-4 text-gray-500">
             No available time slots for the selected date and stylist.

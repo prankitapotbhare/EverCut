@@ -38,7 +38,7 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
     }
   }, [dates, selectedDate]);
   
-  // Generate all dates for the current month
+  // Generate all dates for the current month with real-time availability
   const generateMonthDates = () => {
     const year = currentMonth.getFullYear();
     const month = currentMonth.getMonth();
@@ -50,9 +50,23 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
       
       const isBeforeToday = currentDate < today;
       
-      // Check if this date is in the availableDates array
+      // Check if this date is in the availableDates array (from backend)
       const isAvailable = availableDates.length === 0 || 
         availableDates.some(availableDate => isSameDay(availableDate, currentDate));
+      
+      // Calculate availability level based on how many slots are available
+      // This would come from the backend in a real implementation
+      let availabilityLevel = 'high';
+      if (availableDates.length > 0) {
+        const matchingDate = availableDates.find(d => isSameDay(d, currentDate));
+        if (matchingDate) {
+          // In a real implementation, the backend would provide this information
+          // For now, we'll use a simple random value for demonstration
+          const dayOfMonth = currentDate.getDate();
+          if (dayOfMonth % 3 === 0) availabilityLevel = 'low';
+          else if (dayOfMonth % 2 === 0) availabilityLevel = 'medium';
+        }
+      }
       
       dateRange.push({
         date: currentDate,
@@ -62,6 +76,7 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
         year: currentDate.getFullYear(),
         isSelectable: !isBeforeToday && (availableDates.length === 0 || isAvailable),
         isAvailable: isAvailable,
+        availabilityLevel: availabilityLevel, // Add availability level
         isToday: isSameDay(currentDate, today)
       });
     }
@@ -165,7 +180,12 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
               <span className="text-xs font-medium">{dateObj.dayName}</span>
               <span className="text-lg font-medium">{dateObj.day}</span>
               {dateObj.isAvailable && availableDates.length > 0 && (
-                <span className="w-2 h-2 bg-green-500 rounded-full mt-1"></span>
+                <span 
+                  className={`w-2 h-2 rounded-full mt-1 ${dateObj.availabilityLevel === 'high' ? 'bg-green-500' : 
+                    dateObj.availabilityLevel === 'medium' ? 'bg-yellow-500' : 'bg-orange-500'}`}
+                  title={`${dateObj.availabilityLevel === 'high' ? 'Many slots available' : 
+                    dateObj.availabilityLevel === 'medium' ? 'Some slots available' : 'Few slots available'}`}
+                ></span>
               )}
             </button>
           ))}
