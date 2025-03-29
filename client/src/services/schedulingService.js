@@ -1,5 +1,5 @@
 // Scheduling utilities and mock data for salonist availability
-import { mockSchedules } from '../data/mockSchedules';
+import { mockSchedules } from '@/data/mockSchedules';
 import { isSalonistBookedForTimeSlot, getBookedTimeSlotsForSalonist, getBookingsForSalonistOnDate } from '../data/mockBookings';
 import { isSalonistOnLeaveForTimeSlot, isSalonistOnLeave, mockLeaveSchedules } from '../data/mockLeaveSchedules';
 

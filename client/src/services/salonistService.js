@@ -1,8 +1,8 @@
-import mockSalonists from '../data/mockSalonists';
-import { mockSchedules } from '../data/mockSchedules';
+import mockSalonists from '@/data/mockSalonists';
+import { mockSchedules } from '@/data/mockSchedules';
 import { mockLeaveSchedules, isSalonistOnLeave, isSalonistOnLeaveForTimeSlot } from '../data/mockLeaveSchedules';
 import { isTimeSlotInPast, getSalonistRealTimeAvailability, isSalonistAvailableForDateTime } from './schedulingService';
-import { isSalonistBookedForTimeSlot, getBookedTimeSlotsForSalonist } from '../data/mockBookings';
+import { isSalonistBookedForTimeSlot, getBookedTimeSlotsForSalonist } from '@/data/mockBookings';
 
 // Filter salonists by service type
 export const getSalonistsByServiceType = (serviceType) => {

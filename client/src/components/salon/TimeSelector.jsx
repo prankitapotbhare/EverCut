@@ -6,7 +6,7 @@ import {
   getSalonistRealTimeAvailability,
   isTimeSlotInPast,
   isSalonistAvailableForDateTime
-} from '../../services/schedulingService';
+} from '@/services/schedulingService';
 
 const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], selectedStylist, selectedDate }) => {
   // Use memoization to prevent unnecessary recalculations

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { isTimeSlotInPast } from '../../services/schedulingService';
+import { isTimeSlotInPast } from '@/services/schedulingService';
 
 const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
   const scrollContainerRef = useRef(null);

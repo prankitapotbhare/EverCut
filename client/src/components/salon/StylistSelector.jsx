@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { getStylistAvailabilityStatus } from '../../services/salonistService';
+import { getStylistAvailabilityStatus } from '@/services/salonistService';
 
 const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, availableStylists = [], selectedDate }) => {
   // Use memoization to prevent unnecessary recalculations of stylist availability
