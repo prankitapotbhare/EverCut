@@ -1,41 +1,12 @@
 import React, { useMemo } from 'react';
-import { isSalonistBookedForTimeSlot } from '../../data/mockBookings';
-import { isSalonistOnLeaveForTimeSlot } from '../../data/mockLeaveSchedules';
+import { generateAvailableTimeSlots, getUnavailableTimeSlots } from '../../services/schedulingService';
 
 const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], selectedStylist, selectedDate }) => {
-  // Generate realistic time slots from 8:00 AM to 8:00 PM if no available slots provided
-  const generateTimeSlots = () => {
-    const slots = [];
-    const startHour = 8; // 8:00 AM
-    const endHour = 20; // 8:00 PM
-    const now = new Date();
-    const currentHour = now.getHours();
-    const currentMinute = now.getMinutes();
-    
-    for (let hour = startHour; hour < endHour; hour++) {
-      for (let minute = 0; minute < 60; minute += 30) {
-        // Skip time slots in the past for today
-        if (hour < currentHour || (hour === currentHour && minute <= currentMinute)) {
-          continue;
-        }
-        
-        const isPM = hour >= 12;
-        const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
-        const displayMinute = minute === 0 ? '00' : minute;
-        const timeString = `${displayHour}:${displayMinute} ${isPM ? 'PM' : 'AM'}`;
-        
-        slots.push(timeString);
-      }
-    }
-    
-    return slots;
-  };
-  
   // Use memoization to prevent unnecessary recalculations
-  const defaultTimeSlots = useMemo(() => generateTimeSlots(), []);
+  const defaultTimeSlots = useMemo(() => generateAvailableTimeSlots(), []);
   
   // Get all possible time slots for the day
-  const allPossibleTimeSlots = useMemo(() => generateTimeSlots(), []);
+  const allPossibleTimeSlots = useMemo(() => generateAvailableTimeSlots(), []);
   
   // Use available time slots if provided, otherwise generate default slots
   // But only show default slots if no specific availability data is provided
@@ -50,32 +21,7 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
   
   // Get unavailable time slots with reasons
   const unavailableSlots = useMemo(() => {
-    if (!selectedStylist || !selectedDate) return {};
-    
-    const unavailableWithReasons = {};
-    
-    // Check each possible time slot
-    allPossibleTimeSlots.forEach(timeSlot => {
-      // Skip if the slot is available
-      if (timeSlots.includes(timeSlot)) return;
-      
-      // Check if the slot is unavailable due to booking
-      if (isSalonistBookedForTimeSlot(selectedStylist.id, selectedDate, timeSlot)) {
-        unavailableWithReasons[timeSlot] = { reason: 'Booked', color: 'text-red-500' };
-        return;
-      }
-      
-      // Check if the slot is unavailable due to leave
-      if (isSalonistOnLeaveForTimeSlot(selectedStylist.id, selectedDate, timeSlot)) {
-        unavailableWithReasons[timeSlot] = { reason: 'On leave', color: 'text-amber-500' };
-        return;
-      }
-      
-      // Otherwise, it's unavailable for other reasons
-      unavailableWithReasons[timeSlot] = { reason: 'Unavailable', color: 'text-gray-500' };
-    });
-    
-    return unavailableWithReasons;
+    return getUnavailableTimeSlots(selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots);
   }, [selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots]);
 
   return (

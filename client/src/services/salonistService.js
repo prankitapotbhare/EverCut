@@ -45,6 +45,117 @@ export const getSalonistRatings = (salonistId) => {
   });
 };
 
+// Helper function to get availability status with reason based on real-time data
+// Moved from StylistSelector.jsx to centralize availability logic
+export const getStylistAvailabilityStatus = (stylist, isAvailable, selectedDate) => {
+  // If no date is selected or availableStylists is empty, we can't determine detailed status
+  if (!selectedDate) {
+    return { status: isAvailable ? 'available' : 'unavailable', reason: '' };
+  }
+  
+  // Format date for consistency
+  const dateString = selectedDate instanceof Date 
+    ? selectedDate.toISOString().split('T')[0] 
+    : new Date(selectedDate).toISOString().split('T')[0];
+  
+  // 1. Check if stylist is on full-day leave
+  if (isSalonistOnLeave(stylist.id, selectedDate)) {
+    const leaveSchedule = mockLeaveSchedules[stylist.id] || [];
+    const fullDayLeave = leaveSchedule.find(leave => 
+      leave.type === 'FULL_DAY' && 
+      selectedDate >= new Date(leave.startDate) && 
+      selectedDate <= new Date(leave.endDate)
+    );
+    
+    if (fullDayLeave) {
+      return { 
+        status: 'on-leave', 
+        reason: fullDayLeave.reason ? `On leave: ${fullDayLeave.reason}` : 'On leave' 
+      };
+    }
+  }
+  
+  // 2. Check if stylist has partial-day leave
+  const leaveSchedule = mockLeaveSchedules[stylist.id] || [];
+  const partialDayLeave = leaveSchedule.find(leave => 
+    leave.type === 'PARTIAL_DAY' && 
+    leave.date.getDate() === selectedDate.getDate() &&
+    leave.date.getMonth() === selectedDate.getMonth() &&
+    leave.date.getFullYear() === selectedDate.getFullYear()
+  );
+  
+  // 3. Get the stylist's schedule for this date
+  const salonistSchedule = mockSchedules[stylist.id] || {};
+  const allTimeSlots = salonistSchedule[dateString] || [];
+  
+  // 4. Get booked time slots for this stylist on this date
+  const bookedTimeSlots = getBookedTimeSlotsForSalonist(stylist.id, selectedDate);
+  
+  // 5. Filter available time slots (not in the past, not on leave, not booked)
+  const availableTimeSlots = allTimeSlots.filter(timeSlot => 
+    !isTimeSlotInPast(selectedDate, timeSlot) && 
+    !(partialDayLeave && isSalonistOnLeaveForTimeSlot(stylist.id, selectedDate, timeSlot)) &&
+    !bookedTimeSlots.includes(timeSlot)
+  );
+  
+  // 6. Determine availability status based on filtered slots
+  if (!isAvailable) {
+    // If they're marked as unavailable by the backend
+    if (bookedTimeSlots.length > 0) {
+      // If they have bookings, show how many slots are booked
+      const totalSlots = allTimeSlots.filter(timeSlot => !isTimeSlotInPast(selectedDate, timeSlot)).length;
+      const percentBooked = Math.round((bookedTimeSlots.length / totalSlots) * 100);
+      
+      if (percentBooked >= 90) {
+        return { 
+          status: 'booked', 
+          reason: 'Fully booked' 
+        };
+      } else {
+        return { 
+          status: 'booked', 
+          reason: `${bookedTimeSlots.length} slots booked (${percentBooked}% of day)` 
+        };
+      }
+    }
+    
+    // If they have partial day leave
+    if (partialDayLeave) {
+      return { 
+        status: 'partial-leave', 
+        reason: `On leave: ${partialDayLeave.startTime} - ${partialDayLeave.endTime}` 
+      };
+    }
+    
+    // If they're not available but not on leave or booked, they must be unavailable for other reasons
+    return { status: 'unavailable', reason: 'Not available today' };
+  }
+  
+  // If they're marked as available by the backend
+  if (partialDayLeave) {
+    return { 
+      status: 'partial-leave', 
+      reason: `Available except ${partialDayLeave.startTime} - ${partialDayLeave.endTime}` 
+    };
+  }
+  
+  if (bookedTimeSlots.length > 0) {
+    const totalSlots = allTimeSlots.filter(timeSlot => !isTimeSlotInPast(selectedDate, timeSlot)).length;
+    const percentBooked = Math.round((bookedTimeSlots.length / totalSlots) * 100);
+    
+    return { 
+      status: 'partially-booked', 
+      reason: `${bookedTimeSlots.length} slots booked (${percentBooked}% of day)` 
+    };
+  }
+  
+  // Fully available
+  return { 
+    status: 'available', 
+    reason: `${availableTimeSlots.length} slots available` 
+  };
+};
+
 // Get all salonists
 export const getSalonists = () => {
   return new Promise((resolve) => {
