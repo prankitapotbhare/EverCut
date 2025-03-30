@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '@/components/home/Navbar';
 import Footer from '@/components/home/Footer';
@@ -7,8 +7,7 @@ import StylistSelector from '@/components/salon/StylistSelector';
 import DateSelector from '@/components/salon/DateSelector';
 import TimeSelector from '@/components/salon/TimeSelector';
 import PaymentModal from '@/components/payment/PaymentModal';
-import { useSalon } from '@/contexts/SalonContext';
-import { useSalonist } from '@/contexts/SalonistContext';
+import { useBooking } from '@/contexts/BookingContext';
 import { usePayment } from '@/contexts/PaymentContext';
 import { BookingPageSkeleton } from '@/components/common/SkeletonLoader';
 
@@ -16,49 +15,28 @@ const BookingPage = () => {
   const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
-  const [salon, setSalon] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [loadingData, setLoadingData] = useState({
-    salon: false,
-    salonists: false,
-    availability: false,
-    availableDates: false,
-    availableSalonists: false
-  });
-  const [selectedServices, setSelectedServices] = useState([]);
-  const [selectedStylist, setSelectedStylist] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [selectedTime, setSelectedTime] = useState(null);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
-  const [salonists, setSalonists] = useState([]);
-  const [availableTimeSlots, setAvailableTimeSlots] = useState([]);
 
-  const { fetchSalonById, loading: salonLoading, error: salonError } = useSalon();
+  // Use the booking context instead of local state
   const { 
-    fetchSalonistsBySalonId, 
-    fetchSalonistAvailability,
-    fetchAvailableSalonistsForDate,
-    fetchAvailableDatesForSalonist,
+    selectedServices, setSelectedServices,
+    selectedStylist, setSelectedStylist,
+    selectedDate, setSelectedDate,
+    selectedTime, setSelectedTime,
+    salon, setSalon,
+    salonists,
+    availableTimeSlots,
     availableSalonists,
     availableDates,
-    loading: salonistLoading, 
-    error: salonistError 
-  } = useSalonist();
+    loadingData,
+    fetchSalon,
+    fetchSalonists
+  } = useBooking();
+  
   const { resetPaymentState } = usePayment();
-
-  // Memoize the fetchSalon function to prevent recreating it on every render
-  const fetchSalon = useCallback(async () => {
-    try {
-      setLoadingData(prev => ({ ...prev, salon: true }));
-      const salonData = await fetchSalonById(parseInt(id));
-      setSalon(salonData);
-    } catch (error) {
-      console.error('Error fetching salon details:', error);
-    } finally {
-      setLoadingData(prev => ({ ...prev, salon: false }));
-      setLoading(false);
-    }
-  }, [id, fetchSalonById]);
+  
+  // Track if we're still loading the initial salon data
+  const [initialLoading, setInitialLoading] = useState(true);
 
   useEffect(() => {
     // Get selected services from location state
@@ -69,182 +47,28 @@ const BookingPage = () => {
     // Check if salon data was passed from previous page
     if (location.state?.salonData) {
       setSalon(location.state.salonData);
-      setLoading(false); // No need to fetch, we already have the data
+      setInitialLoading(false); // No need to fetch, we already have the data
     } else {
       // Fetch salon data only if not provided in location state
-      fetchSalon();
+      fetchSalon(parseInt(id))
+        .finally(() => setInitialLoading(false));
     }
-  }, [location.state, fetchSalon]);
+  }, [location.state, fetchSalon, id, setSelectedServices, setSalon]);
   
-  // Memoize the fetchSalonists function
-  const fetchSalonists = useCallback(async () => {
-    if (!salon) return;
-    
-    try {
-      setLoadingData(prev => ({ ...prev, salonists: true }));
-      const salonistsData = await fetchSalonistsBySalonId(salon.id);
-      setSalonists(salonistsData);
-    } catch (error) {
-      console.error('Error fetching salonists:', error);
-    } finally {
-      setLoadingData(prev => ({ ...prev, salonists: false }));
-    }
-  }, [salon, fetchSalonistsBySalonId]);
-
   // Fetch salonists when salon data is available
-  // Using salon?.id instead of the entire salon object to prevent unnecessary re-renders
   useEffect(() => {
     if (salon?.id) {
       fetchSalonists();
     }
   }, [salon?.id, fetchSalonists]);
 
-  // Memoize the fetchAvailability function
-  const fetchAvailability = useCallback(async () => {
-    if (!selectedStylist || !selectedDate) return;
-    
-    try {
-      setLoadingData(prev => ({ ...prev, availability: true }));
-      const availabilityData = await fetchSalonistAvailability(selectedStylist.id, selectedDate);
-      setAvailableTimeSlots(availabilityData);
-    } catch (error) {
-      console.error('Error fetching availability:', error);
-    } finally {
-      setLoadingData(prev => ({ ...prev, availability: false }));
-    }
-  }, [selectedStylist, selectedDate, fetchSalonistAvailability]);
+  // All the fetching logic has been moved to the BookingContext
   
-  // Fetch available dates for a selected stylist
-  const fetchAvailableDatesForSelectedStylist = useCallback(async () => {
-    if (!selectedStylist) return;
-    
-    try {
-      setLoadingData(prev => ({ ...prev, availableDates: true }));
-      await fetchAvailableDatesForSalonist(selectedStylist.id);
-      // Note: We don't need to update state here as it's handled in the context
-    } catch (error) {
-      console.error('Error fetching available dates:', error);
-    } finally {
-      setLoadingData(prev => ({ ...prev, availableDates: false }));
-    }
-  }, [selectedStylist, fetchAvailableDatesForSalonist]);
-  
-  // Fetch available stylists for a selected date
-  const fetchAvailableStylistsForSelectedDate = useCallback(async () => {
-    if (!selectedDate || !salon) return;
-    
-    try {
-      setLoadingData(prev => ({ ...prev, availableSalonists: true }));
-      const availableStylistsData = await fetchAvailableSalonistsForDate(selectedDate, salon.id);
-      
-      // If current selected stylist is not available on this date, reset selection
-      if (selectedStylist && !availableStylistsData.some(stylist => stylist.id === selectedStylist.id)) {
-        setSelectedStylist(null);
-        setSelectedTime(null);
-      }
-    } catch (error) {
-      console.error('Error fetching available stylists:', error);
-    } finally {
-      setLoadingData(prev => ({ ...prev, availableSalonists: false }));
-    }
-  }, [selectedDate, salon, selectedStylist, fetchAvailableSalonistsForDate]);
-
-  // When stylist changes, fetch their available dates and time slots
-  useEffect(() => {
-    if (selectedStylist) {
-      // Fetch available dates for this stylist
-      fetchAvailableDatesForSelectedStylist();
-      
-      // If date is already selected, fetch availability for that date
-      if (selectedDate) {
-        // Add a small delay to prevent rapid re-renders
-        const timeoutId = setTimeout(() => {
-          fetchAvailability();
-          // Reset selected time when stylist changes
-          setSelectedTime(null);
-        }, 300);
-        
-        return () => clearTimeout(timeoutId);
-      }
-    }
-  }, [selectedStylist?.id, fetchAvailableDatesForSelectedStylist]);
-  
-  // Separate effect for date changes to avoid dependency conflicts
-  useEffect(() => {
-    if (selectedStylist && selectedDate) {
-      const timeoutId = setTimeout(() => {
-        fetchAvailability();
-      }, 300);
-      
-      return () => clearTimeout(timeoutId);
-    }
-  }, [selectedDate, selectedStylist?.id, fetchAvailability]);
-  
-  // When date changes, fetch available stylists for that date
-  useEffect(() => {
-    if (selectedDate && salon) {
-      // Fetch available stylists for this date
-      fetchAvailableStylistsForSelectedDate();
-      
-      // If stylist is already selected, check if they're still available on this date
-      // This will be handled by the separate effect for time slot fetching
-      if (selectedStylist) {
-        // Reset selected time when date changes
-        setSelectedTime(null);
-      }
-    }
-  }, [selectedDate?.toISOString?.()?.split('T')[0], salon?.id, fetchAvailableStylistsForSelectedDate]);
-  
-  // Separate effect to handle time slot availability when both date and stylist are selected
-  useEffect(() => {
-    if (selectedDate && selectedStylist && salon) {
-      // Add a small delay to prevent rapid re-renders
-      const timeoutId = setTimeout(() => {
-        fetchAvailability();
-      }, 300);
-      
-      return () => clearTimeout(timeoutId);
-    }
-  }, [selectedDate?.toISOString?.()?.split('T')[0], selectedStylist?.id, salon?.id, fetchAvailability]);
-  
-  // Effect to clear selected time if it's no longer available
-  useEffect(() => {
-    if (selectedTime && availableTimeSlots.length > 0 && !availableTimeSlots.includes(selectedTime)) {
-      setSelectedTime(null);
-    }
-  }, [availableTimeSlots, selectedTime]);
-  
-  // Track combined loading state to prevent flickering
-  // Use useMemo to prevent recalculating this value on every render
+  // Track loading state to prevent flickering
   const isLoading = useMemo(() => {
     // Only show loading state for initial salon data fetch
-    // Don't trigger loading state for subsequent data fetches
-    return loading && !salon;
-    // Explicitly NOT using salonLoading or salonistLoading here to prevent flickering
-    // These states are tracked separately in loadingData for component-specific loading indicators
-  }, [loading, salon]);
-
-  const handleStylistSelect = (stylist) => {
-    // If selecting the same stylist, do nothing
-    if (selectedStylist?.id === stylist.id) return;
-    
-    setSelectedStylist(stylist);
-    // Reset selected time when stylist changes
-    setSelectedTime(null);
-    
-    // The useEffect will handle fetching available dates and time slots
-  };
-
-  const handleDateSelect = (date) => {
-    // If selecting the same date, do nothing
-    if (selectedDate && date.getTime() === selectedDate.getTime()) return;
-    
-    setSelectedDate(date);
-    // Reset selected time when date changes
-    setSelectedTime(null);
-    
-    // The useEffect will handle fetching available stylists and time slots
-  };
+    return initialLoading && !salon;
+  }, [initialLoading, salon]);
 
   const handleTimeSelect = (time) => {
     setSelectedTime(time);
@@ -298,7 +122,7 @@ const BookingPage = () => {
             <StylistSelector 
               stylists={salonists}
               selectedStylist={selectedStylist}
-              onStylistSelect={handleStylistSelect}
+              onStylistSelect={setSelectedStylist}
               availableStylists={selectedDate ? availableSalonists : []}
               selectedDate={selectedDate}
             />
@@ -311,7 +135,7 @@ const BookingPage = () => {
             {/* Date Selector */}
             <DateSelector 
               selectedDate={selectedDate}
-              onDateSelect={handleDateSelect}
+              onDateSelect={setSelectedDate}
               availableDates={selectedStylist ? availableDates : []}
             />
             

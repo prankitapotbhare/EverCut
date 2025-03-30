@@ -1,12 +1,5 @@
 import React, { useMemo } from 'react';
-import { 
-  generateAvailableTimeSlots, 
-  getUnavailableTimeSlots, 
-  generateTimeSlots,
-  getSalonistRealTimeAvailability,
-  isTimeSlotInPast,
-  isSalonistAvailableForDateTime
-} from '@/services/schedulingService';
+import { generateTimeSlots, getUnavailableTimeSlots, generateAvailableTimeSlots, getSalonistRealTimeAvailability } from '@/services/schedulingService';
 
 const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], selectedStylist, selectedDate }) => {
   // Use memoization to prevent unnecessary recalculations
