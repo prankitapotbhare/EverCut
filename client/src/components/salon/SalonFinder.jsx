@@ -36,7 +36,7 @@ const SalonFinder = () => {
     if (query.trim() === '') {
       clearSearchResults();
     } else {
-      searchSalonsByQuery(query);
+      searchSalonsByQuery(query, coordinates);
     }
   };
 

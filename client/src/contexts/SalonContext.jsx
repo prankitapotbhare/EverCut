@@ -100,8 +100,9 @@ export const SalonProvider = ({ children }) => {
 
   // Debounced search function for real-time search
   // Modify the debouncedSearch function to have a shorter debounce time
+  // Modify the debouncedSearch function to include coordinates
   const debouncedSearch = useCallback(
-    debounce(async (query) => {
+    debounce(async (query, coordinates) => {
       if (query === undefined || query === null || query.trim() === '') {
         setSearchResults([]);
         setSearchLoading(false);
@@ -109,7 +110,7 @@ export const SalonProvider = ({ children }) => {
       }
       
       try {
-        const results = await searchSalons(query);
+        const results = await searchSalons(query, coordinates);
         setSearchResults(results);
         setError(null);
       } catch (err) {
@@ -118,17 +119,17 @@ export const SalonProvider = ({ children }) => {
       } finally {
         setSearchLoading(false);
       }
-    }, 150), // Reduced from 300ms to 150ms for faster response with single letters
+    }, 150),
     []
   );
   
   // Function to search salons by query (real-time)
-  const searchSalonsByQuery = async (query) => {
+  const searchSalonsByQuery = async (query, coordinates = null) => {
     setSearchLoading(true);
     
     // For single letter searches, we still want to show results
     if (query && query.trim().length >= 1) {
-      debouncedSearch(query);
+      debouncedSearch(query, coordinates);
     } else {
       clearSearchResults();
       setSearchLoading(false);

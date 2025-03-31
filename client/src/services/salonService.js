@@ -51,19 +51,25 @@ export const getNearestSalons = async (coordinates, limit = 10) => {
 };
 
 // Search salons by query with advanced features
-export const searchSalons = async (query, limit = 10) => {
+export const searchSalons = async (query, coordinates = null, limit = 10) => {
   try {
     // Handle empty queries
     if (!query || query.trim() === '') {
       return [];
     }
     
-    const response = await api.get('/salons/search', { 
-      params: { 
-        query: query.trim(),
-        limit
-      } 
-    });
+    const params = { 
+      query: query.trim(),
+      limit
+    };
+    
+    // Add coordinates if available
+    if (coordinates && coordinates.lat && coordinates.lng) {
+      params.lat = coordinates.lat;
+      params.lng = coordinates.lng;
+    }
+    
+    const response = await api.get('/salons/search', { params });
     
     return response.data.data;
   } catch (error) {

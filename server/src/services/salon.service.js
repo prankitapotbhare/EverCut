@@ -276,9 +276,10 @@ const searchSalons = async (query) => {
  * Search salons by query with fuzzy matching
  * @param {string} query - Search query
  * @param {number} limit - Number of results to return
+ * @param {Object} coordinates - Optional user coordinates for distance calculation
  * @returns {Promise<Array>} - List of matching salons
  */
-const searchSalonsByQuery = async (query, limit = 10) => {
+const searchSalonsByQuery = async (query, limit = 10, coordinates = null) => {
   try {
     if (!query) {
       return [];
@@ -293,7 +294,8 @@ const searchSalonsByQuery = async (query, limit = 10) => {
           { score: { $meta: "textScore" } }
         )
         .sort({ score: { $meta: "textScore" } })
-        .limit(limit);
+        .limit(limit)
+        .select('name description address image rating reviewCount location');
       } catch (error) {
         logger.warn(`Text search error: ${error.message}. Falling back to regex search.`);
         // If text search fails, we'll continue to regex search
@@ -311,13 +313,17 @@ const searchSalonsByQuery = async (query, limit = 10) => {
           { 'address.city': regexPattern },
           { 'address.state': regexPattern }
         ]
-      }).limit(limit);
+      })
+      .limit(limit)
+      .select('name description address image rating reviewCount location');
     }
 
     // Third attempt: fuzzy matching for spelling mistakes
     if (salons.length === 0) {
       // Get all salons and filter in memory for fuzzy matching
-      const allSalons = await Salon.find({}).limit(100); // Limit to prevent performance issues
+      const allSalons = await Salon.find({})
+        .limit(100) // Limit to prevent performance issues
+        .select('name description address image rating reviewCount location services');
       
       // Simple fuzzy matching function
       const calculateSimilarity = (str1, str2) => {
@@ -382,17 +388,38 @@ const searchSalonsByQuery = async (query, limit = 10) => {
         .map(item => item.salon);
     }
 
-    // Format the results
-    return salons.map(salon => ({
-      id: salon._id,
-      name: salon.name,
-      description: salon.description,
-      address: `${salon.address.city}, ${salon.address.state}`,
-      image: salon.image,
-      rating: salon.rating,
-      reviews: salon.reviewCount,
-      distance: salon.distance || Math.random() * 10 // Fallback for testing
-    }));
+    // Calculate distance for each salon if coordinates are provided
+    return salons.map(salon => {
+      let distance = 0;
+      
+      // If coordinates are provided, calculate actual distance
+      if (coordinates && coordinates.lat && coordinates.lng) {
+        const salonLat = salon.location?.coordinates?.[1] || 0;
+        const salonLng = salon.location?.coordinates?.[0] || 0;
+        
+        distance = calculateDistance(
+          coordinates.lat,
+          coordinates.lng,
+          salonLat,
+          salonLng
+        );
+        distance = parseFloat(distance.toFixed(1));
+      } else {
+        // Use existing distance or a consistent placeholder
+        distance = salon.distance || 0;
+      }
+      
+      return {
+        id: salon._id,
+        name: salon.name,
+        description: salon.description,
+        address: `${salon.address.city}, ${salon.address.state}`,
+        image: salon.image,
+        rating: salon.rating,
+        reviews: salon.reviewCount,
+        distance: distance
+      };
+    });
   } catch (error) {
     logger.error(`Error searching salons: ${error.message}`);
     throw new ApiError('Failed to search salons', 500);
