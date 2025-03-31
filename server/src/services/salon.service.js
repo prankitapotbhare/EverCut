@@ -1,6 +1,7 @@
 const { ApiError } = require('../utils/errors');
 const logger = require('../utils/logger');
 const Salon = require('../models/Salon');
+const mongoose = require('mongoose'); // Add this import
 
 /**
  * Get all salons with optional filtering
@@ -272,6 +273,133 @@ const searchSalons = async (query) => {
 };
 
 /**
+ * Search salons by query with fuzzy matching
+ * @param {string} query - Search query
+ * @param {number} limit - Number of results to return
+ * @returns {Promise<Array>} - List of matching salons
+ */
+const searchSalonsByQuery = async (query, limit = 10) => {
+  try {
+    if (!query) {
+      return [];
+    }
+
+    // First attempt: try using existing text index
+    let salons = [];
+    if (query.length > 1) {
+      try {
+        salons = await Salon.find(
+          { $text: { $search: query } },
+          { score: { $meta: "textScore" } }
+        )
+        .sort({ score: { $meta: "textScore" } })
+        .limit(limit);
+      } catch (error) {
+        logger.warn(`Text search error: ${error.message}. Falling back to regex search.`);
+        // If text search fails, we'll continue to regex search
+      }
+    }
+
+    // Second attempt: regex search for partial matches (works with single letters)
+    if (salons.length === 0) {
+      const regexPattern = new RegExp(query, 'i');
+      salons = await Salon.find({
+        $or: [
+          { name: regexPattern },
+          { description: regexPattern },
+          { 'services.name': regexPattern },
+          { 'address.city': regexPattern },
+          { 'address.state': regexPattern }
+        ]
+      }).limit(limit);
+    }
+
+    // Third attempt: fuzzy matching for spelling mistakes
+    if (salons.length === 0) {
+      // Get all salons and filter in memory for fuzzy matching
+      const allSalons = await Salon.find({}).limit(100); // Limit to prevent performance issues
+      
+      // Simple fuzzy matching function
+      const calculateSimilarity = (str1, str2) => {
+        if (!str1 || !str2) return 0;
+        
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+        
+        // Calculate Levenshtein distance
+        const track = Array(str2.length + 1).fill(null).map(() => 
+          Array(str1.length + 1).fill(null));
+        
+        for (let i = 0; i <= str1.length; i += 1) {
+          track[0][i] = i;
+        }
+        
+        for (let j = 0; j <= str2.length; j += 1) {
+          track[j][0] = j;
+        }
+        
+        for (let j = 1; j <= str2.length; j += 1) {
+          for (let i = 1; i <= str1.length; i += 1) {
+            const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+            track[j][i] = Math.min(
+              track[j][i - 1] + 1, // deletion
+              track[j - 1][i] + 1, // insertion
+              track[j - 1][i - 1] + indicator, // substitution
+            );
+          }
+        }
+        
+        return 1 - (track[str2.length][str1.length] / Math.max(str1.length, str2.length));
+      };
+      
+      // Score each salon based on similarity to query
+      const scoredSalons = allSalons.map(salon => {
+        const nameScore = calculateSimilarity(salon.name, query);
+        const descScore = salon.description ? calculateSimilarity(salon.description, query) : 0;
+        
+        // Check services for matches
+        let serviceScore = 0;
+        if (salon.services && salon.services.length > 0) {
+          const serviceScores = salon.services.map(service => 
+            calculateSimilarity(service.name, query));
+          serviceScore = Math.max(...serviceScores, 0);
+        }
+        
+        // Calculate overall score (weighted)
+        const totalScore = (nameScore * 0.6) + (descScore * 0.2) + (serviceScore * 0.2);
+        
+        return {
+          salon,
+          score: totalScore
+        };
+      });
+      
+      // Sort by score and take top results
+      scoredSalons.sort((a, b) => b.score - a.score);
+      salons = scoredSalons
+        .filter(item => item.score > 0.3) // Only include reasonably similar results
+        .slice(0, limit)
+        .map(item => item.salon);
+    }
+
+    // Format the results
+    return salons.map(salon => ({
+      id: salon._id,
+      name: salon.name,
+      description: salon.description,
+      address: `${salon.address.city}, ${salon.address.state}`,
+      image: salon.image,
+      rating: salon.rating,
+      reviews: salon.reviewCount,
+      distance: salon.distance || Math.random() * 10 // Fallback for testing
+    }));
+  } catch (error) {
+    logger.error(`Error searching salons: ${error.message}`);
+    throw new ApiError('Failed to search salons', 500);
+  }
+};
+
+/**
  * Calculate distance between two coordinates using Haversine formula
  * @param {number} lat1 - Latitude of point 1
  * @param {number} lon1 - Longitude of point 1
@@ -304,5 +432,6 @@ module.exports = {
   getSalonStylists,
   getPopularSalons,
   getNearestSalons,
-  searchSalons
+  searchSalons,
+  searchSalonsByQuery
 };

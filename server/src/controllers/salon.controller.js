@@ -395,12 +395,12 @@ const getNearestSalons = async (req, res, next) => {
 
 /**
  * @route GET /api/salons/search
- * @desc Search salons
+ * @desc Search salons with fuzzy matching
  * @access Public
  */
 const searchSalons = async (req, res, next) => {
   try {
-    const { query } = req.query;
+    const { query, limit } = req.query;
     
     if (!query) {
       return res.status(200).json({
@@ -410,9 +410,10 @@ const searchSalons = async (req, res, next) => {
       });
     }
     
-    const salons = await salonService.searchSalons(query);
+    const limitValue = limit ? parseInt(limit) : 10;
+    const salons = await salonService.searchSalonsByQuery(query, limitValue);
     
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
       count: salons.length,
       data: salons

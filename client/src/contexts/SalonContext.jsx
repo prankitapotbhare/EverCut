@@ -102,7 +102,7 @@ export const SalonProvider = ({ children }) => {
   // Modify the debouncedSearch function to have a shorter debounce time
   const debouncedSearch = useCallback(
     debounce(async (query) => {
-      if (query === undefined || query === null) {
+      if (query === undefined || query === null || query.trim() === '') {
         setSearchResults([]);
         setSearchLoading(false);
         return;
@@ -118,14 +118,21 @@ export const SalonProvider = ({ children }) => {
       } finally {
         setSearchLoading(false);
       }
-    }, 150), // Reduced from 300ms to 150ms for faster response
+    }, 150), // Reduced from 300ms to 150ms for faster response with single letters
     []
   );
   
   // Function to search salons by query (real-time)
   const searchSalonsByQuery = async (query) => {
     setSearchLoading(true);
-    debouncedSearch(query);
+    
+    // For single letter searches, we still want to show results
+    if (query && query.trim().length >= 1) {
+      debouncedSearch(query);
+    } else {
+      clearSearchResults();
+      setSearchLoading(false);
+    }
   };
 
   // Clear current salon data

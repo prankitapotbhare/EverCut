@@ -50,13 +50,21 @@ export const getNearestSalons = async (coordinates, limit = 10) => {
   }
 };
 
-// Search salons by query
-export const searchSalons = async (query) => {
+// Search salons by query with advanced features
+export const searchSalons = async (query, limit = 10) => {
   try {
-    // Ensure we're sending the query even if it's just a single character
+    // Handle empty queries
+    if (!query || query.trim() === '') {
+      return [];
+    }
+    
     const response = await api.get('/salons/search', { 
-      params: { query: query.trim() } 
+      params: { 
+        query: query.trim(),
+        limit
+      } 
     });
+    
     return response.data.data;
   } catch (error) {
     console.error('Error searching salons:', error);
