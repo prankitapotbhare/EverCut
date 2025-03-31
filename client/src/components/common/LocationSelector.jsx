@@ -10,30 +10,31 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
   
   // Extended list of locations for selection and search
   const allLocations = [
-    'Munich Center', 
-    'Berlin', 
-    'Hamburg', 
-    'Frankfurt', 
-    'Cologne', 
-    'Stuttgart',
-    'Düsseldorf',
-    'Leipzig',
-    'Dresden',
-    'Nuremberg',
-    'Hannover',
-    'Essen',
-    'Dortmund',
-    'Bremen',
-    'Bonn',
-    'Mannheim',
-    'Karlsruhe',
-    'Heidelberg',
-    'Freiburg',
-    'Münster',
-    'Augsburg',
-    'Wiesbaden',
-    'Aachen'
+    'New York, NY', 
+    'Los Angeles, CA', 
+    'Chicago, IL', 
+    'Houston, TX', 
+    'Phoenix, AZ', 
+    'Philadelphia, PA',
+    'San Antonio, TX',
+    'San Diego, CA',
+    'Dallas, TX',
+    'San Jose, CA'
   ];
+
+  // Map of locations to coordinates
+  const locationCoordinates = {
+    'New York, NY': { lat: 40.7128, lng: -74.0060 },
+    'Los Angeles, CA': { lat: 34.0522, lng: -118.2437 },
+    'Chicago, IL': { lat: 41.8781, lng: -87.6298 },
+    'Houston, TX': { lat: 29.7604, lng: -95.3698 },
+    'Phoenix, AZ': { lat: 33.4484, lng: -112.0740 },
+    'Philadelphia, PA': { lat: 39.9526, lng: -75.1652 },
+    'San Antonio, TX': { lat: 29.4241, lng: -98.4936 },
+    'San Diego, CA': { lat: 32.7157, lng: -117.1611 },
+    'Dallas, TX': { lat: 32.7767, lng: -96.7970 },
+    'San Jose, CA': { lat: 37.3382, lng: -121.8863 }
+  };
 
   // Popular locations (subset of all locations)
   const popularLocations = allLocations.slice(0, 6);
@@ -50,7 +51,7 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
   // Auto-detect location when component mounts
   useEffect(() => {
     // Only auto-detect if we don't already have a location or if it's the default
-    if (selectedLocation === 'Munich Center') {
+    if (selectedLocation === 'New York, NY') {
       detectLocation();
     }
   }, []);
@@ -94,15 +95,17 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
             const data = await response.json();
             // Check for different keys that may contain the city name
             if (data.address) {
+              let cityName = "Unknown Location";
               if (data.address.city) {
-                onLocationChange(data.address.city);
+                cityName = data.address.city;
               } else if (data.address.town) {
-                onLocationChange(data.address.town);
+                cityName = data.address.town;
               } else if (data.address.village) {
-                onLocationChange(data.address.village);
-              } else {
-                onLocationChange("Unknown Location");
+                cityName = data.address.village;
               }
+              
+              // Pass both the city name and coordinates to the parent component
+              onLocationChange(cityName, { lat: latitude, lng: longitude });
             }
             setDetectingLocation(false);
           } catch (error) {
@@ -129,7 +132,8 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
 
   // Function to select a location from the dropdown
   const selectLocation = (loc) => {
-    onLocationChange(loc);
+    // Pass both the location name and its coordinates to the parent component
+    onLocationChange(loc, locationCoordinates[loc]);
     setShowLocationDropdown(false);
     setLocationSearchQuery('');
   };

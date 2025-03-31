@@ -197,26 +197,24 @@ const getNearestSalons = async (coordinates, limit = 10) => {
       return getAllSalons({ limit });
     }
     
-    const salons = await Salon.find({
-      location: {
-        $near: {
-          $geometry: {
-            type: 'Point',
-            coordinates: [coordinates.lng, coordinates.lat]
-          }
-        }
-      }
-    })
-    .limit(limit)
-    .select('name description address image rating reviewCount location');
+    // Instead of using $near which might not work if geospatial index isn't set up correctly,
+    // we'll fetch all salons and calculate distances manually
+    const salons = await Salon.find()
+      .select('name description address image rating reviewCount location')
+      .limit(limit * 3); // Fetch more than needed to sort by distance
     
-    return salons.map(salon => {
+    // Calculate distance for each salon and add it to the salon object
+    const salonsWithDistance = salons.map(salon => {
+      // Default coordinates if location isn't set
+      const salonLat = salon.location?.coordinates?.[1] || 0;
+      const salonLng = salon.location?.coordinates?.[0] || 0;
+      
       // Calculate distance in kilometers
       const distance = calculateDistance(
         coordinates.lat, 
         coordinates.lng, 
-        salon.location.coordinates[1], 
-        salon.location.coordinates[0]
+        salonLat,
+        salonLng
       );
       
       return {
@@ -230,6 +228,11 @@ const getNearestSalons = async (coordinates, limit = 10) => {
         distance: parseFloat(distance.toFixed(1))
       };
     });
+    
+    // Sort by distance and limit to requested number
+    return salonsWithDistance
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, limit);
   } catch (error) {
     logger.error(`Error getting nearest salons: ${error.message}`);
     throw new ApiError('Failed to fetch nearest salons', 500);

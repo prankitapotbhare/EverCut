@@ -122,4 +122,7 @@ salonSchema.methods.calculateAverageRating = function() {
   return (sum / this.reviews.length).toFixed(1);
 };
 
+// Ensure the 2dsphere index is created
+salonSchema.index({ location: '2dsphere' });
+
 module.exports = mongoose.model('Salon', salonSchema);

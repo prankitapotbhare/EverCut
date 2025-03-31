@@ -5,7 +5,9 @@ export const getAuthToken = async () => {
   if (!user) {
     throw new Error('No user logged in');
   }
-  return user.getIdToken();
+  const token = await user.getIdToken();
+  console.log(token); //Remove this after testing
+  return token
 };
 
 export const parseAuthError = (error) => {

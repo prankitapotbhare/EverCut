@@ -40,7 +40,7 @@ const limiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false
 });
-app.use(limiter);
+// app.use(limiter);
 
 // HTTP request logging
 if (process.env.NODE_ENV !== 'test') {

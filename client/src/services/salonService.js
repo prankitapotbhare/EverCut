@@ -1,59 +1,121 @@
-import mockSalons from '../data/mockSalons';
+import api from './api';
 
-// Simulate API calls
-export const getSalons = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mockSalons);
-    }, 300); // Simulate network delay
-  });
+// Get all salons with optional filters
+export const getSalons = async (filters = {}) => {
+  try {
+    const response = await api.get('/salons', { params: filters });
+    return response.data.data;
+  } catch (error) {
+    console.error('Error fetching salons:', error);
+    throw error;
+  }
 };
 
-export const getSalonById = (id) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const salon = mockSalons.find(salon => salon.id === id);
-      if (salon) {
-        resolve(salon);
-      } else {
-        reject(new Error('Salon not found'));
-      }
-    }, 300);
-  });
+// Get salon by ID
+export const getSalonById = async (id) => {
+  try {
+    const response = await api.get(`/salons/${id}`);
+    return response.data.data;
+  } catch (error) {
+    console.error(`Error fetching salon with ID ${id}:`, error);
+    throw error;
+  }
 };
 
-// Additional service functions
-export const getPopularSalons = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Sort by rating and reviews to get the most popular salons
-      const popular = [...mockSalons]
-        .sort((a, b) => (b.rating * b.reviews) - (a.rating * a.reviews))
-        .slice(0, 10);
-      resolve(popular);
-    }, 300);
-  });
+// Get popular salons
+export const getPopularSalons = async (limit = 10) => {
+  try {
+    const response = await api.get('/salons/popular', { params: { limit } });
+    return response.data.data;
+  } catch (error) {
+    console.error('Error fetching popular salons:', error);
+    throw error;
+  }
 };
 
-export const getNearestSalons = (userLocation) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Sort by distance to get the nearest salons
-      const nearest = [...mockSalons]
-        .sort((a, b) => a.distance - b.distance)
-        .slice(0, 10);
-      resolve(nearest);
-    }, 300);
-  });
+// Get nearest salons based on coordinates
+export const getNearestSalons = async (coordinates, limit = 10) => {
+  try {
+    const params = { limit };
+    if (coordinates && coordinates.lat && coordinates.lng) {
+      params.lat = coordinates.lat;
+      params.lng = coordinates.lng;
+    }
+    
+    const response = await api.get('/salons/nearest', { params });
+    return response.data.data;
+  } catch (error) {
+    console.error('Error fetching nearest salons:', error);
+    throw error;
+  }
 };
 
-export const searchSalons = (query) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const results = mockSalons.filter(salon => 
-        salon.name.toLowerCase().includes(query.toLowerCase())
-      );
-      resolve(results);
-    }, 300);
-  });
+// Search salons by query
+export const searchSalons = async (query) => {
+  try {
+    // Ensure we're sending the query even if it's just a single character
+    const response = await api.get('/salons/search', { 
+      params: { query: query.trim() } 
+    });
+    return response.data.data;
+  } catch (error) {
+    console.error('Error searching salons:', error);
+    throw error;
+  }
+};
+
+// Get salon services
+export const getSalonServices = async (salonId) => {
+  try {
+    const response = await api.get(`/salons/${salonId}/services`);
+    return response.data.data;
+  } catch (error) {
+    console.error(`Error fetching services for salon ${salonId}:`, error);
+    throw error;
+  }
+};
+
+// Get salon packages
+export const getSalonPackages = async (salonId) => {
+  try {
+    const response = await api.get(`/salons/${salonId}/packages`);
+    return response.data.data;
+  } catch (error) {
+    console.error(`Error fetching packages for salon ${salonId}:`, error);
+    throw error;
+  }
+};
+
+// Get salon stylists
+export const getSalonStylists = async (salonId) => {
+  try {
+    const response = await api.get(`/salons/${salonId}/stylists`);
+    return response.data.data;
+  } catch (error) {
+    console.error(`Error fetching stylists for salon ${salonId}:`, error);
+    throw error;
+  }
+};
+
+// Create a new salon (admin only)
+export const createSalon = async (salonData) => {
+  try {
+    const response = await api.post('/salons', salonData, { protected: true });
+    return response.data.data;
+  } catch (error) {
+    console.error('Error creating salon:', error);
+    throw error;
+  }
+};
+
+export default {
+  getSalons,
+  getSalonById,
+  getPopularSalons,
+  getNearestSalons,
+  searchSalons,
+  getSalonServices,
+  getSalonPackages,
+  getSalonStylists,
+  createSalon
 };

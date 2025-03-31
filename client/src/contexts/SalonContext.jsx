@@ -1,5 +1,12 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
-import { getSalons, getSalonById, getPopularSalons, getNearestSalons, searchSalons } from '@/services/salonService';
+import React, { createContext, useState, useContext, useEffect, useCallback } from 'react';
+import { 
+  getSalons, 
+  getSalonById, 
+  getPopularSalons, 
+  getNearestSalons, 
+  searchSalons 
+} from '@/services/salonService';
+import { debounce } from 'lodash';
 
 const SalonContext = createContext();
 
@@ -11,8 +18,10 @@ export const SalonProvider = ({ children }) => {
   const [allSalons, setAllSalons] = useState([]);
   const [popularSalons, setPopularSalons] = useState([]);
   const [nearestSalons, setNearestSalons] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
   const [currentSalon, setCurrentSalon] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [searchLoading, setSearchLoading] = useState(false);
   const [error, setError] = useState(null);
 
   // Fetch all salons on initial load
@@ -89,20 +98,34 @@ export const SalonProvider = ({ children }) => {
     }
   };
 
-  // Function to search salons by query
+  // Debounced search function for real-time search
+  // Modify the debouncedSearch function to have a shorter debounce time
+  const debouncedSearch = useCallback(
+    debounce(async (query) => {
+      if (query === undefined || query === null) {
+        setSearchResults([]);
+        setSearchLoading(false);
+        return;
+      }
+      
+      try {
+        const results = await searchSalons(query);
+        setSearchResults(results);
+        setError(null);
+      } catch (err) {
+        console.error('Error searching salons:', err);
+        setError('Failed to search salons. Please try again later.');
+      } finally {
+        setSearchLoading(false);
+      }
+    }, 150), // Reduced from 300ms to 150ms for faster response
+    []
+  );
+  
+  // Function to search salons by query (real-time)
   const searchSalonsByQuery = async (query) => {
-    try {
-      setLoading(true);
-      const results = await searchSalons(query);
-      setError(null);
-      return results;
-    } catch (err) {
-      console.error('Error searching salons:', err);
-      setError('Failed to search salons. Please try again later.');
-      throw err;
-    } finally {
-      setLoading(false);
-    }
+    setSearchLoading(true);
+    debouncedSearch(query);
   };
 
   // Clear current salon data
@@ -110,17 +133,25 @@ export const SalonProvider = ({ children }) => {
     setCurrentSalon(null);
   };
 
+  // Clear search results
+  const clearSearchResults = () => {
+    setSearchResults([]);
+  };
+
   const value = {
     allSalons,
     popularSalons,
     nearestSalons,
+    searchResults,
     currentSalon,
     loading,
+    searchLoading,
     error,
     fetchSalonById,
     fetchNearestSalons,
     searchSalonsByQuery,
-    clearCurrentSalon
+    clearCurrentSalon,
+    clearSearchResults
   };
 
   return (

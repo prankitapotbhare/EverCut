@@ -18,7 +18,7 @@ import {
   getDoc 
 } from 'firebase/firestore';
 import { auth, db, verifyEmailSettings, resetPasswordSettings } from '@/firebase/config';
-import { parseAuthError } from '@/utils/auth';
+import { getAuthToken, parseAuthError } from '@/utils/auth';
 
 const AuthContext = createContext();
 
@@ -188,6 +188,7 @@ export const AuthProvider = ({ children }) => {
       try {
         if (user) {
           await user.reload();
+          getAuthToken(); //Remove this after testing
           if (user.emailVerified) {
             await createOrUpdateUser(user, {}, false); // Add isInitializing flag
           }

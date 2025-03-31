@@ -1,44 +1,73 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Search } from 'lucide-react';
 import SalonCard from './SalonCard';
 import LocationSelector from '@/components/common/LocationSelector';
+import Search from '@/components/common/Search';
 import { useSalon } from '@/contexts/SalonContext';
 
 const SalonFinder = () => {
-  const [location, setLocation] = useState('Munich Center');
+  const [location, setLocation] = useState('New York, NY');
   const [searchQuery, setSearchQuery] = useState('');
   const [showAll, setShowAll] = useState(false);
-  const [salons, setSalons] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [coordinates, setCoordinates] = useState({ lat: 40.7128, lng: -74.0060 }); // Default to New York coordinates
 
-  const { allSalons, loading: contextLoading, error: contextError } = useSalon();
+  const { 
+    allSalons, 
+    searchResults, 
+    nearestSalons,
+    loading, 
+    searchLoading,
+    error, 
+    searchSalonsByQuery,
+    fetchNearestSalons,
+    clearSearchResults
+  } = useSalon();
 
-  // This effect sets salons once allSalons is available
+  // Fetch nearest salons on initial load
   useEffect(() => {
-    if (allSalons.length > 0) {
-      setSalons(allSalons);
-      setLoading(false);
+    if (coordinates) {
+      fetchNearestSalons(coordinates);
     }
-  }, [allSalons]);
-
-  // Handle location change from LocationSelector
-  const handleLocationChange = (newLocation) => {
-    setLocation(newLocation);
-  };
-
-  // Optionally, detect location automatically on mount
-  useEffect(() => {
-    // This will be handled by the LocationSelector component
   }, []);
 
-  const filteredSalons = useMemo(() => {
-    const filtered = salons.filter(salon =>
-      salon.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    return showAll ? filtered : filtered.slice(0, 6);
-  }, [salons, searchQuery, showAll]);
+  // Handle search input change with real-time search
+  const handleSearchChange = (query) => {
+    setSearchQuery(query);
+    
+    if (query.trim() === '') {
+      clearSearchResults();
+    } else {
+      searchSalonsByQuery(query);
+    }
+  };
 
-  if (loading) {
+  // Handle location change from LocationSelector
+  const handleLocationChange = (newLocation, newCoordinates) => {
+    setLocation(newLocation);
+    
+    // Only update coordinates and fetch if we have valid coordinates
+    if (newCoordinates && newCoordinates.lat && newCoordinates.lng) {
+      setCoordinates(newCoordinates);
+      fetchNearestSalons(newCoordinates);
+    }
+  };
+
+  // Determine which salons to display based on search state
+  const displayedSalons = useMemo(() => {
+    if (searchQuery.trim() !== '') {
+      return searchResults;
+    } else if (coordinates && nearestSalons.length > 0) {
+      return nearestSalons;
+    } else {
+      return allSalons;
+    }
+  }, [searchQuery, searchResults, coordinates, nearestSalons, allSalons]);
+
+  // Apply pagination if not showing all
+  const paginatedSalons = useMemo(() => {
+    return showAll ? displayedSalons : displayedSalons.slice(0, 6);
+  }, [displayedSalons, showAll]);
+
+  if (loading && !searchLoading && displayedSalons.length === 0) {
     return (
       <div className="min-h-screen bg-[#f3f0ff] p-8 flex items-center justify-center">
         <div className="text-xl">Loading salons...</div>
@@ -60,16 +89,14 @@ const SalonFinder = () => {
           Seamless booking, smooth management, and a hassle-free salon experience—all in one powerful app. Stay ahead with Evercut!
         </p>
 
-        {/* Search Bar */}
+        {/* Search Component */}
         <div className="relative max-w-2xl mx-auto mt-8">
-          <input
-            type="text"
+          <Search 
             placeholder="Shop name or service"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-6 py-4 rounded-full shadow-lg text-lg"
+            onSearch={handleSearchChange}
+            initialValue={searchQuery}
+            loading={searchLoading}
           />
-          <Search className="absolute right-6 top-1/2 transform -translate-y-1/2 text-gray-400" />
         </div>
 
         {/* Location Selector Component */}
@@ -81,18 +108,41 @@ const SalonFinder = () => {
         </div>
       </div>
 
+      {/* Error Message */}
+      {error && (
+        <div className="max-w-6xl mx-auto mb-6 p-4 bg-red-100 text-red-700 rounded-lg">
+          {error}
+        </div>
+      )}
+
       {/* Salon Cards Grid */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredSalons.map((salon) => (
-          <SalonCard 
-            key={salon.id} 
-            salon={salon} 
-          />
-        ))}
+        {paginatedSalons.length > 0 ? (
+          paginatedSalons.map((salon) => (
+            <SalonCard 
+              key={salon.id || salon._id} 
+              salon={salon} 
+            />
+          ))
+        ) : (
+          <div className="col-span-3 text-center py-12">
+            {searchQuery ? 
+              "No salons found matching your search. Try a different keyword." : 
+              "No salons available in this area."}
+          </div>
+        )}
       </div>
 
+      {/* Loading indicator for search results */}
+      {searchLoading && displayedSalons.length === 0 && (
+        <div className="max-w-6xl mx-auto text-center py-12">
+          <div className="inline-block w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+          <p className="mt-4 text-gray-600">Searching for salons...</p>
+        </div>
+      )}
+
       {/* See All Button */}
-      {!showAll && filteredSalons.length === 6 && salons.length > 6 && (
+      {!showAll && displayedSalons.length > 6 && (
         <div className="max-w-6xl mx-auto mt-8 text-center">
           <button 
             onClick={() => setShowAll(true)}

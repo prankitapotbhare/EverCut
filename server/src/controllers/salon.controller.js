@@ -356,16 +356,37 @@ const getPopularSalons = async (req, res, next) => {
 const getNearestSalons = async (req, res, next) => {
   try {
     const { lat, lng, limit } = req.query;
-    const coordinates = lat && lng ? { lat: parseFloat(lat), lng: parseFloat(lng) } : null;
-    const limitValue = limit ? parseInt(limit) : 10;
     
-    const salons = await salonService.getNearestSalons(coordinates, limitValue);
-    
-    res.status(200).json({
-      success: true,
-      count: salons.length,
-      data: salons
-    });
+    // Validate coordinates
+    if (lat && lng) {
+      const latNum = parseFloat(lat);
+      const lngNum = parseFloat(lng);
+      
+      if (isNaN(latNum) || isNaN(lngNum)) {
+        return next(new ApiError('Invalid coordinates provided', 400));
+      }
+      
+      const coordinates = { lat: latNum, lng: lngNum };
+      const limitValue = limit ? parseInt(limit) : 10;
+      
+      const salons = await salonService.getNearestSalons(coordinates, limitValue);
+      
+      return res.status(200).json({
+        success: true,
+        count: salons.length,
+        data: salons
+      });
+    } else {
+      // If no coordinates, just return popular salons
+      const limitValue = limit ? parseInt(limit) : 10;
+      const salons = await salonService.getPopularSalons(limitValue);
+      
+      return res.status(200).json({
+        success: true,
+        count: salons.length,
+        data: salons
+      });
+    }
   } catch (error) {
     logger.error(`Error getting nearest salons: ${error.message}`);
     next(new ApiError('Failed to fetch nearest salons', 500));
