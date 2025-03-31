@@ -1,0 +1,523 @@
+{
+  "name": "Tress Trends",
+  "description": "Eco-friendly salon using organic and sustainable products for all services.",
+  "address": {
+    "street": "3976 Main Street",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zipCode": "19101",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -75.15416356594206,
+      39.95519164484631
+    ]
+  },
+  "contactPhone": "(699) 994-8279",
+  "contactEmail": "info@tresstrends.com",
+  "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Full Face Waxing",
+      "description": "Complete facial hair removal",
+      "price": 44,
+      "duration": "30 min"
+    },
+    {
+      "id": "2",
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 14,
+      "duration": "15 min"
+    },
+    {
+      "id": "3",
+      "name": "Women's Cut & Style",
+      "description": "Women's haircut with blowout",
+      "price": 46,
+      "duration": "45 min"
+    },
+    {
+      "id": "4",
+      "name": "Acrylic Nails",
+      "description": "Full set of acrylic nails",
+      "price": 70,
+      "duration": "1.5 hrs"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 233,
+      "duration": "2 hrs",
+      "services": [
+        "Swedish Massage (2)",
+        "Pedicure (2)"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 274,
+      "duration": "5 hrs",
+      "services": [
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
+        "Pedicure"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 219,
+      "duration": "3 hrs",
+      "services": [
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-86-1",
+      "name": "James Wright",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "specialties": [
+        "Women's Cut & Style",
+        "Eyebrow Waxing"
+      ],
+      "bio": "Trained in New York and Paris, bringing international techniques to every client.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-86-2",
+      "name": "Amelia Harris",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "specialties": [
+        "Acrylic Nails",
+        "Full Face Waxing"
+      ],
+      "bio": "Passionate about creating styles that enhance each client's unique features.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "James T.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "rating": 5,
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-03-16T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Abigail U.",
+      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
+      "rating": 5,
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-02-11T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Logan P.",
+      "userImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+      "rating": 3,
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-02-21T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.5,
+  "reviewCount": 1482,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "6:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": [
+    {
+      "date": "2025-03-31",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    }
+  ]
+}

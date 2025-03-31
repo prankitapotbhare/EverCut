@@ -1,0 +1,393 @@
+{
+  "name": "Fringe Benefits",
+  "description": "High-end salon offering premium services with exceptional attention to detail.",
+  "address": {
+    "street": "5648 Main Street",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10001",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -74.01238656943502,
+      40.720630787599006
+    ]
+  },
+  "contactPhone": "(484) 955-6576",
+  "contactEmail": "info@fringebenefits.com",
+  "image": "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
+    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
+    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Gel Manicure",
+      "description": "Long-lasting gel polish application",
+      "price": 43,
+      "duration": "45 min"
+    },
+    {
+      "id": "2",
+      "name": "Bridal Hair",
+      "description": "Wedding day hair styling",
+      "price": 111,
+      "duration": "1.5 hrs"
+    },
+    {
+      "id": "3",
+      "name": "Women's Cut & Style",
+      "description": "Women's haircut with blowout",
+      "price": 52,
+      "duration": "45 min"
+    },
+    {
+      "id": "4",
+      "name": "Hot Stone Massage",
+      "description": "Massage with heated stones",
+      "price": 109,
+      "duration": "1.25 hrs"
+    },
+    {
+      "id": "5",
+      "name": "Lip Waxing",
+      "description": "Upper lip hair removal",
+      "price": 10,
+      "duration": "10 min"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 208,
+      "duration": "3 hrs",
+      "services": [
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-52-1",
+      "name": "Amelia Martinez",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
+      "specialties": [
+        "Lip Waxing",
+        "Women's Cut & Style",
+        "Hot Stone Massage"
+      ],
+      "bio": "Specializes in natural-looking balayage and dimensional color.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:30",
+            "15:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-52-2",
+      "name": "Henry Allen",
+      "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+      "specialties": [
+        "Gel Manicure",
+        "Bridal Hair"
+      ],
+      "bio": "Passionate about creating styles that enhance each client's unique features.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "09:30",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "14:00",
+            "15:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Benjamin H.",
+      "userImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
+      "rating": 5,
+      "comment": "My stylist was amazing and really understood what I wanted.",
+      "date": "2025-03-06T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Hannah G.",
+      "userImage": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
+      "rating": 5,
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-03-30T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.9,
+  "reviewCount": 680,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "5:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": [
+    {
+      "date": "2025-04-01",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    }
+  ]
+}

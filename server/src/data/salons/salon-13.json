@@ -1,0 +1,842 @@
+{
+  "name": "Curl Up & Dye",
+  "description": "Upscale salon offering premium hair and beauty services in a luxurious setting.",
+  "address": {
+    "street": "9397 Forest Avenue",
+    "city": "San Antonio",
+    "state": "TX",
+    "zipCode": "78201",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -98.50686885621833,
+      29.425286936301806
+    ]
+  },
+  "contactPhone": "(875) 700-4811",
+  "contactEmail": "info@curlup&dye.com",
+  "image": "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
+    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 108,
+      "duration": "45 min"
+    },
+    {
+      "id": "2",
+      "name": "Men's Cut",
+      "description": "Men's haircut and styling",
+      "price": 28,
+      "duration": "30 min"
+    },
+    {
+      "id": "3",
+      "name": "Body Scrub",
+      "description": "Exfoliating body treatment",
+      "price": 71,
+      "duration": "45 min"
+    },
+    {
+      "id": "4",
+      "name": "Deep Tissue Massage",
+      "description": "Therapeutic muscle massage",
+      "price": 91,
+      "duration": "1 hr"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Bridal Package",
+      "description": "Complete bridal beauty preparation",
+      "price": 200,
+      "duration": "3 hrs",
+      "services": [
+        "Bridal Hair",
+        "Makeup Application",
+        "Gel Manicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-13-1",
+      "name": "Amelia Robinson",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "specialties": [
+        "Chemical Peel",
+        "Men's Cut",
+        "Deep Tissue Massage"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-13-2",
+      "name": "Matthew Hernandez",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
+      "specialties": [
+        "Body Scrub"
+      ],
+      "bio": "Expert in curly hair textures and specialized cutting techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-13-3",
+      "name": "Sebastian Harris",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "specialties": [],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "10:30",
+            "11:00",
+            "12:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-13-4",
+      "name": "Elijah Jackson",
+      "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
+      "specialties": [],
+      "bio": "Known for creating stunning transformations and attention to detail.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-13-5",
+      "name": "Elijah Walker",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "specialties": [],
+      "bio": "Expert in curly hair textures and specialized cutting techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "10:00",
+            "10:30",
+            "12:00",
+            "13:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-13-6",
+      "name": "Evelyn Walker",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "specialties": [],
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:30",
+            "13:00",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:00"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Mia E.",
+      "userImage": "https://images.unsplash.com/photo-1557555187-23d685287bc3?w=100&q=80",
+      "rating": 5,
+      "comment": "Amazing results! Everyone keeps complimenting my new look.",
+      "date": "2025-03-25T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Emma S.",
+      "userImage": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
+      "rating": 4,
+      "comment": "The best salon experience I've had in years. Highly recommend!",
+      "date": "2025-03-07T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Evelyn W.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "rating": 4,
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-02-12T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.2,
+  "reviewCount": 1570,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "Closed",
+      "close": "Closed"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": {
+    "discount": "28%",
+    "description": "Monthly Special"
+  },
+  "availability": [
+    {
+      "date": "2025-04-01",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    }
+  ]
+}

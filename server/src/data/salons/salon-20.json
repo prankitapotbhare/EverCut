@@ -1,0 +1,892 @@
+{
+  "name": "Hair Affair",
+  "description": "High-end salon offering premium services with exceptional attention to detail.",
+  "address": {
+    "street": "2743 Beach Road",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zipCode": "90001",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -118.22706177847424,
+      34.063440002413415
+    ]
+  },
+  "contactPhone": "(223) 368-2630",
+  "contactEmail": "info@hairaffair.com",
+  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
+    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Blowout",
+      "description": "Wash and blowdry styling",
+      "price": 39,
+      "duration": "30 min"
+    },
+    {
+      "id": "2",
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 77,
+      "duration": "1 hr"
+    },
+    {
+      "id": "3",
+      "name": "Eyebrow Threading",
+      "description": "Precise eyebrow shaping",
+      "price": 16,
+      "duration": "15 min"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 154,
+      "duration": "3.5 hrs",
+      "services": [
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-20-1",
+      "name": "Benjamin Thomas",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "specialties": [
+        "Eyebrow Threading",
+        "Updo Styling"
+      ],
+      "bio": "Trained in New York and Paris, bringing international techniques to every client.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-20-2",
+      "name": "Charlotte Miller",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "specialties": [
+        "Blowout"
+      ],
+      "bio": "Known for creating stunning transformations and attention to detail.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-20-3",
+      "name": "Noah Hernandez",
+      "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+      "specialties": [],
+      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "14:00",
+            "14:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-20-4",
+      "name": "Elijah Miller",
+      "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "specialties": [],
+      "bio": "Expert in curly hair textures and specialized cutting techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "10:00",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-20-5",
+      "name": "Henry Thompson",
+      "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
+      "specialties": [],
+      "bio": "Passionate about creating styles that enhance each client's unique features.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-20-6",
+      "name": "William Thompson",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "specialties": [],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "William K.",
+      "userImage": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&q=80",
+      "rating": 5,
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-03-10T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Ava J.",
+      "userImage": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+      "rating": 5,
+      "comment": "Incredible attention to detail. They really know what they're doing.",
+      "date": "2025-03-23T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Penelope C.",
+      "userImage": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
+      "rating": 4,
+      "comment": "My new hairstyle is perfect. Exactly what I wanted!",
+      "date": "2025-03-24T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.1,
+  "reviewCount": 2028,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "6:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": [
+    {
+      "date": "2025-03-31",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
+    }
+  ]
+}

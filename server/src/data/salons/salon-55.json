@@ -1,0 +1,565 @@
+{
+  "name": "Style Masters",
+  "description": "Inclusive salon specializing in services for all hair types and textures.",
+  "address": {
+    "street": "2113 Pine Street",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zipCode": "85001",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -112.08471345900334,
+      33.44860009067115
+    ]
+  },
+  "contactPhone": "(576) 736-2162",
+  "contactEmail": "info@stylemasters.com",
+  "image": "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Balayage",
+      "description": "Hand-painted highlighting technique",
+      "price": 131,
+      "duration": "2.5 hrs"
+    },
+    {
+      "id": "2",
+      "name": "Full Face Waxing",
+      "description": "Complete facial hair removal",
+      "price": 46,
+      "duration": "30 min"
+    },
+    {
+      "id": "3",
+      "name": "Kids Cut",
+      "description": "Children's haircut (12 and under)",
+      "price": 25,
+      "duration": "20 min"
+    },
+    {
+      "id": "4",
+      "name": "Hair Extensions",
+      "description": "Hair extension application",
+      "price": 267,
+      "duration": "3 hrs"
+    },
+    {
+      "id": "5",
+      "name": "Men's Cut",
+      "description": "Men's haircut and styling",
+      "price": 29,
+      "duration": "30 min"
+    },
+    {
+      "id": "6",
+      "name": "Body Scrub",
+      "description": "Exfoliating body treatment",
+      "price": 64,
+      "duration": "45 min"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 275,
+      "duration": "5 hrs",
+      "services": [
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
+        "Pedicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-55-1",
+      "name": "Harper Martinez",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
+      "specialties": [
+        "Kids Cut",
+        "Full Face Waxing",
+        "Body Scrub",
+        "Men's Cut"
+      ],
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-55-2",
+      "name": "Mason Walker",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
+      "specialties": [
+        "Balayage",
+        "Hair Extensions"
+      ],
+      "bio": "Expert in curly hair textures and specialized cutting techniques.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-55-3",
+      "name": "Mason Thompson",
+      "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
+      "specialties": [],
+      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-55-4",
+      "name": "Ava Garcia",
+      "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
+      "specialties": [],
+      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:30",
+            "15:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:30",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "William K.",
+      "userImage": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
+      "rating": 5,
+      "comment": "I appreciate how they explained each step of the process.",
+      "date": "2025-02-02T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Aiden L.",
+      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
+      "rating": 4,
+      "comment": "The package deal was worth every penny. So happy with the results!",
+      "date": "2025-02-16T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.5,
+  "reviewCount": 127,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "6:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": []
+}

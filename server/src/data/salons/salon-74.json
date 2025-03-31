@@ -1,0 +1,752 @@
+{
+  "name": "Hair Sensation",
+  "description": "High-end salon offering premium services with exceptional attention to detail.",
+  "address": {
+    "street": "3605 Broadway",
+    "city": "Dallas",
+    "state": "TX",
+    "zipCode": "75201",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -96.79135394173322,
+      32.78663781976858
+    ]
+  },
+  "contactPhone": "(468) 833-4969",
+  "contactEmail": "info@hairsensation.com",
+  "image": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
+    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Full Color",
+      "description": "All-over hair color application",
+      "price": 85,
+      "duration": "2 hrs"
+    },
+    {
+      "id": "2",
+      "name": "Microdermabrasion",
+      "description": "Exfoliating skin treatment",
+      "price": 105,
+      "duration": "45 min"
+    },
+    {
+      "id": "3",
+      "name": "Partial Highlights",
+      "description": "Highlights for top and sides",
+      "price": 93,
+      "duration": "1.5 hrs"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Relaxation Package",
+      "description": "Ultimate relaxation experience",
+      "price": 159,
+      "duration": "2.5 hrs",
+      "services": [
+        "Swedish Massage",
+        "Express Facial",
+        "Pedicure"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Hair Repair",
+      "description": "Restorative treatment for damaged hair",
+      "price": 221,
+      "duration": "3.5 hrs",
+      "services": [
+        "Keratin Treatment",
+        "Deep Conditioning",
+        "Trim"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 288,
+      "duration": "5 hrs",
+      "services": [
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
+        "Pedicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-74-1",
+      "name": "Elijah Martinez",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
+      "specialties": [
+        "Microdermabrasion",
+        "Partial Highlights"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-74-2",
+      "name": "James Miller",
+      "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
+      "specialties": [
+        "Full Color"
+      ],
+      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-74-3",
+      "name": "James Allen",
+      "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "specialties": [],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-74-4",
+      "name": "Sophia Moore",
+      "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "specialties": [],
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-74-5",
+      "name": "Jackson Taylor",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "specialties": [],
+      "bio": "Specializes in natural-looking balayage and dimensional color.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-74-6",
+      "name": "Henry Brown",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "specialties": [],
+      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:30",
+            "13:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "10:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:30",
+            "16:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Sophia R.",
+      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
+      "rating": 5,
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-03-27T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.2,
+  "reviewCount": 864,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "6:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": [
+    {
+      "date": "2025-03-31",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    }
+  ]
+}

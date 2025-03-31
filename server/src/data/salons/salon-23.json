@@ -1,0 +1,494 @@
+{
+  "name": "Sophisticated Cuts",
+  "description": "Vibrant salon known for bold colors and avant-garde styling.",
+  "address": {
+    "street": "1956 Meadow Lane",
+    "city": "Houston",
+    "state": "TX",
+    "zipCode": "77001",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -95.37278712882754,
+      29.76553041255954
+    ]
+  },
+  "contactPhone": "(842) 692-5562",
+  "contactEmail": "info@sophisticatedcuts.com",
+  "image": "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
+    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Keratin Treatment",
+      "description": "Smoothing keratin service",
+      "price": 171,
+      "duration": "2.5 hrs"
+    },
+    {
+      "id": "2",
+      "name": "Nail Art",
+      "description": "Custom nail designs",
+      "price": 14,
+      "duration": "15 min"
+    },
+    {
+      "id": "3",
+      "name": "Gel Manicure",
+      "description": "Long-lasting gel polish application",
+      "price": 41,
+      "duration": "45 min"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Hair Repair",
+      "description": "Restorative treatment for damaged hair",
+      "price": 209,
+      "duration": "3.5 hrs",
+      "services": [
+        "Keratin Treatment",
+        "Deep Conditioning",
+        "Trim"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 77,
+      "duration": "1 hr",
+      "services": [
+        "Basic Haircut",
+        "Express Facial"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 215,
+      "duration": "3 hrs",
+      "services": [
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-23-1",
+      "name": "Oliver Smith",
+      "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
+      "specialties": [
+        "Gel Manicure",
+        "Nail Art",
+        "Keratin Treatment"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:30",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:30",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-23-2",
+      "name": "Sophia Taylor",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
+      "specialties": [],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-23-3",
+      "name": "Samuel Williams",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "specialties": [],
+      "bio": "Trained in New York and Paris, bringing international techniques to every client.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "09:30",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "10:30",
+            "11:30",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Sofia Q.",
+      "userImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+      "rating": 3,
+      "comment": "Incredible attention to detail. They really know what they're doing.",
+      "date": "2025-02-17T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Emma S.",
+      "userImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80",
+      "rating": 5,
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-02-08T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Evelyn W.",
+      "userImage": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
+      "rating": 5,
+      "comment": "The best salon experience I've had in years. Highly recommend!",
+      "date": "2025-03-22T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.1,
+  "reviewCount": 1692,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "10:00 AM",
+      "close": "4:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": []
+}

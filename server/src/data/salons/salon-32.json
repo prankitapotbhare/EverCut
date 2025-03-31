@@ -1,0 +1,751 @@
+{
+  "name": "Snip & Style",
+  "description": "Budget-friendly salon providing quality services at accessible prices.",
+  "address": {
+    "street": "2377 Maple Drive",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10001",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -74.01741447556041,
+      40.72004267157682
+    ]
+  },
+  "contactPhone": "(323) 290-9046",
+  "contactEmail": "info@snip&style.com",
+  "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
+    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
+    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Ombre",
+      "description": "Graduated color effect",
+      "price": 139,
+      "duration": "2.5 hrs"
+    },
+    {
+      "id": "2",
+      "name": "Balayage",
+      "description": "Hand-painted highlighting technique",
+      "price": 126,
+      "duration": "2.5 hrs"
+    },
+    {
+      "id": "3",
+      "name": "Partial Highlights",
+      "description": "Highlights for top and sides",
+      "price": 90,
+      "duration": "1.5 hrs"
+    },
+    {
+      "id": "4",
+      "name": "Deep Cleansing Facial",
+      "description": "Thorough facial with extractions",
+      "price": 85,
+      "duration": "1 hr"
+    },
+    {
+      "id": "5",
+      "name": "Body Scrub",
+      "description": "Exfoliating body treatment",
+      "price": 76,
+      "duration": "45 min"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Relaxation Package",
+      "description": "Ultimate relaxation experience",
+      "price": 165,
+      "duration": "2.5 hrs",
+      "services": [
+        "Swedish Massage",
+        "Express Facial",
+        "Pedicure"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 209,
+      "duration": "3 hrs",
+      "services": [
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 75,
+      "duration": "1 hr",
+      "services": [
+        "Basic Haircut",
+        "Express Facial"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-32-1",
+      "name": "Liam Wright",
+      "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
+      "specialties": [
+        "Balayage",
+        "Deep Cleansing Facial",
+        "Body Scrub",
+        "Ombre"
+      ],
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "13:00",
+            "14:00",
+            "14:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-32-2",
+      "name": "Daniel Thomas",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "specialties": [
+        "Partial Highlights"
+      ],
+      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:30",
+            "13:30",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:30",
+            "10:00",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "11:00",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-32-3",
+      "name": "David Rodriguez",
+      "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "specialties": [],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:30",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-32-4",
+      "name": "Aiden Thomas",
+      "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
+      "specialties": [],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-32-5",
+      "name": "Logan Lee",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
+      "specialties": [],
+      "bio": "Specializes in natural-looking balayage and dimensional color.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:30",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:30",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Aiden L.",
+      "userImage": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
+      "rating": 5,
+      "comment": "I appreciate how they explained each step of the process.",
+      "date": "2025-02-06T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Owen H.",
+      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
+      "rating": 4,
+      "comment": "Excellent service from start to finish. Love this place!",
+      "date": "2025-03-27T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Zoe E.",
+      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
+      "rating": 5,
+      "comment": "They were able to fit me in last minute. Such great customer service!",
+      "date": "2025-01-31T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "Henry D.",
+      "userImage": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "rating": 5,
+      "comment": "Very skilled stylists who really listen to what you want.",
+      "date": "2025-02-01T00:00:00.000Z"
+    }
+  ],
+  "rating": 5,
+  "reviewCount": 2096,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "6:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": [
+    {
+      "date": "2025-03-31",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
+    }
+  ]
+}

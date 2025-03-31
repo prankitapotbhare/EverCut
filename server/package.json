@@ -1,0 +1,44 @@
+{
+  "name": "evercut-server",
+  "version": "1.0.0",
+  "description": "EverCut Salon Booking System Backend",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --forceExit --detectOpenHandles",
+    "lint": "eslint .",
+    "seed": "node src/scripts/seed.js",
+    "seedSalons": "node src/scripts/seedSalons.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "firebase-admin": "^11.11.1",
+    "helmet": "^7.1.0",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "stripe": "^14.9.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^4.3.2",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^10.1.4",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "jest": {
+    "preset": "@shelf/jest-mongodb",
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ]
+  }
+}

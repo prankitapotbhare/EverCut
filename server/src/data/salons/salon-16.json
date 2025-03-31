@@ -1,0 +1,529 @@
+{
+  "name": "The Beauty Collective",
+  "description": "Trendy salon specializing in cutting-edge styles and innovative color techniques.",
+  "address": {
+    "street": "7924 Forest Avenue",
+    "city": "Chicago",
+    "state": "IL",
+    "zipCode": "60601",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -87.61577419860384,
+      41.902669133101746
+    ]
+  },
+  "contactPhone": "(683) 138-7707",
+  "contactEmail": "info@thebeautycollective.com",
+  "image": "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
+    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
+    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
+    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
+    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Kids Cut",
+      "description": "Children's haircut (12 and under)",
+      "price": 24,
+      "duration": "20 min"
+    },
+    {
+      "id": "2",
+      "name": "Body Wrap",
+      "description": "Detoxifying body treatment",
+      "price": 83,
+      "duration": "1 hr"
+    },
+    {
+      "id": "3",
+      "name": "Acrylic Nails",
+      "description": "Full set of acrylic nails",
+      "price": 63,
+      "duration": "1.5 hrs"
+    },
+    {
+      "id": "4",
+      "name": "Lip Waxing",
+      "description": "Upper lip hair removal",
+      "price": 11,
+      "duration": "10 min"
+    },
+    {
+      "id": "5",
+      "name": "Swedish Massage",
+      "description": "Relaxing full body massage",
+      "price": 86,
+      "duration": "1 hr"
+    },
+    {
+      "id": "6",
+      "name": "Ombre",
+      "description": "Graduated color effect",
+      "price": 124,
+      "duration": "2.5 hrs"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 247,
+      "duration": "2 hrs",
+      "services": [
+        "Swedish Massage (2)",
+        "Pedicure (2)"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-16-1",
+      "name": "Mason Miller",
+      "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "specialties": [
+        "Body Wrap",
+        "Ombre"
+      ],
+      "bio": "Trained in New York and Paris, bringing international techniques to every client.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:30",
+            "11:00",
+            "11:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-16-2",
+      "name": "Amelia Smith",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "specialties": [
+        "Swedish Massage",
+        "Lip Waxing"
+      ],
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:30",
+            "13:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "11:00",
+            "12:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "15:30",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-16-3",
+      "name": "Oliver Young",
+      "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "specialties": [
+        "Kids Cut",
+        "Acrylic Nails"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Zoe E.",
+      "userImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "rating": 5,
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-02-26T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Noah P.",
+      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
+      "rating": 5,
+      "comment": "The staff went above and beyond to make sure I was happy.",
+      "date": "2025-02-20T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.6,
+  "reviewCount": 1809,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "10:00 AM",
+      "close": "4:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": [
+    {
+      "date": "2025-03-31",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    }
+  ]
+}

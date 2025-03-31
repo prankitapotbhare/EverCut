@@ -1,0 +1,706 @@
+{
+  "name": "Hair Radiance",
+  "description": "Wellness-focused salon combining beauty services with holistic health approaches.",
+  "address": {
+    "street": "3889 Oak Avenue",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zipCode": "90001",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -118.26639770426905,
+      34.05089951154034
+    ]
+  },
+  "contactPhone": "(469) 284-2948",
+  "contactEmail": "info@hairradiance.com",
+  "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
+    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Deluxe Pedicure",
+      "description": "Luxury foot treatment with massage",
+      "price": 64,
+      "duration": "1 hr"
+    },
+    {
+      "id": "2",
+      "name": "Blowout",
+      "description": "Wash and blowdry styling",
+      "price": 43,
+      "duration": "30 min"
+    },
+    {
+      "id": "3",
+      "name": "Basic Manicure",
+      "description": "Nail shaping, cuticle care, and polish",
+      "price": 27,
+      "duration": "30 min"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 151,
+      "duration": "3.5 hrs",
+      "services": [
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-4-1",
+      "name": "Sebastian Lee",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
+      "specialties": [
+        "Blowout",
+        "Deluxe Pedicure"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-4-2",
+      "name": "Jackson Williams",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "specialties": [
+        "Basic Manicure"
+      ],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-4-3",
+      "name": "Jacob Smith",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "specialties": [],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "14:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-4-4",
+      "name": "Elijah Lee",
+      "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+      "specialties": [],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "10:00",
+            "10:30",
+            "11:30",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-4-5",
+      "name": "Amelia Allen",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "specialties": [],
+      "bio": "Expert in curly hair textures and specialized cutting techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:30",
+            "14:30",
+            "15:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Ava J.",
+      "userImage": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
+      "rating": 5,
+      "comment": "The staff went above and beyond to make sure I was happy.",
+      "date": "2025-02-12T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Alexander B.",
+      "userImage": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
+      "rating": 5,
+      "comment": "They were able to fit me in last minute. Such great customer service!",
+      "date": "2025-02-07T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "James T.",
+      "userImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
+      "rating": 4,
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-02-27T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "Carter D.",
+      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
+      "rating": 5,
+      "comment": "Very skilled stylists who really listen to what you want.",
+      "date": "2025-03-29T00:00:00.000Z"
+    }
+  ],
+  "rating": 5,
+  "reviewCount": 2970,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "Closed",
+      "close": "Closed"
+    }
+  ],
+  "featured": true,
+  "featuredReason": "Best Value",
+  "specialOffer": null,
+  "availability": [
+    {
+      "date": "2025-03-31",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    }
+  ]
+}

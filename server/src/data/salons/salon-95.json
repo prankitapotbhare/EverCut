@@ -1,0 +1,472 @@
+{
+  "name": "Salon Luxe",
+  "description": "High-end salon offering premium services with exceptional attention to detail.",
+  "address": {
+    "street": "4242 Oak Avenue",
+    "city": "Houston",
+    "state": "TX",
+    "zipCode": "77001",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -95.38200597866687,
+      29.761501569876856
+    ]
+  },
+  "contactPhone": "(728) 571-6265",
+  "contactEmail": "info@salonluxe.com",
+  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Hair Extensions",
+      "description": "Hair extension application",
+      "price": 248,
+      "duration": "3 hrs"
+    },
+    {
+      "id": "2",
+      "name": "Microdermabrasion",
+      "description": "Exfoliating skin treatment",
+      "price": 120,
+      "duration": "45 min"
+    },
+    {
+      "id": "3",
+      "name": "Ombre",
+      "description": "Graduated color effect",
+      "price": 132,
+      "duration": "2.5 hrs"
+    },
+    {
+      "id": "4",
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 16,
+      "duration": "15 min"
+    },
+    {
+      "id": "5",
+      "name": "Body Scrub",
+      "description": "Exfoliating body treatment",
+      "price": 68,
+      "duration": "45 min"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 286,
+      "duration": "5 hrs",
+      "services": [
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
+        "Pedicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-95-1",
+      "name": "Logan Williams",
+      "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "specialties": [
+        "Eyebrow Waxing",
+        "Ombre",
+        "Hair Extensions",
+        "Body Scrub"
+      ],
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "12:00",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:30",
+            "13:00",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-95-2",
+      "name": "William Martinez",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "specialties": [
+        "Microdermabrasion"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Jackson N.",
+      "userImage": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "rating": 4,
+      "comment": "Great service and attention to detail. Will definitely come back!",
+      "date": "2025-03-15T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Ethan T.",
+      "userImage": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80",
+      "rating": 4,
+      "comment": "The best salon experience I've had in years. Highly recommend!",
+      "date": "2025-02-06T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Abigail U.",
+      "userImage": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
+      "rating": 4,
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-03-16T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "Michael V.",
+      "userImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "rating": 5,
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-02-09T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.1,
+  "reviewCount": 1829,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "5:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": [
+    {
+      "date": "2025-04-01",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    }
+  ]
+}

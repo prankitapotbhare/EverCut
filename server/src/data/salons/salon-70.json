@@ -1,0 +1,517 @@
+{
+  "name": "Hair Splendor",
+  "description": "Specialized salon focusing on color corrections and transformations.",
+  "address": {
+    "street": "9220 Oak Avenue",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zipCode": "85001",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -112.08339925336475,
+      33.439776451723105
+    ]
+  },
+  "contactPhone": "(377) 269-1848",
+  "contactEmail": "info@hairsplendor.com",
+  "image": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Pedicure",
+      "description": "Foot care and polish application",
+      "price": 43,
+      "duration": "45 min"
+    },
+    {
+      "id": "2",
+      "name": "Lip Waxing",
+      "description": "Upper lip hair removal",
+      "price": 10,
+      "duration": "10 min"
+    },
+    {
+      "id": "3",
+      "name": "Swedish Massage",
+      "description": "Relaxing full body massage",
+      "price": 72,
+      "duration": "1 hr"
+    },
+    {
+      "id": "4",
+      "name": "Eyebrow Threading",
+      "description": "Precise eyebrow shaping",
+      "price": 14,
+      "duration": "15 min"
+    },
+    {
+      "id": "5",
+      "name": "Brazilian Blowout",
+      "description": "Smoothing and anti-frizz treatment",
+      "price": 202,
+      "duration": "2 hrs"
+    },
+    {
+      "id": "6",
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 16,
+      "duration": "15 min"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Relaxation Package",
+      "description": "Ultimate relaxation experience",
+      "price": 166,
+      "duration": "2.5 hrs",
+      "services": [
+        "Swedish Massage",
+        "Express Facial",
+        "Pedicure"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 74,
+      "duration": "1 hr",
+      "services": [
+        "Basic Haircut",
+        "Express Facial"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Men's Grooming",
+      "description": "Complete men's grooming experience",
+      "price": 104,
+      "duration": "1.5 hrs",
+      "services": [
+        "Men's Cut",
+        "Beard Trim",
+        "Facial"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-70-1",
+      "name": "Noah Thompson",
+      "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
+      "specialties": [
+        "Eyebrow Threading",
+        "Pedicure"
+      ],
+      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "13:30",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-70-2",
+      "name": "Olivia King",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "specialties": [
+        "Eyebrow Waxing",
+        "Brazilian Blowout"
+      ],
+      "bio": "Known for creating stunning transformations and attention to detail.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "11:00",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Lily I.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "rating": 4,
+      "comment": "Excellent service from start to finish. Love this place!",
+      "date": "2025-02-07T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Victoria O.",
+      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
+      "rating": 3,
+      "comment": "My stylist was amazing and really understood what I wanted.",
+      "date": "2025-02-17T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.3,
+  "reviewCount": 1591,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "6:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": [
+    {
+      "date": "2025-03-31",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-03-31",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    }
+  ]
+}

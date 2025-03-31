@@ -1,0 +1,370 @@
+{
+  "name": "Beauty Oasis",
+  "description": "Family-friendly salon providing quality services for all ages at affordable prices.",
+  "address": {
+    "street": "2037 Ocean Drive",
+    "city": "Houston",
+    "state": "TX",
+    "zipCode": "77001",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -95.37173621965808,
+      29.752095328748524
+    ]
+  },
+  "contactPhone": "(250) 887-6301",
+  "contactEmail": "info@beautyoasis.com",
+  "image": "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Express Facial",
+      "description": "Quick refreshing facial",
+      "price": 45,
+      "duration": "30 min"
+    },
+    {
+      "id": "2",
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 16,
+      "duration": "15 min"
+    },
+    {
+      "id": "3",
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 127,
+      "duration": "45 min"
+    },
+    {
+      "id": "4",
+      "name": "Bridal Hair",
+      "description": "Wedding day hair styling",
+      "price": 126,
+      "duration": "1.5 hrs"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 141,
+      "duration": "3 hrs",
+      "services": [
+        "Full Color",
+        "Deep Conditioning",
+        "Blowout"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 273,
+      "duration": "5 hrs",
+      "services": [
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
+        "Pedicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "id": "stylist-6-1",
+      "name": "Mason Martin",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
+      "specialties": [
+        "Chemical Peel",
+        "Express Facial",
+        "Eyebrow Waxing",
+        "Bridal Hair"
+      ],
+      "bio": "Known for creating stunning transformations and attention to detail.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "15:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylist-6-2",
+      "name": "David Thompson",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "specialties": [],
+      "bio": "Expert in curly hair textures and specialized cutting techniques.",
+      "availability": [
+        {
+          "day": 2,
+          "slots": [
+            "09:30",
+            "10:30",
+            "11:30",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "09:00",
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:00",
+            "12:00",
+            "12:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Mia E.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "rating": 5,
+      "comment": "The best salon experience I've had in years. Highly recommend!",
+      "date": "2025-02-23T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Harper Y.",
+      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
+      "rating": 5,
+      "comment": "Excellent service from start to finish. Love this place!",
+      "date": "2025-03-27T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Elizabeth S.",
+      "userImage": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+      "rating": 4,
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-02-06T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.2,
+  "reviewCount": 2265,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "6:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": {
+    "discount": "23%",
+    "description": "New Client Special"
+  },
+  "availability": []
+}
