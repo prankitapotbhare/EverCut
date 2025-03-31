@@ -119,7 +119,7 @@ const PaymentModal = ({ isOpen, onClose, bookingDetails }) => {
             {/* Cancel Payment Button */}
             <button
               onClick={handleCancel}
-              className="w-full mt-2 border border-gray-300 text-gray-700 py-2 px-4 rounded-md font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              className="w-full mt-2 border border-gray-300 text-gray-700 py-2 px-4 rounded-md font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 cursor-pointer"
               disabled={isProcessing}
             >
               Cancel Payment

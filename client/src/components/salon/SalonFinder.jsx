@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Search } from 'lucide-react';
 import SalonCard from './SalonCard';
-import LocationSelector from '../common/LocationSelector';
+import LocationSelector from '@/components/common/LocationSelector';
 import { useSalon } from '@/contexts/SalonContext';
 
 const SalonFinder = () => {

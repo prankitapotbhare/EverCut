@@ -1,6 +1,8 @@
-import mockSalonists from '../data/mockSalonists';
-import { mockSchedules } from '../data/mockSchedules';
-import { isTimeSlotInPast } from './schedulingService';
+import mockSalonists from '@/data/mockSalonists';
+import { mockSchedules } from '@/data/mockSchedules';
+import { mockLeaveSchedules, isSalonistOnLeave, isSalonistOnLeaveForTimeSlot } from '../data/mockLeaveSchedules';
+import { isTimeSlotInPast, getSalonistRealTimeAvailability, isSalonistAvailableForDateTime } from './schedulingService';
+import { isSalonistBookedForTimeSlot, getBookedTimeSlotsForSalonist } from '@/data/mockBookings';
 
 // Filter salonists by service type
 export const getSalonistsByServiceType = (serviceType) => {
@@ -41,6 +43,160 @@ export const getSalonistRatings = (salonistId) => {
       });
     }, 300);
   });
+};
+
+// Helper function to get availability status with reason based on real-time data
+// Enhanced to provide more detailed availability information
+// Add validation at top of functions
+export const getStylistAvailabilityStatus = (stylist, isAvailable, selectedDate) => {
+  if (!stylist?.id || !selectedDate) {
+    throw new Error('Invalid parameters for availability check');
+  }
+  // If no date is selected or availableStylists is empty, we can't determine detailed status
+  if (!selectedDate) {
+    return { status: isAvailable ? 'available' : 'unavailable', reason: '' };
+  }
+  
+  // Format date for consistency
+  const dateString = selectedDate instanceof Date 
+    ? selectedDate.toISOString().split('T')[0] 
+    : new Date(selectedDate).toISOString().split('T')[0];
+  
+  // 1. Check if stylist is on full-day leave
+  if (isSalonistOnLeave(stylist.id, selectedDate)) {
+    const leaveSchedule = mockLeaveSchedules[stylist.id] || [];
+    const fullDayLeave = leaveSchedule.find(leave => 
+      leave.type === 'FULL_DAY' && 
+      selectedDate >= new Date(leave.startDate) && 
+      selectedDate <= new Date(leave.endDate)
+    );
+    
+    if (fullDayLeave) {
+      return { 
+        status: 'on-leave', 
+        reason: fullDayLeave.reason ? `On leave: ${fullDayLeave.reason}` : 'On leave',
+        availabilityLevel: 'none'
+      };
+    }
+  }
+  
+  // 2. Check if stylist has partial-day leave
+  const leaveSchedule = mockLeaveSchedules[stylist.id] || [];
+  const partialDayLeave = leaveSchedule.find(leave => 
+    leave.type === 'PARTIAL_DAY' && 
+    leave.date.getDate() === selectedDate.getDate() &&
+    leave.date.getMonth() === selectedDate.getMonth() &&
+    leave.date.getFullYear() === selectedDate.getFullYear()
+  );
+  
+  // 3. Get the stylist's schedule for this date
+  const salonistSchedule = mockSchedules[stylist.id] || {};
+  const allTimeSlots = salonistSchedule[dateString] || [];
+  
+  // Check if the stylist works on this day at all
+  if (allTimeSlots.length === 0) {
+    return {
+      status: 'unavailable',
+      reason: 'Not scheduled to work today',
+      availabilityLevel: 'none'
+    };
+  }
+  
+  // 4. Get booked time slots for this stylist on this date
+  const bookedTimeSlots = getBookedTimeSlotsForSalonist(stylist.id, selectedDate);
+  
+  // 5. Filter available time slots (not in the past, not on leave, not booked)
+  const availableTimeSlots = allTimeSlots.filter(timeSlot => 
+    !isTimeSlotInPast(selectedDate, timeSlot) && 
+    !(partialDayLeave && isSalonistOnLeaveForTimeSlot(stylist.id, selectedDate, timeSlot)) &&
+    !bookedTimeSlots.includes(timeSlot)
+  );
+  
+  // Calculate total valid slots (excluding past slots)
+  const totalValidSlots = allTimeSlots.filter(timeSlot => !isTimeSlotInPast(selectedDate, timeSlot)).length;
+  
+  // Calculate percentage of available slots
+  const percentAvailable = totalValidSlots > 0 ? Math.round((availableTimeSlots.length / totalValidSlots) * 100) : 0;
+  const percentBooked = totalValidSlots > 0 ? Math.round((bookedTimeSlots.length / totalValidSlots) * 100) : 0;
+  
+  // Determine availability level based on percentage
+  let availabilityLevel = 'high';
+  if (percentAvailable <= 25) {
+    availabilityLevel = 'low';
+  } else if (percentAvailable <= 60) {
+    availabilityLevel = 'medium';
+  }
+  
+  // 6. Determine availability status based on filtered slots
+  if (!isAvailable) {
+    // If they're marked as unavailable by the backend
+    if (bookedTimeSlots.length > 0) {
+      // If they have bookings, show how many slots are booked
+      if (percentBooked >= 90) {
+        return { 
+          status: 'booked', 
+          reason: 'Fully booked',
+          availabilityLevel: 'none'
+        };
+      } else {
+        return { 
+          status: 'booked', 
+          reason: `${bookedTimeSlots.length} slots booked (${percentBooked}% of day)`,
+          availabilityLevel: 'low'
+        };
+      }
+    }
+    
+    // If they have partial day leave
+    if (partialDayLeave) {
+      return { 
+        status: 'partial-leave', 
+        reason: `On leave: ${partialDayLeave.startTime} - ${partialDayLeave.endTime}`,
+        availabilityLevel: 'medium'
+      };
+    }
+    
+    // If they're not available but not on leave or booked, they must be unavailable for other reasons
+    return { 
+      status: 'unavailable', 
+      reason: 'Not available today',
+      availabilityLevel: 'none'
+    };
+  }
+  
+  // If they're marked as available by the backend
+  if (partialDayLeave) {
+    return { 
+      status: 'partial-leave', 
+      reason: `Available except ${partialDayLeave.startTime} - ${partialDayLeave.endTime}`,
+      availabilityLevel: 'medium',
+      availableSlots: availableTimeSlots.length
+    };
+  }
+  
+  if (bookedTimeSlots.length > 0) {
+    // Determine status based on booking percentage
+    let bookingStatus = 'partially-booked';
+    if (percentBooked >= 75) {
+      bookingStatus = 'mostly-booked';
+      availabilityLevel = 'low';
+    }
+    
+    return { 
+      status: bookingStatus, 
+      reason: `${bookedTimeSlots.length} slots booked (${percentBooked}% of day)`,
+      availabilityLevel,
+      availableSlots: availableTimeSlots.length
+    };
+  }
+  
+  // Fully available
+  return { 
+    status: 'available', 
+    reason: `${availableTimeSlots.length} slots available`,
+    availabilityLevel: 'high',
+    availableSlots: availableTimeSlots.length
+  };
 };
 
 // Get all salonists
@@ -98,100 +254,34 @@ export const getSalonistsBySalonId = (salonId) => {
 
 // Get available time slots for a specific salonist on a specific date
 export const getSalonistAvailability = (salonistId, date) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // Check if salonist exists
-      const salonist = mockSalonists.find(s => s.id === salonistId);
-      if (!salonist) {
-        reject(new Error('Salonist not found'));
-        return;
-      }
+  const bookedSlots = getBookedTimeSlotsForSalonist(salonistId, date);
+  const schedule = mockSchedules[salonistId] || {};
+  const dateString = date.toISOString().split('T')[0];
+  return schedule[dateString]?.filter(slot => !bookedSlots.includes(slot)) || [];
+};
 
-      // Format date to YYYY-MM-DD for lookup
-      const dateString = date instanceof Date 
-        ? date.toISOString().split('T')[0] 
-        : new Date(date).toISOString().split('T')[0];
-
-      // Get schedule for this salonist
-      const salonistSchedule = mockSchedules[salonistId] || {};
-      
-      // Get available slots for this date
-      let availableSlots = salonistSchedule[dateString] || [];
-      
-      // Filter out past time slots if the date is today
-      const selectedDate = new Date(dateString);
-      availableSlots = availableSlots.filter(timeSlot => !isTimeSlotInPast(selectedDate, timeSlot));
-      
-      resolve(availableSlots);
-    }, 300);
+export const getAvailableSalonists = async (date) => {
+  return mockSalonists.filter(salonist => {
+    const availability = getSalonistAvailability(salonist.id, date);
+    return availability.length > 0 && !isSalonistOnLeave(salonist.id, date);
   });
 };
 
-// Get all available salonists for a specific date and time
-export const getAvailableSalonists = (date, time, salonId = null, serviceTypes = []) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Format date to YYYY-MM-DD for lookup
-      const dateString = date instanceof Date 
-        ? date.toISOString().split('T')[0] 
-        : new Date(date).toISOString().split('T')[0];
-
-      // Start with all salonists or filter by salon if salonId is provided
-      let salonistsToCheck = mockSalonists;
-      
-      if (salonId) {
-        // Get salonists for this salon (reusing the salon assignments from getSalonistsBySalonId)
-        const salonAssignments = {
-          1: [1, 3, 5],
-          2: [2, 4, 6],
-          3: [1, 2, 3],
-          4: [4, 5, 6],
-          5: [1, 4, 6]
-        };
-        
-        const salonistIds = salonAssignments[salonId] || [];
-        salonistsToCheck = mockSalonists.filter(salonist => salonistIds.includes(salonist.id));
-      }
-      
-      // Filter by service types if provided
-      if (serviceTypes.length > 0) {
-        salonistsToCheck = salonistsToCheck.filter(salonist => {
-          // Check if salonist specializes in at least one of the requested service types
-          return salonist.specialization.some(specialization => 
-            serviceTypes.includes(specialization)
-          );
-        });
-      }
-
-      // Check each salonist's availability
-      const availableSalonists = salonistsToCheck.filter(salonist => {
-        const salonistSchedule = mockSchedules[salonist.id] || {};
-        const availableSlots = salonistSchedule[dateString] || [];
-        
-        // Salonist is available if the requested time is in their available slots
-        return availableSlots.includes(time);
-      });
-      
-      resolve(availableSalonists);
-    }, 300);
-  });
-};
-
-// Get available dates for a specific salonist
-export const getAvailableDatesForSalonist = (salonistId) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Get schedule for this salonist
-      const salonistSchedule = mockSchedules[salonistId] || {};
-      
-      // Get dates with at least one available time slot
-      const availableDatesData = Object.entries(salonistSchedule)
-        .filter(([date, timeSlots]) => timeSlots.length > 0)
-        .map(([date]) => new Date(date));
-      
-      resolve(availableDatesData);
-    }, 300);
-  });
+// Remove unused imports and implement missing functions
+export const getAvailableDatesForSalonist = async (salonistId, startDate, endDate) => {
+  const dates = [];
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  
+  for (let date = start; date <= end; date.setDate(date.getDate() + 1)) {
+    if (!isTimeSlotInPast(date, '12:00 AM') && 
+        !isSalonistOnLeave(salonistId, date) &&
+        getSalonistAvailability(salonistId, new Date(date)).length > 0) {
+      dates.push(new Date(date));
+    }
+  }
+  
+  return dates;
 };
 
 // Get available salonists for a specific date (without time)
@@ -201,6 +291,8 @@ export const getAvailableSalonistsForDate = async (date, salonId = null) => {
       const dateString = date instanceof Date 
         ? date.toISOString().split('T')[0] 
         : new Date(date).toISOString().split('T')[0];
+      
+      const selectedDate = new Date(dateString);
       
       // Start with all salonists or filter by salon if salonId is provided
       let salonistsToCheck = [];
@@ -214,9 +306,35 @@ export const getAvailableSalonistsForDate = async (date, salonId = null) => {
       
       // Filter salonists who have availability on this date
       const availableSalonistsData = salonistsToCheck.filter(salonist => {
+        // First check if salonist is on full-day leave for this date
+        if (isSalonistOnLeave(salonist.id, selectedDate)) {
+          const leaveSchedule = mockLeaveSchedules[salonist.id] || [];
+          const fullDayLeave = leaveSchedule.find(leave => 
+            leave.type === 'FULL_DAY' && 
+            selectedDate >= new Date(leave.startDate) && 
+            selectedDate <= new Date(leave.endDate)
+          );
+          
+          if (fullDayLeave) {
+            return false; // Salonist is on full-day leave, not available
+          }
+        }
+        
+        // Get the salonist's schedule
         const salonistSchedule = mockSchedules[salonist.id] || {};
         const availableSlots = salonistSchedule[dateString] || [];
-        return availableSlots.length > 0;
+        
+        // Get booked time slots for this salonist on this date
+        const bookedTimeSlots = getBookedTimeSlotsForSalonist(salonist.id, selectedDate);
+        
+        // Filter out past time slots, slots when salonist is on partial leave, and booked slots
+        const filteredSlots = availableSlots.filter(timeSlot => 
+          !isTimeSlotInPast(selectedDate, timeSlot) && 
+          !isSalonistOnLeaveForTimeSlot(salonist.id, selectedDate, timeSlot) &&
+          !bookedTimeSlots.includes(timeSlot)
+        );
+        
+        return filteredSlots.length > 0; // Salonist is available if they have at least one available slot
       });
       
       resolve(availableSalonistsData);
@@ -241,6 +359,29 @@ export const bookSalonistAppointment = (salonistId, date, time, services, salonI
       const dateString = date instanceof Date 
         ? date.toISOString().split('T')[0] 
         : new Date(date).toISOString().split('T')[0];
+      
+      const selectedDate = new Date(dateString);
+
+      // Check if salonist is on leave for this date/time
+      if (isSalonistOnLeave(salonistId, selectedDate)) {
+        const leaveSchedule = mockLeaveSchedules[salonistId] || [];
+        const fullDayLeave = leaveSchedule.find(leave => 
+          leave.type === 'FULL_DAY' && 
+          selectedDate >= new Date(leave.startDate) && 
+          selectedDate <= new Date(leave.endDate)
+        );
+        
+        if (fullDayLeave) {
+          reject(new Error('The salonist is on leave for this date'));
+          return;
+        }
+      }
+      
+      // Check if salonist is on partial-day leave that includes this time slot
+      if (isSalonistOnLeaveForTimeSlot(salonistId, selectedDate, time)) {
+        reject(new Error('The salonist is on leave during this time slot'));
+        return;
+      }
 
       // Get schedule for this salonist
       const salonistSchedule = mockSchedules[salonistId] || {};

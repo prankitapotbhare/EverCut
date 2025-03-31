@@ -22,64 +22,42 @@ const PaymentSuccess = ({ onClose, bookingDetails }) => {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto">
-      <div className="flex items-center justify-center mb-6">
-        <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mr-4">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      {/* Success Header with Animation */}
+      <div className="flex flex-col items-center justify-center mb-8">
+        <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mb-4">
+          <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
           </svg>
         </div>
-        <div>
-          <h1 className="text-2xl font-bold">Booking Confirmed!</h1>
-          <p className="text-gray-600">Your appointment has been successfully booked.</p>
-        </div>
+        <h1 className="text-2xl font-bold text-center">Booking Confirmed!</h1>
+        <p className="text-gray-600 text-center">Your appointment has been successfully booked.</p>
       </div>
 
-      <div className="border-t border-b border-gray-200 py-4 mb-4">
-        <h2 className="text-lg font-bold mb-3">Booking Details</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <p className="text-sm text-gray-500 mb-1">Booking ID</p>
-            <p className="font-medium">{bookingResult?.bookingId}</p>
+      {/* Simplified Booking Details */}
+      <div className="bg-gray-50 rounded-lg p-5 mb-6">
+        <div className="space-y-3">
+          <div className="flex justify-between">
+            <span className="text-gray-500">Salon</span>
+            <span className="font-medium">{bookingDetails?.salon?.name}</span>
           </div>
-          <div>
-            <p className="text-sm text-gray-500 mb-1">Payment ID</p>
-            <p className="font-medium">{bookingResult?.paymentId}</p>
+          
+          <div className="flex justify-between">
+            <span className="text-gray-500">Date & Time</span>
+            <span className="font-medium">{formatDate(bookingDetails?.date)} • {bookingDetails?.time}</span>
           </div>
-          <div>
-            <p className="text-sm text-gray-500 mb-1">Salon</p>
-            <p className="font-medium">{bookingDetails?.salon?.name}</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 mb-1">Stylist</p>
-            <p className="font-medium">{bookingDetails?.stylist?.name || 'Any available stylist'}</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 mb-1">Date & Time</p>
-            <p className="font-medium">{formatDate(bookingDetails?.date)} • {bookingDetails?.time}</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 mb-1">Amount Paid</p>
-            <p className="font-medium">₹ {total}</p>
+          
+          <div className="flex justify-between">
+            <span className="text-gray-500">Total Amount</span>
+            <span className="font-bold text-green-600">₹ {total}</span>
           </div>
         </div>
       </div>
 
-      <div className="mb-6">
-        <h2 className="text-lg font-bold mb-3">Services Booked</h2>
-        <div className="space-y-2">
-          {bookingDetails?.services?.map((service, index) => (
-            <div key={index} className="flex justify-between">
-              <span>{service.name}</span>
-              <span>₹ {service.price}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
+      {/* Back to Home Button */}
       <div className="flex justify-center">
         <button 
           onClick={handleBackToHome}
-          className="bg-green-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          className="bg-green-500 text-white px-8 py-3 rounded-full font-medium hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all duration-300"
         >
           Back to Home
         </button>

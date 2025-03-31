@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 import { SalonProvider } from '@/contexts/SalonContext';
 import { PaymentProvider } from '@/contexts/PaymentContext';
 import { SalonistProvider } from '@/contexts/SalonistContext';
+import { BookingProvider } from '@/contexts/BookingContext';
 import Signup from '@/pages/auth/Signup';
 import Login from '@/pages/auth/Login';
 import ForgotPassword from '@/pages/auth/ForgotPassword';
@@ -122,11 +123,13 @@ function App() {
     <ErrorBoundary>
       <AuthProvider>
         <SalonProvider>
-          <PaymentProvider>
-            <SalonistProvider>
-              <AppRoutes />
-            </SalonistProvider>
-          </PaymentProvider>
+          <SalonistProvider>
+            <PaymentProvider>
+              <BookingProvider>
+                <AppRoutes />
+              </BookingProvider>
+            </PaymentProvider>
+          </SalonistProvider>
         </SalonProvider>
       </AuthProvider>
     </ErrorBoundary>
