@@ -146,14 +146,14 @@ const SalonDetailPage = () => {
         <div className="mb-4 sm:mb-6">
           <button 
             onClick={() => navigate(-1)} 
-            className="flex items-center text-gray-600 mb-2 hover:text-gray-900"
+            className="flex items-center text-gray-600 mb-2 hover:text-gray-900 cursor-pointer"
           >
             <ArrowLeft size={18} className="mr-1" />
             <span>Back</span>
           </button>
           <h1 className="text-2xl sm:text-3xl font-bold mb-1">{salon.name}</h1>
           <p className="text-sm sm:text-base text-gray-600">
-            Closed opens at 11:00 am • {salon.location.address}, {salon.location.city}, {salon.location.state} {salon.location.zip}
+            Closed opens at 11:00 am • {salon.location.street}, {salon.location.city}, {salon.location.state} {salon.location.zipCode}
           </p>
         </div>
 
