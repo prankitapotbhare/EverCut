@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 import { SalonProvider } from '@/contexts/SalonContext';
 import { PaymentProvider } from '@/contexts/PaymentContext';
-import { SalonistProvider } from '@/contexts/SalonistContext';
+// Remove SalonistProvider import since we've merged it
 import { BookingProvider } from '@/contexts/BookingContext';
 import Signup from '@/pages/auth/Signup';
 import Login from '@/pages/auth/Login';
@@ -123,13 +123,12 @@ function App() {
     <ErrorBoundary>
       <AuthProvider>
         <SalonProvider>
-          <SalonistProvider>
-            <PaymentProvider>
-              <BookingProvider>
-                <AppRoutes />
-              </BookingProvider>
-            </PaymentProvider>
-          </SalonistProvider>
+          <PaymentProvider>
+            {/* Remove SalonistProvider since we've merged it into BookingProvider */}
+            <BookingProvider>
+              <AppRoutes />
+            </BookingProvider>
+          </PaymentProvider>
         </SalonProvider>
       </AuthProvider>
     </ErrorBoundary>

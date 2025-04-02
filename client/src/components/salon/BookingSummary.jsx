@@ -1,15 +1,16 @@
 import React from 'react';
+import { useBooking } from '@/contexts/BookingContext';
 
 const BookingSummary = ({ salon, selectedServices, selectedStylist, selectedDate, selectedTime, onPayNow }) => {
-  const total = selectedServices.reduce((sum, service) => sum + service.price, 0);
+  const { calculateTotalPrice, formatDate } = useBooking();
+  
+  const total = calculateTotalPrice(selectedServices);
   
   // Check if all required selections are made
   const isBookingComplete = selectedStylist && selectedDate && selectedTime;
   
-  const formatDate = (date) => {
-    if (!date) return '';
-    return `${date.getDate()} ${date.toLocaleString('default', { weekday: 'long' })}`;
-  };
+  // Use the formatDate function from our context
+  const formattedDate = selectedDate ? formatDate(selectedDate, { weekday: 'long' }) : '';
 
   return (
     <div className="bg-blue-50 rounded-lg p-4">
@@ -27,7 +28,7 @@ const BookingSummary = ({ salon, selectedServices, selectedStylist, selectedDate
       <div className="mb-3 text-sm">
         {selectedStylist ? (
           <div className="font-medium">
-            {selectedStylist.name} {selectedDate ? `• ${formatDate(selectedDate)}` : ''} {selectedTime ? `• ${selectedTime}` : ''}
+            {selectedStylist.name} {selectedDate ? `• ${formattedDate}` : ''} {selectedTime ? `• ${selectedTime}` : ''}
           </div>
         ) : (
           <div className="text-amber-600 font-medium">Please select a stylist</div>
@@ -66,7 +67,7 @@ const BookingSummary = ({ salon, selectedServices, selectedStylist, selectedDate
               : 'bg-gray-300 text-gray-500 cursor-not-allowed'
           }`}
         >
-          {isBookingComplete ? 'Pay Now' : 'Complete Selection'}
+          Pay Now
         </button>
       </div>
     </div>
