@@ -1,39 +1,5 @@
 const mongoose = require('mongoose');
 
-// Define the service schema
-const serviceSchema = new mongoose.Schema({
-  id: { type: String, required: true },
-  name: { type: String, required: true },
-  description: { type: String },
-  price: { type: Number, required: true },
-  duration: { type: String, required: true },
-  services: [{ type: String }] // For packages that include multiple services
-});
-
-// Define the stylist schema
-const stylistSchema = new mongoose.Schema({
-  id: { type: String, required: true },
-  name: { type: String, required: true },
-  image: { type: String },
-  specialties: [{ type: String }],
-  bio: { type: String },
-  availability: [{
-    day: { type: Number }, // 0-6 for Sunday-Saturday
-    slots: [{ type: String }] // Time slots like "09:00", "09:30"
-  }]
-});
-
-// Define the review schema
-const reviewSchema = new mongoose.Schema({
-  id: { type: String, required: true },
-  userId: { type: String, required: true },
-  userName: { type: String, required: true },
-  userImage: { type: String },
-  rating: { type: Number, required: true, min: 1, max: 5 },
-  comment: { type: String },
-  date: { type: Date, default: Date.now }
-});
-
 const salonSchema = new mongoose.Schema({
   name: { 
     type: String, 
@@ -73,10 +39,6 @@ const salonSchema = new mongoose.Schema({
   gallery: [{ // Additional salon images
     type: String 
   }],
-  services: [serviceSchema], // Individual services
-  packages: [serviceSchema], // Service packages
-  stylists: [stylistSchema], // Salon stylists
-  reviews: [reviewSchema], // Customer reviews
   rating: { // Average rating
     type: Number, 
     default: 0 
@@ -108,6 +70,34 @@ salonSchema.virtual('fullAddress').get(function() {
   return `${this.address.street}, ${this.address.city}, ${this.address.state} ${this.address.zipCode}, ${this.address.country}`;
 });
 
+// Virtual populate for services
+salonSchema.virtual('services', {
+  ref: 'Service',
+  localField: '_id',
+  foreignField: 'salonId'
+});
+
+// Virtual populate for stylists
+salonSchema.virtual('stylists', {
+  ref: 'Salonist',
+  localField: '_id',
+  foreignField: 'salonId'
+});
+
+// Virtual populate for reviews
+salonSchema.virtual('reviews', {
+  ref: 'Review',
+  localField: '_id',
+  foreignField: 'salonId'
+});
+
+// Virtual populate for bookings
+salonSchema.virtual('bookings', {
+  ref: 'Booking',
+  localField: '_id',
+  foreignField: 'salonId'
+});
+
 // Pre-save middleware to update the updatedAt field
 salonSchema.pre('save', function(next) {
   this.updatedAt = Date.now();
@@ -115,11 +105,12 @@ salonSchema.pre('save', function(next) {
 });
 
 // Method to calculate average rating
-salonSchema.methods.calculateAverageRating = function() {
-  if (this.reviews.length === 0) return 0;
+salonSchema.methods.calculateAverageRating = async function() {
+  const reviews = await mongoose.model('Review').find({ salonId: this._id });
+  if (reviews.length === 0) return 0;
   
-  const sum = this.reviews.reduce((total, review) => total + review.rating, 0);
-  return (sum / this.reviews.length).toFixed(1);
+  const sum = reviews.reduce((total, review) => total + review.rating, 0);
+  return (sum / reviews.length).toFixed(1);
 };
 
 // Ensure the 2dsphere index is created
