@@ -1,0 +1,472 @@
+{
+  "name": "Brush & Blow",
+  "description": "Vintage-themed salon combining classic techniques with modern trends.",
+  "address": {
+    "street": "8425 Sunset Boulevard",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zipCode": "90001",
+    "country": "USA"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -118.22432688205369,
+      34.0725158573907
+    ]
+  },
+  "contactPhone": "(867) 262-6195",
+  "contactEmail": "info@brush&blow.com",
+  "image": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80"
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Men's Cut",
+      "description": "Men's haircut and styling",
+      "price": 30,
+      "duration": "30 min"
+    },
+    {
+      "id": "2",
+      "name": "Lip Waxing",
+      "description": "Upper lip hair removal",
+      "price": 10,
+      "duration": "10 min"
+    },
+    {
+      "id": "3",
+      "name": "Hair Extensions",
+      "description": "Hair extension application",
+      "price": 237,
+      "duration": "3 hrs"
+    },
+    {
+      "id": "4",
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 82,
+      "duration": "1 hr"
+    },
+    {
+      "id": "5",
+      "name": "Full Face Waxing",
+      "description": "Complete facial hair removal",
+      "price": 49,
+      "duration": "30 min"
+    }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 215,
+      "duration": "3 hrs",
+      "services": [
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 276,
+      "duration": "5 hrs",
+      "services": [
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
+        "Pedicure"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 147,
+      "duration": "3.5 hrs",
+      "services": [
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
+      ]
+    }
+  ],
+  "stylists": [
+    {
+      "name": "Olivia Taylor",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "specialties": [
+        "Updo Styling",
+        "Lip Waxing",
+        "Hair Extensions"
+      ],
+      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
+      "availability": [
+        {
+          "day": 0,
+          "slots": [
+            "10:00",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        }
+      ],
+      "rating": 5,
+      "reviewCount": 10,
+      "status": "active",
+      "createdAt": "2025-04-02T17:24:14.467Z",
+      "updatedAt": "2025-04-02T17:24:14.467Z"
+    },
+    {
+      "name": "Olivia Thompson",
+      "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
+      "specialties": [
+        "Full Face Waxing",
+        "Men's Cut"
+      ],
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:30",
+            "13:00",
+            "14:00",
+            "14:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30"
+          ]
+        },
+        {
+          "day": 6,
+          "slots": [
+            "09:00",
+            "09:30",
+            "10:00",
+            "11:30",
+            "12:00",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:30"
+          ]
+        }
+      ],
+      "rating": 5,
+      "reviewCount": 10,
+      "status": "active",
+      "createdAt": "2025-04-02T17:24:14.468Z",
+      "updatedAt": "2025-04-02T17:24:14.468Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": "user-1",
+      "userName": "Michael V.",
+      "userImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80",
+      "rating": 5,
+      "comment": "I've never had a better color treatment. Absolutely perfect!",
+      "date": "2025-02-15T00:00:00.000Z"
+    }
+  ],
+  "rating": 4.1,
+  "reviewCount": 1159,
+  "operatingHours": [
+    {
+      "day": 1,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 2,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "10:00 AM",
+      "close": "9:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "6:00 PM"
+    }
+  ],
+  "featured": false,
+  "featuredReason": null,
+  "specialOffer": null,
+  "availability": [
+    {
+      "date": "2025-04-01",
+      "time": "09:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-04-01",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "09:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-04-02",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-04-03",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "09:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "09:30",
+      "formattedTime": "9:30 AM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-04-04",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "09:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-04-05",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-04-06",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    }
+  ]
+}
