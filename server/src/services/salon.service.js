@@ -56,7 +56,21 @@ const getAllSalons = async (filters = {}) => {
  */
 const getSalonById = async (id) => {
   try {
-    const salon = await Salon.findById(id);
+    let salon;
+    
+    // Try to find by MongoDB ObjectId first
+    try {
+      if (mongoose.Types.ObjectId.isValid(id)) {
+        salon = await Salon.findById(id);
+      }
+    } catch (err) {
+      logger.warn(`Failed to find salon by ObjectId: ${err.message}`);
+    }
+    
+    // If not found by ObjectId, try to find by numeric ID
+    if (!salon) {
+      salon = await Salon.findOne({ id: id });
+    }
     
     if (!salon) {
       throw new ApiError('Salon not found', 404);
@@ -66,7 +80,8 @@ const getSalonById = async (id) => {
       id: salon._id,
       name: salon.name,
       description: salon.description,
-      address: `${salon.address.street}, ${salon.address.city}, ${salon.address.state} ${salon.address.zipCode}`,
+      location: salon.address || {}, // Ensure location exists
+      address: `${salon.address?.street || ''}, ${salon.address?.city || ''}, ${salon.address?.state || ''} ${salon.address?.zipCode || ''}`,
       image: salon.image,
       gallery: salon.gallery || [],
       rating: salon.rating,

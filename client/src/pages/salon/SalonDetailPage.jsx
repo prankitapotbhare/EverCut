@@ -13,20 +13,31 @@ const SalonDetailPage = () => {
   const navigate = useNavigate();
   const [salon, setSalon] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState('single');
   const [selectedServices, setSelectedServices] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  const { fetchSalonById, loading: contextLoading, error: contextError } = useSalon();
+  // Use the salon context for fetching data
+  const { 
+    fetchSalonById, 
+    loading: contextLoading, 
+    error: contextError, 
+    currentSalon 
+  } = useSalon();
 
   useEffect(() => {
     const fetchSalon = async () => {
       try {
-        const data = await fetchSalonById(parseInt(id));
+        setLoading(true);
+        // Don't parse the ID as an integer - pass it as a string
+        const data = await fetchSalonById(id);
         setSalon(data);
+        setError(null);
       } catch (error) {
         console.error('Error fetching salon details:', error);
+        setError('Failed to load salon details. Please try again later.');
       } finally {
         setLoading(false);
       }
@@ -86,7 +97,8 @@ const SalonDetailPage = () => {
     }
   };
 
-  if (loading) {
+  // Show loading state
+  if (loading || contextLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-xl">Loading salon details...</div>
@@ -94,6 +106,22 @@ const SalonDetailPage = () => {
     );
   }
 
+  // Show error state
+  if (error || contextError) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center">
+        <div className="text-xl mb-4 text-red-600">{error || contextError}</div>
+        <button 
+          onClick={() => navigate('/')}
+          className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium"
+        >
+          Go back to home
+        </button>
+      </div>
+    );
+  }
+
+  // Show not found state
   if (!salon) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
@@ -116,6 +144,13 @@ const SalonDetailPage = () => {
       <Navbar />
       <div className="max-w-8xl mx-auto py-4 sm:py-6 px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="mb-4 sm:mb-6">
+          <button 
+            onClick={() => navigate(-1)} 
+            className="flex items-center text-gray-600 mb-2 hover:text-gray-900"
+          >
+            <ArrowLeft size={18} className="mr-1" />
+            <span>Back</span>
+          </button>
           <h1 className="text-2xl sm:text-3xl font-bold mb-1">{salon.name}</h1>
           <p className="text-sm sm:text-base text-gray-600">
             Closed opens at 11:00 am • {salon.location.address}, {salon.location.city}, {salon.location.state} {salon.location.zip}
@@ -139,14 +174,20 @@ const SalonDetailPage = () => {
             <ServiceTabs activeTab={activeTab} setActiveTab={setActiveTab} />
             
             <div className="space-y-4">
-              {currentItems.map(item => (
-                <ServiceCard 
-                  key={`${activeTab}-${item.id}`}
-                  service={item}
-                  onSelect={handleServiceSelect}
-                  isSelected={selectedServices.some(s => s.id === item.id && s.type === activeTab)}
-                />
-              ))}
+              {currentItems.length > 0 ? (
+                currentItems.map(item => (
+                  <ServiceCard 
+                    key={`${activeTab}-${item.id}`}
+                    service={item}
+                    onSelect={handleServiceSelect}
+                    isSelected={selectedServices.some(s => s.id === item.id && s.type === activeTab)}
+                  />
+                ))
+              ) : (
+                <div className="text-center py-8 text-gray-500">
+                  No {activeTab === 'single' ? 'services' : 'packages'} available
+                </div>
+              )}
             </div>
 
             {/* Pagination controls */}
@@ -159,6 +200,9 @@ const SalonDetailPage = () => {
                 >
                   <ChevronLeft size={20} />
                 </button>
+                <span className="flex items-center px-3">
+                  {currentPage} of {totalPages}
+                </span>
                 <button 
                   onClick={nextPage} 
                   disabled={currentPage === totalPages}
@@ -179,6 +223,9 @@ const SalonDetailPage = () => {
                 address: `${salon.location.address}, ${salon.location.city}, ${salon.location.state} ${salon.location.zip}`
               }}
               onContinue={handleContinue}
+              onRemoveService={(serviceId, type) => {
+                setSelectedServices(selectedServices.filter(s => !(s.id === serviceId && s.type === type)));
+              }}
             />
           </div>
         </div>
