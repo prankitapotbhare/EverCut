@@ -136,7 +136,6 @@ const BookingPage = () => {
             <DateSelector 
               selectedDate={selectedDate}
               onDateSelect={setSelectedDate}
-              availableDates={selectedStylist ? availableDates : []}
             />
             
             {/* Time Selector */}

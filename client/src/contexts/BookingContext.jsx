@@ -13,7 +13,6 @@ const BookingContext = createContext({
   salon: null,
   salonists: [],
   availableTimeSlots: [],
-  availableDates: [],
   availableSalonists: [],
   unavailableTimeSlots: {},
   
@@ -23,7 +22,6 @@ const BookingContext = createContext({
     salon: false,
     salonists: false,
     availability: false,
-    availableDates: false,
     availableSalonists: false
   },
   
@@ -41,7 +39,6 @@ const BookingContext = createContext({
   fetchSalon: () => {},
   fetchSalonists: () => {},
   fetchAvailability: () => {},
-  fetchAvailableDatesForSelectedStylist: () => {},
   fetchAvailableStylistsForSelectedDate: () => {},
   
   // Utility functions
@@ -75,7 +72,6 @@ export const BookingProvider = ({ children }) => {
   const [salon, setSalon] = useState(null);
   const [salonists, setSalonists] = useState([]);
   const [availableTimeSlots, setAvailableTimeSlots] = useState([]);
-  const [availableDates, setAvailableDates] = useState([]);
   const [availableSalonists, setAvailableSalonists] = useState([]);
   const [unavailableTimeSlots, setUnavailableTimeSlots] = useState({});
   
@@ -85,7 +81,6 @@ export const BookingProvider = ({ children }) => {
     salon: false,
     salonists: false,
     availability: false,
-    availableDates: false,
     availableSalonists: false
   });
   const [error, setError] = useState(null);
@@ -95,7 +90,6 @@ export const BookingProvider = ({ children }) => {
   const [salonistCache, setSalonistCache] = useState({});
   const [availabilityCache, setAvailabilityCache] = useState({});
   const [salonSalonistsCache, setSalonSalonistsCache] = useState({});
-  const [availableDatesCache, setAvailableDatesCache] = useState({});
   const [salonistsByDateCache, setSalonistsByDateCache] = useState({});
   
   // Get context hooks
@@ -221,37 +215,6 @@ export const BookingProvider = ({ children }) => {
     }
   }, [selectedStylist, selectedDate]);
   
-  // Fetch available dates for a selected stylist
-  const fetchAvailableDatesForSelectedStylist = useCallback(async () => {
-    if (!selectedStylist) return [];
-    
-    try {
-      // Check if we already have this stylist's available dates in cache
-      if (availableDatesCache[selectedStylist.id]) {
-        setAvailableDates(availableDatesCache[selectedStylist.id]);
-        return availableDatesCache[selectedStylist.id];
-      }
-      
-      setLoadingData(prev => ({ ...prev, availableDates: true }));
-      const dates = await bookingService.getAvailableDatesForSalonist(selectedStylist.id);
-      setAvailableDates(dates);
-      
-      // Update the cache
-      setAvailableDatesCache(prev => ({
-        ...prev,
-        [selectedStylist.id]: dates
-      }));
-      
-      return dates;
-    } catch (error) {
-      console.error('Error fetching available dates:', error);
-      setError('Failed to load available dates. Please try again later.');
-      throw error;
-    } finally {
-      setLoadingData(prev => ({ ...prev, availableDates: false }));
-    }
-  }, [selectedStylist]);
-  
   // Fetch available stylists for a selected date
   const fetchAvailableStylistsForSelectedDate = useCallback(async () => {
     if (!selectedDate || !salon) return [];
@@ -302,16 +265,8 @@ export const BookingProvider = ({ children }) => {
     setSalonistCache({});
     setAvailabilityCache({});
     setSalonSalonistsCache({});
-    setAvailableDatesCache({});
     setSalonistsByDateCache({});
   }, []);
-  
-  // When stylist changes, fetch their available dates
-  useEffect(() => {
-    if (selectedStylist) {
-      fetchAvailableDatesForSelectedStylist();
-    }
-  }, [selectedStylist, fetchAvailableDatesForSelectedStylist]);
   
   // When date changes, fetch available stylists for that date
   useEffect(() => {
@@ -347,7 +302,6 @@ export const BookingProvider = ({ children }) => {
     setSalon(null);
     setSalonists([]);
     setAvailableTimeSlots([]);
-    setAvailableDates([]);
     setAvailableSalonists([]);
     setUnavailableTimeSlots({});
     resetPaymentState();
@@ -417,7 +371,6 @@ export const BookingProvider = ({ children }) => {
     salonists,
     availableTimeSlots,
     availableSalonists,
-    availableDates,
     unavailableTimeSlots,
     loading,
     loadingData,
@@ -434,7 +387,6 @@ export const BookingProvider = ({ children }) => {
     fetchSalon,
     fetchSalonists,
     fetchAvailability,
-    fetchAvailableDatesForSelectedStylist,
     fetchAvailableStylistsForSelectedDate,
     
     // Utility functions
