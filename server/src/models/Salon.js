@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const salonSchema = new mongoose.Schema({
   name: { 
@@ -39,6 +40,17 @@ const salonSchema = new mongoose.Schema({
   gallery: [{ // Additional salon images
     type: String 
   }],
+  amenities: [{
+    type: String
+  }],
+  popularServices: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Service'
+  }],
+  popularPackages: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Package'
+  }],
   rating: { // Average rating
     type: Number, 
     default: 0 
@@ -49,8 +61,8 @@ const salonSchema = new mongoose.Schema({
   },
   operatingHours: [{
     day: { type: Number, required: true },  // 0-6 for Sunday-Saturday
-    open: { type: String, required: true },  // "09:00"
-    close: { type: String, required: true }  // "18:00"
+    open: { type: String, required: true },  // "9:00 AM"
+    close: { type: String, required: true }  // "6:00 PM"
   }],
   createdAt: { 
     type: Date, 

@@ -18,6 +18,9 @@ const serviceBookingSchema = new Schema({
   duration: {
     type: Number,
     required: true
+  },
+  category: {
+    type: String
   }
 });
 
@@ -34,11 +37,17 @@ const bookingSchema = new Schema({
     required: true,
     index: true
   },
+  salonName: {
+    type: String
+  },
   salonistId: {
     type: Schema.Types.ObjectId,
     ref: 'Salonist',
     required: true,
     index: true
+  },
+  salonistName: {
+    type: String
   },
   services: [serviceBookingSchema],
   date: {
@@ -61,6 +70,16 @@ const bookingSchema = new Schema({
   totalPrice: {
     type: Number,
     required: true
+  },
+  paymentId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Payment',
+    index: true
+  },
+  paymentStatus: {
+    type: String,
+    enum: ['pending', 'paid', 'failed', 'refunded'],
+    default: 'pending'
   },
   status: {
     type: String,

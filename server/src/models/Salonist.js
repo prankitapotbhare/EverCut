@@ -8,7 +8,7 @@ const availabilitySchema = new Schema({
     required: true
   },
   slots: [{
-    type: String // Format: "09:00", "09:30", etc.
+    type: String // Format: "9:00 AM", "9:30 AM", etc.
   }]
 });
 
@@ -35,6 +35,18 @@ const salonistSchema = new Schema({
     type: String
   },
   availability: [availabilitySchema],
+  availabilityStatus: {
+    type: String,
+    enum: ['available', 'unavailable', 'partially-booked', 'mostly-booked', 'booked', 'on-leave'],
+    default: 'available'
+  },
+  availabilityReason: {
+    type: String
+  },
+  bookedPercentage: {
+    type: Number,
+    default: 0
+  },
   rating: {
     type: Number,
     default: 0

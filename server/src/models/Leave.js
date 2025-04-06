@@ -8,6 +8,12 @@ const leaveSchema = new Schema({
     required: true,
     index: true
   },
+  salonId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Salon',
+    required: true,
+    index: true
+  },
   type: {
     type: String,
     enum: ['FULL_DAY', 'PARTIAL_DAY'],
@@ -32,17 +38,20 @@ const leaveSchema = new Schema({
     }
   },
   startTime: {
-    type: String,
+    type: String, // Format: "9:00 AM", "9:30 AM", etc.
     required: function() {
       return this.type === 'PARTIAL_DAY';
     }
   },
   endTime: {
-    type: String,
+    type: String, // Format: "9:00 AM", "9:30 AM", etc.
     required: function() {
       return this.type === 'PARTIAL_DAY';
     }
   },
+  affectedTimeSlots: [{
+    type: String // Format: "9:00 AM", "9:30 AM", etc.
+  }],
   reason: {
     type: String
   },
