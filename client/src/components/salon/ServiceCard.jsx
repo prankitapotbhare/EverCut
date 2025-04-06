@@ -1,6 +1,11 @@
 import React from 'react';
 
 const ServiceCard = ({ service, onSelect, isSelected }) => {
+  // Format duration to display "X min" if it's just a number
+  const formattedDuration = typeof service.duration === 'number' 
+    ? `${service.duration} min` 
+    : service.duration;
+
   return (
     <div className="bg-white rounded-lg shadow p-4 flex justify-between items-center">
       <div className="flex-1">
@@ -8,12 +13,12 @@ const ServiceCard = ({ service, onSelect, isSelected }) => {
         {service.description && (
           <p className="text-sm text-gray-600 mt-1">{service.description}</p>
         )}
-        <div className="text-sm text-gray-500">{service.duration}</div>
-        {service.services && (
+        <div className="text-sm text-gray-500">{formattedDuration}</div>
+        {service.services && service.services.length > 0 && (
           <div className="flex flex-wrap gap-1 mt-1">
             {service.services.map((item, idx) => (
               <span key={idx} className="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">
-                {item}
+                {typeof item === 'string' ? item : item.name}
               </span>
             ))}
           </div>

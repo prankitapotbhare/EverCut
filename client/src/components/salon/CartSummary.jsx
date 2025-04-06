@@ -17,13 +17,15 @@ const CartSummary = ({ selectedServices, salon, onContinue }) => {
 
       {selectedServices.length > 0 ? (
         <>
-          {selectedServices.map((service, index) => (
-            <div key={`${service.type}-${service.id}-${index}`} className="py-3">
-              <div className="flex justify-between font-medium">
-                <span>{service.name}</span>
-                <span>{service.price} ₹</span>
+          {selectedServices.map((service) => (
+            <div key={`${service.type}-${service._id || service.id}`} className="py-3 flex justify-between">
+              <div>
+                <div className="font-medium">{service.name}</div>
+                <div className="text-sm text-gray-600">{service.duration} min</div>
               </div>
-              <div className="text-sm text-gray-600">{service.duration}</div>
+              <div className="flex items-center gap-2">
+                <span className="font-medium">{service.price} ₹</span>
+              </div>
             </div>
           ))}
 

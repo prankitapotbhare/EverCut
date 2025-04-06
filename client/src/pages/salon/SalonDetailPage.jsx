@@ -52,8 +52,10 @@ const SalonDetailPage = () => {
   }, [activeTab]);
 
   const handleServiceSelect = (item) => {
-    if (selectedServices.some(s => s.id === item.id && s.type === activeTab)) {
-      setSelectedServices(selectedServices.filter(s => !(s.id === item.id && s.type === activeTab)));
+    // Use _id instead of id for comparison
+    const serviceId = item._id || item.id;
+    if (selectedServices.some(s => (s._id || s.id) === serviceId && s.type === activeTab)) {
+      setSelectedServices(selectedServices.filter(s => !((s._id || s.id) === serviceId && s.type === activeTab)));
     } else {
       setSelectedServices([...selectedServices, { ...item, type: activeTab }]);
     }
@@ -153,7 +155,7 @@ const SalonDetailPage = () => {
           </button>
           <h1 className="text-2xl sm:text-3xl font-bold mb-1">{salon.name}</h1>
           <p className="text-sm sm:text-base text-gray-600">
-            Closed opens at 11:00 am • {salon.location.street}, {salon.location.city}, {salon.location.state} {salon.location.zipCode}
+            Closed opens at 11:00 am • {salon.fullAddress.street}, {salon.fullAddress.city}, {salon.fullAddress.state} {salon.fullAddress.zipCode}
           </p>
         </div>
 
@@ -177,10 +179,10 @@ const SalonDetailPage = () => {
               {currentItems.length > 0 ? (
                 currentItems.map(item => (
                   <ServiceCard 
-                    key={`${activeTab}-${item.id}`}
+                    key={`${activeTab}-${item._id || item.id}`}
                     service={item}
                     onSelect={handleServiceSelect}
-                    isSelected={selectedServices.some(s => s.id === item.id && s.type === activeTab)}
+                    isSelected={selectedServices.some(s => (s._id || s.id) === (item._id || item.id) && s.type === activeTab)}
                   />
                 ))
               ) : (
@@ -220,12 +222,9 @@ const SalonDetailPage = () => {
               selectedServices={selectedServices} 
               salon={{
                 ...salon,
-                address: `${salon.location.address}, ${salon.location.city}, ${salon.location.state} ${salon.location.zip}`
+                address: `${salon.fullAddress.street}, ${salon.fullAddress.city}, ${salon.fullAddress.state} ${salon.fullAddress.zipCode}`
               }}
               onContinue={handleContinue}
-              onRemoveService={(serviceId, type) => {
-                setSelectedServices(selectedServices.filter(s => !(s.id === serviceId && s.type === type)));
-              }}
             />
           </div>
         </div>
