@@ -133,15 +133,6 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
                 }}
                 aria-label={`Select ${stylist.name}${!isAvailable ? ' (unavailable)' : ''}`}
               >
-                {isSelected && (
-                  <div className="absolute top-2 right-2 w-4 h-4 bg-green-500 rounded-full"></div>
-                )}
-                {availableStylists.length > 0 && isAvailable && !isSelected && (
-                  <div className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded-full"></div>
-                )}
-                {availableStylists.length > 0 && !isAvailable && (
-                  <div className="absolute top-2 right-2 w-3 h-3 bg-red-500 rounded-full"></div>
-                )}
                 <img 
                   src={stylist.image} 
                   alt={stylist.name}
