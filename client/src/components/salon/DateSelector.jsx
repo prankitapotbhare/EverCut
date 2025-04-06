@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { isTimeSlotInPast } from '@/services/schedulingService';
+import { useBooking } from '@/contexts/BookingContext';
 
 const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
   const scrollContainerRef = useRef(null);
+  const { isTimeSlotInPast, isSameDay } = useBooking();
   
   // Initialize with today's date
   const today = useMemo(() => {
@@ -49,8 +50,9 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
     for (let i = 1; i <= daysInMonth; i++) {
       const currentDate = new Date(year, month, i);
       
-      // Use isTimeSlotInPast from schedulingService to check if date is in past
-      // For date comparison, we'll use midnight as the time
+      // Use isTimeSlotInPast from BookingContext instead of schedulingService
+      // The issue is here - we're checking if the entire date is in the past
+      // But today's date is not in the past, only times before current time are
       const isBeforeToday = isTimeSlotInPast(currentDate, '12:00 AM');
       
       // Check if this date is in the availableDates array (from backend)
@@ -73,27 +75,24 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
         }
       }
       
+      // Fix: Make today's date always selectable if it's in availableDates
+      const isTodayDate = isSameDay(currentDate, today);
+      const isSelectable = (!isBeforeToday || isTodayDate) && (availableDates.length === 0 || isAvailable);
+      
       dateRange.push({
         date: currentDate,
         day: currentDate.getDate(),
         dayName: currentDate.toLocaleString('default', { weekday: 'short' }),
         month: currentDate.getMonth(),
         year: currentDate.getFullYear(),
-        isSelectable: !isBeforeToday && (availableDates.length === 0 || isAvailable),
+        isSelectable: isSelectable,
         isAvailable: isAvailable,
         availabilityLevel: availabilityLevel,
-        isToday: isSameDay(currentDate, today)
+        isToday: isTodayDate
       });
     }
     
     setDates(dateRange);
-  };
-  
-  // Helper function to check if two dates are the same day
-  const isSameDay = (date1, date2) => {
-    return date1.getDate() === date2.getDate() &&
-           date1.getMonth() === date2.getMonth() &&
-           date1.getFullYear() === date2.getFullYear();
   };
   
   // Navigate to previous month

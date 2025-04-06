@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
-import { getStylistAvailabilityStatus } from '@/services/salonistService';
+import { useBooking } from '@/contexts/BookingContext';
 
 const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, availableStylists = [], selectedDate }) => {
+  const { getStylistAvailabilityStatus } = useBooking();
+  
   // Use memoization to prevent unnecessary recalculations of stylist availability
-  // Update the stylistsWithAvailability memoization
   const stylistsWithAvailability = useMemo(() => {
     if (!stylists || stylists.length === 0) {
       return [];
@@ -16,7 +17,7 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
         availableStylists.some(s => s.id === stylist.id);
       
       try {
-        // Get detailed availability status using the service function
+        // Get detailed availability status using the context function
         const { status, reason } = getStylistAvailabilityStatus(stylist, isAvailable, selectedDate);
         
         return {
@@ -35,7 +36,7 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
         };
       }
     });
-  }, [stylists, availableStylists, selectedDate]);
+  }, [stylists, availableStylists, selectedDate, getStylistAvailabilityStatus]);
 
   // Handle the case when no stylists are available
   const hasAvailableStylists = useMemo(() => {

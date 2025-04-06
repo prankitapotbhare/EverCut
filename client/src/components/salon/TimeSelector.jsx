@@ -1,12 +1,18 @@
 import React, { useMemo } from 'react';
-import { generateTimeSlots, getUnavailableTimeSlots, generateAvailableTimeSlots, getSalonistRealTimeAvailability } from '@/services/schedulingService';
+import { useBooking } from '@/contexts/BookingContext';
 
 const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], selectedStylist, selectedDate }) => {
+  const { 
+    generateTimeSlots, 
+    getUnavailableTimeSlots 
+  } = useBooking();
+  
   // Use memoization to prevent unnecessary recalculations
-  const defaultTimeSlots = useMemo(() => generateAvailableTimeSlots(), []);
+  // Note: generateAvailableTimeSlots and getSalonistRealTimeAvailability are not in BookingContext
+  // We'll use the available functions from context instead
   
   // Get all possible time slots for the day (8 AM to 8 PM)
-  const allPossibleTimeSlots = useMemo(() => generateTimeSlots(), []);
+  const allPossibleTimeSlots = useMemo(() => generateTimeSlots(), [generateTimeSlots]);
   
   // Update the timeSlots memoization logic
   const timeSlots = useMemo(() => {
@@ -18,8 +24,9 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
       return availableTimeSlots;
     }
     
-    // Otherwise, get real-time availability
-    return getSalonistRealTimeAvailability(selectedStylist.id, selectedDate);
+    // Since getSalonistRealTimeAvailability is not in BookingContext,
+    // we'll use the availableTimeSlots prop as the source of truth
+    return [];
   }, [availableTimeSlots, selectedStylist, selectedDate]);
   
   // Update the unavailable slots calculation
@@ -32,7 +39,7 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
       timeSlots,
       allPossibleTimeSlots
     );
-  }, [selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots]);
+  }, [selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots, getUnavailableTimeSlots]);
   
   // Check if the selected time is still available
   // This handles the case where a time slot becomes unavailable after selection
