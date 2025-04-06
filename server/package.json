@@ -8,8 +8,7 @@
     "dev": "nodemon src/server.js",
     "test": "jest --forceExit --detectOpenHandles",
     "lint": "eslint .",
-    "seed": "node src/scripts/seed.js",
-    "seedSalons": "node src/scripts/seedSalons.js"
+    "importSalons": "node src/scripts/importSalons.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
