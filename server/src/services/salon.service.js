@@ -1,7 +1,11 @@
 const { ApiError } = require('../utils/errors');
 const logger = require('../utils/logger');
 const Salon = require('../models/Salon');
-const mongoose = require('mongoose'); // Add this import
+const Service = require('../models/Service');
+const Package = require('../models/Package');
+const Salonist = require('../models/Salonist');
+const Review = require('../models/Review');
+const mongoose = require('mongoose');
 
 /**
  * Get all salons with optional filtering
@@ -56,50 +60,75 @@ const getAllSalons = async (filters = {}) => {
  */
 const getSalonById = async (id) => {
   try {
-    let salon;
-    
-    // Try to find by MongoDB ObjectId first
-    try {
-      if (mongoose.Types.ObjectId.isValid(id)) {
-        salon = await Salon.findById(id);
-      }
-    } catch (err) {
-      logger.warn(`Failed to find salon by ObjectId: ${err.message}`);
+    // Validate ID format
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      throw new ApiError('Invalid salon ID format', 400);
     }
     
-    // If not found by ObjectId, try to find by numeric ID
-    if (!salon) {
-      salon = await Salon.findOne({ id: id });
-    }
+    // Find salon by ID with populated services, packages, and salonists
+    const salon = await Salon.findById(id)
+      .populate('services')
+      .populate('packages')
+      .populate('salonists')
+      .populate('reviews');
     
     if (!salon) {
       throw new ApiError('Salon not found', 404);
     }
     
+    // If services array is empty, try to find services directly
+    if (!salon.services || salon.services.length === 0) {
+      const services = await Service.find({ 
+        salonId: salon._id,
+        isActive: true 
+      });
+      
+      salon.services = services;
+    }
+    
+    // If packages array is empty, try to find packages directly
+    if (!salon.packages || salon.packages.length === 0) {
+      const packages = await Package.find({ 
+        salonId: salon._id,
+        isActive: true 
+      });
+      
+      salon.packages = packages;
+    }
+    
+    // If salonists array is empty, try to find salonists directly
+    if (!salon.salonists || salon.salonists.length === 0) {
+      const salonists = await Salonist.find({ 
+        salonId: salon._id,
+        status: 'active' 
+      });
+      
+      salon.salonists = salonists;
+    }
+    
+    // Format the response
     return {
       id: salon._id,
       name: salon.name,
       description: salon.description,
-      location: salon.address || {}, // Ensure location exists
-      address: `${salon.address?.street || ''}, ${salon.address?.city || ''}, ${salon.address?.state || ''} ${salon.address?.zipCode || ''}`,
+      address: `${salon.address.street}, ${salon.address.city}, ${salon.address.state} ${salon.address.zipCode}`,
+      fullAddress: salon.address,
+      location: salon.location,
+      contactPhone: salon.contactPhone,
+      contactEmail: salon.contactEmail,
       image: salon.image,
       gallery: salon.gallery || [],
-      rating: salon.rating,
+      rating: salon.rating || 0,
       reviews: salon.reviews || [],
-      reviewCount: salon.reviewCount,
+      reviewCount: salon.reviewCount || 0,
       services: salon.services || [],
       packages: salon.packages || [],
-      stylists: salon.stylists || [],
-      operatingHours: salon.operatingHours || [],
-      contactPhone: salon.contactPhone,
-      contactEmail: salon.contactEmail
+      stylists: salon.salonists || [],
+      operatingHours: salon.operatingHours || []
     };
   } catch (error) {
-    if (error instanceof ApiError) {
-      throw error;
-    }
     logger.error(`Error getting salon by ID: ${error.message}`);
-    throw new ApiError('Failed to fetch salon', 500);
+    throw error;
   }
 };
 

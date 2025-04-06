@@ -9,7 +9,16 @@ const timeSlotSchema = new Schema({
   },
   endTime: {
     type: String,
-    required: true
+    default: ''
+  },
+  isBooked: {
+    type: Boolean,
+    default: false
+  },
+  bookingId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Booking',
+    default: null
   }
 });
 
@@ -29,12 +38,14 @@ const scheduleSchema = new Schema({
   dayOfWeek: {
     type: Number, // 0-6 for Sunday-Saturday
     required: true,
+    min: 0,
+    max: 6
+  },
+  date: {
+    type: Date, // Specific date if this is a date-specific schedule
     index: true
   },
-  timeSlots: [{
-    type: String, // Format: "9:00 AM", "9:30 AM", etc.
-    required: true
-  }],
+  timeSlots: [timeSlotSchema],
   isActive: {
     type: Boolean,
     default: true
@@ -55,8 +66,9 @@ scheduleSchema.pre('save', function(next) {
   next();
 });
 
-// Create compound indexes for efficient querying
-scheduleSchema.index({ salonistId: 1, dayOfWeek: 1 }, { unique: true });
+// Create compound indexes for common queries
+scheduleSchema.index({ salonistId: 1, dayOfWeek: 1 });
 scheduleSchema.index({ salonId: 1, dayOfWeek: 1 });
+scheduleSchema.index({ salonId: 1, date: 1 });
 
 module.exports = mongoose.model('Schedule', scheduleSchema);

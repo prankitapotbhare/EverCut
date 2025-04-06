@@ -9,35 +9,8 @@ const salonService = require('../services/salon.service');
  */
 const getSalons = async (req, res, next) => {
   try {
-    // For test environment, use mock data
-    if (process.env.NODE_ENV === 'test') {
-      return res.status(200).json({
-        success: true,
-        count: 2,
-        data: [
-          {
-            id: 'salon-1',
-            name: 'Test Salon',
-            description: 'A test salon',
-            address: 'Test City, Test State',
-            image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80',
-            rating: 4.5,
-            reviews: 120,
-            distance: 1.2
-          },
-          {
-            id: 'salon-2',
-            name: 'Another Test Salon',
-            description: 'Another test salon',
-            address: 'Another City, Another State',
-            image: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80',
-            rating: 4.0,
-            reviews: 85,
-            distance: 2.5
-          }
-        ]
-      });
-    }
+    // Use database for all environments including test
+    // Test environment will use the seeded mock data
 
     // Extract filters from query parameters
     const filters = {
@@ -69,96 +42,27 @@ const getSalons = async (req, res, next) => {
  */
 const getSalonById = async (req, res, next) => {
   try {
-    // For test environment, use mock data
-    if (process.env.NODE_ENV === 'test') {
-      if (req.params.id === 'salon-1') {
-        return res.status(200).json({
-          success: true,
-          data: {
-            id: 'salon-1',
-            name: 'Test Salon',
-            description: 'A test salon with great services',
-            address: 'Test Street, Test City, Test State 12345',
-            image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80',
-            gallery: [
-              'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80',
-              'https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80'
-            ],
-            rating: 4.5,
-            reviews: [
-              {
-                id: 'review-1',
-                userId: 'user-1',
-                userName: 'John Doe',
-                userImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
-                rating: 5,
-                comment: 'Great service!',
-                date: '2023-01-15T12:00:00.000Z'
-              }
-            ],
-            reviewCount: 120,
-            services: [
-              {
-                id: 'service-1',
-                name: 'Haircut',
-                description: 'Professional haircut',
-                price: 30,
-                duration: '30 min'
-              },
-              {
-                id: 'service-2',
-                name: 'Hair Coloring',
-                description: 'Full hair coloring',
-                price: 60,
-                duration: '60 min'
-              }
-            ],
-            packages: [
-              {
-                id: 'package-1',
-                name: 'Complete Makeover',
-                description: 'Haircut, coloring, and styling',
-                price: 100,
-                duration: '120 min',
-                services: ['Haircut', 'Hair Coloring', 'Styling']
-              }
-            ],
-            stylists: [
-              {
-                id: 'stylist-1',
-                name: 'Jane Smith',
-                image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
-                specialties: ['Haircut', 'Styling'],
-                bio: 'Experienced stylist with 5 years of experience'
-              }
-            ]
-          }
-        });
-      } else {
-        return next(new ApiError('Salon not found', 404));
-      }
-    }
-
+    const { id } = req.params;
+    
+    // Log the requested ID for debugging
+    logger.info(`Fetching salon with ID: ${id}`);
+    
     // Get salon from service
-    const salon = await salonService.getSalonById(req.params.id);
+    const salon = await salonService.getSalonById(id);
     
     res.status(200).json({
       success: true,
       data: salon
     });
   } catch (error) {
+    logger.error(`Error getting salon by ID: ${error.message}`);
+    
+    // Pass the error to the error handler middleware
     if (error instanceof ApiError) {
       return next(error);
     }
     
-    logger.error(`Error getting salon by ID: ${error.message}`);
-    
-    // Check if error is due to invalid ObjectId
-    if (error.name === 'CastError') {
-      return next(new ApiError('Salon not found', 404));
-    }
-    
-    next(new ApiError('Failed to fetch salon', 500));
+    next(new ApiError('Failed to fetch salon details', 500));
   }
 };
 
@@ -169,14 +73,17 @@ const getSalonById = async (req, res, next) => {
  */
 const createSalon = async (req, res, next) => {
   try {
-    // This would typically validate the request and create a salon
-    // For now, we'll just return a success response
+    // Check if user has admin privileges
+    if (!req.user.admin) {
+      return next(new ApiError('Not authorized to create salons', 403));
+    }
+    
+    // Create salon using service
+    const salon = await salonService.createSalon(req.body);
+    
     res.status(201).json({
       success: true,
-      data: {
-        id: 'new-salon-id',
-        ...req.body
-      }
+      data: salon
     });
   } catch (error) {
     logger.error(`Error creating salon: ${error.message}`);
@@ -197,28 +104,10 @@ const createSalon = async (req, res, next) => {
  */
 const getSalonServices = async (req, res, next) => {
   try {
-    // For test environment, use mock data
+    // For test environment, use mock data from database
     if (process.env.NODE_ENV === 'test') {
-      return res.status(200).json({
-        success: true,
-        count: 2,
-        data: [
-          {
-            id: 'service-1',
-            name: 'Haircut',
-            description: 'Professional haircut',
-            price: 30,
-            duration: '30 min'
-          },
-          {
-            id: 'service-2',
-            name: 'Hair Coloring',
-            description: 'Full hair coloring',
-            price: 60,
-            duration: '60 min'
-          }
-        ]
-      });
+      // Use the database for tests as well, since we've seeded it with mock data
+      // This ensures consistent behavior between test and production environments
     }
     
     // Get services from service
@@ -247,23 +136,8 @@ const getSalonServices = async (req, res, next) => {
  */
 const getSalonPackages = async (req, res, next) => {
   try {
-    // For test environment, use mock data
-    if (process.env.NODE_ENV === 'test') {
-      return res.status(200).json({
-        success: true,
-        count: 1,
-        data: [
-          {
-            id: 'package-1',
-            name: 'Complete Makeover',
-            description: 'Haircut, coloring, and styling',
-            price: 100,
-            duration: '120 min',
-            services: ['Haircut', 'Hair Coloring', 'Styling']
-          }
-        ]
-      });
-    }
+    // Use database for all environments including test
+    // Test environment will use the seeded mock data
     
     // Get packages from service
     const packages = await salonService.getSalonPackages(req.params.id);
@@ -291,22 +165,8 @@ const getSalonPackages = async (req, res, next) => {
  */
 const getSalonStylists = async (req, res, next) => {
   try {
-    // For test environment, use mock data
-    if (process.env.NODE_ENV === 'test') {
-      return res.status(200).json({
-        success: true,
-        count: 1,
-        data: [
-          {
-            id: 'stylist-1',
-            name: 'Jane Smith',
-            image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
-            specialties: ['Haircut', 'Styling'],
-            bio: 'Experienced stylist with 5 years of experience'
-          }
-        ]
-      });
-    }
+    // Use database for all environments including test
+    // Test environment will use the seeded mock data
     
     // Get stylists from service
     const stylists = await salonService.getSalonStylists(req.params.id);

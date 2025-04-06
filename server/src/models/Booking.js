@@ -13,11 +13,13 @@ const serviceBookingSchema = new Schema({
   },
   price: {
     type: Number,
-    required: true
+    required: true,
+    min: 0
   },
   duration: {
     type: Number,
-    required: true
+    required: true,
+    min: 0
   },
   category: {
     type: String
@@ -30,6 +32,15 @@ const bookingSchema = new Schema({
     type: String,
     required: true,
     index: true
+  },
+  userEmail: {
+    type: String
+  },
+  userName: {
+    type: String
+  },
+  userPhone: {
+    type: String
   },
   salonId: {
     type: Schema.Types.ObjectId,
@@ -57,19 +68,33 @@ const bookingSchema = new Schema({
   },
   startTime: {
     type: String,
-    required: true
+    required: true,
+    validate: {
+      validator: function(v) {
+        return /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(v);
+      },
+      message: props => `${props.value} is not a valid time format! Use HH:MM format.`
+    }
   },
   endTime: {
     type: String,
-    required: true
+    required: true,
+    validate: {
+      validator: function(v) {
+        return /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(v);
+      },
+      message: props => `${props.value} is not a valid time format! Use HH:MM format.`
+    }
   },
   totalDuration: {
     type: Number,
-    required: true
+    required: true,
+    min: 0
   },
   totalPrice: {
     type: Number,
-    required: true
+    required: true,
+    min: 0
   },
   paymentId: {
     type: Schema.Types.ObjectId,
@@ -83,12 +108,27 @@ const bookingSchema = new Schema({
   },
   status: {
     type: String,
-    enum: ['pending', 'confirmed', 'completed', 'cancelled', 'rescheduled'],
+    enum: ['pending', 'confirmed', 'completed', 'cancelled', 'rescheduled', 'no-show'],
     default: 'pending',
     index: true
   },
+  cancellationReason: {
+    type: String
+  },
+  cancelledBy: {
+    type: String,
+    enum: ['user', 'salon', 'system']
+  },
   notes: {
     type: String
+  },
+  reminderSent: {
+    type: Boolean,
+    default: false
+  },
+  feedbackRequested: {
+    type: Boolean,
+    default: false
   },
   createdAt: {
     type: Date,
@@ -110,5 +150,7 @@ bookingSchema.pre('save', function(next) {
 bookingSchema.index({ salonId: 1, date: 1 });
 bookingSchema.index({ salonistId: 1, date: 1 });
 bookingSchema.index({ userId: 1, status: 1 });
+bookingSchema.index({ date: 1, status: 1 });
+bookingSchema.index({ createdAt: -1 });
 
 module.exports = mongoose.model('Booking', bookingSchema);

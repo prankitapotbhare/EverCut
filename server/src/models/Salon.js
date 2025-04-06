@@ -1,6 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// Operating hours schema (embedded)
+const operatingHoursSchema = new Schema({
+  day: { 
+    type: Number, // 0-6 for Sunday-Saturday
+    required: true 
+  },
+  open: { 
+    type: String, 
+    required: true 
+  },
+  close: { 
+    type: String, 
+    required: true 
+  }
+});
+
 const salonSchema = new mongoose.Schema({
   name: { 
     type: String, 
@@ -43,71 +59,49 @@ const salonSchema = new mongoose.Schema({
   amenities: [{
     type: String
   }],
-  popularServices: [{
+  services: [{
     type: Schema.Types.ObjectId,
     ref: 'Service'
   }],
-  popularPackages: [{
+  packages: [{
     type: Schema.Types.ObjectId,
     ref: 'Package'
   }],
-  rating: { // Average rating
-    type: Number, 
-    default: 0 
-  },
-  reviewCount: { 
-    type: Number, 
-    default: 0 
-  },
-  operatingHours: [{
-    day: { type: Number, required: true },  // 0-6 for Sunday-Saturday
-    open: { type: String, required: true },  // "9:00 AM"
-    close: { type: String, required: true }  // "6:00 PM"
+  salonists: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Salonist'
   }],
-  createdAt: { 
-    type: Date, 
-    default: Date.now 
+  operatingHours: [operatingHoursSchema],
+  rating: {
+    type: Number,
+    default: 0,
+    min: 0,
+    max: 5
   },
-  updatedAt: { 
-    type: Date, 
-    default: Date.now 
+  reviewCount: {
+    type: Number,
+    default: 0
+  },
+  reviews: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Review'
+  }],
+  status: {
+    type: String,
+    enum: ['active', 'inactive', 'pending', 'suspended'],
+    default: 'active'
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now
   }
-});
-
-// Add text search indexes
-salonSchema.index({ name: 'text', 'address.city': 'text', 'address.state': 'text' });
-
-// Virtual for full address
-salonSchema.virtual('fullAddress').get(function() {
-  return `${this.address.street}, ${this.address.city}, ${this.address.state} ${this.address.zipCode}, ${this.address.country}`;
-});
-
-// Virtual populate for services
-salonSchema.virtual('services', {
-  ref: 'Service',
-  localField: '_id',
-  foreignField: 'salonId'
-});
-
-// Virtual populate for stylists
-salonSchema.virtual('stylists', {
-  ref: 'Salonist',
-  localField: '_id',
-  foreignField: 'salonId'
-});
-
-// Virtual populate for reviews
-salonSchema.virtual('reviews', {
-  ref: 'Review',
-  localField: '_id',
-  foreignField: 'salonId'
-});
-
-// Virtual populate for bookings
-salonSchema.virtual('bookings', {
-  ref: 'Booking',
-  localField: '_id',
-  foreignField: 'salonId'
+}, { 
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
 });
 
 // Pre-save middleware to update the updatedAt field
@@ -116,16 +110,38 @@ salonSchema.pre('save', function(next) {
   next();
 });
 
-// Method to calculate average rating
-salonSchema.methods.calculateAverageRating = async function() {
-  const reviews = await mongoose.model('Review').find({ salonId: this._id });
-  if (reviews.length === 0) return 0;
-  
-  const sum = reviews.reduce((total, review) => total + review.rating, 0);
-  return (sum / reviews.length).toFixed(1);
-};
+// Virtual populate for services if not directly populated
+salonSchema.virtual('virtualServices', {
+  ref: 'Service',
+  localField: '_id',
+  foreignField: 'salonId'
+});
 
-// Ensure the 2dsphere index is created
-salonSchema.index({ location: '2dsphere' });
+// Virtual populate for packages if not directly populated
+salonSchema.virtual('virtualPackages', {
+  ref: 'Package',
+  localField: '_id',
+  foreignField: 'salonId'
+});
+
+// Virtual populate for salonists if not directly populated
+salonSchema.virtual('virtualSalonists', {
+  ref: 'Salonist',
+  localField: '_id',
+  foreignField: 'salonId'
+});
+
+// Virtual populate for reviews if not directly populated
+salonSchema.virtual('virtualReviews', {
+  ref: 'Review',
+  localField: '_id',
+  foreignField: 'salonId'
+});
+
+// Create indexes for common queries
+salonSchema.index({ 'address.city': 1 });
+salonSchema.index({ 'address.state': 1 });
+salonSchema.index({ rating: -1 });
+salonSchema.index({ name: 'text', description: 'text' });
 
 module.exports = mongoose.model('Salon', salonSchema);

@@ -15,16 +15,18 @@ const paymentSchema = new Schema({
   },
   amount: {
     type: Number,
-    required: true
+    required: true,
+    min: 0
   },
   currency: {
     type: String,
     default: 'inr',
-    required: true
+    required: true,
+    enum: ['inr', 'usd', 'eur', 'gbp']
   },
   paymentMethod: {
     type: String,
-    enum: ['card', 'upi'],
+    enum: ['card', 'upi', 'netbanking', 'wallet', 'cash'],
     required: true
   },
   paymentDetails: {
@@ -39,11 +41,15 @@ const paymentSchema = new Schema({
     // For UPI payments
     upiId: String,
     provider: String,
-    reference: String
+    reference: String,
+    
+    // For other payment methods
+    transactionId: String,
+    gateway: String
   },
   status: {
     type: String,
-    enum: ['pending', 'processing', 'succeeded', 'failed', 'refunded'],
+    enum: ['pending', 'processing', 'succeeded', 'failed', 'refunded', 'partially_refunded'],
     default: 'pending',
     index: true
   },
@@ -54,15 +60,36 @@ const paymentSchema = new Schema({
   },
   taxAmount: {
     type: Number,
-    default: 0
+    default: 0,
+    min: 0
+  },
+  discountAmount: {
+    type: Number,
+    default: 0,
+    min: 0
   },
   totalAmount: {
     type: Number,
-    required: true
+    required: true,
+    min: 0
+  },
+  refundAmount: {
+    type: Number,
+    default: 0,
+    min: 0
+  },
+  refundReason: {
+    type: String
+  },
+  refundDate: {
+    type: Date
   },
   error: {
     code: String,
     message: String
+  },
+  gatewayResponse: {
+    type: Object
   },
   createdAt: {
     type: Date,
@@ -84,5 +111,6 @@ paymentSchema.pre('save', function(next) {
 // Create compound indexes for efficient querying
 paymentSchema.index({ userId: 1, status: 1 });
 paymentSchema.index({ bookingId: 1, status: 1 });
+paymentSchema.index({ createdAt: -1 });
 
 module.exports = mongoose.model('Payment', paymentSchema);

@@ -5,10 +5,12 @@ const Schema = mongoose.Schema;
 const availabilitySchema = new Schema({
   day: {
     type: Number, // 0-6 for Sunday-Saturday
-    required: true
+    required: true,
+    min: 0,
+    max: 6
   },
   slots: [{
-    type: String // Format: "9:00 AM", "9:30 AM", etc.
+    type: String // Format: "9:00", "9:30", etc.
   }]
 });
 
@@ -35,29 +37,20 @@ const salonistSchema = new Schema({
     type: String
   },
   availability: [availabilitySchema],
-  availabilityStatus: {
-    type: String,
-    enum: ['available', 'unavailable', 'partially-booked', 'mostly-booked', 'booked', 'on-leave'],
-    default: 'available'
-  },
-  availabilityReason: {
-    type: String
-  },
-  bookedPercentage: {
-    type: Number,
-    default: 0
-  },
   rating: {
     type: Number,
-    default: 0
+    default: 0,
+    min: 0,
+    max: 5
   },
   reviewCount: {
     type: Number,
-    default: 0
+    default: 0,
+    min: 0
   },
   status: {
     type: String,
-    enum: ['active', 'inactive', 'on-leave'],
+    enum: ['active', 'inactive', 'on_leave'],
     default: 'active',
     index: true
   },
@@ -77,7 +70,14 @@ salonistSchema.pre('save', function(next) {
   next();
 });
 
-// Create compound indexes for efficient querying
+// Virtual for getting all schedules for this salonist
+salonistSchema.virtual('schedules', {
+  ref: 'Schedule',
+  localField: '_id',
+  foreignField: 'salonistId'
+});
+
+// Create compound indexes for common queries
 salonistSchema.index({ salonId: 1, status: 1 });
 salonistSchema.index({ name: 'text' });
 

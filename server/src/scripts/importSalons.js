@@ -27,11 +27,11 @@ async function connectDatabase() {
 
 async function importSalons() {
   try {
-    // Read the salons.json file
-    const salonsFilePath = path.join(__dirname, 'data', 'salons.json');
-    const salonsData = JSON.parse(fs.readFileSync(salonsFilePath, 'utf8'));
+    // Read the salons directory
+    const salonsDir = path.join(__dirname, 'data', 'salons');
+    const salonFiles = fs.readdirSync(salonsDir).filter(file => file.endsWith('.json'));
     
-    logger.info(`Found ${salonsData.length} salons to import`);
+    logger.info(`Found ${salonFiles.length} salon files to import`);
     
     // Clear existing data (optional - remove if you want to keep existing data)
     await Salon.deleteMany({});
@@ -43,128 +43,264 @@ async function importSalons() {
     logger.info('Cleared existing data');
     
     // Import each salon
-    for (const salonData of salonsData) {
-      // Create the salon
-      const salon = new Salon({
-        name: salonData.name,
-        description: salonData.description,
-        address: salonData.address,
-        location: salonData.location,
-        contactPhone: salonData.contactPhone,
-        contactEmail: salonData.contactEmail,
-        image: salonData.image,
-        gallery: salonData.gallery,
-        operatingHours: salonData.operatingHours || []
-      });
-      
-      await salon.save();
-      logger.info(`Imported salon: ${salon.name}`);
-      
-      // Import services
-      if (salonData.services && salonData.services.length > 0) {
-        for (const serviceData of salonData.services) {
-          const service = new Service({
-            salonId: salon._id,
-            name: serviceData.name,
-            description: serviceData.description,
-            price: serviceData.price,
-            duration: parseDuration(serviceData.duration),
-            category: serviceData.category || 'General',
-            image: serviceData.image
-          });
-          
-          await service.save();
+    for (const [index, salonFile] of salonFiles.entries()) {
+      try {
+        // Read salon data from file
+        const salonData = JSON.parse(fs.readFileSync(path.join(salonsDir, salonFile), 'utf8'));
+        
+        // Create the salon
+        const salon = new Salon({
+          name: salonData.name,
+          description: salonData.description,
+          address: salonData.address,
+          location: salonData.location,
+          contactPhone: salonData.contactPhone,
+          contactEmail: salonData.contactEmail,
+          image: salonData.image,
+          gallery: salonData.gallery || [],
+          amenities: salonData.amenities || [],
+          operatingHours: salonData.operatingHours || [
+            { day: 0, open: '11:00 AM', close: '5:00 PM' },
+            { day: 1, open: '9:00 AM', close: '7:00 PM' },
+            { day: 2, open: '9:00 AM', close: '7:00 PM' },
+            { day: 3, open: '9:00 AM', close: '7:00 PM' },
+            { day: 4, open: '9:00 AM', close: '7:00 PM' },
+            { day: 5, open: '9:00 AM', close: '7:00 PM' },
+            { day: 6, open: '10:00 AM', close: '6:00 PM' }
+          ]
+        });
+        
+        // Save the salon to get an _id
+        await salon.save();
+        
+        // Create services for this salon
+        const serviceIds = [];
+        const serviceMap = {}; // Map service IDs to MongoDB IDs
+        
+        if (salonData.services && salonData.services.length > 0) {
+          for (const serviceData of salonData.services) {
+            // Ensure duration is at least 5 minutes
+            let duration = serviceData.duration;
+            if (typeof duration === 'string') {
+              if (duration.includes('min')) {
+                duration = Math.max(5, parseInt(duration));
+              } else if (duration.includes('hr')) {
+                duration = Math.max(5, Math.round(parseFloat(duration) * 60));
+              } else {
+                duration = Math.max(5, parseInt(duration) || 30);
+              }
+            } else if (typeof duration === 'number') {
+              duration = Math.max(5, duration);
+            } else {
+              duration = 30; // Default
+            }
+            
+            const service = new Service({
+              salonId: salon._id,
+              name: serviceData.name,
+              description: serviceData.description,
+              price: serviceData.price,
+              duration: duration,
+              category: serviceData.category || 'General',
+              image: serviceData.image || salon.image,
+              isActive: true
+            });
+            
+            await service.save();
+            serviceIds.push(service._id);
+            
+            // Store the mapping from service ID to MongoDB ID
+            if (serviceData.id) {
+              serviceMap[serviceData.id] = service._id;
+            }
+          }
         }
-        logger.info(`Imported ${salonData.services.length} services for ${salon.name}`);
-      }
-      
-      // Import packages
-      if (salonData.packages && salonData.packages.length > 0) {
-        for (const packageData of salonData.packages) {
-          const packageDoc = new Package({
-            salonId: salon._id,
-            name: packageData.name,
-            description: packageData.description,
-            price: packageData.price,
-            duration: parseDuration(packageData.duration),
-            services: packageData.services.map(service => ({
-              name: service,
-              description: '',
-              regularPrice: 0
-            }))
-          });
-          
-          await packageDoc.save();
+        
+        // Create packages for this salon
+        const packageIds = [];
+        if (salonData.packages && salonData.packages.length > 0) {
+          for (const packageData of salonData.packages) {
+            // Ensure duration is at least 15 minutes
+            let duration = packageData.duration;
+            if (typeof duration === 'string') {
+              if (duration.includes('min')) {
+                duration = Math.max(15, parseInt(duration));
+              } else if (duration.includes('hr')) {
+                duration = Math.max(15, Math.round(parseFloat(duration) * 60));
+              } else {
+                duration = Math.max(15, parseInt(duration) || 60);
+              }
+            } else if (typeof duration === 'number') {
+              duration = Math.max(15, duration);
+            } else {
+              duration = 60; // Default
+            }
+            
+            const includedServices = [];
+            
+            // Create included services
+            if (packageData.services && packageData.services.length > 0) {
+              for (const includedService of packageData.services) {
+                // Handle both object and string formats
+                if (typeof includedService === 'object') {
+                  includedServices.push({
+                    name: includedService.name || 'Unnamed Service',
+                    description: includedService.description || '',
+                    regularPrice: includedService.price || 0
+                  });
+                } else if (typeof includedService === 'string') {
+                  // Find a matching service by name
+                  const matchingService = salonData.services?.find(s => 
+                    s.name.toLowerCase() === includedService.toLowerCase());
+                  
+                  includedServices.push({
+                    name: includedService,
+                    description: matchingService?.description || '',
+                    regularPrice: matchingService?.price || 0
+                  });
+                }
+              }
+            }
+            
+            // Ensure we have at least one service if array is empty
+            if (includedServices.length === 0) {
+              includedServices.push({
+                name: 'Package Service',
+                description: 'Included in package',
+                regularPrice: 0
+              });
+            }
+            
+            const packageObj = new Package({
+              salonId: salon._id,
+              name: packageData.name,
+              description: packageData.description,
+              price: packageData.price,
+              discountPercentage: packageData.discountPercentage || 10,
+              duration: duration,
+              services: includedServices,
+              isActive: true
+            });
+            
+            await packageObj.save();
+            packageIds.push(packageObj._id);
+          }
         }
-        logger.info(`Imported ${salonData.packages.length} packages for ${salon.name}`);
-      }
-      
-      // Import stylists
-      if (salonData.stylists && salonData.stylists.length > 0) {
-        for (const stylistData of salonData.stylists) {
-          const salonist = new Salonist({
-            salonId: salon._id,
-            name: stylistData.name,
-            image: stylistData.image,
-            specialties: stylistData.specialties || [],
-            bio: stylistData.bio,
-            status: stylistData.status || 'active',
-            rating: stylistData.rating || 0,
-            reviewCount: stylistData.reviewCount || 0
-          });
-          
-          await salonist.save();
-          
-          // Import availability as schedules
-          if (stylistData.availability && stylistData.availability.length > 0) {
-            for (const availabilityData of stylistData.availability) {
+        
+        // Create stylists (salonists) for this salon
+        const salonistIds = [];
+        if (salonData.stylists && salonData.stylists.length > 0) {
+          for (const stylistData of salonData.stylists) {
+            const salonist = new Salonist({
+              name: stylistData.name,
+              salonId: salon._id,
+              image: stylistData.image || 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80',
+              specialties: stylistData.specialties || [],
+              bio: stylistData.bio || `Experienced stylist at ${salonData.name}`,
+              availability: stylistData.availability || [
+                { day: 1, slots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"] },
+                { day: 2, slots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"] },
+                { day: 3, slots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"] },
+                { day: 4, slots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"] },
+                { day: 5, slots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"] }
+              ],
+              status: 'active'
+            });
+            
+            await salonist.save();
+            salonistIds.push(salonist._id);
+            
+            // Create schedule for this salonist
+            for (let day = 0; day <= 6; day++) {
+              // Skip days where the stylist doesn't work
+              const availabilityForDay = salonist.availability.find(a => a.day === day);
+              if (!availabilityForDay) continue;
+              
               const schedule = new Schedule({
                 salonistId: salonist._id,
                 salonId: salon._id,
-                dayOfWeek: availabilityData.day,
-                timeSlots: availabilityData.slots || []
+                dayOfWeek: day,
+                timeSlots: availabilityForDay.slots.map(slot => ({
+                  startTime: slot,
+                  endTime: '' // Will be calculated based on service duration
+                }))
+              });
+              
+              await schedule.save();
+            }
+          }
+        } else {
+          // Create default stylists if none provided
+          const defaultStylistNames = ['Alex Johnson', 'Jamie Smith', 'Taylor Williams'];
+          
+          for (const name of defaultStylistNames) {
+            const salonist = new Salonist({
+              name: name,
+              salonId: salon._id,
+              image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80',
+              specialties: ['Haircut', 'Styling', 'Color'],
+              bio: `Experienced stylist at ${salonData.name}`,
+              availability: [
+                { day: 1, slots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"] },
+                { day: 2, slots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"] },
+                { day: 3, slots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"] },
+                { day: 4, slots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"] },
+                { day: 5, slots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"] }
+              ],
+              status: 'active'
+            });
+            
+            await salonist.save();
+            salonistIds.push(salonist._id);
+            
+            // Create schedule for this salonist
+            for (let day = 1; day <= 5; day++) {
+              const schedule = new Schedule({
+                salonistId: salonist._id,
+                salonId: salon._id,
+                dayOfWeek: day,
+                timeSlots: ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"].map(slot => ({
+                  startTime: slot,
+                  endTime: '' // Will be calculated based on service duration
+                }))
               });
               
               await schedule.save();
             }
           }
         }
-        logger.info(`Imported ${salonData.stylists.length} stylists for ${salon.name}`);
+        
+        // Update salon with references to services, packages, and salonists
+        salon.services = serviceIds;
+        salon.packages = packageIds;
+        salon.salonists = salonistIds;
+        
+        // Save the updated salon
+        await salon.save();
+        
+        logger.info(`Imported salon ${index + 1}/${salonFiles.length}: ${salon.name}`);
+      } catch (error) {
+        const salonName = salonFile.replace('.json', '').replace('salon-', '');
+        logger.error(`Error importing salon ${salonName}: ${error.message}`);
       }
     }
     
-    logger.info('Salon data import completed successfully');
+    logger.info('Import completed successfully');
   } catch (error) {
-    logger.error(`Error importing salon data: ${error.message}`);
-    console.error(error);
+    logger.error(`Import failed: ${error.message}`);
   }
 }
 
-// Helper function to parse duration strings like "1 hr", "30 min", "2.5 hrs" to minutes
-function parseDuration(durationStr) {
-  if (!durationStr) return 60; // Default to 60 minutes
-  
-  const hours = durationStr.match(/(\d+(\.\d+)?)\s*hr/);
-  const minutes = durationStr.match(/(\d+)\s*min/);
-  
-  let totalMinutes = 0;
-  
-  if (hours) {
-    totalMinutes += parseFloat(hours[1]) * 60;
-  }
-  
-  if (minutes) {
-    totalMinutes += parseInt(minutes[1]);
-  }
-  
-  return totalMinutes || 60; // Default to 60 minutes if parsing fails
-}
-
-// Run the import process
 async function run() {
-  await connectDatabase();
-  await importSalons();
-  process.exit(0);
+  try {
+    await connectDatabase();
+    await importSalons();
+    logger.info('Script completed successfully');
+    process.exit(0);
+  } catch (error) {
+    logger.error(`Script failed: ${error.message}`);
+    process.exit(1);
+  }
 }
 
 run();
