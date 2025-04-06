@@ -18,21 +18,19 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
       
       try {
         // Get detailed availability status using the context function
-        const { status, reason } = getStylistAvailabilityStatus(stylist, isAvailable, selectedDate);
+        const { status } = getStylistAvailabilityStatus(stylist, isAvailable, selectedDate);
         
         return {
           ...stylist,
           isAvailable,
-          availabilityStatus: status,
-          availabilityReason: reason
+          availabilityStatus: status
         };
       } catch (error) {
         console.error(`Error getting availability for stylist ${stylist.id}:`, error);
         return {
           ...stylist,
           isAvailable: false,
-          availabilityStatus: 'error',
-          availabilityReason: 'Error checking availability'
+          availabilityStatus: 'Error'
         };
       }
     });
