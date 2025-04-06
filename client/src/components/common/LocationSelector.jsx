@@ -48,10 +48,16 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
     ).slice(0, 8); // Limit to 8 results
   }, [locationSearchQuery, allLocations]);
 
-  // Auto-detect location when component mounts
+  // Auto-detect location when component mounts only if no saved location
   useEffect(() => {
-    // Only auto-detect if we don't already have a location or if it's the default
-    if (selectedLocation === 'New York, NY') {
+    const savedLocation = localStorage.getItem('userLocation');
+    const savedCoordinates = localStorage.getItem('userCoordinates');
+    
+    if (savedLocation && savedCoordinates) {
+      // Use saved location and coordinates
+      onLocationChange(savedLocation, JSON.parse(savedCoordinates));
+    } else if (selectedLocation === 'New York, NY') {
+      // Only auto-detect if we don't have a saved location and are using the default
       detectLocation();
     }
   }, []);
@@ -104,8 +110,14 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
                 cityName = data.address.village;
               }
               
+              const coordinates = { lat: latitude, lng: longitude };
+              
+              // Save to localStorage
+              localStorage.setItem('userLocation', cityName);
+              localStorage.setItem('userCoordinates', JSON.stringify(coordinates));
+              
               // Pass both the city name and coordinates to the parent component
-              onLocationChange(cityName, { lat: latitude, lng: longitude });
+              onLocationChange(cityName, coordinates);
             }
             setDetectingLocation(false);
           } catch (error) {
@@ -132,8 +144,14 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
 
   // Function to select a location from the dropdown
   const selectLocation = (loc) => {
+    const coordinates = locationCoordinates[loc];
+    
+    // Save to localStorage
+    localStorage.setItem('userLocation', loc);
+    localStorage.setItem('userCoordinates', JSON.stringify(coordinates));
+    
     // Pass both the location name and its coordinates to the parent component
-    onLocationChange(loc, locationCoordinates[loc]);
+    onLocationChange(loc, coordinates);
     setShowLocationDropdown(false);
     setLocationSearchQuery('');
   };

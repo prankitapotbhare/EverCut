@@ -5,10 +5,16 @@ import Search from '@/components/common/Search';
 import { useSalon } from '@/contexts/SalonContext';
 
 const SalonFinder = () => {
-  const [location, setLocation] = useState('New York, NY');
+  // Get saved location from localStorage or use default
+  const savedLocation = localStorage.getItem('userLocation') || 'New York, NY';
+  const savedCoordinates = localStorage.getItem('userCoordinates') 
+    ? JSON.parse(localStorage.getItem('userCoordinates')) 
+    : { lat: 40.7128, lng: -74.0060 }; // Default to New York coordinates
+  
+  const [location, setLocation] = useState(savedLocation);
   const [searchQuery, setSearchQuery] = useState('');
   const [showAll, setShowAll] = useState(false);
-  const [coordinates, setCoordinates] = useState({ lat: 40.7128, lng: -74.0060 }); // Default to New York coordinates
+  const [coordinates, setCoordinates] = useState(savedCoordinates);
 
   const { 
     allSalons, 
@@ -22,7 +28,7 @@ const SalonFinder = () => {
     clearSearchResults
   } = useSalon();
 
-  // Fetch nearest salons on initial load
+  // Fetch nearest salons on initial load using saved coordinates
   useEffect(() => {
     if (coordinates) {
       fetchNearestSalons(coordinates);
