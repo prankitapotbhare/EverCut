@@ -173,7 +173,8 @@ const getSalonistRatings = async (salonistId) => {
 const getSalonistAvailability = async (salonistId, date) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      const salonistId = parseInt(salonistId);
+      // Don't redefine salonistId - use the parameter directly
+      const stylistId = parseInt(salonistId);
       
       // Format date to YYYY-MM-DD for lookup
       const dateString = date instanceof Date 
@@ -181,7 +182,7 @@ const getSalonistAvailability = async (salonistId, date) => {
         : new Date(date).toISOString().split('T')[0];
       
       // Get the salonist's schedule for this date
-      const salonistSchedule = mockSchedules[salonistId] || {};
+      const salonistSchedule = mockSchedules[stylistId] || {};
       const allTimeSlots = salonistSchedule[dateString] || [];
       
       // Filter out time slots that are:
@@ -190,8 +191,8 @@ const getSalonistAvailability = async (salonistId, date) => {
       // 3. Already booked
       const availableTimeSlots = allTimeSlots.filter(timeSlot => 
         !isTimeSlotInPast(date, timeSlot) && 
-        !isSalonistOnLeaveForTimeSlot(salonistId, date, timeSlot) &&
-        !isSalonistBookedForTimeSlot(salonistId, date, timeSlot)
+        !isSalonistOnLeaveForTimeSlot(stylistId, date, timeSlot) &&
+        !isSalonistBookedForTimeSlot(stylistId, date, timeSlot)
       );
       
       resolve(availableTimeSlots);

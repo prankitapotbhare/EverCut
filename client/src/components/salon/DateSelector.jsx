@@ -2,9 +2,9 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useBooking } from '@/contexts/BookingContext';
 
-const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
+const DateSelector = ({ selectedDate, onDateSelect }) => {
   const scrollContainerRef = useRef(null);
-  const { isTimeSlotInPast, isSameDay } = useBooking();
+  const { isSameDay } = useBooking();
   
   // Initialize with today's date
   const today = useMemo(() => {
@@ -16,10 +16,10 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
   const [currentMonth, setCurrentMonth] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
   const [dates, setDates] = useState([]);
   
-  // Generate dates when component mounts, month changes, or available dates change
+  // Generate dates when component mounts or month changes
   useEffect(() => {
     generateMonthDates();
-  }, [currentMonth, today, availableDates]);
+  }, [currentMonth, today]);
   
   // Scroll to today or selected date when dates change
   useEffect(() => {
@@ -40,7 +40,7 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
     }
   }, [dates, selectedDate]);
   
-  // Generate all dates for the current month with real-time availability
+  // Generate all dates for the current month
   const generateMonthDates = () => {
     const year = currentMonth.getFullYear();
     const month = currentMonth.getMonth();
@@ -50,34 +50,16 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
     for (let i = 1; i <= daysInMonth; i++) {
       const currentDate = new Date(year, month, i);
       
-      // Use isTimeSlotInPast from BookingContext instead of schedulingService
-      // The issue is here - we're checking if the entire date is in the past
-      // But today's date is not in the past, only times before current time are
-      const isBeforeToday = isTimeSlotInPast(currentDate, '12:00 AM');
+      // Check if date is before today
+      const isBeforeToday = currentDate < today;
       
-      // Check if this date is in the availableDates array (from backend)
-      const isAvailable = availableDates.length === 0 || 
-        availableDates.some(availableDate => isSameDay(availableDate, currentDate));
+      // Check if date is within the 3-month range
+      const threeMonthsFromToday = new Date(today);
+      threeMonthsFromToday.setMonth(today.getMonth() + 3);
+      const isWithinRange = currentDate <= threeMonthsFromToday;
       
-      // Calculate availability level based on how many slots are available
-      let availabilityLevel = 'high';
-      if (availableDates.length > 0) {
-        const matchingDate = availableDates.find(d => isSameDay(d, currentDate));
-        if (matchingDate) {
-          // In a real implementation, we would get this from the backend
-          // For now, we'll use a simple algorithm based on the date
-          const dayOfMonth = currentDate.getDate();
-          if (dayOfMonth % 3 === 0) availabilityLevel = 'low';
-          else if (dayOfMonth % 2 === 0) availabilityLevel = 'medium';
-        } else {
-          // If the date is not in availableDates, it's not available
-          availabilityLevel = 'none';
-        }
-      }
-      
-      // Fix: Make today's date always selectable if it's in availableDates
       const isTodayDate = isSameDay(currentDate, today);
-      const isSelectable = (!isBeforeToday || isTodayDate) && (availableDates.length === 0 || isAvailable);
+      const isSelectable = (!isBeforeToday || isTodayDate) && isWithinRange;
       
       dateRange.push({
         date: currentDate,
@@ -86,8 +68,6 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
         month: currentDate.getMonth(),
         year: currentDate.getFullYear(),
         isSelectable: isSelectable,
-        isAvailable: isAvailable,
-        availabilityLevel: availabilityLevel,
         isToday: isTodayDate
       });
     }
@@ -100,13 +80,9 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
     const prevMonth = new Date(currentMonth);
     prevMonth.setMonth(prevMonth.getMonth() - 1);
     
-    // Don't allow navigating to months before the current month if today is in current month
+    // Don't allow navigating to months before the current month
     if (prevMonth.getMonth() < today.getMonth() && prevMonth.getFullYear() <= today.getFullYear()) {
-      // If we're trying to go before the current month and today is in the current month,
-      // just stay in the current month
-      if (today.getMonth() === new Date().getMonth() && today.getFullYear() === new Date().getFullYear()) {
-        return;
-      }
+      return;
     }
     
     setCurrentMonth(prevMonth);
@@ -116,6 +92,17 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
   const handleNextMonth = () => {
     const nextMonth = new Date(currentMonth);
     nextMonth.setMonth(nextMonth.getMonth() + 1);
+    
+    // Don't allow navigating beyond 3 months from today
+    const threeMonthsFromToday = new Date(today);
+    threeMonthsFromToday.setMonth(today.getMonth() + 3);
+    
+    if (nextMonth.getFullYear() > threeMonthsFromToday.getFullYear() || 
+        (nextMonth.getFullYear() === threeMonthsFromToday.getFullYear() && 
+         nextMonth.getMonth() > threeMonthsFromToday.getMonth())) {
+      return;
+    }
+    
     setCurrentMonth(nextMonth);
   };
   
@@ -172,25 +159,16 @@ const DateSelector = ({ selectedDate, onDateSelect, availableDates = [] }) => {
                   ? 'bg-blue-600 text-white shadow-md' 
                   : dateObj.isToday
                     ? 'bg-blue-100 hover:bg-blue-200'
-                    : dateObj.isSelectable && dateObj.isAvailable
+                    : dateObj.isSelectable 
                       ? 'bg-green-50 hover:bg-green-100 border border-green-200' 
-                      : dateObj.isSelectable 
-                        ? 'bg-gray-100 hover:bg-gray-200' 
-                        : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-gray-100 text-gray-400 cursor-not-allowed'
               }`}
               onClick={() => dateObj.isSelectable && onDateSelect(dateObj.date)}
               aria-label={`Select ${dateObj.date.toLocaleDateString()}`}
             >
               <span className="text-xs font-medium">{dateObj.dayName}</span>
               <span className="text-lg font-medium">{dateObj.day}</span>
-              {dateObj.isAvailable && availableDates.length > 0 && (
-                <span 
-                  className={`w-2 h-2 rounded-full mt-1 ${dateObj.availabilityLevel === 'high' ? 'bg-green-500' : 
-                    dateObj.availabilityLevel === 'medium' ? 'bg-yellow-500' : 'bg-orange-500'}`}
-                  title={`${dateObj.availabilityLevel === 'high' ? 'Many slots available' : 
-                    dateObj.availabilityLevel === 'medium' ? 'Some slots available' : 'Few slots available'}`}
-                ></span>
-              )}
+
             </button>
           ))}
         </div>
