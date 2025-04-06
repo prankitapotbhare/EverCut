@@ -28,7 +28,7 @@ const Search = ({ onSearch, placeholder, initialValue = '', loading = false }) =
   }, [initialValue]);
 
   return (
-    <div className={`relative w-full transition-all duration-300 ${isFocused ? 'ring-2 ring-purple-300' : ''}`}>
+    <div className={`relative w-full transition-all duration-300 rounded-[50px] ${isFocused ? 'ring-2 ring-purple-300' : ''}`}>
       <input
         ref={inputRef}
         type="text"
