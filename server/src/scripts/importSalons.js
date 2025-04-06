@@ -13,6 +13,7 @@ const Service = require('../models/Service');
 const Package = require('../models/Package');
 const Salonist = require('../models/Salonist');
 const Schedule = require('../models/Schedule');
+const Review = require('../models/Review'); // Add Review model import
 
 async function connectDatabase() {
   try {
@@ -39,6 +40,7 @@ async function importSalons() {
     await Package.deleteMany({});
     await Salonist.deleteMany({});
     await Schedule.deleteMany({});
+    await Review.deleteMany({});
     
     logger.info('Cleared existing data');
     
@@ -59,18 +61,16 @@ async function importSalons() {
           image: salonData.image,
           gallery: salonData.gallery || [],
           amenities: salonData.amenities || [],
-          operatingHours: salonData.operatingHours || [
-            { day: 0, open: '11:00 AM', close: '5:00 PM' },
-            { day: 1, open: '9:00 AM', close: '7:00 PM' },
-            { day: 2, open: '9:00 AM', close: '7:00 PM' },
-            { day: 3, open: '9:00 AM', close: '7:00 PM' },
-            { day: 4, open: '9:00 AM', close: '7:00 PM' },
-            { day: 5, open: '9:00 AM', close: '7:00 PM' },
-            { day: 6, open: '10:00 AM', close: '6:00 PM' }
-          ]
+          operatingHours: salonData.operatingHours || [],
+          rating: 0, // Initialize with 0, will update after reviews are imported
+          reviewCount: 0, // Initialize with 0, will update after reviews are imported
+          reviews: [], // Initialize with empty array, will update after reviews are imported
+          featured: salonData.featured || false,
+          featuredReason: salonData.featuredReason || null,
+          specialOffer: salonData.specialOffer || null,
+          availability: salonData.availability || []
         });
         
-        // Save the salon to get an _id
         await salon.save();
         
         // Create services for this salon
@@ -269,16 +269,70 @@ async function importSalons() {
             }
           }
         }
+
+        // Import reviews if they exist in the salon data
+        if (salonData.reviews && salonData.reviews.length > 0) {
+          const reviewPromises = salonData.reviews.map(async (reviewData) => {
+            try {
+              // Create dummy IDs for required fields - using 'new' with ObjectId constructor
+              const userId = new mongoose.Types.ObjectId();
+              const bookingId = new mongoose.Types.ObjectId();
+              
+              // Create a new review
+              const review = new Review({
+                userId: userId,
+                salonId: salon._id,
+                salonistId: reviewData.salonistId || null,
+                bookingId: bookingId,
+                rating: reviewData.rating || 5, // Default to 5 if not provided
+                comment: reviewData.comment || '',
+                images: reviewData.images || [],
+                createdAt: reviewData.date ? new Date(reviewData.date) : new Date(),
+                updatedAt: reviewData.date ? new Date(reviewData.date) : new Date()
+              });
+              
+              await review.save();
+              return review;
+            } catch (error) {
+              logger.error(`Error creating review: ${error.message}`);
+              return null;
+            }
+          });
+          
+          // Wait for all reviews to be created
+          const savedReviews = (await Promise.all(reviewPromises)).filter(review => review !== null);
+          
+          if (savedReviews.length > 0) {
+            // Calculate average rating
+            const totalRating = savedReviews.reduce((sum, review) => sum + review.rating, 0);
+            const averageRating = parseFloat((totalRating / savedReviews.length).toFixed(1));
+            
+            // Update salon with review data
+            salon.rating = salonData.rating || averageRating; // Use provided rating or calculate
+            salon.reviewCount = salonData.reviewCount || savedReviews.length; // Use provided count or actual count
+            salon.reviews = savedReviews.map(review => review._id);
+          }
+        } else {
+          // If no reviews in JSON, check if there's a rating and reviewCount directly in the salon data
+          if (salonData.rating || salonData.reviewCount) {
+            salon.rating = salonData.rating || 0;
+            salon.reviewCount = salonData.reviewCount || 0;
+          }
+        }
         
         // Update salon with references to services, packages, and salonists
         salon.services = serviceIds;
         salon.packages = packageIds;
         salon.salonists = salonistIds;
         
-        // Save the updated salon
+        // Save the updated salon with all references
         await salon.save();
         
         logger.info(`Imported salon ${index + 1}/${salonFiles.length}: ${salon.name}`);
+        if (salon.reviews && salon.reviews.length > 0) {
+          logger.info(`Imported ${salon.reviews.length} reviews for salon: ${salon.name}`);
+          logger.info(`Updated salon rating to ${salon.rating} with ${salon.reviewCount} reviews`);
+        }
       } catch (error) {
         const salonName = salonFile.replace('.json', '').replace('salon-', '');
         logger.error(`Error importing salon ${salonName}: ${error.message}`);
