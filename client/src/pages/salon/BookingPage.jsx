@@ -27,10 +27,11 @@ const BookingPage = () => {
     salonists,
     availableTimeSlots,
     availableSalonists,
-    availableDates,
     loadingData,
     fetchSalon,
-    fetchSalonists
+    fetchSalonists,
+    fetchAvailability,
+    fetchAvailableStylistsForSelectedDate
   } = useBooking();
   
   const { resetPaymentState } = usePayment();
@@ -38,6 +39,7 @@ const BookingPage = () => {
   // Track if we're still loading the initial salon data
   const [initialLoading, setInitialLoading] = useState(true);
 
+  // Initialize with salon data and selected services
   useEffect(() => {
     // Get selected services from location state
     if (location.state?.selectedServices) {
@@ -61,8 +63,20 @@ const BookingPage = () => {
       fetchSalonists();
     }
   }, [salon?.id, fetchSalonists]);
-
-  // All the fetching logic has been moved to the BookingContext
+  
+  // Fetch available stylists for the selected date
+  useEffect(() => {
+    if (salon?.id && selectedDate) {
+      fetchAvailableStylistsForSelectedDate();
+    }
+  }, [salon?.id, selectedDate, fetchAvailableStylistsForSelectedDate]);
+  
+  // Fetch availability when stylist and date are selected
+  useEffect(() => {
+    if (selectedStylist && selectedDate) {
+      fetchAvailability();
+    }
+  }, [selectedStylist, selectedDate, fetchAvailability]);
   
   // Track loading state to prevent flickering
   const isLoading = useMemo(() => {
@@ -112,7 +126,7 @@ const BookingPage = () => {
         <div className="mb-4 sm:mb-6">
           <h1 className="text-2xl sm:text-3xl font-bold mb-1">{salon.name}</h1>
           <p className="text-sm sm:text-base text-gray-600">
-            Closed opens at 11:00 am • Pillar number 106, opposite to corner bar address maker, Bengaluru, Karnataka 560008
+            {salon.address || "Address information not available"}
           </p>
         </div>
 
@@ -123,7 +137,7 @@ const BookingPage = () => {
               stylists={salonists}
               selectedStylist={selectedStylist}
               onStylistSelect={setSelectedStylist}
-              availableStylists={selectedDate ? availableSalonists : []}
+              availableStylists={availableSalonists}
               selectedDate={selectedDate}
             />
           </div>
