@@ -37,7 +37,7 @@ const Search = ({ onSearch, placeholder, initialValue = '', loading = false }) =
         onChange={handleSearchChange}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        className="w-full px-6 py-4 rounded-full shadow-lg text-lg focus:outline-none"
+        className="w-full px-6 py-4 rounded-full bg-white shadow-lg text-lg focus:outline-none"
         aria-label="Search"
       />
       <div className="absolute right-6 top-1/2 transform -translate-y-1/2 flex items-center">
