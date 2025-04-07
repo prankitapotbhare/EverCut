@@ -567,6 +567,75 @@ const getStylistAvailabilityStatus = (stylist, isAvailable, selectedDate) => {
   };
 };
 
+const getUpcomingBookings = async () => {
+  try {
+    // In a real app, this would be an API call
+    // For now, we'll use our mock data
+    const allBookings = getAllBookings();
+    
+    // Filter to only get future bookings
+    const now = new Date();
+    const upcomingBookings = allBookings
+      .filter(booking => {
+        const bookingDate = new Date(booking.date);
+        const bookingTime = booking.timeSlot.split(' ')[0];
+        const [hours, minutes] = bookingTime.split(':');
+        let hour = parseInt(hours);
+        const minute = parseInt(minutes || 0);
+        
+        // Convert to 24-hour format if needed
+        if (booking.timeSlot.includes('PM') && hour < 12) {
+          hour += 12;
+        } else if (booking.timeSlot.includes('AM') && hour === 12) {
+          hour = 0;
+        }
+        
+        bookingDate.setHours(hour, minute, 0, 0);
+        
+        return bookingDate > now;
+      })
+      .sort((a, b) => {
+        // Sort by date and time
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        
+        if (dateA.getTime() !== dateB.getTime()) {
+          return dateA - dateB;
+        }
+        
+        // If same date, sort by time
+        return timeToMinutes(a.timeSlot) - timeToMinutes(b.timeSlot);
+      });
+    
+    // Enhance bookings with salon and stylist information
+    return upcomingBookings.map(booking => {
+      // Get salon information (in a real app, this would come from the API)
+      const salon = {
+        id: booking.salonId,
+        name: `InStyle Stylizt ${booking.salonId}`,
+        image: '/salon-placeholder.jpg',
+        address: '123 Main St, New York, NY'
+      };
+      
+      // Get stylist information
+      const stylist = mockSalonists.find(s => s.id === booking.salonistId) || {
+        id: booking.salonistId,
+        name: 'Kiran',
+        role: 'Barber'
+      };
+      
+      return {
+        ...booking,
+        salon,
+        stylist
+      };
+    });
+  } catch (error) {
+    console.error('Error getting upcoming bookings:', error);
+    return [];
+  }
+};
+
 // Create and export the bookingService object with all functions
 const bookingService = {
   // Salonist functions
@@ -594,7 +663,8 @@ const bookingService = {
   generateTimeSlots,
   isTimeSlotInPast,
   timeToMinutes,
-  getCurrentDateTime
+  getCurrentDateTime,
+  getUpcomingBookings,
 };
 
 export default bookingService;

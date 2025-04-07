@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import SalonCard from './SalonCard';
+import UpcomingSchedule from './UpcomingSchedule';
 import LocationSelector from '@/components/common/LocationSelector';
 import Search from '@/components/common/Search';
 import { useSalon } from '@/contexts/SalonContext';
@@ -105,13 +106,15 @@ const SalonFinder = () => {
           />
         </div>
 
-        {/* Location Selector Component */}
-        <div className="mt-4">
-          <LocationSelector 
-            selectedLocation={location} 
-            onLocationChange={handleLocationChange} 
-          />
-        </div>
+        {/* Location Selector and Upcoming Schedule Component */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
+            <LocationSelector 
+              selectedLocation={location}
+              onLocationChange={handleLocationChange}
+            />
+            
+            <UpcomingSchedule />
+          </div>
       </div>
 
       {/* Error Message */}
