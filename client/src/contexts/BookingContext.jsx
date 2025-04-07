@@ -2,7 +2,6 @@ import React, { createContext, useState, useContext, useCallback, useEffect } fr
 import { useSalon } from './SalonContext';
 import { usePayment } from './PaymentContext';
 import bookingService from '@/services/bookingService';
-import { getAllBookings } from '@/data/mockBookings';
 
 // Create the context
 const BookingContext = createContext({
@@ -51,7 +50,10 @@ const BookingContext = createContext({
   
   // Reset function
   resetBookingState: () => {},
-  clearCaches: () => {}
+  clearCaches: () => {},
+
+  upcomingBookings: [],
+  getUpcomingBookings: () => {},
 });
 
 // Custom hook to use the booking context
@@ -75,6 +77,7 @@ export const BookingProvider = ({ children }) => {
   const [availableTimeSlots, setAvailableTimeSlots] = useState([]);
   const [availableSalonists, setAvailableSalonists] = useState([]);
   const [unavailableTimeSlots, setUnavailableTimeSlots] = useState({});
+  const [upcomingBookings, setUpcomingBookings] = useState([]);
   
   // Loading and error states
   const [loading, setLoading] = useState(false);
@@ -361,55 +364,19 @@ export const BookingProvider = ({ children }) => {
     return bookingService.formatDate(date, options);
   }, []);
 
-  // Add getUpcomingBookings method
+  // Get upcoming bookings
   const getUpcomingBookings = useCallback(async () => {
     try {
-      const allBookings = getAllBookings();
-      const now = new Date();
-      
-      // Filter and sort upcoming bookings
-      const upcomingBookings = allBookings
-        .filter(booking => {
-          const bookingDate = new Date(booking.date);
-          const bookingTime = booking.timeSlot.split(' ')[0];
-          const [hours, minutes] = bookingTime.split(':');
-          let hour = parseInt(hours);
-          const minute = parseInt(minutes || 0);
-          
-          if (booking.timeSlot.includes('PM') && hour < 12) {
-            hour += 12;
-          } else if (booking.timeSlot.includes('AM') && hour === 12) {
-            hour = 0;
-          }
-          
-          bookingDate.setHours(hour, minute, 0, 0);
-          return bookingDate > now;
-        })
-        .sort((a, b) => {
-          const dateA = new Date(a.date);
-          const dateB = new Date(b.date);
-          return dateA - dateB;
-        })
-        .map(booking => ({
-          id: booking.id,
-          salon: {
-            name: 'InStyle Stylizt 4',
-            image: 'https://i.imgur.com/jMR0mEO.jpg'
-          },
-          stylist: {
-            name: 'Meera',
-            role: 'Barber'
-          },
-          date: new Date(booking.date),
-          time: booking.timeSlot,
-          formattedDate: `Monday, April 7`,
-          formattedTime: '2:30 PM'
-        }));
-
-      return upcomingBookings;
+      setLoading(true);
+      const bookings = await bookingService.getUpcomingBookings();
+      setUpcomingBookings(bookings);
+      return bookings;
     } catch (error) {
       console.error('Error fetching upcoming bookings:', error);
+      setError('Failed to load upcoming bookings. Please try again later.');
       return [];
+    } finally {
+      setLoading(false);
     }
   }, []);
 
@@ -448,6 +415,7 @@ export const BookingProvider = ({ children }) => {
     validateBookingData,
     createBookingObject,
     formatDate,
+    upcomingBookings,
     getUpcomingBookings,
     
     // Add these utility functions from bookingService

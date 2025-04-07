@@ -363,6 +363,145 @@ const getUnavailableTimeSlots = (selectedStylist, selectedDate, availableTimeSlo
 
 // ==================== BOOKING FUNCTIONS ====================
 
+// Get upcoming bookings for the current user
+const getUpcomingBookings = async () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const now = new Date();
+      const allBookings = getAllBookings();
+      
+      // Filter and sort upcoming bookings
+      const upcomingBookings = allBookings
+        .filter(booking => {
+          const bookingDate = new Date(booking.date);
+          const timeSlot = booking.timeSlot;
+          const [time, period] = timeSlot.split(' ');
+          const [hourStr, minuteStr] = time.split(':');
+          
+          let hour = parseInt(hourStr);
+          const minute = parseInt(minuteStr);
+          
+          // Convert to 24-hour format
+          if (period === 'PM' && hour < 12) {
+            hour += 12;
+          } else if (period === 'AM' && hour === 12) {
+            hour = 0;
+          }
+          
+          // Set the time on the booking date
+          bookingDate.setHours(hour, minute, 0, 0);
+          
+          // Only include bookings in the future and with status 'confirmed'
+          return bookingDate > now && booking.status === 'confirmed';
+        })
+        .sort((a, b) => {
+          // Sort by date and time
+          const dateA = new Date(a.date);
+          const dateB = new Date(b.date);
+          
+          // Extract time from timeSlot for a
+          const timeSlotA = a.timeSlot;
+          const [timeA, periodA] = timeSlotA.split(' ');
+          const [hourStrA, minuteStrA] = timeA.split(':');
+          
+          let hourA = parseInt(hourStrA);
+          const minuteA = parseInt(minuteStrA);
+          
+          // Convert to 24-hour format
+          if (periodA === 'PM' && hourA < 12) {
+            hourA += 12;
+          } else if (periodA === 'AM' && hourA === 12) {
+            hourA = 0;
+          }
+          
+          // Set the time on date A
+          dateA.setHours(hourA, minuteA, 0, 0);
+          
+          // Extract time from timeSlot for b
+          const timeSlotB = b.timeSlot;
+          const [timeB, periodB] = timeSlotB.split(' ');
+          const [hourStrB, minuteStrB] = timeB.split(':');
+          
+          let hourB = parseInt(hourStrB);
+          const minuteB = parseInt(minuteStrB);
+          
+          // Convert to 24-hour format
+          if (periodB === 'PM' && hourB < 12) {
+            hourB += 12;
+          } else if (periodB === 'AM' && hourB === 12) {
+            hourB = 0;
+          }
+          
+          // Set the time on date B
+          dateB.setHours(hourB, minuteB, 0, 0);
+          
+          return dateA - dateB;
+        })
+        .map(booking => {
+          // Find the salonist for this booking
+          const salonist = mockSalonists.find(s => s.id === booking.salonistId) || {};
+          
+          // Calculate end time
+          const startTimeSlot = booking.timeSlot;
+          const [startTime, period] = startTimeSlot.split(' ');
+          const [startHourStr, startMinuteStr] = startTime.split(':');
+          
+          let startHour = parseInt(startHourStr);
+          const startMinute = parseInt(startMinuteStr);
+          
+          // Convert to 24-hour format
+          if (period === 'PM' && startHour < 12) {
+            startHour += 12;
+          } else if (period === 'AM' && startHour === 12) {
+            startHour = 0;
+          }
+          
+          // Calculate end time based on duration
+          let endHour = startHour;
+          let endMinute = startMinute + booking.duration;
+          
+          // Adjust for overflow
+          if (endMinute >= 60) {
+            endHour += Math.floor(endMinute / 60);
+            endMinute = endMinute % 60;
+          }
+          
+          // Convert back to 12-hour format
+          const endPeriod = endHour >= 12 ? 'PM' : 'AM';
+          const displayEndHour = endHour > 12 ? endHour - 12 : endHour === 0 ? 12 : endHour;
+          const endTime = `${displayEndHour}:${endMinute === 0 ? '00' : endMinute} ${endPeriod}`;
+          
+          // Format date for display
+          const bookingDate = new Date(booking.date);
+          const formattedDate = formatDate(bookingDate, { weekday: 'long', day: 'numeric', month: 'long' });
+          
+          return {
+            id: booking.id,
+            salon: {
+              id: booking.salonId,
+              name: `Shear Excellence`,
+              image: 'https://i.imgur.com/jMR0mEO.jpg'
+            },
+            stylist: {
+              id: salonist.id,
+              name: salonist.name || 'Kiran',
+              role: salonist.role || 'Barber'
+            },
+            date: bookingDate,
+            formattedDate,
+            startTime: booking.timeSlot,
+            endTime,
+            formattedTime: `${booking.timeSlot} - ${endTime}`,
+            services: booking.services,
+            status: booking.status
+          };
+        });
+      
+      resolve(upcomingBookings);
+    }, 500); // Simulate network delay
+  });
+};
+
 // Validates booking data to ensure all required fields are present
 const validateBookingData = (bookingData) => {
   const { salon, services, stylist, date, time } = bookingData;
@@ -567,74 +706,7 @@ const getStylistAvailabilityStatus = (stylist, isAvailable, selectedDate) => {
   };
 };
 
-const getUpcomingBookings = async () => {
-  try {
-    // In a real app, this would be an API call
-    // For now, we'll use our mock data
-    const allBookings = getAllBookings();
-    
-    // Filter to only get future bookings
-    const now = new Date();
-    const upcomingBookings = allBookings
-      .filter(booking => {
-        const bookingDate = new Date(booking.date);
-        const bookingTime = booking.timeSlot.split(' ')[0];
-        const [hours, minutes] = bookingTime.split(':');
-        let hour = parseInt(hours);
-        const minute = parseInt(minutes || 0);
-        
-        // Convert to 24-hour format if needed
-        if (booking.timeSlot.includes('PM') && hour < 12) {
-          hour += 12;
-        } else if (booking.timeSlot.includes('AM') && hour === 12) {
-          hour = 0;
-        }
-        
-        bookingDate.setHours(hour, minute, 0, 0);
-        
-        return bookingDate > now;
-      })
-      .sort((a, b) => {
-        // Sort by date and time
-        const dateA = new Date(a.date);
-        const dateB = new Date(b.date);
-        
-        if (dateA.getTime() !== dateB.getTime()) {
-          return dateA - dateB;
-        }
-        
-        // If same date, sort by time
-        return timeToMinutes(a.timeSlot) - timeToMinutes(b.timeSlot);
-      });
-    
-    // Enhance bookings with salon and stylist information
-    return upcomingBookings.map(booking => {
-      // Get salon information (in a real app, this would come from the API)
-      const salon = {
-        id: booking.salonId,
-        name: `InStyle Stylizt ${booking.salonId}`,
-        image: '/salon-placeholder.jpg',
-        address: '123 Main St, New York, NY'
-      };
-      
-      // Get stylist information
-      const stylist = mockSalonists.find(s => s.id === booking.salonistId) || {
-        id: booking.salonistId,
-        name: 'Kiran',
-        role: 'Barber'
-      };
-      
-      return {
-        ...booking,
-        salon,
-        stylist
-      };
-    });
-  } catch (error) {
-    console.error('Error getting upcoming bookings:', error);
-    return [];
-  }
-};
+
 
 // Create and export the bookingService object with all functions
 const bookingService = {
