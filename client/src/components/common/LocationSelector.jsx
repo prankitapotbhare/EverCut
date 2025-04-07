@@ -200,10 +200,10 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
                   onClick={() => setLocationSearchQuery('')}
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
-                  <X size={14} className="sm:w-4 sm:h-4" />
+                  <X size={14} className="sm:w-4 sm:h-4 cursor-pointer" />
                 </button>
               ) : (
-                <Search className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <Search className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-3.5 h-3.5 sm:w-4 sm:h-4 cursor-pointer" />
               )}
             </div>
           </div>
@@ -211,7 +211,7 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
           {/* Auto-detect option */}
           <button 
             onClick={detectLocation}
-            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-left hover:bg-purple-50 flex items-center gap-2 transition-colors"
+            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-left hover:bg-purple-50 flex items-center gap-2 transition-colors cursor-pointer"
           >
             <MapPin size={16} className="text-purple-500 sm:w-[18px] sm:h-[18px]" />
             <span className="text-xs sm:text-sm">Auto-detect my location</span>
@@ -226,7 +226,7 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
                   <button 
                     key={loc}
                     onClick={() => selectLocation(loc)}
-                    className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-left hover:bg-purple-50 flex items-center gap-2 transition-colors"
+                    className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-left hover:bg-purple-50 flex items-center gap-2 transition-colors cursor-pointer"
                   >
                     {selectedLocation === loc && <Check size={14} className="text-purple-500 sm:w-4 sm:h-4" />}
                     <span className={`text-xs sm:text-sm ${selectedLocation === loc ? "text-purple-700 font-medium" : ""}`}>{loc}</span>
@@ -252,7 +252,7 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
                   <button 
                     key={loc}
                     onClick={() => selectLocation(loc)}
-                    className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-left hover:bg-purple-50 flex items-center gap-2 transition-colors"
+                    className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-left hover:bg-purple-50 flex items-center gap-2 transition-colors cursor-pointer"
                   >
                     {selectedLocation === loc && <Check size={14} className="text-purple-500 sm:w-4 sm:h-4" />}
                     <span className={`text-xs sm:text-sm ${selectedLocation === loc ? "text-purple-700 font-medium" : ""}`}>{loc}</span>

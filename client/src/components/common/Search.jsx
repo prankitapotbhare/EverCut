@@ -44,7 +44,7 @@ const Search = ({ onSearch, placeholder, initialValue = '', loading = false }) =
         {searchQuery && (
           <button 
             onClick={clearSearch}
-            className="mr-2 text-gray-400 hover:text-gray-600 transition-colors"
+            className="mr-2 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
             aria-label="Clear search"
           >
             <X size={18} />
@@ -53,7 +53,7 @@ const Search = ({ onSearch, placeholder, initialValue = '', loading = false }) =
         {loading ? (
           <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
         ) : (
-          <SearchIcon className="text-gray-400" />
+          <SearchIcon className="text-gray-400 cursor-pointer" />
         )}
       </div>
     </div>

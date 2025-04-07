@@ -137,7 +137,7 @@ const UpcomingSchedule = () => {
                 {/* View Details Button */}
                 <button
                   onClick={() => navigate('/bookings')}
-                  className="w-full mt-4 py-2 text-center text-sm text-purple-600 hover:text-purple-700 font-medium"
+                  className="w-full mt-4 py-2 text-center text-sm text-purple-600 hover:text-purple-700 font-medium cursor-pointer"
                 >
                   View All Appointments
                 </button>
