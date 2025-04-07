@@ -82,12 +82,22 @@ export const PaymentProvider = ({ children }) => {
     }
   }, []);
 
-  // Get payment receipt
+  // Get payment receipt data
   const getPaymentReceipt = useCallback(async (paymentId) => {
     try {
       return await paymentService.getPaymentReceipt(paymentId);
     } catch (error) {
-      console.error('Receipt generation error:', error);
+      console.error('Error getting payment receipt:', error);
+      throw error;
+    }
+  }, []);
+  
+  // Download invoice
+  const downloadInvoice = useCallback(async (paymentId, customInvoiceData = null) => {
+    try {
+      return await paymentService.downloadInvoice(paymentId, customInvoiceData);
+    } catch (error) {
+      console.error('Error downloading invoice:', error);
       throw error;
     }
   }, []);
@@ -100,14 +110,14 @@ export const PaymentProvider = ({ children }) => {
     error,
     transactionDetails,
     bookingResult,
-    transactionHistory,
+    savedPaymentMethods,
+    savedUpiIds,
     handlePayment,
-    verifyPayment,
-    getPaymentReceipt,
     resetPaymentState,
     loadTransactionHistory,
-    savedPaymentMethods,
-    savedUpiIds
+    transactionHistory,
+    getPaymentReceipt,
+    downloadInvoice
   };
 
   return (

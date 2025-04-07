@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { usePayment } from '@/contexts/PaymentContext';
 import { useNavigate } from 'react-router-dom';
+import Loading from '@/components/common/Loading';
 
 const PaymentSuccess = ({ onClose, bookingDetails }) => {
-  const { bookingResult } = usePayment();
+  const { bookingResult, downloadInvoice } = usePayment();
   const navigate = useNavigate();
-
+  const [isDownloading, setIsDownloading] = useState(false);
+  
   // Format date for display
   const formatDate = (date) => {
     if (!date) return '';
@@ -18,6 +20,47 @@ const PaymentSuccess = ({ onClose, bookingDetails }) => {
   const handleBackToHome = () => {
     onClose();
     navigate('/');
+  };
+
+  const handleDownloadInvoice = async () => {
+    try {
+      setIsDownloading(true);
+      
+      // Get the payment ID from the booking result
+      const paymentId = bookingResult?.paymentId || 'mock-payment-123';
+      
+      // Prepare invoice data from booking details
+      const invoiceData = {
+        salonName: bookingDetails?.salon?.name || 'Kiran Salon',
+        salonAddress: bookingDetails?.salon?.address || 'Company address',
+        salonLocation: bookingDetails?.salon?.city 
+          ? `${bookingDetails.salon.city}, ${bookingDetails.salon.country} - ${bookingDetails.salon.zipCode}`
+          : 'City, Country - 00000',
+        salonPhone: bookingDetails?.salon?.phone || '+0 (000) 123-4567',
+        appointmentDate: bookingDetails?.date 
+          ? new Date(bookingDetails.date).toLocaleDateString('en-GB', {
+              day: '2-digit',
+              month: '2-digit',
+              year: 'numeric'
+            }).split('/').join('.')
+          : '01.08.2023',
+        amount: total,
+        services: bookingDetails?.services?.map(service => ({
+          title: service.name,
+          price: service.price
+        })) || [
+          { title: 'Hair Cut', price: 80 },
+          { title: 'Beard', price: 90 }
+        ]
+      };
+      
+      // Download the invoice with the prepared data
+      await downloadInvoice(paymentId, invoiceData);
+    } catch (error) {
+      console.error('Error downloading invoice:', error);
+    } finally {
+      setIsDownloading(false);
+    }
   };
 
   return (
@@ -53,11 +96,29 @@ const PaymentSuccess = ({ onClose, bookingDetails }) => {
         </div>
       </div>
 
-      {/* Back to Home Button */}
+      {/* Download Invoice Button */}
       <div className="flex justify-center">
         <button 
+          onClick={handleDownloadInvoice}
+          disabled={isDownloading}
+          className="bg-green-500 text-white px-8 py-3 rounded-full font-medium hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all duration-300 disabled:opacity-70 flex items-center justify-center"
+        >
+          {isDownloading ? (
+            <>
+              <Loading variant="spinner" size="sm" className="mr-2" />
+              Generating Invoice...
+            </>
+          ) : (
+            'Download Invoice'
+          )}
+        </button>
+      </div>
+      
+      {/* Back to Home link */}
+      <div className="text-center mt-4">
+        <button 
           onClick={handleBackToHome}
-          className="bg-green-500 text-white px-8 py-3 rounded-full font-medium hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all duration-300"
+          className="text-green-600 hover:text-green-700 underline"
         >
           Back to Home
         </button>

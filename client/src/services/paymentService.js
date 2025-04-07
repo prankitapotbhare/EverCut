@@ -293,6 +293,8 @@ const getPaymentReceipt = async (paymentId) => {
   });
 };
 
+// Mock function to generate invoice PDF
+// Add this to the paymentService object
 export const paymentService = {
   stripePromise,
   createPaymentIntent,
@@ -300,8 +302,167 @@ export const paymentService = {
   processUpiPayment,
   verifyPayment,
   createBookingWithPayment,
-  getPaymentReceipt,
+  // Generate and download invoice PDF
+  getPaymentReceipt: async (paymentId) => {
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, MOCK_PAYMENT_DELAY));
+    
+    // Mock invoice data that matches the image
+    return {
+      success: true,
+      paymentId,
+      invoiceData: {
+        salonName: 'Kiran Salon',
+        salonAddress: 'Company address',
+        salonLocation: 'City, Country - 00000',
+        salonPhone: '+0 (000) 123-4567',
+        appointmentDate: '01.08.2023',
+        amount: 170,
+        services: [
+          { title: 'Hair Cut', price: 80 },
+          { title: 'Beard', price: 90 }
+        ]
+      }
+    };
+  },
+  
+  // Download invoice as PDF
+  downloadInvoice: async (paymentId, customInvoiceData = null) => {
+    try {
+      // If custom invoice data is provided, use it
+      // Otherwise, get the receipt data from the service
+      let invoiceData;
+      
+      if (customInvoiceData) {
+        invoiceData = customInvoiceData;
+      } else {
+        const receiptData = await paymentService.getPaymentReceipt(paymentId);
+        
+        if (!receiptData.success) {
+          throw new Error('Failed to get receipt data');
+        }
+        
+        invoiceData = receiptData.invoiceData;
+      }
+      
+      // Generate PDF using the invoice template
+      const pdf = await generateInvoicePdf(invoiceData);
+      
+      // Save the PDF
+      pdf.save(`evercut-invoice-${paymentId}.pdf`);
+      
+      return { success: true };
+    } catch (error) {
+      console.error('Error downloading invoice:', error);
+      return { success: false, error: error.message };
+    }
+  },
   savedPaymentMethods,
   savedUpiIds,
   transactionHistory,
+};
+
+// Import the necessary libraries
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
+// Function to generate the invoice PDF
+const generateInvoicePdf = async (invoiceData) => {
+  // Create a temporary div to render the invoice
+  const invoiceContainer = document.createElement('div');
+  invoiceContainer.style.width = '595px'; // A4 width in pixels at 72 DPI
+  invoiceContainer.style.padding = '40px';
+  invoiceContainer.style.fontFamily = 'Arial, sans-serif';
+  invoiceContainer.style.position = 'absolute';
+  invoiceContainer.style.left = '-9999px';
+  
+  // Add the invoice HTML content
+  invoiceContainer.innerHTML = `
+    <div style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+      <div>
+        <img src="/logo/evercut.png" alt="EverCut" style="height: 30px; margin-bottom: 10px;" />
+      </div>
+      <div style="text-align: right; color: #aaa; font-size: 32px; font-weight: 300;">
+        Invoice
+      </div>
+    </div>
+    
+    <div style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+      <div>
+        <div style="font-size: 12px; color: #666; margin-bottom: 5px;">SALON INFO</div>
+        <div style="font-weight: bold; margin-bottom: 5px;">${invoiceData.salonName}</div>
+        <div style="font-size: 14px; color: #666;">${invoiceData.salonAddress}</div>
+        <div style="font-size: 14px; color: #666;">${invoiceData.salonLocation}</div>
+        <div style="font-size: 14px; color: #666;">${invoiceData.salonPhone}</div>
+      </div>
+      
+      <div style="text-align: right;">
+        <div style="font-size: 12px; color: #666; margin-bottom: 5px;">APPOINTMENT DATE</div>
+        <div style="font-size: 14px;">${invoiceData.appointmentDate}</div>
+      </div>
+      
+      <div style="text-align: right;">
+        <div style="font-size: 12px; color: #666; margin-bottom: 5px;">AMOUNT DUE</div>
+        <div style="background-color: #f0ff7a; padding: 5px 15px; font-size: 16px; font-weight: bold;">₹ ${invoiceData.amount}</div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <div style="font-size: 16px; font-weight: bold; margin-bottom: 15px;">Services</div>
+      
+      <div style="display: flex; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 10px;">
+        <div style="width: 5%; font-size: 14px; color: #666;">#</div>
+        <div style="width: 75%; font-size: 14px; color: #666;">TITLE / DESCRIPTION</div>
+        <div style="width: 20%; text-align: right; font-size: 14px; color: #666;">SUBTOTAL</div>
+      </div>
+      
+      ${invoiceData.services.map((service, index) => `
+        <div style="display: flex; padding: 10px 0; border-bottom: 1px solid #f5f5f5;">
+          <div style="width: 5%;">${index + 1}</div>
+          <div style="width: 75%;">${service.title}</div>
+          <div style="width: 20%; text-align: right;">₹${service.price}</div>
+        </div>
+      `).join('')}
+      
+      <div style="display: flex; padding: 15px 0; font-weight: bold;">
+        <div style="width: 5%;"></div>
+        <div style="width: 75%;">Total</div>
+        <div style="width: 20%; text-align: right;">₹ ${invoiceData.amount}</div>
+      </div>
+    </div>
+    
+    <div style="margin-top: 100px; text-align: left; color: #666;">
+      Thank you for the Appointment
+    </div>
+  `;
+  
+  // Append to body temporarily
+  document.body.appendChild(invoiceContainer);
+  
+  try {
+    // Convert the HTML to canvas
+    const canvas = await html2canvas(invoiceContainer, {
+      scale: 2, // Higher scale for better quality
+      useCORS: true,
+      logging: false
+    });
+    
+    // Create PDF from canvas
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'pt',
+      format: 'a4'
+    });
+    
+    const imgWidth = 595; // A4 width in points
+    const imgHeight = canvas.height * imgWidth / canvas.width;
+    
+    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+    
+    return pdf;
+  } finally {
+    // Clean up
+    document.body.removeChild(invoiceContainer);
+  }
 };
