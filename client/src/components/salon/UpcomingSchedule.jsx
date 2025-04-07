@@ -48,8 +48,7 @@ const UpcomingSchedule = () => {
       <button
         onClick={() => setShowDropdown(!showDropdown)}
         className="flex items-center gap-2 w-full 
-                   sm:w-auto mx-auto px-4 sm:px-5 py-2.5 sm:py-3 rounded-full 
-                   bg-white text-gray-700 shadow-md hover:shadow-lg transition-all 
+                   sm:w-auto mx-auto px-4 sm:px-5 py-2.5 sm:py-3 rounded-full transition-all 
                    duration-300 cursor-pointer border-2 border-transparent hover:border-purple-200"
       >
         <>

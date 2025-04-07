@@ -161,8 +161,8 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
       <button 
         onClick={() => setShowLocationDropdown(!showLocationDropdown)}
         className={`flex items-center gap-2 w-full sm:w-auto mx-auto px-4 sm:px-5 py-2.5 sm:py-3 rounded-full 
-          ${detectingLocation ? 'bg-purple-100 text-purple-700 animate-pulse' : 'bg-white text-gray-700'} 
-          shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer border-2 
+          ${detectingLocation ? 'bg-purple-100 text-purple-700 animate-pulse' : ''} 
+          transition-all duration-300 cursor-pointer border-2 
           ${detectingLocation ? 'border-purple-300' : 'border-transparent hover:border-purple-200'}`}
       >
         {detectingLocation ? (
