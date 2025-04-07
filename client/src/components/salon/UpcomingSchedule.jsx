@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useBooking } from '@/contexts/BookingContext';
-import { Calendar, Clock, CreditCard, ChevronDown } from 'lucide-react';
+import { Calendar, Clock, ChevronDown } from 'lucide-react';
 
 const UpcomingSchedule = () => {
   const navigate = useNavigate();
@@ -128,10 +128,6 @@ const UpcomingSchedule = () => {
                     </div>
                     <span>{upcomingBooking.formattedTime}</span>
                   </div>
-                  
-                  {/* <div className="bg-white p-1.5 rounded-full">
-                    <CreditCard className="w-4 h-4 text-gray-600" />
-                  </div> */}
                 </div>
 
                 {/* View Details Button */}

@@ -7,29 +7,17 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
     getUnavailableTimeSlots 
   } = useBooking();
   
-  // Use memoization to prevent unnecessary recalculations
-  // Note: generateAvailableTimeSlots and getSalonistRealTimeAvailability are not in BookingContext
-  // We'll use the available functions from context instead
-  
-  // Get all possible time slots for the day (8 AM to 8 PM)
   const allPossibleTimeSlots = useMemo(() => generateTimeSlots(), [generateTimeSlots]);
-  
-  // Update the timeSlots memoization logic
+
   const timeSlots = useMemo(() => {
-    // If no stylist or date is selected, return empty array
     if (!selectedStylist || !selectedDate) return [];
-    
-    // If explicit available time slots are provided, use them
+
     if (Array.isArray(availableTimeSlots) && availableTimeSlots.length > 0) {
       return availableTimeSlots;
     }
-    
-    // Since getSalonistRealTimeAvailability is not in BookingContext,
-    // we'll use the availableTimeSlots prop as the source of truth
     return [];
   }, [availableTimeSlots, selectedStylist, selectedDate]);
-  
-  // Update the unavailable slots calculation
+
   const unavailableSlots = useMemo(() => {
     if (!selectedStylist || !selectedDate) return {};
     
@@ -40,12 +28,9 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
       allPossibleTimeSlots
     );
   }, [selectedStylist, selectedDate, timeSlots, allPossibleTimeSlots, getUnavailableTimeSlots]);
-  
-  // Check if the selected time is still available
-  // This handles the case where a time slot becomes unavailable after selection
+
   useMemo(() => {
     if (selectedTime && !timeSlots.includes(selectedTime)) {
-      // If the selected time is no longer available, notify parent component
       onTimeSelect(null);
     }
   }, [selectedTime, timeSlots, onTimeSelect]);
@@ -62,7 +47,6 @@ const TimeSelector = ({ selectedTime, onTimeSelect, availableTimeSlots = [], sel
       </div>
       <div className="grid grid-cols-5 gap-2">
         {timeSlots.length > 0 ? (
-          // Show all possible time slots, but disable unavailable ones
           allPossibleTimeSlots.map((time, index) => {
             const isAvailable = timeSlots.includes(time);
             const unavailableInfo = !isAvailable ? unavailableSlots[time] : null;

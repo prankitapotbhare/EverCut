@@ -41,7 +41,7 @@ const getAllSalons = async (filters = {}) => {
       id: salon._id,
       name: salon.name,
       description: salon.description,
-      address: `${salon.address.city}, ${salon.address.state}`,
+      address: `${salon.address.street}, ${salon.address.city}`,
       image: salon.image,
       rating: salon.rating,
       reviews: salon.reviewCount,

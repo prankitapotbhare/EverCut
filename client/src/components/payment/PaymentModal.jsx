@@ -17,15 +17,11 @@ const PaymentModal = ({ isOpen, onClose, bookingDetails }) => {
     resetPaymentState,
   } = usePayment();
 
-  // Reset payment state when modal is opened/closed
   useEffect(() => {
     if (isOpen) {
       resetPaymentState();
     }
   }, [isOpen, resetPaymentState]);
-
-  // No need for the effect to automatically close the modal
-  // Let the user close it when they're ready
 
   const handlePaymentMethodChange = (method) => {
     setPaymentMethod(method);
@@ -44,13 +40,10 @@ const PaymentModal = ({ isOpen, onClose, bookingDetails }) => {
     onClose();
   };
 
-  // If modal is not open, don't render anything
   if (!isOpen) return null;
 
-  // Calculate total amount
   const total = bookingDetails?.services?.reduce((sum, service) => sum + service.price, 0) || 0;
 
-  // Render appropriate content based on payment state
   let content;
   if (paymentStatus === 'success') {
     content = <PaymentSuccess onClose={onClose} bookingDetails={bookingDetails} />;

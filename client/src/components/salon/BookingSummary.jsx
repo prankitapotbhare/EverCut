@@ -6,10 +6,8 @@ const BookingSummary = ({ salon, selectedServices, selectedStylist, selectedDate
   
   const total = calculateTotalPrice(selectedServices);
   
-  // Check if all required selections are made
   const isBookingComplete = selectedStylist && selectedDate && selectedTime;
   
-  // Use the formatDate function from our context
   const formattedDate = selectedDate ? formatDate(selectedDate, { weekday: 'long' }) : '';
 
   return (

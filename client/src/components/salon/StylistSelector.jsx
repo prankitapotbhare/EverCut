@@ -3,21 +3,17 @@ import { useBooking } from '@/contexts/BookingContext';
 
 const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, availableStylists = [], selectedDate }) => {
   const { getStylistAvailabilityStatus } = useBooking();
-  
-  // Use memoization to prevent unnecessary recalculations of stylist availability
+
   const stylistsWithAvailability = useMemo(() => {
     if (!stylists || stylists.length === 0) {
       return [];
     }
   
     return stylists.map(stylist => {
-      // Only consider a stylist available if they're in the availableStylists array
-      // If availableStylists is empty, all stylists are considered available
       const isAvailable = availableStylists.length === 0 || 
         availableStylists.some(s => s.id === stylist.id);
       
       try {
-        // Get detailed availability status using the context function
         const { status } = getStylistAvailabilityStatus(stylist, isAvailable, selectedDate);
         
         return {
@@ -36,7 +32,6 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
     });
   }, [stylists, availableStylists, selectedDate, getStylistAvailabilityStatus]);
 
-  // Handle the case when no stylists are available
   const hasAvailableStylists = useMemo(() => {
     return stylistsWithAvailability.some(stylist => stylist.isAvailable);
   }, [stylistsWithAvailability]);
@@ -64,8 +59,7 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
           {stylistsWithAvailability.map(stylist => {
             const { isAvailable, availabilityStatus, availabilityReason } = stylist;
             const isSelected = selectedStylist?.id === stylist.id;
-            
-            // Determine styling based on availability status
+
             let statusColor = '';
             let statusBgColor = '';
             let statusBorder = '';
@@ -126,7 +120,6 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
                       : ''
                 }`}
                 onClick={() => {
-                  // Only allow selection if stylist is available
                   if (isAvailable) {
                     onStylistSelect(stylist);
                   }

@@ -8,13 +8,11 @@ const PaymentSuccess = ({ onClose, bookingDetails }) => {
   const navigate = useNavigate();
   const [isDownloading, setIsDownloading] = useState(false);
   
-  // Format date for display
   const formatDate = (date) => {
     if (!date) return '';
     return `${date.getDate()} ${date.toLocaleString('default', { weekday: 'long' })}`;
   };
 
-  // Calculate total amount
   const total = bookingDetails?.services?.reduce((sum, service) => sum + service.price, 0) || 0;
 
   const handleBackToHome = () => {
@@ -26,10 +24,8 @@ const PaymentSuccess = ({ onClose, bookingDetails }) => {
     try {
       setIsDownloading(true);
       
-      // Get the payment ID from the booking result
       const paymentId = bookingResult?.paymentId || 'mock-payment-123';
       
-      // Prepare invoice data from booking details
       const invoiceData = {
         salonName: bookingDetails?.salon?.name || 'Kiran Salon',
         salonAddress: bookingDetails?.salon?.address || 'Company address',
@@ -54,7 +50,6 @@ const PaymentSuccess = ({ onClose, bookingDetails }) => {
         ]
       };
       
-      // Download the invoice with the prepared data
       await downloadInvoice(paymentId, invoiceData);
     } catch (error) {
       console.error('Error downloading invoice:', error);

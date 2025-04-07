@@ -6,21 +6,18 @@ const Search = ({ onSearch, placeholder, initialValue = '', loading = false }) =
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef(null);
 
-  // Handle input change
   const handleSearchChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
     onSearch(query);
   };
 
-  // Clear search input
   const clearSearch = () => {
     setSearchQuery('');
     onSearch('');
     inputRef.current.focus();
   };
 
-  // Focus the input on mount
   useEffect(() => {
     if (initialValue) {
       setSearchQuery(initialValue);

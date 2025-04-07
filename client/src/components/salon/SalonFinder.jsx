@@ -6,7 +6,6 @@ import Search from '@/components/common/Search';
 import { useSalon } from '@/contexts/SalonContext';
 
 const SalonFinder = () => {
-  // Get saved location from localStorage or use default
   const savedLocation = localStorage.getItem('userLocation') || 'New York, NY';
   const savedCoordinates = localStorage.getItem('userCoordinates') 
     ? JSON.parse(localStorage.getItem('userCoordinates')) 
@@ -29,14 +28,12 @@ const SalonFinder = () => {
     clearSearchResults
   } = useSalon();
 
-  // Fetch nearest salons on initial load using saved coordinates
   useEffect(() => {
     if (coordinates) {
       fetchNearestSalons(coordinates);
     }
   }, []);
 
-  // Handle search input change with real-time search
   const handleSearchChange = (query) => {
     setSearchQuery(query);
     
@@ -47,18 +44,15 @@ const SalonFinder = () => {
     }
   };
 
-  // Handle location change from LocationSelector
   const handleLocationChange = (newLocation, newCoordinates) => {
     setLocation(newLocation);
     
-    // Only update coordinates and fetch if we have valid coordinates
     if (newCoordinates && newCoordinates.lat && newCoordinates.lng) {
       setCoordinates(newCoordinates);
       fetchNearestSalons(newCoordinates);
     }
   };
 
-  // Determine which salons to display based on search state
   const displayedSalons = useMemo(() => {
     if (searchQuery.trim() !== '') {
       return searchResults;
@@ -69,7 +63,6 @@ const SalonFinder = () => {
     }
   }, [searchQuery, searchResults, coordinates, nearestSalons, allSalons]);
 
-  // Apply pagination if not showing all
   const paginatedSalons = useMemo(() => {
     return showAll ? displayedSalons : displayedSalons.slice(0, 6);
   }, [displayedSalons, showAll]);

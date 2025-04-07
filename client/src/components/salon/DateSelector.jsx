@@ -6,7 +6,6 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
   const scrollContainerRef = useRef(null);
   const { isSameDay } = useBooking();
   
-  // Initialize with today's date
   const today = useMemo(() => {
     const date = new Date();
     date.setHours(0, 0, 0, 0);
@@ -16,12 +15,10 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
   const [currentMonth, setCurrentMonth] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
   const [dates, setDates] = useState([]);
   
-  // Generate dates when component mounts or month changes
   useEffect(() => {
     generateMonthDates();
   }, [currentMonth, today]);
   
-  // Scroll to today or selected date when dates change
   useEffect(() => {
     if (scrollContainerRef.current) {
       const selectedIndex = dates.findIndex(d => 
@@ -30,17 +27,15 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
       
       const todayIndex = dates.findIndex(d => d.isToday);
       
-      // Scroll to selected date or today
       const scrollToIndex = selectedIndex >= 0 ? selectedIndex : todayIndex >= 0 ? todayIndex : 0;
       
       if (scrollToIndex >= 0) {
-        const buttonWidth = 68; // width + margin (60px + 8px)
+        const buttonWidth = 68;
         scrollContainerRef.current.scrollLeft = scrollToIndex * buttonWidth;
       }
     }
   }, [dates, selectedDate]);
   
-  // Generate all dates for the current month
   const generateMonthDates = () => {
     const year = currentMonth.getFullYear();
     const month = currentMonth.getMonth();
@@ -50,10 +45,8 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
     for (let i = 1; i <= daysInMonth; i++) {
       const currentDate = new Date(year, month, i);
       
-      // Check if date is before today
       const isBeforeToday = currentDate < today;
       
-      // Check if date is within the 3-month range
       const threeMonthsFromToday = new Date(today);
       threeMonthsFromToday.setMonth(today.getMonth() + 3);
       const isWithinRange = currentDate <= threeMonthsFromToday;
@@ -75,12 +68,10 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
     setDates(dateRange);
   };
   
-  // Navigate to previous month
   const handlePrevMonth = () => {
     const prevMonth = new Date(currentMonth);
     prevMonth.setMonth(prevMonth.getMonth() - 1);
     
-    // Don't allow navigating to months before the current month
     if (prevMonth.getMonth() < today.getMonth() && prevMonth.getFullYear() <= today.getFullYear()) {
       return;
     }
@@ -88,12 +79,10 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
     setCurrentMonth(prevMonth);
   };
   
-  // Navigate to next month
   const handleNextMonth = () => {
     const nextMonth = new Date(currentMonth);
     nextMonth.setMonth(nextMonth.getMonth() + 1);
-    
-    // Don't allow navigating beyond 3 months from today
+
     const threeMonthsFromToday = new Date(today);
     threeMonthsFromToday.setMonth(today.getMonth() + 3);
     
@@ -106,12 +95,10 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
     setCurrentMonth(nextMonth);
   };
   
-  // Check if a date is selected
   const isDateSelected = (date) => {
     return selectedDate && isSameDay(date, selectedDate);
   };
   
-  // Get month name for display
   const getMonthName = () => {
     return currentMonth.toLocaleString('default', { month: 'long' });
   };

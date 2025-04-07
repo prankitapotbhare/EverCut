@@ -9,12 +9,10 @@ const PublicRoute = ({ children }) => {
     return null;
   }
 
-  // If user is verified, redirect away from auth routes
   if (currentUser?.emailVerified) {
     return <Navigate to={location.state?.from || '/'} replace />;
   }
 
-  // Allow unverified users to access only specific auth routes
   if (currentUser && !currentUser.emailVerified) {
     const allowedPaths = ['/verify-email', '/login', '/signup'];
     if (!allowedPaths.includes(location.pathname)) {

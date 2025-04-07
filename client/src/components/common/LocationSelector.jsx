@@ -7,8 +7,7 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
   const [locationSearchQuery, setLocationSearchQuery] = useState('');
   const dropdownRef = useRef(null);
   const locationSearchRef = useRef(null);
-  
-  // Extended list of locations for selection and search
+
   const allLocations = [
     'New York, NY', 
     'Los Angeles, CA', 
@@ -22,7 +21,6 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
     'San Jose, CA'
   ];
 
-  // Map of locations to coordinates
   const locationCoordinates = {
     'New York, NY': { lat: 40.7128, lng: -74.0060 },
     'Los Angeles, CA': { lat: 34.0522, lng: -118.2437 },
@@ -36,33 +34,27 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
     'San Jose, CA': { lat: 37.3382, lng: -121.8863 }
   };
 
-  // Popular locations (subset of all locations)
   const popularLocations = allLocations.slice(0, 6);
 
-  // Filtered locations based on search query
   const filteredLocations = useMemo(() => {
     if (!locationSearchQuery) return [];
     
     return allLocations.filter(loc => 
       loc.toLowerCase().includes(locationSearchQuery.toLowerCase())
-    ).slice(0, 8); // Limit to 8 results
+    ).slice(0, 8); 
   }, [locationSearchQuery, allLocations]);
 
-  // Auto-detect location when component mounts only if no saved location
   useEffect(() => {
     const savedLocation = localStorage.getItem('userLocation');
     const savedCoordinates = localStorage.getItem('userCoordinates');
     
     if (savedLocation && savedCoordinates) {
-      // Use saved location and coordinates
       onLocationChange(savedLocation, JSON.parse(savedCoordinates));
     } else if (selectedLocation === 'New York, NY') {
-      // Only auto-detect if we don't have a saved location and are using the default
       detectLocation();
     }
   }, []);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -77,14 +69,12 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
     };
   }, []);
 
-  // Focus search input when dropdown opens
   useEffect(() => {
     if (showLocationDropdown && locationSearchRef.current) {
       locationSearchRef.current.focus();
     }
   }, [showLocationDropdown]);
 
-  // Function to detect the user's location and update the city name
   const detectLocation = () => {
     setDetectingLocation(true);
     setShowLocationDropdown(false);
@@ -99,7 +89,6 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
               `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
             );
             const data = await response.json();
-            // Check for different keys that may contain the city name
             if (data.address) {
               let cityName = "Unknown Location";
               if (data.address.city) {
@@ -112,11 +101,9 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
               
               const coordinates = { lat: latitude, lng: longitude };
               
-              // Save to localStorage
               localStorage.setItem('userLocation', cityName);
               localStorage.setItem('userCoordinates', JSON.stringify(coordinates));
               
-              // Pass both the city name and coordinates to the parent component
               onLocationChange(cityName, coordinates);
             }
             setDetectingLocation(false);
@@ -129,11 +116,10 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
           console.error('Geolocation error:', error);
           setDetectingLocation(false);
         },
-        // Add options for better user experience
         { 
-          timeout: 10000,         // 10 seconds timeout
-          maximumAge: 60 * 60000, // Cache location for 1 hour
-          enableHighAccuracy: false // Don't need high accuracy for city-level detection
+          timeout: 10000,         
+          maximumAge: 60 * 60000, 
+          enableHighAccuracy: false
         }
       );
     } else {
@@ -142,15 +128,12 @@ const LocationSelector = ({ selectedLocation, onLocationChange }) => {
     }
   };
 
-  // Function to select a location from the dropdown
   const selectLocation = (loc) => {
     const coordinates = locationCoordinates[loc];
     
-    // Save to localStorage
     localStorage.setItem('userLocation', loc);
     localStorage.setItem('userCoordinates', JSON.stringify(coordinates));
     
-    // Pass both the location name and its coordinates to the parent component
     onLocationChange(loc, coordinates);
     setShowLocationDropdown(false);
     setLocationSearchQuery('');

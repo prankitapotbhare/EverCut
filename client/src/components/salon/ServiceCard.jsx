@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ServiceCard = ({ service, onSelect, isSelected }) => {
-  // Format duration to display "X min" if it's just a number
   const formattedDuration = typeof service.duration === 'number' 
     ? `${service.duration} min` 
     : service.duration;

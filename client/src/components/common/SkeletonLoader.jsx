@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// Base skeleton component that shows a pulsing animation
 const Skeleton = ({ className = '', ...props }) => (
   <div
     className={`animate-pulse bg-gray-200 rounded ${className}`}
@@ -13,11 +12,9 @@ Skeleton.propTypes = {
   className: PropTypes.string,
 };
 
-// Skeleton for the booking page
 const BookingPageSkeleton = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Navbar placeholder - make it match the real navbar height */}
       <div className="h-16 bg-white shadow-sm"></div>
       
       <div className="max-w-8xl mx-auto py-6 px-12 transition-opacity duration-300">
