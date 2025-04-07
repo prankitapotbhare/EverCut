@@ -33,18 +33,24 @@ const UpcomingSchedule = () => {
   }, []);
 
   return (
-    <div className="relative inline-block" ref={dropdownRef}>
+    <div className="relative inline-block w-full sm:w-auto" ref={dropdownRef}>
       <button
         onClick={() => setShowDropdown(!showDropdown)}
-        className="flex items-center gap-2 px-6 py-2.5 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors"
+        className="flex items-center gap-2 w-full 
+                   sm:w-auto mx-auto px-4 sm:px-5 py-2.5 sm:py-3 rounded-full 
+                   bg-white text-gray-700 shadow-md hover:shadow-lg transition-all 
+                   duration-300 cursor-pointer border-2 border-transparent hover:border-purple-200"
       >
-        <Calendar className="w-5 h-5 text-gray-600" />
-        <span>Upcoming Schedule</span>
+        <>
+        <Calendar size={18} className="text-purple-500 flex-shrink-0" />
+        <span className="font-medium text-sm sm:text-base truncate flex-grow">Upcoming Schedule</span>
         <ChevronDown 
-          className={`w-4 h-4 text-gray-600 transition-transform duration-200 ${
+          size={18}
+          className={`text-purple-400 transition-transform duration-300 flex-shrink-0 ${
             showDropdown ? 'rotate-180' : ''
           }`}
         />
+        </>
       </button>
 
       {showDropdown && (
