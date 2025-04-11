@@ -93,7 +93,7 @@ Retrieves all available time slots for a specific salonist on a specific date.
 
 **Example Request:**
 ```bash
-curl -X GET "http://localhost:5000/api/availability/time-slots?salonistId=60d21b4667d0d8992e610c86&date=2025-05-15"
+curl -X GET "http://localhost:5000/api/availability/time-slots?salonistId=67f2628f913847bf06665386&date=2025-05-15"
 ```
 
 **Success Response:**
@@ -154,7 +154,7 @@ Retrieves detailed availability status for a specific salonist on a specific dat
 
 **Example Request:**
 ```bash
-curl -X GET "http://localhost:5000/api/availability/status?salonistId=60d21b4667d0d8992e610c86&date=2025-05-15"
+curl -X GET "http://localhost:5000/api/availability/status?salonistId=67f2628f913847bf06665386&date=2025-05-15"
 ```
 
 **Success Response:**
@@ -231,11 +231,11 @@ Checks if a specific time slot is available for a salonist on a specific date.
 **Query Parameters:**
 - `salonistId` (required): The ID of the salonist
 - `date` (required): Date in ISO format (YYYY-MM-DD)
-- `timeSlot` (required): Time slot to check (e.g., "9:00 AM")
+- `timeSlot` (required): Time slot to check (e.g., "9:00")
 
 **Example Request:**
 ```bash
-curl -X GET "http://localhost:5000/api/availability/check-real-time?salonistId=60d21b4667d0d8992e610c86&date=2025-05-15&timeSlot=9:00%20AM"
+curl -X GET "http://localhost:5000/api/availability/check-real-time?salonistId=60d21b4667d0d8992e610c86&date=2025-05-15&timeSlot=9:00"
 ```
 
 **Success Response:**
@@ -244,7 +244,7 @@ curl -X GET "http://localhost:5000/api/availability/check-real-time?salonistId=6
   "success": true,
   "data": {
     "isAvailable": true,
-    "timeSlot": "9:00 AM",
+    "timeSlot": "9:00",
     "date": "2025-05-15"
   }
 }
