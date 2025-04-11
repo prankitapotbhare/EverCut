@@ -1,6 +1,14 @@
 const express = require('express');
 const { verifyToken, requireEmailVerified } = require('../middleware/auth.middleware');
-const { createBooking, getBookings, getBookingById, updateBooking, cancelBooking } = require('../controllers/booking.controller');
+const { 
+  createBooking, 
+  getBookings, 
+  getBookingById, 
+  updateBooking, 
+  cancelBooking,
+  getSalonistBookings,
+  getBookingsByDate
+} = require('../controllers/booking.controller');
 const router = express.Router();
 
 /**
@@ -16,6 +24,20 @@ router.post('/', verifyToken, requireEmailVerified, createBooking);
  * @access Private
  */
 router.get('/', verifyToken, requireEmailVerified, getBookings);
+
+/**
+ * @route GET /api/bookings/salonist/:salonistId
+ * @desc Get all bookings for a specific salonist
+ * @access Private
+ */
+router.get('/salonist/:salonistId', verifyToken, getSalonistBookings);
+
+/**
+ * @route GET /api/bookings/date/:date
+ * @desc Get all bookings for a specific date
+ * @access Private
+ */
+router.get('/date/:date', verifyToken, getBookingsByDate);
 
 /**
  * @route GET /api/bookings/:id

@@ -1,4 +1,3 @@
-
 # API Routes Documentation
 
 ## Availability API
@@ -264,20 +263,12 @@ Creates a new booking.
 ```json
 {
   "salonId": "67f2628f913847bf066652e5",
-  "salonistId": "60d21b4667d0d8992e610c86",
-  "services": [
-    {
-      "id": "60d21b4667d0d8992e610c88",
-      "name": "Haircut",
-      "price": 30,
-      "duration": 60
-    }
-  ],
+  "salonistId": "67f2628f913847bf06665300",
+  "serviceIds": ["67f2628f913847bf066652ee", "67f2628f913847bf066652f2"],
+  "packageIds": ["67f2628f913847bf066652fa"],
   "date": "2025-05-15",
-  "startTime": "9:00 AM",
-  "endTime": "10:00 AM",
-  "totalDuration": 60,
-  "totalPrice": 30,
+  "startTime": "09:00",
+  "endTime": "10:00",
   "notes": "First time customer"
 }
 ```
@@ -289,20 +280,12 @@ curl -X POST "http://localhost:5000/api/bookings" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -d '{
     "salonId": "67f2628f913847bf066652e5",
-    "salonistId": "60d21b4667d0d8992e610c86",
-    "services": [
-      {
-        "id": "60d21b4667d0d8992e610c88",
-        "name": "Haircut",
-        "price": 30,
-        "duration": 60
-      }
-    ],
+    "salonistId": "67f2628f913847bf06665300",
+    "serviceIds": ["67f2628f913847bf066652ee", "67f2628f913847bf066652f2"],
+    "packageIds": ["67f2628f913847bf066652fa"],
     "date": "2025-05-15",
-    "startTime": "9:00 AM",
-    "endTime": "10:00 AM",
-    "totalDuration": 60,
-    "totalPrice": 30,
+    "startTime": "09:00",
+    "endTime": "10:00",
     "notes": "First time customer"
   }'
 ```
@@ -316,21 +299,36 @@ curl -X POST "http://localhost:5000/api/bookings" \
     "userId": "user123",
     "salonId": "67f2628f913847bf066652e5",
     "salonName": "Shear Elegance",
-    "salonistId": "60d21b4667d0d8992e610c86",
+    "salonistId": "67f2628f913847bf06665300",
     "salonistName": "John Smith",
     "services": [
       {
-        "id": "60d21b4667d0d8992e610c88",
+        "serviceId": "67f2628f913847bf066652ee",
         "name": "Haircut",
         "price": 30,
-        "duration": 60
+        "duration": 60,
+        "category": "Hair"
+      },
+      {
+        "serviceId": "67f2628f913847bf066652f2",
+        "name": "Styling",
+        "price": 25,
+        "duration": 30,
+        "category": "Hair"
+      },
+      {
+        "serviceId": "67f2628f913847bf066652fa",
+        "name": "Hair Treatment Package (Package)",
+        "price": 80,
+        "duration": 90,
+        "category": "Package"
       }
     ],
     "date": "2025-05-15T00:00:00.000Z",
-    "startTime": "9:00 AM",
-    "endTime": "10:00 AM",
-    "totalDuration": 60,
-    "totalPrice": 30,
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "totalDuration": 180,
+    "totalPrice": 135,
     "notes": "First time customer",
     "status": "pending",
     "paymentStatus": "pending",
@@ -360,6 +358,17 @@ curl -X POST "http://localhost:5000/api/bookings" \
   "error": {
     "message": "Selected time slot is no longer available",
     "statusCode": 400
+  }
+}
+```
+
+3. Service or package not found:
+```json
+{
+  "success": false,
+  "error": {
+    "message": "One or more services not found or not active",
+    "statusCode": 404
   }
 }
 ```
@@ -604,10 +613,13 @@ Updates an existing booking.
 **Request Body:** (Only include fields to update)
 ```json
 {
+  "serviceIds": ["60d21b4667d0d8992e610c88", "60d21b4667d0d8992e610c89"],
+  "packageIds": ["60d21b4667d0d8992e610d34"],
   "date": "2023-11-16",
   "startTime": "10:00 AM",
   "endTime": "11:00 AM",
-  "notes": "Updated notes"
+  "notes": "Updated notes",
+  "status": "confirmed"
 }
 ```
 
@@ -617,6 +629,7 @@ curl -X PUT "http://localhost:5000/api/bookings/60d21b4667d0d8992e610c89" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -d '{
+    "serviceIds": ["60d21b4667d0d8992e610c88"],
     "date": "2023-11-16",
     "startTime": "10:00 AM",
     "endTime": "11:00 AM",
@@ -633,9 +646,20 @@ curl -X PUT "http://localhost:5000/api/bookings/60d21b4667d0d8992e610c89" \
     "userId": "user123",
     "salonId": "67f2628f913847bf066652e5",
     "salonistId": "60d21b4667d0d8992e610c86",
+    "services": [
+      {
+        "serviceId": "60d21b4667d0d8992e610c88",
+        "name": "Haircut",
+        "price": 30,
+        "duration": 60,
+        "category": "Hair"
+      }
+    ],
     "date": "2023-11-16T00:00:00.000Z",
     "startTime": "10:00 AM",
     "endTime": "11:00 AM",
+    "totalDuration": 60,
+    "totalPrice": 30,
     "notes": "Updated notes",
     "status": "rescheduled",
     "updatedAt": "2023-11-11T12:00:00.000Z"
@@ -664,6 +688,17 @@ curl -X PUT "http://localhost:5000/api/bookings/60d21b4667d0d8992e610c89" \
   "error": {
     "message": "Cannot update a completed booking",
     "statusCode": 400
+  }
+}
+```
+
+3. Service or package not found:
+```json
+{
+  "success": false,
+  "error": {
+    "message": "One or more services not found or not active",
+    "statusCode": 404
   }
 }
 ```

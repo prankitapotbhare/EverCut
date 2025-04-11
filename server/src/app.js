@@ -13,6 +13,7 @@ const bookingRoutes = require('./routes/booking.routes');
 const salonRoutes = require('./routes/salon.routes');
 const paymentRoutes = require('./routes/payment.routes');
 const userRoutes = require('./routes/user.routes');
+const availabilityRoutes = require('./routes/availability.routes');
 
 // Initialize Firebase Admin
 initializeFirebaseAdmin();
@@ -57,6 +58,7 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/salons', salonRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/availability', availabilityRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
