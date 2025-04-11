@@ -10,6 +10,7 @@ import PaymentModal from '@/components/payment/PaymentModal';
 import { useBooking } from '@/contexts/BookingContext';
 import { usePayment } from '@/contexts/PaymentContext';
 import { BookingPageSkeleton } from '@/components/common/SkeletonLoader';
+import { Calendar } from 'lucide-react';
 
 const BookingPage = () => {
   const { id } = useParams();
@@ -27,7 +28,6 @@ const BookingPage = () => {
     salonists,
     availableTimeSlots,
     availableSalonists,
-    loadingData,
     fetchSalon,
     fetchSalonists,
     fetchAvailability,
@@ -144,7 +144,10 @@ const BookingPage = () => {
 
           {/* Middle section - Date & Time Selection */}
           <div className="md:w-[40%] mb-6 md:mb-0">
-            <h2 className="text-xl font-bold mb-4">Select Date & Time!</h2>
+            <div className="flex items-center mb-4">
+              <Calendar size={18} className="text-blue-600 mr-2" />
+              <h2 className="text-xl font-bold">Select Date & Time!</h2>
+            </div>
             
             {/* Date Selector */}
             <DateSelector 

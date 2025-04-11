@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 import { useBooking } from '@/contexts/BookingContext';
 
 const DateSelector = ({ selectedDate, onDateSelect }) => {
   const scrollContainerRef = useRef(null);
-  const { isSameDay } = useBooking();
+  const { isSameDay, formatDate } = useBooking();
   
   const today = useMemo(() => {
     const date = new Date();
@@ -12,29 +12,53 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
     return date;
   }, []);
   
-  const [currentMonth, setCurrentMonth] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
+  // Set current month based on the selected date or today's date
+  const [currentMonth, setCurrentMonth] = useState(() => {
+    if (selectedDate) {
+      return new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
+    }
+    return new Date(today.getFullYear(), today.getMonth(), 1);
+  });
+  
   const [dates, setDates] = useState([]);
+  
+  // Update current month when selected date changes across months
+  useEffect(() => {
+    if (selectedDate && 
+        (selectedDate.getMonth() !== currentMonth.getMonth() || 
+         selectedDate.getFullYear() !== currentMonth.getFullYear())) {
+      setCurrentMonth(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1));
+    }
+  }, [selectedDate, currentMonth]);
   
   useEffect(() => {
     generateMonthDates();
   }, [currentMonth, today]);
   
   useEffect(() => {
-    if (scrollContainerRef.current) {
+    if (scrollContainerRef.current && dates.length > 0) {
       const selectedIndex = dates.findIndex(d => 
         selectedDate && isSameDay(d.date, selectedDate)
       );
       
       const todayIndex = dates.findIndex(d => d.isToday);
       
+      // Scroll to selected date, today, or first available date
       const scrollToIndex = selectedIndex >= 0 ? selectedIndex : todayIndex >= 0 ? todayIndex : 0;
       
       if (scrollToIndex >= 0) {
-        const buttonWidth = 68;
-        scrollContainerRef.current.scrollLeft = scrollToIndex * buttonWidth;
+        // Smoother scrolling with a slight delay
+        setTimeout(() => {
+          const buttonWidth = 68; // Width of each date button + margin
+          const scrollPosition = Math.max(0, scrollToIndex * buttonWidth - 100); // Center selected date
+          scrollContainerRef.current.scrollTo({ 
+            left: scrollPosition, 
+            behavior: 'smooth' 
+          });
+        }, 100);
       }
     }
-  }, [dates, selectedDate]);
+  }, [dates, selectedDate, isSameDay]);
   
   const generateMonthDates = () => {
     const year = currentMonth.getFullYear();
@@ -100,11 +124,17 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
   };
   
   const getMonthName = () => {
-    return currentMonth.toLocaleString('default', { month: 'long' });
+    return currentMonth.toLocaleString('default', { month: 'long', year: 'numeric' });
   };
 
+  // Format the selected date for display
+  const formattedSelectedDate = useMemo(() => {
+    if (!selectedDate) return '';
+    return formatDate(selectedDate, { weekday: 'long', month: 'short', day: 'numeric' });
+  }, [selectedDate, formatDate]);
+
   return (
-    <div className="date-selector">
+    <div className="date-selector mb-6">
       <div className="flex justify-between items-center mb-2">
         <span className="font-medium text-lg">{getMonthName()}</span>
         <div className="flex space-x-1 bg-gray-100 rounded-lg">
@@ -125,16 +155,23 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
         </div>
       </div>
       
-      <p className="text-sm text-gray-600 mb-2">
-        {selectedDate ? 
-          `Selected: ${selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}` : 
-          'Please select a date'}
-      </p>
+      <div className="flex items-center mb-3 bg-blue-50 p-2 rounded-lg">
+        <Calendar size={18} className="text-blue-600 mr-2" />
+        {selectedDate ? (
+          <p className="text-sm text-blue-700 font-medium">
+            Selected: {formattedSelectedDate}
+          </p>
+        ) : (
+          <p className="text-sm text-amber-600">
+            Please select a date to continue
+          </p>
+        )}
+      </div>
       
       <div className="relative">
         <div 
           ref={scrollContainerRef}
-          className="flex space-x-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth px-6"
+          className="flex space-x-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth px-1"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {dates.map((dateObj, index) => (
@@ -159,6 +196,9 @@ const DateSelector = ({ selectedDate, onDateSelect }) => {
             </button>
           ))}
         </div>
+        
+        <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-4 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
       </div>
     </div>
   );

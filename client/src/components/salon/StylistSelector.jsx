@@ -1,8 +1,16 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { useBooking } from '@/contexts/BookingContext';
+import { Users, User, AlertCircle } from 'lucide-react';
 
 const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, availableStylists = [], selectedDate }) => {
-  const { getStylistAvailabilityStatus } = useBooking();
+  const { getStylistAvailabilityStatus, loadingData } = useBooking();
+  
+  // If no stylist is selected but there are available stylists, auto-select the first one
+  useEffect(() => {
+    if (!selectedStylist && availableStylists.length > 0 && !loadingData.availableSalonists) {
+      onStylistSelect(availableStylists[0]);
+    }
+  }, [selectedStylist, availableStylists, onStylistSelect, loadingData.availableSalonists]);
 
   const stylistsWithAvailability = useMemo(() => {
     if (!stylists || stylists.length === 0) {
@@ -14,19 +22,21 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
         availableStylists.some(s => s.id === stylist.id);
       
       try {
-        const { status } = getStylistAvailabilityStatus(stylist, isAvailable, selectedDate);
+        const { status, reason } = getStylistAvailabilityStatus(stylist, isAvailable, selectedDate);
         
         return {
           ...stylist,
           isAvailable,
-          availabilityStatus: status
+          availabilityStatus: status,
+          availabilityReason: reason
         };
       } catch (error) {
         console.error(`Error getting availability for stylist ${stylist.id}:`, error);
         return {
           ...stylist,
           isAvailable: false,
-          availabilityStatus: 'Error'
+          availabilityStatus: 'Error',
+          availabilityReason: 'Error fetching availability'
         };
       }
     });
@@ -37,22 +47,42 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
   }, [stylistsWithAvailability]);
 
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-2">Select your Salonist!</h2>
-      <p className="text-sm text-gray-600 mb-4">
-        {selectedStylist ? 
-          `You selected ${selectedStylist.name}` : 
-          'Please select a stylist to continue'}
-      </p>
+    <div className="stylist-selector">
+      <div className="flex items-center mb-2">
+        <Users size={18} className="text-blue-600 mr-2" />
+        <h2 className="text-xl font-bold">Select your Salonist!</h2>
+      </div>
       
-      {stylistsWithAvailability.length === 0 ? (
+      <div className="bg-blue-50 p-3 rounded-lg mb-4 flex items-start">
+        <User size={16} className="text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+        <p className="text-sm text-blue-800">
+          {selectedStylist ? (
+            <>
+              <span className="font-medium">Selected:</span> {selectedStylist.name}
+            </>
+          ) : (
+            'Please select a stylist to continue'
+          )}
+        </p>
+      </div>
+      
+      {loadingData.availableSalonists ? (
+        <div className="p-4 bg-gray-50 rounded-lg animate-pulse">
+          <div className="flex justify-center items-center h-16">
+            <p className="text-gray-500">Loading stylists availability...</p>
+          </div>
+        </div>
+      ) : stylistsWithAvailability.length === 0 ? (
         <div className="p-4 bg-gray-100 rounded-lg text-center">
           <p className="text-gray-600">No stylists found</p>
         </div>
       ) : !hasAvailableStylists && availableStylists.length > 0 ? (
-        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg text-center">
-          <p className="text-amber-600">No stylists available for the selected date</p>
-          <p className="text-sm text-gray-600 mt-1">Please try another date</p>
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          <div className="flex items-center mb-2">
+            <AlertCircle size={16} className="text-amber-500 mr-2" />
+            <p className="text-amber-600 font-medium">No stylists available for the selected date</p>
+          </div>
+          <p className="text-sm text-gray-600 ml-6">Please try another date</p>
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-4">
@@ -112,9 +142,9 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
             return (
               <div 
                 key={stylist.id}
-                className={`relative bg-gray-100 rounded-lg p-4 flex flex-col items-center ${isAvailable ? 'cursor-pointer hover:bg-gray-200' : 'cursor-not-allowed'} transition-all ${
+                className={`relative bg-gray-100 rounded-lg p-2 flex flex-col items-center ${isAvailable ? 'cursor-pointer hover:bg-gray-200' : 'cursor-not-allowed'} transition-all ${
                   isSelected
-                    ? 'ring-2 ring-green-500 bg-green-50' 
+                    ? 'ring-2 ring-green-500 bg-green-50 transform scale-105' 
                     : availableStylists.length > 0
                       ? `${statusBgColor} border ${statusBorder}`
                       : ''
@@ -140,7 +170,7 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
                   <span className={`text-xs ${statusColor} mt-1`}>{statusText}</span>
                 )}
                 {availabilityReason && (
-                  <span className="text-xs text-gray-500 mt-0.5">{availabilityReason}</span>
+                  <span className="text-xs text-center text-gray-500 mt-0.5 line-clamp-2">{availabilityReason}</span>
                 )}
               </div>
             );

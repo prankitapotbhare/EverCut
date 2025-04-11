@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useCallback, useEffect } from 'react';
+import React, { createContext, useState, useContext, useCallback, useEffect, useMemo } from 'react';
 import { useSalon } from './SalonContext';
 import { usePayment } from './PaymentContext';
 import bookingService from '@/services/bookingService';
@@ -166,7 +166,10 @@ export const BookingProvider = ({ children }) => {
   
   // Fetch availability for a stylist on a date
   const fetchAvailability = useCallback(async () => {
-    if (!selectedStylist || !selectedDate) return [];
+    if (!selectedStylist || !selectedDate) {
+      setAvailableTimeSlots([]);
+      return [];
+    }
     
     try {
       // Format date to YYYY-MM-DD for cache key
@@ -176,19 +179,24 @@ export const BookingProvider = ({ children }) => {
       
       const cacheKey = `${selectedStylist.id}-${dateString}`;
       
-      // Check if we already have this availability in cache
-      if (availabilityCache[cacheKey]) {
-        setAvailableTimeSlots(availabilityCache[cacheKey]);
+      // Check if we already have this availability in cache and it's not too old
+      const cachedData = availabilityCache[cacheKey];
+      const currentTime = new Date().getTime();
+      const cacheTime = cachedData?.timestamp;
+      const cacheMaxAge = 2 * 60 * 1000; // 2 minutes cache lifetime
+      
+      if (cachedData && cacheTime && (currentTime - cacheTime < cacheMaxAge)) {
+        setAvailableTimeSlots(cachedData.slots);
         
         // Also update unavailable time slots
         const unavailable = bookingService.getUnavailableTimeSlots(
           selectedStylist, 
           selectedDate, 
-          availabilityCache[cacheKey]
+          cachedData.slots
         );
         setUnavailableTimeSlots(unavailable);
         
-        return availabilityCache[cacheKey];
+        return cachedData.slots;
       }
       
       setLoadingData(prev => ({ ...prev, availability: true }));
@@ -203,10 +211,13 @@ export const BookingProvider = ({ children }) => {
       );
       setUnavailableTimeSlots(unavailable);
       
-      // Update the cache
+      // Update the cache with timestamp
       setAvailabilityCache(prev => ({
         ...prev,
-        [cacheKey]: availabilityData
+        [cacheKey]: {
+          slots: availabilityData,
+          timestamp: currentTime
+        }
       }));
       
       return availabilityData;
@@ -251,8 +262,10 @@ export const BookingProvider = ({ children }) => {
       if (selectedStylist && !availableStylistsData.some(stylist => stylist.id === selectedStylist.id)) {
         setSelectedStylist(null);
         setSelectedTime(null);
+        setAvailableTimeSlots([]);
       }
       
+      setError(null);
       return availableStylistsData;
     } catch (error) {
       console.error('Error fetching available stylists:', error);
@@ -261,7 +274,7 @@ export const BookingProvider = ({ children }) => {
     } finally {
       setLoadingData(prev => ({ ...prev, availableSalonists: false }));
     }
-  }, [selectedDate, salon, selectedStylist]);
+  }, [selectedDate, salon, selectedStylist, salonistsByDateCache]);
   
   // Clear all caches
   const clearCaches = useCallback(() => {
@@ -378,6 +391,40 @@ export const BookingProvider = ({ children }) => {
     } finally {
       setLoading(false);
     }
+  }, []);
+
+  // Effect to persist selected date to localStorage when it changes
+  useEffect(() => {
+    if (selectedDate) {
+      localStorage.setItem('selectedBookingDate', selectedDate.toISOString());
+    }
+  }, [selectedDate]);
+  
+  // Effect to restore selected date from localStorage on initial load
+  useEffect(() => {
+    const savedDate = localStorage.getItem('selectedBookingDate');
+    if (savedDate) {
+      try {
+        const parsedDate = new Date(savedDate);
+        // Only set if it's a valid date and not in the past
+        if (!isNaN(parsedDate) && parsedDate >= today) {
+          setSelectedDate(parsedDate);
+        } else {
+          // Clear invalid saved date
+          localStorage.removeItem('selectedBookingDate');
+        }
+      } catch (error) {
+        console.error('Error parsing saved date:', error);
+        localStorage.removeItem('selectedBookingDate');
+      }
+    }
+  }, []);
+
+  // Get today's date with time set to 00:00:00
+  const today = useMemo(() => {
+    const date = new Date();
+    date.setHours(0, 0, 0, 0);
+    return date;
   }, []);
 
   // Add to the context value

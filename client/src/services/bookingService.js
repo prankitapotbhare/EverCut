@@ -238,12 +238,20 @@ const getAvailableSalonists = async (date, time, salonId = null) => {
 // Get available salonists for a specific date (any time)
 const getAvailableSalonistsForDate = async (date, salonId = null) => {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      // Filter salonists who have at least one available time slot on this date
-      const availableSalonists = mockSalonists.filter(async salonist => {
+    setTimeout(async () => {
+      // Using Promise.all to handle async operations properly
+      const availabilitiesPromises = mockSalonists.map(async salonist => {
         const availableTimeSlots = await getSalonistAvailability(salonist.id, date);
-        return availableTimeSlots.length > 0;
+        return {
+          salonist,
+          hasAvailability: availableTimeSlots.length > 0
+        };
       });
+
+      const results = await Promise.all(availabilitiesPromises);
+      const availableSalonists = results
+        .filter(result => result.hasAvailability)
+        .map(result => result.salonist);
       
       resolve(availableSalonists);
     }, 300);
