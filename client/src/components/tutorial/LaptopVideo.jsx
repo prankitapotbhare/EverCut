@@ -11,11 +11,11 @@ const LaptopVideo = ({
   preload = 'metadata'
 }) => {
   return (
-    <div className={`relative w-full max-w-5xl mx-auto aspect-[3/2] ${className}`}>
+    <div className={`relative w-full max-w-2xl mx-auto aspect-[16/9] ${className}`}>
       {/* Video positioned absolutely within the screen area */}
       <VideoPlayer 
         src={src}
-        className="absolute top-[12%] left-[12%] w-[76%] h-[63%] object-cover"
+        className="absolute object-cover top-[5.2%] left-[12%] w-[76%] h-[74%] opacity-100"
         controls={controls}
         autoPlay={autoPlay}
         loop={loop}
