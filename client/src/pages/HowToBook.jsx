@@ -19,6 +19,10 @@ const HowToBookPage = () => {
         title="How to Book Your Perfect Appointment"
         subtitle="Follow our video tutorial guide to booking salon appointments with confidence. 
                   From finding the right salon to securing your preferred time slot, we've got you covered."
+        controls={true}
+        autoPlay={true}
+        loop={true}
+        muted={false}
       /> */}
       
       {/* Footer */}

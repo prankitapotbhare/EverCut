@@ -3,8 +3,13 @@ import LaptopVideo from './LaptopVideo';
 
 const VideoTutorialSection = ({ 
   videoSrc, 
-  title = "Watch Our Booking Tutorial",
+  title = "How to Book Your Perfect Appointment",
   subtitle = "Learn how to easily book your appointment in just a few minutes",
+  controls = true,
+  autoPlay = true,
+  loop = true,
+  muted = false,
+  preload = 'metadata'
 }) => {
   return (
     <div className="mb-16 px-4">
@@ -29,7 +34,14 @@ const VideoTutorialSection = ({
       
       {/* Video Player Container */}
       <div className="max-w-6xl mx-auto">
-        <LaptopVideo src={videoSrc} />
+        <LaptopVideo 
+          src={videoSrc}
+          controls={controls}
+          autoPlay={autoPlay}
+          loop={loop}
+          muted={muted}
+          preload={preload}
+        />
       </div>
     </div>
   );
