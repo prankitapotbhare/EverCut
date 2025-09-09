@@ -12,9 +12,9 @@ const VideoTutorialSection = ({
   preload = 'metadata'
 }) => {
   return (
-    <div className="mb-16 px-4">
+    <div className="mt-6 mb-12 px-4">
       {/* Section Header */}
-      <div className="max-w-4xl mx-auto text-center mt-16 mb-8">
+      <div className="max-w-4xl mx-auto text-center mb-4">
         <h1 className="text-5xl font-bold text-gray-900 mb-5">
           {title}
         </h1>

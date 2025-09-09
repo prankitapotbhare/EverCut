@@ -10,11 +10,8 @@ const HowToBookPage = () => {
       {/* Navigation */}
       <Navbar />
       
-      {/* Hero Section with Search */}
-      <SalonFinder />
-      
       {/* Video Tutorial Section with Laptop Display */}
-      {/* <VideoTutorialSection
+      <VideoTutorialSection
         videoSrc="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         title="How to Book Your Perfect Appointment"
         subtitle="Follow our video tutorial guide to booking salon appointments with confidence. 
@@ -23,7 +20,10 @@ const HowToBookPage = () => {
         autoPlay={true}
         loop={true}
         muted={false}
-      /> */}
+      />
+
+      {/* Hero Section with Search */}
+      <SalonFinder />
       
       {/* Footer */}
       <Footer />
