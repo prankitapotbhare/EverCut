@@ -1,5 +1,4 @@
 const express = require('express');
-const { verifyToken, requireEmailVerified } = require('../middleware/auth.middleware');
 const router = express.Router();
 
 /**
@@ -7,16 +6,16 @@ const router = express.Router();
  * @desc Get current user profile
  * @access Private
  */
-router.get('/me', verifyToken, async (req, res) => {
+router.get('/me', async (req, res) => {
   try {
-    // User data is already available in req.user from the middleware
+    // Return mock user data since authentication is removed
     res.status(200).json({
       success: true,
       data: {
-        uid: req.user.uid,
-        email: req.user.email,
-        emailVerified: req.user.email_verified,
-        displayName: req.user.name || req.user.display_name
+        uid: 'anonymous-user',
+        email: 'anonymous@example.com',
+        emailVerified: true,
+        displayName: 'Anonymous User'
       }
     });
   } catch (error) {
@@ -33,14 +32,13 @@ router.get('/me', verifyToken, async (req, res) => {
  * @desc Update current user profile
  * @access Private
  */
-router.put('/me', verifyToken, requireEmailVerified, async (req, res) => {
+router.put('/me', async (req, res) => {
   try {
-    // This is a placeholder implementation
-    // In a real implementation, you would update the user profile in Firestore
+    // This is a placeholder implementation without authentication
     res.status(200).json({
       success: true,
       data: {
-        uid: req.user.uid,
+        uid: 'anonymous-user',
         ...req.body,
         updatedAt: new Date().toISOString()
       }

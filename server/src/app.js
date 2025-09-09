@@ -3,20 +3,15 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const morgan = require('morgan');
-const { initializeFirebaseAdmin } = require('./config/firebase-admin');
 const { connectDatabase } = require('./config/database');
 const { errorHandler } = require('./utils/errors');
 
 // Import routes
-const protectedRoutes = require('./routes/protected.routes');
 const bookingRoutes = require('./routes/booking.routes');
 const salonRoutes = require('./routes/salon.routes');
 const paymentRoutes = require('./routes/payment.routes');
 const userRoutes = require('./routes/user.routes');
 const availabilityRoutes = require('./routes/availability.routes');
-
-// Initialize Firebase Admin
-initializeFirebaseAdmin();
 
 // Connect to MongoDB (skip in test environment if needed)
 if (process.env.NODE_ENV !== 'test') {
@@ -53,7 +48,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Apply routes
-app.use('/api', protectedRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/salons', salonRoutes);
 app.use('/api/payments', paymentRoutes);

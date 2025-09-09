@@ -4,49 +4,7 @@ const mongoose = require('mongoose');
 // Set NODE_ENV to test before requiring app
 process.env.NODE_ENV = 'test';
 
-// Mock Firebase Admin before requiring app
-jest.mock('firebase-admin', () => {
-  const mockAuth = {
-    verifyIdToken: jest.fn().mockResolvedValue({
-      uid: 'test-user-id',
-      email: 'test@example.com',
-      email_verified: true
-    }),
-    getUser: jest.fn().mockResolvedValue({
-      customClaims: { admin: true }
-    })
-  };
-
-  const mockFirestore = {
-    collection: jest.fn().mockReturnThis(),
-    doc: jest.fn().mockReturnThis(),
-    where: jest.fn().mockReturnThis(),
-    get: jest.fn().mockResolvedValue({
-      empty: false,
-      docs: [
-        {
-          id: 'salon-1',
-          data: () => ({
-            name: 'Test Salon',
-            description: 'A test salon',
-            rating: 4.5
-          }),
-          exists: true
-        }
-      ]
-    })
-  };
-
-  return {
-    initializeApp: jest.fn(),
-    apps: ['mockApp'], // Simulate that Firebase is already initialized
-    auth: jest.fn().mockReturnValue(mockAuth),
-    firestore: jest.fn().mockReturnValue(mockFirestore),
-    credential: {
-      cert: jest.fn().mockReturnValue({})
-    }
-  };
-});
+// Firebase Admin mocking removed since authentication is no longer used
 
 // Mock MongoDB connection
 jest.mock('../config/database', () => ({

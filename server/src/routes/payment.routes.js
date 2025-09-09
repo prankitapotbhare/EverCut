@@ -1,5 +1,4 @@
 const express = require('express');
-const { verifyToken, requireEmailVerified } = require('../middleware/auth.middleware');
 const router = express.Router();
 
 /**
@@ -7,7 +6,7 @@ const router = express.Router();
  * @desc Create a payment intent with Stripe
  * @access Private
  */
-router.post('/create-payment-intent', verifyToken, requireEmailVerified, async (req, res) => {
+router.post('/create-payment-intent', async (req, res) => {
   try {
     // This is a placeholder implementation
     // In a real implementation, you would create a payment intent with Stripe

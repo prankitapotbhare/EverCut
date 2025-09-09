@@ -52,13 +52,6 @@ const errorHandler = (err, req, res, next) => {
     );
   }
 
-  // Handle Firebase Admin errors
-  if (err.code && err.code.startsWith('auth/')) {
-    return res.status(401).json(
-      getErrorResponse(err.message || 'Authentication error', err.code)
-    );
-  }
-
   // Default error response
   return res.status(500).json(
     getErrorResponse('Internal server error')

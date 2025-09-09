@@ -1,12 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '@/contexts/AuthContext';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { currentUser, logout } = useAuth();
-  const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
   const menuRef = useRef(null);
 
   // Handle click outside to close menu
@@ -26,50 +22,7 @@ const Navbar = () => {
     setIsOpen(false);
   }, [window.location.pathname]);
 
-  const handleLogout = async () => {
-    try {
-      setIsLoading(true);
-      await logout();
-      navigate('/login');
-    } catch (error) {
-      console.error('Logout error:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
-  const handleLogin = () => navigate('/login');
-  const handleSignup = () => navigate('/signup');
-
-  const AuthButtons = ({ isMobile = false }) => (
-    currentUser ? (
-      <button
-        onClick={handleLogout}
-        className={`${isMobile ? 'w-full mt-2' : ''} bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out disabled:opacity-50 cursor-pointer`}
-        disabled={isLoading}
-        aria-label={isLoading ? 'Logging out' : 'Logout'}
-      >
-        {isLoading ? 'Logging out...' : 'Logout'}
-      </button>
-    ) : (
-      <>
-        <button
-          onClick={handleLogin}
-          className={`${isMobile ? 'w-full mt-2' : ''} bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out cursor-pointer`}
-          aria-label="Login"
-        >
-          Login
-        </button>
-        <button
-          onClick={handleSignup}
-          className={`${isMobile ? 'w-full mt-2' : ''} bg-black text-white px-4 py-2 rounded-3xl hover:bg-[#06C270] transition-all duration-300 ease-in-out cursor-pointer`}
-          aria-label="Sign up"
-        >
-          Signup
-        </button>
-      </>
-    )
-  );
 
   return (
     <nav className="bg-white sticky top-0 z-50 shadow-sm" role="navigation" aria-label="Main navigation">
@@ -90,7 +43,7 @@ const Navbar = () => {
             >
               Get in Touch
             </a>
-            <AuthButtons />
+
           </div>
 
           {/* Mobile menu button */}
@@ -141,7 +94,7 @@ const Navbar = () => {
           >
             Get in Touch
           </a>
-          <AuthButtons isMobile />
+
         </div>
       </div>
     </nav>

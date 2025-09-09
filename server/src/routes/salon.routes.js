@@ -1,5 +1,4 @@
 const express = require('express');
-const { verifyToken, requireEmailVerified } = require('../middleware/auth.middleware');
 const { 
   getSalons, 
   getSalonById, 
@@ -53,7 +52,7 @@ router.get('/:id', getSalonById);
  * @desc Create a new salon
  * @access Private (Admin)
  */
-router.post('/', verifyToken, requireEmailVerified, createSalon);
+router.post('/', createSalon);
 
 /**
  * @route GET /api/salons/:id/services
