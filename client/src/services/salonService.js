@@ -23,7 +23,7 @@ export const getSalonById = async (id) => {
 };
 
 // Get popular salons
-export const getPopularSalons = async (limit = 10) => {
+export const getPopularSalons = async (limit = 12) => {
   try {
     const response = await api.get('/salons/popular', { params: { limit } });
     return response.data.data;
@@ -34,7 +34,7 @@ export const getPopularSalons = async (limit = 10) => {
 };
 
 // Get nearest salons based on coordinates
-export const getNearestSalons = async (coordinates, limit = 10) => {
+export const getNearestSalons = async (coordinates, limit = 12) => {
   try {
     const params = { limit };
     if (coordinates && coordinates.lat && coordinates.lng) {
@@ -51,7 +51,7 @@ export const getNearestSalons = async (coordinates, limit = 10) => {
 };
 
 // Search salons by query with advanced features
-export const searchSalons = async (query, coordinates = null, limit = 10) => {
+export const searchSalons = async (query, coordinates = null, limit = 12) => {
   try {
     // Handle empty queries
     if (!query || query.trim() === '') {

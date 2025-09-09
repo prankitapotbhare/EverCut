@@ -3,6 +3,7 @@ import { SalonProvider } from '@/contexts/SalonContext';
 import { PaymentProvider } from '@/contexts/PaymentContext';
 import { BookingProvider } from '@/contexts/BookingContext';
 import Home from '@/pages/Home';
+import HowToBook from '@/pages/HowToBook';
 import ErrorBoundary from '@/components/error/ErrorBoundary';
 import ErrorHandler from '@/components/error/ErrorHandler';
 import { useState } from 'react';
@@ -21,6 +22,9 @@ function AppRoutes() {
     <Router>
       <ErrorHandler error={error} onClose={() => setError(null)} />
       <Routes>
+        {/* How to Book Route */}
+        <Route path="/how-to-book" element={<HowToBook />} />
+        
         {/* Salon Routes - Now publicly accessible */}
         <Route path="/salon/:id" element={<SalonDetailPage />} />
         

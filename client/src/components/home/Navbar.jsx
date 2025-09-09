@@ -43,7 +43,13 @@ const Navbar = () => {
             >
               Get in Touch
             </a>
-
+            <Link
+              to="/how-to-book"
+              className="bg-[#06C270] text-white px-4 py-2 rounded-3xl hover:bg-black transition-all duration-300 ease-in-out"
+              aria-label="Learn how to book"
+            >
+              How to Book
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -94,7 +100,13 @@ const Navbar = () => {
           >
             Get in Touch
           </a>
-
+          <Link
+            to="/how-to-book"
+            className="block bg-[#06C270] text-white px-4 py-2 rounded-3xl hover:bg-black transition-all duration-300 ease-in-out text-center"
+            aria-label="Learn how to book"
+          >
+            How to Book
+          </Link>
         </div>
       </div>
     </nav>

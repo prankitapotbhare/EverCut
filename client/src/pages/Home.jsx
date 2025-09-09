@@ -5,13 +5,11 @@ import RankingCard from '@/components/home/RankingCard';
 import RankingCard1 from '@/components/home/RankingCard1';
 import Landing from '@/components/home/Landing';
 import Footer from '@/components/home/Footer';
-import SalonFinder from '@/components/salon/SalonFinder';
 
 const Home = () => {
   return (
     <div>
       <Navbar/>
-      <SalonFinder/>
       <Hero/>
       <RankingCard/>
       <RankingCard1/>
