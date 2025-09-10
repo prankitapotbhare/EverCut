@@ -2,6 +2,78 @@
 // Properly formatted and organized for better maintainability
 
 // =============================================================================
+// CENTRALIZED IMAGE CONSTANTS
+// =============================================================================
+
+/**
+ * Centralized salon gallery images pool
+ * Used for salon main images and gallery images
+ */
+const SALON_GALLERY_IMAGES = [
+  "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
+  "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
+  "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+  "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
+  "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
+  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
+  "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
+  "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
+  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
+  "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
+  "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+  "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
+  "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
+  "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
+  "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+  "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80",
+  "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
+  "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
+  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
+  "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80"
+];
+
+/**
+ * Centralized user profile images pool
+ * Used for customer review profile pictures
+ */
+const USER_PROFILE_IMAGES = [
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+  "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
+  "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+  "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
+  "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+  "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+  "https://images.unsplash.com/photo-1557555187-23d685287bc3?w=100&q=80",
+  "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
+  "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&q=80",
+  "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
+  "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
+  "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
+  "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=100&q=80",
+  "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
+  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80",
+  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
+  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80",
+  "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80",
+  "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&q=80",
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+  "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80",
+  "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
+  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
+  "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
+  "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
+  "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
+  "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80"
+];
+
+// =============================================================================
 // UTILITY FUNCTIONS
 // =============================================================================
 
@@ -51,47 +123,22 @@ const generateSalon = (
 };
 
 /**
- * Generates random gallery images from predefined pool
+ * Generates random gallery images from centralized pool
  * @param {number} count - Number of images to generate
  * @returns {Array} Array of image URLs
  */
 const generateGallery = (count) => {
-  const galleryPool = [
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
-    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
-    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
-    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
-    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80",
-    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80"
-  ];
-
   const gallery = [];
   const usedIndices = new Set();
 
   for (let i = 0; i < count; i++) {
     let randomIndex;
     do {
-      randomIndex = Math.floor(Math.random() * galleryPool.length);
+      randomIndex = Math.floor(Math.random() * SALON_GALLERY_IMAGES.length);
     } while (usedIndices.has(randomIndex));
 
     usedIndices.add(randomIndex);
-    gallery.push(galleryPool[randomIndex]);
+    gallery.push(SALON_GALLERY_IMAGES[randomIndex]);
   }
 
   return gallery;
@@ -137,40 +184,7 @@ const generateCustomerReviews = (count) => {
     "Gabriel F.", "Zoe E.", "Carter D.", "Penelope C.", "Wyatt B."
   ];
 
-  const userImagePool = [
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-    "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
-    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
-    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
-    "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
-    "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
-    "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
-    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-    "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-    "https://images.unsplash.com/photo-1557555187-23d685287bc3?w=100&q=80",
-    "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
-    "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&q=80",
-    "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
-    "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
-    "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
-    "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=100&q=80",
-    "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
-    "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80",
-    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
-    "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80",
-    "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80",
-    "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&q=80",
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-    "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80",
-    "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
-    "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
-    "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
-    "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
-    "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80"
-  ];
+
 
   const reviews = [];
   const usedCommentIndices = new Set();
@@ -196,7 +210,7 @@ const generateCustomerReviews = (count) => {
     );
     const nameIndex = getUniqueRandomIndex(reviewNames.length, usedNameIndices);
     const imageIndex = getUniqueRandomIndex(
-      userImagePool.length,
+      USER_PROFILE_IMAGES.length,
       usedImageIndices
     );
 
@@ -212,7 +226,7 @@ const generateCustomerReviews = (count) => {
       rating,
       comment: reviewComments[commentIndex],
       date: reviewDate.toISOString().split('T')[0],
-      userImage: userImagePool[imageIndex]
+      userImage: USER_PROFILE_IMAGES[imageIndex]
     });
   }
 
@@ -627,31 +641,7 @@ const generateAvailabilitySlots = () => {
 
 const mockSalons = [];
 
-// Gallery pool for main salon images
-const mainGalleryPool = [
-  "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
-  "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
-  "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
-  "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
-  "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
-  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
-  "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
-  "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-  "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
-  "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-  "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-  "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
-  "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
-  "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
-  "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80",
-  "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
-  "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
-  "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80"
-];
+
 
 // Generate 100 salons
 for (let i = 1; i <= 100; i++) {
@@ -666,9 +656,9 @@ for (let i = 1; i <= 100; i++) {
   const name = salonNames[nameIndex];
   salonNames.splice(nameIndex, 1);
 
-  // Select random main image
-  const imageIndex = Math.floor(Math.random() * mainGalleryPool.length);
-  const image = mainGalleryPool[imageIndex];
+  // Select random main image from centralized pool
+  const imageIndex = Math.floor(Math.random() * SALON_GALLERY_IMAGES.length);
+  const image = SALON_GALLERY_IMAGES[imageIndex];
 
   // Generate random salon properties
   const rating = (4 + Math.random()).toFixed(1); // 4.0-5.0
