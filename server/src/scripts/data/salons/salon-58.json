@@ -1,103 +1,102 @@
 {
-  "name": "Anushka Hair & Beauty",
-  "description": "Artistic salon where stylists approach hair as a creative canvas.",
+  "name": "The Glow Room",
+  "description": "High-end salon offering premium services with exceptional attention to detail.",
   "address": {
-    "street": "6332 Carter Road",
-    "city": "Delhi",
-    "state": "Delhi",
-    "zipCode": "110001",
+    "street": "6435 Khan Market",
+    "city": "Surat",
+    "state": "Gujarat",
+    "zipCode": "395001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      77.11661415162338,
-      28.725142556911926
+      72.82024403600319,
+      21.17847080454117
     ]
   },
-  "contactPhone": "+91 93387 87560",
-  "contactEmail": "info@anushkahair&beauty.com",
-  "image": "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+  "contactPhone": "+91 83411 38497",
+  "contactEmail": "info@theglowroom.com",
+  "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
-    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80"
+    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=1000",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Deep Cleansing Facial",
-      "description": "Thorough facial with extractions",
-      "price": 88,
+      "name": "Anti-Aging Facial",
+      "description": "Rejuvenating facial for mature skin",
+      "price": 94,
       "duration": 60
     },
     {
       "id": "2",
-      "name": "Lip Waxing",
-      "description": "Upper lip hair removal",
-      "price": 10,
-      "duration": 10
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 129,
+      "duration": 45
     },
     {
       "id": "3",
-      "name": "Premium Haircut",
-      "description": "Detailed haircut with styling",
-      "price": 57,
-      "duration": 45
+      "name": "Deep Cleansing Facial",
+      "description": "Thorough facial with extractions",
+      "price": 79,
+      "duration": 60
     },
     {
       "id": "4",
-      "name": "Partial Highlights",
-      "description": "Highlights for top and sides",
-      "price": 80,
-      "duration": 90
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 32,
+      "duration": 30
     },
     {
       "id": "5",
-      "name": "Pedicure",
-      "description": "Foot care and polish application",
-      "price": 44,
-      "duration": 45
+      "name": "Deluxe Pedicure",
+      "description": "Luxury foot treatment with massage",
+      "price": 64,
+      "duration": 60
     },
     {
       "id": "6",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
-      "price": 65,
-      "duration": 90
+      "name": "Eyebrow Threading",
+      "description": "Precise eyebrow shaping",
+      "price": 15,
+      "duration": 15
     },
     {
       "id": "7",
-      "name": "Full Face Waxing",
-      "description": "Complete facial hair removal",
-      "price": 42,
+      "name": "Basic Manicure",
+      "description": "Nail shaping, cuticle care, and polish",
+      "price": 24,
       "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 100,
-      "duration": 90,
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 232,
+      "duration": 120,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Sneha Gupta",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Deep Cleansing Facial",
-        "Lip Waxing",
-        "Premium Haircut"
+        "Anti-Aging Facial",
+        "Chemical Peel",
+        "Deep Cleansing Facial"
       ],
       "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
@@ -171,14 +170,172 @@
     },
     {
       "id": "2",
-      "name": "Neha Kumar",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Deep Cleansing Facial",
-        "Lip Waxing",
-        "Premium Haircut"
+        "Anti-Aging Facial",
+        "Chemical Peel",
+        "Deep Cleansing Facial"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Shreya Iyer",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Anti-Aging Facial",
+        "Chemical Peel",
+        "Deep Cleansing Facial"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "name": "Divya Joshi",
+      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
+      "specialties": [
+        "Anti-Aging Facial",
+        "Chemical Peel",
+        "Deep Cleansing Facial"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -253,149 +410,72 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Ava J.",
-      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "userName": "Noah P.",
+      "userImage": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80",
       "rating": 5,
-      "comment": "The package deal was worth every penny. So happy with the results!",
-      "date": "2025-09-01T00:00:00.000Z"
+      "comment": "I appreciate how they explained each step of the process.",
+      "date": "2025-08-23T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Grace K.",
-      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
+      "userName": "Ethan T.",
+      "userImage": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80",
       "rating": 4,
-      "comment": "The massage chairs during the shampoo were heavenly!",
-      "date": "2025-07-14T00:00:00.000Z"
+      "comment": "The staff went above and beyond to make sure I was happy.",
+      "date": "2025-08-21T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Sophia R.",
+      "userImage": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
+      "rating": 4,
+      "comment": "Very skilled stylists who really listen to what you want.",
+      "date": "2025-07-18T00:00:00.000Z"
     }
   ],
-  "rating": 4.9,
-  "reviewCount": 1137,
+  "rating": 4.6,
+  "reviewCount": 355,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 6,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "11:00 AM",
+      "close": "6:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": [
-    {
-      "date": "2025-09-10",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    }
-  ]
+  "availability": []
 }

@@ -1,86 +1,90 @@
 {
-  "name": "Green Trends Salon",
-  "description": "Innovative salon featuring the latest technology and techniques in hair and beauty.",
+  "name": "Sahara Salon",
+  "description": "Luxury salon providing VIP treatment and complimentary refreshments with every service.",
   "address": {
-    "street": "5174 Eastern Express Highway",
-    "city": "Hyderabad",
-    "state": "Telangana",
-    "zipCode": "500001",
+    "street": "7042 LBS Marg",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "zipCode": "380001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      78.46217899388351,
-      17.391720552770515
+      72.59001537246297,
+      23.012342895087723
     ]
   },
-  "contactPhone": "+91 93902 54046",
-  "contactEmail": "info@greentrendssalon.com",
-  "image": "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
+  "contactPhone": "+91 25624 47681",
+  "contactEmail": "info@saharasalon.com",
+  "image": "https://images.unsplash.com/photo-1614438865362-9137f7e3036e?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80"
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80",
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80",
+    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Brazilian Blowout",
-      "description": "Smoothing and anti-frizz treatment",
-      "price": 207,
-      "duration": 120
+      "name": "Keratin Treatment",
+      "description": "Smoothing keratin service",
+      "price": 197,
+      "duration": 150
     },
     {
       "id": "2",
-      "name": "Men's Cut",
-      "description": "Men's haircut and styling",
-      "price": 30,
-      "duration": 30
+      "name": "Women's Cut & Style",
+      "description": "Women's haircut with blowout",
+      "price": 46,
+      "duration": 45
     },
     {
       "id": "3",
-      "name": "Bridal Hair",
-      "description": "Wedding day hair styling",
-      "price": 118,
-      "duration": 90
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 28,
+      "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Couples Retreat",
-      "description": "Relaxing spa experience for two",
-      "price": 238,
-      "duration": 120,
+      "name": "Hair Repair",
+      "description": "Restorative treatment for damaged hair",
+      "price": 220,
+      "duration": 210,
       "services": [
-        "Swedish Massage (2)",
-        "Pedicure (2)"
+        "Keratin Treatment",
+        "Deep Conditioning",
+        "Trim"
       ]
     },
     {
       "id": "2",
-      "name": "Quick Refresh",
-      "description": "Quick beauty refresh when you're short on time",
-      "price": 77,
-      "duration": 60,
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 217,
+      "duration": 180,
       "services": [
-        "Basic Haircut",
-        "Express Facial"
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Pooja Agarwal",
+      "name": "Shreya Iyer",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Brazilian Blowout",
-        "Men's Cut",
-        "Bridal Hair"
+        "Keratin Treatment",
+        "Women's Cut & Style",
+        "Deep Conditioning"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -155,167 +159,9 @@
       "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Brazilian Blowout",
-        "Men's Cut",
-        "Bridal Hair"
-      ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Kavya Reddy",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Brazilian Blowout",
-        "Men's Cut",
-        "Bridal Hair"
-      ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Kavya Reddy",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Brazilian Blowout",
-        "Men's Cut",
-        "Bridal Hair"
+        "Keratin Treatment",
+        "Women's Cut & Style",
+        "Deep Conditioning"
       ],
       "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
@@ -392,42 +238,24 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Zoe E.",
-      "userImage": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&q=80",
+      "userName": "Ethan T.",
+      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
       "rating": 5,
       "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
-      "date": "2025-08-17T00:00:00.000Z"
+      "date": "2025-07-15T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Mia E.",
-      "userImage": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
-      "rating": 5,
-      "comment": "The best salon experience I've had in years. Highly recommend!",
-      "date": "2025-07-23T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
-      "rating": 5,
-      "comment": "Amazing results! Everyone keeps complimenting my new look.",
-      "date": "2025-08-26T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "userId": "user-4",
-      "userName": "Charlotte C.",
-      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
-      "rating": 5,
-      "comment": "Great service and attention to detail. Will definitely come back!",
-      "date": "2025-08-12T00:00:00.000Z"
+      "userName": "Alexander B.",
+      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "rating": 4,
+      "comment": "They were able to fit me in last minute. Such great customer service!",
+      "date": "2025-08-04T00:00:00.000Z"
     }
   ],
-  "rating": 4.4,
-  "reviewCount": 940,
+  "rating": 4.2,
+  "reviewCount": 1389,
   "operatingHours": [
     {
       "day": 1,
@@ -468,64 +296,59 @@
   "featured": false,
   "featuredReason": null,
   "specialOffer": {
-    "discount": "29%",
+    "discount": "26%",
     "description": "Seasonal Special"
   },
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
     },
     {
       "date": "2025-09-12",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
     },
     {
       "date": "2025-09-12",
       "time": "13:00",
       "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
     },
     {
       "date": "2025-09-13",
@@ -534,38 +357,18 @@
     },
     {
       "date": "2025-09-13",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
     },
     {
-      "date": "2025-09-14",
+      "date": "2025-09-13",
       "time": "14:30",
       "formattedTime": "2:30 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
+      "date": "2025-09-13",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
     }
   ]
 }

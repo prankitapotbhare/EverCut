@@ -1,86 +1,244 @@
 {
-  "name": "Aishwarya Beauty Parlour",
-  "description": "Specialized salon focusing on color corrections and transformations.",
+  "name": "Harmony Hair Bar",
+  "description": "High-end salon offering premium services with exceptional attention to detail.",
   "address": {
-    "street": "4668 SV Road",
-    "city": "Bangalore",
-    "state": "Karnataka",
-    "zipCode": "560001",
+    "street": "1602 MG Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "zipCode": "411001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      77.58425962514933,
-      12.989317247125678
+      73.87747317347937,
+      18.53685499323844
     ]
   },
-  "contactPhone": "+91 23349 81178",
-  "contactEmail": "info@aishwaryabeautyparlour.com",
-  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+  "contactPhone": "+91 82501 38894",
+  "contactEmail": "info@harmonyhairbar.com",
+  "image": "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80"
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1661349656933-532b88c88682?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Bridal Hair",
-      "description": "Wedding day hair styling",
-      "price": 124,
+      "name": "Root Touch-up",
+      "description": "Color application for roots",
+      "price": 59,
       "duration": 90
     },
     {
       "id": "2",
-      "name": "Partial Highlights",
-      "description": "Highlights for top and sides",
-      "price": 78,
-      "duration": 90
+      "name": "Express Facial",
+      "description": "Quick refreshing facial",
+      "price": 52,
+      "duration": 30
     },
     {
       "id": "3",
       "name": "Body Scrub",
       "description": "Exfoliating body treatment",
-      "price": 75,
+      "price": 74,
+      "duration": 45
+    },
+    {
+      "id": "4",
+      "name": "Nail Art",
+      "description": "Custom nail designs",
+      "price": 14,
+      "duration": 15
+    },
+    {
+      "id": "5",
+      "name": "Gel Manicure",
+      "description": "Long-lasting gel polish application",
+      "price": 42,
       "duration": 45
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 101,
-      "duration": 90,
-      "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Hair Repair",
-      "description": "Restorative treatment for damaged hair",
-      "price": 228,
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 146,
       "duration": 210,
       "services": [
-        "Keratin Treatment",
-        "Deep Conditioning",
-        "Trim"
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Neha Kumar",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Bridal Hair",
-        "Partial Highlights",
+        "Root Touch-up",
+        "Express Facial",
+        "Body Scrub"
+      ],
+      "bio": "Known for creating stunning transformations and attention to detail.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "name": "Shreya Iyer",
+      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
+      "specialties": [
+        "Root Touch-up",
+        "Express Facial",
+        "Body Scrub"
+      ],
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Kavya Reddy",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Root Touch-up",
+        "Express Facial",
         "Body Scrub"
       ],
       "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
@@ -154,12 +312,12 @@
       "status": "active"
     },
     {
-      "id": "2",
-      "name": "Priya Patel",
-      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
+      "id": "4",
+      "name": "Riya Singh",
+      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
       "specialties": [
-        "Bridal Hair",
-        "Partial Highlights",
+        "Root Touch-up",
+        "Express Facial",
         "Body Scrub"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
@@ -237,50 +395,59 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Caden J.",
-      "userImage": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&q=80",
+      "userName": "Harper Y.",
+      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
       "rating": 5,
-      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
-      "date": "2025-07-26T00:00:00.000Z"
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-07-13T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Gabriel F.",
+      "userImage": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80",
+      "rating": 5,
+      "comment": "Great service and attention to detail. Will definitely come back!",
+      "date": "2025-09-08T00:00:00.000Z"
     }
   ],
-  "rating": 4.1,
-  "reviewCount": 729,
+  "rating": 4.3,
+  "reviewCount": 1424,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "10:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
+      "day": 2,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "6:00 PM"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
@@ -289,5 +456,116 @@
     "discount": "27%",
     "description": "Monthly Special"
   },
-  "availability": []
+  "availability": [
+    {
+      "date": "2025-09-10",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    }
+  ]
 }

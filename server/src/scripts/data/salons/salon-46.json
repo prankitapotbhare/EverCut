@@ -1,35 +1,36 @@
 {
-  "name": "Sridevi Beauty Center",
-  "description": "Specialized salon focusing on color corrections and transformations.",
+  "name": "Nirvana Beauty Lounge",
+  "description": "Upscale salon offering premium hair and beauty services in a luxurious setting.",
   "address": {
-    "street": "4462 Connaught Place",
-    "city": "Surat",
-    "state": "Gujarat",
-    "zipCode": "395001",
+    "street": "2148 Ring Road",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "zipCode": "500001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.81875009320264,
-      21.16225235665567
+      78.5087574379712,
+      17.401301090007767
     ]
   },
-  "contactPhone": "+91 89353 11562",
-  "contactEmail": "info@sridevibeautycenter.com",
-  "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
+  "contactPhone": "+91 10453 35819",
+  "contactEmail": "info@nirvanabeautylounge.com",
+  "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80"
+    "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Express Facial",
-      "description": "Quick refreshing facial",
-      "price": 53,
+      "name": "Full Face Waxing",
+      "description": "Complete facial hair removal",
+      "price": 41,
       "duration": 30
     },
     {
@@ -41,51 +42,65 @@
     },
     {
       "id": "3",
-      "name": "Ombre",
-      "description": "Graduated color effect",
-      "price": 120,
-      "duration": 150
+      "name": "Nail Art",
+      "description": "Custom nail designs",
+      "price": 15,
+      "duration": 15
     },
     {
       "id": "4",
-      "name": "Men's Cut",
-      "description": "Men's haircut and styling",
-      "price": 28,
-      "duration": 30
+      "name": "Deluxe Pedicure",
+      "description": "Luxury foot treatment with massage",
+      "price": 65,
+      "duration": 60
     },
     {
       "id": "5",
-      "name": "Blowout",
-      "description": "Wash and blowdry styling",
-      "price": 43,
-      "duration": 30
+      "name": "Body Wrap",
+      "description": "Detoxifying body treatment",
+      "price": 83,
+      "duration": 60
+    },
+    {
+      "id": "6",
+      "name": "Deep Cleansing Facial",
+      "description": "Thorough facial with extractions",
+      "price": 87,
+      "duration": 60
+    },
+    {
+      "id": "7",
+      "name": "Root Touch-up",
+      "description": "Color application for roots",
+      "price": 67,
+      "duration": 90
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Bridal Package",
-      "description": "Complete bridal beauty preparation",
-      "price": 200,
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 207,
       "duration": 180,
       "services": [
-        "Bridal Hair",
-        "Makeup Application",
-        "Gel Manicure"
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Divya Joshi",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Express Facial",
+        "Full Face Waxing",
         "Pedicure",
-        "Ombre"
+        "Nail Art"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -157,93 +172,14 @@
     },
     {
       "id": "2",
-      "name": "Priya Patel",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Express Facial",
+        "Full Face Waxing",
         "Pedicure",
-        "Ombre"
+        "Nail Art"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Pooja Agarwal",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Express Facial",
-        "Pedicure",
-        "Ombre"
-      ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -318,72 +254,167 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Evelyn W.",
-      "userImage": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
+      "userName": "Harper Y.",
+      "userImage": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
       "rating": 5,
-      "comment": "Amazing results! Everyone keeps complimenting my new look.",
-      "date": "2025-08-12T00:00:00.000Z"
+      "comment": "Excellent service from start to finish. Love this place!",
+      "date": "2025-08-31T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Victoria O.",
+      "userName": "Carter D.",
       "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
-      "rating": 3,
-      "comment": "Top-notch service and expertise. My go-to salon from now on!",
-      "date": "2025-07-19T00:00:00.000Z"
+      "rating": 5,
+      "comment": "The products they use are high quality and smell amazing.",
+      "date": "2025-09-04T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Elizabeth S.",
-      "userImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "userName": "Logan P.",
+      "userImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
+      "rating": 4,
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-09-02T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "Grace K.",
+      "userImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
       "rating": 5,
-      "comment": "Excellent service from start to finish. Love this place!",
-      "date": "2025-08-28T00:00:00.000Z"
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-09-08T00:00:00.000Z"
     }
   ],
-  "rating": 4.8,
-  "reviewCount": 1075,
+  "rating": 4,
+  "reviewCount": 1007,
   "operatingHours": [
     {
       "day": 1,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 2,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 3,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 4,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 5,
       "open": "9:00 AM",
-      "close": "8:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "9:00 AM",
       "close": "7:00 PM"
     },
     {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "11:00 AM",
+      "close": "5:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": []
+  "availability": [
+    {
+      "date": "2025-09-10",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    }
+  ]
 }

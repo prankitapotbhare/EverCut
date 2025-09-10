@@ -1,63 +1,68 @@
 {
-  "name": "Elegance Beauty Center",
-  "description": "Urban-inspired salon specializing in contemporary styles for the city dweller.",
+  "name": "Mirage Salon",
+  "description": "Vibrant salon known for bold colors and avant-garde styling.",
   "address": {
-    "street": "7099 Janpath",
-    "city": "Hyderabad",
-    "state": "Telangana",
-    "zipCode": "500001",
+    "street": "9062 MG Road",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "zipCode": "560001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      78.50645513409897,
-      17.3999521448303
+      77.6012305462968,
+      12.963468726608708
     ]
   },
-  "contactPhone": "+91 43469 40066",
-  "contactEmail": "info@elegancebeautycenter.com",
-  "image": "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
+  "contactPhone": "+91 52137 63084",
+  "contactEmail": "info@miragesalon.com",
+  "image": "https://images.unsplash.com/photo-1614438865362-9137f7e3036e?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80"
+    "https://images.unsplash.com/photo-1679621577488-4ec73fe17de6?q=80&w=1000",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1000&q=80",
+    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1000&q=80",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Deep Cleansing Facial",
-      "description": "Thorough facial with extractions",
-      "price": 73,
-      "duration": 60
+      "name": "Blowout",
+      "description": "Wash and blowdry styling",
+      "price": 36,
+      "duration": 30
     },
     {
       "id": "2",
-      "name": "Nail Art",
-      "description": "Custom nail designs",
-      "price": 15,
-      "duration": 15
+      "name": "Gel Manicure",
+      "description": "Long-lasting gel polish application",
+      "price": 40,
+      "duration": 45
     },
     {
       "id": "3",
-      "name": "Eyebrow Threading",
-      "description": "Precise eyebrow shaping",
-      "price": 14,
-      "duration": 15
-    },
-    {
-      "id": "4",
-      "name": "Full Highlights",
-      "description": "Complete highlight service",
-      "price": 131,
-      "duration": 150
+      "name": "Acrylic Nails",
+      "description": "Full set of acrylic nails",
+      "price": 76,
+      "duration": 90
     }
   ],
   "packages": [
     {
       "id": "1",
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 149,
+      "duration": 210,
+      "services": [
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
+      ]
+    },
+    {
+      "id": "2",
       "name": "Bridal Package",
       "description": "Complete bridal beauty preparation",
       "price": 194,
@@ -72,14 +77,14 @@
   "stylists": [
     {
       "id": "1",
-      "name": "Priya Patel",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Deep Cleansing Facial",
-        "Nail Art",
-        "Eyebrow Threading"
+        "Blowout",
+        "Gel Manicure",
+        "Acrylic Nails"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -151,14 +156,14 @@
     },
     {
       "id": "2",
-      "name": "Pooja Agarwal",
+      "name": "Shreya Iyer",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Deep Cleansing Facial",
-        "Nail Art",
-        "Eyebrow Threading"
+        "Blowout",
+        "Gel Manicure",
+        "Acrylic Nails"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -233,59 +238,68 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Henry D.",
-      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
+      "userName": "Grace K.",
+      "userImage": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
       "rating": 5,
-      "comment": "The products they use are high quality and smell amazing.",
-      "date": "2025-08-23T00:00:00.000Z"
+      "comment": "The package deal was worth every penny. So happy with the results!",
+      "date": "2025-08-11T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Wyatt B.",
-      "userImage": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
+      "userName": "Hannah G.",
+      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
       "rating": 5,
-      "comment": "Top-notch service and expertise. My go-to salon from now on!",
-      "date": "2025-07-30T00:00:00.000Z"
+      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
+      "date": "2025-08-19T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Lily I.",
+      "userImage": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "rating": 5,
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-09-01T00:00:00.000Z"
     }
   ],
-  "rating": 4.4,
-  "reviewCount": 1775,
+  "rating": 4.2,
+  "reviewCount": 883,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
       "open": "9:00 AM",
       "close": "7:00 PM"
     },
     {
-      "day": 6,
-      "open": "10:00 AM",
-      "close": "6:00 PM"
-    },
-    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "5:00 PM"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
@@ -294,58 +308,23 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
     },
     {
       "date": "2025-09-13",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
     },
     {
       "date": "2025-09-13",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
     },
     {
       "date": "2025-09-13",
-      "time": "17:15",
-      "formattedTime": "5:15 PM"
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
     },
     {
       "date": "2025-09-13",
@@ -353,44 +332,29 @@
       "formattedTime": "10:30 AM"
     },
     {
-      "date": "2025-09-14",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
+      "date": "2025-09-13",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
     },
     {
-      "date": "2025-09-14",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
+      "date": "2025-09-15",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
+      "date": "2025-09-15",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
     },
     {
-      "date": "2025-09-16",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
+      "date": "2025-09-15",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
     },
     {
-      "date": "2025-09-16",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
+      "date": "2025-09-15",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
     }
   ]
 }

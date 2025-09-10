@@ -1,106 +1,118 @@
 {
-  "name": "Parvati Salon",
-  "description": "High-end salon offering premium services with exceptional attention to detail.",
+  "name": "Ivory Salon",
+  "description": "Boutique salon focused on personalized service and attention to detail.",
   "address": {
-    "street": "3042 Sarojini Nagar",
-    "city": "Bangalore",
-    "state": "Karnataka",
-    "zipCode": "560001",
+    "street": "2452 Commercial Street",
+    "city": "Delhi",
+    "state": "Delhi",
+    "zipCode": "110001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      77.61082108925501,
-      12.985581451133939
+      77.09680400037435,
+      28.70983974051837
     ]
   },
-  "contactPhone": "+91 43508 41987",
-  "contactEmail": "info@parvatisalon.com",
-  "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
+  "contactPhone": "+91 36651 60667",
+  "contactEmail": "info@ivorysalon.com",
+  "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80"
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80",
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Partial Highlights",
-      "description": "Highlights for top and sides",
-      "price": 93,
-      "duration": 90
+      "name": "Hair Extensions",
+      "description": "Hair extension application",
+      "price": 250,
+      "duration": 180
     },
     {
       "id": "2",
-      "name": "Balayage",
-      "description": "Hand-painted highlighting technique",
-      "price": 154,
-      "duration": 150
+      "name": "Full Face Waxing",
+      "description": "Complete facial hair removal",
+      "price": 47,
+      "duration": 30
     },
     {
       "id": "3",
-      "name": "Premium Haircut",
-      "description": "Detailed haircut with styling",
-      "price": 52,
-      "duration": 45
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 29,
+      "duration": 30
     },
     {
       "id": "4",
-      "name": "Men's Cut",
-      "description": "Men's haircut and styling",
-      "price": 27,
+      "name": "Deep Tissue Massage",
+      "description": "Therapeutic muscle massage",
+      "price": 94,
+      "duration": 60
+    },
+    {
+      "id": "5",
+      "name": "Brazilian Blowout",
+      "description": "Smoothing and anti-frizz treatment",
+      "price": 185,
+      "duration": 120
+    },
+    {
+      "id": "6",
+      "name": "Basic Manicure",
+      "description": "Nail shaping, cuticle care, and polish",
+      "price": 25,
       "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Color Transformation",
-      "description": "Complete hair color makeover",
-      "price": 145,
-      "duration": 180,
-      "services": [
-        "Full Color",
-        "Deep Conditioning",
-        "Blowout"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 153,
-      "duration": 210,
-      "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
-      ]
-    },
-    {
-      "id": "3",
       "name": "Relaxation Package",
       "description": "Ultimate relaxation experience",
-      "price": 162,
+      "price": 157,
       "duration": 150,
       "services": [
         "Swedish Massage",
         "Express Facial",
         "Pedicure"
       ]
+    },
+    {
+      "id": "2",
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 76,
+      "duration": 60,
+      "services": [
+        "Basic Haircut",
+        "Express Facial"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 243,
+      "duration": 120,
+      "services": [
+        "Swedish Massage (2)",
+        "Pedicure (2)"
+      ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Riya Singh",
+      "name": "Divya Joshi",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Partial Highlights",
-        "Balayage",
-        "Premium Haircut"
+        "Hair Extensions",
+        "Full Face Waxing",
+        "Deep Conditioning"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -172,14 +184,14 @@
     },
     {
       "id": "2",
-      "name": "Shreya Iyer",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Partial Highlights",
-        "Balayage",
-        "Premium Haircut"
+        "Hair Extensions",
+        "Full Face Waxing",
+        "Deep Conditioning"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -251,14 +263,14 @@
     },
     {
       "id": "3",
-      "name": "Shreya Iyer",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Partial Highlights",
-        "Balayage",
-        "Premium Haircut"
+        "Hair Extensions",
+        "Full Face Waxing",
+        "Deep Conditioning"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -333,59 +345,77 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Matthew X.",
-      "userImage": "https://images.unsplash.com/photo-1557555187-23d685287bc3?w=100&q=80",
-      "rating": 3,
-      "comment": "Absolutely loved my experience here! The staff was so professional.",
-      "date": "2025-08-24T00:00:00.000Z"
+      "userName": "Gabriel F.",
+      "userImage": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
+      "rating": 5,
+      "comment": "I appreciate how they explained each step of the process.",
+      "date": "2025-09-03T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Hannah G.",
-      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
+      "userName": "William K.",
+      "userImage": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
       "rating": 5,
-      "comment": "Reasonable prices for the quality of service you receive.",
-      "date": "2025-09-04T00:00:00.000Z"
+      "comment": "The package deal was worth every penny. So happy with the results!",
+      "date": "2025-07-12T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Lily I.",
+      "userImage": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80",
+      "rating": 5,
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-08-10T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "Amelia A.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "rating": 5,
+      "comment": "They were able to fit me in last minute. Such great customer service!",
+      "date": "2025-07-30T00:00:00.000Z"
     }
   ],
-  "rating": 4.4,
-  "reviewCount": 880,
+  "rating": 5,
+  "reviewCount": 1937,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 6,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "11:00 AM",
+      "close": "6:00 PM"
     }
   ],
   "featured": false,
@@ -394,63 +424,98 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-12",
       "time": "15:45",
       "formattedTime": "3:45 PM"
     },
     {
-      "date": "2025-09-12",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "date": "2025-09-11",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
     },
     {
-      "date": "2025-09-12",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-16",
+      "date": "2025-09-11",
       "time": "16:00",
       "formattedTime": "4:00 PM"
     },
     {
+      "date": "2025-09-12",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
+    },
+    {
       "date": "2025-09-16",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
     }
   ]
 }

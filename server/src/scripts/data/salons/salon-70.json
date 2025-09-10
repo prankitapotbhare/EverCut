@@ -1,129 +1,122 @@
 {
-  "name": "Lakme Beauty Lounge",
-  "description": "Budget-friendly salon providing quality services at accessible prices.",
+  "name": "Rooted Salon",
+  "description": "Minimalist salon focused on precision cuts and natural beauty.",
   "address": {
-    "street": "9745 Karol Bagh",
-    "city": "Ahmedabad",
-    "state": "Gujarat",
-    "zipCode": "380001",
+    "street": "6085 Linking Road",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "zipCode": "400001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.54853852428505,
-      23.004647218314233
+      72.88686846698835,
+      19.087897975826127
     ]
   },
-  "contactPhone": "+91 10921 83898",
-  "contactEmail": "info@lakmebeautylounge.com",
-  "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
+  "contactPhone": "+91 91936 73936",
+  "contactEmail": "info@rootedsalon.com",
+  "image": "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
-    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80"
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
+    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80",
+    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Men's Cut",
-      "description": "Men's haircut and styling",
-      "price": 33,
+      "name": "Blowout",
+      "description": "Wash and blowdry styling",
+      "price": 43,
       "duration": 30
     },
     {
       "id": "2",
-      "name": "Microdermabrasion",
-      "description": "Exfoliating skin treatment",
-      "price": 110,
-      "duration": 45
+      "name": "Lip Waxing",
+      "description": "Upper lip hair removal",
+      "price": 9,
+      "duration": 10
     },
     {
       "id": "3",
-      "name": "Bridal Hair",
-      "description": "Wedding day hair styling",
-      "price": 112,
-      "duration": 90
-    },
-    {
-      "id": "4",
-      "name": "Ombre",
-      "description": "Graduated color effect",
-      "price": 142,
+      "name": "Balayage",
+      "description": "Hand-painted highlighting technique",
+      "price": 137,
       "duration": 150
     },
     {
+      "id": "4",
+      "name": "Microdermabrasion",
+      "description": "Exfoliating skin treatment",
+      "price": 116,
+      "duration": 45
+    },
+    {
       "id": "5",
-      "name": "Swedish Massage",
-      "description": "Relaxing full body massage",
-      "price": 74,
-      "duration": 60
+      "name": "Keratin Treatment",
+      "description": "Smoothing keratin service",
+      "price": 196,
+      "duration": 150
     },
     {
       "id": "6",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 99,
-      "duration": 60
-    },
-    {
-      "id": "7",
-      "name": "Updo Styling",
-      "description": "Formal updo for special occasions",
-      "price": 75,
-      "duration": 60
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 128,
+      "duration": 45
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Bridal Package",
-      "description": "Complete bridal beauty preparation",
-      "price": 194,
-      "duration": 180,
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 268,
+      "duration": 300,
       "services": [
-        "Bridal Hair",
-        "Makeup Application",
-        "Gel Manicure"
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
+        "Pedicure"
       ]
     },
     {
       "id": "2",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 103,
-      "duration": 90,
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 203,
+      "duration": 180,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
       ]
     },
     {
       "id": "3",
-      "name": "Relaxation Package",
-      "description": "Ultimate relaxation experience",
-      "price": 155,
-      "duration": 150,
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 137,
+      "duration": 180,
       "services": [
-        "Swedish Massage",
-        "Express Facial",
-        "Pedicure"
+        "Full Color",
+        "Deep Conditioning",
+        "Blowout"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Riya Singh",
+      "name": "Pooja Agarwal",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Men's Cut",
-        "Microdermabrasion",
-        "Bridal Hair"
+        "Blowout",
+        "Lip Waxing",
+        "Balayage"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -195,91 +188,12 @@
     },
     {
       "id": "2",
-      "name": "Riya Singh",
+      "name": "Divya Joshi",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Men's Cut",
-        "Microdermabrasion",
-        "Bridal Hair"
-      ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Neha Kumar",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Men's Cut",
-        "Microdermabrasion",
-        "Bridal Hair"
+        "Blowout",
+        "Lip Waxing",
+        "Balayage"
       ],
       "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
@@ -356,15 +270,15 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "James T.",
-      "userImage": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+      "userName": "Caden J.",
+      "userImage": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
       "rating": 5,
-      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
-      "date": "2025-08-20T00:00:00.000Z"
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-07-23T00:00:00.000Z"
     }
   ],
   "rating": 4.4,
-  "reviewCount": 935,
+  "reviewCount": 1427,
   "operatingHours": [
     {
       "day": 1,
@@ -408,73 +322,103 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
     },
     {
       "date": "2025-09-11",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-13",
       "time": "12:00",
       "formattedTime": "12:00 PM"
     },
     {
       "date": "2025-09-13",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
+      "date": "2025-09-14",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
     },
     {
-      "date": "2025-09-13",
+      "date": "2025-09-14",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
+    },
+    {
+      "date": "2025-09-14",
       "time": "12:30",
       "formattedTime": "12:30 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "9:00",
-      "formattedTime": "9:00 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
+      "date": "2025-09-15",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
     },
     {
       "date": "2025-09-15",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
     },
     {
       "date": "2025-09-15",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     }
   ]
 }

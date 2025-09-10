@@ -1,63 +1,68 @@
 {
-  "name": "Ganga Salon",
-  "description": "Vibrant salon known for bold colors and avant-garde styling.",
+  "name": "Liva Hair Studio",
+  "description": "Family-friendly salon providing quality services for all ages at affordable prices.",
   "address": {
-    "street": "7043 SV Road",
-    "city": "Ahmedabad",
-    "state": "Gujarat",
-    "zipCode": "380001",
+    "street": "7935 Sarojini Nagar",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "zipCode": "400001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.57203243620599,
-      23.002360918743438
+      72.86316983636199,
+      19.100889305407975
     ]
   },
-  "contactPhone": "+91 28689 28936",
-  "contactEmail": "info@gangasalon.com",
-  "image": "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
+  "contactPhone": "+91 61030 75700",
+  "contactEmail": "info@livahairstudio.com",
+  "image": "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80"
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Full Face Waxing",
-      "description": "Complete facial hair removal",
-      "price": 45,
-      "duration": 30
+      "name": "Hot Stone Massage",
+      "description": "Massage with heated stones",
+      "price": 100,
+      "duration": 75
     },
     {
       "id": "2",
-      "name": "Keratin Treatment",
-      "description": "Smoothing keratin service",
-      "price": 192,
-      "duration": 150
+      "name": "Men's Cut",
+      "description": "Men's haircut and styling",
+      "price": 28,
+      "duration": 30
     },
     {
       "id": "3",
-      "name": "Body Wrap",
-      "description": "Detoxifying body treatment",
-      "price": 80,
-      "duration": 60
-    },
-    {
-      "id": "4",
-      "name": "Ombre",
-      "description": "Graduated color effect",
-      "price": 123,
+      "name": "Full Highlights",
+      "description": "Complete highlight service",
+      "price": 117,
       "duration": 150
     }
   ],
   "packages": [
     {
       "id": "1",
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 213,
+      "duration": 180,
+      "services": [
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
+      ]
+    },
+    {
+      "id": "2",
       "name": "Complete Makeover",
       "description": "Full beauty transformation package",
-      "price": 146,
+      "price": 145,
       "duration": 210,
       "services": [
         "Premium Haircut",
@@ -66,39 +71,27 @@
       ]
     },
     {
-      "id": "2",
+      "id": "3",
       "name": "Relaxation Package",
       "description": "Ultimate relaxation experience",
-      "price": 168,
+      "price": 164,
       "duration": 150,
       "services": [
         "Swedish Massage",
         "Express Facial",
         "Pedicure"
       ]
-    },
-    {
-      "id": "3",
-      "name": "Hair Repair",
-      "description": "Restorative treatment for damaged hair",
-      "price": 229,
-      "duration": 210,
-      "services": [
-        "Keratin Treatment",
-        "Deep Conditioning",
-        "Trim"
-      ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Shreya Iyer",
+      "name": "Meera Nair",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Full Face Waxing",
-        "Keratin Treatment",
-        "Body Wrap"
+        "Hot Stone Massage",
+        "Men's Cut",
+        "Full Highlights"
       ],
       "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
@@ -172,14 +165,14 @@
     },
     {
       "id": "2",
-      "name": "Pooja Agarwal",
+      "name": "Sneha Gupta",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Full Face Waxing",
-        "Keratin Treatment",
-        "Body Wrap"
+        "Hot Stone Massage",
+        "Men's Cut",
+        "Full Highlights"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -254,50 +247,59 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Isabella G.",
-      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
+      "userName": "Harper Y.",
+      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
       "rating": 4,
-      "comment": "Amazing results! Everyone keeps complimenting my new look.",
-      "date": "2025-08-01T00:00:00.000Z"
+      "comment": "Very skilled stylists who really listen to what you want.",
+      "date": "2025-07-27T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Alexander B.",
+      "userImage": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
+      "rating": 4,
+      "comment": "The products they use are high quality and smell amazing.",
+      "date": "2025-09-02T00:00:00.000Z"
     }
   ],
   "rating": 4.3,
-  "reviewCount": 121,
+  "reviewCount": 404,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 6,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "11:00 AM",
+      "close": "6:00 PM"
     }
   ],
   "featured": false,
@@ -306,118 +308,73 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
     },
     {
       "date": "2025-09-10",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-15",
       "time": "14:15",
       "formattedTime": "2:15 PM"
     },
     {
-      "date": "2025-09-10",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-12",
+      "date": "2025-09-15",
       "time": "16:30",
       "formattedTime": "4:30 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
       "date": "2025-09-15",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
     },
     {
-      "date": "2025-09-15",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "date": "2025-09-16",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
     },
     {
       "date": "2025-09-16",
       "time": "9:30",
       "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
     }
   ]
 }

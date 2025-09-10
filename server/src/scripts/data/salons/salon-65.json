@@ -1,84 +1,82 @@
 {
-  "name": "Tabu Beauty Center",
-  "description": "Modern salon with a team of creative stylists who stay current with the latest trends.",
+  "name": "Prana Salon",
+  "description": "Urban-inspired salon specializing in contemporary styles for the city dweller.",
   "address": {
-    "street": "4906 Park Street",
-    "city": "Surat",
-    "state": "Gujarat",
-    "zipCode": "395001",
+    "street": "7249 Outer Ring Road",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "zipCode": "700001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.83155730120075,
-      21.17104152104925
+      88.36604300680268,
+      22.590261092164294
     ]
   },
-  "contactPhone": "+91 10120 78107",
-  "contactEmail": "info@tabubeautycenter.com",
-  "image": "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
+  "contactPhone": "+91 98626 53568",
+  "contactEmail": "info@pranasalon.com",
+  "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80"
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80",
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80",
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Deluxe Pedicure",
-      "description": "Luxury foot treatment with massage",
-      "price": 55,
-      "duration": 60
-    },
-    {
-      "id": "2",
-      "name": "Ombre",
-      "description": "Graduated color effect",
-      "price": 131,
+      "name": "Full Highlights",
+      "description": "Complete highlight service",
+      "price": 124,
       "duration": 150
     },
     {
-      "id": "3",
-      "name": "Eyebrow Waxing",
-      "description": "Eyebrow shaping with wax",
-      "price": 14,
+      "id": "2",
+      "name": "Eyebrow Threading",
+      "description": "Precise eyebrow shaping",
+      "price": 15,
       "duration": 15
     },
     {
+      "id": "3",
+      "name": "Basic Haircut",
+      "description": "Simple haircut and style",
+      "price": 35,
+      "duration": 30
+    },
+    {
       "id": "4",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 104,
-      "duration": 60
+      "name": "Full Face Waxing",
+      "description": "Complete facial hair removal",
+      "price": 46,
+      "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Quick Refresh",
-      "description": "Quick beauty refresh when you're short on time",
-      "price": 73,
-      "duration": 60,
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 240,
+      "duration": 120,
       "services": [
-        "Basic Haircut",
-        "Express Facial"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Priya Patel",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Deluxe Pedicure",
-        "Ombre",
-        "Eyebrow Waxing"
+        "Full Highlights",
+        "Eyebrow Threading",
+        "Basic Haircut"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -150,12 +148,12 @@
     },
     {
       "id": "2",
-      "name": "Anjali Sharma",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Deluxe Pedicure",
-        "Ombre",
-        "Eyebrow Waxing"
+        "Full Highlights",
+        "Eyebrow Threading",
+        "Basic Haircut"
       ],
       "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
@@ -229,91 +227,12 @@
     },
     {
       "id": "3",
-      "name": "Sneha Gupta",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Deluxe Pedicure",
-        "Ombre",
-        "Eyebrow Waxing"
-      ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Riya Singh",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Deluxe Pedicure",
-        "Ombre",
-        "Eyebrow Waxing"
+        "Full Highlights",
+        "Eyebrow Threading",
+        "Basic Haircut"
       ],
       "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
@@ -391,38 +310,47 @@
       "id": "1",
       "userId": "user-1",
       "userName": "Matthew X.",
-      "userImage": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
+      "userImage": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
       "rating": 5,
-      "comment": "The best salon experience I've had in years. Highly recommend!",
-      "date": "2025-08-28T00:00:00.000Z"
+      "comment": "Incredible attention to detail. They really know what they're doing.",
+      "date": "2025-07-24T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Ava J.",
+      "userImage": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
+      "rating": 5,
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-08-14T00:00:00.000Z"
     }
   ],
-  "rating": 4.4,
-  "reviewCount": 1315,
+  "rating": 4.8,
+  "reviewCount": 1469,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
@@ -432,8 +360,8 @@
     },
     {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
@@ -442,113 +370,103 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-13",
       "time": "13:00",
       "formattedTime": "1:00 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-14",
+      "date": "2025-09-11",
       "time": "15:15",
       "formattedTime": "3:15 PM"
     },
     {
-      "date": "2025-09-15",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
+      "date": "2025-09-11",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
     },
     {
-      "date": "2025-09-15",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
+      "date": "2025-09-12",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
     },
     {
-      "date": "2025-09-15",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
+      "date": "2025-09-12",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
     },
     {
-      "date": "2025-09-16",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
+      "date": "2025-09-12",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
     },
     {
-      "date": "2025-09-16",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
+      "date": "2025-09-12",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
     },
     {
       "date": "2025-09-16",
       "time": "10:45",
       "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
     }
   ]
 }

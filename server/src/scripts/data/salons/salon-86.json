@@ -1,73 +1,103 @@
 {
-  "name": "Sonali Salon",
-  "description": "Contemporary salon with expert stylists specializing in modern cuts and colors.",
+  "name": "Riva Beauty Lounge",
+  "description": "Artistic salon where stylists approach hair as a creative canvas.",
   "address": {
-    "street": "6406 Hill Road",
-    "city": "Hyderabad",
-    "state": "Telangana",
-    "zipCode": "500001",
+    "street": "6640 India Gate Road",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "zipCode": "400001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      78.49419206208798,
-      17.375609172567763
+      72.89623338262825,
+      19.09400698418524
     ]
   },
-  "contactPhone": "+91 34951 89378",
-  "contactEmail": "info@sonalisalon.com",
-  "image": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
+  "contactPhone": "+91 27955 87194",
+  "contactEmail": "info@rivabeautylounge.com",
+  "image": "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80"
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Deluxe Pedicure",
-      "description": "Luxury foot treatment with massage",
-      "price": 65,
-      "duration": 60
+      "name": "Nail Art",
+      "description": "Custom nail designs",
+      "price": 14,
+      "duration": 15
     },
     {
       "id": "2",
-      "name": "Hair Extensions",
-      "description": "Hair extension application",
-      "price": 254,
-      "duration": 180
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 76,
+      "duration": 60
     },
     {
       "id": "3",
-      "name": "Hot Stone Massage",
-      "description": "Massage with heated stones",
-      "price": 103,
-      "duration": 75
+      "name": "Hair Extensions",
+      "description": "Hair extension application",
+      "price": 262,
+      "duration": 180
+    },
+    {
+      "id": "4",
+      "name": "Pedicure",
+      "description": "Foot care and polish application",
+      "price": 48,
+      "duration": 45
+    },
+    {
+      "id": "5",
+      "name": "Brazilian Blowout",
+      "description": "Smoothing and anti-frizz treatment",
+      "price": 206,
+      "duration": 120
+    },
+    {
+      "id": "6",
+      "name": "Premium Haircut",
+      "description": "Detailed haircut with styling",
+      "price": 54,
+      "duration": 45
+    },
+    {
+      "id": "7",
+      "name": "Eyebrow Threading",
+      "description": "Precise eyebrow shaping",
+      "price": 15,
+      "duration": 15
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Quick Refresh",
-      "description": "Quick beauty refresh when you're short on time",
-      "price": 77,
-      "duration": 60,
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 143,
+      "duration": 180,
       "services": [
-        "Basic Haircut",
-        "Express Facial"
+        "Full Color",
+        "Deep Conditioning",
+        "Blowout"
       ]
     },
     {
       "id": "2",
-      "name": "Relaxation Package",
-      "description": "Ultimate relaxation experience",
-      "price": 152,
-      "duration": 150,
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 230,
+      "duration": 120,
       "services": [
-        "Swedish Massage",
-        "Express Facial",
-        "Pedicure"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     }
   ],
@@ -77,11 +107,11 @@
       "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Deluxe Pedicure",
-        "Hair Extensions",
-        "Hot Stone Massage"
+        "Nail Art",
+        "Updo Styling",
+        "Hair Extensions"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -153,14 +183,14 @@
     },
     {
       "id": "2",
-      "name": "Anjali Sharma",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Deluxe Pedicure",
-        "Hair Extensions",
-        "Hot Stone Massage"
+        "Nail Art",
+        "Updo Styling",
+        "Hair Extensions"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -232,12 +262,12 @@
     },
     {
       "id": "3",
-      "name": "Pooja Agarwal",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Deluxe Pedicure",
-        "Hair Extensions",
-        "Hot Stone Massage"
+        "Nail Art",
+        "Updo Styling",
+        "Hair Extensions"
       ],
       "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
@@ -314,63 +344,123 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Benjamin H.",
-      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
+      "userName": "Grace K.",
+      "userImage": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&q=80",
       "rating": 5,
-      "comment": "Incredible attention to detail. They really know what they're doing.",
-      "date": "2025-07-24T00:00:00.000Z"
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-08-02T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Gabriel F.",
-      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
-      "rating": 4,
-      "comment": "My new hairstyle is perfect. Exactly what I wanted!",
-      "date": "2025-08-30T00:00:00.000Z"
+      "userName": "Hannah G.",
+      "userImage": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80",
+      "rating": 5,
+      "comment": "Very skilled stylists who really listen to what you want.",
+      "date": "2025-08-19T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Caden J.",
+      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
+      "rating": 5,
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-07-28T00:00:00.000Z"
     }
   ],
-  "rating": 4.8,
-  "reviewCount": 1001,
+  "rating": 4.5,
+  "reviewCount": 697,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 6,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "11:00 AM",
+      "close": "6:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": []
+  "availability": [
+    {
+      "date": "2025-09-10",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    }
+  ]
 }

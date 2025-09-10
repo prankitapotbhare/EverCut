@@ -1,8 +1,8 @@
 {
-  "name": "Sushmita Hair Studio",
-  "description": "Eco-friendly salon using organic and sustainable products for all services.",
+  "name": "Serene Hair Lounge",
+  "description": "Trendy salon specializing in cutting-edge styles and innovative color techniques.",
   "address": {
-    "street": "4343 Khan Market",
+    "street": "8000 Linking Road",
     "city": "Pune",
     "state": "Maharashtra",
     "zipCode": "411001",
@@ -11,97 +11,94 @@
   "location": {
     "type": "Point",
     "coordinates": [
-      73.84611046581144,
-      18.542102868541892
+      73.85399192705896,
+      18.518431267648637
     ]
   },
-  "contactPhone": "+91 47197 22448",
-  "contactEmail": "info@sushmitahairstudio.com",
-  "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
+  "contactPhone": "+91 30642 27436",
+  "contactEmail": "info@serenehairlounge.com",
+  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80"
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1661717725396-b05465e725cd?q=80&w=1000",
+    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Basic Haircut",
-      "description": "Simple haircut and style",
-      "price": 34,
-      "duration": 30
+      "name": "Deep Cleansing Facial",
+      "description": "Thorough facial with extractions",
+      "price": 75,
+      "duration": 60
     },
     {
       "id": "2",
-      "name": "Brazilian Blowout",
-      "description": "Smoothing and anti-frizz treatment",
-      "price": 197,
-      "duration": 120
+      "name": "Pedicure",
+      "description": "Foot care and polish application",
+      "price": 44,
+      "duration": 45
     },
     {
       "id": "3",
-      "name": "Hair Extensions",
-      "description": "Hair extension application",
-      "price": 256,
-      "duration": 180
+      "name": "Body Scrub",
+      "description": "Exfoliating body treatment",
+      "price": 69,
+      "duration": 45
     },
     {
       "id": "4",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
-      "price": 73,
-      "duration": 90
+      "name": "Full Color",
+      "description": "All-over hair color application",
+      "price": 93,
+      "duration": 120
+    },
+    {
+      "id": "5",
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 15,
+      "duration": 15
+    },
+    {
+      "id": "6",
+      "name": "Full Highlights",
+      "description": "Complete highlight service",
+      "price": 108,
+      "duration": 150
+    },
+    {
+      "id": "7",
+      "name": "Swedish Massage",
+      "description": "Relaxing full body massage",
+      "price": 87,
+      "duration": 60
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 103,
-      "duration": 90,
+      "name": "Bridal Package",
+      "description": "Complete bridal beauty preparation",
+      "price": 201,
+      "duration": 180,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Relaxation Package",
-      "description": "Ultimate relaxation experience",
-      "price": 164,
-      "duration": 150,
-      "services": [
-        "Swedish Massage",
-        "Express Facial",
-        "Pedicure"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 154,
-      "duration": 210,
-      "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
+        "Bridal Hair",
+        "Makeup Application",
+        "Gel Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Priya Patel",
+      "name": "Meera Nair",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Basic Haircut",
-        "Brazilian Blowout",
-        "Hair Extensions"
+        "Deep Cleansing Facial",
+        "Pedicure",
+        "Body Scrub"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -173,14 +170,14 @@
     },
     {
       "id": "2",
-      "name": "Neha Kumar",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Basic Haircut",
-        "Brazilian Blowout",
-        "Hair Extensions"
+        "Deep Cleansing Facial",
+        "Pedicure",
+        "Body Scrub"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -252,93 +249,14 @@
     },
     {
       "id": "3",
-      "name": "Meera Nair",
+      "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Basic Haircut",
-        "Brazilian Blowout",
-        "Hair Extensions"
+        "Deep Cleansing Facial",
+        "Pedicure",
+        "Body Scrub"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Anjali Sharma",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Basic Haircut",
-        "Brazilian Blowout",
-        "Hair Extensions"
-      ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -413,188 +331,54 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Evelyn W.",
-      "userImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80",
-      "rating": 4,
-      "comment": "I appreciate how they explained each step of the process.",
-      "date": "2025-08-14T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Hannah G.",
-      "userImage": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
-      "rating": 4,
-      "comment": "The massage chairs during the shampoo were heavenly!",
-      "date": "2025-09-02T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Sofia Q.",
-      "userImage": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80",
+      "userName": "Wyatt B.",
+      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
       "rating": 5,
       "comment": "Incredible attention to detail. They really know what they're doing.",
-      "date": "2025-08-23T00:00:00.000Z"
+      "date": "2025-08-11T00:00:00.000Z"
     }
   ],
-  "rating": 4.5,
-  "reviewCount": 852,
+  "rating": 4.4,
+  "reviewCount": 1441,
   "operatingHours": [
     {
       "day": 1,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
-    },
-    {
-      "day": 2,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
-    },
-    {
-      "day": 3,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
-    },
-    {
-      "day": 4,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
-    },
-    {
-      "day": 5,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
-    },
-    {
-      "day": 6,
       "open": "9:00 AM",
       "close": "7:00 PM"
     },
     {
-      "day": 0,
+      "day": 2,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
+      "day": 6,
       "open": "10:00 AM",
-      "close": "4:00 PM"
+      "close": "6:00 PM"
+    },
+    {
+      "day": 0,
+      "open": "11:00 AM",
+      "close": "5:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": [
-    {
-      "date": "2025-09-10",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    }
-  ]
+  "availability": []
 }

@@ -1,124 +1,120 @@
 {
-  "name": "Priyanka Beauty Lounge",
-  "description": "Celebrity-inspired salon bringing red carpet looks to everyday clients.",
+  "name": "The Curl Room",
+  "description": "Eco-friendly salon using organic and sustainable products for all services.",
   "address": {
-    "street": "5503 Brigade Road",
-    "city": "Hyderabad",
-    "state": "Telangana",
-    "zipCode": "500001",
+    "street": "7323 Brigade Road",
+    "city": "Delhi",
+    "state": "Delhi",
+    "zipCode": "110001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      78.46862599234163,
-      17.36363741292277
+      77.11927707912172,
+      28.712638866341635
     ]
   },
-  "contactPhone": "+91 53493 21098",
-  "contactEmail": "info@priyankabeautylounge.com",
-  "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
+  "contactPhone": "+91 13904 21647",
+  "contactEmail": "info@thecurlroom.com",
+  "image": "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
-    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80"
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80",
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1661717725396-b05465e725cd?q=80&w=1000",
+    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=1000",
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Brazilian Blowout",
-      "description": "Smoothing and anti-frizz treatment",
-      "price": 211,
-      "duration": 120
+      "name": "Men's Cut",
+      "description": "Men's haircut and styling",
+      "price": 32,
+      "duration": 30
     },
     {
       "id": "2",
-      "name": "Partial Highlights",
-      "description": "Highlights for top and sides",
-      "price": 81,
-      "duration": 90
-    },
-    {
-      "id": "3",
-      "name": "Microdermabrasion",
-      "description": "Exfoliating skin treatment",
-      "price": 113,
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 128,
       "duration": 45
     },
     {
+      "id": "3",
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 15,
+      "duration": 15
+    },
+    {
       "id": "4",
-      "name": "Full Highlights",
-      "description": "Complete highlight service",
-      "price": 120,
-      "duration": 150
+      "name": "Basic Manicure",
+      "description": "Nail shaping, cuticle care, and polish",
+      "price": 24,
+      "duration": 30
     },
     {
       "id": "5",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 92,
-      "duration": 60
-    },
-    {
-      "id": "6",
-      "name": "Balayage",
-      "description": "Hand-painted highlighting technique",
-      "price": 146,
+      "name": "Keratin Treatment",
+      "description": "Smoothing keratin service",
+      "price": 164,
       "duration": 150
     },
     {
-      "id": "7",
-      "name": "Root Touch-up",
-      "description": "Color application for roots",
-      "price": 62,
-      "duration": 90
+      "id": "6",
+      "name": "Nail Art",
+      "description": "Custom nail designs",
+      "price": 14,
+      "duration": 15
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Hair Repair",
-      "description": "Restorative treatment for damaged hair",
-      "price": 230,
-      "duration": 210,
-      "services": [
-        "Keratin Treatment",
-        "Deep Conditioning",
-        "Trim"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Color Transformation",
-      "description": "Complete hair color makeover",
-      "price": 141,
-      "duration": 180,
-      "services": [
-        "Full Color",
-        "Deep Conditioning",
-        "Blowout"
-      ]
-    },
-    {
-      "id": "3",
       "name": "Quick Refresh",
       "description": "Quick beauty refresh when you're short on time",
-      "price": 78,
+      "price": 71,
       "duration": 60,
       "services": [
         "Basic Haircut",
         "Express Facial"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 243,
+      "duration": 120,
+      "services": [
+        "Swedish Massage (2)",
+        "Pedicure (2)"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 286,
+      "duration": 300,
+      "services": [
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
+        "Pedicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Pooja Agarwal",
+      "name": "Sneha Gupta",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Brazilian Blowout",
-        "Partial Highlights",
-        "Microdermabrasion"
+        "Men's Cut",
+        "Chemical Peel",
+        "Eyebrow Waxing"
       ],
       "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
@@ -195,90 +191,11 @@
       "name": "Shreya Iyer",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Brazilian Blowout",
-        "Partial Highlights",
-        "Microdermabrasion"
+        "Men's Cut",
+        "Chemical Peel",
+        "Eyebrow Waxing"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Kavya Reddy",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Brazilian Blowout",
-        "Partial Highlights",
-        "Microdermabrasion"
-      ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -353,24 +270,15 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Zoe E.",
-      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "userName": "Henry D.",
+      "userImage": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
       "rating": 5,
-      "comment": "The products they use are high quality and smell amazing.",
-      "date": "2025-07-14T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Owen H.",
-      "userImage": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-      "rating": 5,
-      "comment": "I appreciate how they explained each step of the process.",
-      "date": "2025-07-29T00:00:00.000Z"
+      "comment": "The package deal was worth every penny. So happy with the results!",
+      "date": "2025-07-13T00:00:00.000Z"
     }
   ],
-  "rating": 4.4,
-  "reviewCount": 2090,
+  "rating": 4.1,
+  "reviewCount": 2425,
   "operatingHours": [
     {
       "day": 1,
@@ -414,58 +322,78 @@
   "availability": [
     {
       "date": "2025-09-10",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-09-10",
       "time": "11:15",
       "formattedTime": "11:15 AM"
     },
     {
       "date": "2025-09-10",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
     },
     {
       "date": "2025-09-11",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
+    },
+    {
+      "date": "2025-09-14",
       "time": "16:30",
       "formattedTime": "4:30 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
+      "date": "2025-09-16",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
+      "date": "2025-09-16",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     }
   ]
 }

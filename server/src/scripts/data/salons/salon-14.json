@@ -1,111 +1,109 @@
 {
-  "name": "Saraswati Hair Studio",
-  "description": "Contemporary salon with expert stylists specializing in modern cuts and colors.",
+  "name": "Blush & Bloom",
+  "description": "Specialized salon focusing on color corrections and transformations.",
   "address": {
-    "street": "5406 LBS Marg",
-    "city": "Jaipur",
-    "state": "Rajasthan",
-    "zipCode": "302001",
+    "street": "8993 Karol Bagh",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "zipCode": "700001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      75.80376906014367,
-      26.906568641933436
+      88.36211836449594,
+      22.584410438408728
     ]
   },
-  "contactPhone": "+91 41692 29977",
-  "contactEmail": "info@saraswatihairstudio.com",
-  "image": "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
+  "contactPhone": "+91 26202 75226",
+  "contactEmail": "info@blush&bloom.com",
+  "image": "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80"
+    "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
+    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80",
+    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=1000",
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 104,
-      "duration": 60
+      "name": "Basic Manicure",
+      "description": "Nail shaping, cuticle care, and polish",
+      "price": 27,
+      "duration": 30
     },
     {
       "id": "2",
-      "name": "Swedish Massage",
-      "description": "Relaxing full body massage",
-      "price": 84,
-      "duration": 60
+      "name": "Premium Haircut",
+      "description": "Detailed haircut with styling",
+      "price": 50,
+      "duration": 45
     },
     {
       "id": "3",
-      "name": "Hair Extensions",
-      "description": "Hair extension application",
-      "price": 239,
-      "duration": 180
+      "name": "Express Facial",
+      "description": "Quick refreshing facial",
+      "price": 51,
+      "duration": 30
     },
     {
       "id": "4",
-      "name": "Body Wrap",
-      "description": "Detoxifying body treatment",
-      "price": 80,
-      "duration": 60
+      "name": "Full Face Waxing",
+      "description": "Complete facial hair removal",
+      "price": 42,
+      "duration": 30
     },
     {
       "id": "5",
-      "name": "Root Touch-up",
-      "description": "Color application for roots",
-      "price": 62,
-      "duration": 90
+      "name": "Ombre",
+      "description": "Graduated color effect",
+      "price": 136,
+      "duration": 150
     },
     {
       "id": "6",
-      "name": "Express Facial",
-      "description": "Quick refreshing facial",
-      "price": 47,
-      "duration": 30
+      "name": "Deep Tissue Massage",
+      "description": "Therapeutic muscle massage",
+      "price": 88,
+      "duration": 60
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Luxury Experience",
-      "description": "Premium head-to-toe beauty experience",
-      "price": 282,
-      "duration": 300,
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 74,
+      "duration": 60,
       "services": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Gel Manicure",
-        "Pedicure"
+        "Basic Haircut",
+        "Express Facial"
       ]
     },
     {
       "id": "2",
-      "name": "Hair Repair",
-      "description": "Restorative treatment for damaged hair",
-      "price": 226,
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 149,
       "duration": 210,
       "services": [
-        "Keratin Treatment",
-        "Deep Conditioning",
-        "Trim"
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Neha Kumar",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Anti-Aging Facial",
-        "Swedish Massage",
-        "Hair Extensions"
+        "Basic Manicure",
+        "Premium Haircut",
+        "Express Facial"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -177,14 +175,14 @@
     },
     {
       "id": "2",
-      "name": "Priya Patel",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Anti-Aging Facial",
-        "Swedish Massage",
-        "Hair Extensions"
+        "Basic Manicure",
+        "Premium Haircut",
+        "Express Facial"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -256,14 +254,14 @@
     },
     {
       "id": "3",
-      "name": "Sneha Gupta",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Anti-Aging Facial",
-        "Swedish Massage",
-        "Hair Extensions"
+        "Basic Manicure",
+        "Premium Haircut",
+        "Express Facial"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -338,24 +336,15 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Matthew X.",
-      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
-      "rating": 4,
-      "comment": "Absolutely loved my experience here! The staff was so professional.",
-      "date": "2025-07-28T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Abigail U.",
-      "userImage": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "userName": "James T.",
+      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
       "rating": 5,
-      "comment": "The massage chairs during the shampoo were heavenly!",
-      "date": "2025-08-31T00:00:00.000Z"
+      "comment": "The products they use are high quality and smell amazing.",
+      "date": "2025-08-18T00:00:00.000Z"
     }
   ],
-  "rating": 4.9,
-  "reviewCount": 1586,
+  "rating": 4.5,
+  "reviewCount": 422,
   "operatingHours": [
     {
       "day": 1,
@@ -396,8 +385,114 @@
   "featured": false,
   "featuredReason": null,
   "specialOffer": {
-    "discount": "21%",
+    "discount": "24%",
     "description": "Flash Sale"
   },
-  "availability": []
+  "availability": [
+    {
+      "date": "2025-09-10",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    }
+  ]
 }

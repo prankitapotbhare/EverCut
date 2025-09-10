@@ -1,80 +1,87 @@
 {
-  "name": "Katrina Beauty Center",
-  "description": "Family-friendly salon providing quality services for all ages at affordable prices.",
+  "name": "Neha’s Studio",
+  "description": "Urban-inspired salon specializing in contemporary styles for the city dweller.",
   "address": {
-    "street": "4557 Eastern Express Highway",
-    "city": "Hyderabad",
-    "state": "Telangana",
-    "zipCode": "500001",
+    "street": "8586 India Gate Road",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "zipCode": "700001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      78.47247891582978,
-      17.394349958454534
+      88.35616120476121,
+      22.551663845380652
     ]
   },
-  "contactPhone": "+91 92300 27180",
-  "contactEmail": "info@katrinabeautycenter.com",
-  "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
+  "contactPhone": "+91 95730 95250",
+  "contactEmail": "info@neha’sstudio.com",
+  "image": "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80"
+    "https://images.unsplash.com/photo-1614438865362-9137f7e3036e?q=80&w=1000",
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1000&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
+    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Full Color",
-      "description": "All-over hair color application",
-      "price": 93,
-      "duration": 120
+      "name": "Acrylic Nails",
+      "description": "Full set of acrylic nails",
+      "price": 65,
+      "duration": 90
     },
     {
       "id": "2",
-      "name": "Full Highlights",
-      "description": "Complete highlight service",
-      "price": 123,
-      "duration": 150
+      "name": "Basic Haircut",
+      "description": "Simple haircut and style",
+      "price": 33,
+      "duration": 30
     },
     {
       "id": "3",
-      "name": "Bridal Hair",
-      "description": "Wedding day hair styling",
-      "price": 111,
-      "duration": 90
+      "name": "Balayage",
+      "description": "Hand-painted highlighting technique",
+      "price": 142,
+      "duration": 150
+    },
+    {
+      "id": "4",
+      "name": "Kids Cut",
+      "description": "Children's haircut (12 and under)",
+      "price": 25,
+      "duration": 20
+    },
+    {
+      "id": "5",
+      "name": "Body Scrub",
+      "description": "Exfoliating body treatment",
+      "price": 74,
+      "duration": 45
+    },
+    {
+      "id": "6",
+      "name": "Women's Cut & Style",
+      "description": "Women's haircut with blowout",
+      "price": 54,
+      "duration": 45
+    },
+    {
+      "id": "7",
+      "name": "Pedicure",
+      "description": "Foot care and polish application",
+      "price": 46,
+      "duration": 45
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 102,
-      "duration": 90,
-      "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Hair Repair",
-      "description": "Restorative treatment for damaged hair",
-      "price": 216,
-      "duration": 210,
-      "services": [
-        "Keratin Treatment",
-        "Deep Conditioning",
-        "Trim"
-      ]
-    },
-    {
-      "id": "3",
       "name": "Bridal Package",
       "description": "Complete bridal beauty preparation",
-      "price": 205,
+      "price": 208,
       "duration": 180,
       "services": [
         "Bridal Hair",
@@ -89,11 +96,11 @@
       "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Full Color",
-        "Full Highlights",
-        "Bridal Hair"
+        "Acrylic Nails",
+        "Basic Haircut",
+        "Balayage"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -165,14 +172,14 @@
     },
     {
       "id": "2",
-      "name": "Anjali Sharma",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Full Color",
-        "Full Highlights",
-        "Bridal Hair"
+        "Acrylic Nails",
+        "Basic Haircut",
+        "Balayage"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -247,15 +254,33 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Benjamin H.",
-      "userImage": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
+      "userName": "Noah P.",
+      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
       "rating": 5,
-      "comment": "I've never had a better color treatment. Absolutely perfect!",
-      "date": "2025-08-03T00:00:00.000Z"
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-09-02T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Michael V.",
+      "userImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
+      "rating": 5,
+      "comment": "My stylist was amazing and really understood what I wanted.",
+      "date": "2025-08-31T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Jackson N.",
+      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
+      "rating": 4,
+      "comment": "The staff went above and beyond to make sure I was happy.",
+      "date": "2025-07-14T00:00:00.000Z"
     }
   ],
-  "rating": 5,
-  "reviewCount": 1533,
+  "rating": 4.7,
+  "reviewCount": 488,
   "operatingHours": [
     {
       "day": 1,
@@ -298,74 +323,49 @@
   "specialOffer": null,
   "availability": [
     {
-      "date": "2025-09-11",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-11",
+      "date": "2025-09-10",
       "time": "14:30",
       "formattedTime": "2:30 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
+      "date": "2025-09-10",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
     },
     {
-      "date": "2025-09-11",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
+      "date": "2025-09-10",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
     },
     {
       "date": "2025-09-12",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
     },
     {
       "date": "2025-09-12",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
+      "date": "2025-09-12",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "17:15",
-      "formattedTime": "5:15 PM"
+      "date": "2025-09-12",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
     },
     {
-      "date": "2025-09-13",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
+      "date": "2025-09-12",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
     },
     {
       "date": "2025-09-14",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     },
     {
       "date": "2025-09-14",
@@ -373,44 +373,29 @@
       "formattedTime": "11:00 AM"
     },
     {
-      "date": "2025-09-14",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
+      "date": "2025-09-15",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
     },
     {
       "date": "2025-09-15",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
     },
     {
       "date": "2025-09-15",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
-    },
-    {
-      "date": "2025-09-16",
       "time": "13:15",
       "formattedTime": "1:15 PM"
     },
     {
-      "date": "2025-09-16",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
+      "date": "2025-09-15",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
     }
   ]
 }

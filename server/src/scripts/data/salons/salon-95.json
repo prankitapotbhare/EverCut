@@ -1,76 +1,101 @@
 {
-  "name": "Naturals Salon",
-  "description": "Relaxing spa-like salon offering a peaceful escape from the busy world.",
+  "name": "Seraph Beauty Bar",
+  "description": "Award-winning salon known for excellence in all aspects of hair and beauty services.",
   "address": {
-    "street": "8416 Karol Bagh",
-    "city": "Chennai",
-    "state": "Tamil Nadu",
-    "zipCode": "600001",
+    "street": "9515 Carter Road",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "zipCode": "500001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      80.26535682954616,
-      13.0807714023217
+      78.47731207402985,
+      17.40298712847019
     ]
   },
-  "contactPhone": "+91 39556 63773",
-  "contactEmail": "info@naturalssalon.com",
-  "image": "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+  "contactPhone": "+91 36067 23199",
+  "contactEmail": "info@seraphbeautybar.com",
+  "image": "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80"
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
+    "https://images.unsplash.com/photo-1614438865362-9137f7e3036e?q=80&w=1000",
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Basic Haircut",
-      "description": "Simple haircut and style",
-      "price": 35,
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 30,
       "duration": 30
     },
     {
       "id": "2",
-      "name": "Hot Stone Massage",
-      "description": "Massage with heated stones",
-      "price": 103,
-      "duration": 75
+      "name": "Full Highlights",
+      "description": "Complete highlight service",
+      "price": 113,
+      "duration": 150
     },
     {
       "id": "3",
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 77,
+      "duration": 60
+    },
+    {
+      "id": "4",
+      "name": "Hot Stone Massage",
+      "description": "Massage with heated stones",
+      "price": 115,
+      "duration": 75
+    },
+    {
+      "id": "5",
+      "name": "Bridal Hair",
+      "description": "Wedding day hair styling",
+      "price": 120,
+      "duration": 90
+    },
+    {
+      "id": "6",
       "name": "Men's Cut",
       "description": "Men's haircut and styling",
-      "price": 30,
+      "price": 29,
       "duration": 30
+    },
+    {
+      "id": "7",
+      "name": "Deluxe Pedicure",
+      "description": "Luxury foot treatment with massage",
+      "price": 55,
+      "duration": 60
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Color Transformation",
-      "description": "Complete hair color makeover",
-      "price": 140,
-      "duration": 180,
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 248,
+      "duration": 120,
       "services": [
-        "Full Color",
-        "Deep Conditioning",
-        "Blowout"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Pooja Agarwal",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Basic Haircut",
-        "Hot Stone Massage",
-        "Men's Cut"
+        "Deep Conditioning",
+        "Full Highlights",
+        "Updo Styling"
       ],
       "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
@@ -144,14 +169,14 @@
     },
     {
       "id": "2",
-      "name": "Riya Singh",
+      "name": "Shreya Iyer",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Basic Haircut",
-        "Hot Stone Massage",
-        "Men's Cut"
+        "Deep Conditioning",
+        "Full Highlights",
+        "Updo Styling"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -223,14 +248,14 @@
     },
     {
       "id": "3",
-      "name": "Kavya Reddy",
+      "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Basic Haircut",
-        "Hot Stone Massage",
-        "Men's Cut"
+        "Deep Conditioning",
+        "Full Highlights",
+        "Updo Styling"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -302,14 +327,14 @@
     },
     {
       "id": "4",
-      "name": "Meera Nair",
+      "name": "Sneha Gupta",
       "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
       "specialties": [
-        "Basic Haircut",
-        "Hot Stone Massage",
-        "Men's Cut"
+        "Deep Conditioning",
+        "Full Highlights",
+        "Updo Styling"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -384,24 +409,15 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Logan P.",
-      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
-      "rating": 4,
-      "comment": "The staff went above and beyond to make sure I was happy.",
-      "date": "2025-08-21T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Henry D.",
-      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
-      "rating": 5,
-      "comment": "My new hairstyle is perfect. Exactly what I wanted!",
-      "date": "2025-09-09T00:00:00.000Z"
+      "userName": "Carter D.",
+      "userImage": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
+      "rating": 3,
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-08-20T00:00:00.000Z"
     }
   ],
-  "rating": 4.3,
-  "reviewCount": 1230,
+  "rating": 4.6,
+  "reviewCount": 2171,
   "operatingHours": [
     {
       "day": 1,
@@ -444,39 +460,94 @@
   "specialOffer": null,
   "availability": [
     {
+      "date": "2025-09-10",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
       "date": "2025-09-11",
-      "time": "9:00",
-      "formattedTime": "9:00 AM"
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
     },
     {
       "date": "2025-09-12",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-14",
       "time": "11:30",
       "formattedTime": "11:30 AM"
     },
     {
+      "date": "2025-09-12",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
       "date": "2025-09-15",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
     }
   ]
 }

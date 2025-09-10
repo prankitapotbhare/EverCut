@@ -10,33 +10,34 @@
  * Used for salon main images and gallery images
  */
 const SALON_GALLERY_IMAGES = [
-  "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
-  "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
-  "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
-  "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
-  "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
-  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
-  "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
-  "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-  "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
-  "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-  "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-  "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
-  "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
-  "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
-  "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80",
-  "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
-  "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
-  "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80"
+  "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=1000",
+  "https://images.unsplash.com/photo-1614438865362-9137f7e3036e?q=80&w=1000",
+  "https://plus.unsplash.com/premium_photo-1661349656933-532b88c88682?q=80&w=1000",
+  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80",
+  "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80",
+  "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80",
+  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1000&q=80",
+  "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80",
+  "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80",
+  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80",
+  "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
+  "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80",
+  "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
+  "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1000&q=80",
+  "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80",
+  "https://images.unsplash.com/photo-1679621577488-4ec73fe17de6?q=80&w=1000",
+  "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
+  "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000",
+  "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
+  "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80",
+  "https://plus.unsplash.com/premium_photo-1661717725396-b05465e725cd?q=80&w=1000",
+  "https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1000"
 ];
 
 /**
  * Centralized user profile images pool
  * Used for customer review profile pictures
+ *
  */
 const USER_PROFILE_IMAGES = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
@@ -510,26 +511,28 @@ const salonDescriptions = [
  * Indian-context salon names
  */
 const salonNames = [
-  "Khoobsurat Beauty Salon", "Rangoli Hair Studio", "Saundarya Salon", "Lakme Beauty Lounge", "Naturals Salon",
-  "Jawed Habib Hair & Beauty", "Shahnaz Husain Salon", "VLCC Beauty Clinic", "Green Trends Salon", "Looks Salon",
-  "Bounce Salon", "Enrich Salon", "Toni & Guy", "Juice Salon", "Geetanjali Salon",
-  "Affinity Salon", "Bodycraft Spa & Salon", "Mirrors Beauty Lounge", "Femina Salon", "Blush Beauty Salon",
-  "Glam Studio", "Diva Salon", "Sparkle Beauty Parlour", "Radiance Salon", "Elegance Beauty Center",
-  "Glamour Zone", "Style Mantra", "Beauty Bliss", "Chic Salon", "Trendy Cuts",
-  "Bollywood Salon", "Royal Beauty Parlour", "Madhuri Beauty Salon", "Aishwarya Hair Studio", "Priyanka Beauty Lounge",
-  "Deepika Salon", "Katrina Beauty Center", "Anushka Hair & Beauty", "Sonam Style Studio", "Alia Beauty Parlour",
-  "Shraddha Salon", "Jacqueline Beauty Lounge", "Kriti Hair Studio", "Sara Beauty Center", "Janhvi Salon",
-  "Kiara Beauty Parlour", "Tara Hair Studio", "Mira Beauty Lounge", "Vidya Salon", "Kangana Beauty Center",
-  "Sushmita Hair Studio", "Aishwarya Beauty Parlour", "Madhubala Salon", "Rekha Beauty Lounge", "Hema Hair Studio",
-  "Sridevi Beauty Center", "Meena Salon", "Kajol Beauty Parlour", "Rani Hair Studio", "Preity Beauty Lounge",
-  "Kareena Salon", "Karisma Beauty Center", "Shilpa Hair Studio", "Bipasha Beauty Parlour", "Lara Salon",
-  "Celina Beauty Lounge", "Amrita Hair Studio", "Tabu Beauty Center", "Manisha Salon", "Raveena Beauty Parlour",
-  "Juhi Hair Studio", "Pooja Beauty Lounge", "Sonali Salon", "Urmila Beauty Center", "Mahima Hair Studio",
-  "Twinkle Beauty Parlour", "Dimple Salon", "Simple Beauty Lounge", "Rinke Hair Studio", "Akshara Beauty Center",
-  "Ganga Salon", "Yamuna Beauty Parlour", "Saraswati Hair Studio", "Lakshmi Beauty Lounge", "Parvati Salon",
-  "Durga Beauty Center", "Kali Hair Studio", "Radha Beauty Parlour", "Sita Salon", "Geeta Beauty Lounge",
-  "Meera Hair Studio", "Meerabai Beauty Center", "Rukmini Salon", "Draupadi Beauty Parlour", "Kunti Hair Studio",
-  "Gandhari Beauty Lounge", "Mandodari Salon", "Tara Beauty Center", "Arundhati Hair Studio", "Savitri Beauty Parlour"
+  "Aura Salon", "Liva Hair Studio", "Nirvana Beauty Lounge", "Blush & Bloom", "Urban Tresses",
+  "Velvet Touch", "The Glow Room", "Elysian Salon", "Canvas Beauty Studio", "Serene Hair Lounge",
+  "Opal Salon", "Ember Beauty Hub", "Nova Hair Studio", "Mist Beauty Lounge", "Prism Salon",
+  "Lustre Beauty Bar", "The Style Loft", "Veda Hair Studio", "Celeste Beauty Lounge", "Sutra Salon",
+  "Glowberry Salon", "Bare Beauty Studio", "Elara Hair Lounge", "Haven Salon", "Blissful Cuts",
+  "Tribe Beauty Lounge", "Rooted Salon", "Solace Hair Studio", "The Curl Room", "Zephyr Beauty Bar",
+  "Modish Hair Lounge", "Aether Salon", "Bloom Beauty Studio", "Spark Hair Lounge", "Saffron Salon",
+  "Verve Beauty Hub", "Halo Hair Studio", "Evoke Salon", "Natura Beauty Lounge", "Chroma Salon",
+  "Mira’s Touch", "Ziva Hair Studio", "Vanya Beauty Lounge", "Kaya Salon", "Aarya Beauty Hub",
+  "Noor Hair Studio", "Riva Beauty Lounge", "Indira Salon", "Sia Hair Studio", "Aroha Beauty Bar",
+  "Prana Salon", "Alia’s Loft", "Moksha Beauty Studio", "Rhea Hair Lounge", "Ira Salon",
+  "Sanya Beauty Hub", "Diya Hair Studio", "Tara Beauty Lounge", "Ishaa Salon", "Neha’s Studio",
+  "Esha Hair Lounge", "Anaya Beauty Bar", "Rumi Salon", "Nyra Hair Studio", "Vita Beauty Lounge",
+  "Kriti’s Loft", "Sahara Salon", "Naina Beauty Studio", "Tanshi Hair Lounge", "Yara Beauty Bar",
+  "Essence Salon", "Bloom & Co", "Silk Hair Studio", "Petal Beauty Lounge", "Quartz Salon",
+  "The Vanity Room", "Luna Hair Studio", "Aurora Beauty Hub", "Mirage Salon", "Velora Hair Lounge",
+  "Eden Beauty Studio", "Nest Salon", "Reflections Lounge", "Glowcraft Salon", "Celina Hair Studio",
+  "Seraph Beauty Bar", "Opaline Salon", "Wildflower Hair Lounge", "Mistral Beauty Hub", "Harbor Salon",
+  "Citrine Beauty Lounge", "Phoenix Hair Studio", "Whisper Salon", "Breeze Beauty Lounge", "Empress Hair Studio",
+  "Coco Beauty Bar", "Ivory Salon", "Sapphire Hair Lounge", "Jasmine Beauty Studio", "Pearl Salon",
+  "Radiant Touch", "Majestic Hair Lounge", "Serene Glow", "Velour Beauty Hub", "Azure Salon",
+  "Eclat Beauty Lounge", "Noble Hair Studio", "Zephyr Lounge", "Bloomfield Salon", "Harmony Hair Bar"
 ];
 
 // =============================================================================

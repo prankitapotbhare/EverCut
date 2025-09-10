@@ -1,72 +1,50 @@
 {
-  "name": "Gandhari Beauty Lounge",
-  "description": "Relaxing spa-like salon offering a peaceful escape from the busy world.",
+  "name": "Reflections Lounge",
+  "description": "Vibrant salon known for bold colors and avant-garde styling.",
   "address": {
-    "street": "3390 Janpath",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "2258 Brigade Road",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "zipCode": "302001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.36191143740007,
-      22.58500034817711
+      75.79225779780718,
+      26.926612912249507
     ]
   },
-  "contactPhone": "+91 94354 46790",
-  "contactEmail": "info@gandharibeautylounge.com",
-  "image": "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
+  "contactPhone": "+91 66425 30745",
+  "contactEmail": "info@reflectionslounge.com",
+  "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80"
+    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=1000",
+    "https://plus.unsplash.com/premium_photo-1661717725396-b05465e725cd?q=80&w=1000",
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80",
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Updo Styling",
-      "description": "Formal updo for special occasions",
-      "price": 72,
+      "name": "Deluxe Pedicure",
+      "description": "Luxury foot treatment with massage",
+      "price": 65,
       "duration": 60
     },
     {
       "id": "2",
-      "name": "Men's Cut",
-      "description": "Men's haircut and styling",
-      "price": 28,
-      "duration": 30
-    },
-    {
-      "id": "3",
-      "name": "Full Highlights",
-      "description": "Complete highlight service",
-      "price": 121,
-      "duration": 150
-    },
-    {
-      "id": "4",
-      "name": "Brazilian Blowout",
-      "description": "Smoothing and anti-frizz treatment",
-      "price": 202,
-      "duration": 120
-    },
-    {
-      "id": "5",
-      "name": "Microdermabrasion",
-      "description": "Exfoliating skin treatment",
-      "price": 119,
+      "name": "Women's Cut & Style",
+      "description": "Women's haircut with blowout",
+      "price": 45,
       "duration": 45
     },
     {
-      "id": "6",
-      "name": "Full Color",
-      "description": "All-over hair color application",
-      "price": 96,
-      "duration": 120
+      "id": "3",
+      "name": "Keratin Treatment",
+      "description": "Smoothing keratin service",
+      "price": 172,
+      "duration": 150
     }
   ],
   "packages": [
@@ -74,37 +52,26 @@
       "id": "1",
       "name": "Men's Grooming",
       "description": "Complete men's grooming experience",
-      "price": 103,
+      "price": 96,
       "duration": 90,
       "services": [
         "Men's Cut",
         "Beard Trim",
         "Facial"
       ]
-    },
-    {
-      "id": "2",
-      "name": "Quick Refresh",
-      "description": "Quick beauty refresh when you're short on time",
-      "price": 74,
-      "duration": 60,
-      "services": [
-        "Basic Haircut",
-        "Express Facial"
-      ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Riya Singh",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Updo Styling",
-        "Men's Cut",
-        "Full Highlights"
+        "Deluxe Pedicure",
+        "Women's Cut & Style",
+        "Keratin Treatment"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -176,14 +143,14 @@
     },
     {
       "id": "2",
-      "name": "Pooja Agarwal",
+      "name": "Meera Nair",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Updo Styling",
-        "Men's Cut",
-        "Full Highlights"
+        "Deluxe Pedicure",
+        "Women's Cut & Style",
+        "Keratin Treatment"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -255,14 +222,14 @@
     },
     {
       "id": "3",
-      "name": "Divya Joshi",
+      "name": "Meera Nair",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Updo Styling",
-        "Men's Cut",
-        "Full Highlights"
+        "Deluxe Pedicure",
+        "Women's Cut & Style",
+        "Keratin Treatment"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -337,42 +304,15 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Lucas F.",
-      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
+      "userName": "Sofia Q.",
+      "userImage": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80",
       "rating": 5,
-      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
-      "date": "2025-07-30T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Matthew X.",
-      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
-      "rating": 5,
-      "comment": "My stylist was amazing and really understood what I wanted.",
-      "date": "2025-08-11T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Noah P.",
-      "userImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
-      "rating": 5,
-      "comment": "I've never had a better color treatment. Absolutely perfect!",
-      "date": "2025-09-09T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "userId": "user-4",
-      "userName": "James T.",
-      "userImage": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
-      "rating": 5,
-      "comment": "The best salon experience I've had in years. Highly recommend!",
-      "date": "2025-07-17T00:00:00.000Z"
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-09-06T00:00:00.000Z"
     }
   ],
   "rating": 4.9,
-  "reviewCount": 3173,
+  "reviewCount": 2924,
   "operatingHours": [
     {
       "day": 1,
@@ -413,111 +353,5 @@
   "featured": true,
   "featuredReason": "Editor's Pick",
   "specialOffer": null,
-  "availability": [
-    {
-      "date": "2025-09-10",
-      "time": "9:00",
-      "formattedTime": "9:00 AM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "9:00",
-      "formattedTime": "9:00 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    }
-  ]
+  "availability": []
 }

@@ -1,88 +1,81 @@
 {
-  "name": "Celina Beauty Lounge",
-  "description": "Specialized salon focusing on color corrections and transformations.",
+  "name": "Breeze Beauty Lounge",
+  "description": "Relaxing spa-like salon offering a peaceful escape from the busy world.",
   "address": {
-    "street": "6753 India Gate Road",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "1965 India Gate Road",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "zipCode": "302001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.38612140586335,
-      22.55090501392572
+      75.7929004680626,
+      26.892171690823698
     ]
   },
-  "contactPhone": "+91 23799 62509",
-  "contactEmail": "info@celinabeautylounge.com",
-  "image": "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+  "contactPhone": "+91 12861 41436",
+  "contactEmail": "info@breezebeautylounge.com",
+  "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80"
+    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80",
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80",
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Brazilian Blowout",
-      "description": "Smoothing and anti-frizz treatment",
-      "price": 219,
-      "duration": 120
+      "name": "Basic Haircut",
+      "description": "Simple haircut and style",
+      "price": 35,
+      "duration": 30
     },
     {
       "id": "2",
-      "name": "Eyebrow Threading",
-      "description": "Precise eyebrow shaping",
+      "name": "Partial Highlights",
+      "description": "Highlights for top and sides",
+      "price": 83,
+      "duration": 90
+    },
+    {
+      "id": "3",
+      "name": "Nail Art",
+      "description": "Custom nail designs",
       "price": 16,
       "duration": 15
     },
     {
-      "id": "3",
-      "name": "Express Facial",
-      "description": "Quick refreshing facial",
-      "price": 49,
-      "duration": 30
-    },
-    {
       "id": "4",
-      "name": "Blowout",
-      "description": "Wash and blowdry styling",
-      "price": 40,
-      "duration": 30
-    },
-    {
-      "id": "5",
-      "name": "Deluxe Pedicure",
-      "description": "Luxury foot treatment with massage",
-      "price": 57,
-      "duration": 60
-    },
-    {
-      "id": "6",
-      "name": "Full Face Waxing",
-      "description": "Complete facial hair removal",
-      "price": 48,
-      "duration": 30
-    },
-    {
-      "id": "7",
-      "name": "Keratin Treatment",
-      "description": "Smoothing keratin service",
-      "price": 162,
-      "duration": 150
+      "name": "Eyebrow Threading",
+      "description": "Precise eyebrow shaping",
+      "price": 16,
+      "duration": 15
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Relaxation Package",
-      "description": "Ultimate relaxation experience",
-      "price": 154,
-      "duration": 150,
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 153,
+      "duration": 210,
       "services": [
-        "Swedish Massage",
-        "Express Facial",
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 267,
+      "duration": 300,
+      "services": [
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
         "Pedicure"
       ]
     }
@@ -90,14 +83,14 @@
   "stylists": [
     {
       "id": "1",
-      "name": "Priya Patel",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Brazilian Blowout",
-        "Eyebrow Threading",
-        "Express Facial"
+        "Basic Haircut",
+        "Partial Highlights",
+        "Nail Art"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -169,14 +162,14 @@
     },
     {
       "id": "2",
-      "name": "Neha Kumar",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Brazilian Blowout",
-        "Eyebrow Threading",
-        "Express Facial"
+        "Basic Haircut",
+        "Partial Highlights",
+        "Nail Art"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -248,14 +241,14 @@
     },
     {
       "id": "3",
-      "name": "Meera Nair",
+      "name": "Shreya Iyer",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Brazilian Blowout",
-        "Eyebrow Threading",
-        "Express Facial"
+        "Basic Haircut",
+        "Partial Highlights",
+        "Nail Art"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -330,59 +323,50 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Hannah G.",
-      "userImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
-      "rating": 4,
-      "comment": "Excellent service from start to finish. Love this place!",
-      "date": "2025-08-11T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Amelia A.",
-      "userImage": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80",
-      "rating": 4,
-      "comment": "The package deal was worth every penny. So happy with the results!",
-      "date": "2025-07-26T00:00:00.000Z"
+      "userName": "Grace K.",
+      "userImage": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80",
+      "rating": 5,
+      "comment": "Incredible attention to detail. They really know what they're doing.",
+      "date": "2025-07-14T00:00:00.000Z"
     }
   ],
-  "rating": 4.5,
-  "reviewCount": 1525,
+  "rating": 4.7,
+  "reviewCount": 2327,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "10:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
+      "day": 2,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "6:00 PM"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
@@ -390,39 +374,119 @@
   "specialOffer": null,
   "availability": [
     {
-      "date": "2025-09-11",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
+      "date": "2025-09-10",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
     },
     {
-      "date": "2025-09-12",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-09-15",
+      "date": "2025-09-10",
       "time": "16:00",
       "formattedTime": "4:00 PM"
     },
     {
-      "date": "2025-09-16",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
+      "date": "2025-09-10",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
     },
     {
-      "date": "2025-09-16",
+      "date": "2025-09-10",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-12",
       "time": "17:15",
       "formattedTime": "5:15 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
     }
   ]
 }

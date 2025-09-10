@@ -1,192 +1,124 @@
 {
-  "name": "Kiara Beauty Parlour",
-  "description": "Wellness-focused salon combining beauty services with holistic health approaches.",
+  "name": "Eden Beauty Studio",
+  "description": "Celebrity-inspired salon bringing red carpet looks to everyday clients.",
   "address": {
-    "street": "1734 Park Street",
-    "city": "Bangalore",
-    "state": "Karnataka",
-    "zipCode": "560001",
+    "street": "5100 LBS Marg",
+    "city": "Surat",
+    "state": "Gujarat",
+    "zipCode": "395001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      77.58718459072094,
-      12.973641767394438
+      72.85370092698898,
+      21.186183807019525
     ]
   },
-  "contactPhone": "+91 57381 26755",
-  "contactEmail": "info@kiarabeautyparlour.com",
-  "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
+  "contactPhone": "+91 44466 62715",
+  "contactEmail": "info@edenbeautystudio.com",
+  "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80"
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80",
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Lip Waxing",
-      "description": "Upper lip hair removal",
-      "price": 9,
-      "duration": 10
+      "name": "Men's Cut",
+      "description": "Men's haircut and styling",
+      "price": 30,
+      "duration": 30
     },
     {
       "id": "2",
-      "name": "Body Scrub",
-      "description": "Exfoliating body treatment",
+      "name": "Deep Cleansing Facial",
+      "description": "Thorough facial with extractions",
       "price": 73,
-      "duration": 45
-    },
-    {
-      "id": "3",
-      "name": "Keratin Treatment",
-      "description": "Smoothing keratin service",
-      "price": 194,
-      "duration": 150
-    },
-    {
-      "id": "4",
-      "name": "Deep Tissue Massage",
-      "description": "Therapeutic muscle massage",
-      "price": 98,
       "duration": 60
     },
     {
+      "id": "3",
+      "name": "Lip Waxing",
+      "description": "Upper lip hair removal",
+      "price": 10,
+      "duration": 10
+    },
+    {
+      "id": "4",
+      "name": "Women's Cut & Style",
+      "description": "Women's haircut with blowout",
+      "price": 51,
+      "duration": 45
+    },
+    {
       "id": "5",
-      "name": "Men's Cut",
-      "description": "Men's haircut and styling",
-      "price": 29,
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 16,
+      "duration": 15
+    },
+    {
+      "id": "6",
+      "name": "Pedicure",
+      "description": "Foot care and polish application",
+      "price": 42,
+      "duration": 45
+    },
+    {
+      "id": "7",
+      "name": "Basic Manicure",
+      "description": "Nail shaping, cuticle care, and polish",
+      "price": 27,
       "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 99,
-      "duration": 90,
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 75,
+      "duration": 60,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Basic Haircut",
+        "Express Facial"
       ]
     },
     {
       "id": "2",
-      "name": "Hair Repair",
-      "description": "Restorative treatment for damaged hair",
-      "price": 229,
-      "duration": 210,
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 142,
+      "duration": 180,
       "services": [
-        "Keratin Treatment",
+        "Full Color",
         "Deep Conditioning",
-        "Trim"
+        "Blowout"
       ]
     },
     {
       "id": "3",
-      "name": "Spa Day",
-      "description": "Full day of pampering and relaxation",
-      "price": 210,
+      "name": "Bridal Package",
+      "description": "Complete bridal beauty preparation",
+      "price": 196,
       "duration": 180,
       "services": [
-        "Deep Tissue Massage",
-        "Deep Cleansing Facial",
-        "Deluxe Pedicure"
+        "Bridal Hair",
+        "Makeup Application",
+        "Gel Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Divya Joshi",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Lip Waxing",
-        "Body Scrub",
-        "Keratin Treatment"
-      ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "2",
-      "name": "Priya Patel",
-      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
-      "specialties": [
-        "Lip Waxing",
-        "Body Scrub",
-        "Keratin Treatment"
+        "Men's Cut",
+        "Deep Cleansing Facial",
+        "Lip Waxing"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
@@ -259,94 +191,15 @@
       "status": "active"
     },
     {
-      "id": "3",
-      "name": "Sneha Gupta",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "id": "2",
+      "name": "Neha Kumar",
+      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Lip Waxing",
-        "Body Scrub",
-        "Keratin Treatment"
+        "Men's Cut",
+        "Deep Cleansing Facial",
+        "Lip Waxing"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Pooja Agarwal",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Lip Waxing",
-        "Body Scrub",
-        "Keratin Treatment"
-      ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -421,77 +274,77 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Carter D.",
-      "userImage": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80",
+      "userName": "Sofia Q.",
+      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
       "rating": 5,
-      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
-      "date": "2025-08-29T00:00:00.000Z"
+      "comment": "Excellent service from start to finish. Love this place!",
+      "date": "2025-08-18T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Hannah G.",
-      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
+      "userName": "Abigail U.",
+      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
       "rating": 5,
-      "comment": "Excellent service from start to finish. Love this place!",
-      "date": "2025-08-10T00:00:00.000Z"
+      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
+      "date": "2025-08-21T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Abigail U.",
-      "userImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80",
+      "userName": "Ava J.",
+      "userImage": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
       "rating": 5,
-      "comment": "The best salon experience I've had in years. Highly recommend!",
-      "date": "2025-07-24T00:00:00.000Z"
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-08-26T00:00:00.000Z"
     },
     {
       "id": "4",
       "userId": "user-4",
-      "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
+      "userName": "Caden J.",
+      "userImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
       "rating": 5,
-      "comment": "Amazing results! Everyone keeps complimenting my new look.",
-      "date": "2025-08-21T00:00:00.000Z"
+      "comment": "The best salon experience I've had in years. Highly recommend!",
+      "date": "2025-07-18T00:00:00.000Z"
     }
   ],
-  "rating": 4.4,
-  "reviewCount": 1800,
+  "rating": 4.9,
+  "reviewCount": 931,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 6,
       "open": "10:00 AM",
-      "close": "6:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 0,
       "open": "11:00 AM",
-      "close": "5:00 PM"
+      "close": "6:00 PM"
     }
   ],
   "featured": false,
@@ -500,63 +353,58 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
     },
     {
       "date": "2025-09-11",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     },
     {
       "date": "2025-09-12",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
     },
     {
-      "date": "2025-09-12",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
+      "date": "2025-09-13",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
     },
     {
-      "date": "2025-09-12",
+      "date": "2025-09-13",
       "time": "18:45",
       "formattedTime": "6:45 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "9:00",
-      "formattedTime": "9:00 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
     },
     {
       "date": "2025-09-13",
@@ -565,38 +413,53 @@
     },
     {
       "date": "2025-09-13",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
     },
     {
       "date": "2025-09-14",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
     },
     {
       "date": "2025-09-14",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-15",
       "time": "17:15",
       "formattedTime": "5:15 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
+      "date": "2025-09-16",
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
     }
   ]
 }

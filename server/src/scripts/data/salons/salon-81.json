@@ -1,109 +1,108 @@
 {
-  "name": "Manisha Salon",
-  "description": "Artistic salon where stylists approach hair as a creative canvas.",
+  "name": "Natura Beauty Lounge",
+  "description": "Minimalist salon focused on precision cuts and natural beauty.",
   "address": {
-    "street": "6419 Linking Road",
-    "city": "Surat",
-    "state": "Gujarat",
-    "zipCode": "395001",
+    "street": "6403 Sarojini Nagar",
+    "city": "Delhi",
+    "state": "Delhi",
+    "zipCode": "110001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.82990501014466,
-      21.15053408356168
+      77.09368094009648,
+      28.706881973387983
     ]
   },
-  "contactPhone": "+91 99994 81175",
-  "contactEmail": "info@manishasalon.com",
-  "image": "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+  "contactPhone": "+91 78303 35858",
+  "contactEmail": "info@naturabeautylounge.com",
+  "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80"
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000",
+    "https://plus.unsplash.com/premium_photo-1661717725396-b05465e725cd?q=80&w=1000",
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Eyebrow Threading",
-      "description": "Precise eyebrow shaping",
-      "price": 15,
-      "duration": 15
+      "name": "Deep Tissue Massage",
+      "description": "Therapeutic muscle massage",
+      "price": 91,
+      "duration": 60
     },
     {
       "id": "2",
-      "name": "Nail Art",
-      "description": "Custom nail designs",
-      "price": 16,
-      "duration": 15
+      "name": "Microdermabrasion",
+      "description": "Exfoliating skin treatment",
+      "price": 103,
+      "duration": 45
     },
     {
       "id": "3",
-      "name": "Kids Cut",
-      "description": "Children's haircut (12 and under)",
-      "price": 25,
-      "duration": 20
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 82,
+      "duration": 60
     },
     {
       "id": "4",
-      "name": "Ombre",
-      "description": "Graduated color effect",
-      "price": 123,
-      "duration": 150
+      "name": "Eyebrow Threading",
+      "description": "Precise eyebrow shaping",
+      "price": 14,
+      "duration": 15
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Bridal Package",
-      "description": "Complete bridal beauty preparation",
-      "price": 197,
-      "duration": 180,
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 231,
+      "duration": 120,
       "services": [
-        "Bridal Hair",
-        "Makeup Application",
-        "Gel Manicure"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     },
     {
       "id": "2",
-      "name": "Hair Repair",
-      "description": "Restorative treatment for damaged hair",
-      "price": 225,
-      "duration": 210,
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 133,
+      "duration": 180,
       "services": [
-        "Keratin Treatment",
+        "Full Color",
         "Deep Conditioning",
-        "Trim"
+        "Blowout"
       ]
     },
     {
       "id": "3",
-      "name": "Relaxation Package",
-      "description": "Ultimate relaxation experience",
-      "price": 159,
-      "duration": 150,
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 156,
+      "duration": 210,
       "services": [
-        "Swedish Massage",
-        "Express Facial",
-        "Pedicure"
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Anjali Sharma",
+      "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Eyebrow Threading",
-        "Nail Art",
-        "Kids Cut"
+        "Deep Tissue Massage",
+        "Microdermabrasion",
+        "Updo Styling"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -175,14 +174,14 @@
     },
     {
       "id": "2",
-      "name": "Pooja Agarwal",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Eyebrow Threading",
-        "Nail Art",
-        "Kids Cut"
+        "Deep Tissue Massage",
+        "Microdermabrasion",
+        "Updo Styling"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -254,14 +253,14 @@
     },
     {
       "id": "3",
-      "name": "Riya Singh",
+      "name": "Shreya Iyer",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Eyebrow Threading",
-        "Nail Art",
-        "Kids Cut"
+        "Deep Tissue Massage",
+        "Microdermabrasion",
+        "Updo Styling"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -336,81 +335,143 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Victoria O.",
-      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-      "rating": 5,
-      "comment": "The products they use are high quality and smell amazing.",
-      "date": "2025-08-27T00:00:00.000Z"
+      "userName": "Carter D.",
+      "userImage": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+      "rating": 4,
+      "comment": "I've never had a better color treatment. Absolutely perfect!",
+      "date": "2025-08-25T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Emma S.",
-      "userImage": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+      "userName": "Ava J.",
+      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
       "rating": 5,
       "comment": "The staff went above and beyond to make sure I was happy.",
-      "date": "2025-08-01T00:00:00.000Z"
+      "date": "2025-08-11T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Alexander B.",
-      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "userName": "Isabella G.",
+      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
       "rating": 5,
-      "comment": "Top-notch service and expertise. My go-to salon from now on!",
-      "date": "2025-08-18T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "userId": "user-4",
-      "userName": "Wyatt B.",
-      "userImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-      "rating": 5,
-      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
-      "date": "2025-08-28T00:00:00.000Z"
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-08-04T00:00:00.000Z"
     }
   ],
-  "rating": 4.5,
-  "reviewCount": 948,
+  "rating": 4.2,
+  "reviewCount": 1613,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
       "open": "9:00 AM",
       "close": "7:00 PM"
     },
     {
-      "day": 6,
-      "open": "10:00 AM",
-      "close": "6:00 PM"
-    },
-    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "5:00 PM"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": []
+  "availability": [
+    {
+      "date": "2025-09-10",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    }
+  ]
 }

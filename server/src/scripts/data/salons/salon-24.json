@@ -1,34 +1,36 @@
 {
-  "name": "Jawed Habib Hair & Beauty",
-  "description": "Health-conscious salon using only non-toxic and cruelty-free products.",
+  "name": "Yara Beauty Bar",
+  "description": "Trendy salon specializing in cutting-edge styles and innovative color techniques.",
   "address": {
-    "street": "9080 Park Street",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "6858 Park Street",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "zipCode": "500001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.35403439885103,
-      22.56668063692846
+      78.47660829478833,
+      17.371619226245226
     ]
   },
-  "contactPhone": "+91 87128 28288",
-  "contactEmail": "info@jawedhabibhair&beauty.com",
-  "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
+  "contactPhone": "+91 49390 36482",
+  "contactEmail": "info@yarabeautybar.com",
+  "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80"
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80",
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000",
+    "https://plus.unsplash.com/premium_photo-1661717725396-b05465e725cd?q=80&w=1000",
+    "https://images.unsplash.com/photo-1679621577488-4ec73fe17de6?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Full Face Waxing",
-      "description": "Complete facial hair removal",
-      "price": 46,
-      "duration": 30
+      "name": "Swedish Massage",
+      "description": "Relaxing full body massage",
+      "price": 74,
+      "duration": 60
     },
     {
       "id": "2",
@@ -39,74 +41,55 @@
     },
     {
       "id": "3",
-      "name": "Deluxe Pedicure",
-      "description": "Luxury foot treatment with massage",
-      "price": 57,
-      "duration": 60
+      "name": "Basic Haircut",
+      "description": "Simple haircut and style",
+      "price": 36,
+      "duration": 30
     },
     {
       "id": "4",
-      "name": "Gel Manicure",
-      "description": "Long-lasting gel polish application",
-      "price": 42,
-      "duration": 45
+      "name": "Full Highlights",
+      "description": "Complete highlight service",
+      "price": 120,
+      "duration": 150
     },
     {
       "id": "5",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
+      "name": "Deep Cleansing Facial",
+      "description": "Thorough facial with extractions",
       "price": 75,
-      "duration": 90
+      "duration": 60
+    },
+    {
+      "id": "6",
+      "name": "Brazilian Blowout",
+      "description": "Smoothing and anti-frizz treatment",
+      "price": 208,
+      "duration": 120
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Luxury Experience",
-      "description": "Premium head-to-toe beauty experience",
-      "price": 278,
-      "duration": 300,
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 73,
+      "duration": 60,
       "services": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Gel Manicure",
-        "Pedicure"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 105,
-      "duration": 90,
-      "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Color Transformation",
-      "description": "Complete hair color makeover",
-      "price": 144,
-      "duration": 180,
-      "services": [
-        "Full Color",
-        "Deep Conditioning",
-        "Blowout"
+        "Basic Haircut",
+        "Express Facial"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Priya Patel",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Full Face Waxing",
+        "Swedish Massage",
         "Men's Cut",
-        "Deluxe Pedicure"
+        "Basic Haircut"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
@@ -183,11 +166,11 @@
       "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Full Face Waxing",
+        "Swedish Massage",
         "Men's Cut",
-        "Deluxe Pedicure"
+        "Basic Haircut"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -259,12 +242,12 @@
     },
     {
       "id": "3",
-      "name": "Meera Nair",
+      "name": "Pooja Agarwal",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Full Face Waxing",
+        "Swedish Massage",
         "Men's Cut",
-        "Deluxe Pedicure"
+        "Basic Haircut"
       ],
       "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
@@ -341,50 +324,68 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Ava J.",
+      "userName": "Sofia Q.",
       "userImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
       "rating": 4,
-      "comment": "The staff went above and beyond to make sure I was happy.",
-      "date": "2025-08-29T00:00:00.000Z"
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-08-18T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Jackson N.",
+      "userImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
+      "rating": 5,
+      "comment": "Great service and attention to detail. Will definitely come back!",
+      "date": "2025-07-17T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Hannah G.",
+      "userImage": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80",
+      "rating": 5,
+      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
+      "date": "2025-09-09T00:00:00.000Z"
     }
   ],
-  "rating": 4.7,
-  "reviewCount": 941,
+  "rating": 4.2,
+  "reviewCount": 1104,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 6,
       "open": "10:00 AM",
-      "close": "8:00 PM"
+      "close": "6:00 PM"
     },
     {
       "day": 0,
       "open": "11:00 AM",
-      "close": "6:00 PM"
+      "close": "5:00 PM"
     }
   ],
   "featured": false,
@@ -393,108 +394,88 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
     },
     {
-      "date": "2025-09-12",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
+      "date": "2025-09-11",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
     },
     {
-      "date": "2025-09-12",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
+      "date": "2025-09-11",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
     },
     {
       "date": "2025-09-13",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-15",
       "time": "13:45",
       "formattedTime": "1:45 PM"
     },
     {
-      "date": "2025-09-15",
+      "date": "2025-09-13",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-09-14",
       "time": "17:00",
       "formattedTime": "5:00 PM"
     },
     {
       "date": "2025-09-15",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
     },
     {
-      "date": "2025-09-16",
+      "date": "2025-09-15",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-15",
       "time": "11:30",
       "formattedTime": "11:30 AM"
     },
     {
-      "date": "2025-09-16",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
+      "date": "2025-09-15",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
     },
     {
       "date": "2025-09-16",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
     }
   ]
 }

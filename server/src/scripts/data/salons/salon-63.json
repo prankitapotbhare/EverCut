@@ -1,113 +1,103 @@
 {
-  "name": "Janhvi Salon",
-  "description": "Contemporary salon with expert stylists specializing in modern cuts and colors.",
+  "name": "Celeste Beauty Lounge",
+  "description": "Eco-friendly salon using organic and sustainable products for all services.",
   "address": {
-    "street": "2474 LBS Marg",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "9211 LBS Marg",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "zipCode": "380001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.37838601520306,
-      22.59382613613786
+      72.56399416086488,
+      23.043738538128437
     ]
   },
-  "contactPhone": "+91 61283 16435",
-  "contactEmail": "info@janhvisalon.com",
-  "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
+  "contactPhone": "+91 89306 13271",
+  "contactEmail": "info@celestebeautylounge.com",
+  "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
-    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80"
+    "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
+    "https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1000",
+    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Balayage",
-      "description": "Hand-painted highlighting technique",
-      "price": 146,
-      "duration": 150
+      "name": "Premium Haircut",
+      "description": "Detailed haircut with styling",
+      "price": 54,
+      "duration": 45
     },
     {
       "id": "2",
-      "name": "Hot Stone Massage",
-      "description": "Massage with heated stones",
-      "price": 101,
-      "duration": 75
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 75,
+      "duration": 60
     },
     {
       "id": "3",
-      "name": "Full Face Waxing",
-      "description": "Complete facial hair removal",
-      "price": 47,
-      "duration": 30
+      "name": "Partial Highlights",
+      "description": "Highlights for top and sides",
+      "price": 93,
+      "duration": 90
     },
     {
       "id": "4",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 89,
+      "name": "Swedish Massage",
+      "description": "Relaxing full body massage",
+      "price": 84,
       "duration": 60
     },
     {
       "id": "5",
-      "name": "Nail Art",
-      "description": "Custom nail designs",
-      "price": 14,
-      "duration": 15
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 31,
+      "duration": 30
+    },
+    {
+      "id": "6",
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 121,
+      "duration": 45
+    },
+    {
+      "id": "7",
+      "name": "Brazilian Blowout",
+      "description": "Smoothing and anti-frizz treatment",
+      "price": 181,
+      "duration": 120
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Color Transformation",
-      "description": "Complete hair color makeover",
-      "price": 141,
-      "duration": 180,
+      "name": "Relaxation Package",
+      "description": "Ultimate relaxation experience",
+      "price": 166,
+      "duration": 150,
       "services": [
-        "Full Color",
-        "Deep Conditioning",
-        "Blowout"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 148,
-      "duration": 210,
-      "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Couples Retreat",
-      "description": "Relaxing spa experience for two",
-      "price": 243,
-      "duration": 120,
-      "services": [
-        "Swedish Massage (2)",
-        "Pedicure (2)"
+        "Swedish Massage",
+        "Express Facial",
+        "Pedicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Priya Patel",
+      "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Full Face Waxing"
+        "Premium Haircut",
+        "Updo Styling",
+        "Partial Highlights"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
@@ -181,14 +171,14 @@
     },
     {
       "id": "2",
-      "name": "Kavya Reddy",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Full Face Waxing"
+        "Premium Haircut",
+        "Updo Styling",
+        "Partial Highlights"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -263,11 +253,11 @@
       "name": "Divya Joshi",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Full Face Waxing"
+        "Premium Haircut",
+        "Updo Styling",
+        "Partial Highlights"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -339,14 +329,14 @@
     },
     {
       "id": "4",
-      "name": "Kavya Reddy",
+      "name": "Shreya Iyer",
       "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
       "specialties": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Full Face Waxing"
+        "Premium Haircut",
+        "Updo Styling",
+        "Partial Highlights"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -421,15 +411,15 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Aiden L.",
-      "userImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80",
-      "rating": 5,
-      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
-      "date": "2025-08-22T00:00:00.000Z"
+      "userName": "Wyatt B.",
+      "userImage": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&q=80",
+      "rating": 4,
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-08-29T00:00:00.000Z"
     }
   ],
-  "rating": 4.3,
-  "reviewCount": 2049,
+  "rating": 4.6,
+  "reviewCount": 1524,
   "operatingHours": [
     {
       "day": 1,
@@ -473,103 +463,158 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-09-11",
       "time": "12:30",
       "formattedTime": "12:30 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
+      "date": "2025-09-10",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
     },
     {
       "date": "2025-09-12",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     },
     {
       "date": "2025-09-13",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
     },
     {
       "date": "2025-09-13",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
+    },
+    {
+      "date": "2025-09-14",
       "time": "12:15",
       "formattedTime": "12:15 PM"
     },
     {
       "date": "2025-09-14",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
     },
     {
-      "date": "2025-09-14",
+      "date": "2025-09-15",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-09-15",
       "time": "14:30",
       "formattedTime": "2:30 PM"
     },
     {
       "date": "2025-09-15",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
     },
     {
       "date": "2025-09-15",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     },
     {
-      "date": "2025-09-15",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
-    },
-    {
-      "date": "2025-09-15",
+      "date": "2025-09-16",
       "time": "9:15",
       "formattedTime": "9:15 AM"
     },
     {
-      "date": "2025-09-15",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
+      "date": "2025-09-16",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
     }
   ]
 }

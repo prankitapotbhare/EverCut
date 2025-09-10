@@ -17,7 +17,7 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
       return [];
     }
   
-    return stylists.map(stylist => {
+    const processedStylists = stylists.map(stylist => {
       const isAvailable = availableStylists.length === 0 || 
         availableStylists.some(s => s.id === stylist.id);
       
@@ -40,6 +40,10 @@ const StylistSelector = ({ stylists, selectedStylist, onStylistSelect, available
         };
       }
     });
+    
+    // Limit displayed stylists to between 2-6 items
+    const limitedStylists = processedStylists.slice(0, Math.max(2, Math.min(6, processedStylists.length)));
+    return limitedStylists;
   }, [stylists, availableStylists, selectedDate, getStylistAvailabilityStatus]);
 
   const hasAvailableStylists = useMemo(() => {

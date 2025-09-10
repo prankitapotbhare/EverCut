@@ -1,105 +1,94 @@
 {
-  "name": "Kareena Salon",
-  "description": "Relaxing spa-like salon offering a peaceful escape from the busy world.",
+  "name": "Mira’s Touch",
+  "description": "Luxury salon providing VIP treatment and complimentary refreshments with every service.",
   "address": {
-    "street": "8694 Sarojini Nagar",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "6823 LBS Marg",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "zipCode": "400001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.35167817292366,
-      22.558113832243603
+      72.86076259798159,
+      19.099121006663523
     ]
   },
-  "contactPhone": "+91 87386 62258",
-  "contactEmail": "info@kareenasalon.com",
-  "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
+  "contactPhone": "+91 45288 21344",
+  "contactEmail": "info@mira’stouch.com",
+  "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80"
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
       "name": "Updo Styling",
       "description": "Formal updo for special occasions",
-      "price": 69,
+      "price": 68,
       "duration": 60
     },
     {
       "id": "2",
-      "name": "Deep Tissue Massage",
-      "description": "Therapeutic muscle massage",
-      "price": 91,
-      "duration": 60
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 32,
+      "duration": 30
     },
     {
       "id": "3",
       "name": "Hair Extensions",
       "description": "Hair extension application",
-      "price": 264,
+      "price": 239,
       "duration": 180
     },
     {
       "id": "4",
-      "name": "Women's Cut & Style",
-      "description": "Women's haircut with blowout",
-      "price": 53,
-      "duration": 45
-    },
-    {
-      "id": "5",
-      "name": "Root Touch-up",
-      "description": "Color application for roots",
-      "price": 64,
-      "duration": 90
-    },
-    {
-      "id": "6",
-      "name": "Full Color",
-      "description": "All-over hair color application",
-      "price": 82,
-      "duration": 120
-    },
-    {
-      "id": "7",
-      "name": "Body Scrub",
-      "description": "Exfoliating body treatment",
-      "price": 64,
-      "duration": 45
+      "name": "Men's Cut",
+      "description": "Men's haircut and styling",
+      "price": 29,
+      "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 156,
-      "duration": 210,
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 241,
+      "duration": 120,
       "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 268,
+      "duration": 300,
+      "services": [
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
+        "Pedicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Sneha Gupta",
+      "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
         "Updo Styling",
-        "Deep Tissue Massage",
+        "Deep Conditioning",
         "Hair Extensions"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -171,14 +160,14 @@
     },
     {
       "id": "2",
-      "name": "Divya Joshi",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
         "Updo Styling",
-        "Deep Tissue Massage",
+        "Deep Conditioning",
         "Hair Extensions"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -250,11 +239,90 @@
     },
     {
       "id": "3",
-      "name": "Pooja Agarwal",
+      "name": "Sneha Gupta",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
         "Updo Styling",
-        "Deep Tissue Massage",
+        "Deep Conditioning",
+        "Hair Extensions"
+      ],
+      "bio": "Known for creating stunning transformations and attention to detail.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "name": "Riya Singh",
+      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
+      "specialties": [
+        "Updo Styling",
+        "Deep Conditioning",
         "Hair Extensions"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
@@ -332,59 +400,50 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Grace K.",
-      "userImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
-      "rating": 4,
-      "comment": "I've never had a better color treatment. Absolutely perfect!",
-      "date": "2025-07-16T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Noah P.",
-      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "userName": "Alexander B.",
+      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
       "rating": 5,
-      "comment": "The products they use are high quality and smell amazing.",
-      "date": "2025-08-05T00:00:00.000Z"
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-08-12T00:00:00.000Z"
     }
   ],
-  "rating": 4.7,
-  "reviewCount": 759,
+  "rating": 4.1,
+  "reviewCount": 693,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "10:00 AM",
+      "open": "9:00 AM",
       "close": "8:00 PM"
     },
     {
+      "day": 2,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "6:00 PM"
+      "open": "Closed",
+      "close": "Closed"
     }
   ],
   "featured": false,
@@ -392,59 +451,69 @@
   "specialOffer": null,
   "availability": [
     {
-      "date": "2025-09-11",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
+      "date": "2025-09-10",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
+      "date": "2025-09-10",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
     },
     {
-      "date": "2025-09-11",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
+      "date": "2025-09-10",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
-    },
-    {
-      "date": "2025-09-12",
+      "date": "2025-09-10",
       "time": "12:15",
       "formattedTime": "12:15 PM"
     },
     {
+      "date": "2025-09-10",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
       "date": "2025-09-12",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
+      "date": "2025-09-12",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
+      "date": "2025-09-12",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
     },
     {
       "date": "2025-09-13",
@@ -453,33 +522,28 @@
     },
     {
       "date": "2025-09-13",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
     },
     {
       "date": "2025-09-13",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-09-14",
       "time": "18:45",
       "formattedTime": "6:45 PM"
     },
     {
-      "date": "2025-09-15",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
+      "date": "2025-09-13",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
     },
     {
       "date": "2025-09-15",
@@ -488,28 +552,48 @@
     },
     {
       "date": "2025-09-15",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
     },
     {
       "date": "2025-09-15",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
     }
   ]
 }

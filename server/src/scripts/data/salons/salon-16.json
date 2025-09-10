@@ -1,120 +1,105 @@
 {
-  "name": "Glam Studio",
-  "description": "Artistic salon where stylists approach hair as a creative canvas.",
+  "name": "Majestic Hair Lounge",
+  "description": "Celebrity-inspired salon bringing red carpet looks to everyday clients.",
   "address": {
-    "street": "9609 Khan Market",
-    "city": "Pune",
-    "state": "Maharashtra",
-    "zipCode": "411001",
+    "street": "8309 Ring Road",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "zipCode": "600001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      73.84171731857683,
-      18.541375974503236
+      80.29372075330078,
+      13.094363821457229
     ]
   },
-  "contactPhone": "+91 37444 47607",
-  "contactEmail": "info@glamstudio.com",
-  "image": "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+  "contactPhone": "+91 67038 93657",
+  "contactEmail": "info@majestichairlounge.com",
+  "image": "https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80"
+    "https://images.unsplash.com/photo-1614438865362-9137f7e3036e?q=80&w=1000",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Swedish Massage",
-      "description": "Relaxing full body massage",
-      "price": 77,
-      "duration": 60
+      "name": "Root Touch-up",
+      "description": "Color application for roots",
+      "price": 65,
+      "duration": 90
     },
     {
       "id": "2",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
-      "price": 70,
-      "duration": 90
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 74,
+      "duration": 60
     },
     {
       "id": "3",
-      "name": "Bridal Hair",
-      "description": "Wedding day hair styling",
-      "price": 109,
-      "duration": 90
+      "name": "Basic Manicure",
+      "description": "Nail shaping, cuticle care, and polish",
+      "price": 27,
+      "duration": 30
     },
     {
       "id": "4",
-      "name": "Microdermabrasion",
-      "description": "Exfoliating skin treatment",
-      "price": 106,
-      "duration": 45
+      "name": "Deluxe Pedicure",
+      "description": "Luxury foot treatment with massage",
+      "price": 64,
+      "duration": 60
     },
     {
       "id": "5",
-      "name": "Kids Cut",
-      "description": "Children's haircut (12 and under)",
-      "price": 26,
-      "duration": 20
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 125,
+      "duration": 45
     },
     {
       "id": "6",
-      "name": "Deep Cleansing Facial",
-      "description": "Thorough facial with extractions",
-      "price": 73,
-      "duration": 60
+      "name": "Acrylic Nails",
+      "description": "Full set of acrylic nails",
+      "price": 69,
+      "duration": 90
+    },
+    {
+      "id": "7",
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 14,
+      "duration": 15
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Couples Retreat",
-      "description": "Relaxing spa experience for two",
-      "price": 229,
-      "duration": 120,
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 280,
+      "duration": 300,
       "services": [
-        "Swedish Massage (2)",
-        "Pedicure (2)"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Relaxation Package",
-      "description": "Ultimate relaxation experience",
-      "price": 163,
-      "duration": 150,
-      "services": [
-        "Swedish Massage",
-        "Express Facial",
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
         "Pedicure"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Bridal Package",
-      "description": "Complete bridal beauty preparation",
-      "price": 208,
-      "duration": 180,
-      "services": [
-        "Bridal Hair",
-        "Makeup Application",
-        "Gel Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Meera Nair",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Swedish Massage",
-        "Acrylic Nails",
-        "Bridal Hair"
+        "Root Touch-up",
+        "Updo Styling",
+        "Basic Manicure"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -186,14 +171,14 @@
     },
     {
       "id": "2",
-      "name": "Divya Joshi",
+      "name": "Sneha Gupta",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Swedish Massage",
-        "Acrylic Nails",
-        "Bridal Hair"
+        "Root Touch-up",
+        "Updo Styling",
+        "Basic Manicure"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -265,93 +250,14 @@
     },
     {
       "id": "3",
-      "name": "Shreya Iyer",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Swedish Massage",
-        "Acrylic Nails",
-        "Bridal Hair"
+        "Root Touch-up",
+        "Updo Styling",
+        "Basic Manicure"
       ],
       "bio": "Certified colorist who loves helping clients find their perfect shade.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Sneha Gupta",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Swedish Massage",
-        "Acrylic Nails",
-        "Bridal Hair"
-      ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -426,54 +332,178 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Hannah G.",
-      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
+      "userName": "Caden J.",
+      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
       "rating": 5,
-      "comment": "My new hairstyle is perfect. Exactly what I wanted!",
-      "date": "2025-09-07T00:00:00.000Z"
+      "comment": "Great service and attention to detail. Will definitely come back!",
+      "date": "2025-08-20T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Wyatt B.",
+      "userImage": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
+      "rating": 5,
+      "comment": "Very skilled stylists who really listen to what you want.",
+      "date": "2025-07-15T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Ava J.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "rating": 5,
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-07-13T00:00:00.000Z"
     }
   ],
   "rating": 4.1,
-  "reviewCount": 1318,
+  "reviewCount": 2297,
   "operatingHours": [
     {
       "day": 1,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 2,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 3,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 4,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 5,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 6,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 0,
-      "open": "10:00 AM",
-      "close": "4:00 PM"
+      "open": "11:00 AM",
+      "close": "6:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": []
+  "availability": [
+    {
+      "date": "2025-09-10",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    }
+  ]
 }

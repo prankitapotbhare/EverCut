@@ -1,73 +1,104 @@
 {
-  "name": "Bollywood Salon",
-  "description": "Contemporary salon with expert stylists specializing in modern cuts and colors.",
+  "name": "Celina Hair Studio",
+  "description": "Family-friendly salon providing quality services for all ages at affordable prices.",
   "address": {
-    "street": "6842 Sarojini Nagar",
-    "city": "Ahmedabad",
-    "state": "Gujarat",
-    "zipCode": "380001",
+    "street": "9736 MG Road",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "zipCode": "302001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.58024043125312,
-      23.00772245968505
+      75.7836945937027,
+      26.92007914865763
     ]
   },
-  "contactPhone": "+91 54536 94511",
-  "contactEmail": "info@bollywoodsalon.com",
-  "image": "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+  "contactPhone": "+91 35187 31052",
+  "contactEmail": "info@celinahairstudio.com",
+  "image": "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80"
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
+    "https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1000",
+    "https://plus.unsplash.com/premium_photo-1661349656933-532b88c88682?q=80&w=1000",
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80",
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Kids Cut",
-      "description": "Children's haircut (12 and under)",
-      "price": 24,
-      "duration": 20
-    },
-    {
-      "id": "2",
-      "name": "Basic Manicure",
-      "description": "Nail shaping, cuticle care, and polish",
-      "price": 26,
+      "name": "Blowout",
+      "description": "Wash and blowdry styling",
+      "price": 43,
       "duration": 30
     },
     {
+      "id": "2",
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 73,
+      "duration": 60
+    },
+    {
       "id": "3",
+      "name": "Hair Extensions",
+      "description": "Hair extension application",
+      "price": 244,
+      "duration": 180
+    },
+    {
+      "id": "4",
+      "name": "Swedish Massage",
+      "description": "Relaxing full body massage",
+      "price": 74,
+      "duration": 60
+    },
+    {
+      "id": "5",
+      "name": "Brazilian Blowout",
+      "description": "Smoothing and anti-frizz treatment",
+      "price": 200,
+      "duration": 120
+    },
+    {
+      "id": "6",
       "name": "Women's Cut & Style",
       "description": "Women's haircut with blowout",
-      "price": 48,
+      "price": 54,
       "duration": 45
+    },
+    {
+      "id": "7",
+      "name": "Anti-Aging Facial",
+      "description": "Rejuvenating facial for mature skin",
+      "price": 92,
+      "duration": 60
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Spa Day",
-      "description": "Full day of pampering and relaxation",
-      "price": 210,
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 141,
       "duration": 180,
       "services": [
-        "Deep Tissue Massage",
-        "Deep Cleansing Facial",
-        "Deluxe Pedicure"
+        "Full Color",
+        "Deep Conditioning",
+        "Blowout"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Sneha Gupta",
+      "name": "Meera Nair",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Kids Cut",
-        "Basic Manicure",
-        "Women's Cut & Style"
+        "Blowout",
+        "Updo Styling",
+        "Hair Extensions"
       ],
       "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
@@ -141,14 +172,14 @@
     },
     {
       "id": "2",
-      "name": "Meera Nair",
+      "name": "Shreya Iyer",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Kids Cut",
-        "Basic Manicure",
-        "Women's Cut & Style"
+        "Blowout",
+        "Updo Styling",
+        "Hair Extensions"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -220,12 +251,91 @@
     },
     {
       "id": "3",
-      "name": "Priya Patel",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Kids Cut",
-        "Basic Manicure",
-        "Women's Cut & Style"
+        "Blowout",
+        "Updo Styling",
+        "Hair Extensions"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "name": "Divya Joshi",
+      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
+      "specialties": [
+        "Blowout",
+        "Updo Styling",
+        "Hair Extensions"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
@@ -302,77 +412,68 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Jackson N.",
-      "userImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
+      "userName": "Lucas F.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
       "rating": 5,
       "comment": "Top-notch service and expertise. My go-to salon from now on!",
-      "date": "2025-08-26T00:00:00.000Z"
+      "date": "2025-07-14T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Lucas F.",
-      "userImage": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
+      "userName": "Michael V.",
+      "userImage": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=100&q=80",
       "rating": 5,
-      "comment": "The package deal was worth every penny. So happy with the results!",
-      "date": "2025-08-22T00:00:00.000Z"
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-08-09T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Sophia R.",
-      "userImage": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
-      "rating": 5,
-      "comment": "The products they use are high quality and smell amazing.",
-      "date": "2025-07-16T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "userId": "user-4",
-      "userName": "Isabella G.",
-      "userImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-      "rating": 5,
-      "comment": "I appreciate how they explained each step of the process.",
-      "date": "2025-08-02T00:00:00.000Z"
+      "userName": "Lily I.",
+      "userImage": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80",
+      "rating": 4,
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-08-15T00:00:00.000Z"
     }
   ],
-  "rating": 4.1,
-  "reviewCount": 2387,
+  "rating": 4.8,
+  "reviewCount": 234,
   "operatingHours": [
     {
       "day": 1,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 2,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 3,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 4,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 5,
       "open": "9:00 AM",
-      "close": "8:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "9:00 AM",
       "close": "7:00 PM"
     },
     {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "11:00 AM",
+      "close": "5:00 PM"
     }
   ],
   "featured": false,
@@ -381,88 +482,78 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
     },
     {
-      "date": "2025-09-11",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
+      "date": "2025-09-10",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "date": "2025-09-10",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-09-16",
+      "date": "2025-09-10",
       "time": "9:00",
       "formattedTime": "9:00 AM"
     },
     {
-      "date": "2025-09-16",
+      "date": "2025-09-10",
       "time": "14:15",
       "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
     }
   ]
 }

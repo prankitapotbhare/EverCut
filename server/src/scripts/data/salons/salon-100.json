@@ -1,92 +1,82 @@
 {
-  "name": "Pooja Beauty Lounge",
-  "description": "Innovative salon featuring the latest technology and techniques in hair and beauty.",
+  "name": "Tara Beauty Lounge",
+  "description": "Relaxing spa-like salon offering a peaceful escape from the busy world.",
   "address": {
-    "street": "9028 Sarojini Nagar",
-    "city": "Chennai",
-    "state": "Tamil Nadu",
-    "zipCode": "600001",
+    "street": "7039 Brigade Road",
+    "city": "Delhi",
+    "state": "Delhi",
+    "zipCode": "110001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      80.26386161781997,
-      13.076726739732706
+      77.12356894375239,
+      28.70173133404661
     ]
   },
-  "contactPhone": "+91 85502 24220",
-  "contactEmail": "info@poojabeautylounge.com",
-  "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
+  "contactPhone": "+91 46806 17873",
+  "contactEmail": "info@tarabeautylounge.com",
+  "image": "https://images.unsplash.com/photo-1614438865362-9137f7e3036e?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80"
+    "https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1000",
+    "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Basic Manicure",
-      "description": "Nail shaping, cuticle care, and polish",
-      "price": 25,
-      "duration": 30
-    },
-    {
-      "id": "2",
-      "name": "Premium Haircut",
-      "description": "Detailed haircut with styling",
-      "price": 54,
+      "name": "Gel Manicure",
+      "description": "Long-lasting gel polish application",
+      "price": 42,
       "duration": 45
     },
     {
+      "id": "2",
+      "name": "Nail Art",
+      "description": "Custom nail designs",
+      "price": 15,
+      "duration": 15
+    },
+    {
       "id": "3",
-      "name": "Women's Cut & Style",
-      "description": "Women's haircut with blowout",
-      "price": 46,
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 125,
       "duration": 45
     },
     {
       "id": "4",
-      "name": "Hair Extensions",
-      "description": "Hair extension application",
-      "price": 254,
-      "duration": 180
+      "name": "Blowout",
+      "description": "Wash and blowdry styling",
+      "price": 43,
+      "duration": 30
+    },
+    {
+      "id": "5",
+      "name": "Full Highlights",
+      "description": "Complete highlight service",
+      "price": 116,
+      "duration": 150
+    },
+    {
+      "id": "6",
+      "name": "Root Touch-up",
+      "description": "Color application for roots",
+      "price": 64,
+      "duration": 90
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 152,
-      "duration": 210,
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 73,
+      "duration": 60,
       "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Color Transformation",
-      "description": "Complete hair color makeover",
-      "price": 137,
-      "duration": 180,
-      "services": [
-        "Full Color",
-        "Deep Conditioning",
-        "Blowout"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Spa Day",
-      "description": "Full day of pampering and relaxation",
-      "price": 205,
-      "duration": 180,
-      "services": [
-        "Deep Tissue Massage",
-        "Deep Cleansing Facial",
-        "Deluxe Pedicure"
+        "Basic Haircut",
+        "Express Facial"
       ]
     }
   ],
@@ -96,11 +86,11 @@
       "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Basic Manicure",
-        "Premium Haircut",
-        "Women's Cut & Style"
+        "Gel Manicure",
+        "Nail Art",
+        "Chemical Peel"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -172,170 +162,12 @@
     },
     {
       "id": "2",
-      "name": "Shreya Iyer",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Basic Manicure",
-        "Premium Haircut",
-        "Women's Cut & Style"
-      ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Divya Joshi",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Basic Manicure",
-        "Premium Haircut",
-        "Women's Cut & Style"
-      ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Neha Kumar",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Basic Manicure",
-        "Premium Haircut",
-        "Women's Cut & Style"
+        "Gel Manicure",
+        "Nail Art",
+        "Chemical Peel"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
@@ -412,48 +244,66 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
-      "rating": 5,
-      "comment": "I've never had a better color treatment. Absolutely perfect!",
-      "date": "2025-08-08T00:00:00.000Z"
+      "userName": "Ethan T.",
+      "userImage": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80",
+      "rating": 4,
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-08-01T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Owen H.",
-      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
-      "rating": 5,
-      "comment": "Great service and attention to detail. Will definitely come back!",
+      "userName": "Emma S.",
+      "userImage": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "rating": 4,
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-09-09T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Henry D.",
+      "userImage": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
+      "rating": 4,
+      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
+      "date": "2025-09-02T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "Olivia M.",
+      "userImage": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
+      "rating": 4,
+      "comment": "Incredible attention to detail. They really know what they're doing.",
       "date": "2025-08-03T00:00:00.000Z"
     }
   ],
   "rating": 4.7,
-  "reviewCount": 866,
+  "reviewCount": 493,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
@@ -463,8 +313,8 @@
     },
     {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
@@ -473,33 +323,28 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
     },
     {
       "date": "2025-09-10",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
     },
     {
       "date": "2025-09-10",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
     },
     {
       "date": "2025-09-11",
@@ -508,18 +353,13 @@
     },
     {
       "date": "2025-09-11",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
+      "date": "2025-09-12",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
     },
     {
       "date": "2025-09-12",
@@ -527,79 +367,19 @@
       "formattedTime": "5:15 PM"
     },
     {
-      "date": "2025-09-12",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
+      "date": "2025-09-14",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
     },
     {
       "date": "2025-09-14",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
     },
     {
       "date": "2025-09-16",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     }
   ]
 }

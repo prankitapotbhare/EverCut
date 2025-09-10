@@ -1,89 +1,107 @@
 {
-  "name": "Rani Hair Studio",
-  "description": "Luxury salon providing VIP treatment and complimentary refreshments with every service.",
+  "name": "Solace Hair Studio",
+  "description": "Budget-friendly salon providing quality services at accessible prices.",
   "address": {
-    "street": "3371 Carter Road",
-    "city": "Bangalore",
-    "state": "Karnataka",
-    "zipCode": "560001",
+    "street": "3811 Janpath",
+    "city": "Surat",
+    "state": "Gujarat",
+    "zipCode": "395001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      77.60853154128331,
-      12.959454255950249
+      72.82219850756749,
+      21.169954053144394
     ]
   },
-  "contactPhone": "+91 87347 22843",
-  "contactEmail": "info@ranihairstudio.com",
-  "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
+  "contactPhone": "+91 42696 31902",
+  "contactEmail": "info@solacehairstudio.com",
+  "image": "https://plus.unsplash.com/premium_photo-1661349656933-532b88c88682?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80",
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80"
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Body Scrub",
-      "description": "Exfoliating body treatment",
-      "price": 69,
+      "name": "Pedicure",
+      "description": "Foot care and polish application",
+      "price": 43,
       "duration": 45
     },
     {
       "id": "2",
-      "name": "Basic Haircut",
-      "description": "Simple haircut and style",
-      "price": 36,
-      "duration": 30
-    },
-    {
-      "id": "3",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 92,
+      "name": "Body Wrap",
+      "description": "Detoxifying body treatment",
+      "price": 91,
       "duration": 60
     },
     {
-      "id": "4",
-      "name": "Express Facial",
-      "description": "Quick refreshing facial",
-      "price": 53,
-      "duration": 30
+      "id": "3",
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 15,
+      "duration": 15
     },
     {
-      "id": "5",
-      "name": "Full Highlights",
-      "description": "Complete highlight service",
-      "price": 131,
-      "duration": 150
+      "id": "4",
+      "name": "Deep Cleansing Facial",
+      "description": "Thorough facial with extractions",
+      "price": 82,
+      "duration": 60
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Color Transformation",
-      "description": "Complete hair color makeover",
-      "price": 141,
-      "duration": 180,
+      "name": "Men's Grooming",
+      "description": "Complete men's grooming experience",
+      "price": 97,
+      "duration": 90,
       "services": [
-        "Full Color",
+        "Men's Cut",
+        "Beard Trim",
+        "Facial"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Hair Repair",
+      "description": "Restorative treatment for damaged hair",
+      "price": 209,
+      "duration": 210,
+      "services": [
+        "Keratin Treatment",
         "Deep Conditioning",
-        "Blowout"
+        "Trim"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 76,
+      "duration": 60,
+      "services": [
+        "Basic Haircut",
+        "Express Facial"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Riya Singh",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Body Scrub",
-        "Basic Haircut",
-        "Anti-Aging Facial"
+        "Pedicure",
+        "Body Wrap",
+        "Eyebrow Waxing"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -155,14 +173,93 @@
     },
     {
       "id": "2",
-      "name": "Pooja Agarwal",
+      "name": "Divya Joshi",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Body Scrub",
-        "Basic Haircut",
-        "Anti-Aging Facial"
+        "Pedicure",
+        "Body Wrap",
+        "Eyebrow Waxing"
       ],
       "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Sneha Gupta",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Pedicure",
+        "Body Wrap",
+        "Eyebrow Waxing"
+      ],
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -237,81 +334,162 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
-      "rating": 3,
-      "comment": "The package deal was worth every penny. So happy with the results!",
-      "date": "2025-08-17T00:00:00.000Z"
+      "userName": "Jackson N.",
+      "userImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
+      "rating": 5,
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-08-09T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Gabriel F.",
-      "userImage": "https://images.unsplash.com/photo-1557555187-23d685287bc3?w=100&q=80",
+      "userName": "Mia E.",
+      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
       "rating": 5,
-      "comment": "The products they use are high quality and smell amazing.",
-      "date": "2025-08-24T00:00:00.000Z"
+      "comment": "Excellent service from start to finish. Love this place!",
+      "date": "2025-09-01T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Isabella G.",
-      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
+      "userName": "Noah P.",
+      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
       "rating": 5,
-      "comment": "They were able to fit me in last minute. Such great customer service!",
-      "date": "2025-08-23T00:00:00.000Z"
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-07-22T00:00:00.000Z"
     },
     {
       "id": "4",
       "userId": "user-4",
-      "userName": "Grace K.",
-      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
-      "rating": 4,
-      "comment": "The staff went above and beyond to make sure I was happy.",
-      "date": "2025-07-26T00:00:00.000Z"
+      "userName": "Harper Y.",
+      "userImage": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
+      "rating": 5,
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-09-05T00:00:00.000Z"
     }
   ],
-  "rating": 4.9,
-  "reviewCount": 684,
+  "rating": 4.4,
+  "reviewCount": 368,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
       "open": "9:00 AM",
       "close": "7:00 PM"
     },
     {
-      "day": 6,
-      "open": "10:00 AM",
-      "close": "6:00 PM"
-    },
-    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "5:00 PM"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": []
+  "availability": [
+    {
+      "date": "2025-09-10",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    }
+  ]
 }

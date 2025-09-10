@@ -1,76 +1,80 @@
 {
-  "name": "Kali Hair Studio",
-  "description": "Health-conscious salon using only non-toxic and cruelty-free products.",
+  "name": "Opaline Salon",
+  "description": "Upscale salon offering premium hair and beauty services in a luxurious setting.",
   "address": {
-    "street": "3751 Park Street",
-    "city": "Ahmedabad",
-    "state": "Gujarat",
-    "zipCode": "380001",
+    "street": "4557 Eastern Express Highway",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "zipCode": "400001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.56103241065338,
-      23.003849302860736
+      72.8885447664501,
+      19.06172717677132
     ]
   },
-  "contactPhone": "+91 31692 32337",
-  "contactEmail": "info@kalihairstudio.com",
-  "image": "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+  "contactPhone": "+91 16076 28632",
+  "contactEmail": "info@opalinesalon.com",
+  "image": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80"
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80",
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Body Wrap",
-      "description": "Detoxifying body treatment",
-      "price": 81,
-      "duration": 60
+      "name": "Full Face Waxing",
+      "description": "Complete facial hair removal",
+      "price": 45,
+      "duration": 30
     },
     {
       "id": "2",
-      "name": "Ombre",
-      "description": "Graduated color effect",
-      "price": 138,
-      "duration": 150
+      "name": "Express Facial",
+      "description": "Quick refreshing facial",
+      "price": 52,
+      "duration": 30
     },
     {
       "id": "3",
-      "name": "Keratin Treatment",
-      "description": "Smoothing keratin service",
-      "price": 192,
-      "duration": 150
-    },
-    {
-      "id": "4",
-      "name": "Women's Cut & Style",
-      "description": "Women's haircut with blowout",
-      "price": 55,
-      "duration": 45
+      "name": "Hot Stone Massage",
+      "description": "Massage with heated stones",
+      "price": 107,
+      "duration": 75
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 103,
-      "duration": 90,
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 150,
+      "duration": 210,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     },
     {
       "id": "2",
+      "name": "Bridal Package",
+      "description": "Complete bridal beauty preparation",
+      "price": 209,
+      "duration": 180,
+      "services": [
+        "Bridal Hair",
+        "Makeup Application",
+        "Gel Manicure"
+      ]
+    },
+    {
+      "id": "3",
       "name": "Hair Repair",
       "description": "Restorative treatment for damaged hair",
-      "price": 228,
+      "price": 217,
       "duration": 210,
       "services": [
         "Keratin Treatment",
@@ -82,91 +86,12 @@
   "stylists": [
     {
       "id": "1",
-      "name": "Sneha Gupta",
+      "name": "Meera Nair",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Body Wrap",
-        "Ombre",
-        "Keratin Treatment"
-      ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "2",
-      "name": "Priya Patel",
-      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
-      "specialties": [
-        "Body Wrap",
-        "Ombre",
-        "Keratin Treatment"
+        "Full Face Waxing",
+        "Express Facial",
+        "Hot Stone Massage"
       ],
       "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
@@ -239,13 +164,13 @@
       "status": "active"
     },
     {
-      "id": "3",
-      "name": "Pooja Agarwal",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "id": "2",
+      "name": "Neha Kumar",
+      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Body Wrap",
-        "Ombre",
-        "Keratin Treatment"
+        "Full Face Waxing",
+        "Express Facial",
+        "Hot Stone Massage"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
@@ -318,15 +243,15 @@
       "status": "active"
     },
     {
-      "id": "4",
-      "name": "Anjali Sharma",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
+      "id": "3",
+      "name": "Neha Kumar",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Body Wrap",
-        "Ombre",
-        "Keratin Treatment"
+        "Full Face Waxing",
+        "Express Facial",
+        "Hot Stone Massage"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -401,24 +326,33 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Abigail U.",
-      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
-      "rating": 4,
-      "comment": "Absolutely loved my experience here! The staff was so professional.",
-      "date": "2025-09-08T00:00:00.000Z"
+      "userName": "Wyatt B.",
+      "userImage": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&q=80",
+      "rating": 5,
+      "comment": "Incredible attention to detail. They really know what they're doing.",
+      "date": "2025-08-25T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Benjamin H.",
-      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
+      "userName": "Emma S.",
+      "userImage": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&q=80",
+      "rating": 5,
+      "comment": "The products they use are high quality and smell amazing.",
+      "date": "2025-08-11T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Isabella G.",
+      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
       "rating": 4,
-      "comment": "The best salon experience I've had in years. Highly recommend!",
-      "date": "2025-08-18T00:00:00.000Z"
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-07-17T00:00:00.000Z"
     }
   ],
-  "rating": 4.3,
-  "reviewCount": 2462,
+  "rating": 4.9,
+  "reviewCount": 997,
   "operatingHours": [
     {
       "day": 1,
@@ -459,71 +393,5 @@
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": [
-    {
-      "date": "2025-09-10",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    }
-  ]
+  "availability": []
 }

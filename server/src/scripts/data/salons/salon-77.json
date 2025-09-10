@@ -1,97 +1,82 @@
 {
-  "name": "Kajol Beauty Parlour",
-  "description": "Trendy salon specializing in cutting-edge styles and innovative color techniques.",
+  "name": "Rumi Salon",
+  "description": "Family-friendly salon providing quality services for all ages at affordable prices.",
   "address": {
-    "street": "5420 Commercial Street",
-    "city": "Delhi",
-    "state": "Delhi",
-    "zipCode": "110001",
+    "street": "1949 Linking Road",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "zipCode": "380001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      77.08725999715291,
-      28.704403583558502
+      72.56206210272417,
+      23.02385335731709
     ]
   },
-  "contactPhone": "+91 16750 75514",
-  "contactEmail": "info@kajolbeautyparlour.com",
-  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+  "contactPhone": "+91 24595 60130",
+  "contactEmail": "info@rumisalon.com",
+  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80"
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1661717725396-b05465e725cd?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Balayage",
-      "description": "Hand-painted highlighting technique",
-      "price": 140,
+      "name": "Keratin Treatment",
+      "description": "Smoothing keratin service",
+      "price": 181,
       "duration": 150
     },
     {
       "id": "2",
-      "name": "Gel Manicure",
-      "description": "Long-lasting gel polish application",
-      "price": 37,
-      "duration": 45
+      "name": "Bridal Hair",
+      "description": "Wedding day hair styling",
+      "price": 124,
+      "duration": 90
     },
     {
       "id": "3",
-      "name": "Body Wrap",
-      "description": "Detoxifying body treatment",
-      "price": 86,
-      "duration": 60
-    },
-    {
-      "id": "4",
-      "name": "Women's Cut & Style",
-      "description": "Women's haircut with blowout",
-      "price": 46,
+      "name": "Body Scrub",
+      "description": "Exfoliating body treatment",
+      "price": 77,
       "duration": 45
-    },
-    {
-      "id": "5",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 87,
-      "duration": 60
-    },
-    {
-      "id": "6",
-      "name": "Nail Art",
-      "description": "Custom nail designs",
-      "price": 15,
-      "duration": 15
-    },
-    {
-      "id": "7",
-      "name": "Brazilian Blowout",
-      "description": "Smoothing and anti-frizz treatment",
-      "price": 191,
-      "duration": 120
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Spa Day",
-      "description": "Full day of pampering and relaxation",
-      "price": 214,
-      "duration": 180,
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 154,
+      "duration": 210,
       "services": [
-        "Deep Tissue Massage",
-        "Deep Cleansing Facial",
-        "Deluxe Pedicure"
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     },
     {
       "id": "2",
+      "name": "Hair Repair",
+      "description": "Restorative treatment for damaged hair",
+      "price": 213,
+      "duration": 210,
+      "services": [
+        "Keratin Treatment",
+        "Deep Conditioning",
+        "Trim"
+      ]
+    },
+    {
+      "id": "3",
       "name": "Luxury Experience",
       "description": "Premium head-to-toe beauty experience",
-      "price": 288,
+      "price": 272,
       "duration": 300,
       "services": [
         "Balayage",
@@ -99,31 +84,19 @@
         "Gel Manicure",
         "Pedicure"
       ]
-    },
-    {
-      "id": "3",
-      "name": "Bridal Package",
-      "description": "Complete bridal beauty preparation",
-      "price": 209,
-      "duration": 180,
-      "services": [
-        "Bridal Hair",
-        "Makeup Application",
-        "Gel Manicure"
-      ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Pooja Agarwal",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Balayage",
-        "Gel Manicure",
-        "Body Wrap"
+        "Keratin Treatment",
+        "Bridal Hair",
+        "Body Scrub"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -195,12 +168,91 @@
     },
     {
       "id": "2",
-      "name": "Pooja Agarwal",
+      "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Balayage",
-        "Gel Manicure",
-        "Body Wrap"
+        "Keratin Treatment",
+        "Bridal Hair",
+        "Body Scrub"
+      ],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Kavya Reddy",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Keratin Treatment",
+        "Bridal Hair",
+        "Body Scrub"
       ],
       "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
@@ -273,92 +325,13 @@
       "status": "active"
     },
     {
-      "id": "3",
-      "name": "Riya Singh",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Balayage",
-        "Gel Manicure",
-        "Body Wrap"
-      ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
       "id": "4",
-      "name": "Riya Singh",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
       "specialties": [
-        "Balayage",
-        "Gel Manicure",
-        "Body Wrap"
+        "Keratin Treatment",
+        "Bridal Hair",
+        "Body Scrub"
       ],
       "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
@@ -435,42 +408,15 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Olivia M.",
-      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "userName": "Matthew X.",
+      "userImage": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
       "rating": 5,
-      "comment": "Top-notch service and expertise. My go-to salon from now on!",
-      "date": "2025-08-24T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "James T.",
-      "userImage": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80",
-      "rating": 5,
-      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
-      "date": "2025-09-05T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
-      "rating": 5,
-      "comment": "Reasonable prices for the quality of service you receive.",
-      "date": "2025-09-08T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "userId": "user-4",
-      "userName": "Jacob R.",
-      "userImage": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=100&q=80",
-      "rating": 4,
-      "comment": "My new hairstyle is perfect. Exactly what I wanted!",
-      "date": "2025-08-19T00:00:00.000Z"
+      "comment": "I appreciate how they explained each step of the process.",
+      "date": "2025-07-24T00:00:00.000Z"
     }
   ],
-  "rating": 4.2,
-  "reviewCount": 355,
+  "rating": 4.1,
+  "reviewCount": 1512,
   "operatingHours": [
     {
       "day": 1,
@@ -514,58 +460,113 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
     },
     {
       "date": "2025-09-10",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
     },
     {
       "date": "2025-09-10",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-11",
       "time": "13:45",
       "formattedTime": "1:45 PM"
     },
     {
-      "date": "2025-09-12",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
+      "date": "2025-09-11",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
     },
     {
       "date": "2025-09-13",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
+    },
+    {
+      "date": "2025-09-14",
       "time": "11:30",
       "formattedTime": "11:30 AM"
     },
     {
       "date": "2025-09-14",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
     },
     {
       "date": "2025-09-14",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
     },
     {
       "date": "2025-09-15",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
     },
     {
       "date": "2025-09-16",
       "time": "10:30",
       "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
     }
   ]
 }

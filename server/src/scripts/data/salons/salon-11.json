@@ -1,110 +1,89 @@
 {
-  "name": "Shahnaz Husain Salon",
-  "description": "Innovative salon featuring the latest technology and techniques in hair and beauty.",
+  "name": "Aether Salon",
+  "description": "Family-friendly salon providing quality services for all ages at affordable prices.",
   "address": {
-    "street": "3980 Park Street",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "2819 Janpath",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "zipCode": "380001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.37988483647742,
-      22.550353289985388
+      72.59240742103039,
+      23.034744327558816
     ]
   },
-  "contactPhone": "+91 37002 88119",
-  "contactEmail": "info@shahnazhusainsalon.com",
-  "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
+  "contactPhone": "+91 77062 50875",
+  "contactEmail": "info@aethersalon.com",
+  "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80"
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80",
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Body Wrap",
-      "description": "Detoxifying body treatment",
-      "price": 92,
-      "duration": 60
-    },
-    {
-      "id": "2",
-      "name": "Hot Stone Massage",
-      "description": "Massage with heated stones",
-      "price": 114,
-      "duration": 75
-    },
-    {
-      "id": "3",
       "name": "Full Color",
       "description": "All-over hair color application",
-      "price": 96,
+      "price": 97,
       "duration": 120
     },
     {
+      "id": "2",
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 75,
+      "duration": 60
+    },
+    {
+      "id": "3",
+      "name": "Eyebrow Threading",
+      "description": "Precise eyebrow shaping",
+      "price": 15,
+      "duration": 15
+    },
+    {
       "id": "4",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
-      "price": 73,
-      "duration": 90
+      "name": "Hot Stone Massage",
+      "description": "Massage with heated stones",
+      "price": 109,
+      "duration": 75
     },
     {
       "id": "5",
-      "name": "Root Touch-up",
-      "description": "Color application for roots",
-      "price": 59,
-      "duration": 90
-    },
-    {
-      "id": "6",
-      "name": "Deep Cleansing Facial",
-      "description": "Thorough facial with extractions",
-      "price": 76,
-      "duration": 60
+      "name": "Blowout",
+      "description": "Wash and blowdry styling",
+      "price": 36,
+      "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 99,
-      "duration": 90,
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 241,
+      "duration": 120,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Spa Day",
-      "description": "Full day of pampering and relaxation",
-      "price": 202,
-      "duration": 180,
-      "services": [
-        "Deep Tissue Massage",
-        "Deep Cleansing Facial",
-        "Deluxe Pedicure"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Kavya Reddy",
+      "name": "Meera Nair",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Body Wrap",
-        "Hot Stone Massage",
-        "Full Color"
+        "Full Color",
+        "Updo Styling",
+        "Eyebrow Threading"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -176,12 +155,12 @@
     },
     {
       "id": "2",
-      "name": "Meera Nair",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Body Wrap",
-        "Hot Stone Massage",
-        "Full Color"
+        "Full Color",
+        "Updo Styling",
+        "Eyebrow Threading"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
@@ -255,14 +234,14 @@
     },
     {
       "id": "3",
-      "name": "Priya Patel",
+      "name": "Sneha Gupta",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Body Wrap",
-        "Hot Stone Massage",
-        "Full Color"
+        "Full Color",
+        "Updo Styling",
+        "Eyebrow Threading"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -334,14 +313,14 @@
     },
     {
       "id": "4",
-      "name": "Neha Kumar",
+      "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
       "specialties": [
-        "Body Wrap",
-        "Hot Stone Massage",
-        "Full Color"
+        "Full Color",
+        "Updo Styling",
+        "Eyebrow Threading"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -416,84 +395,235 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Mia E.",
-      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
-      "rating": 5,
-      "comment": "I've never had a better color treatment. Absolutely perfect!",
-      "date": "2025-08-30T00:00:00.000Z"
+      "userName": "James T.",
+      "userImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "rating": 4,
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-09-03T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Penelope C.",
-      "userImage": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&q=80",
-      "rating": 4,
-      "comment": "Amazing results! Everyone keeps complimenting my new look.",
-      "date": "2025-07-30T00:00:00.000Z"
+      "userName": "Evelyn W.",
+      "userImage": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
+      "rating": 5,
+      "comment": "Excellent service from start to finish. Love this place!",
+      "date": "2025-07-26T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Wyatt B.",
-      "userImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
-      "rating": 5,
-      "comment": "My stylist was amazing and really understood what I wanted.",
-      "date": "2025-07-16T00:00:00.000Z"
+      "userName": "Benjamin H.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "rating": 4,
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-08-25T00:00:00.000Z"
     },
     {
       "id": "4",
       "userId": "user-4",
       "userName": "Owen H.",
-      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
+      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
       "rating": 5,
-      "comment": "Great service and attention to detail. Will definitely come back!",
-      "date": "2025-09-01T00:00:00.000Z"
+      "comment": "The best salon experience I've had in years. Highly recommend!",
+      "date": "2025-07-30T00:00:00.000Z"
     }
   ],
-  "rating": 4.6,
-  "reviewCount": 1720,
+  "rating": 4.4,
+  "reviewCount": 1578,
   "operatingHours": [
     {
       "day": 1,
       "open": "9:00 AM",
-      "close": "7:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 2,
       "open": "9:00 AM",
-      "close": "7:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 3,
       "open": "9:00 AM",
-      "close": "7:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 4,
       "open": "9:00 AM",
-      "close": "7:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 5,
       "open": "9:00 AM",
-      "close": "7:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 6,
-      "open": "10:00 AM",
-      "close": "6:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "5:00 PM"
+      "open": "Closed",
+      "close": "Closed"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": {
-    "discount": "23%",
+    "discount": "26%",
     "description": "First-Time Customer Deal"
   },
-  "availability": []
+  "availability": [
+    {
+      "date": "2025-09-10",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    }
+  ]
 }

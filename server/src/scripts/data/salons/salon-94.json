@@ -1,94 +1,73 @@
 {
-  "name": "Glamour Zone",
-  "description": "Chic salon with Instagram-worthy decor and top-tier stylists.",
+  "name": "Opal Salon",
+  "description": "Full-service beauty lounge offering hair, nail, and skin treatments in a relaxing environment.",
   "address": {
-    "street": "2648 Khan Market",
-    "city": "Bangalore",
-    "state": "Karnataka",
-    "zipCode": "560001",
+    "street": "6480 Park Street",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "zipCode": "600001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      77.59886481101368,
-      12.957038731782378
+      80.2512149201138,
+      13.084375696553984
     ]
   },
-  "contactPhone": "+91 45561 62221",
-  "contactEmail": "info@glamourzone.com",
-  "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
+  "contactPhone": "+91 10590 60711",
+  "contactEmail": "info@opalsalon.com",
+  "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
-    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80"
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Deep Conditioning",
-      "description": "Intensive hair treatment",
-      "price": 31,
-      "duration": 30
+      "name": "Pedicure",
+      "description": "Foot care and polish application",
+      "price": 44,
+      "duration": 45
     },
     {
       "id": "2",
-      "name": "Hot Stone Massage",
-      "description": "Massage with heated stones",
-      "price": 100,
-      "duration": 75
+      "name": "Keratin Treatment",
+      "description": "Smoothing keratin service",
+      "price": 163,
+      "duration": 150
     },
     {
       "id": "3",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 93,
-      "duration": 60
-    },
-    {
-      "id": "4",
-      "name": "Lip Waxing",
-      "description": "Upper lip hair removal",
-      "price": 10,
-      "duration": 10
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 29,
+      "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Luxury Experience",
-      "description": "Premium head-to-toe beauty experience",
-      "price": 278,
-      "duration": 300,
+      "name": "Men's Grooming",
+      "description": "Complete men's grooming experience",
+      "price": 99,
+      "duration": 90,
       "services": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Gel Manicure",
-        "Pedicure"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 143,
-      "duration": 210,
-      "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
+        "Men's Cut",
+        "Beard Trim",
+        "Facial"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Meera Nair",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Deep Conditioning",
-        "Hot Stone Massage",
-        "Anti-Aging Facial"
+        "Pedicure",
+        "Keratin Treatment",
+        "Deep Conditioning"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
@@ -162,14 +141,14 @@
     },
     {
       "id": "2",
-      "name": "Divya Joshi",
+      "name": "Shreya Iyer",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Deep Conditioning",
-        "Hot Stone Massage",
-        "Anti-Aging Facial"
+        "Pedicure",
+        "Keratin Treatment",
+        "Deep Conditioning"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -241,91 +220,12 @@
     },
     {
       "id": "3",
-      "name": "Anjali Sharma",
+      "name": "Meera Nair",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Deep Conditioning",
-        "Hot Stone Massage",
-        "Anti-Aging Facial"
-      ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Divya Joshi",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Deep Conditioning",
-        "Hot Stone Massage",
-        "Anti-Aging Facial"
+        "Pedicure",
+        "Keratin Treatment",
+        "Deep Conditioning"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
@@ -402,59 +302,50 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Hannah G.",
-      "userImage": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80",
+      "userName": "Abigail U.",
+      "userImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
       "rating": 4,
-      "comment": "My stylist was amazing and really understood what I wanted.",
-      "date": "2025-07-16T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Lucas F.",
-      "userImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-      "rating": 5,
-      "comment": "Excellent service from start to finish. Love this place!",
-      "date": "2025-09-03T00:00:00.000Z"
+      "comment": "The staff went above and beyond to make sure I was happy.",
+      "date": "2025-08-24T00:00:00.000Z"
     }
   ],
-  "rating": 4.1,
-  "reviewCount": 1697,
+  "rating": 4.5,
+  "reviewCount": 190,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 6,
       "open": "10:00 AM",
-      "close": "8:00 PM"
+      "close": "6:00 PM"
     },
     {
       "day": 0,
       "open": "11:00 AM",
-      "close": "6:00 PM"
+      "close": "5:00 PM"
     }
   ],
   "featured": false,
@@ -463,18 +354,8 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
     },
     {
       "date": "2025-09-10",
@@ -482,19 +363,24 @@
       "formattedTime": "2:00 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "date": "2025-09-10",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     },
     {
       "date": "2025-09-11",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
     },
     {
       "date": "2025-09-11",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
     },
     {
       "date": "2025-09-11",
@@ -503,53 +389,78 @@
     },
     {
       "date": "2025-09-11",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
     },
     {
-      "date": "2025-09-12",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
+      "date": "2025-09-11",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
     },
     {
       "date": "2025-09-13",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
     },
     {
       "date": "2025-09-13",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-14",
       "time": "13:45",
       "formattedTime": "1:45 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
+      "date": "2025-09-14",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
     },
     {
       "date": "2025-09-14",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
     },
     {
       "date": "2025-09-14",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
+      "date": "2025-09-15",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
+      "date": "2025-09-15",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
     }
   ]
 }

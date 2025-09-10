@@ -1,88 +1,88 @@
 {
-  "name": "Bounce Salon",
-  "description": "Budget-friendly salon providing quality services at accessible prices.",
+  "name": "Modish Hair Lounge",
+  "description": "Health-conscious salon using only non-toxic and cruelty-free products.",
   "address": {
-    "street": "4916 Hill Road",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "1779 Connaught Place",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "zipCode": "400001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.34927980011487,
-      22.55503697323565
+      72.89286640331821,
+      19.095910701789965
     ]
   },
-  "contactPhone": "+91 73275 11217",
-  "contactEmail": "info@bouncesalon.com",
-  "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
+  "contactPhone": "+91 80409 67539",
+  "contactEmail": "info@modishhairlounge.com",
+  "image": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80"
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1661349656933-532b88c88682?q=80&w=1000",
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80",
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Body Scrub",
-      "description": "Exfoliating body treatment",
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
       "price": 69,
-      "duration": 45
-    },
-    {
-      "id": "2",
-      "name": "Swedish Massage",
-      "description": "Relaxing full body massage",
-      "price": 83,
       "duration": 60
     },
     {
+      "id": "2",
+      "name": "Brazilian Blowout",
+      "description": "Smoothing and anti-frizz treatment",
+      "price": 220,
+      "duration": 120
+    },
+    {
       "id": "3",
-      "name": "Women's Cut & Style",
-      "description": "Women's haircut with blowout",
-      "price": 47,
-      "duration": 45
+      "name": "Kids Cut",
+      "description": "Children's haircut (12 and under)",
+      "price": 23,
+      "duration": 20
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Color Transformation",
-      "description": "Complete hair color makeover",
-      "price": 134,
-      "duration": 180,
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 251,
+      "duration": 120,
       "services": [
-        "Full Color",
-        "Deep Conditioning",
-        "Blowout"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     },
     {
       "id": "2",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 100,
-      "duration": 90,
+      "name": "Bridal Package",
+      "description": "Complete bridal beauty preparation",
+      "price": 208,
+      "duration": 180,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Bridal Hair",
+        "Makeup Application",
+        "Gel Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Riya Singh",
+      "name": "Sneha Gupta",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Body Scrub",
-        "Swedish Massage",
-        "Women's Cut & Style"
+        "Updo Styling",
+        "Brazilian Blowout",
+        "Kids Cut"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -154,14 +154,14 @@
     },
     {
       "id": "2",
-      "name": "Sneha Gupta",
+      "name": "Pooja Agarwal",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Body Scrub",
-        "Swedish Massage",
-        "Women's Cut & Style"
+        "Updo Styling",
+        "Brazilian Blowout",
+        "Kids Cut"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -236,77 +236,59 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Noah P.",
-      "userImage": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
-      "rating": 5,
-      "comment": "Amazing results! Everyone keeps complimenting my new look.",
-      "date": "2025-08-04T00:00:00.000Z"
+      "userName": "Michael V.",
+      "userImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
+      "rating": 4,
+      "comment": "Excellent service from start to finish. Love this place!",
+      "date": "2025-09-02T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Abigail U.",
-      "userImage": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
+      "userName": "Ava J.",
+      "userImage": "https://images.unsplash.com/photo-1557555187-23d685287bc3?w=100&q=80",
       "rating": 5,
-      "comment": "They were able to fit me in last minute. Such great customer service!",
-      "date": "2025-08-08T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Grace K.",
-      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-      "rating": 5,
-      "comment": "The staff went above and beyond to make sure I was happy.",
-      "date": "2025-07-27T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "userId": "user-4",
-      "userName": "Matthew X.",
-      "userImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
-      "rating": 5,
-      "comment": "Excellent service from start to finish. Love this place!",
-      "date": "2025-07-29T00:00:00.000Z"
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-08-20T00:00:00.000Z"
     }
   ],
-  "rating": 4.5,
-  "reviewCount": 2419,
+  "rating": 4.4,
+  "reviewCount": 2224,
   "operatingHours": [
     {
       "day": 1,
       "open": "9:00 AM",
-      "close": "7:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 2,
       "open": "9:00 AM",
-      "close": "7:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 3,
       "open": "9:00 AM",
-      "close": "7:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 4,
       "open": "9:00 AM",
-      "close": "7:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 5,
       "open": "9:00 AM",
-      "close": "7:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 6,
-      "open": "10:00 AM",
-      "close": "6:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "5:00 PM"
+      "open": "Closed",
+      "close": "Closed"
     }
   ],
   "featured": false,
@@ -315,18 +297,13 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
     },
     {
       "date": "2025-09-11",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
     },
     {
       "date": "2025-09-11",
@@ -335,53 +312,123 @@
     },
     {
       "date": "2025-09-11",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
     },
     {
-      "date": "2025-09-13",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
+      "date": "2025-09-11",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
+      "date": "2025-09-12",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
+      "date": "2025-09-12",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-09-14",
+      "date": "2025-09-12",
       "time": "15:00",
       "formattedTime": "3:00 PM"
     },
     {
-      "date": "2025-09-15",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
+      "date": "2025-09-12",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "14:00",
+      "formattedTime": "2:00 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
     },
     {
       "date": "2025-09-15",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
     }
   ]
 }

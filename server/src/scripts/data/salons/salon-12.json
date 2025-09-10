@@ -1,112 +1,88 @@
 {
-  "name": "Mirrors Beauty Lounge",
-  "description": "Artistic salon where stylists approach hair as a creative canvas.",
+  "name": "Azure Salon",
+  "description": "Celebrity-inspired salon bringing red carpet looks to everyday clients.",
   "address": {
-    "street": "7336 SV Road",
-    "city": "Delhi",
-    "state": "Delhi",
-    "zipCode": "110001",
+    "street": "4358 Sarojini Nagar",
+    "city": "Surat",
+    "state": "Gujarat",
+    "zipCode": "395001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      77.09136774423808,
-      28.708114416126868
+      72.84468184161545,
+      21.16972945479604
     ]
   },
-  "contactPhone": "+91 18205 92320",
-  "contactEmail": "info@mirrorsbeautylounge.com",
-  "image": "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+  "contactPhone": "+91 72636 89717",
+  "contactEmail": "info@azuresalon.com",
+  "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80"
+    "https://images.unsplash.com/photo-1679621577488-4ec73fe17de6?q=80&w=1000",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Eyebrow Threading",
-      "description": "Precise eyebrow shaping",
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
       "price": 14,
       "duration": 15
     },
     {
       "id": "2",
-      "name": "Premium Haircut",
-      "description": "Detailed haircut with styling",
-      "price": 51,
-      "duration": 45
+      "name": "Full Color",
+      "description": "All-over hair color application",
+      "price": 83,
+      "duration": 120
     },
     {
       "id": "3",
-      "name": "Express Facial",
-      "description": "Quick refreshing facial",
-      "price": 54,
-      "duration": 30
-    },
-    {
-      "id": "4",
-      "name": "Full Face Waxing",
-      "description": "Complete facial hair removal",
-      "price": 48,
-      "duration": 30
-    },
-    {
-      "id": "5",
-      "name": "Deep Tissue Massage",
-      "description": "Therapeutic muscle massage",
-      "price": 99,
-      "duration": 60
+      "name": "Balayage",
+      "description": "Hand-painted highlighting technique",
+      "price": 146,
+      "duration": 150
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 101,
-      "duration": 90,
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 139,
+      "duration": 180,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Full Color",
+        "Deep Conditioning",
+        "Blowout"
       ]
     },
     {
       "id": "2",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 153,
-      "duration": 210,
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 218,
+      "duration": 180,
       "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Couples Retreat",
-      "description": "Relaxing spa experience for two",
-      "price": 233,
-      "duration": 120,
-      "services": [
-        "Swedish Massage (2)",
-        "Pedicure (2)"
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Kavya Reddy",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Eyebrow Threading",
-        "Premium Haircut",
-        "Express Facial"
+        "Eyebrow Waxing",
+        "Full Color",
+        "Balayage"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -181,169 +157,11 @@
       "name": "Sneha Gupta",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Eyebrow Threading",
-        "Premium Haircut",
-        "Express Facial"
-      ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Divya Joshi",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Eyebrow Threading",
-        "Premium Haircut",
-        "Express Facial"
+        "Eyebrow Waxing",
+        "Full Color",
+        "Balayage"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Kavya Reddy",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Eyebrow Threading",
-        "Premium Haircut",
-        "Express Facial"
-      ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -418,141 +236,66 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Isabella G.",
-      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
-      "rating": 5,
-      "comment": "They were able to fit me in last minute. Such great customer service!",
-      "date": "2025-07-20T00:00:00.000Z"
+      "userName": "Sophia R.",
+      "userImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
+      "rating": 3,
+      "comment": "I appreciate how they explained each step of the process.",
+      "date": "2025-08-27T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
+      "userName": "William K.",
+      "userImage": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80",
       "rating": 5,
-      "comment": "Incredible attention to detail. They really know what they're doing.",
-      "date": "2025-07-19T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Penelope C.",
-      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
-      "rating": 5,
-      "comment": "Excellent service from start to finish. Love this place!",
-      "date": "2025-09-01T00:00:00.000Z"
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-08-24T00:00:00.000Z"
     }
   ],
-  "rating": 4.3,
-  "reviewCount": 303,
+  "rating": 4.7,
+  "reviewCount": 2104,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 6,
       "open": "10:00 AM",
-      "close": "6:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 0,
       "open": "11:00 AM",
-      "close": "5:00 PM"
+      "close": "6:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": {
-    "discount": "17%",
+    "discount": "21%",
     "description": "Referral Bonus"
   },
-  "availability": [
-    {
-      "date": "2025-09-12",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    }
-  ]
+  "availability": []
 }

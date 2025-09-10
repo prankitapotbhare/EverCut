@@ -1,84 +1,90 @@
 {
-  "name": "Shraddha Salon",
-  "description": "Award-winning salon known for excellence in all aspects of hair and beauty services.",
+  "name": "Prism Salon",
+  "description": "Minimalist salon focused on precision cuts and natural beauty.",
   "address": {
-    "street": "5598 Karol Bagh",
-    "city": "Ahmedabad",
-    "state": "Gujarat",
-    "zipCode": "380001",
+    "street": "9314 Linking Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "zipCode": "411001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.5739832523025,
-      23.04093821868183
+      73.8733174160614,
+      18.542435986948195
     ]
   },
-  "contactPhone": "+91 47678 37831",
-  "contactEmail": "info@shraddhasalon.com",
-  "image": "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+  "contactPhone": "+91 98351 93079",
+  "contactEmail": "info@prismsalon.com",
+  "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80"
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80",
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80",
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Women's Cut & Style",
-      "description": "Women's haircut with blowout",
-      "price": 46,
-      "duration": 45
+      "name": "Express Facial",
+      "description": "Quick refreshing facial",
+      "price": 48,
+      "duration": 30
     },
     {
       "id": "2",
-      "name": "Full Highlights",
-      "description": "Complete highlight service",
-      "price": 125,
-      "duration": 150
+      "name": "Swedish Massage",
+      "description": "Relaxing full body massage",
+      "price": 80,
+      "duration": 60
     },
     {
       "id": "3",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
-      "price": 76,
-      "duration": 90
+      "name": "Eyebrow Threading",
+      "description": "Precise eyebrow shaping",
+      "price": 14,
+      "duration": 15
     },
     {
       "id": "4",
-      "name": "Keratin Treatment",
-      "description": "Smoothing keratin service",
-      "price": 197,
-      "duration": 150
+      "name": "Kids Cut",
+      "description": "Children's haircut (12 and under)",
+      "price": 23,
+      "duration": 20
+    },
+    {
+      "id": "5",
+      "name": "Partial Highlights",
+      "description": "Highlights for top and sides",
+      "price": 81,
+      "duration": 90
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Hair Repair",
-      "description": "Restorative treatment for damaged hair",
-      "price": 222,
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 148,
       "duration": 210,
       "services": [
-        "Keratin Treatment",
-        "Deep Conditioning",
-        "Trim"
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Shreya Iyer",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Women's Cut & Style",
-        "Full Highlights",
-        "Acrylic Nails"
+        "Express Facial",
+        "Swedish Massage",
+        "Eyebrow Threading"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -150,14 +156,172 @@
     },
     {
       "id": "2",
-      "name": "Divya Joshi",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Women's Cut & Style",
-        "Full Highlights",
-        "Acrylic Nails"
+        "Express Facial",
+        "Swedish Massage",
+        "Eyebrow Threading"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Neha Kumar",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Express Facial",
+        "Swedish Massage",
+        "Eyebrow Threading"
+      ],
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "name": "Neha Kumar",
+      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
+      "specialties": [
+        "Express Facial",
+        "Swedish Massage",
+        "Eyebrow Threading"
+      ],
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -232,180 +396,84 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Caden J.",
-      "userImage": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+      "userName": "Wyatt B.",
+      "userImage": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
       "rating": 5,
-      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
-      "date": "2025-09-05T00:00:00.000Z"
+      "comment": "Excellent service from start to finish. Love this place!",
+      "date": "2025-08-04T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
-      "rating": 4,
-      "comment": "Amazing results! Everyone keeps complimenting my new look.",
-      "date": "2025-08-20T00:00:00.000Z"
+      "userName": "Benjamin H.",
+      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
+      "rating": 5,
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-07-23T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Carter D.",
-      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
-      "rating": 3,
-      "comment": "I appreciate how they explained each step of the process.",
-      "date": "2025-08-06T00:00:00.000Z"
+      "userName": "Elizabeth S.",
+      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
+      "rating": 5,
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-08-16T00:00:00.000Z"
     },
     {
       "id": "4",
       "userId": "user-4",
-      "userName": "Henry D.",
-      "userImage": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-      "rating": 4,
-      "comment": "Great service and attention to detail. Will definitely come back!",
+      "userName": "Gabriel F.",
+      "userImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
+      "rating": 3,
+      "comment": "Amazing results! Everyone keeps complimenting my new look.",
       "date": "2025-07-22T00:00:00.000Z"
     }
   ],
-  "rating": 4.6,
-  "reviewCount": 748,
+  "rating": 4.4,
+  "reviewCount": 128,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
       "open": "9:00 AM",
       "close": "7:00 PM"
     },
     {
-      "day": 6,
-      "open": "10:00 AM",
-      "close": "6:00 PM"
-    },
-    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "5:00 PM"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": {
-    "discount": "21%",
+    "discount": "29%",
     "description": "New Client Special"
   },
-  "availability": [
-    {
-      "date": "2025-09-10",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "17:15",
-      "formattedTime": "5:15 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
-    }
-  ]
+  "availability": []
 }

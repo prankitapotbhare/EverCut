@@ -1,102 +1,93 @@
 {
-  "name": "Rinke Hair Studio",
-  "description": "Innovative salon featuring the latest technology and techniques in hair and beauty.",
+  "name": "Blissful Cuts",
+  "description": "Trendy salon specializing in cutting-edge styles and innovative color techniques.",
   "address": {
-    "street": "5453 Karol Bagh",
-    "city": "Mumbai",
-    "state": "Maharashtra",
-    "zipCode": "400001",
+    "street": "1471 Lajpat Nagar",
+    "city": "Surat",
+    "state": "Gujarat",
+    "zipCode": "395001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.85480779530488,
-      19.059477656809552
+      72.80756053448721,
+      21.147642870529257
     ]
   },
-  "contactPhone": "+91 88658 50588",
-  "contactEmail": "info@rinkehairstudio.com",
-  "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
+  "contactPhone": "+91 70900 30772",
+  "contactEmail": "info@blissfulcuts.com",
+  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80"
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
+    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Microdermabrasion",
-      "description": "Exfoliating skin treatment",
-      "price": 107,
-      "duration": 45
-    },
-    {
-      "id": "2",
-      "name": "Ombre",
-      "description": "Graduated color effect",
-      "price": 124,
-      "duration": 150
-    },
-    {
-      "id": "3",
-      "name": "Bridal Hair",
-      "description": "Wedding day hair styling",
-      "price": 125,
-      "duration": 90
-    },
-    {
-      "id": "4",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 86,
+      "name": "Deluxe Pedicure",
+      "description": "Luxury foot treatment with massage",
+      "price": 58,
       "duration": 60
     },
     {
-      "id": "5",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
-      "price": 73,
-      "duration": 90
-    },
-    {
-      "id": "6",
-      "name": "Nail Art",
-      "description": "Custom nail designs",
-      "price": 14,
-      "duration": 15
-    },
-    {
-      "id": "7",
+      "id": "2",
       "name": "Hair Extensions",
       "description": "Hair extension application",
-      "price": 239,
+      "price": 245,
       "duration": 180
+    },
+    {
+      "id": "3",
+      "name": "Deep Tissue Massage",
+      "description": "Therapeutic muscle massage",
+      "price": 100,
+      "duration": 60
+    },
+    {
+      "id": "4",
+      "name": "Ombre",
+      "description": "Graduated color effect",
+      "price": 126,
+      "duration": 150
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Spa Day",
-      "description": "Full day of pampering and relaxation",
-      "price": 205,
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 136,
       "duration": 180,
       "services": [
-        "Deep Tissue Massage",
-        "Deep Cleansing Facial",
-        "Deluxe Pedicure"
+        "Full Color",
+        "Deep Conditioning",
+        "Blowout"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 143,
+      "duration": 210,
+      "services": [
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Priya Patel",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Microdermabrasion",
-        "Ombre",
-        "Bridal Hair"
+        "Deluxe Pedicure",
+        "Hair Extensions",
+        "Deep Tissue Massage"
       ],
       "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
@@ -170,14 +161,14 @@
     },
     {
       "id": "2",
-      "name": "Priya Patel",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Microdermabrasion",
-        "Ombre",
-        "Bridal Hair"
+        "Deluxe Pedicure",
+        "Hair Extensions",
+        "Deep Tissue Massage"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -252,59 +243,59 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Noah P.",
-      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
+      "userName": "Ava J.",
+      "userImage": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
       "rating": 5,
-      "comment": "They were able to fit me in last minute. Such great customer service!",
-      "date": "2025-07-24T00:00:00.000Z"
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-08-06T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Daniel Z.",
-      "userImage": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "userName": "Noah P.",
+      "userImage": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80",
       "rating": 5,
-      "comment": "The massage chairs during the shampoo were heavenly!",
-      "date": "2025-08-07T00:00:00.000Z"
+      "comment": "The products they use are high quality and smell amazing.",
+      "date": "2025-07-25T00:00:00.000Z"
     }
   ],
-  "rating": 4.7,
-  "reviewCount": 2050,
+  "rating": 4.3,
+  "reviewCount": 1849,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 6,
       "open": "10:00 AM",
-      "close": "8:00 PM"
+      "close": "6:00 PM"
     },
     {
       "day": 0,
       "open": "11:00 AM",
-      "close": "6:00 PM"
+      "close": "5:00 PM"
     }
   ],
   "featured": false,
@@ -313,113 +304,83 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "10:45",
+      "formattedTime": "10:45 AM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
     },
     {
       "date": "2025-09-11",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "17:15",
-      "formattedTime": "5:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-09-13",
       "time": "9:00",
       "formattedTime": "9:00 AM"
     },
     {
-      "date": "2025-09-13",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
+      "date": "2025-09-11",
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "18:00",
-      "formattedTime": "6:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-15",
+      "date": "2025-09-11",
       "time": "10:30",
       "formattedTime": "10:30 AM"
     },
     {
-      "date": "2025-09-15",
+      "date": "2025-09-14",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "15:00",
+      "formattedTime": "3:00 PM"
+    },
+    {
+      "date": "2025-09-16",
       "time": "12:45",
       "formattedTime": "12:45 PM"
     },
     {
-      "date": "2025-09-15",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
       "date": "2025-09-16",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
     }
   ]
 }

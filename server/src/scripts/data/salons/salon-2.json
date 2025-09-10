@@ -1,98 +1,107 @@
 {
-  "name": "Kunti Hair Studio",
-  "description": "Family-friendly salon providing quality services for all ages at affordable prices.",
+  "name": "Mistral Beauty Hub",
+  "description": "Minimalist salon focused on precision cuts and natural beauty.",
   "address": {
-    "street": "5287 Karol Bagh",
-    "city": "Jaipur",
-    "state": "Rajasthan",
-    "zipCode": "302001",
+    "street": "1767 Rajpath",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "zipCode": "500001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      75.79573458412325,
-      26.9232389998679
+      78.50779462505322,
+      17.370726540915314
     ]
   },
-  "contactPhone": "+91 63101 14420",
-  "contactEmail": "info@kuntihairstudio.com",
-  "image": "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
+  "contactPhone": "+91 89939 66735",
+  "contactEmail": "info@mistralbeautyhub.com",
+  "image": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80"
+    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1661717725396-b05465e725cd?q=80&w=1000",
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Deep Tissue Massage",
-      "description": "Therapeutic muscle massage",
-      "price": 92,
+      "name": "Anti-Aging Facial",
+      "description": "Rejuvenating facial for mature skin",
+      "price": 100,
       "duration": 60
     },
     {
       "id": "2",
       "name": "Bridal Hair",
       "description": "Wedding day hair styling",
-      "price": 126,
+      "price": 112,
       "duration": 90
     },
     {
       "id": "3",
-      "name": "Deep Conditioning",
-      "description": "Intensive hair treatment",
-      "price": 33,
-      "duration": 30
+      "name": "Body Scrub",
+      "description": "Exfoliating body treatment",
+      "price": 67,
+      "duration": 45
     },
     {
       "id": "4",
-      "name": "Partial Highlights",
-      "description": "Highlights for top and sides",
-      "price": 89,
-      "duration": 90
-    },
-    {
-      "id": "5",
-      "name": "Balayage",
-      "description": "Hand-painted highlighting technique",
-      "price": 135,
-      "duration": 150
-    },
-    {
-      "id": "6",
-      "name": "Brazilian Blowout",
-      "description": "Smoothing and anti-frizz treatment",
-      "price": 188,
+      "name": "Full Color",
+      "description": "All-over hair color application",
+      "price": 82,
       "duration": 120
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Spa Day",
-      "description": "Full day of pampering and relaxation",
-      "price": 204,
+      "name": "Hair Repair",
+      "description": "Restorative treatment for damaged hair",
+      "price": 226,
+      "duration": 210,
+      "services": [
+        "Keratin Treatment",
+        "Deep Conditioning",
+        "Trim"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 74,
+      "duration": 60,
+      "services": [
+        "Basic Haircut",
+        "Express Facial"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Bridal Package",
+      "description": "Complete bridal beauty preparation",
+      "price": 190,
       "duration": 180,
       "services": [
-        "Deep Tissue Massage",
-        "Deep Cleansing Facial",
-        "Deluxe Pedicure"
+        "Bridal Hair",
+        "Makeup Application",
+        "Gel Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Anjali Sharma",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Deep Tissue Massage",
+        "Anti-Aging Facial",
         "Bridal Hair",
-        "Deep Conditioning"
+        "Body Scrub"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -167,9 +176,88 @@
       "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Deep Tissue Massage",
+        "Anti-Aging Facial",
         "Bridal Hair",
-        "Deep Conditioning"
+        "Body Scrub"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Shreya Iyer",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Anti-Aging Facial",
+        "Bridal Hair",
+        "Body Scrub"
       ],
       "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
@@ -242,94 +330,15 @@
       "status": "active"
     },
     {
-      "id": "3",
-      "name": "Priya Patel",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Deep Tissue Massage",
-        "Bridal Hair",
-        "Deep Conditioning"
-      ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
       "id": "4",
-      "name": "Neha Kumar",
+      "name": "Divya Joshi",
       "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
       "specialties": [
-        "Deep Tissue Massage",
+        "Anti-Aging Facial",
         "Bridal Hair",
-        "Deep Conditioning"
+        "Body Scrub"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -404,147 +413,63 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Henry D.",
-      "userImage": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80",
+      "userName": "Olivia M.",
+      "userImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
       "rating": 5,
-      "comment": "I appreciate how they explained each step of the process.",
-      "date": "2025-09-01T00:00:00.000Z"
+      "comment": "The staff went above and beyond to make sure I was happy.",
+      "date": "2025-08-20T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Wyatt B.",
-      "userImage": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
-      "rating": 4,
-      "comment": "Excellent service from start to finish. Love this place!",
-      "date": "2025-09-09T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Charlotte C.",
+      "userName": "Harper Y.",
       "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
-      "rating": 4,
+      "rating": 3,
       "comment": "Great service and attention to detail. Will definitely come back!",
-      "date": "2025-07-24T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "userId": "user-4",
-      "userName": "Victoria O.",
-      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
-      "rating": 4,
-      "comment": "Amazing results! Everyone keeps complimenting my new look.",
-      "date": "2025-08-15T00:00:00.000Z"
+      "date": "2025-08-23T00:00:00.000Z"
     }
   ],
-  "rating": 5,
-  "reviewCount": 3354,
+  "rating": 4.9,
+  "reviewCount": 3276,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "10:00 AM",
+      "open": "9:00 AM",
       "close": "8:00 PM"
     },
     {
+      "day": 2,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "6:00 PM"
+      "open": "Closed",
+      "close": "Closed"
     }
   ],
   "featured": true,
   "featuredReason": "Most Popular Choice",
   "specialOffer": null,
-  "availability": [
-    {
-      "date": "2025-09-10",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    }
-  ]
+  "availability": []
 }

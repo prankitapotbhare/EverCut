@@ -4,7 +4,7 @@ const mockSalonists = [
   { 
     id: 1, 
     name: 'Anjali Sharma', 
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1733306493611-3fdb745c48b7?q=80&w=100',
     experience: '5 years',
     specialization: ['Haircut', 'Hair Coloring', 'Styling'],
     rating: 4.8,
@@ -16,7 +16,7 @@ const mockSalonists = [
   { 
     id: 2, 
     name: 'Arjun Patel', 
-    image: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80',
+    image: 'https://images.unsplash.com/photo-1659489097722-4fcb2505c374?q=80&w=100',
     experience: '7 years',
     specialization: ['Beard Trim', 'Facial', 'Hair Treatment'],
     rating: 4.9,
@@ -40,7 +40,7 @@ const mockSalonists = [
   { 
     id: 4, 
     name: 'Geeta Reddy', 
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1706377274456-885d63f5ea2a?q=80&w=100',
     experience: '6 years',
     specialization: ['Hair Coloring', 'Styling', 'Hair Spa'],
     rating: 4.7,
@@ -52,7 +52,7 @@ const mockSalonists = [
   { 
     id: 5, 
     name: 'Rahul Singh', 
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80',
+    image: 'https://images.unsplash.com/photo-1729157659231-1982957f2d7b?q=80&w=100',
     experience: '4 years',
     specialization: ['Haircut', 'Beard Trim', 'Facial'],
     rating: 4.5,
@@ -64,7 +64,7 @@ const mockSalonists = [
   { 
     id: 6, 
     name: 'Rohan Joshi', 
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80',
+    image: 'https://images.unsplash.com/photo-1739104584814-4262052c9aa0?q=80&w=100',
     experience: '8 years',
     specialization: ['Hair Treatment', 'Hair Spa', 'Styling'],
     rating: 4.9,
@@ -76,7 +76,7 @@ const mockSalonists = [
   { 
     id: 7, 
     name: 'Priya Nair', 
-    image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1682089806994-abcccbaa953a?q=80&w=100',
     experience: '9 years',
     specialization: ['Hair Coloring', 'Haircut', 'Bridal Styling'],
     rating: 4.9,
@@ -88,7 +88,7 @@ const mockSalonists = [
   { 
     id: 8, 
     name: 'Vikram Agarwal', 
-    image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80',
+    image: 'https://images.unsplash.com/photo-1647538044240-ab6ed1b8056a?q=80&w=100',
     experience: '5 years',
     specialization: ['Beard Trim', 'Haircut', 'Hair Treatment'],
     rating: 4.7,
@@ -100,7 +100,7 @@ const mockSalonists = [
   { 
     id: 9, 
     name: 'Meera Iyer', 
-    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1664910701774-d0caf55fb1a9?q=80&w=100',
     experience: '7 years',
     specialization: ['Hair Spa', 'Facial', 'Manicure'],
     rating: 4.8,
@@ -112,7 +112,7 @@ const mockSalonists = [
   { 
     id: 10, 
     name: 'Kabir Malhotra', 
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80',
+    image: 'https://images.unsplash.com/photo-1569779213435-ba3167dde7cc?q=80&w=100',
     experience: '10 years',
     specialization: ['Haircut', 'Hair Coloring', 'Hair Treatment'],
     rating: 5.0,

@@ -1,8 +1,8 @@
 {
-  "name": "Style Mantra",
-  "description": "Luxury salon providing VIP treatment and complimentary refreshments with every service.",
+  "name": "Bare Beauty Studio",
+  "description": "Specialized salon focusing on color corrections and transformations.",
   "address": {
-    "street": "2087 Eastern Express Highway",
+    "street": "8862 Janpath",
     "city": "Mumbai",
     "state": "Maharashtra",
     "zipCode": "400001",
@@ -11,91 +11,79 @@
   "location": {
     "type": "Point",
     "coordinates": [
-      72.87681173541613,
-      19.078151315941184
+      72.86030778790459,
+      19.10005033057877
     ]
   },
-  "contactPhone": "+91 77425 73144",
-  "contactEmail": "info@stylemantra.com",
-  "image": "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+  "contactPhone": "+91 74989 33659",
+  "contactEmail": "info@barebeautystudio.com",
+  "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80"
+    "https://images.unsplash.com/photo-1679621577488-4ec73fe17de6?q=80&w=1000",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Balayage",
-      "description": "Hand-painted highlighting technique",
-      "price": 131,
-      "duration": 150
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 16,
+      "duration": 15
     },
     {
       "id": "2",
       "name": "Pedicure",
       "description": "Foot care and polish application",
-      "price": 46,
+      "price": 47,
       "duration": 45
     },
     {
       "id": "3",
-      "name": "Premium Haircut",
-      "description": "Detailed haircut with styling",
-      "price": 55,
+      "name": "Microdermabrasion",
+      "description": "Exfoliating skin treatment",
+      "price": 107,
       "duration": 45
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 100,
-      "duration": 90,
+      "name": "Relaxation Package",
+      "description": "Ultimate relaxation experience",
+      "price": 154,
+      "duration": 150,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Swedish Massage",
+        "Express Facial",
+        "Pedicure"
       ]
     },
     {
       "id": "2",
-      "name": "Spa Day",
-      "description": "Full day of pampering and relaxation",
-      "price": 216,
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 141,
       "duration": 180,
       "services": [
-        "Deep Tissue Massage",
-        "Deep Cleansing Facial",
-        "Deluxe Pedicure"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Luxury Experience",
-      "description": "Premium head-to-toe beauty experience",
-      "price": 273,
-      "duration": 300,
-      "services": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Gel Manicure",
-        "Pedicure"
+        "Full Color",
+        "Deep Conditioning",
+        "Blowout"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Kavya Reddy",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Balayage",
+        "Eyebrow Waxing",
         "Pedicure",
-        "Premium Haircut"
+        "Microdermabrasion"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -167,14 +155,93 @@
     },
     {
       "id": "2",
-      "name": "Shreya Iyer",
+      "name": "Sneha Gupta",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Balayage",
+        "Eyebrow Waxing",
         "Pedicure",
-        "Premium Haircut"
+        "Microdermabrasion"
       ],
       "bio": "Known for creating stunning transformations and attention to detail.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Anjali Sharma",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Eyebrow Waxing",
+        "Pedicure",
+        "Microdermabrasion"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -249,77 +316,50 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Aiden L.",
-      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
+      "userName": "Logan P.",
+      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
       "rating": 4,
-      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
-      "date": "2025-07-28T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Abigail U.",
-      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
-      "rating": 5,
-      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
-      "date": "2025-09-02T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Hannah G.",
-      "userImage": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80",
-      "rating": 5,
-      "comment": "My stylist was amazing and really understood what I wanted.",
-      "date": "2025-09-07T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "userId": "user-4",
-      "userName": "Emma S.",
-      "userImage": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&q=80",
-      "rating": 5,
-      "comment": "I appreciate how they explained each step of the process.",
-      "date": "2025-08-27T00:00:00.000Z"
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-07-29T00:00:00.000Z"
     }
   ],
-  "rating": 4.1,
-  "reviewCount": 967,
+  "rating": 4.9,
+  "reviewCount": 324,
   "operatingHours": [
     {
       "day": 1,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 2,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 3,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 4,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 5,
-      "open": "8:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 6,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 0,
-      "open": "10:00 AM",
-      "close": "4:00 PM"
+      "open": "11:00 AM",
+      "close": "6:00 PM"
     }
   ],
   "featured": false,
@@ -328,83 +368,28 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
     },
     {
       "date": "2025-09-12",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
+      "time": "13:15",
+      "formattedTime": "1:15 PM"
     },
     {
       "date": "2025-09-13",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
     },
     {
       "date": "2025-09-14",
@@ -413,13 +398,38 @@
     },
     {
       "date": "2025-09-14",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     },
     {
       "date": "2025-09-16",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
     }
   ]
 }

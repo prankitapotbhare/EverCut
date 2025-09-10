@@ -1,8 +1,8 @@
 {
-  "name": "Madhubala Salon",
-  "description": "Vintage-themed salon combining classic techniques with modern trends.",
+  "name": "Diya Hair Studio",
+  "description": "Upscale salon offering premium hair and beauty services in a luxurious setting.",
   "address": {
-    "street": "9364 Linking Road",
+    "street": "7160 India Gate Road",
     "city": "Bangalore",
     "state": "Karnataka",
     "zipCode": "560001",
@@ -11,61 +11,55 @@
   "location": {
     "type": "Point",
     "coordinates": [
-      77.61741118736292,
-      12.95678946098224
+      77.61574790561951,
+      12.974207947547656
     ]
   },
-  "contactPhone": "+91 81704 11732",
-  "contactEmail": "info@madhubalasalon.com",
-  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+  "contactPhone": "+91 23872 10449",
+  "contactEmail": "info@diyahairstudio.com",
+  "image": "https://images.unsplash.com/photo-1679621577488-4ec73fe17de6?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
-    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80"
+    "https://images.unsplash.com/photo-1614438865362-9137f7e3036e?q=80&w=1000",
+    "https://plus.unsplash.com/premium_photo-1661717725396-b05465e725cd?q=80&w=1000",
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Keratin Treatment",
-      "description": "Smoothing keratin service",
-      "price": 183,
-      "duration": 150
-    },
-    {
-      "id": "2",
-      "name": "Men's Cut",
-      "description": "Men's haircut and styling",
-      "price": 27,
+      "name": "Express Facial",
+      "description": "Quick refreshing facial",
+      "price": 51,
       "duration": 30
     },
     {
-      "id": "3",
-      "name": "Gel Manicure",
-      "description": "Long-lasting gel polish application",
-      "price": 39,
+      "id": "2",
+      "name": "Body Scrub",
+      "description": "Exfoliating body treatment",
+      "price": 68,
       "duration": 45
     },
     {
+      "id": "3",
+      "name": "Nail Art",
+      "description": "Custom nail designs",
+      "price": 16,
+      "duration": 15
+    },
+    {
       "id": "4",
-      "name": "Partial Highlights",
-      "description": "Highlights for top and sides",
-      "price": 88,
-      "duration": 90
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 121,
+      "duration": 45
     },
     {
       "id": "5",
-      "name": "Swedish Massage",
-      "description": "Relaxing full body massage",
-      "price": 86,
-      "duration": 60
-    },
-    {
-      "id": "6",
-      "name": "Deluxe Pedicure",
-      "description": "Luxury foot treatment with massage",
-      "price": 62,
-      "duration": 60
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 31,
+      "duration": 30
     }
   ],
   "packages": [
@@ -73,37 +67,24 @@
       "id": "1",
       "name": "Spa Day",
       "description": "Full day of pampering and relaxation",
-      "price": 220,
+      "price": 219,
       "duration": 180,
       "services": [
         "Deep Tissue Massage",
         "Deep Cleansing Facial",
         "Deluxe Pedicure"
       ]
-    },
-    {
-      "id": "2",
-      "name": "Luxury Experience",
-      "description": "Premium head-to-toe beauty experience",
-      "price": 280,
-      "duration": 300,
-      "services": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Gel Manicure",
-        "Pedicure"
-      ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Kavya Reddy",
+      "name": "Divya Joshi",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Keratin Treatment",
-        "Men's Cut",
-        "Gel Manicure"
+        "Express Facial",
+        "Body Scrub",
+        "Nail Art"
       ],
       "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
@@ -180,11 +161,11 @@
       "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Keratin Treatment",
-        "Men's Cut",
-        "Gel Manicure"
+        "Express Facial",
+        "Body Scrub",
+        "Nail Art"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -256,14 +237,14 @@
     },
     {
       "id": "3",
-      "name": "Neha Kumar",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Keratin Treatment",
-        "Men's Cut",
-        "Gel Manicure"
+        "Express Facial",
+        "Body Scrub",
+        "Nail Art"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -338,42 +319,33 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Hannah G.",
-      "userImage": "https://images.unsplash.com/photo-1557555187-23d685287bc3?w=100&q=80",
+      "userName": "Henry D.",
+      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
       "rating": 5,
-      "comment": "Amazing results! Everyone keeps complimenting my new look.",
-      "date": "2025-08-16T00:00:00.000Z"
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-08-26T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "William K.",
-      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
+      "userName": "Gabriel F.",
+      "userImage": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=100&q=80",
       "rating": 5,
-      "comment": "Very skilled stylists who really listen to what you want.",
-      "date": "2025-09-06T00:00:00.000Z"
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-07-25T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Olivia M.",
-      "userImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+      "userName": "Noah P.",
+      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
       "rating": 5,
-      "comment": "My stylist was amazing and really understood what I wanted.",
-      "date": "2025-09-06T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "userId": "user-4",
-      "userName": "Ethan T.",
-      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
-      "rating": 5,
-      "comment": "Excellent service from start to finish. Love this place!",
-      "date": "2025-09-01T00:00:00.000Z"
+      "comment": "The package deal was worth every penny. So happy with the results!",
+      "date": "2025-07-14T00:00:00.000Z"
     }
   ],
-  "rating": 4.1,
-  "reviewCount": 2163,
+  "rating": 4.5,
+  "reviewCount": 1430,
   "operatingHours": [
     {
       "day": 1,
@@ -414,69 +386,8 @@
   "featured": false,
   "featuredReason": null,
   "specialOffer": {
-    "discount": "23%",
+    "discount": "16%",
     "description": "Holiday Promotion"
   },
-  "availability": [
-    {
-      "date": "2025-09-10",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "18:45",
-      "formattedTime": "6:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    }
-  ]
+  "availability": []
 }

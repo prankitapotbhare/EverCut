@@ -1,121 +1,88 @@
 {
-  "name": "Savitri Beauty Parlour",
-  "description": "Celebrity-inspired salon bringing red carpet looks to everyday clients.",
+  "name": "Alia’s Loft",
+  "description": "Full-service beauty lounge offering hair, nail, and skin treatments in a relaxing environment.",
   "address": {
-    "street": "7666 Linking Road",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "8089 Lajpat Nagar",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "zipCode": "411001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.38354096534509,
-      22.570866434609325
+      73.8800557109286,
+      18.504016753126862
     ]
   },
-  "contactPhone": "+91 40667 65007",
-  "contactEmail": "info@savitribeautyparlour.com",
-  "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
+  "contactPhone": "+91 77886 55869",
+  "contactEmail": "info@alia’sloft.com",
+  "image": "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80"
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000",
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80",
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Bridal Hair",
-      "description": "Wedding day hair styling",
-      "price": 121,
-      "duration": 90
+      "name": "Deep Tissue Massage",
+      "description": "Therapeutic muscle massage",
+      "price": 92,
+      "duration": 60
     },
     {
       "id": "2",
-      "name": "Lip Waxing",
-      "description": "Upper lip hair removal",
-      "price": 10,
-      "duration": 10
-    },
-    {
-      "id": "3",
-      "name": "Partial Highlights",
-      "description": "Highlights for top and sides",
-      "price": 87,
-      "duration": 90
-    },
-    {
-      "id": "4",
-      "name": "Pedicure",
-      "description": "Foot care and polish application",
-      "price": 45,
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 125,
       "duration": 45
     },
     {
-      "id": "5",
-      "name": "Deluxe Pedicure",
-      "description": "Luxury foot treatment with massage",
-      "price": 61,
-      "duration": 60
-    },
-    {
-      "id": "6",
-      "name": "Deep Tissue Massage",
-      "description": "Therapeutic muscle massage",
-      "price": 98,
-      "duration": 60
+      "id": "3",
+      "name": "Men's Cut",
+      "description": "Men's haircut and styling",
+      "price": 29,
+      "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Quick Refresh",
-      "description": "Quick beauty refresh when you're short on time",
-      "price": 72,
-      "duration": 60,
+      "name": "Men's Grooming",
+      "description": "Complete men's grooming experience",
+      "price": 99,
+      "duration": 90,
       "services": [
-        "Basic Haircut",
-        "Express Facial"
+        "Men's Cut",
+        "Beard Trim",
+        "Facial"
       ]
     },
     {
       "id": "2",
-      "name": "Couples Retreat",
-      "description": "Relaxing spa experience for two",
-      "price": 238,
-      "duration": 120,
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 202,
+      "duration": 180,
       "services": [
-        "Swedish Massage (2)",
-        "Pedicure (2)"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 150,
-      "duration": 210,
-      "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Riya Singh",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Bridal Hair",
-        "Lip Waxing",
-        "Partial Highlights"
+        "Deep Tissue Massage",
+        "Chemical Peel",
+        "Men's Cut"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -187,14 +154,93 @@
     },
     {
       "id": "2",
-      "name": "Riya Singh",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Bridal Hair",
-        "Lip Waxing",
-        "Partial Highlights"
+        "Deep Tissue Massage",
+        "Chemical Peel",
+        "Men's Cut"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Riya Singh",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Deep Tissue Massage",
+        "Chemical Peel",
+        "Men's Cut"
+      ],
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -269,57 +315,39 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Amelia A.",
-      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
-      "rating": 4,
-      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
-      "date": "2025-08-07T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Jacob R.",
-      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "userName": "Gabriel F.",
+      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
       "rating": 5,
-      "comment": "The best salon experience I've had in years. Highly recommend!",
-      "date": "2025-07-31T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Matthew X.",
-      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
-      "rating": 5,
-      "comment": "The products they use are high quality and smell amazing.",
-      "date": "2025-08-23T00:00:00.000Z"
+      "comment": "The staff went above and beyond to make sure I was happy.",
+      "date": "2025-08-19T00:00:00.000Z"
     }
   ],
-  "rating": 4.8,
-  "reviewCount": 779,
+  "rating": 4.7,
+  "reviewCount": 2470,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
@@ -329,8 +357,8 @@
     },
     {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
@@ -339,53 +367,63 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
     },
     {
-      "date": "2025-09-10",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-09-16",
+      "date": "2025-09-12",
       "time": "18:15",
       "formattedTime": "6:15 PM"
     },
     {
+      "date": "2025-09-12",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
       "date": "2025-09-16",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "10:15",
+      "formattedTime": "10:15 AM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
     }
   ]
 }

@@ -1,257 +1,99 @@
 {
-  "name": "Simple Beauty Lounge",
-  "description": "Vibrant salon known for bold colors and avant-garde styling.",
+  "name": "Empress Hair Studio",
+  "description": "Specialized salon focusing on color corrections and transformations.",
   "address": {
-    "street": "4803 MG Road",
-    "city": "Hyderabad",
-    "state": "Telangana",
-    "zipCode": "500001",
+    "street": "6898 LBS Marg",
+    "city": "Surat",
+    "state": "Gujarat",
+    "zipCode": "395001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      78.49158144870296,
-      17.398586763629975
+      72.85326183409538,
+      21.173357558281737
     ]
   },
-  "contactPhone": "+91 88249 48552",
-  "contactEmail": "info@simplebeautylounge.com",
-  "image": "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
+  "contactPhone": "+91 31530 10000",
+  "contactEmail": "info@empresshairstudio.com",
+  "image": "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80"
+    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1661717725396-b05465e725cd?q=80&w=1000",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Deluxe Pedicure",
-      "description": "Luxury foot treatment with massage",
-      "price": 61,
-      "duration": 60
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 129,
+      "duration": 45
     },
     {
       "id": "2",
-      "name": "Express Facial",
-      "description": "Quick refreshing facial",
-      "price": 46,
+      "name": "Basic Haircut",
+      "description": "Simple haircut and style",
+      "price": 33,
       "duration": 30
     },
     {
       "id": "3",
-      "name": "Pedicure",
-      "description": "Foot care and polish application",
-      "price": 44,
-      "duration": 45
+      "name": "Keratin Treatment",
+      "description": "Smoothing keratin service",
+      "price": 172,
+      "duration": 150
     },
     {
       "id": "4",
-      "name": "Basic Manicure",
-      "description": "Nail shaping, cuticle care, and polish",
-      "price": 27,
-      "duration": 30
+      "name": "Balayage",
+      "description": "Hand-painted highlighting technique",
+      "price": 130,
+      "duration": 150
     },
     {
       "id": "5",
-      "name": "Men's Cut",
-      "description": "Men's haircut and styling",
-      "price": 32,
-      "duration": 30
+      "name": "Swedish Massage",
+      "description": "Relaxing full body massage",
+      "price": 85,
+      "duration": 60
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Hair Repair",
-      "description": "Restorative treatment for damaged hair",
-      "price": 226,
-      "duration": 210,
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 74,
+      "duration": 60,
       "services": [
-        "Keratin Treatment",
-        "Deep Conditioning",
-        "Trim"
+        "Basic Haircut",
+        "Express Facial"
       ]
     },
     {
       "id": "2",
-      "name": "Relaxation Package",
-      "description": "Ultimate relaxation experience",
-      "price": 163,
-      "duration": 150,
+      "name": "Bridal Package",
+      "description": "Complete bridal beauty preparation",
+      "price": 200,
+      "duration": 180,
       "services": [
-        "Swedish Massage",
-        "Express Facial",
-        "Pedicure"
+        "Bridal Hair",
+        "Makeup Application",
+        "Gel Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Anjali Sharma",
+      "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Deluxe Pedicure",
-        "Express Facial",
-        "Pedicure"
-      ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "2",
-      "name": "Sneha Gupta",
-      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
-      "specialties": [
-        "Deluxe Pedicure",
-        "Express Facial",
-        "Pedicure"
-      ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Sneha Gupta",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Deluxe Pedicure",
-        "Express Facial",
-        "Pedicure"
+        "Chemical Peel",
+        "Basic Haircut",
+        "Keratin Treatment"
       ],
       "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
@@ -324,15 +166,15 @@
       "status": "active"
     },
     {
-      "id": "4",
-      "name": "Neha Kumar",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
+      "id": "2",
+      "name": "Meera Nair",
+      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Deluxe Pedicure",
-        "Express Facial",
-        "Pedicure"
+        "Chemical Peel",
+        "Basic Haircut",
+        "Keratin Treatment"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -407,68 +249,77 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Charlotte C.",
-      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
-      "rating": 4,
-      "comment": "The staff went above and beyond to make sure I was happy.",
-      "date": "2025-07-28T00:00:00.000Z"
+      "userName": "Isabella G.",
+      "userImage": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80",
+      "rating": 5,
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-08-08T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Olivia M.",
-      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
-      "rating": 5,
-      "comment": "Great service and attention to detail. Will definitely come back!",
-      "date": "2025-08-20T00:00:00.000Z"
+      "userName": "Michael V.",
+      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "rating": 4,
+      "comment": "The best salon experience I've had in years. Highly recommend!",
+      "date": "2025-09-02T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Aiden L.",
-      "userImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
+      "userName": "Hannah G.",
+      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
       "rating": 5,
       "comment": "Amazing results! Everyone keeps complimenting my new look.",
-      "date": "2025-08-19T00:00:00.000Z"
+      "date": "2025-09-03T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "Victoria O.",
+      "userImage": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80",
+      "rating": 5,
+      "comment": "My stylist was amazing and really understood what I wanted.",
+      "date": "2025-08-26T00:00:00.000Z"
     }
   ],
-  "rating": 4.5,
-  "reviewCount": 1895,
+  "rating": 4.4,
+  "reviewCount": 938,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "8:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
       "open": "9:00 AM",
       "close": "7:00 PM"
     },
     {
-      "day": 6,
-      "open": "10:00 AM",
-      "close": "6:00 PM"
-    },
-    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "5:00 PM"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,

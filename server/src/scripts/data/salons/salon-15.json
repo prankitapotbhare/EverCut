@@ -1,100 +1,108 @@
 {
-  "name": "Geeta Beauty Lounge",
-  "description": "Boutique salon focused on personalized service and attention to detail.",
+  "name": "Canvas Beauty Studio",
+  "description": "Celebrity-inspired salon bringing red carpet looks to everyday clients.",
   "address": {
-    "street": "3680 Connaught Place",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "1943 Eastern Express Highway",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "zipCode": "302001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.34671377385655,
-      22.58900111264793
+      75.77883711039968,
+      26.935278131864965
     ]
   },
-  "contactPhone": "+91 59464 62185",
-  "contactEmail": "info@geetabeautylounge.com",
-  "image": "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+  "contactPhone": "+91 21525 72313",
+  "contactEmail": "info@canvasbeautystudio.com",
+  "image": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80"
+    "https://images.unsplash.com/photo-1679621577488-4ec73fe17de6?q=80&w=1000",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
+    "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Gel Manicure",
-      "description": "Long-lasting gel polish application",
-      "price": 38,
-      "duration": 45
+      "name": "Deep Tissue Massage",
+      "description": "Therapeutic muscle massage",
+      "price": 98,
+      "duration": 60
     },
     {
       "id": "2",
-      "name": "Lip Waxing",
-      "description": "Upper lip hair removal",
-      "price": 10,
-      "duration": 10
+      "name": "Men's Cut",
+      "description": "Men's haircut and styling",
+      "price": 30,
+      "duration": 30
     },
     {
       "id": "3",
-      "name": "Root Touch-up",
-      "description": "Color application for roots",
-      "price": 61,
-      "duration": 90
+      "name": "Nail Art",
+      "description": "Custom nail designs",
+      "price": 14,
+      "duration": 15
+    },
+    {
+      "id": "4",
+      "name": "Deep Cleansing Facial",
+      "description": "Thorough facial with extractions",
+      "price": 78,
+      "duration": 60
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 144,
-      "duration": 210,
-      "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Hair Repair",
-      "description": "Restorative treatment for damaged hair",
-      "price": 222,
-      "duration": 210,
-      "services": [
-        "Keratin Treatment",
-        "Deep Conditioning",
-        "Trim"
-      ]
-    },
-    {
-      "id": "3",
       "name": "Quick Refresh",
       "description": "Quick beauty refresh when you're short on time",
-      "price": 72,
+      "price": 73,
       "duration": 60,
       "services": [
         "Basic Haircut",
         "Express Facial"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Relaxation Package",
+      "description": "Ultimate relaxation experience",
+      "price": 160,
+      "duration": 150,
+      "services": [
+        "Swedish Massage",
+        "Express Facial",
+        "Pedicure"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 147,
+      "duration": 180,
+      "services": [
+        "Full Color",
+        "Deep Conditioning",
+        "Blowout"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Divya Joshi",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Gel Manicure",
-        "Lip Waxing",
-        "Root Touch-up"
+        "Deep Tissue Massage",
+        "Men's Cut",
+        "Nail Art"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -166,14 +174,93 @@
     },
     {
       "id": "2",
-      "name": "Kavya Reddy",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Gel Manicure",
-        "Lip Waxing",
-        "Root Touch-up"
+        "Deep Tissue Massage",
+        "Men's Cut",
+        "Nail Art"
       ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Meera Nair",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Deep Tissue Massage",
+        "Men's Cut",
+        "Nail Art"
+      ],
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -248,81 +335,68 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1557555187-23d685287bc3?w=100&q=80",
+      "userName": "Benjamin H.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
       "rating": 5,
-      "comment": "I've never had a better color treatment. Absolutely perfect!",
-      "date": "2025-07-16T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Daniel Z.",
-      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
-      "rating": 3,
-      "comment": "The massage chairs during the shampoo were heavenly!",
-      "date": "2025-07-21T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Penelope C.",
-      "userImage": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=100&q=80",
-      "rating": 4,
-      "comment": "Reasonable prices for the quality of service you receive.",
-      "date": "2025-08-03T00:00:00.000Z"
+      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
+      "date": "2025-09-07T00:00:00.000Z"
     }
   ],
-  "rating": 4.2,
-  "reviewCount": 2159,
+  "rating": 4.7,
+  "reviewCount": 128,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
+      "open": "9:00 AM",
+      "close": "7:00 PM"
     },
     {
       "day": 6,
       "open": "10:00 AM",
-      "close": "8:00 PM"
+      "close": "6:00 PM"
     },
     {
       "day": 0,
       "open": "11:00 AM",
-      "close": "6:00 PM"
+      "close": "5:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": {
-    "discount": "16%",
+    "discount": "30%",
     "description": "Member Discount"
   },
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
+      "time": "10:00",
+      "formattedTime": "10:00 AM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
     },
     {
       "date": "2025-09-10",
@@ -330,54 +404,29 @@
       "formattedTime": "9:30 AM"
     },
     {
-      "date": "2025-09-11",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
+      "date": "2025-09-10",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-11",
+      "date": "2025-09-10",
       "time": "16:00",
       "formattedTime": "4:00 PM"
     },
     {
-      "date": "2025-09-12",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
+      "date": "2025-09-11",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-13",
+      "date": "2025-09-11",
       "time": "11:30",
       "formattedTime": "11:30 AM"
     },
     {
-      "date": "2025-09-13",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
+      "date": "2025-09-11",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
     },
     {
       "date": "2025-09-13",
@@ -386,58 +435,33 @@
     },
     {
       "date": "2025-09-14",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
     },
     {
       "date": "2025-09-14",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     },
     {
-      "date": "2025-09-15",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-15",
+      "date": "2025-09-14",
       "time": "9:00",
       "formattedTime": "9:00 AM"
     },
     {
-      "date": "2025-09-15",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "date": "2025-09-14",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
     },
     {
       "date": "2025-09-16",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
     }
   ]
 }

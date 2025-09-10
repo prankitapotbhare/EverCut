@@ -1,8 +1,8 @@
 {
-  "name": "Dimple Salon",
-  "description": "Vintage-themed salon combining classic techniques with modern trends.",
+  "name": "Noor Hair Studio",
+  "description": "Health-conscious salon using only non-toxic and cruelty-free products.",
   "address": {
-    "street": "3784 Brigade Road",
+    "street": "6382 SV Road",
     "city": "Mumbai",
     "state": "Maharashtra",
     "zipCode": "400001",
@@ -11,34 +11,32 @@
   "location": {
     "type": "Point",
     "coordinates": [
-      72.88004609259765,
-      19.08986600493797
+      72.86321640116617,
+      19.099840166611497
     ]
   },
-  "contactPhone": "+91 30570 96380",
-  "contactEmail": "info@dimplesalon.com",
-  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+  "contactPhone": "+91 63134 38336",
+  "contactEmail": "info@noorhairstudio.com",
+  "image": "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
-    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80",
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80"
+    "https://plus.unsplash.com/premium_photo-1669675936121-6d3d42244ab5?q=80&w=1000",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1000&q=80",
+    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Women's Cut & Style",
-      "description": "Women's haircut with blowout",
-      "price": 50,
-      "duration": 45
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 82,
+      "duration": 60
     },
     {
       "id": "2",
-      "name": "Eyebrow Threading",
-      "description": "Precise eyebrow shaping",
-      "price": 14,
-      "duration": 15
+      "name": "Bridal Hair",
+      "description": "Wedding day hair styling",
+      "price": 123,
+      "duration": 90
     },
     {
       "id": "3",
@@ -46,40 +44,31 @@
       "description": "Long-lasting gel polish application",
       "price": 40,
       "duration": 45
-    },
-    {
-      "id": "4",
-      "name": "Basic Manicure",
-      "description": "Nail shaping, cuticle care, and polish",
-      "price": 24,
-      "duration": 30
-    },
-    {
-      "id": "5",
-      "name": "Deep Tissue Massage",
-      "description": "Therapeutic muscle massage",
-      "price": 86,
-      "duration": 60
-    },
-    {
-      "id": "6",
-      "name": "Updo Styling",
-      "description": "Formal updo for special occasions",
-      "price": 76,
-      "duration": 60
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 154,
+      "name": "Relaxation Package",
+      "description": "Ultimate relaxation experience",
+      "price": 166,
+      "duration": 150,
+      "services": [
+        "Swedish Massage",
+        "Express Facial",
+        "Pedicure"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Hair Repair",
+      "description": "Restorative treatment for damaged hair",
+      "price": 220,
       "duration": 210,
       "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
+        "Keratin Treatment",
+        "Deep Conditioning",
+        "Trim"
       ]
     }
   ],
@@ -89,11 +78,11 @@
       "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Women's Cut & Style",
-        "Eyebrow Threading",
+        "Updo Styling",
+        "Bridal Hair",
         "Gel Manicure"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -165,11 +154,90 @@
     },
     {
       "id": "2",
-      "name": "Riya Singh",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Women's Cut & Style",
-        "Eyebrow Threading",
+        "Updo Styling",
+        "Bridal Hair",
+        "Gel Manicure"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Priya Patel",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Updo Styling",
+        "Bridal Hair",
         "Gel Manicure"
       ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
@@ -243,15 +311,15 @@
       "status": "active"
     },
     {
-      "id": "3",
-      "name": "Pooja Agarwal",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "id": "4",
+      "name": "Riya Singh",
+      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
       "specialties": [
-        "Women's Cut & Style",
-        "Eyebrow Threading",
+        "Updo Styling",
+        "Bridal Hair",
         "Gel Manicure"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -326,120 +394,72 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Carter D.",
-      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
+      "userName": "Jackson N.",
+      "userImage": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
       "rating": 5,
-      "comment": "I appreciate how they explained each step of the process.",
-      "date": "2025-09-01T00:00:00.000Z"
+      "comment": "The products they use are high quality and smell amazing.",
+      "date": "2025-07-15T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Hannah G.",
+      "userImage": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
+      "rating": 3,
+      "comment": "The best salon experience I've had in years. Highly recommend!",
+      "date": "2025-08-18T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Victoria O.",
+      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
+      "rating": 5,
+      "comment": "Incredible attention to detail. They really know what they're doing.",
+      "date": "2025-07-21T00:00:00.000Z"
     }
   ],
   "rating": 4.2,
-  "reviewCount": 1384,
+  "reviewCount": 208,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "10:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
+      "day": 2,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "6:00 PM"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": [
-    {
-      "date": "2025-09-10",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
-    }
-  ]
+  "availability": []
 }

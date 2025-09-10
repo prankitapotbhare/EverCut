@@ -1,126 +1,98 @@
 {
-  "name": "Karisma Beauty Center",
-  "description": "Budget-friendly salon providing quality services at accessible prices.",
+  "name": "Sanya Beauty Hub",
+  "description": "Artistic salon where stylists approach hair as a creative canvas.",
   "address": {
-    "street": "5871 SV Road",
-    "city": "Chennai",
-    "state": "Tamil Nadu",
-    "zipCode": "600001",
+    "street": "9614 Connaught Place",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "zipCode": "700001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      80.2929814058365,
-      13.10403981127202
+      88.37190038728592,
+      22.553170539335724
     ]
   },
-  "contactPhone": "+91 79175 41999",
-  "contactEmail": "info@karismabeautycenter.com",
-  "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
+  "contactPhone": "+91 44969 99873",
+  "contactEmail": "info@sanyabeautyhub.com",
+  "image": "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80"
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80",
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80",
+    "https://images.unsplash.com/photo-1679621577488-4ec73fe17de6?q=80&w=1000",
+    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Balayage",
-      "description": "Hand-painted highlighting technique",
-      "price": 137,
-      "duration": 150
+      "name": "Brazilian Blowout",
+      "description": "Smoothing and anti-frizz treatment",
+      "price": 208,
+      "duration": 120
     },
     {
       "id": "2",
-      "name": "Lip Waxing",
-      "description": "Upper lip hair removal",
-      "price": 11,
-      "duration": 10
+      "name": "Hot Stone Massage",
+      "description": "Massage with heated stones",
+      "price": 109,
+      "duration": 75
     },
     {
       "id": "3",
-      "name": "Root Touch-up",
-      "description": "Color application for roots",
-      "price": 62,
+      "name": "Acrylic Nails",
+      "description": "Full set of acrylic nails",
+      "price": 70,
       "duration": 90
     },
     {
       "id": "4",
-      "name": "Blowout",
-      "description": "Wash and blowdry styling",
-      "price": 41,
-      "duration": 30
+      "name": "Gel Manicure",
+      "description": "Long-lasting gel polish application",
+      "price": 38,
+      "duration": 45
     },
     {
       "id": "5",
-      "name": "Deep Cleansing Facial",
-      "description": "Thorough facial with extractions",
-      "price": 73,
-      "duration": 60
+      "name": "Balayage",
+      "description": "Hand-painted highlighting technique",
+      "price": 127,
+      "duration": 150
     },
     {
       "id": "6",
-      "name": "Brazilian Blowout",
-      "description": "Smoothing and anti-frizz treatment",
-      "price": 203,
-      "duration": 120
-    },
-    {
-      "id": "7",
-      "name": "Express Facial",
-      "description": "Quick refreshing facial",
-      "price": 51,
-      "duration": 30
+      "name": "Swedish Massage",
+      "description": "Relaxing full body massage",
+      "price": 88,
+      "duration": 60
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Couples Retreat",
-      "description": "Relaxing spa experience for two",
-      "price": 250,
-      "duration": 120,
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 146,
+      "duration": 210,
       "services": [
-        "Swedish Massage (2)",
-        "Pedicure (2)"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Luxury Experience",
-      "description": "Premium head-to-toe beauty experience",
-      "price": 270,
-      "duration": 300,
-      "services": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Gel Manicure",
-        "Pedicure"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Quick Refresh",
-      "description": "Quick beauty refresh when you're short on time",
-      "price": 77,
-      "duration": 60,
-      "services": [
-        "Basic Haircut",
-        "Express Facial"
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Neha Kumar",
+      "name": "Meera Nair",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Balayage",
-        "Lip Waxing",
-        "Root Touch-up"
+        "Brazilian Blowout",
+        "Hot Stone Massage",
+        "Acrylic Nails"
       ],
-      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -192,14 +164,172 @@
     },
     {
       "id": "2",
-      "name": "Meera Nair",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Balayage",
-        "Lip Waxing",
-        "Root Touch-up"
+        "Brazilian Blowout",
+        "Hot Stone Massage",
+        "Acrylic Nails"
       ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Anjali Sharma",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Brazilian Blowout",
+        "Hot Stone Massage",
+        "Acrylic Nails"
+      ],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "name": "Anjali Sharma",
+      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
+      "specialties": [
+        "Brazilian Blowout",
+        "Hot Stone Massage",
+        "Acrylic Nails"
+      ],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -274,33 +404,24 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Emma S.",
-      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
+      "userName": "Ava J.",
+      "userImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
       "rating": 5,
-      "comment": "The package deal was worth every penny. So happy with the results!",
-      "date": "2025-08-21T00:00:00.000Z"
+      "comment": "I've never had a better color treatment. Absolutely perfect!",
+      "date": "2025-07-27T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Daniel Z.",
-      "userImage": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80",
+      "userName": "Amelia A.",
+      "userImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
       "rating": 5,
-      "comment": "The products they use are high quality and smell amazing.",
-      "date": "2025-08-06T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Henry D.",
-      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
-      "rating": 4,
-      "comment": "Great service and attention to detail. Will definitely come back!",
-      "date": "2025-07-20T00:00:00.000Z"
+      "comment": "The staff went above and beyond to make sure I was happy.",
+      "date": "2025-08-29T00:00:00.000Z"
     }
   ],
-  "rating": 5,
-  "reviewCount": 101,
+  "rating": 4.1,
+  "reviewCount": 2078,
   "operatingHours": [
     {
       "day": 1,
@@ -341,76 +462,5 @@
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": [
-    {
-      "date": "2025-09-10",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "9:00",
-      "formattedTime": "9:00 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "9:00",
-      "formattedTime": "9:00 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "18:30",
-      "formattedTime": "6:30 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    }
-  ]
+  "availability": []
 }

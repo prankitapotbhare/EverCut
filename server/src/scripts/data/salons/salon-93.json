@@ -1,78 +1,99 @@
 {
-  "name": "VLCC Beauty Clinic",
-  "description": "Urban-inspired salon specializing in contemporary styles for the city dweller.",
+  "name": "Phoenix Hair Studio",
+  "description": "Award-winning salon known for excellence in all aspects of hair and beauty services.",
   "address": {
-    "street": "1342 Khan Market",
-    "city": "Ahmedabad",
-    "state": "Gujarat",
-    "zipCode": "380001",
+    "street": "8381 Janpath",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "zipCode": "600001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.57200881561324,
-      23.03614234901858
+      80.26570334891863,
+      13.093971004005759
     ]
   },
-  "contactPhone": "+91 61643 69339",
-  "contactEmail": "info@vlccbeautyclinic.com",
-  "image": "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+  "contactPhone": "+91 86943 93339",
+  "contactEmail": "info@phoenixhairstudio.com",
+  "image": "https://images.unsplash.com/photo-1679621577488-4ec73fe17de6?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80"
+    "https://images.unsplash.com/photo-1614438865362-9137f7e3036e?q=80&w=1000",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1000&q=80",
+    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1000&q=80",
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80",
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Men's Cut",
-      "description": "Men's haircut and styling",
-      "price": 32,
-      "duration": 30
+      "name": "Bridal Hair",
+      "description": "Wedding day hair styling",
+      "price": 120,
+      "duration": 90
     },
     {
       "id": "2",
       "name": "Hot Stone Massage",
       "description": "Massage with heated stones",
-      "price": 111,
+      "price": 106,
       "duration": 75
     },
     {
       "id": "3",
-      "name": "Lip Waxing",
-      "description": "Upper lip hair removal",
-      "price": 9,
-      "duration": 10
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 32,
+      "duration": 30
+    },
+    {
+      "id": "4",
+      "name": "Nail Art",
+      "description": "Custom nail designs",
+      "price": 15,
+      "duration": 15
+    },
+    {
+      "id": "5",
+      "name": "Microdermabrasion",
+      "description": "Exfoliating skin treatment",
+      "price": 110,
+      "duration": 45
+    },
+    {
+      "id": "6",
+      "name": "Premium Haircut",
+      "description": "Detailed haircut with styling",
+      "price": 59,
+      "duration": 45
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 96,
-      "duration": 90,
+      "name": "Color Transformation",
+      "description": "Complete hair color makeover",
+      "price": 145,
+      "duration": 180,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Full Color",
+        "Deep Conditioning",
+        "Blowout"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Shreya Iyer",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Men's Cut",
+        "Bridal Hair",
         "Hot Stone Massage",
-        "Lip Waxing"
+        "Deep Conditioning"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -144,12 +165,12 @@
     },
     {
       "id": "2",
-      "name": "Divya Joshi",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Men's Cut",
+        "Bridal Hair",
         "Hot Stone Massage",
-        "Lip Waxing"
+        "Deep Conditioning"
       ],
       "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
@@ -223,93 +244,14 @@
     },
     {
       "id": "3",
-      "name": "Priya Patel",
+      "name": "Divya Joshi",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Men's Cut",
+        "Bridal Hair",
         "Hot Stone Massage",
-        "Lip Waxing"
+        "Deep Conditioning"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Divya Joshi",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Men's Cut",
-        "Hot Stone Massage",
-        "Lip Waxing"
-      ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -384,119 +326,81 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
+      "userName": "Isabella G.",
+      "userImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
       "rating": 5,
-      "comment": "Absolutely loved my experience here! The staff was so professional.",
-      "date": "2025-08-24T00:00:00.000Z"
+      "comment": "My stylist was amazing and really understood what I wanted.",
+      "date": "2025-07-25T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Mia E.",
-      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
-      "rating": 4,
+      "userName": "Matthew X.",
+      "userImage": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "rating": 5,
+      "comment": "Incredible attention to detail. They really know what they're doing.",
+      "date": "2025-08-18T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Wyatt B.",
+      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
+      "rating": 5,
+      "comment": "Amazing results! Everyone keeps complimenting my new look.",
+      "date": "2025-08-20T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "William K.",
+      "userImage": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
+      "rating": 5,
       "comment": "The products they use are high quality and smell amazing.",
-      "date": "2025-07-30T00:00:00.000Z"
+      "date": "2025-08-23T00:00:00.000Z"
     }
   ],
-  "rating": 4.8,
-  "reviewCount": 1935,
+  "rating": 4,
+  "reviewCount": 2293,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
-      "close": "8:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 6,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "8:00 PM"
     },
     {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "11:00 AM",
+      "close": "6:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": null,
-  "availability": [
-    {
-      "date": "2025-09-11",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    }
-  ]
+  "availability": []
 }

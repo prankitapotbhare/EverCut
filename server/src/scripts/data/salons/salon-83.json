@@ -1,112 +1,94 @@
 {
-  "name": "Yamuna Beauty Parlour",
-  "description": "Eco-friendly salon using organic and sustainable products for all services.",
+  "name": "Zephyr Lounge",
+  "description": "Health-conscious salon using only non-toxic and cruelty-free products.",
   "address": {
-    "street": "9256 Linking Road",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "2974 Eastern Express Highway",
+    "city": "Delhi",
+    "state": "Delhi",
+    "zipCode": "110001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.37719549518205,
-      22.591181015027338
+      77.09865966375715,
+      28.687335653517522
     ]
   },
-  "contactPhone": "+91 42969 51986",
-  "contactEmail": "info@yamunabeautyparlour.com",
-  "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
+  "contactPhone": "+91 13997 87769",
+  "contactEmail": "info@zephyrlounge.com",
+  "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80"
+    "https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1000",
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Women's Cut & Style",
-      "description": "Women's haircut with blowout",
-      "price": 52,
-      "duration": 45
+      "name": "Ombre",
+      "description": "Graduated color effect",
+      "price": 127,
+      "duration": 150
     },
     {
       "id": "2",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
-      "price": 71,
-      "duration": 90
+      "name": "Premium Haircut",
+      "description": "Detailed haircut with styling",
+      "price": 57,
+      "duration": 45
     },
     {
       "id": "3",
-      "name": "Deep Cleansing Facial",
-      "description": "Thorough facial with extractions",
-      "price": 86,
-      "duration": 60
+      "name": "Pedicure",
+      "description": "Foot care and polish application",
+      "price": 48,
+      "duration": 45
     },
     {
       "id": "4",
-      "name": "Lip Waxing",
-      "description": "Upper lip hair removal",
-      "price": 11,
-      "duration": 10
+      "name": "Basic Manicure",
+      "description": "Nail shaping, cuticle care, and polish",
+      "price": 27,
+      "duration": 30
     },
     {
       "id": "5",
-      "name": "Partial Highlights",
-      "description": "Highlights for top and sides",
-      "price": 79,
-      "duration": 90
+      "name": "Full Face Waxing",
+      "description": "Complete facial hair removal",
+      "price": 41,
+      "duration": 30
     },
     {
       "id": "6",
-      "name": "Updo Styling",
-      "description": "Formal updo for special occasions",
-      "price": 72,
-      "duration": 60
-    },
-    {
-      "id": "7",
-      "name": "Root Touch-up",
-      "description": "Color application for roots",
-      "price": 65,
-      "duration": 90
+      "name": "Keratin Treatment",
+      "description": "Smoothing keratin service",
+      "price": 164,
+      "duration": 150
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Bridal Package",
-      "description": "Complete bridal beauty preparation",
-      "price": 191,
-      "duration": 180,
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 149,
+      "duration": 210,
       "services": [
-        "Bridal Hair",
-        "Makeup Application",
-        "Gel Manicure"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Quick Refresh",
-      "description": "Quick beauty refresh when you're short on time",
-      "price": 75,
-      "duration": 60,
-      "services": [
-        "Basic Haircut",
-        "Express Facial"
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Divya Joshi",
+      "name": "Pooja Agarwal",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Women's Cut & Style",
-        "Acrylic Nails",
-        "Deep Cleansing Facial"
+        "Ombre",
+        "Premium Haircut",
+        "Pedicure"
       ],
       "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
@@ -180,14 +162,14 @@
     },
     {
       "id": "2",
-      "name": "Divya Joshi",
+      "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Women's Cut & Style",
-        "Acrylic Nails",
-        "Deep Cleansing Facial"
+        "Ombre",
+        "Premium Haircut",
+        "Pedicure"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -262,50 +244,68 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Sophia R.",
-      "userImage": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
+      "userName": "Jackson N.",
+      "userImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80",
       "rating": 5,
-      "comment": "Excellent service from start to finish. Love this place!",
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-09-04T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "Aiden L.",
+      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
+      "rating": 4,
+      "comment": "Reasonable prices for the quality of service you receive.",
       "date": "2025-08-03T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Noah P.",
+      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
+      "rating": 5,
+      "comment": "I appreciate how they explained each step of the process.",
+      "date": "2025-09-03T00:00:00.000Z"
     }
   ],
   "rating": 4,
-  "reviewCount": 1674,
+  "reviewCount": 1924,
   "operatingHours": [
     {
       "day": 1,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 2,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 3,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 4,
       "open": "9:00 AM",
-      "close": "8:00 PM"
+      "close": "7:00 PM"
     },
     {
       "day": 5,
       "open": "9:00 AM",
-      "close": "8:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "9:00 AM",
       "close": "7:00 PM"
     },
     {
+      "day": 6,
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "11:00 AM",
+      "close": "5:00 PM"
     }
   ],
   "featured": false,
@@ -314,13 +314,13 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
+      "time": "15:15",
+      "formattedTime": "3:15 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
     },
     {
       "date": "2025-09-10",
@@ -329,63 +329,68 @@
     },
     {
       "date": "2025-09-11",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
     },
     {
       "date": "2025-09-11",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
     },
     {
       "date": "2025-09-11",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
+      "date": "2025-09-12",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
     },
     {
-      "date": "2025-09-11",
-      "time": "9:00",
-      "formattedTime": "9:00 AM"
+      "date": "2025-09-12",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
+      "date": "2025-09-12",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
+      "date": "2025-09-12",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
+      "date": "2025-09-12",
+      "time": "17:15",
+      "formattedTime": "5:15 PM"
     },
     {
-      "date": "2025-09-14",
+      "date": "2025-09-15",
       "time": "18:45",
       "formattedTime": "6:45 PM"
     },
     {
-      "date": "2025-09-14",
+      "date": "2025-09-15",
       "time": "14:45",
       "formattedTime": "2:45 PM"
     },
     {
-      "date": "2025-09-14",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
+      "date": "2025-09-15",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
     },
     {
-      "date": "2025-09-16",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
+      "date": "2025-09-15",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
     }
   ]
 }

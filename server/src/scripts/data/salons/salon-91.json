@@ -1,121 +1,118 @@
 {
-  "name": "Lara Salon",
-  "description": "Award-winning salon known for excellence in all aspects of hair and beauty services.",
+  "name": "Silk Hair Studio",
+  "description": "Vibrant salon known for bold colors and avant-garde styling.",
   "address": {
-    "street": "8075 Lajpat Nagar",
-    "city": "Mumbai",
-    "state": "Maharashtra",
-    "zipCode": "400001",
+    "street": "6791 Janpath",
+    "city": "Surat",
+    "state": "Gujarat",
+    "zipCode": "395001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      72.85649125180794,
-      19.06885435227436
+      72.81818144664773,
+      21.19500523326062
     ]
   },
-  "contactPhone": "+91 87208 78454",
-  "contactEmail": "info@larasalon.com",
-  "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
+  "contactPhone": "+91 44180 20396",
+  "contactEmail": "info@silkhairstudio.com",
+  "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80"
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1000&q=80",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80",
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80",
+    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Deep Tissue Massage",
-      "description": "Therapeutic muscle massage",
-      "price": 103,
+      "name": "Deep Cleansing Facial",
+      "description": "Thorough facial with extractions",
+      "price": 78,
       "duration": 60
     },
     {
       "id": "2",
-      "name": "Bridal Hair",
-      "description": "Wedding day hair styling",
-      "price": 112,
-      "duration": 90
+      "name": "Kids Cut",
+      "description": "Children's haircut (12 and under)",
+      "price": 26,
+      "duration": 20
     },
     {
       "id": "3",
-      "name": "Nail Art",
-      "description": "Custom nail designs",
-      "price": 15,
-      "duration": 15
+      "name": "Lip Waxing",
+      "description": "Upper lip hair removal",
+      "price": 10,
+      "duration": 10
     },
     {
       "id": "4",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
-      "price": 76,
-      "duration": 90
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 126,
+      "duration": 45
     },
     {
       "id": "5",
-      "name": "Basic Manicure",
-      "description": "Nail shaping, cuticle care, and polish",
-      "price": 23,
-      "duration": 30
+      "name": "Women's Cut & Style",
+      "description": "Women's haircut with blowout",
+      "price": 55,
+      "duration": 45
     },
     {
       "id": "6",
-      "name": "Premium Haircut",
-      "description": "Detailed haircut with styling",
-      "price": 50,
-      "duration": 45
+      "name": "Swedish Massage",
+      "description": "Relaxing full body massage",
+      "price": 85,
+      "duration": 60
+    },
+    {
+      "id": "7",
+      "name": "Updo Styling",
+      "description": "Formal updo for special occasions",
+      "price": 80,
+      "duration": 60
     }
   ],
   "packages": [
     {
       "id": "1",
+      "name": "Relaxation Package",
+      "description": "Ultimate relaxation experience",
+      "price": 153,
+      "duration": 150,
+      "services": [
+        "Swedish Massage",
+        "Express Facial",
+        "Pedicure"
+      ]
+    },
+    {
+      "id": "2",
       "name": "Men's Grooming",
       "description": "Complete men's grooming experience",
-      "price": 95,
+      "price": 96,
       "duration": 90,
       "services": [
         "Men's Cut",
         "Beard Trim",
         "Facial"
       ]
-    },
-    {
-      "id": "2",
-      "name": "Bridal Package",
-      "description": "Complete bridal beauty preparation",
-      "price": 190,
-      "duration": 180,
-      "services": [
-        "Bridal Hair",
-        "Makeup Application",
-        "Gel Manicure"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Complete Makeover",
-      "description": "Full beauty transformation package",
-      "price": 154,
-      "duration": 210,
-      "services": [
-        "Premium Haircut",
-        "Full Color",
-        "Manicure"
-      ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Meera Nair",
+      "name": "Sneha Gupta",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Deep Tissue Massage",
-        "Bridal Hair",
-        "Nail Art"
+        "Deep Cleansing Facial",
+        "Kids Cut",
+        "Lip Waxing"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
           "day": 1,
@@ -187,12 +184,12 @@
     },
     {
       "id": "2",
-      "name": "Pooja Agarwal",
+      "name": "Riya Singh",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Deep Tissue Massage",
-        "Bridal Hair",
-        "Nail Art"
+        "Deep Cleansing Facial",
+        "Kids Cut",
+        "Lip Waxing"
       ],
       "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
@@ -266,93 +263,14 @@
     },
     {
       "id": "3",
-      "name": "Sneha Gupta",
+      "name": "Kavya Reddy",
       "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Deep Tissue Massage",
-        "Bridal Hair",
-        "Nail Art"
+        "Deep Cleansing Facial",
+        "Kids Cut",
+        "Lip Waxing"
       ],
       "bio": "Certified colorist who loves helping clients find their perfect shade.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Priya Patel",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Deep Tissue Massage",
-        "Bridal Hair",
-        "Nail Art"
-      ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -427,59 +345,77 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Hannah G.",
-      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
-      "rating": 5,
-      "comment": "My stylist was amazing and really understood what I wanted.",
-      "date": "2025-08-20T00:00:00.000Z"
+      "userName": "Penelope C.",
+      "userImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "rating": 4,
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-07-28T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Amelia A.",
-      "userImage": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80",
+      "userName": "Lucas F.",
+      "userImage": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
+      "rating": 5,
+      "comment": "Incredible attention to detail. They really know what they're doing.",
+      "date": "2025-09-07T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Lily I.",
+      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
       "rating": 4,
-      "comment": "Reasonable prices for the quality of service you receive.",
-      "date": "2025-07-25T00:00:00.000Z"
+      "comment": "Very skilled stylists who really listen to what you want.",
+      "date": "2025-08-28T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "Sophia R.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
+      "rating": 4,
+      "comment": "I appreciate how they explained each step of the process.",
+      "date": "2025-07-28T00:00:00.000Z"
     }
   ],
-  "rating": 4.7,
-  "reviewCount": 1130,
+  "rating": 4.1,
+  "reviewCount": 1862,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "10:00 AM",
+      "open": "9:00 AM",
       "close": "8:00 PM"
     },
     {
+      "day": 2,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "6:00 PM"
+      "open": "Closed",
+      "close": "Closed"
     }
   ],
   "featured": false,
@@ -487,34 +423,9 @@
   "specialOffer": null,
   "availability": [
     {
-      "date": "2025-09-10",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
       "date": "2025-09-11",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "time": "16:00",
+      "formattedTime": "4:00 PM"
     },
     {
       "date": "2025-09-12",
@@ -523,8 +434,13 @@
     },
     {
       "date": "2025-09-12",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
     },
     {
       "date": "2025-09-12",
@@ -532,64 +448,34 @@
       "formattedTime": "11:30 AM"
     },
     {
-      "date": "2025-09-12",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
+      "date": "2025-09-14",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
     },
     {
-      "date": "2025-09-12",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
+      "date": "2025-09-14",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     },
     {
-      "date": "2025-09-13",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
+      "date": "2025-09-14",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
+      "date": "2025-09-14",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     },
     {
-      "date": "2025-09-13",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
-    },
-    {
-      "date": "2025-09-13",
+      "date": "2025-09-16",
       "time": "9:15",
       "formattedTime": "9:15 AM"
     },
     {
-      "date": "2025-09-14",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "17:15",
-      "formattedTime": "5:15 PM"
-    },
-    {
       "date": "2025-09-16",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
     }
   ]
 }

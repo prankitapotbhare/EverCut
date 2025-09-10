@@ -1,81 +1,74 @@
 {
-  "name": "Kriti Hair Studio",
-  "description": "Celebrity-inspired salon bringing red carpet looks to everyday clients.",
+  "name": "Elysian Salon",
+  "description": "Contemporary salon with expert stylists specializing in modern cuts and colors.",
   "address": {
-    "street": "4979 Karol Bagh",
-    "city": "Pune",
-    "state": "Maharashtra",
-    "zipCode": "411001",
+    "street": "6377 Janpath",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "zipCode": "302001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      73.87517410492708,
-      18.536704196398254
+      75.77470271719355,
+      26.887438023731164
     ]
   },
-  "contactPhone": "+91 32963 56272",
-  "contactEmail": "info@kritihairstudio.com",
-  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+  "contactPhone": "+91 90501 12220",
+  "contactEmail": "info@elysiansalon.com",
+  "image": "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000",
   "gallery": [
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80"
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=1000&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Partial Highlights",
-      "description": "Highlights for top and sides",
-      "price": 82,
-      "duration": 90
+      "name": "Eyebrow Waxing",
+      "description": "Eyebrow shaping with wax",
+      "price": 15,
+      "duration": 15
     },
     {
       "id": "2",
-      "name": "Full Highlights",
-      "description": "Complete highlight service",
-      "price": 110,
-      "duration": 150
+      "name": "Full Color",
+      "description": "All-over hair color application",
+      "price": 94,
+      "duration": 120
     },
     {
       "id": "3",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
-      "price": 65,
-      "duration": 90
+      "name": "Eyebrow Threading",
+      "description": "Precise eyebrow shaping",
+      "price": 14,
+      "duration": 15
     },
     {
       "id": "4",
-      "name": "Deep Conditioning",
-      "description": "Intensive hair treatment",
-      "price": 28,
-      "duration": 30
+      "name": "Premium Haircut",
+      "description": "Detailed haircut with styling",
+      "price": 59,
+      "duration": 45
+    },
+    {
+      "id": "5",
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 122,
+      "duration": 45
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Bridal Package",
-      "description": "Complete bridal beauty preparation",
-      "price": 204,
-      "duration": 180,
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 248,
+      "duration": 120,
       "services": [
-        "Bridal Hair",
-        "Makeup Application",
-        "Gel Manicure"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Relaxation Package",
-      "description": "Ultimate relaxation experience",
-      "price": 165,
-      "duration": 150,
-      "services": [
-        "Swedish Massage",
-        "Express Facial",
-        "Pedicure"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     }
   ],
@@ -85,11 +78,11 @@
       "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Partial Highlights",
-        "Full Highlights",
-        "Acrylic Nails"
+        "Eyebrow Waxing",
+        "Full Color",
+        "Eyebrow Threading"
       ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
           "day": 1,
@@ -161,14 +154,172 @@
     },
     {
       "id": "2",
-      "name": "Shreya Iyer",
+      "name": "Pooja Agarwal",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Partial Highlights",
-        "Full Highlights",
-        "Acrylic Nails"
+        "Eyebrow Waxing",
+        "Full Color",
+        "Eyebrow Threading"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Anjali Sharma",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Eyebrow Waxing",
+        "Full Color",
+        "Eyebrow Threading"
+      ],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "name": "Meera Nair",
+      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
+      "specialties": [
+        "Eyebrow Waxing",
+        "Full Color",
+        "Eyebrow Threading"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
         {
           "day": 1,
@@ -243,33 +394,33 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Charlotte C.",
+      "userName": "Abigail U.",
       "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
       "rating": 5,
-      "comment": "Top-notch service and expertise. My go-to salon from now on!",
-      "date": "2025-09-09T00:00:00.000Z"
+      "comment": "They were able to fit me in last minute. Such great customer service!",
+      "date": "2025-07-31T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Gabriel F.",
-      "userImage": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80",
+      "userName": "Olivia M.",
+      "userImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
       "rating": 5,
-      "comment": "Great service and attention to detail. Will definitely come back!",
-      "date": "2025-07-25T00:00:00.000Z"
+      "comment": "The staff went above and beyond to make sure I was happy.",
+      "date": "2025-07-20T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Matthew X.",
-      "userImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
+      "userName": "Gabriel F.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
       "rating": 5,
-      "comment": "The staff went above and beyond to make sure I was happy.",
-      "date": "2025-08-18T00:00:00.000Z"
+      "comment": "Top-notch service and expertise. My go-to salon from now on!",
+      "date": "2025-08-02T00:00:00.000Z"
     }
   ],
-  "rating": 4.9,
-  "reviewCount": 1128,
+  "rating": 4.3,
+  "reviewCount": 2279,
   "operatingHours": [
     {
       "day": 1,
@@ -313,123 +464,83 @@
   "availability": [
     {
       "date": "2025-09-10",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
     },
     {
       "date": "2025-09-10",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     },
     {
       "date": "2025-09-10",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "12:15",
+      "formattedTime": "12:15 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "11:00",
+      "formattedTime": "11:00 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "12:30",
+      "formattedTime": "12:30 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-12",
       "time": "15:15",
       "formattedTime": "3:15 PM"
     },
     {
-      "date": "2025-09-10",
-      "time": "9:30",
-      "formattedTime": "9:30 AM"
+      "date": "2025-09-14",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     },
     {
-      "date": "2025-09-10",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "15:00",
-      "formattedTime": "3:00 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-09-11",
-      "time": "9:00",
-      "formattedTime": "9:00 AM"
-    },
-    {
-      "date": "2025-09-12",
+      "date": "2025-09-14",
       "time": "9:45",
       "formattedTime": "9:45 AM"
     },
     {
-      "date": "2025-09-12",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
+      "date": "2025-09-14",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     },
     {
       "date": "2025-09-14",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
+      "time": "17:00",
+      "formattedTime": "5:00 PM"
     },
     {
-      "date": "2025-09-14",
+      "date": "2025-09-16",
       "time": "16:00",
       "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-14",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "9:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
     }
   ]
 }

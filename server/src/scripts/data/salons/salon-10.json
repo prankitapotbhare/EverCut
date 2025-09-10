@@ -1,99 +1,117 @@
 {
-  "name": "Royal Beauty Parlour",
-  "description": "Budget-friendly salon providing quality services at accessible prices.",
+  "name": "Nova Hair Studio",
+  "description": "Vibrant salon known for bold colors and avant-garde styling.",
   "address": {
-    "street": "7559 Khan Market",
-    "city": "Pune",
+    "street": "4985 LBS Marg",
+    "city": "Mumbai",
     "state": "Maharashtra",
-    "zipCode": "411001",
+    "zipCode": "400001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      73.85285363590168,
-      18.544076501538488
+      72.89654273712752,
+      19.05580422977254
     ]
   },
-  "contactPhone": "+91 94221 74573",
-  "contactEmail": "info@royalbeautyparlour.com",
-  "image": "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
+  "contactPhone": "+91 61006 54008",
+  "contactEmail": "info@novahairstudio.com",
+  "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
-    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80"
+    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80",
+    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1000&q=80",
+    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&q=80",
+    "https://images.unsplash.com/photo-1671750145646-0f4d791b8025?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Basic Haircut",
-      "description": "Simple haircut and style",
-      "price": 36,
-      "duration": 30
+      "name": "Balayage",
+      "description": "Hand-painted highlighting technique",
+      "price": 138,
+      "duration": 150
     },
     {
       "id": "2",
-      "name": "Hair Extensions",
-      "description": "Hair extension application",
-      "price": 245,
-      "duration": 180
+      "name": "Women's Cut & Style",
+      "description": "Women's haircut with blowout",
+      "price": 52,
+      "duration": 45
     },
     {
       "id": "3",
-      "name": "Express Facial",
-      "description": "Quick refreshing facial",
-      "price": 51,
-      "duration": 30
-    },
-    {
-      "id": "4",
-      "name": "Deep Conditioning",
-      "description": "Intensive hair treatment",
-      "price": 32,
-      "duration": 30
-    },
-    {
-      "id": "5",
-      "name": "Acrylic Nails",
-      "description": "Full set of acrylic nails",
-      "price": 64,
+      "name": "Root Touch-up",
+      "description": "Color application for roots",
+      "price": 66,
       "duration": 90
     },
     {
+      "id": "4",
+      "name": "Kids Cut",
+      "description": "Children's haircut (12 and under)",
+      "price": 26,
+      "duration": 20
+    },
+    {
+      "id": "5",
+      "name": "Ombre",
+      "description": "Graduated color effect",
+      "price": 120,
+      "duration": 150
+    },
+    {
       "id": "6",
-      "name": "Men's Cut",
-      "description": "Men's haircut and styling",
-      "price": 27,
-      "duration": 30
+      "name": "Microdermabrasion",
+      "description": "Exfoliating skin treatment",
+      "price": 113,
+      "duration": 45
+    },
+    {
+      "id": "7",
+      "name": "Full Color",
+      "description": "All-over hair color application",
+      "price": 92,
+      "duration": 120
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Spa Day",
-      "description": "Full day of pampering and relaxation",
-      "price": 206,
-      "duration": 180,
+      "name": "Men's Grooming",
+      "description": "Complete men's grooming experience",
+      "price": 102,
+      "duration": 90,
       "services": [
-        "Deep Tissue Massage",
-        "Deep Cleansing Facial",
-        "Deluxe Pedicure"
+        "Men's Cut",
+        "Beard Trim",
+        "Facial"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 154,
+      "duration": 210,
+      "services": [
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Meera Nair",
+      "name": "Neha Kumar",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Basic Haircut",
-        "Hair Extensions",
-        "Express Facial"
+        "Balayage",
+        "Women's Cut & Style",
+        "Root Touch-up"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
           "day": 1,
@@ -165,172 +183,14 @@
     },
     {
       "id": "2",
-      "name": "Shreya Iyer",
+      "name": "Meera Nair",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Basic Haircut",
-        "Hair Extensions",
-        "Express Facial"
+        "Balayage",
+        "Women's Cut & Style",
+        "Root Touch-up"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Divya Joshi",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Basic Haircut",
-        "Hair Extensions",
-        "Express Facial"
-      ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Neha Kumar",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Basic Haircut",
-        "Hair Extensions",
-        "Express Facial"
-      ],
-      "bio": "Known for creating stunning transformations and attention to detail.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -406,154 +266,56 @@
       "id": "1",
       "userId": "user-1",
       "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-      "rating": 5,
-      "comment": "Excellent service from start to finish. Love this place!",
-      "date": "2025-08-18T00:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "userId": "user-2",
-      "userName": "Victoria O.",
-      "userImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80",
-      "rating": 5,
-      "comment": "The massage chairs during the shampoo were heavenly!",
-      "date": "2025-07-23T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Owen H.",
-      "userImage": "https://images.unsplash.com/photo-1557555187-23d685287bc3?w=100&q=80",
-      "rating": 4,
-      "comment": "The staff went above and beyond to make sure I was happy.",
-      "date": "2025-07-21T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "userId": "user-4",
-      "userName": "Sophia R.",
       "userImage": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=100&q=80",
       "rating": 5,
-      "comment": "Friendly staff and relaxing atmosphere. A real treat!",
-      "date": "2025-07-18T00:00:00.000Z"
+      "comment": "The package deal was worth every penny. So happy with the results!",
+      "date": "2025-07-14T00:00:00.000Z"
     }
   ],
-  "rating": 4.3,
-  "reviewCount": 1051,
+  "rating": 4.5,
+  "reviewCount": 109,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "10:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
+      "day": 2,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "8:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "6:00 PM"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": false,
   "featuredReason": null,
   "specialOffer": {
-    "discount": "29%",
+    "discount": "19%",
     "description": "Weekday Discount"
   },
-  "availability": [
-    {
-      "date": "2025-09-10",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-09-10",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "17:15",
-      "formattedTime": "5:15 PM"
-    },
-    {
-      "date": "2025-09-12",
-      "time": "18:15",
-      "formattedTime": "6:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "17:15",
-      "formattedTime": "5:15 PM"
-    },
-    {
-      "date": "2025-09-13",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "9:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-09-15",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-09-16",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    }
-  ]
+  "availability": []
 }

@@ -1,99 +1,103 @@
 {
-  "name": "Twinkle Beauty Parlour",
-  "description": "Chic salon with Instagram-worthy decor and top-tier stylists.",
+  "name": "Haven Salon",
+  "description": "Family-friendly salon providing quality services for all ages at affordable prices.",
   "address": {
-    "street": "7928 Ring Road",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "zipCode": "700001",
+    "street": "5193 Outer Ring Road",
+    "city": "Delhi",
+    "state": "Delhi",
+    "zipCode": "110001",
     "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      88.34652575786123,
-      22.55935479337699
+      77.08873622349097,
+      28.689048907722718
     ]
   },
-  "contactPhone": "+91 20529 91967",
-  "contactEmail": "info@twinklebeautyparlour.com",
-  "image": "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+  "contactPhone": "+91 68695 12541",
+  "contactEmail": "info@havensalon.com",
+  "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
-    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80"
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80",
+    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=1000&q=80",
+    "https://images.unsplash.com/photo-1614438865362-9137f7e3036e?q=80&w=1000"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Eyebrow Threading",
-      "description": "Precise eyebrow shaping",
-      "price": 15,
-      "duration": 15
+      "name": "Bridal Hair",
+      "description": "Wedding day hair styling",
+      "price": 128,
+      "duration": 90
     },
     {
       "id": "2",
-      "name": "Balayage",
-      "description": "Hand-painted highlighting technique",
-      "price": 143,
-      "duration": 150
+      "name": "Pedicure",
+      "description": "Foot care and polish application",
+      "price": 41,
+      "duration": 45
     },
     {
       "id": "3",
-      "name": "Brazilian Blowout",
-      "description": "Smoothing and anti-frizz treatment",
-      "price": 208,
-      "duration": 120
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 108,
+      "duration": 45
+    },
+    {
+      "id": "4",
+      "name": "Partial Highlights",
+      "description": "Highlights for top and sides",
+      "price": 81,
+      "duration": 90
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Luxury Experience",
-      "description": "Premium head-to-toe beauty experience",
-      "price": 292,
-      "duration": 300,
+      "name": "Quick Refresh",
+      "description": "Quick beauty refresh when you're short on time",
+      "price": 75,
+      "duration": 60,
       "services": [
-        "Balayage",
-        "Hot Stone Massage",
-        "Gel Manicure",
-        "Pedicure"
+        "Basic Haircut",
+        "Express Facial"
       ]
     },
     {
       "id": "2",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 103,
-      "duration": 90,
+      "name": "Hair Repair",
+      "description": "Restorative treatment for damaged hair",
+      "price": 218,
+      "duration": 210,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Keratin Treatment",
+        "Deep Conditioning",
+        "Trim"
       ]
     },
     {
       "id": "3",
-      "name": "Color Transformation",
-      "description": "Complete hair color makeover",
-      "price": 135,
-      "duration": 180,
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 244,
+      "duration": 120,
       "services": [
-        "Full Color",
-        "Deep Conditioning",
-        "Blowout"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     }
   ],
   "stylists": [
     {
       "id": "1",
-      "name": "Riya Singh",
+      "name": "Priya Patel",
       "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Eyebrow Threading",
-        "Balayage",
-        "Brazilian Blowout"
+        "Bridal Hair",
+        "Pedicure",
+        "Chemical Peel"
       ],
       "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
@@ -167,172 +171,14 @@
     },
     {
       "id": "2",
-      "name": "Pooja Agarwal",
+      "name": "Anjali Sharma",
       "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Eyebrow Threading",
-        "Balayage",
-        "Brazilian Blowout"
+        "Bridal Hair",
+        "Pedicure",
+        "Chemical Peel"
       ],
       "bio": "Known for creating stunning transformations and attention to detail.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Meera Nair",
-      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
-      "specialties": [
-        "Eyebrow Threading",
-        "Balayage",
-        "Brazilian Blowout"
-      ],
-      "bio": "Certified colorist who loves helping clients find their perfect shade.",
-      "availability": [
-        {
-          "day": 1,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "9:00",
-            "10:00",
-            "11:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00"
-          ]
-        }
-      ],
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Sneha Gupta",
-      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
-      "specialties": [
-        "Eyebrow Threading",
-        "Balayage",
-        "Brazilian Blowout"
-      ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
           "day": 1,
@@ -407,48 +253,48 @@
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Ava J.",
-      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
+      "userName": "Amelia A.",
+      "userImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80",
       "rating": 5,
-      "comment": "Reasonable prices for the quality of service you receive.",
-      "date": "2025-08-14T00:00:00.000Z"
+      "comment": "Incredible attention to detail. They really know what they're doing.",
+      "date": "2025-08-26T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Emma S.",
-      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
+      "userName": "Isabella G.",
+      "userImage": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&q=80",
       "rating": 5,
-      "comment": "The staff went above and beyond to make sure I was happy.",
-      "date": "2025-07-13T00:00:00.000Z"
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-08-29T00:00:00.000Z"
     }
   ],
-  "rating": 4.9,
-  "reviewCount": 2571,
+  "rating": 5,
+  "reviewCount": 2579,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
@@ -458,8 +304,8 @@
     },
     {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": true,
