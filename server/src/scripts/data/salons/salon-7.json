@@ -1,583 +1,476 @@
 {
-  "name": "Shear Genius",
-  "description": "Award-winning salon known for excellence in all aspects of hair and beauty services.",
+  "name": "Beauty Bliss",
+  "description": "Family-friendly salon providing quality services for all ages at affordable prices.",
   "address": {
-    "street": "9360 Maple Drive",
-    "city": "Phoenix",
-    "state": "AZ",
-    "zipCode": "85001",
-    "country": "USA"
+    "street": "8402 Eastern Express Highway",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "zipCode": "500001",
+    "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      -112.05738047537648,
-      33.45847065461212
+      78.50630754329899,
+      17.401173228409043
     ]
   },
-  "contactPhone": "(495) 624-1705",
-  "contactEmail": "info@sheargenius.com",
-  "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
+  "contactPhone": "+91 94311 57877",
+  "contactEmail": "info@beautybliss.com",
+  "image": "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80"
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
+    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Pedicure",
-      "description": "Foot care and polish application",
-      "price": 42,
-      "duration": "45 min"
+      "name": "Brazilian Blowout",
+      "description": "Smoothing and anti-frizz treatment",
+      "price": 201,
+      "duration": 120
     },
     {
       "id": "2",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 90,
-      "duration": "1 hr"
+      "name": "Acrylic Nails",
+      "description": "Full set of acrylic nails",
+      "price": 75,
+      "duration": 90
     },
     {
       "id": "3",
-      "name": "Eyebrow Waxing",
-      "description": "Eyebrow shaping with wax",
-      "price": 16,
-      "duration": "15 min"
+      "name": "Nail Art",
+      "description": "Custom nail designs",
+      "price": 15,
+      "duration": 15
     },
     {
       "id": "4",
-      "name": "Microdermabrasion",
-      "description": "Exfoliating skin treatment",
-      "price": 106,
-      "duration": "45 min"
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 129,
+      "duration": 45
+    },
+    {
+      "id": "5",
+      "name": "Basic Manicure",
+      "description": "Nail shaping, cuticle care, and polish",
+      "price": 25,
+      "duration": 30
+    },
+    {
+      "id": "6",
+      "name": "Basic Haircut",
+      "description": "Simple haircut and style",
+      "price": 37,
+      "duration": 30
+    },
+    {
+      "id": "7",
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 32,
+      "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 97,
-      "duration": "1.5 hrs",
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 243,
+      "duration": 120,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     },
     {
       "id": "2",
-      "name": "Bridal Package",
-      "description": "Complete bridal beauty preparation",
-      "price": 193,
-      "duration": "3 hrs",
+      "name": "Luxury Experience",
+      "description": "Premium head-to-toe beauty experience",
+      "price": 280,
+      "duration": 300,
       "services": [
-        "Bridal Hair",
-        "Makeup Application",
-        "Gel Manicure"
+        "Balayage",
+        "Hot Stone Massage",
+        "Gel Manicure",
+        "Pedicure"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 149,
+      "duration": 210,
+      "services": [
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
       ]
     }
   ],
   "stylists": [
     {
-      "name": "Harper Hernandez",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "id": "1",
+      "name": "Neha Kumar",
+      "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Anti-Aging Facial",
-        "Microdermabrasion",
-        "Pedicure",
-        "Eyebrow Waxing"
+        "Brazilian Blowout",
+        "Acrylic Nails",
+        "Nail Art"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "name": "Meera Nair",
+      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
+      "specialties": [
+        "Brazilian Blowout",
+        "Acrylic Nails",
+        "Nail Art"
+      ],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Shreya Iyer",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Brazilian Blowout",
+        "Acrylic Nails",
+        "Nail Art"
       ],
       "bio": "Award-winning stylist with over 10 years of experience in the industry.",
       "availability": [
         {
-          "day": 0,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:00",
-            "14:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
           "day": 1,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
             "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 2,
           "slots": [
-            "09:00",
-            "09:30",
-            "10:30",
-            "11:30",
-            "12:30",
+            "9:00",
+            "10:00",
+            "11:00",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
-            "16:30"
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 3,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "11:30",
-            "12:00",
-            "13:00",
-            "13:30",
-            "14:00",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
             "11:00",
-            "12:00",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "16:30"
-          ]
-        },
-        {
-          "day": 6,
-          "slots": [
-            "09:00",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:30"
-          ]
-        }
-      ],
-      "rating": 4,
-      "reviewCount": 32,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.186Z",
-      "updatedAt": "2025-04-02T17:24:14.186Z"
-    },
-    {
-      "name": "Daniel Lewis",
-      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
-      "specialties": [],
-      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
-      "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
             "13:00",
             "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:30"
-          ]
-        },
-        {
-          "day": 1,
-          "slots": [
-            "09:00",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:30",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:30"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "11:30",
-            "12:00",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
             "15:00",
             "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 6,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:00",
-            "14:30",
-            "16:30"
-          ]
-        }
-      ],
-      "rating": 4,
-      "reviewCount": 22,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.186Z",
-      "updatedAt": "2025-04-02T17:24:14.186Z"
-    },
-    {
-      "name": "Amelia Hill",
-      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
-      "specialties": [],
-      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
-      "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "09:00",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:30",
-            "13:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 1,
-          "slots": [
-            "09:00",
-            "10:30",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:00",
-            "14:30"
+            "17:00"
           ]
         },
         {
           "day": 4,
           "slots": [
-            "09:00",
-            "09:30",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:30",
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
             "14:00",
-            "14:30",
             "15:00",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 5,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
+            "10:00",
             "11:00",
-            "11:30",
-            "12:30",
             "13:00",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 6,
-          "slots": [
-            "09:00",
-            "10:00",
-            "11:30",
-            "12:00",
-            "13:00",
-            "16:00",
-            "16:30"
+            "17:00"
           ]
         }
       ],
-      "rating": 4,
-      "reviewCount": 34,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.186Z",
-      "updatedAt": "2025-04-02T17:24:14.186Z"
+      "status": "active"
     },
     {
-      "name": "Jacob Rodriguez",
-      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
-      "specialties": [],
-      "bio": "Passionate about creating styles that enhance each client's unique features.",
-      "availability": [
-        {
-          "day": 2,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:30",
-            "16:30"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "09:30",
-            "10:00",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:30",
-            "15:00",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "09:00",
-            "10:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:30",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 6,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "12:00",
-            "12:30",
-            "13:00",
-            "14:00",
-            "15:00"
-          ]
-        }
+      "id": "4",
+      "name": "Neha Kumar",
+      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
+      "specialties": [
+        "Brazilian Blowout",
+        "Acrylic Nails",
+        "Nail Art"
       ],
-      "rating": 4,
-      "reviewCount": 38,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.186Z",
-      "updatedAt": "2025-04-02T17:24:14.186Z"
-    },
-    {
-      "name": "Michael Moore",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-      "specialties": [],
-      "bio": "Passionate about creating styles that enhance each client's unique features.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
         {
           "day": 1,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
-            "12:00",
+            "11:00",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
-            "15:30",
-            "16:00"
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 2,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30",
-            "13:30",
+            "13:00",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 3,
           "slots": [
-            "10:30",
+            "9:00",
+            "10:00",
+            "11:00",
             "13:00",
-            "13:30",
-            "14:30",
+            "14:00",
             "15:00",
-            "16:30"
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 5,
           "slots": [
-            "09:00",
-            "09:30",
-            "10:30",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:30",
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
-            "16:30"
+            "16:00",
+            "17:00"
           ]
         }
       ],
-      "rating": 5,
-      "reviewCount": 38,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.186Z",
-      "updatedAt": "2025-04-02T17:24:14.186Z"
+      "status": "active"
     }
   ],
   "reviews": [
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Aiden L.",
-      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
+      "userName": "Jacob R.",
+      "userImage": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
       "rating": 5,
-      "comment": "Reasonable prices for the quality of service you receive.",
-      "date": "2025-02-12T00:00:00.000Z"
+      "comment": "They were able to fit me in last minute. Such great customer service!",
+      "date": "2025-08-09T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Scarlett M.",
-      "userImage": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&q=80",
+      "userName": "Wyatt B.",
+      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
       "rating": 5,
-      "comment": "Excellent service from start to finish. Love this place!",
-      "date": "2025-02-13T00:00:00.000Z"
+      "comment": "The massage chairs during the shampoo were heavenly!",
+      "date": "2025-08-07T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Mia E.",
+      "userImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80",
+      "rating": 5,
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-07-16T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "Penelope C.",
+      "userImage": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
+      "rating": 4,
+      "comment": "The products they use are high quality and smell amazing.",
+      "date": "2025-07-16T00:00:00.000Z"
     }
   ],
-  "rating": 4,
-  "reviewCount": 1911,
+  "rating": 5,
+  "reviewCount": 1209,
   "operatingHours": [
     {
       "day": 1,
@@ -618,129 +511,89 @@
   "featured": false,
   "featuredReason": null,
   "specialOffer": {
-    "discount": "28%",
+    "discount": "24%",
     "description": "Limited Time Offer"
   },
   "availability": [
     {
-      "date": "2025-04-01",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
+      "date": "2025-09-10",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
     },
     {
-      "date": "2025-04-01",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-04-01",
-      "time": "09:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "09:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "09:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "17:15",
-      "formattedTime": "5:15 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "09:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-04-04",
+      "date": "2025-09-10",
       "time": "10:30",
       "formattedTime": "10:30 AM"
     },
     {
-      "date": "2025-04-04",
+      "date": "2025-09-10",
+      "time": "13:45",
+      "formattedTime": "1:45 PM"
+    },
+    {
+      "date": "2025-09-10",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "14:45",
+      "formattedTime": "2:45 PM"
+    },
+    {
+      "date": "2025-09-12",
       "time": "16:15",
       "formattedTime": "4:15 PM"
     },
     {
-      "date": "2025-04-04",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
+      "date": "2025-09-12",
+      "time": "17:30",
+      "formattedTime": "5:30 PM"
     },
     {
-      "date": "2025-04-04",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
+      "date": "2025-09-12",
+      "time": "9:15",
+      "formattedTime": "9:15 AM"
     },
     {
-      "date": "2025-04-04",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-04-06",
+      "date": "2025-09-12",
       "time": "15:15",
       "formattedTime": "3:15 PM"
     },
     {
-      "date": "2025-04-06",
-      "time": "09:15",
-      "formattedTime": "9:15 AM"
+      "date": "2025-09-13",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
     },
     {
-      "date": "2025-04-06",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
+      "date": "2025-09-13",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "16:45",
+      "formattedTime": "4:45 PM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "12:45",
+      "formattedTime": "12:45 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "11:30",
+      "formattedTime": "11:30 AM"
     }
   ]
 }

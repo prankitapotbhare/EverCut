@@ -1,271 +1,398 @@
 {
-  "name": "The Hair Loft",
-  "description": "Inclusive salon specializing in services for all hair types and textures.",
+  "name": "Mandodari Salon",
+  "description": "High-end salon offering premium services with exceptional attention to detail.",
   "address": {
-    "street": "3666 Willow Lane",
-    "city": "Dallas",
-    "state": "TX",
-    "zipCode": "75201",
-    "country": "USA"
+    "street": "1007 India Gate Road",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "zipCode": "500001",
+    "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      -96.79800314923914,
-      32.766783030422594
+      78.494088365923,
+      17.39632057532475
     ]
   },
-  "contactPhone": "(199) 456-9432",
-  "contactEmail": "info@thehairloft.com",
-  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+  "contactPhone": "+91 81218 97306",
+  "contactEmail": "info@mandodarisalon.com",
+  "image": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
-    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80"
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
+    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
+    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Pedicure",
-      "description": "Foot care and polish application",
-      "price": 45,
-      "duration": "45 min"
+      "name": "Blowout",
+      "description": "Wash and blowdry styling",
+      "price": 39,
+      "duration": 30
     },
     {
       "id": "2",
-      "name": "Kids Cut",
-      "description": "Children's haircut (12 and under)",
-      "price": 25,
-      "duration": "20 min"
+      "name": "Express Facial",
+      "description": "Quick refreshing facial",
+      "price": 52,
+      "duration": 30
     },
     {
       "id": "3",
-      "name": "Anti-Aging Facial",
-      "description": "Rejuvenating facial for mature skin",
-      "price": 93,
-      "duration": "1 hr"
+      "name": "Full Highlights",
+      "description": "Complete highlight service",
+      "price": 128,
+      "duration": 150
+    },
+    {
+      "id": "4",
+      "name": "Full Color",
+      "description": "All-over hair color application",
+      "price": 95,
+      "duration": 120
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 96,
-      "duration": "1.5 hrs",
+      "name": "Bridal Package",
+      "description": "Complete bridal beauty preparation",
+      "price": 208,
+      "duration": 180,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
+        "Bridal Hair",
+        "Makeup Application",
+        "Gel Manicure"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Hair Repair",
+      "description": "Restorative treatment for damaged hair",
+      "price": 226,
+      "duration": 210,
+      "services": [
+        "Keratin Treatment",
+        "Deep Conditioning",
+        "Trim"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Couples Retreat",
+      "description": "Relaxing spa experience for two",
+      "price": 246,
+      "duration": 120,
+      "services": [
+        "Swedish Massage (2)",
+        "Pedicure (2)"
       ]
     }
   ],
   "stylists": [
     {
-      "name": "Logan Clark",
-      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "id": "1",
+      "name": "Divya Joshi",
+      "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Pedicure",
-        "Kids Cut",
-        "Anti-Aging Facial"
+        "Blowout",
+        "Express Facial",
+        "Full Highlights"
       ],
-      "bio": "Trained in New York and Paris, bringing international techniques to every client.",
+      "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
-          "day": 0,
+          "day": 1,
           "slots": [
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
             "13:00",
-            "14:30",
+            "14:00",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 2,
           "slots": [
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
             "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "16:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "09:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "13:30",
             "14:00",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
-          ]
-        }
-      ],
-      "rating": 4,
-      "reviewCount": 13,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.159Z",
-      "updatedAt": "2025-04-02T17:24:14.159Z"
-    },
-    {
-      "name": "Jackson Williams",
-      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-      "specialties": [],
-      "bio": "Passionate about creating styles that enhance each client's unique features.",
-      "availability": [
-        {
-          "day": 2,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 3,
           "slots": [
-            "09:00",
-            "10:30",
+            "9:00",
+            "10:00",
+            "11:00",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 4,
           "slots": [
-            "09:00",
-            "09:30",
-            "10:30",
-            "11:30",
-            "12:00",
-            "12:30",
+            "9:00",
+            "10:00",
+            "11:00",
             "13:00",
-            "13:30",
-            "14:30",
+            "14:00",
             "15:00",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 5,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
             "11:00",
-            "12:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 6,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
-            "16:30"
+            "16:00",
+            "17:00"
           ]
         }
       ],
-      "rating": 4,
-      "reviewCount": 44,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.159Z",
-      "updatedAt": "2025-04-02T17:24:14.159Z"
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "name": "Priya Patel",
+      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
+      "specialties": [
+        "Blowout",
+        "Express Facial",
+        "Full Highlights"
+      ],
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Pooja Agarwal",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Blowout",
+        "Express Facial",
+        "Full Highlights"
+      ],
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
     }
   ],
   "reviews": [
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Alexander B.",
-      "userImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
-      "rating": 3,
+      "userName": "Sofia Q.",
+      "userImage": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
+      "rating": 5,
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-08-22T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": "user-2",
+      "userName": "James T.",
+      "userImage": "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80",
+      "rating": 5,
       "comment": "The best salon experience I've had in years. Highly recommend!",
-      "date": "2025-03-25T00:00:00.000Z"
+      "date": "2025-08-09T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "user-3",
+      "userName": "Jackson N.",
+      "userImage": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80",
+      "rating": 5,
+      "comment": "I've never had a better color treatment. Absolutely perfect!",
+      "date": "2025-09-08T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": "user-4",
+      "userName": "Henry D.",
+      "userImage": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
+      "rating": 5,
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-09-09T00:00:00.000Z"
     }
   ],
-  "rating": 4.8,
-  "reviewCount": 3136,
+  "rating": 5,
+  "reviewCount": 3219,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
+      "open": "8:00 AM",
       "close": "8:00 PM"
     },
     {
@@ -275,143 +402,12 @@
     },
     {
       "day": 0,
-      "open": "Closed",
-      "close": "Closed"
+      "open": "10:00 AM",
+      "close": "4:00 PM"
     }
   ],
   "featured": true,
   "featuredReason": "Best Value",
   "specialOffer": null,
-  "availability": [
-    {
-      "date": "2025-04-01",
-      "time": "09:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-04-01",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-04-01",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-04-01",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-04-01",
-      "time": "15:45",
-      "formattedTime": "3:45 PM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "09:30",
-      "formattedTime": "9:30 AM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "09:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "14:15",
-      "formattedTime": "2:15 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "14:00",
-      "formattedTime": "2:00 PM"
-    },
-    {
-      "date": "2025-04-04",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-04-04",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-04-04",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
-    },
-    {
-      "date": "2025-04-04",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-04-04",
-      "time": "10:30",
-      "formattedTime": "10:30 AM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "11:30",
-      "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "09:00",
-      "formattedTime": "9:00 AM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    }
-  ]
+  "availability": []
 }

@@ -232,25 +232,25 @@ const generateOpeningHours = () => {
 
 // Generate random location data
 const generateLocation = () => {
-  // Generate addresses in different cities
+  // Generate addresses in different Indian cities
   const cities = [
-    { city: "New York", state: "NY", zip: "10001", lat: 40.7128, lng: -74.0060 },
-    { city: "Los Angeles", state: "CA", zip: "90001", lat: 34.0522, lng: -118.2437 },
-    { city: "Chicago", state: "IL", zip: "60601", lat: 41.8781, lng: -87.6298 },
-    { city: "Houston", state: "TX", zip: "77001", lat: 29.7604, lng: -95.3698 },
-    { city: "Phoenix", state: "AZ", zip: "85001", lat: 33.4484, lng: -112.0740 },
-    { city: "Philadelphia", state: "PA", zip: "19101", lat: 39.9526, lng: -75.1652 },
-    { city: "San Antonio", state: "TX", zip: "78201", lat: 29.4241, lng: -98.4936 },
-    { city: "San Diego", state: "CA", zip: "92101", lat: 32.7157, lng: -117.1611 },
-    { city: "Dallas", state: "TX", zip: "75201", lat: 32.7767, lng: -96.7970 },
-    { city: "San Jose", state: "CA", zip: "95101", lat: 37.3382, lng: -121.8863 }
+    { city: "Mumbai", state: "Maharashtra", zip: "400001", lat: 19.0760, lng: 72.8777 },
+    { city: "Delhi", state: "Delhi", zip: "110001", lat: 28.7041, lng: 77.1025 },
+    { city: "Bangalore", state: "Karnataka", zip: "560001", lat: 12.9716, lng: 77.5946 },
+    { city: "Hyderabad", state: "Telangana", zip: "500001", lat: 17.3850, lng: 78.4867 },
+    { city: "Chennai", state: "Tamil Nadu", zip: "600001", lat: 13.0827, lng: 80.2707 },
+    { city: "Kolkata", state: "West Bengal", zip: "700001", lat: 22.5726, lng: 88.3639 },
+    { city: "Pune", state: "Maharashtra", zip: "411001", lat: 18.5204, lng: 73.8567 },
+    { city: "Ahmedabad", state: "Gujarat", zip: "380001", lat: 23.0225, lng: 72.5714 },
+    { city: "Jaipur", state: "Rajasthan", zip: "302001", lat: 26.9124, lng: 75.7873 },
+    { city: "Surat", state: "Gujarat", zip: "395001", lat: 21.1702, lng: 72.8311 }
   ];
   
   const streets = [
-    "Main Street", "Oak Avenue", "Maple Drive", "Cedar Lane", "Pine Street",
-    "Elm Road", "Washington Avenue", "Park Boulevard", "Highland Drive", "Sunset Boulevard",
-    "Broadway", "Willow Lane", "Lake Street", "River Road", "Forest Avenue",
-    "Mountain View Drive", "Valley Road", "Meadow Lane", "Ocean Drive", "Beach Road"
+    "MG Road", "Brigade Road", "Commercial Street", "Park Street", "Linking Road",
+    "Carter Road", "Hill Road", "SV Road", "LBS Marg", "Eastern Express Highway",
+    "Connaught Place", "Khan Market", "Karol Bagh", "Lajpat Nagar", "Sarojini Nagar",
+    "Janpath", "Rajpath", "India Gate Road", "Ring Road", "Outer Ring Road"
   ];
   
   const selectedCity = cities[Math.floor(Math.random() * cities.length)];
@@ -429,28 +429,28 @@ const salonDescriptions = [
   "Vibrant salon known for bold colors and avant-garde styling."
 ];
 
-// Generate unique salon names
+// Generate unique salon names (Indian context)
 const salonNames = [
-  "Elegance Hair Studio", "Chic Cuts", "The Hair Loft", "Trendy Trims", "Glamour Salon",
-  "Scissors & Style", "Mane Attraction", "Hair Haven", "Curl Up & Dye", "Shear Perfection",
-  "Cutting Edge", "Locks & Looks", "Hair Affair", "Strands & Style", "Clip Joint",
-  "Snip & Style", "Mane Event", "Tress Chic", "Fringe Benefits", "Shear Delight",
-  "Clip Art", "Hairology", "Salon Bliss", "Mane Street", "Hairspray",
-  "Roots Salon", "Scissors Palace", "Brush & Blow", "Salon Serenity", "Classy Cuts",
-  "Tress for Success", "Mane Concern", "Shear Magic", "Cutting Room", "Hair Studio",
-  "Salon Allure", "Style Savvy", "Clip & Curl", "Shear Elegance", "Tress Trends",
-  "Salon Couture", "Mane Focus", "Shear Artistry", "Cutting Crew", "Hair Lounge",
-  "Salon Glam", "Style Masters", "Shear Brilliance", "Cutting Class", "Hair Envy",
-  "Salon Luxe", "Beauty Bar", "Shear Genius", "Style Central", "Hair Flair",
-  "Salon Chic", "Gloss & Glamour", "Shear Excellence", "Style Spot", "Hair Dazzle",
-  "Salon Elite", "Beauty Boutique", "Polished Look", "Style Zone", "Hair Sensation",
-  "Salon Prestige", "Beauty Lounge", "Refined Edge", "Style Point", "Hair Distinction",
-  "Salon Opulence", "Beauty Haven", "Sleek Style", "Trend Setters", "Hair Radiance",
-  "Salon Grandeur", "Beauty Retreat", "Sophisticated Cuts", "Urban Style", "Hair Splendor",
-  "Salon Majesty", "Beauty Oasis", "Signature Cuts", "Metro Style", "Hair Magnificence",
-  "The Style Studio", "Glow Up", "Precision Cuts", "Vogue Hair", "Lush Locks",
-  "The Beauty Collective", "Glam Room", "Artisan Hair", "Runway Style", "Luxe Locks",
-  "The Styling Co.", "Glow Getters", "Craft Cuts", "Haute Hair", "Lavish Locks"
+  "Khoobsurat Beauty Salon", "Rangoli Hair Studio", "Saundarya Salon", "Lakme Beauty Lounge", "Naturals Salon",
+  "Jawed Habib Hair & Beauty", "Shahnaz Husain Salon", "VLCC Beauty Clinic", "Green Trends Salon", "Looks Salon",
+  "Bounce Salon", "Enrich Salon", "Toni & Guy", "Juice Salon", "Geetanjali Salon",
+  "Affinity Salon", "Bodycraft Spa & Salon", "Mirrors Beauty Lounge", "Femina Salon", "Blush Beauty Salon",
+  "Glam Studio", "Diva Salon", "Sparkle Beauty Parlour", "Radiance Salon", "Elegance Beauty Center",
+  "Glamour Zone", "Style Mantra", "Beauty Bliss", "Chic Salon", "Trendy Cuts",
+  "Bollywood Salon", "Royal Beauty Parlour", "Madhuri Beauty Salon", "Aishwarya Hair Studio", "Priyanka Beauty Lounge",
+  "Deepika Salon", "Katrina Beauty Center", "Anushka Hair & Beauty", "Sonam Style Studio", "Alia Beauty Parlour",
+  "Shraddha Salon", "Jacqueline Beauty Lounge", "Kriti Hair Studio", "Sara Beauty Center", "Janhvi Salon",
+  "Kiara Beauty Parlour", "Tara Hair Studio", "Mira Beauty Lounge", "Vidya Salon", "Kangana Beauty Center",
+  "Sushmita Hair Studio", "Aishwarya Beauty Parlour", "Madhubala Salon", "Rekha Beauty Lounge", "Hema Hair Studio",
+  "Sridevi Beauty Center", "Meena Salon", "Kajol Beauty Parlour", "Rani Hair Studio", "Preity Beauty Lounge",
+  "Kareena Salon", "Karisma Beauty Center", "Shilpa Hair Studio", "Bipasha Beauty Parlour", "Lara Salon",
+  "Celina Beauty Lounge", "Amrita Hair Studio", "Tabu Beauty Center", "Manisha Salon", "Raveena Beauty Parlour",
+  "Juhi Hair Studio", "Pooja Beauty Lounge", "Sonali Salon", "Urmila Beauty Center", "Mahima Hair Studio",
+  "Twinkle Beauty Parlour", "Dimple Salon", "Simple Beauty Lounge", "Rinke Hair Studio", "Akshara Beauty Center",
+  "Ganga Salon", "Yamuna Beauty Parlour", "Saraswati Hair Studio", "Lakshmi Beauty Lounge", "Parvati Salon",
+  "Durga Beauty Center", "Kali Hair Studio", "Radha Beauty Parlour", "Sita Salon", "Geeta Beauty Lounge",
+  "Meera Hair Studio", "Meerabai Beauty Center", "Rukmini Salon", "Draupadi Beauty Parlour", "Kunti Hair Studio",
+  "Gandhari Beauty Lounge", "Mandodari Salon", "Tara Beauty Center", "Arundhati Hair Studio", "Savitri Beauty Parlour"
 ];
 
 // Generate additional salons

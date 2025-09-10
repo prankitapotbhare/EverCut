@@ -1,517 +1,267 @@
 {
-  "name": "Precision Cuts",
-  "description": "Award-winning salon known for excellence in all aspects of hair and beauty services.",
+  "name": "Radiance Salon",
+  "description": "Budget-friendly salon providing quality services at accessible prices.",
   "address": {
-    "street": "2567 Broadway",
-    "city": "New York",
-    "state": "NY",
-    "zipCode": "10001",
-    "country": "USA"
+    "street": "7639 Connaught Place",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "zipCode": "700001",
+    "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      -74.01063746567648,
-      40.692685832621926
+      88.38722198658706,
+      22.565375645445954
     ]
   },
-  "contactPhone": "(934) 268-8052",
-  "contactEmail": "info@precisioncuts.com",
-  "image": "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+  "contactPhone": "+91 40234 10544",
+  "contactEmail": "info@radiancesalon.com",
+  "image": "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80"
+    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
+    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
+    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Updo Styling",
-      "description": "Formal updo for special occasions",
-      "price": 73,
-      "duration": "1 hr"
+      "name": "Pedicure",
+      "description": "Foot care and polish application",
+      "price": 44,
+      "duration": 45
     },
     {
       "id": "2",
-      "name": "Deep Conditioning",
-      "description": "Intensive hair treatment",
-      "price": 31,
-      "duration": "30 min"
+      "name": "Women's Cut & Style",
+      "description": "Women's haircut with blowout",
+      "price": 52,
+      "duration": 45
     },
     {
       "id": "3",
-      "name": "Body Scrub",
-      "description": "Exfoliating body treatment",
-      "price": 74,
-      "duration": "45 min"
+      "name": "Deep Tissue Massage",
+      "description": "Therapeutic muscle massage",
+      "price": 90,
+      "duration": 60
+    },
+    {
+      "id": "4",
+      "name": "Chemical Peel",
+      "description": "Skin resurfacing treatment",
+      "price": 120,
+      "duration": 45
+    },
+    {
+      "id": "5",
+      "name": "Body Wrap",
+      "description": "Detoxifying body treatment",
+      "price": 84,
+      "duration": 60
+    },
+    {
+      "id": "6",
+      "name": "Lip Waxing",
+      "description": "Upper lip hair removal",
+      "price": 10,
+      "duration": 10
+    },
+    {
+      "id": "7",
+      "name": "Partial Highlights",
+      "description": "Highlights for top and sides",
+      "price": 86,
+      "duration": 90
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 101,
-      "duration": "1.5 hrs",
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 157,
+      "duration": 210,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Bridal Package",
-      "description": "Complete bridal beauty preparation",
-      "price": 202,
-      "duration": "3 hrs",
-      "services": [
-        "Bridal Hair",
-        "Makeup Application",
-        "Gel Manicure"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Color Transformation",
-      "description": "Complete hair color makeover",
-      "price": 134,
-      "duration": "3 hrs",
-      "services": [
+        "Premium Haircut",
         "Full Color",
-        "Deep Conditioning",
-        "Blowout"
+        "Manicure"
       ]
     }
   ],
   "stylists": [
     {
-      "name": "Oliver Thompson",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "id": "1",
+      "name": "Divya Joshi",
+      "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Body Scrub",
-        "Deep Conditioning",
-        "Updo Styling"
+        "Pedicure",
+        "Women's Cut & Style",
+        "Deep Tissue Massage"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "11:00",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00"
-          ]
-        },
         {
           "day": 1,
           "slots": [
-            "09:00",
-            "09:30",
-            "10:30",
-            "11:30",
-            "12:00",
+            "9:00",
+            "10:00",
+            "11:00",
             "13:00",
-            "13:30",
-            "14:30",
-            "15:30",
+            "14:00",
+            "15:00",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 2,
           "slots": [
+            "9:00",
             "10:00",
-            "10:30",
-            "11:30",
-            "12:30",
+            "11:00",
             "13:00",
             "14:00",
-            "14:30",
             "15:00",
-            "16:00"
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 3,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
             "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
+            "15:00",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 4,
           "slots": [
-            "09:00",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30",
-            "12:00",
             "13:00",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         }
       ],
-      "rating": 5,
-      "reviewCount": 7,
-      "status": "inactive",
-      "createdAt": "2025-04-02T17:24:14.341Z",
-      "updatedAt": "2025-04-02T17:24:14.341Z"
+      "status": "active"
     },
     {
-      "name": "Sebastian Martin",
-      "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
-      "specialties": [],
+      "id": "2",
+      "name": "Divya Joshi",
+      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
+      "specialties": [
+        "Pedicure",
+        "Women's Cut & Style",
+        "Deep Tissue Massage"
+      ],
       "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
         {
-          "day": 0,
-          "slots": [
-            "10:30",
-            "11:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:30",
-            "12:30",
-            "13:30",
-            "14:00",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "11:00",
-            "11:30",
-            "12:00",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "14:30",
-            "15:00",
-            "16:00",
-            "16:30"
-          ]
-        }
-      ],
-      "rating": 5,
-      "reviewCount": 39,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.341Z",
-      "updatedAt": "2025-04-02T17:24:14.341Z"
-    },
-    {
-      "name": "Alexander Martin",
-      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-      "specialties": [],
-      "bio": "Trained in New York and Paris, bringing international techniques to every client.",
-      "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "09:00",
-            "09:30",
-            "11:00",
-            "13:00",
-            "13:30",
-            "14:30",
-            "15:00",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
           "day": 1,
           "slots": [
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
-            "11:30",
-            "12:30",
-            "13:30",
+            "11:00",
+            "13:00",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 2,
           "slots": [
-            "09:00",
+            "9:00",
             "10:00",
-            "10:30",
-            "11:30",
-            "12:00",
+            "11:00",
             "13:00",
             "14:00",
-            "14:30",
-            "16:30"
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 3,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "12:00",
-            "12:30",
             "13:00",
+            "14:00",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 4,
           "slots": [
-            "09:00",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
             "13:00",
-            "13:30",
             "14:00",
-            "15:30",
+            "15:00",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 5,
           "slots": [
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 6,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:30",
-            "12:30",
             "13:00",
-            "13:30",
-            "14:30",
-            "15:30",
-            "16:00"
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         }
       ],
-      "rating": 4,
-      "reviewCount": 47,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.341Z",
-      "updatedAt": "2025-04-02T17:24:14.341Z"
-    },
-    {
-      "name": "Charlotte Martinez",
-      "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
-      "specialties": [],
-      "bio": "Expert in curly hair textures and specialized cutting techniques.",
-      "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "09:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:30",
-            "15:00",
-            "16:00"
-          ]
-        },
-        {
-          "day": 1,
-          "slots": [
-            "09:00",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 2,
-          "slots": [
-            "09:30",
-            "10:00",
-            "11:00",
-            "11:30",
-            "12:30",
-            "13:30",
-            "14:00",
-            "15:30",
-            "16:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:30",
-            "11:30",
-            "12:30",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:30"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:30",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 6,
-          "slots": [
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:30",
-            "13:30",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        }
-      ],
-      "rating": 4,
-      "reviewCount": 53,
-      "status": "on-leave",
-      "createdAt": "2025-04-02T17:24:14.341Z",
-      "updatedAt": "2025-04-02T17:24:14.341Z"
+      "status": "active"
     }
   ],
   "reviews": [
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Isabella G.",
-      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
-      "rating": 4,
-      "comment": "Incredible attention to detail. They really know what they're doing.",
-      "date": "2025-02-23T00:00:00.000Z"
+      "userName": "Lily I.",
+      "userImage": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&q=80",
+      "rating": 5,
+      "comment": "The staff went above and beyond to make sure I was happy.",
+      "date": "2025-07-27T00:00:00.000Z"
     }
   ],
-  "rating": 4.1,
-  "reviewCount": 2445,
+  "rating": 4.9,
+  "reviewCount": 2483,
   "operatingHours": [
     {
       "day": 1,
@@ -554,114 +304,89 @@
   "specialOffer": null,
   "availability": [
     {
-      "date": "2025-04-01",
-      "time": "09:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-04-01",
-      "time": "17:00",
-      "formattedTime": "5:00 PM"
-    },
-    {
-      "date": "2025-04-01",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "15:15",
-      "formattedTime": "3:15 PM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "17:45",
-      "formattedTime": "5:45 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "15:30",
-      "formattedTime": "3:30 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-04-04",
-      "time": "09:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-04-04",
-      "time": "11:00",
-      "formattedTime": "11:00 AM"
-    },
-    {
-      "date": "2025-04-04",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
-    },
-    {
-      "date": "2025-04-05",
+      "date": "2025-09-10",
       "time": "12:45",
       "formattedTime": "12:45 PM"
     },
     {
-      "date": "2025-04-05",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
+      "date": "2025-09-10",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
     },
     {
-      "date": "2025-04-05",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
+      "date": "2025-09-10",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
     },
     {
-      "date": "2025-04-05",
-      "time": "09:15",
-      "formattedTime": "9:15 AM"
+      "date": "2025-09-10",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
     },
     {
-      "date": "2025-04-06",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
+      "date": "2025-09-11",
+      "time": "16:15",
+      "formattedTime": "4:15 PM"
     },
     {
-      "date": "2025-04-06",
+      "date": "2025-09-11",
+      "time": "14:30",
+      "formattedTime": "2:30 PM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-09-11",
+      "time": "16:30",
+      "formattedTime": "4:30 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "12:00",
+      "formattedTime": "12:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "9:00",
+      "formattedTime": "9:00 AM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "13:30",
+      "formattedTime": "1:30 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "11:15",
+      "formattedTime": "11:15 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
+    },
+    {
+      "date": "2025-09-15",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-09-16",
       "time": "11:30",
       "formattedTime": "11:30 AM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "17:15",
-      "formattedTime": "5:15 PM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
     }
   ]
 }

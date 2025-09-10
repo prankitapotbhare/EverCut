@@ -1,456 +1,480 @@
 {
-  "name": "Shear Excellence",
-  "description": "Minimalist salon focused on precision cuts and natural beauty.",
+  "name": "Kunti Hair Studio",
+  "description": "Family-friendly salon providing quality services for all ages at affordable prices.",
   "address": {
-    "street": "6075 Oak Avenue",
-    "city": "Philadelphia",
-    "state": "PA",
-    "zipCode": "19101",
-    "country": "USA"
+    "street": "5287 Karol Bagh",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "zipCode": "302001",
+    "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      -75.17201555814415,
-      39.9705559907466
+      75.79573458412325,
+      26.9232389998679
     ]
   },
-  "contactPhone": "(726) 130-3607",
-  "contactEmail": "info@shearexcellence.com",
-  "image": "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
+  "contactPhone": "+91 63101 14420",
+  "contactEmail": "info@kuntihairstudio.com",
+  "image": "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80"
+    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
+    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Lip Waxing",
-      "description": "Upper lip hair removal",
-      "price": 10,
-      "duration": "10 min"
+      "name": "Deep Tissue Massage",
+      "description": "Therapeutic muscle massage",
+      "price": 92,
+      "duration": 60
     },
     {
       "id": "2",
-      "name": "Hair Extensions",
-      "description": "Hair extension application",
-      "price": 247,
-      "duration": "3 hrs"
+      "name": "Bridal Hair",
+      "description": "Wedding day hair styling",
+      "price": 126,
+      "duration": 90
     },
     {
       "id": "3",
-      "name": "Swedish Massage",
-      "description": "Relaxing full body massage",
-      "price": 74,
-      "duration": "1 hr"
+      "name": "Deep Conditioning",
+      "description": "Intensive hair treatment",
+      "price": 33,
+      "duration": 30
     },
     {
       "id": "4",
-      "name": "Express Facial",
-      "description": "Quick refreshing facial",
-      "price": 50,
-      "duration": "30 min"
+      "name": "Partial Highlights",
+      "description": "Highlights for top and sides",
+      "price": 89,
+      "duration": 90
     },
     {
       "id": "5",
-      "name": "Full Highlights",
-      "description": "Complete highlight service",
-      "price": 116,
-      "duration": "2.5 hrs"
+      "name": "Balayage",
+      "description": "Hand-painted highlighting technique",
+      "price": 135,
+      "duration": 150
+    },
+    {
+      "id": "6",
+      "name": "Brazilian Blowout",
+      "description": "Smoothing and anti-frizz treatment",
+      "price": 188,
+      "duration": 120
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Men's Grooming",
-      "description": "Complete men's grooming experience",
-      "price": 96,
-      "duration": "1.5 hrs",
+      "name": "Spa Day",
+      "description": "Full day of pampering and relaxation",
+      "price": 204,
+      "duration": 180,
       "services": [
-        "Men's Cut",
-        "Beard Trim",
-        "Facial"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Couples Retreat",
-      "description": "Relaxing spa experience for two",
-      "price": 230,
-      "duration": "2 hrs",
-      "services": [
-        "Swedish Massage (2)",
-        "Pedicure (2)"
+        "Deep Tissue Massage",
+        "Deep Cleansing Facial",
+        "Deluxe Pedicure"
       ]
     }
   ],
   "stylists": [
     {
-      "name": "Daniel Robinson",
-      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80",
+      "id": "1",
+      "name": "Anjali Sharma",
+      "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Full Highlights",
-        "Swedish Massage",
-        "Hair Extensions",
-        "Lip Waxing"
-      ],
-      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
-      "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "09:30",
-            "10:30",
-            "11:00",
-            "12:00",
-            "12:30",
-            "13:00",
-            "14:00",
-            "14:30",
-            "15:30",
-            "16:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "12:30",
-            "13:00",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 6,
-          "slots": [
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "16:00",
-            "16:30"
-          ]
-        }
-      ],
-      "rating": 5,
-      "reviewCount": 40,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.129Z",
-      "updatedAt": "2025-04-02T17:24:14.129Z"
-    },
-    {
-      "name": "Matthew Jones",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-      "specialties": [
-        "Express Facial"
+        "Deep Tissue Massage",
+        "Bridal Hair",
+        "Deep Conditioning"
       ],
       "bio": "Known for creating stunning transformations and attention to detail.",
       "availability": [
         {
-          "day": 0,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
           "day": 1,
           "slots": [
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:30",
-            "15:00"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 4,
-          "slots": [
+            "9:00",
             "10:00",
             "11:00",
-            "12:00",
-            "12:30",
             "13:00",
             "14:00",
-            "14:30",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "09:00",
-            "09:30",
-            "10:00",
-            "11:00",
-            "11:30",
-            "12:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 6,
-          "slots": [
-            "09:30",
-            "10:00",
-            "11:00",
-            "11:30",
-            "12:00",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        }
-      ],
-      "rating": 5,
-      "reviewCount": 19,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.129Z",
-      "updatedAt": "2025-04-02T17:24:14.129Z"
-    },
-    {
-      "name": "Sophia Martinez",
-      "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
-      "specialties": [],
-      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
-      "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
             "15:00",
             "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 1,
-          "slots": [
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "12:30",
-            "13:30",
-            "14:00",
-            "15:00",
-            "15:30"
+            "17:00"
           ]
         },
         {
           "day": 2,
           "slots": [
-            "09:00",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
             "13:00",
-            "13:30",
             "14:00",
-            "15:30",
-            "16:30"
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 3,
           "slots": [
-            "09:30",
-            "10:30",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:30",
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
             "15:00",
-            "15:30",
-            "16:30"
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 4,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
-            "12:30",
+            "11:00",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         }
       ],
-      "rating": 5,
-      "reviewCount": 31,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.129Z",
-      "updatedAt": "2025-04-02T17:24:14.129Z"
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "name": "Riya Singh",
+      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
+      "specialties": [
+        "Deep Tissue Massage",
+        "Bridal Hair",
+        "Deep Conditioning"
+      ],
+      "bio": "Known for creating stunning transformations and attention to detail.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Priya Patel",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
+      "specialties": [
+        "Deep Tissue Massage",
+        "Bridal Hair",
+        "Deep Conditioning"
+      ],
+      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "name": "Neha Kumar",
+      "image": "https://images.unsplash.com/photo-1494790108380?w=500&q=80",
+      "specialties": [
+        "Deep Tissue Massage",
+        "Bridal Hair",
+        "Deep Conditioning"
+      ],
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
+      "availability": [
+        {
+          "day": 1,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 2,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 3,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 4,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": 5,
+          "slots": [
+            "9:00",
+            "10:00",
+            "11:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
+          ]
+        }
+      ],
+      "status": "active"
     }
   ],
   "reviews": [
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Olivia M.",
-      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
+      "userName": "Henry D.",
+      "userImage": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80",
       "rating": 5,
-      "comment": "The massage chairs during the shampoo were heavenly!",
-      "date": "2025-02-19T00:00:00.000Z"
+      "comment": "I appreciate how they explained each step of the process.",
+      "date": "2025-09-01T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Mia E.",
-      "userImage": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
-      "rating": 5,
-      "comment": "Incredible attention to detail. They really know what they're doing.",
-      "date": "2025-02-01T00:00:00.000Z"
+      "userName": "Wyatt B.",
+      "userImage": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80",
+      "rating": 4,
+      "comment": "Excellent service from start to finish. Love this place!",
+      "date": "2025-09-09T00:00:00.000Z"
     },
     {
       "id": "3",
       "userId": "user-3",
-      "userName": "Penelope C.",
-      "userImage": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&q=80",
+      "userName": "Charlotte C.",
+      "userImage": "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?w=100&q=80",
       "rating": 4,
-      "comment": "The package deal was worth every penny. So happy with the results!",
-      "date": "2025-03-25T00:00:00.000Z"
+      "comment": "Great service and attention to detail. Will definitely come back!",
+      "date": "2025-07-24T00:00:00.000Z"
     },
     {
       "id": "4",
       "userId": "user-4",
-      "userName": "Jacob R.",
-      "userImage": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=100&q=80",
+      "userName": "Victoria O.",
+      "userImage": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80",
       "rating": 4,
-      "comment": "My stylist was amazing and really understood what I wanted.",
-      "date": "2025-03-28T00:00:00.000Z"
+      "comment": "Amazing results! Everyone keeps complimenting my new look.",
+      "date": "2025-08-15T00:00:00.000Z"
     }
   ],
-  "rating": 4.9,
-  "reviewCount": 3449,
+  "rating": 5,
+  "reviewCount": 3354,
   "operatingHours": [
     {
       "day": 1,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 2,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 3,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 4,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 5,
-      "open": "9:00 AM",
-      "close": "7:00 PM"
+      "open": "10:00 AM",
+      "close": "9:00 PM"
     },
     {
       "day": 6,
       "open": "10:00 AM",
-      "close": "6:00 PM"
+      "close": "8:00 PM"
     },
     {
       "day": 0,
       "open": "11:00 AM",
-      "close": "5:00 PM"
+      "close": "6:00 PM"
     }
   ],
   "featured": true,
@@ -458,114 +482,69 @@
   "specialOffer": null,
   "availability": [
     {
-      "date": "2025-04-01",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
+      "date": "2025-09-10",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     },
     {
-      "date": "2025-04-01",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
+      "date": "2025-09-11",
+      "time": "11:45",
+      "formattedTime": "11:45 AM"
     },
     {
-      "date": "2025-04-01",
-      "time": "14:30",
-      "formattedTime": "2:30 PM"
+      "date": "2025-09-11",
+      "time": "9:30",
+      "formattedTime": "9:30 AM"
     },
     {
-      "date": "2025-04-01",
-      "time": "16:45",
-      "formattedTime": "4:45 PM"
-    },
-    {
-      "date": "2025-04-01",
-      "time": "09:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "13:45",
-      "formattedTime": "1:45 PM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-04-02",
+      "date": "2025-09-13",
       "time": "15:15",
       "formattedTime": "3:15 PM"
     },
     {
-      "date": "2025-04-02",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
+      "date": "2025-09-13",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
     },
     {
-      "date": "2025-04-03",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
+      "date": "2025-09-13",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
     },
     {
-      "date": "2025-04-03",
+      "date": "2025-09-14",
+      "time": "10:30",
+      "formattedTime": "10:30 AM"
+    },
+    {
+      "date": "2025-09-14",
+      "time": "15:30",
+      "formattedTime": "3:30 PM"
+    },
+    {
+      "date": "2025-09-14",
       "time": "15:45",
       "formattedTime": "3:45 PM"
     },
     {
-      "date": "2025-04-03",
-      "time": "09:45",
-      "formattedTime": "9:45 AM"
+      "date": "2025-09-14",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
     },
     {
-      "date": "2025-04-04",
+      "date": "2025-09-16",
+      "time": "18:45",
+      "formattedTime": "6:45 PM"
+    },
+    {
+      "date": "2025-09-16",
       "time": "17:00",
       "formattedTime": "5:00 PM"
     },
     {
-      "date": "2025-04-04",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-04-04",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "09:45",
-      "formattedTime": "9:45 AM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "14:45",
-      "formattedTime": "2:45 PM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "13:30",
-      "formattedTime": "1:30 PM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "13:00",
-      "formattedTime": "1:00 PM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "17:15",
-      "formattedTime": "5:15 PM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
+      "date": "2025-09-16",
+      "time": "15:45",
+      "formattedTime": "3:45 PM"
     }
   ]
 }

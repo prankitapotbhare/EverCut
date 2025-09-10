@@ -1,590 +1,391 @@
 {
-  "name": "Hair Magnificence",
-  "description": "Vintage-themed salon combining classic techniques with modern trends.",
+  "name": "Parvati Salon",
+  "description": "High-end salon offering premium services with exceptional attention to detail.",
   "address": {
-    "street": "9709 Broadway",
-    "city": "Phoenix",
-    "state": "AZ",
-    "zipCode": "85001",
-    "country": "USA"
+    "street": "3042 Sarojini Nagar",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "zipCode": "560001",
+    "country": "India"
   },
   "location": {
     "type": "Point",
     "coordinates": [
-      -112.04987385031184,
-      33.43333148833574
+      77.61082108925501,
+      12.985581451133939
     ]
   },
-  "contactPhone": "(654) 699-9720",
-  "contactEmail": "info@hairmagnificence.com",
-  "image": "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+  "contactPhone": "+91 43508 41987",
+  "contactEmail": "info@parvatisalon.com",
+  "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
   "gallery": [
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80"
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
+    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80"
   ],
   "services": [
     {
       "id": "1",
-      "name": "Root Touch-up",
-      "description": "Color application for roots",
-      "price": 63,
-      "duration": "1.5 hrs"
+      "name": "Partial Highlights",
+      "description": "Highlights for top and sides",
+      "price": 93,
+      "duration": 90
     },
     {
       "id": "2",
-      "name": "Kids Cut",
-      "description": "Children's haircut (12 and under)",
-      "price": 25,
-      "duration": "20 min"
+      "name": "Balayage",
+      "description": "Hand-painted highlighting technique",
+      "price": 154,
+      "duration": 150
     },
     {
       "id": "3",
-      "name": "Blowout",
-      "description": "Wash and blowdry styling",
-      "price": 37,
-      "duration": "30 min"
+      "name": "Premium Haircut",
+      "description": "Detailed haircut with styling",
+      "price": 52,
+      "duration": 45
     },
     {
       "id": "4",
-      "name": "Bridal Hair",
-      "description": "Wedding day hair styling",
-      "price": 131,
-      "duration": "1.5 hrs"
-    },
-    {
-      "id": "5",
-      "name": "Full Highlights",
-      "description": "Complete highlight service",
-      "price": 121,
-      "duration": "2.5 hrs"
-    },
-    {
-      "id": "6",
-      "name": "Deep Tissue Massage",
-      "description": "Therapeutic muscle massage",
-      "price": 88,
-      "duration": "1 hr"
-    },
-    {
-      "id": "7",
-      "name": "Express Facial",
-      "description": "Quick refreshing facial",
-      "price": 49,
-      "duration": "30 min"
+      "name": "Men's Cut",
+      "description": "Men's haircut and styling",
+      "price": 27,
+      "duration": 30
     }
   ],
   "packages": [
     {
       "id": "1",
-      "name": "Quick Refresh",
-      "description": "Quick beauty refresh when you're short on time",
-      "price": 73,
-      "duration": "1 hr",
-      "services": [
-        "Basic Haircut",
-        "Express Facial"
-      ]
-    },
-    {
-      "id": "2",
       "name": "Color Transformation",
       "description": "Complete hair color makeover",
-      "price": 135,
-      "duration": "3 hrs",
+      "price": 145,
+      "duration": 180,
       "services": [
         "Full Color",
         "Deep Conditioning",
         "Blowout"
       ]
+    },
+    {
+      "id": "2",
+      "name": "Complete Makeover",
+      "description": "Full beauty transformation package",
+      "price": 153,
+      "duration": 210,
+      "services": [
+        "Premium Haircut",
+        "Full Color",
+        "Manicure"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Relaxation Package",
+      "description": "Ultimate relaxation experience",
+      "price": 162,
+      "duration": 150,
+      "services": [
+        "Swedish Massage",
+        "Express Facial",
+        "Pedicure"
+      ]
     }
   ],
   "stylists": [
     {
-      "name": "Michael Young",
-      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
+      "id": "1",
+      "name": "Riya Singh",
+      "image": "https://images.unsplash.com/photo-1494790108377?w=500&q=80",
       "specialties": [
-        "Express Facial",
-        "Root Touch-up",
-        "Deep Tissue Massage"
+        "Partial Highlights",
+        "Balayage",
+        "Premium Haircut"
       ],
-      "bio": "Award-winning stylist with over 10 years of experience in the industry.",
+      "bio": "Certified colorist who loves helping clients find their perfect shade.",
       "availability": [
         {
-          "day": 0,
+          "day": 1,
           "slots": [
-            "09:30",
+            "9:00",
+            "10:00",
             "11:00",
-            "11:30",
-            "12:30",
             "13:00",
-            "14:30",
-            "16:00"
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 2,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
-            "11:30",
-            "12:00",
-            "12:30",
+            "11:00",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 3,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30",
-            "12:00",
+            "13:00",
             "14:00",
-            "15:30",
-            "16:00"
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 4,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "11:30",
-            "12:00",
-            "12:30",
+            "11:00",
             "13:00",
-            "13:30",
             "14:00",
-            "15:30",
+            "15:00",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
-          "day": 6,
+          "day": 5,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "12:00",
-            "12:30",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         }
       ],
-      "rating": 4,
-      "reviewCount": 42,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.385Z",
-      "updatedAt": "2025-04-02T17:24:14.385Z"
+      "status": "active"
     },
     {
-      "name": "Elijah Thompson",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "id": "2",
+      "name": "Shreya Iyer",
+      "image": "https://images.unsplash.com/photo-1494790108378?w=500&q=80",
       "specialties": [
-        "Blowout",
-        "Bridal Hair",
-        "Kids Cut"
+        "Partial Highlights",
+        "Balayage",
+        "Premium Haircut"
       ],
-      "bio": "Dedicated to continuing education to bring clients the latest trends and techniques.",
+      "bio": "Experienced stylist with a passion for creating beautiful, personalized looks.",
       "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "09:00",
-            "09:30",
-            "12:00",
-            "13:00",
-            "13:30",
-            "15:00",
-            "16:30"
-          ]
-        },
         {
           "day": 1,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
-            "12:00",
+            "11:00",
             "13:00",
             "14:00",
-            "14:30",
-            "15:30",
-            "16:30"
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 2,
           "slots": [
-            "09:00",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "12:00",
-            "12:30",
-            "13:30",
+            "13:00",
             "14:00",
             "15:00",
-            "15:30",
-            "16:00"
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 3,
           "slots": [
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:30",
+            "13:00",
+            "14:00",
             "15:00",
-            "15:30",
-            "16:00"
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 4,
           "slots": [
-            "09:00",
-            "09:30",
-            "10:30",
+            "9:00",
+            "10:00",
             "11:00",
-            "11:30",
             "13:00",
-            "13:30",
             "14:00",
             "15:00",
-            "15:30",
-            "16:30"
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 5,
           "slots": [
-            "09:00",
-            "09:30",
-            "10:30",
+            "9:00",
+            "10:00",
             "11:00",
-            "11:30",
-            "12:30",
-            "13:30",
+            "13:00",
             "14:00",
-            "15:30",
+            "15:00",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         }
       ],
-      "rating": 4,
-      "reviewCount": 32,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.386Z",
-      "updatedAt": "2025-04-02T17:24:14.386Z"
+      "status": "active"
     },
     {
-      "name": "Noah Rodriguez",
-      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "id": "3",
+      "name": "Shreya Iyer",
+      "image": "https://images.unsplash.com/photo-1494790108379?w=500&q=80",
       "specialties": [
-        "Full Highlights"
+        "Partial Highlights",
+        "Balayage",
+        "Premium Haircut"
       ],
-      "bio": "Trained in New York and Paris, bringing international techniques to every client.",
+      "bio": "Specializes in the latest cutting and coloring techniques for all hair types.",
       "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "09:30",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "13:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
         {
           "day": 1,
           "slots": [
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
             "13:00",
             "14:00",
             "15:00",
-            "15:30",
-            "16:00"
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 2,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
-            "10:30",
             "11:00",
-            "12:00",
-            "12:30",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
-            "15:30",
-            "16:30"
+            "15:00",
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 3,
           "slots": [
+            "9:00",
             "10:00",
             "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
             "13:00",
-            "13:30",
+            "14:00",
             "15:00",
-            "15:30",
-            "16:00"
+            "16:00",
+            "17:00"
           ]
         },
         {
           "day": 4,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
             "11:00",
-            "12:00",
             "13:00",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         },
         {
           "day": 5,
           "slots": [
-            "09:00",
-            "09:30",
+            "9:00",
             "10:00",
             "11:00",
-            "12:30",
-            "13:30",
-            "14:00",
-            "15:00",
-            "15:30"
-          ]
-        },
-        {
-          "day": 6,
-          "slots": [
-            "09:00",
-            "10:00",
-            "10:30",
-            "11:00",
-            "12:30",
             "13:00",
-            "13:30",
             "14:00",
-            "14:30",
             "15:00",
-            "15:30",
             "16:00",
-            "16:30"
+            "17:00"
           ]
         }
       ],
-      "rating": 4,
-      "reviewCount": 34,
-      "status": "inactive",
-      "createdAt": "2025-04-02T17:24:14.386Z",
-      "updatedAt": "2025-04-02T17:24:14.386Z"
-    },
-    {
-      "name": "James Anderson",
-      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80",
-      "specialties": [],
-      "bio": "Specializes in natural-looking balayage and dimensional color.",
-      "availability": [
-        {
-          "day": 0,
-          "slots": [
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 1,
-          "slots": [
-            "09:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 3,
-          "slots": [
-            "09:00",
-            "09:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "14:00",
-            "14:30",
-            "16:00",
-            "16:30"
-          ]
-        },
-        {
-          "day": 5,
-          "slots": [
-            "10:00",
-            "11:30",
-            "12:00",
-            "13:30",
-            "14:30",
-            "15:30",
-            "16:00",
-            "16:30"
-          ]
-        }
-      ],
-      "rating": 4,
-      "reviewCount": 35,
-      "status": "active",
-      "createdAt": "2025-04-02T17:24:14.386Z",
-      "updatedAt": "2025-04-02T17:24:14.386Z"
+      "status": "active"
     }
   ],
   "reviews": [
     {
       "id": "1",
       "userId": "user-1",
-      "userName": "Olivia M.",
-      "userImage": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80",
-      "rating": 5,
-      "comment": "My new hairstyle is perfect. Exactly what I wanted!",
-      "date": "2025-03-14T00:00:00.000Z"
+      "userName": "Matthew X.",
+      "userImage": "https://images.unsplash.com/photo-1557555187-23d685287bc3?w=100&q=80",
+      "rating": 3,
+      "comment": "Absolutely loved my experience here! The staff was so professional.",
+      "date": "2025-08-24T00:00:00.000Z"
     },
     {
       "id": "2",
       "userId": "user-2",
-      "userName": "Zoe E.",
-      "userImage": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80",
+      "userName": "Hannah G.",
+      "userImage": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=100&q=80",
       "rating": 5,
-      "comment": "The salon has such a welcoming vibe. I felt comfortable right away.",
-      "date": "2025-03-19T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "userId": "user-3",
-      "userName": "Charlotte C.",
-      "userImage": "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=100&q=80",
-      "rating": 5,
-      "comment": "I've never had a better color treatment. Absolutely perfect!",
-      "date": "2025-03-03T00:00:00.000Z"
+      "comment": "Reasonable prices for the quality of service you receive.",
+      "date": "2025-09-04T00:00:00.000Z"
     }
   ],
-  "rating": 4.6,
-  "reviewCount": 559,
+  "rating": 4.4,
+  "reviewCount": 880,
   "operatingHours": [
     {
       "day": 1,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 2,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 3,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 4,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 5,
-      "open": "10:00 AM",
-      "close": "9:00 PM"
-    },
-    {
-      "day": 6,
-      "open": "10:00 AM",
+      "open": "9:00 AM",
       "close": "8:00 PM"
     },
     {
+      "day": 2,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 3,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 4,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 5,
+      "open": "9:00 AM",
+      "close": "8:00 PM"
+    },
+    {
+      "day": 6,
+      "open": "9:00 AM",
+      "close": "7:00 PM"
+    },
+    {
       "day": 0,
-      "open": "11:00 AM",
-      "close": "6:00 PM"
+      "open": "Closed",
+      "close": "Closed"
     }
   ],
   "featured": false,
@@ -592,129 +393,64 @@
   "specialOffer": null,
   "availability": [
     {
-      "date": "2025-04-01",
-      "time": "17:30",
-      "formattedTime": "5:30 PM"
-    },
-    {
-      "date": "2025-04-01",
-      "time": "12:00",
-      "formattedTime": "12:00 PM"
-    },
-    {
-      "date": "2025-04-01",
-      "time": "09:15",
-      "formattedTime": "9:15 AM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "09:00",
-      "formattedTime": "9:00 AM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "16:30",
-      "formattedTime": "4:30 PM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "12:45",
-      "formattedTime": "12:45 PM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-04-02",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "09:00",
-      "formattedTime": "9:00 AM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "13:15",
-      "formattedTime": "1:15 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "16:15",
-      "formattedTime": "4:15 PM"
-    },
-    {
-      "date": "2025-04-03",
-      "time": "09:30",
+      "date": "2025-09-10",
+      "time": "9:30",
       "formattedTime": "9:30 AM"
     },
     {
-      "date": "2025-04-03",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
+      "date": "2025-09-11",
+      "time": "18:15",
+      "formattedTime": "6:15 PM"
     },
     {
-      "date": "2025-04-04",
-      "time": "10:15",
-      "formattedTime": "10:15 AM"
-    },
-    {
-      "date": "2025-04-04",
+      "date": "2025-09-11",
       "time": "14:30",
       "formattedTime": "2:30 PM"
     },
     {
-      "date": "2025-04-04",
+      "date": "2025-09-12",
       "time": "15:45",
       "formattedTime": "3:45 PM"
     },
     {
-      "date": "2025-04-04",
+      "date": "2025-09-12",
+      "time": "13:00",
+      "formattedTime": "1:00 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "18:30",
+      "formattedTime": "6:30 PM"
+    },
+    {
+      "date": "2025-09-12",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "14:15",
+      "formattedTime": "2:15 PM"
+    },
+    {
+      "date": "2025-09-13",
+      "time": "18:00",
+      "formattedTime": "6:00 PM"
+    },
+    {
+      "date": "2025-09-16",
+      "time": "17:45",
+      "formattedTime": "5:45 PM"
+    },
+    {
+      "date": "2025-09-16",
       "time": "16:00",
       "formattedTime": "4:00 PM"
     },
     {
-      "date": "2025-04-05",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "10:00",
-      "formattedTime": "10:00 AM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "16:00",
-      "formattedTime": "4:00 PM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "11:45",
-      "formattedTime": "11:45 AM"
-    },
-    {
-      "date": "2025-04-05",
-      "time": "10:45",
-      "formattedTime": "10:45 AM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "11:15",
-      "formattedTime": "11:15 AM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "12:15",
-      "formattedTime": "12:15 PM"
-    },
-    {
-      "date": "2025-04-06",
-      "time": "12:30",
-      "formattedTime": "12:30 PM"
+      "date": "2025-09-16",
+      "time": "9:45",
+      "formattedTime": "9:45 AM"
     }
   ]
 }
