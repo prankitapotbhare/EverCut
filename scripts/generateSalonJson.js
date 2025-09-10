@@ -7,25 +7,36 @@ const mockSalonsContent = fs.readFileSync(mockSalonsPath, 'utf8');
 
 // Simple extraction of salon data
 let mockSalons = [];
+let tempFilePath = null;
 try {
   // Create a temporary file with modified content for Node.js compatibility
-  const tempFilePath = path.join(__dirname, 'temp-mock-salons.js');
+  tempFilePath = path.join(__dirname, 'temp-mock-salons.js');
   
   // Replace export default with module.exports and handle ES6 syntax
   const modifiedContent = mockSalonsContent
     .replace(/export\s+default\s+mockSalons;?/g, 'module.exports = mockSalons;')
-    .replace(/import\s+.*?from\s+['"].*?['"];?/g, '// Import removed');
+    .replace(/import\s+.*?from\s+['"'].*?['"'];?/g, '// Import removed');
   
   fs.writeFileSync(tempFilePath, modifiedContent);
+  
+  // Clear require cache to avoid stale data
+  delete require.cache[require.resolve('./temp-mock-salons.js')];
   
   // Require the temporary file
   mockSalons = require('./temp-mock-salons.js');
   
-  // Clean up the temporary file
-  fs.unlinkSync(tempFilePath);
 } catch (error) {
   console.error('Error loading mockSalons.js:', error);
   process.exit(1);
+} finally {
+  // Clean up the temporary file
+  if (tempFilePath && fs.existsSync(tempFilePath)) {
+    try {
+      fs.unlinkSync(tempFilePath);
+    } catch (cleanupError) {
+      console.warn('Warning: Could not clean up temporary file:', cleanupError.message);
+    }
+  }
 }
 
 if (!mockSalons || !Array.isArray(mockSalons)) {
@@ -76,7 +87,7 @@ function formatSalonForServer(salon) {
     id: service.id.toString(),
     name: service.name,
     description: service.description,
-    price: service.price,
+    price: typeof service.price === 'string' ? parseInt(service.price, 10) : service.price,
     duration: parseDuration(service.duration)
   }));
 
@@ -85,7 +96,7 @@ function formatSalonForServer(salon) {
     id: pkg.id.toString(),
     name: pkg.name,
     description: pkg.description,
-    price: pkg.price,
+    price: typeof pkg.price === 'string' ? parseInt(pkg.price, 10) : pkg.price,
     duration: parseDuration(pkg.duration),
     services: pkg.services
   }));
@@ -123,8 +134,8 @@ function formatSalonForServer(salon) {
     packages,
     stylists,
     reviews,
-    rating: parseFloat(salon.rating),
-    reviewCount: salon.reviews,
+    rating: typeof salon.rating === 'string' ? parseFloat(salon.rating) : salon.rating,
+    reviewCount: typeof salon.reviews === 'string' ? parseInt(salon.reviews, 10) : salon.reviews,
     operatingHours,
     featured: salon.featured || false,
     featuredReason: salon.featuredReason || null,
@@ -192,6 +203,7 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
+// Create salons directory if it doesn't exist
 if (!fs.existsSync(salonsDir)) {
   fs.mkdirSync(salonsDir, { recursive: true });
 }
@@ -199,17 +211,27 @@ if (!fs.existsSync(salonsDir)) {
 // Write individual salon files
 formattedSalons.forEach((salon, index) => {
   const salonFileName = `salon-${index + 1}.json`;
-  fs.writeFileSync(
-    path.join(salonsDir, salonFileName),
-    JSON.stringify(salon, null, 2)
-  );
+  try {
+    fs.writeFileSync(
+      path.join(salonsDir, salonFileName),
+      JSON.stringify(salon, null, 2)
+    );
+  } catch (error) {
+    console.error(`Error writing ${salonFileName}:`, error.message);
+    process.exit(1);
+  }
 });
 
 // Also write the combined salons.json file for backward compatibility
-fs.writeFileSync(
-  path.join(outputDir, 'salons.json'),
-  JSON.stringify(formattedSalons, null, 2)
-);
+try {
+  fs.writeFileSync(
+    path.join(outputDir, 'salons.json'),
+    JSON.stringify(formattedSalons, null, 2)
+  );
+} catch (error) {
+  console.error('Error writing salons.json:', error.message);
+  process.exit(1);
+}
 
 console.log('Generated ' + formattedSalons.length + ' individual salon files in salons/ directory');
 console.log('Also created combined salons.json for backward compatibility');

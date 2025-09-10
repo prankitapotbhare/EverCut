@@ -455,7 +455,11 @@ const salonNames = [
 
 // Generate additional salons
 for (let i = 1; i <= 100; i++) {
-  // Select a unique salon name
+  // Select a unique salon name (check if names are available)
+  if (salonNames.length === 0) {
+    console.warn(`No more unique salon names available for salon ${i}`);
+    break; // Exit the loop if no names are left
+  }
   const nameIndex = Math.floor(Math.random() * salonNames.length);
   const name = salonNames[nameIndex];
   salonNames.splice(nameIndex, 1); // Remove used name
@@ -603,7 +607,7 @@ for (let i = 0; i < 5; i++) {
 for (let i = 5; i < 15; i++) {
   if (mockSalons[i]) {
     mockSalons[i].specialOffer = {
-      discount: Math.floor(Math.random() * 16) + 15 + "%", // 15-30% discount
+      discount: (Math.floor(Math.random() * 16) + 15) + "%", // 15-30% discount
       description: [
         "New Client Special",
         "Limited Time Offer",
@@ -620,7 +624,7 @@ for (let i = 5; i < 15; i++) {
   }
 }
 
-// Add a few salons with availability information
+// Add availability information to salons
 for (let i = 0; i < mockSalons.length; i++) {
   // 80% of salons have availability info
   if (Math.random() < 0.8) {
@@ -643,7 +647,7 @@ for (let i = 0; i < mockSalons.length; i++) {
         availableSlots.push({
           date: date.toISOString().split('T')[0],
           time: `${hour}:${minute.toString().padStart(2, '0')}`,
-          formattedTime: `${hour > 12 ? hour - 12 : hour}:${minute.toString().padStart(2, '0')} ${hour >= 12 ? 'PM' : 'AM'}`
+          formattedTime: `${hour > 12 ? hour - 12 : (hour === 0 ? 12 : hour)}:${minute.toString().padStart(2, '0')} ${hour >= 12 ? 'PM' : 'AM'}`
         });
       }
     }
