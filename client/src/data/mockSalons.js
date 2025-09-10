@@ -1,7 +1,61 @@
-// Mock data for salons with 100+ entries
-// Utility functions to generate consistent data
-const generateSalon = (id, name, image, rating, reviews, distance, description, services, packages, galleryCount = 4, reviewCount = 3) => {
-  // Generate gallery images from a pool of salon images
+// Mock data generator for salons with 100+ entries
+// Properly formatted and organized for better maintainability
+
+// =============================================================================
+// UTILITY FUNCTIONS
+// =============================================================================
+
+/**
+ * Generates consistent salon data with all required properties
+ * @param {number} id - Unique salon identifier
+ * @param {string} name - Salon name
+ * @param {string} image - Main salon image URL
+ * @param {number} rating - Salon rating (1-5)
+ * @param {number} reviews - Number of reviews
+ * @param {number} distance - Distance in miles
+ * @param {string} description - Salon description
+ * @param {Array} services - Available services
+ * @param {Array} packages - Available packages
+ * @param {number} galleryCount - Number of gallery images to generate
+ * @param {number} reviewCount - Number of customer reviews to generate
+ * @returns {Object} Complete salon object
+ */
+const generateSalon = (
+  id,
+  name,
+  image,
+  rating,
+  reviews,
+  distance,
+  description,
+  services,
+  packages,
+  galleryCount = 4,
+  reviewCount = 3
+) => {
+  return {
+    id,
+    name,
+    image,
+    rating,
+    reviews,
+    distance,
+    description,
+    services,
+    packages,
+    gallery: generateGallery(galleryCount),
+    customerReviews: generateCustomerReviews(reviewCount),
+    openingHours: generateOpeningHours(),
+    location: generateLocation()
+  };
+};
+
+/**
+ * Generates random gallery images from predefined pool
+ * @param {number} count - Number of images to generate
+ * @returns {Array} Array of image URLs
+ */
+const generateGallery = (count) => {
   const galleryPool = [
     "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
     "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
@@ -27,7 +81,62 @@ const generateSalon = (id, name, image, rating, reviews, distance, description, 
     "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80"
   ];
 
-  // Expanded pool of user profile images (41 URLs)
+  const gallery = [];
+  const usedIndices = new Set();
+
+  for (let i = 0; i < count; i++) {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * galleryPool.length);
+    } while (usedIndices.has(randomIndex));
+
+    usedIndices.add(randomIndex);
+    gallery.push(galleryPool[randomIndex]);
+  }
+
+  return gallery;
+};
+
+/**
+ * Generates random customer reviews
+ * @param {number} count - Number of reviews to generate
+ * @returns {Array} Array of review objects
+ */
+const generateCustomerReviews = (count) => {
+  const reviewComments = [
+    "Absolutely loved my experience here! The staff was so professional.",
+    "Great service and attention to detail. Will definitely come back!",
+    "My new hairstyle is perfect. Exactly what I wanted!",
+    "The best salon experience I've had in years. Highly recommend!",
+    "Amazing results! Everyone keeps complimenting my new look.",
+    "Very skilled stylists who really listen to what you want.",
+    "Excellent service from start to finish. Love this place!",
+    "The package deal was worth every penny. So happy with the results!",
+    "Friendly staff and relaxing atmosphere. A real treat!",
+    "Top-notch service and expertise. My go-to salon from now on!",
+    "Incredible attention to detail. They really know what they're doing.",
+    "The salon has such a welcoming vibe. I felt comfortable right away.",
+    "My stylist was amazing and really understood what I wanted.",
+    "Reasonable prices for the quality of service you receive.",
+    "The staff went above and beyond to make sure I was happy.",
+    "I've never had a better color treatment. Absolutely perfect!",
+    "The massage chairs during the shampoo were heavenly!",
+    "I appreciate how they explained each step of the process.",
+    "They were able to fit me in last minute. Such great customer service!",
+    "The products they use are high quality and smell amazing."
+  ];
+
+  const reviewNames = [
+    "Emma S.", "James T.", "Sophia R.", "Noah P.", "Olivia M.",
+    "William K.", "Ava J.", "Benjamin H.", "Isabella G.", "Lucas F.",
+    "Mia E.", "Henry D.", "Charlotte C.", "Alexander B.", "Amelia A.",
+    "Daniel Z.", "Harper Y.", "Matthew X.", "Evelyn W.", "Michael V.",
+    "Abigail U.", "Ethan T.", "Elizabeth S.", "Jacob R.", "Sofia Q.",
+    "Logan P.", "Victoria O.", "Jackson N.", "Scarlett M.", "Aiden L.",
+    "Grace K.", "Caden J.", "Lily I.", "Owen H.", "Hannah G.",
+    "Gabriel F.", "Zoe E.", "Carter D.", "Penelope C.", "Wyatt B."
+  ];
+
   const userImagePool = [
     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
     "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
@@ -62,161 +171,105 @@ const generateSalon = (id, name, image, rating, reviews, distance, description, 
     "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=100&q=80",
     "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=100&q=80"
   ];
-  
-  // Generate random gallery images
-  const gallery = [];
-  const usedGalleryIndices = new Set();
-  
-  for (let i = 0; i < galleryCount; i++) {
-    let randomIndex;
-    do {
-      randomIndex = Math.floor(Math.random() * galleryPool.length);
-    } while (usedGalleryIndices.has(randomIndex));
-    
-    usedGalleryIndices.add(randomIndex);
-    gallery.push(galleryPool[randomIndex]);
-  }
-  
-  // Generate random customer reviews
-  const reviewComments = [
-    "Absolutely loved my experience here! The staff was so professional.",
-    "Great service and attention to detail. Will definitely come back!",
-    "My new hairstyle is perfect. Exactly what I wanted!",
-    "The best salon experience I've had in years. Highly recommend!",
-    "Amazing results! Everyone keeps complimenting my new look.",
-    "Very skilled stylists who really listen to what you want.",
-    "Excellent service from start to finish. Love this place!",
-    "The package deal was worth every penny. So happy with the results!",
-    "Friendly staff and relaxing atmosphere. A real treat!",
-    "Top-notch service and expertise. My go-to salon from now on!",
-    "Incredible attention to detail. They really know what they're doing.",
-    "The salon has such a welcoming vibe. I felt comfortable right away.",
-    "My stylist was amazing and really understood what I wanted.",
-    "Reasonable prices for the quality of service you receive.",
-    "The staff went above and beyond to make sure I was happy.",
-    "I've never had a better color treatment. Absolutely perfect!",
-    "The massage chairs during the shampoo were heavenly!",
-    "I appreciate how they explained each step of the process.",
-    "They were able to fit me in last minute. Such great customer service!",
-    "The products they use are high quality and smell amazing."
-  ];
-  
-  const reviewNames = [
-    "Emma S.", "James T.", "Sophia R.", "Noah P.", "Olivia M.", 
-    "William K.", "Ava J.", "Benjamin H.", "Isabella G.", "Lucas F.",
-    "Mia E.", "Henry D.", "Charlotte C.", "Alexander B.", "Amelia A.",
-    "Daniel Z.", "Harper Y.", "Matthew X.", "Evelyn W.", "Michael V.",
-    "Abigail U.", "Ethan T.", "Elizabeth S.", "Jacob R.", "Sofia Q.",
-    "Logan P.", "Victoria O.", "Jackson N.", "Scarlett M.", "Aiden L.",
-    "Grace K.", "Caden J.", "Lily I.", "Owen H.", "Hannah G.",
-    "Gabriel F.", "Zoe E.", "Carter D.", "Penelope C.", "Wyatt B."
-  ];
-  
-  const customerReviews = [];
+
+  const reviews = [];
   const usedCommentIndices = new Set();
   const usedNameIndices = new Set();
   const usedImageIndices = new Set();
-  
-  for (let i = 0; i < reviewCount; i++) {
-    // 70% chance of 5-star, 25% chance of 4-star, 5% chance of 3-star
-    let randomRating;
+
+  for (let i = 0; i < count; i++) {
+    // Rating distribution: 70% five-star, 25% four-star, 5% three-star
+    let rating;
     const ratingRandom = Math.random();
     if (ratingRandom < 0.7) {
-      randomRating = 5;
+      rating = 5;
     } else if (ratingRandom < 0.95) {
-      randomRating = 4;
+      rating = 4;
     } else {
-      randomRating = 3;
+      rating = 3;
     }
-    
-    // Select unique comment, name, and image
-    let randomCommentIndex, randomNameIndex, randomImageIndex;
-    
-    do {
-      randomCommentIndex = Math.floor(Math.random() * reviewComments.length);
-    } while (usedCommentIndices.has(randomCommentIndex) && usedCommentIndices.size < reviewComments.length);
-    
-    do {
-      randomNameIndex = Math.floor(Math.random() * reviewNames.length);
-    } while (usedNameIndices.has(randomNameIndex) && usedNameIndices.size < reviewNames.length);
-    
-    do {
-      randomImageIndex = Math.floor(Math.random() * userImagePool.length);
-    } while (usedImageIndices.has(randomImageIndex) && usedImageIndices.size < userImagePool.length);
-    
-    usedCommentIndices.add(randomCommentIndex);
-    usedNameIndices.add(randomNameIndex);
-    usedImageIndices.add(randomImageIndex);
-    
-    // Generate a random date within the last 60 days
+
+    // Select unique indices for comment, name, and image
+    const commentIndex = getUniqueRandomIndex(
+      reviewComments.length,
+      usedCommentIndices
+    );
+    const nameIndex = getUniqueRandomIndex(reviewNames.length, usedNameIndices);
+    const imageIndex = getUniqueRandomIndex(
+      userImagePool.length,
+      usedImageIndices
+    );
+
+    // Generate review date (last 60 days)
     const today = new Date();
     const randomDaysAgo = Math.floor(Math.random() * 60) + 1;
     const reviewDate = new Date(today);
     reviewDate.setDate(today.getDate() - randomDaysAgo);
-    
-    customerReviews.push({
+
+    reviews.push({
       id: i + 1,
-      userName: reviewNames[randomNameIndex],
-      rating: randomRating,
-      comment: reviewComments[randomCommentIndex],
+      userName: reviewNames[nameIndex],
+      rating,
+      comment: reviewComments[commentIndex],
       date: reviewDate.toISOString().split('T')[0],
-      userImage: userImagePool[randomImageIndex]
+      userImage: userImagePool[imageIndex]
     });
   }
-  
-  return {
-    id,
-    name,
-    image,
-    rating,
-    reviews,
-    distance,
-    description,
-    services,
-    packages,
-    gallery,
-    customerReviews,
-    // Add opening hours and location data
-    openingHours: generateOpeningHours(),
-    location: generateLocation()
-  };
+
+  return reviews;
 };
 
-// Generate random opening hours
+/**
+ * Helper function to get unique random index
+ * @param {number} max - Maximum index value
+ * @param {Set} usedIndices - Set of already used indices
+ * @returns {number} Unique random index
+ */
+const getUniqueRandomIndex = (max, usedIndices) => {
+  let index;
+  do {
+    index = Math.floor(Math.random() * max);
+  } while (usedIndices.has(index) && usedIndices.size < max);
+
+  usedIndices.add(index);
+  return index;
+};
+
+/**
+ * Generates random opening hours for salon
+ * @returns {Object} Opening hours for each day of the week
+ */
 const generateOpeningHours = () => {
-  const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-  const hours = {};
-  
-  // Different opening patterns
+  const days = [
+    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+  ];
+
   const patterns = [
-    // Standard weekday + weekend pattern
     {
       weekday: { open: "9:00 AM", close: "7:00 PM" },
       saturday: { open: "10:00 AM", close: "6:00 PM" },
       sunday: { open: "11:00 AM", close: "5:00 PM" }
     },
-    // Early opening pattern
     {
       weekday: { open: "8:00 AM", close: "8:00 PM" },
       saturday: { open: "9:00 AM", close: "7:00 PM" },
       sunday: { open: "10:00 AM", close: "4:00 PM" }
     },
-    // Late closing pattern
     {
       weekday: { open: "10:00 AM", close: "9:00 PM" },
       saturday: { open: "10:00 AM", close: "8:00 PM" },
       sunday: { open: "11:00 AM", close: "6:00 PM" }
     },
-    // Closed Sunday pattern
     {
       weekday: { open: "9:00 AM", close: "8:00 PM" },
       saturday: { open: "9:00 AM", close: "7:00 PM" },
       sunday: { open: "Closed", close: "Closed" }
     }
   ];
-  
+
   const selectedPattern = patterns[Math.floor(Math.random() * patterns.length)];
-  
+  const hours = {};
+
   days.forEach(day => {
     if (day === "Sunday") {
       hours[day] = selectedPattern.sunday;
@@ -226,13 +279,15 @@ const generateOpeningHours = () => {
       hours[day] = selectedPattern.weekday;
     }
   });
-  
+
   return hours;
 };
 
-// Generate random location data
+/**
+ * Generates random location data for salon
+ * @returns {Object} Location details including address and coordinates
+ */
 const generateLocation = () => {
-  // Generate addresses in different Indian cities
   const cities = [
     { city: "Mumbai", state: "Maharashtra", zip: "400001", lat: 19.0760, lng: 72.8777 },
     { city: "Delhi", state: "Delhi", zip: "110001", lat: 28.7041, lng: 77.1025 },
@@ -245,22 +300,22 @@ const generateLocation = () => {
     { city: "Jaipur", state: "Rajasthan", zip: "302001", lat: 26.9124, lng: 75.7873 },
     { city: "Surat", state: "Gujarat", zip: "395001", lat: 21.1702, lng: 72.8311 }
   ];
-  
+
   const streets = [
     "MG Road", "Brigade Road", "Commercial Street", "Park Street", "Linking Road",
     "Carter Road", "Hill Road", "SV Road", "LBS Marg", "Eastern Express Highway",
     "Connaught Place", "Khan Market", "Karol Bagh", "Lajpat Nagar", "Sarojini Nagar",
     "Janpath", "Rajpath", "India Gate Road", "Ring Road", "Outer Ring Road"
   ];
-  
+
   const selectedCity = cities[Math.floor(Math.random() * cities.length)];
   const selectedStreet = streets[Math.floor(Math.random() * streets.length)];
-  const buildingNumber = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
-  
-  // Add small random variation to lat/lng to avoid all salons in same spot
+  const buildingNumber = Math.floor(Math.random() * 9000) + 1000;
+
+  // Add location variation to avoid clustering
   const latVariation = (Math.random() - 0.5) * 0.05;
   const lngVariation = (Math.random() - 0.5) * 0.05;
-  
+
   return {
     address: `${buildingNumber} ${selectedStreet}`,
     city: selectedCity.city,
@@ -273,11 +328,15 @@ const generateLocation = () => {
   };
 };
 
-const mockSalons = [];
+// =============================================================================
+// DATA TEMPLATES
+// =============================================================================
 
-// Common service templates that can be used for generating salons
+/**
+ * Service templates for generating salon services
+ */
 const serviceTemplates = [
-  // Hair services
+  // Hair Services
   { name: "Basic Haircut", price: 35, duration: "30 min", description: "Simple haircut and style" },
   { name: "Premium Haircut", price: 55, duration: "45 min", description: "Detailed haircut with styling" },
   { name: "Men's Cut", price: 30, duration: "30 min", description: "Men's haircut and styling" },
@@ -296,29 +355,29 @@ const serviceTemplates = [
   { name: "Hair Extensions", price: 250, duration: "3 hrs", description: "Hair extension application" },
   { name: "Updo Styling", price: 75, duration: "1 hr", description: "Formal updo for special occasions" },
   { name: "Bridal Hair", price: 120, duration: "1.5 hrs", description: "Wedding day hair styling" },
-  
-  // Nail services
+
+  // Nail Services
   { name: "Basic Manicure", price: 25, duration: "30 min", description: "Nail shaping, cuticle care, and polish" },
   { name: "Gel Manicure", price: 40, duration: "45 min", description: "Long-lasting gel polish application" },
   { name: "Pedicure", price: 45, duration: "45 min", description: "Foot care and polish application" },
   { name: "Deluxe Pedicure", price: 60, duration: "1 hr", description: "Luxury foot treatment with massage" },
   { name: "Nail Art", price: 15, duration: "15 min", description: "Custom nail designs" },
   { name: "Acrylic Nails", price: 70, duration: "1.5 hrs", description: "Full set of acrylic nails" },
-  
-  // Facial and skin services
+
+  // Facial and Skin Services
   { name: "Express Facial", price: 50, duration: "30 min", description: "Quick refreshing facial" },
   { name: "Deep Cleansing Facial", price: 80, duration: "1 hr", description: "Thorough facial with extractions" },
   { name: "Anti-Aging Facial", price: 95, duration: "1 hr", description: "Rejuvenating facial for mature skin" },
   { name: "Microdermabrasion", price: 110, duration: "45 min", description: "Exfoliating skin treatment" },
   { name: "Chemical Peel", price: 120, duration: "45 min", description: "Skin resurfacing treatment" },
-  
-  // Waxing and threading
+
+  // Waxing and Threading
   { name: "Eyebrow Waxing", price: 15, duration: "15 min", description: "Eyebrow shaping with wax" },
   { name: "Lip Waxing", price: 10, duration: "10 min", description: "Upper lip hair removal" },
   { name: "Full Face Waxing", price: 45, duration: "30 min", description: "Complete facial hair removal" },
   { name: "Eyebrow Threading", price: 15, duration: "15 min", description: "Precise eyebrow shaping" },
-  
-  // Massage and body treatments
+
+  // Massage and Body Treatments
   { name: "Swedish Massage", price: 80, duration: "1 hr", description: "Relaxing full body massage" },
   { name: "Deep Tissue Massage", price: 95, duration: "1 hr", description: "Therapeutic muscle massage" },
   { name: "Hot Stone Massage", price: 110, duration: "1.25 hrs", description: "Massage with heated stones" },
@@ -326,7 +385,9 @@ const serviceTemplates = [
   { name: "Body Wrap", price: 85, duration: "1 hr", description: "Detoxifying body treatment" }
 ];
 
-// Common package templates
+/**
+ * Package templates for generating salon packages
+ */
 const packageTemplates = [
   {
     name: "Complete Makeover",
@@ -400,7 +461,9 @@ const packageTemplates = [
   }
 ];
 
-// Generate salon descriptions
+/**
+ * Salon descriptions for variety
+ */
 const salonDescriptions = [
   "Upscale salon offering premium hair and beauty services in a luxurious setting.",
   "Contemporary salon with expert stylists specializing in modern cuts and colors.",
@@ -429,7 +492,9 @@ const salonDescriptions = [
   "Vibrant salon known for bold colors and avant-garde styling."
 ];
 
-// Generate unique salon names (Indian context)
+/**
+ * Indian-context salon names
+ */
 const salonNames = [
   "Khoobsurat Beauty Salon", "Rangoli Hair Studio", "Saundarya Salon", "Lakme Beauty Lounge", "Naturals Salon",
   "Jawed Habib Hair & Beauty", "Shahnaz Husain Salon", "VLCC Beauty Clinic", "Green Trends Salon", "Looks Salon",
@@ -453,107 +518,68 @@ const salonNames = [
   "Gandhari Beauty Lounge", "Mandodari Salon", "Tara Beauty Center", "Arundhati Hair Studio", "Savitri Beauty Parlour"
 ];
 
-// Generate additional salons
-for (let i = 1; i <= 100; i++) {
-  // Select a unique salon name (check if names are available)
-  if (salonNames.length === 0) {
-    console.warn(`No more unique salon names available for salon ${i}`);
-    break; // Exit the loop if no names are left
-  }
-  const nameIndex = Math.floor(Math.random() * salonNames.length);
-  const name = salonNames[nameIndex];
-  salonNames.splice(nameIndex, 1); // Remove used name
-  
-  // Select a random image for the main salon image
-  const galleryPool = [
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
-    "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
-    "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
-    "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
-    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
-    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
-    "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
-    "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
-    "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
-    "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
-    "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80",
-    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
-    // Additional salon images
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
-    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80"
-  ];
+// =============================================================================
+// SALON GENERATION FUNCTIONS
+// =============================================================================
 
-  const imageIndex = Math.floor(Math.random() * galleryPool.length);
-  const image = galleryPool[imageIndex];
-  
-  // Generate random rating (4.0-5.0)
-  const rating = (4 + Math.random()).toFixed(1);
-  
-  // Generate random number of reviews (100-2500)
-  const reviews = Math.floor(Math.random() * 2400) + 100;
-  
-  // Generate random distance (0.5-10.0 miles)
-  const distance = (Math.random() * 9.5 + 0.5).toFixed(1);
-  
-  // Select a random description
-  const descIndex = Math.floor(Math.random() * salonDescriptions.length);
-  const description = salonDescriptions[descIndex];
-  
-  // Generate 3-7 random services
-  const serviceCount = Math.floor(Math.random() * 5) + 3;
+/**
+ * Generates random services for a salon
+ * @param {number} count - Number of services to generate
+ * @returns {Array} Array of service objects
+ */
+const generateRandomServices = (count) => {
   const services = [];
-  const usedServiceIndices = new Set();
-  
-  for (let j = 0; j < serviceCount; j++) {
+  const usedIndices = new Set();
+
+  for (let i = 0; i < count; i++) {
     let serviceIndex;
     do {
       serviceIndex = Math.floor(Math.random() * serviceTemplates.length);
-    } while (usedServiceIndices.has(serviceIndex));
-    
-    usedServiceIndices.add(serviceIndex);
-    
-    // Add small price variation (±10%) to make each salon unique
+    } while (usedIndices.has(serviceIndex));
+
+    usedIndices.add(serviceIndex);
+
+    // Add price variation (±10%)
     const basePrice = serviceTemplates[serviceIndex].price;
-    const priceVariation = Math.random() * 0.2 - 0.1; // -10% to +10%
+    const priceVariation = Math.random() * 0.2 - 0.1;
     const adjustedPrice = Math.round(basePrice * (1 + priceVariation));
-    
+
     services.push({
-      id: j + 1,
+      id: i + 1,
       name: serviceTemplates[serviceIndex].name,
       price: adjustedPrice,
       duration: serviceTemplates[serviceIndex].duration,
       description: serviceTemplates[serviceIndex].description
     });
   }
-  
-  // Generate 1-3 random packages
-  const packageCount = Math.floor(Math.random() * 3) + 1;
+
+  return services;
+};
+
+/**
+ * Generates random packages for a salon
+ * @param {number} count - Number of packages to generate
+ * @returns {Array} Array of package objects
+ */
+const generateRandomPackages = (count) => {
   const packages = [];
-  const usedPackageIndices = new Set();
-  
-  for (let j = 0; j < packageCount; j++) {
+  const usedIndices = new Set();
+
+  for (let i = 0; i < count; i++) {
     let packageIndex;
     do {
       packageIndex = Math.floor(Math.random() * packageTemplates.length);
-    } while (usedPackageIndices.has(packageIndex));
-    
-    usedPackageIndices.add(packageIndex);
-    
-    // Add small price variation (±5%) to make each salon unique
+    } while (usedIndices.has(packageIndex));
+
+    usedIndices.add(packageIndex);
+
+    // Add price variation (±5%)
     const basePrice = packageTemplates[packageIndex].price;
-    const priceVariation = Math.random() * 0.1 - 0.05; // -5% to +5%
+    const priceVariation = Math.random() * 0.1 - 0.05;
     const adjustedPrice = Math.round(basePrice * (1 + priceVariation));
-    
+
     packages.push({
-      id: j + 1,
+      id: i + 1,
       name: packageTemplates[packageIndex].name,
       services: packageTemplates[packageIndex].services,
       price: adjustedPrice,
@@ -561,14 +587,108 @@ for (let i = 1; i <= 100; i++) {
       description: packageTemplates[packageIndex].description
     });
   }
-  
-  // Generate random gallery count (2-5)
-  const galleryCount = Math.floor(Math.random() * 4) + 2;
-  
-  // Generate random review count (1-4)
-  const reviewCount = Math.floor(Math.random() * 4) + 1;
-  
-  // Create the salon using the generateSalon function
+
+  return packages;
+};
+
+/**
+ * Generates availability slots for a salon
+ * @returns {Array} Array of available time slots
+ */
+const generateAvailabilitySlots = () => {
+  const availableSlots = [];
+  const today = new Date();
+
+  // Generate slots for next 7 days
+  for (let day = 0; day < 7; day++) {
+    const date = new Date(today);
+    date.setDate(today.getDate() + day);
+
+    const slotCount = Math.floor(Math.random() * 6); // 0-5 slots per day
+
+    for (let slot = 0; slot < slotCount; slot++) {
+      const hour = Math.floor(Math.random() * 10) + 9; // 9 AM - 6 PM
+      const minute = Math.floor(Math.random() * 4) * 15; // 0, 15, 30, 45
+
+      availableSlots.push({
+        date: date.toISOString().split('T')[0],
+        time: `${hour}:${minute.toString().padStart(2, '0')}`,
+        formattedTime: `${hour > 12 ? hour - 12 : (hour === 0 ? 12 : hour)}:${minute.toString().padStart(2, '0')} ${hour >= 12 ? 'PM' : 'AM'}`
+      });
+    }
+  }
+
+  return availableSlots;
+};
+
+// =============================================================================
+// MAIN SALON GENERATION
+// =============================================================================
+
+const mockSalons = [];
+
+// Gallery pool for main salon images
+const mainGalleryPool = [
+  "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=80",
+  "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&q=80",
+  "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=500&q=80",
+  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=500&q=80",
+  "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=80",
+  "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80",
+  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500&q=80",
+  "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80",
+  "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80",
+  "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&q=80",
+  "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80",
+  "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=500&q=80",
+  "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=500&q=80",
+  "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&q=80",
+  "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80",
+  "https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&q=80",
+  "https://images.unsplash.com/photo-1501699169021-3759ee435d66?w=500&q=80",
+  "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=80",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80",
+  "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=80",
+  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80",
+  "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=500&q=80"
+];
+
+// Generate 100 salons
+for (let i = 1; i <= 100; i++) {
+  // Check if salon names are available
+  if (salonNames.length === 0) {
+    console.warn(`No more unique salon names available for salon ${i}`);
+    break;
+  }
+
+  // Select unique salon name
+  const nameIndex = Math.floor(Math.random() * salonNames.length);
+  const name = salonNames[nameIndex];
+  salonNames.splice(nameIndex, 1);
+
+  // Select random main image
+  const imageIndex = Math.floor(Math.random() * mainGalleryPool.length);
+  const image = mainGalleryPool[imageIndex];
+
+  // Generate random salon properties
+  const rating = (4 + Math.random()).toFixed(1); // 4.0-5.0
+  const reviews = Math.floor(Math.random() * 2400) + 100; // 100-2500
+  const distance = (Math.random() * 9.5 + 0.5).toFixed(1); // 0.5-10.0 miles
+
+  // Select random description
+  const descIndex = Math.floor(Math.random() * salonDescriptions.length);
+  const description = salonDescriptions[descIndex];
+
+  // Generate services and packages
+  const serviceCount = Math.floor(Math.random() * 5) + 3; // 3-7 services
+  const packageCount = Math.floor(Math.random() * 3) + 1; // 1-3 packages
+  const galleryCount = Math.floor(Math.random() * 4) + 2; // 2-5 gallery images
+  const reviewCount = Math.floor(Math.random() * 4) + 1; // 1-4 reviews
+
+  const services = generateRandomServices(serviceCount);
+  const packages = generateRandomPackages(packageCount);
+
+  // Create salon using generateSalon function
   const salon = generateSalon(
     i,
     name,
@@ -582,78 +702,68 @@ for (let i = 1; i <= 100; i++) {
     galleryCount,
     reviewCount
   );
-  
-  // Add the salon to the mockSalons array
+
   mockSalons.push(salon);
 }
 
-// Add a few featured salons with higher ratings and more reviews
-for (let i = 0; i < 5; i++) {
-  if (mockSalons[i]) {
-    mockSalons[i].rating = (4.8 + Math.random() * 0.2).toFixed(1); // 4.8-5.0
-    mockSalons[i].reviews = Math.floor(Math.random() * 1000) + 2500; // 2500-3500
-    mockSalons[i].featured = true;
-    mockSalons[i].featuredReason = [
-      "Top Rated in Your Area",
-      "Most Popular Choice",
-      "Editor's Pick",
-      "Best Value",
-      "Highly Recommended"
-    ][i];
-  }
+// =============================================================================
+// POST-GENERATION ENHANCEMENTS
+// =============================================================================
+
+/**
+ * Add featured status to top 5 salons
+ */
+const featuredReasons = [
+  "Top Rated in Your Area",
+  "Most Popular Choice",
+  "Editor's Pick",
+  "Best Value",
+  "Highly Recommended"
+];
+
+for (let i = 0; i < 5 && i < mockSalons.length; i++) {
+  mockSalons[i].rating = (4.8 + Math.random() * 0.2).toFixed(1); // 4.8-5.0
+  mockSalons[i].reviews = Math.floor(Math.random() * 1000) + 2500; // 2500-3500
+  mockSalons[i].featured = true;
+  mockSalons[i].featuredReason = featuredReasons[i];
 }
 
-// Add a few salons with special offers
-for (let i = 5; i < 15; i++) {
-  if (mockSalons[i]) {
-    mockSalons[i].specialOffer = {
-      discount: (Math.floor(Math.random() * 16) + 15) + "%", // 15-30% discount
-      description: [
-        "New Client Special",
-        "Limited Time Offer",
-        "Holiday Promotion",
-        "Seasonal Special",
-        "Weekday Discount",
-        "First-Time Customer Deal",
-        "Referral Bonus",
-        "Monthly Special",
-        "Flash Sale",
-        "Member Discount"
-      ][i - 5]
-    };
-  }
+/**
+ * Add special offers to salons 6-15
+ */
+const offerDescriptions = [
+  "New Client Special",
+  "Limited Time Offer",
+  "Holiday Promotion",
+  "Seasonal Special",
+  "Weekday Discount",
+  "First-Time Customer Deal",
+  "Referral Bonus",
+  "Monthly Special",
+  "Flash Sale",
+  "Member Discount"
+];
+
+for (let i = 5; i < 15 && i < mockSalons.length; i++) {
+  const discount = (Math.floor(Math.random() * 16) + 15) + "%"; // 15-30%
+  
+  mockSalons[i].specialOffer = {
+    discount,
+    description: offerDescriptions[i - 5]
+  };
 }
 
-// Add availability information to salons
+/**
+ * Add availability information to 80% of salons
+ */
 for (let i = 0; i < mockSalons.length; i++) {
-  // 80% of salons have availability info
   if (Math.random() < 0.8) {
-    const availableSlots = [];
-    const today = new Date();
-    
-    // Generate 0-5 available slots for the next 7 days
-    for (let day = 0; day < 7; day++) {
-      const date = new Date(today);
-      date.setDate(today.getDate() + day);
-      
-      const slotCount = Math.floor(Math.random() * 6); // 0-5 slots
-      
-      for (let slot = 0; slot < slotCount; slot++) {
-        // Generate random hour between 9 AM and 6 PM
-        const hour = Math.floor(Math.random() * 10) + 9;
-        // Generate random minute (0, 15, 30, 45)
-        const minute = Math.floor(Math.random() * 4) * 15;
-        
-        availableSlots.push({
-          date: date.toISOString().split('T')[0],
-          time: `${hour}:${minute.toString().padStart(2, '0')}`,
-          formattedTime: `${hour > 12 ? hour - 12 : (hour === 0 ? 12 : hour)}:${minute.toString().padStart(2, '0')} ${hour >= 12 ? 'PM' : 'AM'}`
-        });
-      }
-    }
-    
-    mockSalons[i].availability = availableSlots;
+    mockSalons[i].availability = generateAvailabilitySlots();
   }
 }
+
+// =============================================================================
+// EXPORT
+// =============================================================================
 
 export default mockSalons;

@@ -1,52 +1,119 @@
+/**
+ * Generate Salon JSON Data Script
+ * 
+ * This script processes mock salon data and converts it into the format
+ * expected by the server, creating individual JSON files for each salon
+ * and a combined salons.json file for backward compatibility.
+ */
+
 const fs = require('fs');
 const path = require('path');
 
-// Import the mock salons data
-const mockSalonsPath = path.join(__dirname, '..', 'client', 'src', 'data', 'mockSalons.js');
-const mockSalonsContent = fs.readFileSync(mockSalonsPath, 'utf8');
+// =============================================================================
+// CONFIGURATION AND CONSTANTS
+// =============================================================================
 
-// Simple extraction of salon data
-let mockSalons = [];
-let tempFilePath = null;
-try {
-  // Create a temporary file with modified content for Node.js compatibility
-  tempFilePath = path.join(__dirname, 'temp-mock-salons.js');
-  
-  // Replace export default with module.exports and handle ES6 syntax
-  const modifiedContent = mockSalonsContent
-    .replace(/export\s+default\s+mockSalons;?/g, 'module.exports = mockSalons;')
-    .replace(/import\s+.*?from\s+['"'].*?['"'];?/g, '// Import removed');
-  
-  fs.writeFileSync(tempFilePath, modifiedContent);
-  
-  // Clear require cache to avoid stale data
-  delete require.cache[require.resolve('./temp-mock-salons.js')];
-  
-  // Require the temporary file
-  mockSalons = require('./temp-mock-salons.js');
-  
-} catch (error) {
-  console.error('Error loading mockSalons.js:', error);
-  process.exit(1);
-} finally {
-  // Clean up the temporary file
-  if (tempFilePath && fs.existsSync(tempFilePath)) {
-    try {
-      fs.unlinkSync(tempFilePath);
-    } catch (cleanupError) {
-      console.warn('Warning: Could not clean up temporary file:', cleanupError.message);
+const PATHS = {
+  mockSalonsFile: path.join(__dirname, '..', 'client', 'src', 'data', 'mockSalons.js'),
+  outputDir: path.join(__dirname, '..', 'server', 'src', 'scripts', 'data'),
+  salonsDir: null, // Will be set after outputDir is created
+  tempFile: path.join(__dirname, 'temp-mock-salons.js')
+};
+
+const DAY_MAP = {
+  'Sunday': 0,
+  'Monday': 1,
+  'Tuesday': 2,
+  'Wednesday': 3,
+  'Thursday': 4,
+  'Friday': 5,
+  'Saturday': 6
+};
+
+const STYLIST_DATA = {
+  names: [
+    "Anjali Sharma", "Priya Patel", "Kavya Reddy", "Sneha Gupta", "Riya Singh",
+    "Meera Nair", "Pooja Agarwal", "Divya Joshi", "Neha Kumar", "Shreya Iyer"
+  ],
+  bios: [
+    "Experienced stylist with a passion for creating beautiful, personalized looks.",
+    "Specializes in the latest cutting and coloring techniques for all hair types.",
+    "Award-winning stylist with over 10 years of experience in the industry.",
+    "Known for creating stunning transformations and attention to detail.",
+    "Certified colorist who loves helping clients find their perfect shade."
+  ],
+  defaultAvailability: [
+    { day: 1, slots: ["9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"] },
+    { day: 2, slots: ["9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"] },
+    { day: 3, slots: ["9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"] },
+    { day: 4, slots: ["9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"] },
+    { day: 5, slots: ["9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"] }
+  ]
+};
+
+// =============================================================================
+// UTILITY FUNCTIONS
+// =============================================================================
+
+/**
+ * Loads and processes the mock salons data from the client-side file
+ * @returns {Array} Array of salon objects
+ */
+function loadMockSalonsData() {
+  let mockSalons = [];
+  let tempFilePath = null;
+
+  try {
+    // Read the original mock salons file
+    const mockSalonsContent = fs.readFileSync(PATHS.mockSalonsFile, 'utf8');
+
+    // Create temporary file path
+    tempFilePath = PATHS.tempFile;
+
+    // Convert ES6 module syntax to CommonJS for Node.js compatibility
+    const modifiedContent = mockSalonsContent
+      .replace(/export\s+default\s+mockSalons;?/g, 'module.exports = mockSalons;')
+      .replace(/import\s+.*?from\s+['"'].*?['"'];?/g, '// Import removed');
+
+    // Write temporary file
+    fs.writeFileSync(tempFilePath, modifiedContent);
+
+    // Clear require cache to avoid stale data
+    delete require.cache[require.resolve('./temp-mock-salons.js')];
+
+    // Load the processed data
+    mockSalons = require('./temp-mock-salons.js');
+
+    console.log(`Successfully loaded ${mockSalons.length} salons from mockSalons.js`);
+
+  } catch (error) {
+    console.error('Error loading mockSalons.js:', error);
+    process.exit(1);
+  } finally {
+    // Clean up temporary file
+    if (tempFilePath && fs.existsSync(tempFilePath)) {
+      try {
+        fs.unlinkSync(tempFilePath);
+      } catch (cleanupError) {
+        console.warn('Warning: Could not clean up temporary file:', cleanupError.message);
+      }
     }
   }
+
+  // Validate loaded data
+  if (!mockSalons || !Array.isArray(mockSalons)) {
+    console.error('Failed to extract salon data from mockSalons.js');
+    process.exit(1);
+  }
+
+  return mockSalons;
 }
 
-if (!mockSalons || !Array.isArray(mockSalons)) {
-  console.error('Failed to extract salon data from mockSalons.js');
-  process.exit(1);
-}
-
-console.log('Successfully loaded ' + mockSalons.length + ' salons from mockSalons.js');
-
-// Utility function to parse duration
+/**
+ * Parses duration string and converts to minutes
+ * @param {string|number} duration - Duration in various formats
+ * @returns {number} Duration in minutes (minimum 5 minutes)
+ */
 function parseDuration(duration) {
   if (typeof duration === 'string') {
     if (duration.includes('min')) {
@@ -59,40 +126,77 @@ function parseDuration(duration) {
   } else if (typeof duration === 'number') {
     return Math.max(5, duration);
   }
-  return 30; // Default
+  return 30; // Default duration
 }
 
-// Function to generate salon data in the format expected by the server
-function formatSalonForServer(salon) {
-  // Convert the location format to match the server model
-  const location = {
+/**
+ * Ensures directories exist, creating them if necessary
+ */
+function ensureDirectoriesExist() {
+  PATHS.salonsDir = path.join(PATHS.outputDir, 'salons');
+
+  // Create main output directory
+  if (!fs.existsSync(PATHS.outputDir)) {
+    fs.mkdirSync(PATHS.outputDir, { recursive: true });
+  }
+
+  // Create salons subdirectory
+  if (!fs.existsSync(PATHS.salonsDir)) {
+    fs.mkdirSync(PATHS.salonsDir, { recursive: true });
+  }
+}
+
+// =============================================================================
+// DATA TRANSFORMATION FUNCTIONS
+// =============================================================================
+
+/**
+ * Converts location data to GeoJSON Point format
+ * @param {Object} location - Original location object
+ * @returns {Object} GeoJSON Point object
+ */
+function transformLocation(location) {
+  return {
     type: 'Point',
-    coordinates: [salon.location.coordinates.lng, salon.location.coordinates.lat]
+    coordinates: [location.coordinates.lng, location.coordinates.lat]
   };
+}
 
-  // Convert opening hours to the format expected by the server
-  const dayMap = {
-    'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3,
-    'Thursday': 4, 'Friday': 5, 'Saturday': 6
-  };
-
-  const operatingHours = Object.entries(salon.openingHours).map(([day, hours]) => ({
-    day: dayMap[day],
+/**
+ * Converts opening hours to server format with day numbers
+ * @param {Object} openingHours - Original opening hours object
+ * @returns {Array} Array of operating hours objects
+ */
+function transformOperatingHours(openingHours) {
+  return Object.entries(openingHours).map(([day, hours]) => ({
+    day: DAY_MAP[day],
     open: hours.open === 'Closed' ? 'Closed' : hours.open,
     close: hours.close === 'Closed' ? 'Closed' : hours.close
   }));
+}
 
-  // Convert services to match the server model
-  const services = salon.services.map(service => ({
+/**
+ * Converts services to server format
+ * @param {Array} services - Original services array
+ * @returns {Array} Transformed services array
+ */
+function transformServices(services) {
+  return services.map(service => ({
     id: service.id.toString(),
     name: service.name,
     description: service.description,
     price: typeof service.price === 'string' ? parseInt(service.price, 10) : service.price,
     duration: parseDuration(service.duration)
   }));
+}
 
-  // Convert packages to match the server model
-  const packages = salon.packages.map(pkg => ({
+/**
+ * Converts packages to server format
+ * @param {Array} packages - Original packages array
+ * @returns {Array} Transformed packages array
+ */
+function transformPackages(packages) {
+  return packages.map(pkg => ({
     id: pkg.id.toString(),
     name: pkg.name,
     description: pkg.description,
@@ -100,9 +204,15 @@ function formatSalonForServer(salon) {
     duration: parseDuration(pkg.duration),
     services: pkg.services
   }));
+}
 
-  // Convert reviews to match the server model
-  const reviews = salon.customerReviews.map(review => ({
+/**
+ * Converts customer reviews to server format
+ * @param {Array} customerReviews - Original reviews array
+ * @returns {Array} Transformed reviews array
+ */
+function transformReviews(customerReviews) {
+  return customerReviews.map(review => ({
     id: review.id.toString(),
     userId: 'user-' + review.id,
     userName: review.userName,
@@ -111,9 +221,62 @@ function formatSalonForServer(salon) {
     comment: review.comment,
     date: new Date(review.date).toISOString()
   }));
+}
 
-  // Generate stylists for the salon
-  const stylists = generateStylists(salon);
+/**
+ * Generates contact information for a salon
+ * @param {Object} salon - Salon object
+ * @returns {Object} Contact information object
+ */
+function generateContactInfo(salon) {
+  const phoneNumber = '+91 ' + 
+    (Math.floor(Math.random() * 90000) + 10000) + ' ' + 
+    (Math.floor(Math.random() * 90000) + 10000);
+
+  const email = 'info@' + salon.name.toLowerCase().replace(/\s+/g, '') + '.com';
+
+  return { phoneNumber, email };
+}
+
+/**
+ * Generates stylists for a salon
+ * @param {Object} salon - Salon object
+ * @returns {Array} Array of stylist objects
+ */
+function generateStylists(salon) {
+  const stylistCount = Math.floor(Math.random() * 3) + 2; // 2-4 stylists
+  const stylists = [];
+
+  for (let i = 0; i < stylistCount; i++) {
+    const name = STYLIST_DATA.names[Math.floor(Math.random() * STYLIST_DATA.names.length)];
+    const bio = STYLIST_DATA.bios[Math.floor(Math.random() * STYLIST_DATA.bios.length)];
+    const specialties = salon.services.slice(0, 3).map(service => service.name);
+
+    stylists.push({
+      id: (i + 1).toString(),
+      name,
+      image: `https://images.unsplash.com/photo-${1494790108377 + i}?w=500&q=80`,
+      specialties,
+      bio,
+      availability: STYLIST_DATA.defaultAvailability,
+      status: 'active'
+    });
+  }
+
+  return stylists;
+}
+
+// =============================================================================
+// MAIN TRANSFORMATION FUNCTION
+// =============================================================================
+
+/**
+ * Transforms a single salon object to server format
+ * @param {Object} salon - Original salon object
+ * @returns {Object} Transformed salon object for server
+ */
+function formatSalonForServer(salon) {
+  const contactInfo = generateContactInfo(salon);
 
   return {
     name: salon.name,
@@ -125,18 +288,18 @@ function formatSalonForServer(salon) {
       zipCode: salon.location.zip,
       country: 'India'
     },
-    location,
-    contactPhone: '+91 ' + (Math.floor(Math.random() * 90000) + 10000) + ' ' + (Math.floor(Math.random() * 90000) + 10000),
-    contactEmail: 'info@' + salon.name.toLowerCase().replace(/\s+/g, '') + '.com',
+    location: transformLocation(salon.location),
+    contactPhone: contactInfo.phoneNumber,
+    contactEmail: contactInfo.email,
     image: salon.image,
     gallery: salon.gallery,
-    services,
-    packages,
-    stylists,
-    reviews,
+    services: transformServices(salon.services),
+    packages: transformPackages(salon.packages),
+    stylists: generateStylists(salon),
+    reviews: transformReviews(salon.customerReviews),
     rating: typeof salon.rating === 'string' ? parseFloat(salon.rating) : salon.rating,
     reviewCount: typeof salon.reviews === 'string' ? parseInt(salon.reviews, 10) : salon.reviews,
-    operatingHours,
+    operatingHours: transformOperatingHours(salon.openingHours),
     featured: salon.featured || false,
     featuredReason: salon.featuredReason || null,
     specialOffer: salon.specialOffer || null,
@@ -144,96 +307,113 @@ function formatSalonForServer(salon) {
   };
 }
 
-// Generate stylists for each salon
-function generateStylists(salon) {
-  const stylistCount = Math.floor(Math.random() * 3) + 2; // 2-4 stylists
-  const stylists = [];
+// =============================================================================
+// FILE OPERATIONS
+// =============================================================================
 
-  const names = [
-    "Anjali Sharma", "Priya Patel", "Kavya Reddy", "Sneha Gupta", "Riya Singh",
-    "Meera Nair", "Pooja Agarwal", "Divya Joshi", "Neha Kumar", "Shreya Iyer"
-  ];
+/**
+ * Writes individual salon JSON files
+ * @param {Array} formattedSalons - Array of formatted salon objects
+ */
+function writeIndividualSalonFiles(formattedSalons) {
+  let successCount = 0;
+  let errorCount = 0;
 
-  const bios = [
-    "Experienced stylist with a passion for creating beautiful, personalized looks.",
-    "Specializes in the latest cutting and coloring techniques for all hair types.",
-    "Award-winning stylist with over 10 years of experience in the industry.",
-    "Known for creating stunning transformations and attention to detail.",
-    "Certified colorist who loves helping clients find their perfect shade."
-  ];
+  formattedSalons.forEach((salon, index) => {
+    const salonFileName = `salon-${index + 1}.json`;
+    const filePath = path.join(PATHS.salonsDir, salonFileName);
 
-  const defaultAvailability = [
-    { day: 1, slots: ["9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"] },
-    { day: 2, slots: ["9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"] },
-    { day: 3, slots: ["9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"] },
-    { day: 4, slots: ["9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"] },
-    { day: 5, slots: ["9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"] }
-  ];
+    try {
+      fs.writeFileSync(filePath, JSON.stringify(salon, null, 2));
+      successCount++;
+    } catch (error) {
+      console.error(`Error writing ${salonFileName}:`, error.message);
+      errorCount++;
+    }
+  });
 
-  for (let i = 0; i < stylistCount; i++) {
-    const name = names[Math.floor(Math.random() * names.length)];
-    const bio = bios[Math.floor(Math.random() * bios.length)];
-    const specialties = salon.services.slice(0, 3).map(service => service.name);
-
-    stylists.push({
-      id: (i + 1).toString(),
-      name,
-      image: `https://images.unsplash.com/photo-${1494790108377 + i}?w=500&q=80`,
-      specialties,
-      bio,
-      availability: defaultAvailability,
-      status: 'active'
-    });
-  }
-
-  return stylists;
-}
-
-// Process all salons
-const formattedSalons = mockSalons.map(salon => {
-  const formatted = formatSalonForServer(salon);
-  return formatted;
-});
-
-// Create output directories
-const outputDir = path.join(__dirname, '..', 'server', 'src', 'scripts', 'data');
-const salonsDir = path.join(outputDir, 'salons');
-
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
-}
-
-// Create salons directory if it doesn't exist
-if (!fs.existsSync(salonsDir)) {
-  fs.mkdirSync(salonsDir, { recursive: true });
-}
-
-// Write individual salon files
-formattedSalons.forEach((salon, index) => {
-  const salonFileName = `salon-${index + 1}.json`;
-  try {
-    fs.writeFileSync(
-      path.join(salonsDir, salonFileName),
-      JSON.stringify(salon, null, 2)
-    );
-  } catch (error) {
-    console.error(`Error writing ${salonFileName}:`, error.message);
+  if (errorCount > 0) {
+    console.error(`Failed to write ${errorCount} salon files`);
     process.exit(1);
   }
-});
 
-// Also write the combined salons.json file for backward compatibility
-try {
-  fs.writeFileSync(
-    path.join(outputDir, 'salons.json'),
-    JSON.stringify(formattedSalons, null, 2)
-  );
-} catch (error) {
-  console.error('Error writing salons.json:', error.message);
-  process.exit(1);
+  console.log(`Generated ${successCount} individual salon files in salons/ directory`);
 }
 
-console.log('Generated ' + formattedSalons.length + ' individual salon files in salons/ directory');
-console.log('Also created combined salons.json for backward compatibility');
-console.log('\nTo seed the database, run: npm run seedSalons');
-console.log('Make sure your seedSalons.js script is properly configured in the server.');
+/**
+ * Writes the combined salons.json file
+ * @param {Array} formattedSalons - Array of formatted salon objects
+ */
+function writeCombinedSalonsFile(formattedSalons) {
+  const filePath = path.join(PATHS.outputDir, 'salons.json');
+
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(formattedSalons, null, 2));
+    console.log('Also created combined salons.json for backward compatibility');
+  } catch (error) {
+    console.error('Error writing salons.json:', error.message);
+    process.exit(1);
+  }
+}
+
+/**
+ * Displays final instructions to the user
+ */
+function displayCompletionMessage() {
+  console.log('\nTo seed the database, run: npm run seedSalons');
+  console.log('Make sure your seedSalons.js script is properly configured in the server.');
+}
+
+// =============================================================================
+// MAIN EXECUTION
+// =============================================================================
+
+/**
+ * Main execution function that orchestrates the entire process
+ */
+function main() {
+  try {
+    console.log('Starting salon JSON generation process...\n');
+
+    // Load mock salon data
+    const mockSalons = loadMockSalonsData();
+
+    // Ensure output directories exist
+    ensureDirectoriesExist();
+
+    // Transform all salons to server format
+    console.log('Processing and transforming salon data...');
+    const formattedSalons = mockSalons.map(salon => formatSalonForServer(salon));
+
+    // Write individual salon files
+    console.log('Writing individual salon JSON files...');
+    writeIndividualSalonFiles(formattedSalons);
+
+    // Write combined salons file
+    console.log('Writing combined salons.json file...');
+    writeCombinedSalonsFile(formattedSalons);
+
+    // Display completion message
+    displayCompletionMessage();
+
+    console.log('\nSalon JSON generation completed successfully!');
+
+  } catch (error) {
+    console.error('Fatal error during salon JSON generation:', error);
+    process.exit(1);
+  }
+}
+
+// Execute main function if this script is run directly
+if (require.main === module) {
+  main();
+}
+
+// Export functions for testing or external use
+module.exports = {
+  loadMockSalonsData,
+  formatSalonForServer,
+  parseDuration,
+  generateStylists,
+  main
+};
