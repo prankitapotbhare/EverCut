@@ -64,7 +64,7 @@ const UpcomingSchedule = () => {
       </button>
 
       {showDropdown && (
-        <div className="absolute z-50 mt-2 right-0 bg-white rounded-2xl shadow-xl w-[380px]">
+        <div className="absolute z-50 mt-2 right-0 bg-white rounded-2xl shadow-xl w-[400px]">
           <div className="p-4">
             <h2 className="text-xl font-bold mb-4">Upcoming Schedule</h2>
             
