@@ -79,10 +79,13 @@ const SalonFinder = () => {
     <div className="min-h-screen bg-[#f3f0ff] p-8">
       {/* Header */}
       <div className="max-w-6xl mx-auto mb-8 text-center">
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-5xl font-bold mb-6">
+          Sample <span className="text-emerald-400">Salons</span> to Book
+        </h1>
+        <h2 className="text-4xl font-bold mb-2">
           We're here to bring out<br />
           your best <span className="text-emerald-400">look</span>.
-        </h1>
+        </h2>
 
         {/* Description */}
         <p className="text-md md:text-lg text-gray-600 mb-8 max-w-md md:max-w-xl lg:max-w-2xl text-center mx-auto">

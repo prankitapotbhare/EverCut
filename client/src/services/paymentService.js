@@ -3,7 +3,7 @@ import { loadStripe } from '@stripe/stripe-js';
 
 // Mock API for payment processing
 const MOCK_PAYMENT_DELAY = 1500; // Simulate network delay
-const MOCK_SUCCESS_RATE = 0.8; // 80% success rate for testing
+const MOCK_SUCCESS_RATE = 1.0; // 80% success rate for testing
 
 // Initialize Stripe (in a real app, use your publishable key from environment variables)
 const stripePromise = loadStripe('pk_test_mock_key');

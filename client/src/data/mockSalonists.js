@@ -3,7 +3,7 @@
 const mockSalonists = [
   { 
     id: 1, 
-    name: 'Anjali Sharma', 
+    name: 'Ishita Deshmukh', 
     image: 'https://plus.unsplash.com/premium_photo-1733306493611-3fdb745c48b7?q=80&w=100',
     experience: '5 years',
     specialization: ['Haircut', 'Hair Coloring', 'Styling'],

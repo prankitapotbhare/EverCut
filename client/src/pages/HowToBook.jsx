@@ -12,7 +12,7 @@ const HowToBookPage = () => {
       
       {/* Video Tutorial Section with Laptop Display */}
       <VideoTutorialSection
-        videoSrc="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        videoSrc="/how-to-book-compressed.mp4"
         title="How to Book Your Perfect Appointment"
         subtitle="Follow our video tutorial guide to booking salon appointments with confidence. 
                   From finding the right salon to securing your preferred time slot, we've got you covered."
