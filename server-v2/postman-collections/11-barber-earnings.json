@@ -1,0 +1,18 @@
+{
+  "info": {
+    "name": "EverCut - Barber Earnings & Analytics",
+    "description": "Earnings tracking and rating management for barber shops",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{firebase_token}}", "type": "string"}]},
+  "variable": [
+    {"key": "base_url", "value": "http://localhost:5000", "type": "string"},
+    {"key": "api_prefix", "value": "/api/v1", "type": "string"},
+    {"key": "firebase_token", "value": "", "type": "string"},
+    {"key": "rating_id", "value": "", "type": "string"}
+  ],
+  "item": [
+    {"name": "Get Earnings", "request": {"method": "GET", "header": [], "url": {"raw": "{{base_url}}{{api_prefix}}/barber/earnings", "host": ["{{base_url}}"], "path": ["{{api_prefix}}", "barber", "earnings"]}, "description": "Get earnings summary from completed bookings.\n\nResponse:\n{\n  \"success\": true,\n  \"data\": {\n    \"totalEarning\": 50000,\n    \"lastMonthEarning\": 15000,\n    \"todayEarning\": 2500\n  }\n}"}},
+    {"name": "Remove Rating", "request": {"method": "DELETE", "header": [], "url": {"raw": "{{base_url}}{{api_prefix}}/barber/ratings/{{rating_id}}", "host": ["{{base_url}}"], "path": ["{{api_prefix}}", "barber", "ratings", "{{rating_id}}"]}, "description": "Remove a rating from the shop (barber can remove inappropriate ratings)."}}
+  ]
+}
