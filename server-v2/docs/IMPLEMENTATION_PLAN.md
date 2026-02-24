@@ -188,8 +188,8 @@ Based on the **BACKEND_ARCHITECTURE_BLUEPRINT** (Layered Structure for smaller t
 └───────────────────────────┬─────────────────────────────┘
                             │
 ┌───────────────────────────▼─────────────────────────────┐
-│                    DATABASE / EXTERNAL                   │
-│   MongoDB · Cloudinary · Firebase Auth                  │
+│                    DATABASE / EXTERNAL                  │
+│         MongoDB · Cloudinary · Firebase Auth            │
 └─────────────────────────────────────────────────────────┘
 ```
 

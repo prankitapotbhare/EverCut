@@ -116,6 +116,7 @@ postman-collections/test-tokens.txt
 postman-collections/*-tokens.txt
 
 # Firebase test tokens (in any location)
+test-tokens.json
 test-tokens.txt
 firebase-tokens.txt
 custom-tokens.txt

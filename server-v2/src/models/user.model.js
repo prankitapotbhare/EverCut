@@ -62,12 +62,11 @@ userSchema.index({ roleType: 1, isActive: 1 });
 // ---------------------------------------------------------------------------
 // Query helpers — automatically exclude soft-deleted
 // ---------------------------------------------------------------------------
-userSchema.pre(/^find/, function (next) {
+userSchema.pre(/^find/, function () {
     // Only auto-filter if not explicitly including deleted records
     if (!this.getOptions()?.includeDeleted) {
         this.where({ deletedAt: null });
     }
-    next();
 });
 
 const User = mongoose.model('User', userSchema);
