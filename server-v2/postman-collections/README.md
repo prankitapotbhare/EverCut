@@ -12,15 +12,15 @@ This folder contains **11 modular Postman collections** organized by feature/mod
 | 02 | **Customer Profile** | 4 | Profile management, homepage, services by gender |
 | 03 | **Customer Bookings** | 10 | Book, cancel, reschedule, reorder, favorites, employee calendar |
 | 04 | **Customer Shop Discovery** | 5 | Nearby shops, doorstep services, search |
-| 05 | **Customer Ratings** | 3 | Add ratings, view ratings, rating summary |
+| 05 | **Customer Ratings** | 3 | Add ratings, view ratings with replies, rating summary |
 | 06 | **Barber Profile & Shop** | 5 | Shop profile, business info, PIN, cover, status |
 | 07 | **Barber Employees** | 4 | Employee CRUD operations |
 | 08 | **Barber Services** | 5 | Service catalog management (single/bundled) |
 | 09 | **Barber Bookings** | 5 | Booking management, stats, status updates |
 | 10 | **Barber Photos** | 5 | Photo gallery management |
-| 11 | **Barber Earnings** | 2 | Earnings tracking, rating removal |
+| 11 | **Barber Earnings** | 6 | Earnings tracking, rating management with replies |
 
-**Total: 52 endpoints** across 11 collections
+**Total: 56 endpoints** across 11 collections
 
 ---
 
@@ -248,6 +248,8 @@ Some requests include pre-request scripts for:
 - Rating: 1-5 (integer)
 - Review: Optional, max 500 characters
 - Updating: If rating exists, it will be updated
+- Replies: Shop owners can reply to ratings (max 500 characters)
+- Reply Management: Shop owners can add, update, or delete their replies
 
 ### PIN Rules
 - 4-6 digits only
@@ -383,12 +385,12 @@ All API responses follow this standard format:
 
 ```
 Total Collections: 11
-Total Endpoints: 52
+Total Endpoints: 56
 Authentication: 4 endpoints
 Customer Features: 22 endpoints
-Barber Features: 26 endpoints
+Barber Features: 30 endpoints
 
-File Size: ~150KB total
+File Size: ~160KB total
 Format: Postman Collection v2.1.0
 ```
 

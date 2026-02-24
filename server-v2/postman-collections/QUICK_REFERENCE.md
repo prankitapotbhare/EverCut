@@ -37,9 +37,9 @@ firebase.auth().signInWithPhoneNumber(phone)
 | 08 | Barber Services | 5 |
 | 09 | Barber Bookings | 5 |
 | 10 | Barber Photos | 5 |
-| 11 | Barber Earnings | 2 |
+| 11 | Barber Earnings & Ratings | 6 |
 
-**Total: 52 endpoints**
+**Total: 56 endpoints**
 
 ## 🧪 Quick Test Flow
 
@@ -63,6 +63,8 @@ firebase.auth().signInWithPhoneNumber(phone)
 10 → Upload Photos
 09 → Get Bookings
 11 → Get Earnings
+11 → Get Ratings
+11 → Reply to Rating
 ```
 
 ## 🔗 API Endpoints
@@ -104,6 +106,10 @@ GET    /barber/bookings
 GET    /barber/photos
 POST   /barber/photos
 GET    /barber/earnings
+GET    /barber/ratings
+POST   /barber/ratings/:id/reply
+PUT    /barber/ratings/:id/reply
+DELETE /barber/ratings/:id/reply
 ```
 
 ## 🐛 Common Issues
@@ -137,11 +143,12 @@ GET    /barber/earnings
 ## 🎯 Key Features
 
 ✅ 11 modular collections  
-✅ 52 total endpoints  
+✅ 56 total endpoints  
 ✅ Auto-save variables  
 ✅ Detailed descriptions  
 ✅ Sample data included  
 ✅ Bearer token auth  
+✅ Rating reply system  
 ✅ Production-ready  
 
 ## 📞 Need Help?

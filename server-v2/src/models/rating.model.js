@@ -31,6 +31,20 @@ const ratingSchema = new mongoose.Schema(
             trim: true,
             maxlength: 500,
         },
+        reply: {
+            text: {
+                type: String,
+                trim: true,
+                maxlength: 500,
+            },
+            repliedAt: {
+                type: Date,
+            },
+            repliedBy: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User',
+            },
+        },
     },
     { timestamps: true },
 );

@@ -6,6 +6,8 @@ import {
     uploadShopCover,
     uploadShopPhotos,
 } from '../middleware/upload.middleware.js';
+import { validate } from '../middleware/validate.middleware.js';
+import { addReplySchema } from '../validators/rating.validator.js';
 import { ROLES } from '../utils/constants.js';
 
 // Controllers
@@ -16,6 +18,7 @@ import * as serviceCtrl from '../controllers/barber/barber-service.controller.js
 import * as bookingCtrl from '../controllers/barber/barber-booking.controller.js';
 import * as photoCtrl from '../controllers/barber/barber-photo.controller.js';
 import * as earningsCtrl from '../controllers/barber/barber-earnings.controller.js';
+import * as ratingCtrl from '../controllers/barber/barber-rating.controller.js';
 
 const router = Router();
 
@@ -59,6 +62,10 @@ router.delete('/photos/:id', photoCtrl.deletePhoto);
 router.get('/earnings', earningsCtrl.getEarnings);
 
 // ── Ratings ──────────────────────────────────────────────────────────────
+router.get('/ratings', ratingCtrl.getRatings);
+router.post('/ratings/:id/reply', validate(addReplySchema, 'body'), ratingCtrl.addReply);
+router.put('/ratings/:id/reply', validate(addReplySchema, 'body'), ratingCtrl.updateReply);
+router.delete('/ratings/:id/reply', ratingCtrl.deleteReply);
 router.delete('/ratings/:id', earningsCtrl.removeRating);
 
 export default router;

@@ -37,6 +37,39 @@ class RatingRepository {
 
         return { averageRating: average, totalReviews: total, stars };
     }
+
+    async addReply(ratingId, replyText, repliedBy) {
+        return Rating.findByIdAndUpdate(
+            ratingId,
+            {
+                reply: {
+                    text: replyText,
+                    repliedAt: new Date(),
+                    repliedBy,
+                },
+            },
+            { new: true }
+        ).populate('customerId', 'firstName lastName email');
+    }
+
+    async updateReply(ratingId, replyText) {
+        return Rating.findByIdAndUpdate(
+            ratingId,
+            {
+                'reply.text': replyText,
+                'reply.repliedAt': new Date(),
+            },
+            { new: true }
+        ).populate('customerId', 'firstName lastName email');
+    }
+
+    async deleteReply(ratingId) {
+        return Rating.findByIdAndUpdate(
+            ratingId,
+            { $unset: { reply: '' } },
+            { new: true }
+        ).populate('customerId', 'firstName lastName email');
+    }
 }
 
 export default new RatingRepository();

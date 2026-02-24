@@ -313,20 +313,29 @@ const firebaseUid = req.firebaseUser?.firebaseUid || req.body.firebaseUid || "te
 
 ---
 
-## 6. 🟠 HIGH — Barber Rating Deletion Without Shop Ownership Check
+## 6. ✅ RESOLVED — Barber Rating Management with Proper Ownership Check
 
-**File:** `ratingRemove.Controller.js`  
-**Severity:** 🟠 High
+**Files:** `src/services/rating.service.js`, `src/controllers/barber/barber-rating.controller.js`  
+**Status:** ✅ Resolved in current implementation
 
-**Problem:** The `removeRating` endpoint verifies the caller is *a* barber, but does NOT verify the rating belongs to the caller's shop. Any barber can delete ANY rating from ANY shop.
+**Previous Issue:** The `removeRating` endpoint verified the caller was a barber, but did NOT verify the rating belonged to the caller's shop. Any barber could delete ANY rating from ANY shop.
+
+**Current Implementation:** All rating management operations (delete, reply, update reply, delete reply) now include proper ownership verification:
 
 ```js
-const barber = await barberSetup.findOne({ firebaseUid });
-// ❌ Missing: if (rating.shopId.toString() !== barber._id.toString())
-await Rating.deleteOne({ _id: ratingId });
+// Verify the barber owns the shop this rating belongs to
+const shop = await shopRepository.findByOwnerId(ownerId);
+if (!shop || rating.shopId.toString() !== shop._id.toString()) {
+    throw new BadRequestError('You can only manage ratings on your own shop');
+}
 ```
 
-**Fix:** Add ownership check: verify `rating.shopId` matches the authenticated barber's shop `_id`.
+**New Features Added:**
+- Barbers can reply to customer ratings (max 500 characters)
+- Barbers can update their replies
+- Barbers can delete their replies
+- All operations enforce shop ownership verification
+- Replies include timestamp and are linked to the barber user
 
 ---
 

@@ -1,7 +1,51 @@
 # EverCut Backend — Complete Refactoring Implementation Plan
 
-> **Generated: 2026-02-23 · Status: Ready for Review**
+> **Generated: 2026-02-23 · Status: Ready for Review**  
+> **Last Updated: 2026-02-24 · Rating Reply Feature Added**  
 > **Architecture:** Layered (N-Tier) · **Auth Pattern:** Type 4 — Persona-Based · **Database:** MongoDB/Mongoose
+
+---
+
+## 🆕 Recent Updates (2026-02-24)
+
+### Rating Reply Feature Implementation
+
+A new feature has been added to allow barbers/shop owners to reply to customer ratings and reviews. This implementation follows the established architectural patterns and best practices:
+
+**New Capabilities:**
+- Barbers can view all ratings for their shop
+- Barbers can add replies to customer ratings (max 500 characters)
+- Barbers can update their existing replies
+- Barbers can delete their replies
+- All operations enforce proper shop ownership verification
+- Replies include timestamp and are linked to the barber user
+
+**Files Modified/Created:**
+- `src/models/rating.model.js` - Added reply subdocument with text, repliedAt, repliedBy
+- `src/repositories/rating.repository.js` - Added reply CRUD methods
+- `src/services/rating.service.js` - Added business logic for reply management with ownership checks
+- `src/controllers/barber/barber-rating.controller.js` - New controller for barber rating operations
+- `src/validators/rating.validator.js` - Added reply validation schema
+- `src/routes/barber.routes.js` - Added 4 new endpoints for rating management
+- `postman-collections/11-barber-earnings.json` - Updated with new endpoints
+- `postman-collections/05-customer-ratings.json` - Updated to show replies in responses
+- `postman-collections/README.md` - Updated endpoint counts and business rules
+- `postman-collections/QUICK_REFERENCE.md` - Updated with new endpoints
+- `docs/SECURITY_AUDIT.md` - Marked rating ownership issue as resolved
+
+**API Endpoints Added:**
+- `GET /api/v1/barber/ratings` - Get all ratings for barber's shop
+- `POST /api/v1/barber/ratings/:id/reply` - Add reply to a rating
+- `PUT /api/v1/barber/ratings/:id/reply` - Update existing reply
+- `DELETE /api/v1/barber/ratings/:id/reply` - Delete reply
+
+**Security & Best Practices:**
+- ✅ Proper role-based access control (BARBER role required)
+- ✅ Shop ownership verification for all operations
+- ✅ Input validation using Joi schemas
+- ✅ Consistent error handling with custom error classes
+- ✅ Follows layered architecture (Controller → Service → Repository → Model)
+- ✅ Production-ready with proper validation and authorization
 
 ---
 

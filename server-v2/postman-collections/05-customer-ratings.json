@@ -40,7 +40,7 @@
           "host": ["{{base_url}}"],
           "path": ["{{api_prefix}}", "customer", "shops", "{{shop_id}}", "ratings"]
         },
-        "description": "Get all ratings for a shop with customer details.\n\nResponse:\n{\n  \"success\": true,\n  \"data\": [\n    {\n      \"ratingId\": \"...\",\n      \"rating\": 5,\n      \"review\": \"Great service!\",\n      \"user\": {\n        \"firstName\": \"John\",\n        \"photoUrl\": \"...\"\n      },\n      \"createdAt\": \"2024-03-15T10:30:00.000Z\"\n    }\n  ]\n}"
+        "description": "Get all ratings for a shop with customer details and shop replies.\n\nResponse:\n{\n  \"success\": true,\n  \"data\": [\n    {\n      \"ratingId\": \"...\",\n      \"rating\": 5,\n      \"review\": \"Great service!\",\n      \"user\": {\n        \"firstName\": \"John\",\n        \"photoUrl\": \"...\"\n      },\n      \"reply\": {\n        \"text\": \"Thank you for your feedback!\",\n        \"repliedAt\": \"2024-03-15T10:30:00.000Z\"\n      },\n      \"createdAt\": \"2024-03-15T10:30:00.000Z\"\n    }\n  ]\n}"
       }
     },
     {
