@@ -144,11 +144,10 @@ shopSchema.index({ category: 1, isOpen: 1 });
 // ---------------------------------------------------------------------------
 // Soft-delete query middleware
 // ---------------------------------------------------------------------------
-shopSchema.pre(/^find/, function (next) {
+shopSchema.pre(/^find/, function () {
     if (!this.getOptions()?.includeDeleted) {
         this.where({ deletedAt: null });
     }
-    next();
 });
 
 const Shop = mongoose.model('Shop', shopSchema);

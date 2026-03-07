@@ -79,11 +79,10 @@ employeeSchema.index({ shopId: 1, phoneNumber: 1 }, { unique: true });
 // ---------------------------------------------------------------------------
 // Soft-delete query middleware
 // ---------------------------------------------------------------------------
-employeeSchema.pre(/^find/, function (next) {
+employeeSchema.pre(/^find/, function () {
     if (!this.getOptions()?.includeDeleted) {
         this.where({ deletedAt: null });
     }
-    next();
 });
 
 const Employee = mongoose.model('Employee', employeeSchema);

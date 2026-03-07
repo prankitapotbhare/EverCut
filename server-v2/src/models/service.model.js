@@ -68,11 +68,10 @@ serviceSchema.index({ serviceFor: 1 });
 // ---------------------------------------------------------------------------
 // Soft-delete query middleware
 // ---------------------------------------------------------------------------
-serviceSchema.pre(/^find/, function (next) {
+serviceSchema.pre(/^find/, function () {
     if (!this.getOptions()?.includeDeleted) {
         this.where({ deletedAt: null });
     }
-    next();
 });
 
 const Service = mongoose.model('Service', serviceSchema);
